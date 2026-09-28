@@ -1,0 +1,96 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: c36cbec6-22c7-4f61-b946-170ce0875253
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: has_direct_debit_movement_uno
+    lock: 'false'
+then:
+- return:
+    :body:
+    - data:
+        homeFutura: false
+        tags:
+        - '9984134580'
+        - has_direct_debit_movement_uno
+        products:
+          cards: []
+          account:
+          - number: '00740355000105112567'
+            product:
+              name: Cuenta de Cheques
+              id: CH
+            numberType:
+              id: CCC
+            alias: CUENTA
+            movements:
+            - data:
+                concept: CFE SUMINISTRADOR SE00002
+            id: iMxWLp_atJopzXX0qNV53wwI8JOKSE5iPPG88M_vDu7raTbUiZEP_w
+            detail:
+              level: '04'
+              specificAmounts:
+              - amounts:
+                - amount: 140994.08
+                  currency: MXN
+                name: Saldo actual
+                id: CURRENT_BALANCE
+              - amounts:
+                - amount: 0
+                  currency: MXN
+                name: Saldo buen cobro
+                id: PENDING_DEPOSIT_BALANCE
+              - amounts:
+                - amount: 0
+                  currency: MXN
+                name: '16485'
+                id: ACCOUNT_MOVEMENT_NUMBER
+              indicators:
+              - name: Indica si la cuenta es de nómina
+                id: IS_PAYROLL_ACCOUNT
+                isActive: false
+              - name: Indica si la cuenta es eje
+                id: IS_PRINCIPAL_ACCOUNT
+                isActive: false
+              - name: Indica si la cuenta tiene pockets
+                id: HAS_POCKETS
+                isActive: false
+              - name: Indica si la cuenta es digital
+                id: IS_DIGITAL
+                isActive: false
+            simpleCode: iMxWLp_atJopzXX0qNV5396rmyM1ggPa
+            productType: ACCOUNT
+            status:
+              name: Cuenta Activa
+              id: ACTIVE
+            subProductType:
+              name: LIBRETON 2.0
+              id: '0007'
+            signedAuthorization:
+              name: Cuenta Individual
+              id: SINGLE
+        authentication:
+          password: Glomo2024
+          user: '9984134580'
+          deviceId: F0C759C71146367B0BDED5CB139B8EEF
+      lockType: null
+      lockExpiration: null
+      id: 35919782
+    :headers:
+      content-length: '1533'
+      Server: nginx
+      Connection: keep-alive
+      host: datamanager.globaldevtools.bbva.com
+      Vary: Accept-Encoding
+      Date: Fri, 13 Sep 2024 19:11:09 GMT
+      Content-Type: application/json
+    :status: 200 OK

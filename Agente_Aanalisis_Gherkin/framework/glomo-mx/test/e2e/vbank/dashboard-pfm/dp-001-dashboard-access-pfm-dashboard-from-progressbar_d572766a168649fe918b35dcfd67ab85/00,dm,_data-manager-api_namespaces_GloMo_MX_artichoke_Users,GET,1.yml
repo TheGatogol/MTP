@@ -1,0 +1,130 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_artichoke_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: 4a83b366-7eff-41c4-9926-77487f7717fd
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: active_pfm,incomes_pfm_period
+then:
+- return:
+    :body:
+    - data:
+        name: Artichoke user with an default PFM with expenses, incomes, financial
+          movements, transactions and budgets
+        id: '7351151111'
+        finances:
+          personalFinancesManagement:
+            pfms:
+            - period:
+                endDate: '2020-03-31'
+                startDate: '2020-03-01'
+              isDefault: true
+              relatedContracts: []
+              budgets:
+              - period:
+                  endDate: '2019-09-29'
+                  startDate: '2019-06-01'
+                compliancePercentage: 99.4
+                name: ACTIVE_4 name.
+                limit:
+                  amount: 3651
+                  currency: PEN
+                available:
+                  amount: 22
+                  currency: PEN
+                disposed:
+                  amount: 3629
+                  currency: PEN
+                id: '0001'
+                category:
+                  image:
+                    id: education
+                    url: https://upload.wikimedia.org/wikipedia/commons/1/1e/Default-avatar.jpg
+                  name: Education
+                  id: '9'
+                status:
+                  id: ACTIVE
+                frequency:
+                  name: monthly
+                  id: MONTHLY
+              - period:
+                  endDate: '2019-09-29'
+                  startDate: '2019-06-01'
+                compliancePercentage: 99.33
+                name: EXPIRED_0 name.
+                limit:
+                  amount: 2076
+                  currency: PEN
+                available:
+                  amount: 14
+                  currency: PEN
+                disposed:
+                  amount: 2062
+                  currency: PEN
+                id: '0002'
+                category:
+                  image:
+                    id: home
+                    url: https://upload.wikimedia.org/wikipedia/commons/1/1e/Default-avatar.jpg
+                  name: Home
+                  id: '11'
+                status:
+                  id: EXPIRED
+                frequency:
+                  name: monthly
+                  id: MONTHLY
+              name: Global PFM
+              groups: []
+              currency: PEN
+              id: '0101'
+              transactions: []
+              frequency:
+                name: monthly
+                id: MONTHLY
+            groups:
+            - 01_expenses
+            - 02_incomes
+            - 03_financial_movements
+        tags:
+        - expenses_pfm_period
+        - incomes_pfm_period
+        - active_pfm
+        - artichoke
+        - mexico
+        - active_budgets
+        - expired_budgets
+        - pfm_with_budgets
+        - pfm_with_transaction
+        - category_movements
+        - subcategory_movements
+        - debit_amount
+        - credit_amount
+        - eur_account_with_checks_allowed
+        - '7351151111'
+        products:
+          cards:
+          - pfm_2001_credit_card
+          accounts:
+          - pfm_2184_account
+        authentication:
+          password: '112233'
+          user: '7351151111'
+      lockType: SHARED
+      lockExpiration: '2022-05-30T06:54:07.142073Z'
+      id: 682963
+    :headers:
+      Strict-Transport-Security: max-age=15768000
+      Server: nginx
+      Connection: keep-alive
+      Content-Length: '2084'
+      Date: Mon, 30 May 2022 06:53:16 GMT
+      Content-Type: application/json
+    :status: 200 OK

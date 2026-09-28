@@ -1,0 +1,51 @@
+when:
+  sequence: 1
+  path: /SRVS_A02/cards/v0/cards/1240/transactions
+  method: GET
+  backend: glomo
+request:
+  headers:
+    sec-fetch-mode: cors
+    content-length: '0'
+    referer: http://localhost:8001/
+    sec-fetch-site: same-site
+    accept-language: es-MX,es;q=0.9
+    origin: http://localhost:8001
+    tsec: 6492727f1765ad93b85a862be719fe2ae4b368ed
+    accept: application/json, text/html, */*; q=0.1
+    sec-ch-ua: '"Not?A_Brand";v="8", "Chromium";v="108", "Google Chrome";v="108"'
+    sec-ch-ua-mobile: ?0
+    x-vbank-session: a138fec6-179e-483a-8bdf-f2fa5bd2fe37
+    sec-ch-ua-platform: '"macOS"'
+    host: localhost:9000
+    content-type: application/json
+    connection: keep-alive
+    cache-control: no-cache, no-store, must-revalidate
+    accept-encoding: gzip, deflate, br
+    sec-fetch-dest: empty
+    user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36
+      (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36
+  query:
+    fromOperationDate: '2022-09-28'
+    toOperationDate: '2022-12-28'
+then:
+- return:
+    :body: ''
+    :headers:
+      access-control-allow-origin: '*'
+      content-length: '0'
+      Access-Control-Expose-Headers: tsec, vnd.bbva.access-token-type,vnd.bbva.access-token,
+        vnd.bbva.sso-pkcs7, authenticationtype, authenticationdata, authenticationstate,
+        authenticationchallenge
+      Server: artichoke
+      Alt-Svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      access-control-allow-headers: Content-Type, tsec, authenticationtype, authenticationdata,
+        authenticationstate, contactid, consumeruuid, consumerapplicationid, perimetertsec,
+        authorization, responsewarningcode, responsewarningdescription, cuf, field,
+        bcs-device-app-version, bcs-device-app-version, vnd.bbva.authorization
+      Vary: Accept-Encoding
+      tsec: 6492727f1765ad93b85a862be719fe2ae4b368ed
+      X-Response-Time: 465ms
+      Date: Wed, 28 Dec 2022 14:52:13 GMT
+      Via: 1.1 google
+    :status: 204 No Content

@@ -1,0 +1,121 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: 04133a75-35d2-4e58-b502-b1bcfb309a99
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: edit_alias_with_card_credit
+    lock: 'false'
+then:
+- return:
+    :body:
+    - data:
+        account:
+        - balances:
+          - amountBalance:
+            - amount: 5.6415682176E8
+              currency: USD
+            name: Monto total actual
+            id: TOTAL_CURRENT_AMOUNT
+          name: Cuentas
+          id: ACCOUNTS
+        - balances:
+          - amountBalance:
+            - amount: 0
+            name: Monto total actual
+            id: TOTAL_CURRENT_AMOUNT
+          name: Fondos de inversión
+          id: INVESTMENT_FUNDS
+        tags:
+        - edit_alias_with_card_credit
+        products:
+          cards:
+          - product:
+              name: DEBITO BBVA
+              id: VD
+            formats:
+            - number: '4152313939063801'
+              numberType:
+                id: CLABE
+            numberType:
+              name: PAN
+              id: PAN
+            blocks:
+            - reference: VG_VIGENTE
+              reason:
+                description: VIGENTE
+                id: VIGENTE
+              additionalInformation: Indica que la tarjeta está bloqueada debido a
+                VIGENTE
+              isActive: false
+            cardType:
+              name: DEBIT_CARD
+              id: DEBIT_CARD
+            number: '4152313939063801'
+            bank:
+              name: '0074'
+              id: '0074'
+            cardId: 9YK9GXzCWZ9Zmy0de1k5dUZB_b78X0tUhdvfZA8e3HI
+            alias: deb prue
+            id: 9YK9GXzCWZ9Zmy0de1k5dUZB_b78X0tUhdvfZA8e3HI
+            detail:
+              images:
+              - name: Front face of the card
+                id: FRONT_CARD
+                url: https://cardcovers.caasbbva.com/mexico/415231-VD.png.imgcaas.w320.png
+              physicalSupport:
+                description: VISA
+                id: NORMAL_PLASTIC
+              indicators:
+              - description: Indica si se trata de una tarjeta limpia
+                id: IS_CLEAN_CARD
+                isActive: false
+              - description: Indica si la tarjeta puede ser tokenizada
+                id: TOKENIZED_CARD
+                isActive: true
+              - description: Indica si la tarjeta está relacionada con la tecnología
+                  biométrica de huellas dactilares
+                id: HAS_FINGERPRINT_BIOMETRIC
+                isActive: false
+              - description: Indica si la tarjeta tarjeta está relacionada con tecnología
+                  contactless
+                id: HAS_CONTACTLESS
+                isActive: false
+              - description: Indica si la tarjeta puede estar relacionada con tarjetas
+                  adicionales
+                id: ASSOCIABLE_TO_ADDITIONAL_CARDS
+                isActive: true
+              - description: Indica si la tarjeta está vinculada a una llave inteligente
+                id: IS_SMART_KEY
+                isActive: false
+              expirationDate: '2025-05-31'
+            productType: CARDS
+            status:
+              description: La tarjeta se puede utilizar según la configuración que
+                el cliente haya configurado para las diferentes activaciones.
+              id: OPERATIVE
+        authentication:
+          password: Glomo2023
+          user: '5537458677'
+          deviceId: 9108F9FC766E35A42C8F58F702BA3BE6
+      lockExpiration: '2025-02-08T16:52:40.370198Z'
+      lockType: SHARED
+      id: 36011381
+    :headers:
+      content-length: '2511'
+      Cache-Control: max-age=0
+      Connection: keep-alive
+      host: datamanager.globaldevtools.bbva.com
+      Vary: Accept-Encoding
+      Expires: Sat, 08 Feb 2025 16:52:08 GMT
+      Date: Sat, 08 Feb 2025 16:52:08 GMT
+      Content-Type: application/json; charset=utf-8
+    :status: 200 OK

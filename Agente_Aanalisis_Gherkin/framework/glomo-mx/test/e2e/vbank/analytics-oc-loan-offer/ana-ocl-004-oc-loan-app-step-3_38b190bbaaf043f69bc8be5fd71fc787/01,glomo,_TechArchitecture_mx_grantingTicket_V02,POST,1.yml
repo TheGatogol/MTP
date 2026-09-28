@@ -1,0 +1,67 @@
+when:
+  sequence: 1
+  path: /QSRV_A02/TechArchitecture/mx/grantingTicket/V02
+  method: POST
+  backend: glomo
+request:
+  headers:
+    sec-fetch-mode: cors
+    referer: http://localhost:8001/
+    content-length: '258'
+    sec-fetch-site: same-site
+    accept-language: es
+    origin: http://localhost:8001
+    accept: application/json, text/html, */*; q=0.1
+    sec-ch-ua: '"Chromium";v="94", "Google Chrome";v="94", ";Not A Brand";v="99"'
+    sec-ch-ua-mobile: ?0
+    x-vbank-session: 32d22e3a-3de4-4536-b953-441100a7d349
+    sec-ch-ua-platform: '"macOS"'
+    host: localhost:9000
+    content-type: application/json
+    connection: keep-alive
+    cache-control: no-cache, no-store, must-revalidate
+    accept-encoding: gzip, deflate, br
+    sec-fetch-dest: empty
+    user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36
+      (KHTML, like Gecko) Chrome/94.0.4606.81 Safari/537.36
+  body:
+    backendUserRequest:
+      accessCode: '0070254228'
+      dialogId: ''
+      userId: ''
+    authentication:
+      authenticationData:
+      - authenticationData:
+        - '112233'
+        idAuthenticationData: password
+      consumerID: '10000033'
+      authenticationType: '02'
+      userID: '0070254228'
+then:
+- return:
+    backendUserResponse:
+      clientId: '1234567891011121314150'
+      accountingTerminal: Q7P
+      clientStatus: A1
+      userType: S
+    authenticationResponse:
+      authenticationData: []
+      authenticationState: OK
+    :headers:
+      access-control-allow-origin: '*'
+      content-length: '252'
+      Access-Control-Expose-Headers: tsec, vnd.bbva.access-token-type,vnd.bbva.access-token,
+        authenticationtype, authenticationdata, authenticationstate
+      Server: artichoke
+      access-control-allow-headers: Content-Type, tsec, authenticationtype, authenticationdata,
+        authenticationstate, contactid, consumeruuid, consumerapplicationid, perimetertsec,
+        authorization, responsewarningcode, responsewarningdescription, cuf, field,
+        bcs-device-app-version, bcs-device-app-version
+      Connection: keep-alive
+      content-type: application/json;charset=UTF-8
+      Vary: Accept-Encoding
+      tsec: af29b0a0ec224a294a6a889faeee0d6949201628
+      X-Response-Time: 24ms
+      Date: Wed, 13 Oct 2021 20:51:12 GMT
+      Allow: DELETE
+    :status: 200 OK

@@ -1,0 +1,168 @@
+when:
+  sequence: 1
+  path: /content/caas/mexico/app/sustainability/sustainability-info.model.json
+  method: GET
+  backend: aem
+request:
+  headers:
+    content-length: '0'
+    referer: http://localhost:9031/
+    origin: http://localhost:9031
+    authority: assets-stage.caasbbva.com
+    host: assets-stage.caasbbva.com
+    accept-encoding: deflate, gzip, br
+    accept: '*/*'
+    user-agent: curl/7.68.0
+then:
+- return:
+    :headers:
+      X-EdgeConnect-Origin-MEX-Latency: '298'
+      Access-Control-Allow-Origin: $(${backend.aem.protocol}://${backend.aem.host}:${backend.aem.port})
+      X-Content-Type-Options: nosniff
+      Connection: keep-alive
+      Date: Fri, 19 Aug 2022 06:58:38 GMT
+      Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Access-Control-Request-Method,
+        x-requested-with
+      Strict-Transport-Security: max-age=31536000; includeSubdomains; preload
+      Cache-Control: max-age=1784
+      ETag: '"100882f6cfe7da0f1b27ae58d40d1e39-gzip"'
+      Content-Security-Policy: $(frame-ancestors 'self' https://www.bbva.pt https://bbva.pt
+        https://online.bbva.com.ar https://s3-dev.movil.bbva.es https://movil.bbva.es
+        https://pre.web.bbva.es https://qa.web.grupobbva.com https://web.bbva.es https://*.es.igrupobbva
+        https://*.igrupobbva https://bbvanetcash.com https://www.bbvanetcash.com https://www.bbva.es
+        https://s3-dev.mobile.bbva.it http://localhost http://localhost:4200 https://int-bbva-cells-files.s3.amazonaws.com
+        https://pre.web.bbva.it)
+      Vary: Accept-Encoding
+      Set-Cookie: AWSALBCORS=E/xOVB3OTZ8R7PCAAstXBuDDnuyKtyH5UybKCkntjNxtvnZQjW4PS8V/D6+pFeVm5q5k04MOXcS/gwZHjCBkMNInta9DTd7rPINoj1yRd9MkMcIoyC91tRX6mhUO;
+        Expires=Fri, 26 Aug 2022 06:58:38 GMT; Path=/; SameSite=None; Secure
+      Expires: Fri, 19 Aug 2022 07:28:22 GMT
+      X-XSS-Protection: 1; mode=block
+      Content-Length: '1352'
+      X-EdgeConnect-MidMile-RTT: '0'
+      Content-Type: application/json
+    :body: '{
+  "templateType": "caasinitiativecontent",
+  "title": "Cálculo de la huella de carbono",
+  ":itemsOrder": [
+    "root"
+  ],
+  ":items": {
+    "root": {
+      "gridClassNames": "aem-Grid aem-Grid--12 aem-Grid--default--12",
+      "columnClassNames": {
+        "contentfragmentlist": "aem-GridColumn aem-GridColumn--default--12"
+      },
+      "columnCount": 12,
+      "allowedComponents": {
+        "applicable": false,
+        "components": [
+          {
+            "path": "/content/sustainability-info/jcr:content/root/bbva/pwebs/components/par/corecomponents/contentfragment",
+            "title": "Content Fragment"
+          },
+          {
+            "path": "/content/sustainability-info/jcr:content/root/bbva/pwebs/components/par/corecomponents/contentfragmentlist",
+            "title": "Content Fragment List"
+          }
+        ]
+      },
+      ":itemsOrder": [
+        "contentfragmentlist"
+      ],
+      ":items": {
+        "contentfragmentlist": {
+          ":type": "bbva/pwebs/components/par/corecomponents/contentfragmentlist",
+          "items": [
+            {
+              "description": "Information about sustainability in BBVA. ",
+              "title": "sustainability-info",
+              "model": "caas/spain/app/models/sustainability-info",
+              "elements": {
+                "titulo": {
+                  "dataType": "string",
+                  "title": "Titulo",
+                  "value": "sustainability-info",
+                  "translate": true,
+                  "multiValue": false,
+                  ":type": "string"
+                },
+                "items": {
+                  "dataType": "string",
+                  "title": "Listado items",
+                  "value": [
+                    "Para calcular tu huella de carbono, tenemos en cuenta tus  <span style=\"font-weight:500;\">recibos de luz y gas</span> domiciliados en BBVA y los  <span style=\"font-weight:500;\">consumos en gasolineras</span> pagados con tus tarjetas BBVA del año en curso. Este cálculo es aproximado y no hace referencia al total de tus emisiones. ",
+                    "El volumen de estas emisiones supone aproximadamente un <span style=\"font-weight:500;\">36,5% de tus emisiones totales</span>, el resto están asociadas a consumos y hábitos que no podemos estimar.",
+                    "Utilizamos el valor en euros de los recibos y pagos antes mencionados y lo multiplicamos por las variables ofrecidas por la Oficina Española del Cambio Climático de MITECO para las emisiones asociadas a combustible y por la Comisión Nacional de los Mercados y la Competencia para las emisiones asociadas a los recibos.",
+                    "Para ello, consultamos siempre la última publicación de  <span style=\"font-weight:500;\">datos oficiales</span>.",
+                    "<span style=\"font-weight:500;\">Esta información es rigurosa y está contrastada</span>, aunque no sustituye técnicas de cálculo más precisas. ",
+                    "Ten en cuenta que  <span style=\"font-weight:500;\">no se trata de información orientada al asesoramiento financiero</span> y que no debe ser tomada como único factor de decisión a la hora de realizar operaciones o contrataciones."
+                  ],
+                  "multiValue": true,
+                  ":type": "string"
+                },
+                "image_url": {
+                  "dataType": "string",
+                  "title": "Path imagen",
+                  "value": "/images/thumbnail-video.png.jpg",
+                  "multiValue": false,
+                  ":type": "string"
+                },
+                "item1": {
+                  "dataType": "string",
+                  "title": "Listado - Item 1",
+                  "value": "Para calcular tu huella de carbono tenemos en cuenta tus <span style=\"font-weight:500;\">recibos de luz y gas</span> domiciliados en BBVA y los consumos en gasolineras pagados con tus tajetas BBVA del año en curso.                                          ",
+                  "translate": true,
+                  "multiValue": false,
+                  ":type": "string"
+                },
+                "item2": {
+                  "dataType": "string",
+                  "title": "Listado - Item 2",
+                  "value": "Utilizamos el valor en euros de los recibos y pagos antes mencionados y lo <span style=\"font-weight:500;\">multiplicamos por las variables</span> ofrecidas",
+                  "translate": true,
+                  "multiValue": false,
+                  ":type": "string"
+                },
+                "item3": {
+                  "dataType": "string",
+                  "title": "Listado - Item 3",
+                  "translate": true,
+                  "multiValue": false,
+                  ":type": "string"
+                },
+                "item4": {
+                  "dataType": "string",
+                  "title": "Listado - Item 4",
+                  "translate": true,
+                  "multiValue": false,
+                  ":type": "string"
+                },
+                "video_url": {
+                  "dataType": "string",
+                  "title": "Video (url)",
+                  "value": "https://www.youtube.com/embed/UtwCyfqFXeE",
+                  "multiValue": false,
+                  ":type": "string"
+                }
+              },
+              ":type": "dam:Asset",
+              "elementsOrder": [
+                "titulo",
+                "items",
+                "image_url",
+                "item1",
+                "item2",
+                "item3",
+                "item4",
+                "video_url"
+              ]
+            }
+          ]
+        }
+      },
+      ":type": "wcm/foundation/components/responsivegrid"
+    }
+  },
+  ":type": "bbva/pwebs/components/pages/caasinitiativecontent"
+}
+'

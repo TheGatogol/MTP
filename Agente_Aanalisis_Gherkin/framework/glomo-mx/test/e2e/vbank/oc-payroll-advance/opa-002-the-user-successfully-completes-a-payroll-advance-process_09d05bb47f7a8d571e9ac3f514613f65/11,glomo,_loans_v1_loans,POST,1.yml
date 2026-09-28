@@ -1,0 +1,70 @@
+when:
+  sequence: 1
+  path: /SRVS_A02/loans/v1/loans
+  method: POST
+  backend: glomo
+request:
+  headers:
+    sec-fetch-mode: cors
+    referer: http://localhost:8001/
+    content-length: '236'
+    sec-fetch-site: same-site
+    accept-language: es
+    origin: http://localhost:8001
+    tsec: 097e4251369792a9ec0019553e11fe324484efe6
+    accept: application/json, text/html, */*; q=0.1
+    sec-ch-ua: '"Google Chrome";v="95", "Chromium";v="95", ";Not A Brand";v="99"'
+    sec-ch-ua-mobile: ?0
+    x-vbank-session: 1fc45028-191d-41c1-91b2-048e0632d4b0
+    sec-ch-ua-platform: '"macOS"'
+    host: localhost:9000
+    content-type: application/json
+    connection: keep-alive
+    cache-control: no-cache, no-store, must-revalidate
+    accept-encoding: gzip, deflate, br
+    sec-fetch-dest: empty
+    user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36
+      (KHTML, like Gecko) Chrome/95.0.4638.69 Safari/537.36
+  body:
+    initialAmounts:
+    - amount: 429
+      currency: MXN
+    contractingDate: '2021-11-03'
+    terms:
+      number: 2
+      frequency: MONTHLY
+    purposeGroup:
+      id:
+        name: destino
+        id: '00156'
+    offerId: yU0GxwLNMi_L1_WpCkPqLUswhvUKNI20-XMb7_lcGQQ
+then:
+- return:
+    severity: FATAL
+    system-error-cause: The authentication type must be specified
+    error-message: The authentication type must be specified
+    consumer-request-id: 954cbbbf-5361-4ae3-a250-2999244729a0
+    :headers:
+      access-control-allow-origin: '*'
+      Access-Control-Expose-Headers: tsec, vnd.bbva.access-token-type,vnd.bbva.access-token,
+        authenticationtype, authenticationdata, authenticationstate
+      authenticationdata: otp-sms;otp-token
+      Server: artichoke
+      access-control-allow-headers: Content-Type, tsec, authenticationtype, authenticationdata,
+        authenticationstate, contactid, consumeruuid, consumerapplicationid, perimetertsec,
+        authorization, responsewarningcode, responsewarningdescription, cuf, field,
+        bcs-device-app-version, bcs-device-app-version
+      Connection: keep-alive
+      authenticationtype: 05;33
+      tsec: 097e4251369792a9ec0019553e11fe324484efe6
+      Content-Length: '374'
+      X-Response-Time: 3ms
+      Date: Wed, 03 Nov 2021 18:41:11 GMT
+      Content-Type: application/json; charset=utf-8
+    system-error-code: unauthorized
+    messages: []
+    :status: 401 Unauthorized
+    http-status: 401
+    system-error-description: The authentication type must be specified
+    error-code: '70'
+    version: 1

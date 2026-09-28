@@ -1,0 +1,58 @@
+when:
+  sequence: 2
+  path: /SRVS_A02/cards/v0/cards/1423/activations/ON_OFF
+  method: PATCH
+  backend: glomo
+request:
+  headers:
+    sec-fetch-mode: cors
+    referer: http://localhost:8001/
+    content-length: '17'
+    sec-fetch-site: same-site
+    accept-language: es-ES,es-MX;q=0.9,es;q=0.8
+    origin: http://localhost:8001
+    tsec: b5610ff0f9e6beeba7419ee32975d8f6f1036967
+    accept: application/json, text/html, */*; q=0.1
+    sec-ch-ua: '"Chromium";v="110", "Not A(Brand";v="24", "Google Chrome";v="110"'
+    sec-ch-ua-mobile: ?0
+    x-vbank-session: a2427e29-5df7-444d-b6bb-d7fedfe1e7be
+    sec-ch-ua-platform: '"macOS"'
+    host: localhost:9000
+    content-type: application/json
+    connection: keep-alive
+    cache-control: no-cache, no-store, must-revalidate
+    accept-encoding: gzip, deflate, br
+    sec-fetch-dest: empty
+    user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36
+      (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36
+  body:
+    isActive: true
+then:
+- return:
+    data:
+      name: Activation for global card usage
+      isActive: true
+      activationId: ON_OFF
+    :headers:
+      access-control-allow-origin: '*'
+      content-length: '211'
+      Access-Control-Expose-Headers: tsec, vnd.bbva.access-token-type,vnd.bbva.access-token,
+        vnd.bbva.sso-pkcs7, authenticationtype, authenticationdata, authenticationstate,
+        authenticationchallenge
+      Server: artichoke
+      Alt-Svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      access-control-allow-headers: Content-Type, tsec, authenticationtype, authenticationdata,
+        authenticationstate, contactid, consumeruuid, consumerapplicationid, perimetertsec,
+        authorization, responsewarningcode, responsewarningdescription, cuf, field,
+        bcs-device-app-version, bcs-device-app-version, vnd.bbva.authorization
+      content-type: application/json;charset=UTF-8
+      Vary: Accept-Encoding
+      tsec: b5610ff0f9e6beeba7419ee32975d8f6f1036967
+      X-Response-Time: 461ms
+      Date: Wed, 26 Apr 2023 09:18:01 GMT
+      Via: 1.1 google
+    :status: 200 OK
+    apiInfo:
+      name: cards
+      category: products
+      version: 0.19.0

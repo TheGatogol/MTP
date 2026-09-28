@@ -1,0 +1,46 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: e6a7fc52-d0df-4c37-92b7-8dd2d2f55aad
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: notifications_list_phase_2
+    lock: 'false'
+then:
+- return:
+    :body:
+    - data:
+        text:
+          title: BBVA te llamará
+        locale: es_mx
+        notifications:
+          firstNotification: 68880ae394f775463d71c7ca
+          notificationSimple: 67f8130b2d215f0e8c2c9752
+          notificationDelete: 68517f4be167e86664a07506
+        tags:
+        - notifications_list_phase_2
+        authentication:
+          password: Glomo2025
+          user: '4461255965'
+          deviceId: 0AF4BD655E66FC4CA1F198B6866B1C43
+      id: 36086081
+      lockType: null
+      lockExpiration: null
+    :headers:
+      content-length: '447'
+      Cache-Control: max-age=0
+      Connection: keep-alive
+      host: datamanager.globaldevtools.bbva.com
+      Vary: Accept-Encoding
+      Expires: Tue, 29 Jul 2025 01:03:40 GMT
+      Date: Tue, 29 Jul 2025 01:03:40 GMT
+      Content-Type: application/json; charset=utf-8
+    :status: 200 OK

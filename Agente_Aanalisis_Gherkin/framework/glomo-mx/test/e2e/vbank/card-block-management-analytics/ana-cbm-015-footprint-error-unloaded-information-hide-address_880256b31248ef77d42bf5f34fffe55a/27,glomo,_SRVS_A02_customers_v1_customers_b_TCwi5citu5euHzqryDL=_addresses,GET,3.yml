@@ -1,0 +1,63 @@
+when:
+  sequence: 3
+  path: /SRVS_A02/customers/v1/customers/b_TCwi5citu5euHzqryDL=/addresses
+  method: GET
+  backend: glomo
+request:
+  headers:
+    sec-fetch-mode: cors
+    content-length: '0'
+    referer: http://localhost:8001/
+    sec-fetch-site: same-site
+    accept-language: es-MX,es;q=0.9
+    origin: http://localhost:8001
+    authenticationtype: '05'
+    tsec: 59467b93b183baa2fe293ea7d92528af19d4236f
+    accept: application/json, text/html, */*; q=0.1
+    sec-ch-ua: '"Google Chrome";v="137", "Chromium";v="137", "Not/A)Brand";v="24"'
+    authenticationdata: otp-sms
+    sec-ch-ua-mobile: ?0
+    x-vbank-session: 4d0bbff9-ca85-4c1b-a70a-dc482dc4cb18
+    sec-ch-ua-platform: '"macOS"'
+    host: localhost:9000
+    content-type: application/json
+    connection: keep-alive
+    cache-control: no-cache, no-store, must-revalidate
+    accept-encoding: gzip, deflate, br, zstd
+    sec-fetch-dest: empty
+    user-agent: GLOMO_MX/99.99.99 (Android;14;Samsung)
+  query:
+    unmasked: 'true'
+then:
+- return:
+    severity: FATAL
+    system-error-cause: Expected AuthenticationData header to contain otp-token=otpTokenValue
+    error-message: Expected AuthenticationData header to contain otp-token=otpTokenValue
+    consumer-request-id: 954cbbbf-5361-4ae3-a250-2999244729a0
+    :headers:
+      Server: artichoke
+      access-control-allow-headers: Content-Type, tsec, authenticationtype, authenticationdata,
+        authenticationstate, contactid, consumeruuid, consumerapplicationid, perimetertsec,
+        authorization, responsewarningcode, responsewarningdescription, cuf, field,
+        bcs-device-app-version, bcs-device-app-version, vnd.bbva.authorization, device-id,
+        Bcs-Device-Os-Name, bcs-device-app-name, bcs-device-dpi, BCS-Device-Id
+      Connection: keep-alive
+      authenticationtype: '05'
+      tsec: 59467b93b183baa2fe293ea7d92528af19d4236f
+      X-Response-Time: 5ms
+      Date: Wed, 15 Oct 2025 11:12:07 GMT
+      access-control-allow-origin: '*'
+      Access-Control-Expose-Headers: tsec, vnd.bbva.access-token-type,vnd.bbva.access-token,
+        vnd.bbva.sso-pkcs7, authenticationtype, authenticationdata, authenticationstate,
+        authenticationchallenge
+      authenticationdata: otp-sms
+      authenticationstate: e3b0c44298
+      Content-Length: '462'
+      Content-Type: application/json; charset=utf-8
+    system-error-code: stateChangeGoOn
+    messages: []
+    :status: 401 Unauthorized
+    http-status: 401
+    system-error-description: Expected AuthenticationData header to contain otp-token=otpTokenValue
+    error-code: '999'
+    version: 1

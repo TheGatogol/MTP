@@ -1,0 +1,2452 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: 4b95fec0-250a-4646-9f25-4c6b90a3bea0
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: transactions,debit_card
+    lock: 'false'
+then:
+- return:
+    :body:
+    - data:
+        homeFutura: false
+        cardsConfig:
+          paymentsConfig:
+            simulateConfig:
+              feesConfig:
+                fees:
+                  totalFees:
+                    amount: 20
+                    currency: MXN
+                  itemizeFees:
+                  - amount:
+                      amount: 10
+                      currency: MXN
+                    percentage: 1
+                    name: Direct periodic
+                    feeType: DIRECT_PERIODIC
+                  - amount:
+                      amount: 10
+                      currency: MXN
+                    percentage: 1
+                    name: Interés
+                    feeType: INTEREST
+                emptyOriginFees:
+                  totalFees:
+                    amount: 20
+                    currency: MXN
+                zeroFees:
+                  totalFees:
+                    amount: 0
+                    currency: MXN
+                  itemizeFees:
+                  - amount:
+                      amount: 0
+                      currency: MXN
+                    percentage: 0
+                    name: Direct periodic
+                    feeType: DIRECT_PERIODIC
+              taxesConfig:
+                zeroTaxes:
+                  totalTaxes:
+                    amount: 0
+                    currency: MXN
+                  itemizeTaxes:
+                  - amount:
+                      amount: 0
+                      currency: MXN
+                    percentage: 0
+                    name: Tariff
+                    taxType: TARIFF
+                taxes:
+                  totalTaxes:
+                    amount: 10
+                    currency: MXN
+                  itemizeTaxes:
+                  - amount:
+                      amount: 10
+                      currency: MXN
+                    percentage: 1
+                    name: Tariff
+                    taxType: TARIFF
+              exchangeRateConfig:
+                exchangeRate:
+                  date: '2020-01-30'
+                  targetCurrency: USD
+                  values:
+                    exchangeType: PURCHASE
+                    factor:
+                      value: 49
+                      ratio: 49.44
+                  baseCurrency: MXN
+        clientStatus: A1
+        tags:
+        - '5519655657'
+        - transactions
+        - debit_card
+        products:
+          cards:
+          - numberType:
+              name: Permanent Account Number
+              id: PAN
+            brandAssociation:
+              name: VISA
+              id: VISA
+            title:
+              name: BBVA operative debit card
+              id: V0
+            availableBalance:
+              currentBalances:
+              - amount: 100000
+                currency: MXN
+              pendingBalances:
+              - amount: 150
+                currency: MXN
+              postedBalances:
+              - amount: 100150
+                currency: MXN
+            number: '4152313942071932'
+            bank:
+              name: BBVA Mexico
+              id: '504'
+            pin: '1234'
+            cutOffDate: '2016-09-01T12:00:00Z'
+            paymentMethods:
+            - period:
+                name: Monthly payment
+                id: MONTHLY
+              paymentAmounts:
+              - values:
+                - amount: 50000
+                  currency: MXN
+                name: Pago mínimo
+                id: MINIMUM_AMOUNT
+              - values:
+                - amount: 70000
+                  currency: MXN
+                name: Deuda de este mes
+                id: LAST_PERIOD_AMOUNT
+              - values:
+                - amount: 75000
+                  currency: MXN
+                name: Saldo al corte
+                id: TOTAL_DEBT_AMOUNT
+              endDate: '2017-07-05T12:00:00Z'
+              name: Free amount payment
+              id: FREE_AMOUNT_PAYMENT
+            alias: Tarjeta 1200 - Operative
+            issueDate: '2016-06-01T12:05:13Z'
+            openingDate: '2016-06-01T11:31:45Z'
+            limits: []
+            productType:
+              id: CARD
+            participants: []
+            expirationDate: '2022-03-01T13:32:02Z'
+            images:
+            - name: Front face of the card
+              id: FRONT_CARD
+              url: https://cardcovers.caasbbva.com/mexico/477291-AC.png.imgcaas.w320.png
+            - name: Back face of the card
+              id: BACK_CARD
+              url: /imageBack.jpg
+            holderName: Carlos Santana
+            blocks: []
+            physicalSupport:
+              name: Plástico normal
+              id: NORMAL_PLASTIC
+            cardType:
+              name: Tarjeta de débito
+              id: DEBIT_CARD
+            disposedBalance:
+              currentBalances:
+              - amount: 5000
+                currency: MXN
+              pendingBalances:
+              - amount: -100
+                currency: MXN
+              postedBalances:
+              - amount: 5100
+                currency: MXN
+            indicators:
+            - indicatorId: ASSOCIABLE_TO_NFC
+              name: The card can be associable to nfc.
+              isActive: true
+            - indicatorId: ASSOCIABLE_TO_STICKER_CARDS
+              name: Indica si la tarjeta cuenta con sticker asociado
+              isActive: false
+            - indicatorId: ASSOCIABLE_TO_VIRTUAL_CARDS
+              name: The card can be related to virtual cards
+              isActive: true
+            - indicatorId: BLOCKABLE
+              name: Bloquear tarjeta
+              isActive: false
+            - indicatorId: BLOCKABLE_NIP
+              name: Indica si la tarjeta puede modificar el nip de forma online por
+                una aplicación
+              isActive: false
+            - indicatorId: SECURITY_DATA_READ
+              name: Indica si los datos de seguridad de la tarjeta pueden ser leídos.
+              isActive: true
+            - indicatorId: DINAMIC_CVV
+              name: Indica si el CVV2 es dinámico
+              isActive: false
+            - indicatorId: IS_ADDITIONAL
+              name: IS_ADDITIONAL
+              isActive: false
+            transactions: []
+            grantedCredits:
+            - amount: 150000
+              currency: MXN
+            relatedContracts:
+            - relationType:
+                name: Linked with
+                id: LINKED_WITH
+              number: '05040001010012130200'
+              canOperate: N
+              product:
+                name: Tarjetas
+                id: CARDS
+              numberType:
+                name: Permanent Account Number
+                id: PAN
+              relatedContractId: '05040001010012130200'
+              contractId: '05040001010012130200'
+            security_data: []
+            cardId: '1200'
+            activations:
+            - name: Activation for global card usage
+              isActive: true
+              activationId: ON_OFF
+            blockTypes:
+            - name: Indicates that the card is blocked because of damage.
+              id: DAMAGE
+            - name: Card blocked by lost.
+              id: LOST
+            - name: Indicates that the card is blocked because of stolen.
+              id: STOLEN
+            userAccessControl: []
+            conditions: []
+            activationDate: '2016-06-01T13:32:02Z'
+            rewards: []
+            status:
+              name: Operative card
+              id: OPERATIVE
+            currencies:
+            - isMajor: true
+              currency: MXN
+          - numberType:
+              name: Permanent Account Number
+              id: PAN
+            brandAssociation:
+              name: VISA
+              id: VISA
+            title:
+              name: BBVA Inoperative debit card
+              id: V0
+            availableBalance:
+              currentBalances:
+              - amount: 1000000
+                currency: MXN
+              pendingBalances:
+              - amount: 150
+                currency: MXN
+              postedBalances:
+              - amount: 100150
+                currency: MXN
+            number: '4152307083071201'
+            bank:
+              name: BBVA Mexico
+              id: '504'
+            pin: '1234'
+            cutOffDate: '2016-09-01T12:00:00Z'
+            paymentMethods:
+            - period:
+                name: Monthly payment
+                id: MONTHLY
+              paymentAmounts:
+              - values:
+                - amount: 50000
+                  currency: MXN
+                name: Pago mínimo
+                id: MINIMUM_AMOUNT
+              - values:
+                - amount: 70000
+                  currency: MXN
+                name: Deuda de este mes
+                id: LAST_PERIOD_AMOUNT
+              - values:
+                - amount: 75000
+                  currency: MXN
+                name: Saldo al corte
+                id: TOTAL_DEBT_AMOUNT
+              endDate: '2017-07-05T12:00:00Z'
+              name: Free amount payment
+              id: FREE_AMOUNT_PAYMENT
+            alias: Tarjeta 1201 - Inoperative
+            issueDate: '2016-06-01T12:05:13Z'
+            openingDate: '2016-06-01T11:31:45Z'
+            limits: []
+            productType:
+              id: CARD
+            participants: []
+            expirationDate: '2022-03-01T13:32:02Z'
+            images:
+            - name: Front face of the card
+              id: FRONT_CARD
+              url: https://cardcovers.caasbbva.com/mexico/477291-AC.png.imgcaas.w320.png
+            - name: Back face of the card
+              id: BACK_CARD
+              url: /imageBack.jpg
+            holderName: Carlos Santana
+            blocks: []
+            physicalSupport:
+              name: Plástico normal
+              id: NORMAL_PLASTIC
+            cardType:
+              name: Tarjeta de débito
+              id: DEBIT_CARD
+            disposedBalance:
+              currentBalances:
+              - amount: 5000
+                currency: MXN
+              pendingBalances:
+              - amount: -100
+                currency: MXN
+              postedBalances:
+              - amount: 5100
+                currency: MXN
+            indicators:
+            - indicatorId: ASSOCIABLE_TO_NFC
+              name: The card can be associable to nfc.
+              isActive: false
+            - indicatorId: ASSOCIABLE_TO_STICKER_CARDS
+              name: Indica si la tarjeta cuenta con sticker asociado
+              isActive: false
+            - indicatorId: ASSOCIABLE_TO_VIRTUAL_CARDS
+              name: The card can be related to virtual cards
+              isActive: false
+            - indicatorId: BLOCKABLE
+              name: Bloquear tarjeta
+              isActive: false
+            - indicatorId: BLOCKABLE_NIP
+              name: Indica si la tarjeta puede modificar el nip de forma online por
+                una aplicación
+              isActive: false
+            - indicatorId: SECURITY_DATA_READ
+              name: Indica si los datos de seguridad de la tarjeta pueden ser leídos.
+              isActive: true
+            - indicatorId: DINAMIC_CVV
+              name: Indica si el CVV2 es dinámico
+              isActive: false
+            - indicatorId: IS_ADDITIONAL
+              name: IS_ADDITIONAL
+              isActive: false
+            transactions: []
+            grantedCredits:
+            - amount: 150000
+              currency: MXN
+            relatedContracts:
+            - relationType:
+                name: Linked with
+                id: LINKED_WITH
+              number: '05040001010012130200'
+              canOperate: N
+              product:
+                name: Tarjetas
+                id: CARDS
+              numberType:
+                name: Permanent Account Number
+                id: PAN
+              relatedContractId: '05040001010012130200'
+              contractId: '05040001010012130200'
+            security_data: []
+            cardId: '1201'
+            activations:
+            - name: Activation for global card usage
+              isActive: true
+              activationId: ON_OFF
+            blockTypes:
+            - name: Indicates that the card is blocked because of damage.
+              id: DAMAGE
+            - name: Card blocked by lost.
+              id: LOST
+            - name: Indicates that the card is blocked because of stolen.
+              id: STOLEN
+            userAccessControl: []
+            conditions: []
+            activationDate: '2016-06-01T13:32:02Z'
+            rewards: []
+            status:
+              name: Inoperative card
+              id: INOPERATIVE
+            currencies:
+            - isMajor: true
+              currency: MXN
+          - numberType:
+              name: Permanent Account Number
+              id: PAN
+            brandAssociation:
+              name: VISA
+              id: VISA
+            title:
+              name: debit BBVA PENDING_DELIVERY sin alias
+              id: V0
+            availableBalance:
+              currentBalances:
+              - amount: 10000000
+                currency: MXN
+              pendingBalances:
+              - amount: 150
+                currency: MXN
+              postedBalances:
+              - amount: 100150
+                currency: MXN
+            number: '4152307083071202'
+            bank:
+              name: BBVA Mexico
+              id: '504'
+            pin: '1234'
+            cutOffDate: '2016-09-01T12:00:00Z'
+            paymentMethods:
+            - period:
+                name: Monthly payment
+                id: MONTHLY
+              paymentAmounts:
+              - values:
+                - amount: 50000
+                  currency: MXN
+                name: Pago mínimo
+                id: MINIMUM_AMOUNT
+              - values:
+                - amount: 70000
+                  currency: MXN
+                name: Deuda de este mes
+                id: LAST_PERIOD_AMOUNT
+              - values:
+                - amount: 75000
+                  currency: MXN
+                name: Saldo al corte
+                id: TOTAL_DEBT_AMOUNT
+              endDate: '2017-07-05T12:00:00Z'
+              name: Free amount payment
+              id: FREE_AMOUNT_PAYMENT
+            issueDate: '2016-06-01T12:05:13Z'
+            openingDate: '2016-06-01T11:31:45Z'
+            limits: []
+            productType:
+              id: CARD
+            participants: []
+            expirationDate: '2022-03-01T13:32:02Z'
+            images:
+            - name: Front face of the card
+              id: FRONT_CARD
+              url: https://cardcovers.caasbbva.com/mexico/477291-AC.png.imgcaas.w320.png
+            - name: Back face of the card
+              id: BACK_CARD
+              url: /imageBack.jpg
+            holderName: Carlos Santana
+            blocks: []
+            physicalSupport:
+              name: Plástico normal
+              id: NORMAL_PLASTIC
+            cardType:
+              name: Tarjeta de débito
+              id: DEBIT_CARD
+            disposedBalance:
+              currentBalances:
+              - amount: 5000
+                currency: MXN
+              pendingBalances:
+              - amount: -100
+                currency: MXN
+              postedBalances:
+              - amount: 5100
+                currency: MXN
+            indicators:
+            - indicatorId: ASSOCIABLE_TO_NFC
+              name: The card can be associable to nfc.
+              isActive: false
+            - indicatorId: ASSOCIABLE_TO_STICKER_CARDS
+              name: Indica si la tarjeta cuenta con sticker asociado
+              isActive: false
+            - indicatorId: ASSOCIABLE_TO_VIRTUAL_CARDS
+              name: The card can be related to virtual cards
+              isActive: false
+            - indicatorId: BLOCKABLE
+              name: Bloquear tarjeta
+              isActive: false
+            - indicatorId: BLOCKABLE_NIP
+              name: Indica si la tarjeta puede modificar el nip de forma online por
+                una aplicación
+              isActive: false
+            - indicatorId: SECURITY_DATA_READ
+              name: Indica si los datos de seguridad de la tarjeta pueden ser leídos.
+              isActive: true
+            - indicatorId: DINAMIC_CVV
+              name: Indica si el CVV2 es dinámico
+              isActive: false
+            - indicatorId: IS_ADDITIONAL
+              name: IS_ADDITIONAL
+              isActive: false
+            transactions: []
+            grantedCredits:
+            - amount: 150000
+              currency: MXN
+            relatedContracts:
+            - relationType:
+                name: Linked with
+                id: LINKED_WITH
+              number: '05040001010012130200'
+              canOperate: N
+              product:
+                name: Tarjetas
+                id: CARDS
+              numberType:
+                name: Permanent Account Number
+                id: PAN
+              relatedContractId: '05040001010012130200'
+              contractId: '05040001010012130200'
+            security_data: []
+            cardId: '1202'
+            activations:
+            - name: Activation for global card usage
+              isActive: true
+              activationId: ON_OFF
+            blockTypes:
+            - name: Indicates that the card is blocked because of damage.
+              id: DAMAGE
+            - name: Card blocked by lost.
+              id: LOST
+            - name: Indicates that the card is blocked because of stolen.
+              id: STOLEN
+            userAccessControl: []
+            conditions: []
+            activationDate: '2016-06-01T13:32:02Z'
+            rewards: []
+            status:
+              name: Pending delivery card
+              id: PENDING_DELIVERY
+            currencies:
+            - isMajor: true
+              currency: MXN
+          - numberType:
+              name: Permanent Account Number
+              id: PAN
+            brandAssociation:
+              name: VISA
+              id: VISA
+            title:
+              name: BBVA PENDING_EMBOSSING debit card
+              id: V0
+            availableBalance:
+              currentBalances:
+              - amount: 100000000
+                currency: MXN
+              pendingBalances:
+              - amount: 150
+                currency: MXN
+              postedBalances:
+              - amount: 100150
+                currency: MXN
+            number: '4152307083071203'
+            bank:
+              name: BBVA Mexico
+              id: '504'
+            pin: '1234'
+            cutOffDate: '2016-09-01T12:00:00Z'
+            paymentMethods:
+            - period:
+                name: Monthly payment
+                id: MONTHLY
+              paymentAmounts:
+              - values:
+                - amount: 50000
+                  currency: MXN
+                name: Pago mínimo
+                id: MINIMUM_AMOUNT
+              - values:
+                - amount: 70000
+                  currency: MXN
+                name: Deuda de este mes
+                id: LAST_PERIOD_AMOUNT
+              - values:
+                - amount: 75000
+                  currency: MXN
+                name: Saldo al corte
+                id: TOTAL_DEBT_AMOUNT
+              endDate: '2017-07-05T12:00:00Z'
+              name: Free amount payment
+              id: FREE_AMOUNT_PAYMENT
+            alias: Tarjeta 1203 - Pending embossing
+            issueDate: '2016-06-01T12:05:13Z'
+            openingDate: '2016-06-01T11:31:45Z'
+            limits: []
+            productType:
+              id: CARD
+            participants: []
+            expirationDate: '2022-03-01T13:32:02Z'
+            images:
+            - name: Front face of the card
+              id: FRONT_CARD
+              url: https://cardcovers-stage.caasbbva.com/peru/491911_VISA-ORO-V_front.png?width=120&height=76
+            - name: Back face of the card
+              id: BACK_CARD
+              url: /imageBack.jpg
+            holderName: Carlos Santana
+            blocks: []
+            physicalSupport:
+              name: Plástico normal
+              id: NORMAL_PLASTIC
+            cardType:
+              name: Tarjeta de débito
+              id: DEBIT_CARD
+            disposedBalance:
+              currentBalances:
+              - amount: 5000
+                currency: MXN
+              pendingBalances:
+              - amount: -100
+                currency: MXN
+              postedBalances:
+              - amount: 5100
+                currency: MXN
+            indicators:
+            - indicatorId: ASSOCIABLE_TO_NFC
+              name: The card can be associable to nfc.
+              isActive: false
+            - indicatorId: ASSOCIABLE_TO_STICKER_CARDS
+              name: Indica si la tarjeta cuenta con sticker asociado
+              isActive: false
+            - indicatorId: ASSOCIABLE_TO_VIRTUAL_CARDS
+              name: The card can be related to virtual cards
+              isActive: false
+            - indicatorId: BLOCKABLE
+              name: Bloquear tarjeta
+              isActive: false
+            - indicatorId: BLOCKABLE_NIP
+              name: Indica si la tarjeta puede modificar el nip de forma online por
+                una aplicación
+              isActive: false
+            - indicatorId: SECURITY_DATA_READ
+              name: Indica si los datos de seguridad de la tarjeta pueden ser leídos.
+              isActive: true
+            - indicatorId: DINAMIC_CVV
+              name: Indica si el CVV2 es dinámico
+              isActive: false
+            - indicatorId: IS_ADDITIONAL
+              name: IS_ADDITIONAL
+              isActive: false
+            transactions: []
+            grantedCredits:
+            - amount: 150000
+              currency: MXN
+            relatedContracts:
+            - relationType:
+                name: Linked with
+                id: LINKED_WITH
+              number: '05040001010012130200'
+              canOperate: N
+              product:
+                name: Tarjetas
+                id: CARDS
+              numberType:
+                name: Permanent Account Number
+                id: PAN
+              relatedContractId: '05040001010012130200'
+              contractId: '05040001010012130200'
+            security_data: []
+            cardId: '1203'
+            activations:
+            - name: Activation for global card usage
+              isActive: true
+              activationId: ON_OFF
+            blockTypes:
+            - name: Indicates that the card is blocked because of damage.
+              id: DAMAGE
+            - name: Card blocked by lost.
+              id: LOST
+            - name: Indicates that the card is blocked because of stolen.
+              id: STOLEN
+            userAccessControl: []
+            conditions: []
+            activationDate: '2016-06-01T13:32:02Z'
+            rewards: []
+            status:
+              name: Pending embossing card
+              id: PENDING_EMBOSSING
+            currencies:
+            - isMajor: true
+              currency: MXN
+          - numberType:
+              name: Permanent Account Number
+              id: PAN
+            brandAssociation:
+              name: VISA
+              id: VISA
+            title:
+              name: BBVA BLOCKED debit card
+              id: V0
+            availableBalance:
+              currentBalances:
+              - amount: 1000000000
+                currency: MXN
+              pendingBalances:
+              - amount: 150
+                currency: MXN
+              postedBalances:
+              - amount: 100150
+                currency: MXN
+            number: '4152307083071204'
+            bank:
+              name: BBVA Mexico
+              id: '504'
+            pin: '1234'
+            cutOffDate: '2016-09-01T12:00:00Z'
+            paymentMethods:
+            - period:
+                name: Monthly payment
+                id: MONTHLY
+              paymentAmounts:
+              - values:
+                - amount: 50000
+                  currency: MXN
+                name: Pago mínimo
+                id: MINIMUM_AMOUNT
+              - values:
+                - amount: 70000
+                  currency: MXN
+                name: Deuda de este mes
+                id: LAST_PERIOD_AMOUNT
+              - values:
+                - amount: 75000
+                  currency: MXN
+                name: Saldo al corte
+                id: TOTAL_DEBT_AMOUNT
+              endDate: '2017-07-05T12:00:00Z'
+              name: Free amount payment
+              id: FREE_AMOUNT_PAYMENT
+            alias: Targets 1204 - Blocked
+            issueDate: '2016-06-01T12:05:13Z'
+            openingDate: '2016-06-01T11:31:45Z'
+            limits: []
+            productType:
+              id: CARD
+            participants: []
+            expirationDate: '2022-03-01T13:32:02Z'
+            images:
+            - name: Front face of the card
+              id: FRONT_CARD
+              url: https://cardcovers.caasbbva.com/mexico/477291-AC.png.imgcaas.w320.png
+            - name: Back face of the card
+              id: BACK_CARD
+              url: /imageBack.jpg
+            holderName: Carlos Santana
+            blocks:
+            - blockId: LOST
+              blockDate: '2015-09-09T16:09:34Z'
+              name: Card blocked by lost.
+              isActive: true
+            physicalSupport:
+              name: Plástico normal
+              id: NORMAL_PLASTIC
+            cardType:
+              name: Tarjeta de débito
+              id: DEBIT_CARD
+            disposedBalance:
+              currentBalances:
+              - amount: 5000
+                currency: MXN
+              pendingBalances:
+              - amount: -100
+                currency: MXN
+              postedBalances:
+              - amount: 5100
+                currency: MXN
+            indicators:
+            - indicatorId: ASSOCIABLE_TO_NFC
+              name: The card can be associable to nfc.
+              isActive: false
+            - indicatorId: ASSOCIABLE_TO_STICKER_CARDS
+              name: Indica si la tarjeta cuenta con sticker asociado
+              isActive: false
+            - indicatorId: ASSOCIABLE_TO_VIRTUAL_CARDS
+              name: The card can be related to virtual cards
+              isActive: false
+            - indicatorId: BLOCKABLE
+              name: Bloquear tarjeta
+              isActive: false
+            - indicatorId: BLOCKABLE_NIP
+              name: Indica si la tarjeta puede modificar el nip de forma online por
+                una aplicación
+              isActive: false
+            - indicatorId: SECURITY_DATA_READ
+              name: Indica si los datos de seguridad de la tarjeta pueden ser leídos.
+              isActive: true
+            - indicatorId: DINAMIC_CVV
+              name: Indica si el CVV2 es dinámico
+              isActive: false
+            - indicatorId: IS_ADDITIONAL
+              name: IS_ADDITIONAL
+              isActive: false
+            transactions: []
+            grantedCredits:
+            - amount: 150000
+              currency: MXN
+            relatedContracts:
+            - relationType:
+                name: Linked with
+                id: LINKED_WITH
+              number: '05040001010012130200'
+              canOperate: N
+              product:
+                name: Tarjetas
+                id: CARDS
+              numberType:
+                name: Permanent Account Number
+                id: PAN
+              relatedContractId: '05040001010012130200'
+              contractId: '05040001010012130200'
+            security_data: []
+            cardId: '1204'
+            activations:
+            - name: Activation for global card usage
+              isActive: true
+              activationId: ON_OFF
+            blockTypes:
+            - name: Indicates that the card is blocked because of damage.
+              id: DAMAGE
+            - name: Card blocked by lost.
+              id: LOST
+            - name: Indicates that the card is blocked because of stolen.
+              id: STOLEN
+            userAccessControl: []
+            conditions: []
+            activationDate: '2016-06-01T13:32:02Z'
+            rewards: []
+            status:
+              name: Blocked card
+              id: BLOCKED
+            currencies:
+            - isMajor: true
+              currency: MXN
+          - numberType:
+              name: Permanent Account Number
+              id: PAN
+            brandAssociation:
+              name: VISA
+              id: VISA
+            title:
+              name: BBVA debit card activations error
+              id: V0
+            availableBalance:
+              currentBalances:
+              - amount: 100000
+                currency: MXN
+              pendingBalances:
+              - amount: 150
+                currency: MXN
+              postedBalances:
+              - amount: 100150
+                currency: MXN
+            number: '4152313942098489'
+            bank:
+              name: BBVA Mexico
+              id: '504'
+            pin: '1234'
+            cutOffDate: '2016-09-01T12:00:00Z'
+            paymentMethods:
+            - period:
+                name: Monthly payment
+                id: MONTHLY
+              paymentAmounts:
+              - values:
+                - amount: 50000
+                  currency: MXN
+                name: Pago mínimo
+                id: MINIMUM_AMOUNT
+              - values:
+                - amount: 70000
+                  currency: MXN
+                name: Deuda de este mes
+                id: LAST_PERIOD_AMOUNT
+              - values:
+                - amount: 75000
+                  currency: MXN
+                name: Saldo al corte
+                id: TOTAL_DEBT_AMOUNT
+              endDate: '2017-07-05T12:00:00Z'
+              name: Free amount payment
+              id: FREE_AMOUNT_PAYMENT
+            alias: Tarjeta 1210 - one activations error
+            issueDate: '2016-06-01T12:05:13Z'
+            openingDate: '2016-06-01T11:31:45Z'
+            limits: []
+            productType:
+              id: CARD
+            participants: []
+            expirationDate: '2022-03-01T13:32:02Z'
+            errorSimulationConfig:
+            - 3300000000_errors
+            images:
+            - name: Front face of the card
+              id: FRONT_CARD
+              url: https://cardcovers.caasbbva.com/mexico/477291-AC.png.imgcaas.w320.png
+            - name: Back face of the card
+              id: BACK_CARD
+              url: /imageBack.jpg
+            holderName: Carlos Santana
+            blocks: []
+            physicalSupport:
+              name: Plástico normal
+              id: NORMAL_PLASTIC
+            cardType:
+              name: Tarjeta de débito
+              id: DEBIT_CARD
+            disposedBalance:
+              currentBalances:
+              - amount: 5000
+                currency: MXN
+              pendingBalances:
+              - amount: -100
+                currency: MXN
+              postedBalances:
+              - amount: 5100
+                currency: MXN
+            indicators:
+            - indicatorId: ASSOCIABLE_TO_NFC
+              name: The card can be associable to nfc.
+              isActive: true
+            - indicatorId: ASSOCIABLE_TO_STICKER_CARDS
+              name: Indica si la tarjeta cuenta con sticker asociado
+              isActive: false
+            - indicatorId: ASSOCIABLE_TO_VIRTUAL_CARDS
+              name: The card can be related to virtual cards
+              isActive: true
+            - indicatorId: BLOCKABLE
+              name: Bloquear tarjeta
+              isActive: false
+            - indicatorId: BLOCKABLE_NIP
+              name: Indica si la tarjeta puede modificar el nip de forma online por
+                una aplicación
+              isActive: false
+            - indicatorId: SECURITY_DATA_READ
+              name: Indica si los datos de seguridad de la tarjeta pueden ser leídos.
+              isActive: true
+            - indicatorId: DINAMIC_CVV
+              name: Indica si el CVV2 es dinámico
+              isActive: false
+            - indicatorId: IS_ADDITIONAL
+              name: IS_ADDITIONAL
+              isActive: false
+            transactions: []
+            grantedCredits:
+            - amount: 150000
+              currency: MXN
+            relatedContracts:
+            - relationType:
+                name: Linked with
+                id: LINKED_WITH
+              number: '05040001010012130200'
+              canOperate: N
+              product:
+                name: Tarjetas
+                id: CARDS
+              numberType:
+                name: Permanent Account Number
+                id: PAN
+              relatedContractId: '05040001010012130200'
+              contractId: '05040001010012130200'
+            security_data: []
+            cardId: '1210'
+            activations:
+            - name: Activation for global card usage
+              isActive: true
+              activationId: ON_OFF
+            blockTypes:
+            - name: Indicates that the card is blocked because of damage.
+              id: DAMAGE
+            - name: Card blocked by lost.
+              id: LOST
+            - name: Indicates that the card is blocked because of stolen.
+              id: STOLEN
+            userAccessControl: []
+            conditions: []
+            activationDate: '2016-06-01T13:32:02Z'
+            rewards: []
+            status:
+              name: Operative card
+              id: OPERATIVE
+            currencies:
+            - isMajor: true
+              currency: MXN
+          accounts:
+          - numberType:
+              name: Local Identification Code
+              id: LIC
+            accountFamily:
+              name: Common
+              id: COMMON
+            title:
+              name: Cuenta corriente con línea de crédito
+              id: CORRIENTE_LCREDITO_CL
+            availableBalance:
+              currentBalances:
+              - amount: 1900000
+                currency: MXN
+              pendingBalances:
+              - amount: 25000
+                currency: MXN
+              postedBalances:
+              - amount: 1725000
+                currency: MXN
+            number: '050400010100120000'
+            bank:
+              name: BBVA Mexico
+              id: '504'
+            alias: Cuenta corriente lcred
+            openingDate: '2016-01-08T11:02:32.096Z'
+            limits: []
+            productType:
+              id: ACCOUNT
+            participants:
+            - participantId: '1212123276'
+              lastName: Santana
+              firstName: Carlos
+              participantType:
+                name: Titular
+                id: HOLDER
+            - participantId: '1234123277'
+              lastName: Campos
+              firstName: Jorge
+              participantType:
+                name: Adicional
+                id: AUTHORIZED
+            checkbooks: []
+            address:
+              country:
+                name: Mexico
+                id: MX
+              zipCode: '3580000'
+              city: Santiago
+              alias: Dirección actual
+              addressName: Av. Pte.Roque Saenz Pena 991
+              state: Región Metropolitana
+            customizedFormats: []
+            blocks: []
+            accountType:
+              name: Cuenta corriente
+              id: COMMON_ACCOUNT
+            indicators:
+            - indicatorId: EDITABLE_ALIAS
+              name: Editar alias
+              isActive: true
+            - indicatorId: ORIGIN_TRANSFER_TO_ACCOUNT
+              name: Transferencia
+              isActive: true
+            - indicatorId: ORIGIN_INTERNAL_TRANSFER_TO_ACCOUNT
+              name: Traspaso
+              isActive: true
+            - indicatorId: ORIGIN_INTERNATIONAL_TRANSFER_TO_ACCOUNT
+              name: Transferencia
+              isActive: true
+            - indicatorId: ORIGIN_SERVICE_PAYMENT
+              name: Pago de servicio
+              isActive: true
+            - indicatorId: DESTINATION_TRANSFER_FROM_CARD
+              name: Avance en línea
+              isActive: true
+            - indicatorId: DESTINATION_INTERNATIONAL_TRANSFER_FROM_CARD
+              name: Avance en línea
+              isActive: true
+            - indicatorId: ORIGIN_MOBILE_PHONE_RECHARGES
+              name: Recarga celular
+              isActive: true
+            - indicatorId: ORIGIN_SOLIDARY_CONTRIBUTION
+              name: Aporte solidario
+              isActive: true
+            - indicatorId: ORIGIN_TAX_PAYMENT
+              name: Pago PreviRed
+              isActive: true
+            transactions:
+            - transactionType:
+                name: Uncategorized
+                id: UNCATEGORIZED
+                internalCode:
+                  name: CODIREF:70000000000011778607 16862
+                  id: '612'
+              operationDate: YEAR(CURRENT_TIMESTAMP)-MONTH(CURRENT_TIMESTAMP)-06T10:05:01.090Z
+              additionalInformation:
+                reference: GUIA:2605231
+                additionalData: CODIREF:70000000000011778607 1686216
+              valuationDate: YEAR(CURRENT_TIMESTAMP)-MONTH(CURRENT_TIMESTAMP)-06T12:35:01Z
+              concept: BBVA PROGRAMA CASH 1
+              contract:
+                number: '050400010100120000'
+                product:
+                  name: Cuentas
+                  id: ACCOUNTS
+                numberType:
+                  name: Local Identification Code
+                  id: LIC
+                alias: Cuenta corriente lcred
+                id: '1200'
+              moneyFlow:
+                name: Expense
+                id: EXPENSE
+              id: 3699A0444
+              accountedDate: YEAR(CURRENT_TIMESTAMP)-MONTH(CURRENT_TIMESTAMP)-06T12:35:01.090Z
+              financingType:
+                name: Non financing
+                id: NON_FINANCING
+              status:
+                name: PENDING
+                id: PENDING
+              localAmount:
+                amount: -40
+                currency: MXN
+            - transactionType:
+                name: Uncategorized
+                id: UNCATEGORIZED
+                internalCode:
+                  name: Sin concepto
+                  id: '507'
+              operationDate: YEAR(CURRENT_TIMESTAMP)-MONTH(CURRENT_TIMESTAMP)-01T07:05:01.090Z
+              additionalInformation:
+                reference: '1385284146'
+                additionalData: Sin concepto
+              valuationDate: YEAR(CURRENT_TIMESTAMP)-MONTH(CURRENT_TIMESTAMP)-01T12:10:01Z
+              concept: CODI RECIBIDO BBVA 6
+              contract:
+                number: '050400010100120000'
+                product:
+                  name: Cuentas
+                  id: ACCOUNTS
+                numberType:
+                  name: Local Identification Code
+                  id: LIC
+                alias: Cuenta corriente lcred
+                id: '1200'
+              moneyFlow:
+                name: Income
+                id: INCOME
+              id: 3699A0449
+              accountedDate: YEAR(CURRENT_TIMESTAMP)-MONTH(CURRENT_TIMESTAMP)-01T12:10:01.090Z
+              financingType:
+                name: Non financing
+                id: NON_FINANCING
+              status:
+                name: Settled
+                id: SETTLED
+              localAmount:
+                amount: 100
+                currency: MXN
+            - transactionType:
+                name: Uncategorized
+                id: UNCATEGORIZED
+                internalCode:
+                  name: CODIREF:70000000000011778607 16862
+                  id: '613'
+              operationDate: YEAR(CURRENT_TIMESTAMP)-MONTH(CURRENT_TIMESTAMP)-01T06:28:02.090Z
+              additionalInformation:
+                reference: GUIA:2605237
+                additionalData: CODIREF:70000000000011778607 1686216
+              valuationDate: YEAR(CURRENT_TIMESTAMP)-MONTH(CURRENT_TIMESTAMP)-01T12:05:01Z
+              concept: BBVA PROGRAMA CASH 2
+              contract:
+                number: '050400010100120000'
+                product:
+                  name: Cuentas
+                  id: ACCOUNTS
+                numberType:
+                  name: Local Identification Code
+                  id: LIC
+                alias: Cuenta corriente lcred
+                id: '1200'
+              moneyFlow:
+                name: Expense
+                id: EXPENSE
+              id: 3699A0445
+              accountedDate: YEAR(CURRENT_TIMESTAMP)-MONTH(CURRENT_TIMESTAMP)-01T12:07:01.090Z
+              financingType:
+                name: Non financing
+                id: NON_FINANCING
+              status:
+                name: Settled
+                id: SETTLED
+              localAmount:
+                amount: -50
+                currency: MXN
+            - transactionType:
+                name: Uncategorized
+                id: UNCATEGORIZED
+                internalCode:
+                  name: CODIREF:70000000000011778607 16862
+                  id: '614'
+              operationDate: YEAR(CURRENT_TIMESTAMP)-MONTH(CURRENT_TIMESTAMP)-01T06:06:02.090Z
+              additionalInformation:
+                reference: GUIA:2605238
+                additionalData: CODIREF:70000000000011778607 1686216
+              valuationDate: YEAR(CURRENT_TIMESTAMP)-MONTH(CURRENT_TIMESTAMP)-01T12:05:01Z
+              concept: BBVA PROGRAMA CASH 3
+              contract:
+                number: '050400010100120000'
+                product:
+                  name: Cuentas
+                  id: ACCOUNTS
+                numberType:
+                  name: Local Identification Code
+                  id: LIC
+                alias: Cuenta corriente lcred
+                id: '1200'
+              moneyFlow:
+                name: Expense
+                id: EXPENSE
+              id: 3699A0446
+              accountedDate: YEAR(CURRENT_TIMESTAMP)-MONTH(CURRENT_TIMESTAMP)-01T12:05:01.090Z
+              financingType:
+                name: Non financing
+                id: NON_FINANCING
+              status:
+                name: Settled
+                id: SETTLED
+              localAmount:
+                amount: -60
+                currency: MXN
+            - transactionType:
+                name: Uncategorized
+                id: UNCATEGORIZED
+                internalCode:
+                  name: CODIREF:70000000000011778607 16862
+                  id: '615'
+              operationDate: YEAR(CURRENT_TIMESTAMP)-MONTH(CURRENT_TIMESTAMP)-03T02:05:01.090Z
+              additionalInformation:
+                reference: GUIA:2605239
+                additionalData: CODIREF:70000000000011778607 1686216
+              valuationDate: YEAR(CURRENT_TIMESTAMP)-MONTH(CURRENT_TIMESTAMP)-03T04:35:01Z
+              concept: BBVA PROGRAMA CASH 4
+              contract:
+                number: '050400010100120000'
+                product:
+                  name: Cuentas
+                  id: ACCOUNTS
+                numberType:
+                  name: Local Identification Code
+                  id: LIC
+                alias: Cuenta corriente lcred
+                id: '1200'
+              moneyFlow:
+                name: Expense
+                id: EXPENSE
+              id: 3699A0447
+              accountedDate: YEAR(CURRENT_TIMESTAMP)-MONTH(CURRENT_TIMESTAMP)-03T04:35:01.090Z
+              financingType:
+                name: Non financing
+                id: NON_FINANCING
+              status:
+                name: Settled
+                id: SETTLED
+              localAmount:
+                amount: -40
+                currency: MXN
+            - transactionType:
+                name: Uncategorized
+                id: UNCATEGORIZED
+                internalCode:
+                  name: CODIREF:70000000000011778607 16862
+                  id: '616'
+              operationDate: YEAR(CURRENT_TIMESTAMP)-MONTH(CURRENT_TIMESTAMP)-02T03:05:01.090Z
+              additionalInformation:
+                reference: GUIA:2605240
+                additionalData: CODIREF:70000000000011778607 1686216
+              valuationDate: YEAR(CURRENT_TIMESTAMP)-MONTH(CURRENT_TIMESTAMP)-02T05:35:01Z
+              concept: BBVA PROGRAMA CASH 5
+              contract:
+                number: '050400010100120000'
+                product:
+                  name: Cuentas
+                  id: ACCOUNTS
+                numberType:
+                  name: Local Identification Code
+                  id: LIC
+                alias: Cuenta corriente lcred
+                id: '1200'
+              moneyFlow:
+                name: Expense
+                id: EXPENSE
+              id: 3699A0448
+              accountedDate: YEAR(CURRENT_TIMESTAMP)-MONTH(CURRENT_TIMESTAMP)-02T05:35:01.090Z
+              financingType:
+                name: Non financing
+                id: NON_FINANCING
+              status:
+                name: Settled
+                id: SETTLED
+              localAmount:
+                amount: -40
+                currency: MXN
+            - originAmount:
+                amount: -29900
+                currency: MXN
+              transactionType:
+                name: Compra
+                id: PURCHASE
+              operationDate: '2017-07-24T12:05:01.090Z'
+              additionalInformation:
+                reference: Reference example
+                additionalData: Additional data example
+              valuationDate: '2016-09-24T12:05:01Z'
+              concept: delinas
+              contract:
+                number: '050400010100120000'
+                product:
+                  name: Cuentas
+                  id: ACCOUNTS
+                numberType:
+                  name: Local Identification Code
+                  id: LIC
+                alias: Cuenta corriente lcred
+                id: '1200'
+              id: 000A0002
+              accountedDate: '2017-07-24T12:05:01.090Z'
+              financingType:
+                name: Non financing
+                id: NON_FINANCING
+              status:
+                name: PENDING
+                id: PENDING
+              localAmount:
+                amount: 0.3
+                currency: MXN
+            - originAmount:
+                amount: -29900
+                currency: MXN
+              transactionType:
+                name: Compra
+                id: PURCHASE
+              operationDate: '2017-07-24T12:05:01.090Z'
+              additionalInformation:
+                reference: Reference example
+                additionalData: Additional data example
+              valuationDate: '2016-09-24T12:05:01Z'
+              concept: delinas
+              contract:
+                number: '050400010100120000'
+                product:
+                  name: Cuentas
+                  id: ACCOUNTS
+                numberType:
+                  name: Local Identification Code
+                  id: LIC
+                alias: Cuenta corriente lcred
+                id: '1200'
+              id: 000A0003
+              accountedDate: '2017-07-24T12:05:01.090Z'
+              financingType:
+                name: Non financing
+                id: NON_FINANCING
+              status:
+                name: PENDING
+                id: PENDING
+              localAmount:
+                amount: 0.3
+                currency: MXN
+            - originAmount:
+                amount: -29900
+                currency: MXN
+              transactionType:
+                name: Compra
+                id: PURCHASE
+              operationDate: '2017-07-24T10:52:01.090Z'
+              additionalInformation:
+                reference: Reference example
+                additionalData: Additional data example
+              valuationDate: '2016-09-24T12:05:01Z'
+              concept: iberia s.l.
+              contract:
+                number: '050400010100120000'
+                product:
+                  name: Cuentas
+                  id: ACCOUNTS
+                numberType:
+                  name: Local Identification Code
+                  id: LIC
+                alias: Cuenta corriente lcred
+                id: '1200'
+              id: 000A0004
+              accountedDate: '2017-07-24T10:52:01.090Z'
+              financingType:
+                name: Financing available
+                id: FINANCING_AVAILABLE
+              status:
+                name: Pending
+                id: PENDING
+              localAmount:
+                amount: 684.39
+                currency: MXN
+            - originAmount:
+                amount: -29900
+                currency: MXN
+              transactionType:
+                name: Compra
+                id: PURCHASE
+              operationDate: '2017-07-24T10:52:01.090Z'
+              additionalInformation:
+                reference: Reference example
+                additionalData: Additional data example
+              valuationDate: '2016-09-24T12:05:01Z'
+              concept: iberia s.l.
+              contract:
+                number: '050400010100120000'
+                product:
+                  name: Cuentas
+                  id: ACCOUNTS
+                numberType:
+                  name: Local Identification Code
+                  id: LIC
+                alias: Cuenta corriente lcred
+                id: '1200'
+              id: 000A0005
+              accountedDate: '2017-07-24T10:52:01.090Z'
+              financingType:
+                name: Financing available
+                id: FINANCING_AVAILABLE
+              status:
+                name: Pending
+                id: PENDING
+              localAmount:
+                amount: 684.39
+                currency: MXN
+            - originAmount:
+                amount: -29900
+                currency: MXN
+              transactionType:
+                name: Compra
+                id: PURCHASE
+              operationDate: '2017-07-24T10:52:01.090Z'
+              additionalInformation:
+                reference: Reference example
+                additionalData: Additional data example
+              valuationDate: '2016-09-24T12:05:01Z'
+              concept: iberia s.l.
+              contract:
+                number: '050400010100120000'
+                product:
+                  name: Cuentas
+                  id: ACCOUNTS
+                numberType:
+                  name: Local Identification Code
+                  id: LIC
+                alias: Cuenta corriente lcred
+                id: '1200'
+              id: 000A0006
+              accountedDate: '2017-07-24T10:52:01.090Z'
+              financingType:
+                name: Financing available
+                id: FINANCING_AVAILABLE
+              status:
+                name: Pending
+                id: PENDING
+              localAmount:
+                amount: 684.39
+                currency: MXN
+            - originAmount:
+                amount: -29900
+                currency: MXN
+              transactionType:
+                name: Compra
+                id: PURCHASE
+              operationDate: '2017-07-24T10:52:01.090Z'
+              additionalInformation:
+                reference: Reference example
+                additionalData: Additional data example
+              valuationDate: '2016-09-24T12:05:01Z'
+              concept: iberia s.l.
+              contract:
+                number: '050400010100120000'
+                product:
+                  name: Cuentas
+                  id: ACCOUNTS
+                numberType:
+                  name: Local Identification Code
+                  id: LIC
+                alias: Cuenta corriente lcred
+                id: '1200'
+              id: 000A0007
+              accountedDate: '2017-07-24T10:52:01.090Z'
+              financingType:
+                name: Financing available
+                id: FINANCING_AVAILABLE
+              status:
+                name: Pending
+                id: PENDING
+              localAmount:
+                amount: 684.39
+                currency: MXN
+            - originAmount:
+                amount: -29900
+                currency: MXN
+              transactionType:
+                name: Compra
+                id: PURCHASE
+              operationDate: '2017-07-10T12:05:01.090Z'
+              additionalInformation:
+                reference: Reference example
+                additionalData: Additional data example
+              valuationDate: '2016-09-24T12:05:01Z'
+              concept: delinas2
+              contract:
+                number: '050400010100120000'
+                product:
+                  name: Cuentas
+                  id: ACCOUNTS
+                numberType:
+                  name: Local Identification Code
+                  id: LIC
+                alias: Cuenta corriente lcred
+                id: '1200'
+              id: 000A0008
+              accountedDate: '2017-07-10T12:05:01.090Z'
+              financingType:
+                name: Non financing
+                id: NON_FINANCING
+              status:
+                name: Settled
+                id: SETTLED
+              localAmount:
+                amount: 1
+                currency: MXN
+            - originAmount:
+                amount: -29900
+                currency: MXN
+              transactionType:
+                name: Compra
+                id: PURCHASE
+              operationDate: '2017-07-10T12:05:01.090Z'
+              additionalInformation:
+                reference: Reference example
+                additionalData: Additional data example
+              valuationDate: '2016-09-24T12:05:01Z'
+              concept: delinas2
+              contract:
+                number: '050400010100120000'
+                product:
+                  name: Cuentas
+                  id: ACCOUNTS
+                numberType:
+                  name: Local Identification Code
+                  id: LIC
+                alias: Cuenta corriente lcred
+                id: '1200'
+              id: 000A0009
+              accountedDate: '2017-07-10T12:05:01.090Z'
+              financingType:
+                name: Non financing
+                id: NON_FINANCING
+              status:
+                name: Settled
+                id: SETTLED
+              localAmount:
+                amount: 1
+                currency: MXN
+            - originAmount:
+                amount: -29900
+                currency: MXN
+              transactionType:
+                name: Compra
+                id: PURCHASE
+              operationDate: '2017-07-10T12:05:01.090Z'
+              additionalInformation:
+                reference: Reference example
+                additionalData: Additional data example
+              valuationDate: '2016-09-24T12:05:01Z'
+              concept: delinas2
+              contract:
+                number: '050400010100120000'
+                product:
+                  name: Cuentas
+                  id: ACCOUNTS
+                numberType:
+                  name: Local Identification Code
+                  id: LIC
+                alias: Cuenta corriente lcred
+                id: '1200'
+              id: 000A0010
+              accountedDate: '2017-07-10T12:05:01.090Z'
+              financingType:
+                name: Non financing
+                id: NON_FINANCING
+              status:
+                name: Settled
+                id: SETTLED
+              localAmount:
+                amount: 1
+                currency: MXN
+            - originAmount:
+                amount: -29900
+                currency: MXN
+              transactionType:
+                name: Cash withdrawal
+                id: CASH_WITHDRAWAL
+              operationDate: '2016-02-24T12:05:01.090Z'
+              additionalInformation:
+                reference: Reference example
+                additionalData: Additional data example
+              valuationDate: '2016-09-24T12:05:01Z'
+              concept: retiro de efectivo en cajero
+              contract:
+                number: '050400010100120000'
+                product:
+                  name: Cuentas
+                  id: ACCOUNTS
+                numberType:
+                  name: Local Identification Code
+                  id: LIC
+                alias: Cuenta corriente lcred
+                id: '1200'
+              id: 000A0017
+              accountedDate: '2016-02-24T12:05:01.090Z'
+              financingType:
+                name: Non financing
+                id: NON_FINANCING
+              status:
+                name: Settled
+                id: SETTLED
+              localAmount:
+                amount: 40
+                currency: MXN
+            - originAmount:
+                amount: -29900
+                currency: MXN
+              transactionType:
+                name: Cash withdrawal
+                id: CASH_WITHDRAWAL
+              operationDate: '2016-01-24T12:05:01.090Z'
+              additionalInformation:
+                reference: Reference example
+                additionalData: Additional data example
+              valuationDate: '2016-09-24T12:05:01Z'
+              concept: retiro de efectivo en cajero2
+              contract:
+                number: '050400010100120000'
+                product:
+                  name: Cuentas
+                  id: ACCOUNTS
+                numberType:
+                  name: Local Identification Code
+                  id: LIC
+                alias: Cuenta corriente lcred
+                id: '1200'
+              id: 000A0018
+              accountedDate: '2016-01-24T12:05:01.090Z'
+              financingType:
+                name: Non financing
+                id: NON_FINANCING
+              status:
+                name: Settled
+                id: SETTLED
+              localAmount:
+                amount: 60
+                currency: MXN
+            - originAmount:
+                amount: -29900
+                currency: MXN
+              transactionType:
+                name: Refund
+                id: REFUND
+              operationDate: '2016-01-07T12:05:01.090Z'
+              additionalInformation:
+                reference: Reference example
+                additionalData: Additional data example
+              valuationDate: '2016-09-24T12:05:01Z'
+              concept: 'devolución: corte ingles'
+              contract:
+                number: '050400010100120000'
+                product:
+                  name: Cuentas
+                  id: ACCOUNTS
+                numberType:
+                  name: Local Identification Code
+                  id: LIC
+                alias: Cuenta corriente lcred
+                id: '1200'
+              id: 000A0022
+              accountedDate: '2016-01-07T12:05:01.090Z'
+              financingType:
+                name: Non financing
+                id: NON_FINANCING
+              status:
+                name: Settled
+                id: SETTLED
+              localAmount:
+                amount: 57
+                currency: MXN
+            - originAmount:
+                amount: -29900
+                currency: MXN
+              transactionType:
+                name: Refund
+                id: REFUND
+              operationDate: '2016-01-07T12:05:01.090Z'
+              additionalInformation:
+                reference: Reference example
+                additionalData: Additional data example
+              valuationDate: '2016-09-24T12:05:01Z'
+              concept: 'devolución: corte ingles'
+              contract:
+                number: '050400010100120000'
+                product:
+                  name: Cuentas
+                  id: ACCOUNTS
+                numberType:
+                  name: Local Identification Code
+                  id: LIC
+                alias: Cuenta corriente lcred
+                id: '1200'
+              id: 000A0023
+              accountedDate: '2016-01-07T12:05:01.090Z'
+              financingType:
+                name: Non financing
+                id: NON_FINANCING
+              status:
+                name: Settled
+                id: SETTLED
+              localAmount:
+                amount: 57
+                currency: MXN
+            - originAmount:
+                amount: -30000
+                currency: MXN
+              transactionType:
+                name: Compra
+                id: PURCHASE
+              operationDate: YEAR(CURRENT_TIMESTAMP)-MONTH(CURRENT_TIMESTAMP)-01T05:05:01.090Z
+              additionalInformation:
+                reference: Reference example
+                additionalData: Additional data example
+              valuationDate: YEAR(CURRENT_TIMESTAMP)-MONTH(CURRENT_TIMESTAMP)-01T12:05:01Z
+              concept: delinas1
+              contract:
+                number: '050400010100120000'
+                product:
+                  name: Cuentas
+                  id: ACCOUNTS
+                numberType:
+                  name: Local Identification Code
+                  id: LIC
+                alias: Cuenta corriente lcred
+                id: '1200'
+              id: 001A0024
+              accountedDate: YEAR(CURRENT_TIMESTAMP)-MONTH(CURRENT_TIMESTAMP)-01T12:05:01.090Z
+              financingType:
+                name: Non financing
+                id: NON_FINANCING
+              status:
+                name: PENDING
+                id: PENDING
+              localAmount:
+                amount: 2
+                currency: MXN
+            - originAmount:
+                amount: -29997
+                currency: MXN
+              transactionType:
+                name: Compra
+                id: PURCHASE
+              operationDate: YEAR(CURRENT_TIMESTAMP)-MONTH(CURRENT_TIMESTAMP)-01T05:05:02.090Z
+              additionalInformation:
+                reference: Reference example
+                additionalData: Additional data example
+              valuationDate: 2YEAR(CURRENT_TIMESTAMP)-MONTH(CURRENT_TIMESTAMP)-01T12:05:01Z
+              concept: delinas2
+              contract:
+                number: '050400010100120000'
+                product:
+                  name: Cuentas
+                  id: ACCOUNTS
+                numberType:
+                  name: Local Identification Code
+                  id: LIC
+                alias: Cuenta corriente lcred
+                id: '1200'
+              id: 001A0025
+              accountedDate: YEAR(CURRENT_TIMESTAMP)-MONTH(CURRENT_TIMESTAMP)-01T12:05:01.090Z
+              financingType:
+                name: Financing Available
+                id: FINANCING_AVAILABLE
+              status:
+                name: Settled
+                id: SETTLED
+              localAmount:
+                amount: 1
+                currency: MXN
+            - originAmount:
+                amount: -29996
+                currency: MXN
+              transactionType:
+                name: Compra
+                id: PURCHASE
+              operationDate: YEAR(CURRENT_TIMESTAMP)-MONTH(CURRENT_TIMESTAMP)-01T06:05:02.090Z
+              additionalInformation:
+                reference: Reference example
+                additionalData: Additional data example
+              valuationDate: YEAR(CURRENT_TIMESTAMP)-MONTH(CURRENT_TIMESTAMP)-01T12:05:01Z
+              concept: delinas3
+              contract:
+                number: '050400010100120000'
+                product:
+                  name: Cuentas
+                  id: ACCOUNTS
+                numberType:
+                  name: Local Identification Code
+                  id: LIC
+                alias: Cuenta corriente lcred
+                id: '1200'
+              id: 001A0026
+              accountedDate: YEAR(CURRENT_TIMESTAMP)-MONTH(CURRENT_TIMESTAMP)-01T12:05:01.090Z
+              financingType:
+                name: Non financing
+                id: NON_FINANCING
+              status:
+                name: Settled
+                id: SETTLED
+              localAmount:
+                amount: 1
+                currency: MXN
+            - originAmount:
+                amount: -29995
+                currency: MXN
+              transactionType:
+                name: Compra
+                id: PURCHASE
+              operationDate: YEAR(CURRENT_TIMESTAMP)-MONTH(CURRENT_TIMESTAMP)-01T06:06:02.090Z
+              additionalInformation:
+                reference: Reference example
+                additionalData: Additional data example
+              valuationDate: YEAR(CURRENT_TIMESTAMP)-MONTH(CURRENT_TIMESTAMP)-01T12:05:01Z
+              concept: delinas4
+              contract:
+                number: '050400010100120000'
+                product:
+                  name: Cuentas
+                  id: ACCOUNTS
+                numberType:
+                  name: Local Identification Code
+                  id: LIC
+                alias: Cuenta corriente lcred
+                id: '1200'
+              id: 001A0027
+              accountedDate: YEAR(CURRENT_TIMESTAMP)-MONTH(CURRENT_TIMESTAMP)-01T12:05:01.090Z
+              financingType:
+                name: Non financing
+                id: NON_FINANCING
+              status:
+                name: Settled
+                id: SETTLED
+              localAmount:
+                amount: 1
+                currency: MXN
+            - originAmount:
+                amount: -29994
+                currency: MXN
+              transactionType:
+                name: Compra
+                id: PURCHASE
+              operationDate: YEAR(CURRENT_TIMESTAMP)-MONTH(CURRENT_TIMESTAMP)-01T06:08:02.090Z
+              additionalInformation:
+                reference: Reference example
+                additionalData: Additional data example
+              valuationDate: YEAR(CURRENT_TIMESTAMP)-MONTH(CURRENT_TIMESTAMP)-01T12:05:01Z
+              concept: delinas5
+              contract:
+                number: '050400010100120000'
+                product:
+                  name: Cuentas
+                  id: ACCOUNTS
+                numberType:
+                  name: Local Identification Code
+                  id: LIC
+                alias: Cuenta corriente lcred
+                id: '1200'
+              id: 001A0028
+              accountedDate: YEAR(CURRENT_TIMESTAMP)-MONTH(CURRENT_TIMESTAMP)-01T12:07:01.090Z
+              financingType:
+                name: Financing Amount
+                id: FINANCED_AMOUNT
+              status:
+                name: Settled
+                id: SETTLED
+              localAmount:
+                amount: 1
+                currency: MXN
+            - originAmount:
+                amount: -29992
+                currency: MXN
+              transactionType:
+                name: Cash withdrawal
+                id: CASH_WITHDRAWAL
+              operationDate: YEAR(CURRENT_TIMESTAMP)-MONTH(CURRENT_TIMESTAMP)-01T06:10:02.090Z
+              additionalInformation:
+                reference: Reference example
+                additionalData: Additional data example
+              valuationDate: YEAR(CURRENT_TIMESTAMP)-MONTH(CURRENT_TIMESTAMP)-01T12:05:01Z
+              concept: delinas6
+              contract:
+                number: '050400010100120000'
+                product:
+                  name: Cuentas
+                  id: ACCOUNTS
+                numberType:
+                  name: Local Identification Code
+                  id: LIC
+                alias: Cuenta corriente lcred
+                id: '1200'
+              id: 001A0029
+              accountedDate: YEAR(CURRENT_TIMESTAMP)-MONTH(CURRENT_TIMESTAMP)-01T12:07:01.090Z
+              financingType:
+                name: Non financing
+                id: NON_FINANCING
+              status:
+                name: Settled
+                id: SETTLED
+              localAmount:
+                amount: 1
+                currency: MXN
+            - originAmount:
+                amount: -29991
+                currency: MXN
+              transactionType:
+                name: Refund
+                id: REFUND
+              operationDate: YEAR(CURRENT_TIMESTAMP)-MONTH(CURRENT_TIMESTAMP)-01T06:15:02.090Z
+              additionalInformation:
+                reference: Reference example
+                additionalData: Additional data example
+              valuationDate: YEAR(CURRENT_TIMESTAMP)-MONTH(CURRENT_TIMESTAMP)-01T12:05:01Z
+              concept: delinas7
+              contract:
+                number: '050400010100120000'
+                product:
+                  name: Cuentas
+                  id: ACCOUNTS
+                numberType:
+                  name: Local Identification Code
+                  id: LIC
+                alias: Cuenta corriente lcred
+                id: '1200'
+              id: 001A0030
+              accountedDate: YEAR(CURRENT_TIMESTAMP)-MONTH(CURRENT_TIMESTAMP)-01T12:07:01.090Z
+              financingType:
+                name: Non financing
+                id: NON_FINANCING
+              status:
+                name: Settled
+                id: SETTLED
+              localAmount:
+                amount: 1
+                currency: MXN
+            - originAmount:
+                amount: -29990
+                currency: MXN
+              transactionType:
+                name: Cash Income
+                id: CASH_INCOME
+              operationDate: YEAR(CURRENT_TIMESTAMP)-MONTH(CURRENT_TIMESTAMP)-01T06:28:02.090Z
+              additionalInformation:
+                reference: Reference example
+                additionalData: Additional data example
+              valuationDate: YEAR(CURRENT_TIMESTAMP)-MONTH(CURRENT_TIMESTAMP)-01T12:05:01Z
+              concept: delinas8
+              contract:
+                number: '050400010100120000'
+                product:
+                  name: Cuentas
+                  id: ACCOUNTS
+                numberType:
+                  name: Local Identification Code
+                  id: LIC
+                alias: Cuenta corriente lcred
+                id: '1200'
+              id: 001A0031
+              accountedDate: YEAR(CURRENT_TIMESTAMP)-MONTH(CURRENT_TIMESTAMP)-01T12:07:01.090Z
+              financingType:
+                name: Non financing
+                id: NON_FINANCING
+              status:
+                name: Settled
+                id: SETTLED
+              localAmount:
+                amount: 1
+                currency: MXN
+            accountId: '1200'
+            relatedContracts:
+            - relationType:
+                name: Linked with
+                id: LINKED_WITH
+              number: '050400010100120000'
+              product:
+                name: Cuentas
+                id: ACCOUNTS
+              numberType:
+                name: Local Identification Code
+                id: LIC
+              relatedContractId: '050400010100120000'
+              contractId: '1205'
+            meta:
+              accountLevel: N2
+            holds: []
+            conditions: []
+            status:
+              name: Cuenta operativa
+              id: ACTIVATED
+            currencies:
+            - isMajor: true
+              currency: MXN
+          - numberType:
+              name: Local Identification Code
+              id: LIC
+            accountFamily:
+              name: Common
+              id: COMMON
+            title:
+              name: Cuenta corriente con línea de crédito
+              id: CORRIENTE_LCREDITO_MX
+            availableBalance:
+              currentBalances:
+              - amount: 1900000
+                currency: MXN
+              pendingBalances:
+              - amount: 25000
+                currency: MXN
+              postedBalances:
+              - amount: 1725000
+                currency: MXN
+            number: '05040001010012130200'
+            bank:
+              name: BBVA Mexico
+              id: '504'
+            alias: Cuenta corriente lcred
+            openingDate: '2016-01-08T11:02:32.096Z'
+            limits: []
+            productType:
+              id: ACCOUNT
+            participants:
+            - participantId: '1212123276'
+              lastName: Santana
+              firstName: Carlos
+              participantType:
+                name: Titular
+                id: HOLDER
+            - participantId: '1234123277'
+              lastName: Campos
+              firstName: Jorge
+              participantType:
+                name: Adicional
+                id: AUTHORIZED
+            checkbooks: []
+            address:
+              country:
+                name: Mexico
+                id: MX
+              zipCode: '3580000'
+              city: Santiago
+              alias: Dirección actual
+              addressName: Av. Pte.Roque Saenz Pena 991
+              state: Región Metropolitana
+            customizedFormats: []
+            blocks: []
+            accountType:
+              name: Cuenta corriente
+              id: COMMON_ACCOUNT
+            indicators:
+            - indicatorId: EDITABLE_ALIAS
+              name: Editar alias
+              isActive: true
+            - indicatorId: ORIGIN_TRANSFER_TO_ACCOUNT
+              name: Transferencia
+              isActive: true
+            - indicatorId: ORIGIN_INTERNAL_TRANSFER_TO_ACCOUNT
+              name: Traspaso
+              isActive: true
+            - indicatorId: ORIGIN_INTERNATIONAL_TRANSFER_TO_ACCOUNT
+              name: Transferencia
+              isActive: true
+            - indicatorId: ORIGIN_SERVICE_PAYMENT
+              name: Pago de servicio
+              isActive: true
+            - indicatorId: DESTINATION_TRANSFER_FROM_CARD
+              name: Avance en línea
+              isActive: true
+            - indicatorId: DESTINATION_INTERNATIONAL_TRANSFER_FROM_CARD
+              name: Avance en línea
+              isActive: true
+            - indicatorId: ORIGIN_MOBILE_PHONE_RECHARGES
+              name: Recarga celular
+              isActive: true
+            - indicatorId: ORIGIN_SOLIDARY_CONTRIBUTION
+              name: Aporte solidario
+              isActive: true
+            - indicatorId: ORIGIN_TAX_PAYMENT
+              name: Pago PreviRed
+              isActive: true
+            transactions:
+            - transactionType:
+                name: Uncategorized
+                id: UNCATEGORIZED
+                internalCode:
+                  name: CODIREF:70000000000011778607 16862
+                  id: '612'
+              operationDate: YEAR(CURRENT_TIMESTAMP)-MONTH(CURRENT_TIMESTAMP)-06T10:05:01.090Z
+              additionalInformation:
+                reference: GUIA:2605231
+                additionalData: CODIREF:70000000000011778607 1686216
+              valuationDate: YEAR(CURRENT_TIMESTAMP)-MONTH(CURRENT_TIMESTAMP)-06T12:35:01Z
+              concept: BBVA PROGRAMA CASH 1
+              contract:
+                number: '05040001010012130200'
+                product:
+                  name: Cuentas
+                  id: ACCOUNTS
+                numberType:
+                  name: Local Identification Code
+                  id: LIC
+                alias: Cuenta corriente lcred
+                id: '1302'
+              moneyFlow:
+                name: Expense
+                id: EXPENSE
+              id: 3699A0444
+              accountedDate: YEAR(CURRENT_TIMESTAMP)-MONTH(CURRENT_TIMESTAMP)-06T12:35:01.090Z
+              financingType:
+                name: Non financing
+                id: NON_FINANCING
+              status:
+                name: PENDING
+                id: PENDING
+              localAmount:
+                amount: -40
+                currency: MXN
+            - transactionType:
+                name: Uncategorized
+                id: UNCATEGORIZED
+                internalCode:
+                  name: Sin concepto
+                  id: '507'
+              operationDate: YEAR(CURRENT_TIMESTAMP)-MONTH(CURRENT_TIMESTAMP)-01T07:05:01.090Z
+              additionalInformation:
+                reference: '1385284146'
+                additionalData: Sin concepto
+              valuationDate: YEAR(CURRENT_TIMESTAMP)-MONTH(CURRENT_TIMESTAMP)-01T12:10:01Z
+              concept: CODI RECIBIDO BBVA 6
+              contract:
+                number: '05040001010012130200'
+                product:
+                  name: Cuentas
+                  id: ACCOUNTS
+                numberType:
+                  name: Local Identification Code
+                  id: LIC
+                alias: Cuenta corriente lcred
+                id: '1302'
+              moneyFlow:
+                name: Income
+                id: INCOME
+              id: 3699A0449
+              accountedDate: YEAR(CURRENT_TIMESTAMP)-MONTH(CURRENT_TIMESTAMP)-01T12:10:01.090Z
+              financingType:
+                name: Non financing
+                id: NON_FINANCING
+              status:
+                name: Settled
+                id: SETTLED
+              localAmount:
+                amount: 100
+                currency: MXN
+            - transactionType:
+                name: Uncategorized
+                id: UNCATEGORIZED
+                internalCode:
+                  name: CODIREF:70000000000011778607 16862
+                  id: '613'
+              operationDate: YEAR(CURRENT_TIMESTAMP)-MONTH(CURRENT_TIMESTAMP)-01T06:28:02.090Z
+              additionalInformation:
+                reference: GUIA:2605237
+                additionalData: CODIREF:70000000000011778607 1686216
+              valuationDate: YEAR(CURRENT_TIMESTAMP)-MONTH(CURRENT_TIMESTAMP)-01T12:05:01Z
+              concept: BBVA PROGRAMA CASH 2
+              contract:
+                number: '05040001010012130200'
+                product:
+                  name: Cuentas
+                  id: ACCOUNTS
+                numberType:
+                  name: Local Identification Code
+                  id: LIC
+                alias: Cuenta corriente lcred
+                id: '1302'
+              moneyFlow:
+                name: Expense
+                id: EXPENSE
+              id: 3699A0445
+              accountedDate: YEAR(CURRENT_TIMESTAMP)-MONTH(CURRENT_TIMESTAMP)-01T12:07:01.090Z
+              financingType:
+                name: Non financing
+                id: NON_FINANCING
+              status:
+                name: Settled
+                id: SETTLED
+              localAmount:
+                amount: -50
+                currency: MXN
+            accountId: '1302'
+            relatedContracts: []
+            meta:
+              accountLevel: N2
+            holds: []
+            conditions: []
+            status:
+              name: Cuenta operativa
+              id: ACTIVATED
+            currencies:
+            - isMajor: true
+              currency: MXN
+          - numberType:
+              name: Local Identification Code
+              id: LIC
+            accountFamily:
+              name: Common
+              id: COMMON
+            title:
+              name: Cuenta corriente con línea de crédito
+              id: CORRIENTE_LCREDITO_CL
+            availableBalance:
+              currentBalances:
+              - amount: 1900000
+                currency: MXN
+              pendingBalances:
+              - amount: 25000
+                currency: MXN
+              postedBalances:
+              - amount: 1725000
+                currency: MXN
+            number: '05040001010012000000'
+            bank:
+              name: BBVA Mexico
+              id: '504'
+            alias: Cuenta corriente lcred
+            openingDate: '2016-01-08T11:02:32.096Z'
+            limits: []
+            productType:
+              id: ACCOUNT
+            participants:
+            - participantId: '1212123276'
+              lastName: Santana
+              firstName: Carlos
+              participantType:
+                name: Titular
+                id: HOLDER
+            - participantId: '1234123277'
+              lastName: Campos
+              firstName: Jorge
+              participantType:
+                name: Adicional
+                id: AUTHORIZED
+            checkbooks: []
+            address:
+              country:
+                name: Mexico
+                id: MX
+              zipCode: '3580000'
+              city: Santiago
+              alias: Dirección actual
+              addressName: Av. Pte.Roque Saenz Pena 991
+              state: Región Metropolitana
+            customizedFormats: []
+            blocks: []
+            accountType:
+              name: Cuenta corriente
+              id: COMMON_ACCOUNT
+            indicators:
+            - indicatorId: EDITABLE_ALIAS
+              name: Editar alias
+              isActive: true
+            - indicatorId: ORIGIN_TRANSFER_TO_ACCOUNT
+              name: Transferencia
+              isActive: true
+            - indicatorId: ORIGIN_INTERNAL_TRANSFER_TO_ACCOUNT
+              name: Traspaso
+              isActive: true
+            - indicatorId: ORIGIN_INTERNATIONAL_TRANSFER_TO_ACCOUNT
+              name: Transferencia
+              isActive: true
+            - indicatorId: ORIGIN_SERVICE_PAYMENT
+              name: Pago de servicio
+              isActive: true
+            - indicatorId: DESTINATION_TRANSFER_FROM_CARD
+              name: Avance en línea
+              isActive: true
+            - indicatorId: DESTINATION_INTERNATIONAL_TRANSFER_FROM_CARD
+              name: Avance en línea
+              isActive: true
+            - indicatorId: ORIGIN_MOBILE_PHONE_RECHARGES
+              name: Recarga celular
+              isActive: true
+            - indicatorId: ORIGIN_SOLIDARY_CONTRIBUTION
+              name: Aporte solidario
+              isActive: true
+            - indicatorId: ORIGIN_TAX_PAYMENT
+              name: Pago PreviRed
+              isActive: true
+            transactions: []
+            accountId: '0000'
+            relatedContracts:
+            - relationType:
+                name: Linked with
+                id: LINKED_WITH
+              number: '050400010100120000'
+              product:
+                name: Cuentas
+                id: ACCOUNTS
+              numberType:
+                name: Local Identification Code
+                id: LIC
+              relatedContractId: '050400010100120000'
+              contractId: '1205'
+            meta:
+              accountLevel: N2
+            holds: []
+            conditions: []
+            status:
+              name: Cuenta operativa
+              id: ACTIVATED
+            currencies:
+            - isMajor: true
+              currency: MXN
+          - numberType:
+              name: Local Identification Code
+              id: LIC
+            accountFamily:
+              name: Common
+              id: COMMON
+            title:
+              name: Cuenta corriente con línea de crédito
+              id: CORRIENTE_LCREDITO_MX
+            availableBalance:
+              currentBalances:
+              - amount: 1900000
+                currency: MXN
+              pendingBalances:
+              - amount: 25000
+                currency: MXN
+              postedBalances:
+              - amount: 1725000
+                currency: MXN
+            number: '050400010100121301'
+            bank:
+              name: BBVA Mexico
+              id: '504'
+            alias: Cuenta corriente lcred
+            openingDate: '2016-01-08T11:02:32.096Z'
+            limits: []
+            productType:
+              id: ACCOUNT
+            participants:
+            - participantId: '1212123276'
+              lastName: Santana
+              firstName: Carlos
+              participantType:
+                name: Titular
+                id: HOLDER
+            - participantId: '1234123277'
+              lastName: Campos
+              firstName: Jorge
+              participantType:
+                name: Adicional
+                id: AUTHORIZED
+            checkbooks: []
+            address:
+              country:
+                name: Mexico
+                id: MX
+              zipCode: '3580000'
+              city: Santiago
+              alias: Dirección actual
+              addressName: Av. Pte.Roque Saenz Pena 991
+              state: Región Metropolitana
+            customizedFormats: []
+            blocks: []
+            accountType:
+              name: Cuenta corriente
+              id: COMMON_ACCOUNT
+            indicators:
+            - indicatorId: EDITABLE_ALIAS
+              name: Editar alias
+              isActive: true
+            - indicatorId: ORIGIN_TRANSFER_TO_ACCOUNT
+              name: Transferencia
+              isActive: true
+            - indicatorId: ORIGIN_INTERNAL_TRANSFER_TO_ACCOUNT
+              name: Traspaso
+              isActive: true
+            - indicatorId: ORIGIN_INTERNATIONAL_TRANSFER_TO_ACCOUNT
+              name: Transferencia
+              isActive: true
+            - indicatorId: ORIGIN_SERVICE_PAYMENT
+              name: Pago de servicio
+              isActive: true
+            - indicatorId: DESTINATION_TRANSFER_FROM_CARD
+              name: Avance en línea
+              isActive: true
+            - indicatorId: DESTINATION_INTERNATIONAL_TRANSFER_FROM_CARD
+              name: Avance en línea
+              isActive: true
+            - indicatorId: ORIGIN_MOBILE_PHONE_RECHARGES
+              name: Recarga celular
+              isActive: true
+            - indicatorId: ORIGIN_SOLIDARY_CONTRIBUTION
+              name: Aporte solidario
+              isActive: true
+            - indicatorId: ORIGIN_TAX_PAYMENT
+              name: Pago PreviRed
+              isActive: true
+            transactions: []
+            accountId: '1301'
+            relatedContracts: []
+            meta:
+              accountLevel: N2
+            holds: []
+            conditions: []
+            status:
+              name: Cuenta operativa
+              id: ACTIVATED
+            currencies:
+            - isMajor: true
+              currency: MXN
+          deposits: []
+        authentication:
+          password: Glomo2025
+          user: '5519655657'
+          deviceId: 03A15D825A50CA31CBF4E429D7500A90
+        sendRawCardNumber: true
+      id: 35805151
+      lockType: null
+      lockExpiration: null
+    :headers:
+      content-length: '60672'
+      Strict-Transport-Security: max-age=15768000
+      Server: nginx
+      ECS-Entry-Point-Zone: ext
+      Connection: keep-alive
+      host: datamanager.globaldevtools.bbva.com
+      Vary: Accept-Encoding
+      Date: Thu, 14 Mar 2024 18:16:53 GMT
+      Content-Type: application/json
+    :status: 200 OK

@@ -1,0 +1,42 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: 592105c1-00be-40a2-a384-e7a2cd85ab27
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: dashboard_cards,debit_card_status
+then:
+- return:
+    :body:
+    - data:
+        homeFutura: false
+        skeleton: skeleton2
+        locale: es_mx
+        tags:
+        - '5519655657'
+        - dashboard_cards
+        - debit_card_status
+        authentication:
+          password: Glomo2023
+          user: '5519655657'
+          deviceId: 43A3B1B8684E72FDFA5E5D9494666F8A
+      lockExpiration: null
+      lockType: null
+      id: 1551996
+    :headers:
+      Strict-Transport-Security: max-age=15768000
+      Server: nginx
+      ECS-Entry-Point-Zone: ext
+      Connection: keep-alive
+      Content-Length: '285'
+      Date: Fri, 21 Apr 2023 02:43:29 GMT
+      Content-Type: application/json
+    :status: 200 OK

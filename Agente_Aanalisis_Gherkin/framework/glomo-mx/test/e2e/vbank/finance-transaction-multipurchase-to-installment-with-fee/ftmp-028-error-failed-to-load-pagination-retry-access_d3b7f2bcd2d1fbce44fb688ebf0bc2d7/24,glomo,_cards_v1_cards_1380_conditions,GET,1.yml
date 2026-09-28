@@ -1,0 +1,69 @@
+when:
+  sequence: 1
+  path: /SRVS_A02/cards/v1/cards/1380/conditions
+  method: GET
+  backend: glomo
+request:
+  headers:
+    sec-fetch-mode: cors
+    content-length: '0'
+    referer: http://localhost:8001/
+    sec-fetch-site: same-site
+    accept-language: es-MX,es;q=0.9
+    origin: http://localhost:8001
+    tsec: 7a90f3810bea4f6250901c30cdc181eb3a7c7598
+    accept: application/json, text/html, */*; q=0.1
+    sec-ch-ua: '"Chromium";v="116", "Not)A;Brand";v="24", "Google Chrome";v="116"'
+    sec-ch-ua-mobile: ?0
+    x-vbank-session: c15d1d08-17cf-4dd9-b735-e8447fe478fe
+    sec-ch-ua-platform: '"macOS"'
+    host: localhost:9000
+    content-type: application/json
+    connection: keep-alive
+    cache-control: no-cache, no-store, must-revalidate
+    accept-encoding: gzip, deflate, br
+    sec-fetch-dest: empty
+    user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36
+      (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36
+  query:
+    id:
+    - THRESHOLD_AVAILABLE_BALANCE_FINANCING_MULTIPURCHASE
+    - THRESHOLD_AMOUNT_PER_PURCHASE_FINANCING_MULTIPURCHASE
+then:
+- return:
+    data:
+    - format:
+        amount:
+          amount: 0
+          currency: MXN
+        formatType: AMOUNT
+      id: THRESHOLD_AMOUNT_PER_PURCHASE_FINANCING_MULTIPURCHASE
+    - format:
+        amount:
+          amount: 1000
+          currency: MXN
+        formatType: AMOUNT
+      id: THRESHOLD_AVAILABLE_BALANCE_FINANCING_MULTIPURCHASE
+    :headers:
+      access-control-allow-origin: '*'
+      content-length: '554'
+      Access-Control-Expose-Headers: tsec, vnd.bbva.access-token-type,vnd.bbva.access-token,
+        vnd.bbva.sso-pkcs7, authenticationtype, authenticationdata, authenticationstate,
+        authenticationchallenge
+      Server: artichoke
+      Alt-Svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      access-control-allow-headers: Content-Type, tsec, authenticationtype, authenticationdata,
+        authenticationstate, contactid, consumeruuid, consumerapplicationid, perimetertsec,
+        authorization, responsewarningcode, responsewarningdescription, cuf, field,
+        bcs-device-app-version, bcs-device-app-version, vnd.bbva.authorization, device-id
+      content-type: application/json;charset=UTF-8
+      Vary: Accept-Encoding
+      tsec: 7a90f3810bea4f6250901c30cdc181eb3a7c7598
+      X-Response-Time: 496ms
+      Date: Fri, 08 Sep 2023 00:48:51 GMT
+      Via: 1.1 google
+    :status: 200 OK
+    apiInfo:
+      name: cards
+      category: products
+      version: 0.19.0

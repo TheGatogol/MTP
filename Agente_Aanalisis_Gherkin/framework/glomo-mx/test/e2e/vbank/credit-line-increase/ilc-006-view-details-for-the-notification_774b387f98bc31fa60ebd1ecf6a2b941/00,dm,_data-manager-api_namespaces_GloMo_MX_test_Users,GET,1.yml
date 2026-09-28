@@ -1,0 +1,50 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: 0042bfef-78b7-41ff-86ec-8063a3bd78df
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: credit_line_notif
+    lock: 'false'
+then:
+- return:
+    :body:
+    - data:
+        pushNILC:
+          eventID: nilcp1
+          productId: regBNghwnb8fWFuj5VZrna72_c66TigA_d7ahaf2smY
+          offerId: jNceQQ2m7o_x7FuQO5G9KUjoLagilS9-
+        text:
+          description: ¡Lo lograste! La nueva línea de tu tarjeta ya está disponible.
+            Da clic y acepta tu oferta para empezar a usar tu crédito.
+          title: ¡Tu línea de crédito creció!
+          category: Ofertas y promociones
+        notifications:
+          notifictationId: 695ec534709a1a134d286099
+        tags:
+        - '5524241056'
+        - credit_line_notif
+        authentication:
+          password: Glomo2025
+          user: '5524241056'
+          deviceId: 19BC01EFE161298BEF72C9A62D707D48
+      id: 36284909
+    :headers:
+      content-length: '603'
+      Server: nginx
+      Cache-Control: max-age=0
+      Connection: keep-alive
+      host: datamanager.globaldevtools.bbva.com
+      Vary: Accept-Encoding
+      Expires: Thu, 29 Jan 2026 09:20:07 GMT
+      Date: Thu, 29 Jan 2026 09:20:07 GMT
+      Content-Type: application/json; charset=utf-8
+    :status: 200 OK

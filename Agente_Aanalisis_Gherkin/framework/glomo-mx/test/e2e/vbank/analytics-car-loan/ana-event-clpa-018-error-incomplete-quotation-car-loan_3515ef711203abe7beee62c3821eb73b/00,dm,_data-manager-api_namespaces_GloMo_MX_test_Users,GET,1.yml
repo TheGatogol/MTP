@@ -1,0 +1,41 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: fe962ce0-3305-408a-95a3-d6ac1531b042
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: car_loan,user_exceeds_proposals
+    lock: 'false'
+then:
+- return:
+    :body:
+    - data:
+        locale: es_mx
+        tags:
+        - car_loan
+        - user_exceeds_proposals
+        authentication:
+          password: Glomo2023
+          user: '5534348360'
+          deviceId: B511516D0115836F1EEF1C45A6491B38
+      lockType: null
+      lockExpiration: null
+      id: 35684467
+    :headers:
+      Strict-Transport-Security: max-age=15768000
+      Server: nginx
+      ECS-Entry-Point-Zone: ext
+      Connection: keep-alive
+      host: datamanager.globaldevtools.bbva.com
+      Content-Length: '245'
+      Date: Tue, 14 May 2024 15:36:25 GMT
+      Content-Type: application/json
+    :status: 200 OK

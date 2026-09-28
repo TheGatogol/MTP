@@ -1,0 +1,158 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: 8d8218ab-bbaf-4729-af66-ddbcfa61d7ba
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: 6145280790,digital_card
+    lock: 'false'
+then:
+- return:
+    :body:
+    - data:
+        messagesGroupRequest:
+          onOffDataDebit:
+          - message: Quiero ver los datos de mi tarjeta de débito
+          asociatedProduct:
+          - message: ¿Cuál es el tipo de tarjeta que tengo?
+          - message: '8632'
+          terminationCards:
+            debitCard:
+            - '8632'
+            creditCard:
+            - '2816'
+            digitalCard:
+            - '6385'
+          onOffDataDigital:
+          - message: Quiero ver los datos de mi tarjeta digital
+          detailsTerminationCards:
+            debitCard:
+            - Los detalles de la tarjeta con terminacion 8632
+            creditCard:
+            - Los detalles de la tarjeta con terminacion 2816
+            digitalCard:
+            - Los detalles de la tarjeta con terminacion 6385
+          aliasCard:
+            debitCard:
+            - Quiero ver el alias de mi tarjeta de débito con terminación 8632
+          modifyCardData:
+          - message: ¿Cómo puedo modificar los datos de mi tarjeta?
+          requestExpirationDate:
+            debitCard:
+            - ¿Cuál es la fecha de vencimiento de mi tarjeta de débito con terminación
+              8632?
+          clabeTdd:
+          - message: ¿Cuál es la CLABE de esta tarjeta?
+          - message: '8632'
+          selectTerminationCards:
+            debitCard:
+            - La tarjeta con terminacion 8632
+            creditCard:
+            - La tarjeta con terminacion 2816
+            digitalCard:
+            - La tarjeta con terminacion 6385
+          consultExpirationDate:
+          - message: ¿Cuál es la fecha de vencimiento de mi tarjeta de débito?
+          - message: '8632'
+          editPin:
+          - message: ¿Cómo puedo modificar el NIP de mi tarjeta?
+          - message: '8632'
+          cvvDigitalCard:
+            debitCard:
+            - Dame el CVV de mi tarjeta digital con terminación 6385
+          showCardNumber:
+            debitCard:
+            - Dame el número de mi tarjeta de débito con terminación 8632
+          digitalCardLimits:
+          - message: Quiero ver cual es el límite de crédito de mi tarjeta
+          - message: La tarjeta con terminacion 6385
+          fiveDetail:
+          - message: Dame el tipo, el número, la fecha de vencimiento, fecha límite
+              de pago y fecha de corte de mi tarjeta de crédito
+          - message: '8632'
+          goToDigitalCard:
+          - message: Dame el CVV de mi tarjeta digital
+          addressPaymentTdd:
+          - message: ¿Cuál es el pago que tiene domiciliado mi tarjeta de débito?
+          intervenerConsult:
+          - message: ¿Cuál es el nombre del titular de mi tarjeta de débito?
+          - message: '8632'
+          editAliasBase:
+          - message: ¿Cómo puedo modificar el alias de esta tarjeta?
+          - message: '8632'
+          - message: Elena
+          cardType:
+          - message: ¿Cuál es el tipo de tarjeta de mi tarjeta de crédito?
+          - message: '2816'
+          - message: Cuál es el pago mínimo que tengo que realizar a mi tarjeta de
+              crédito?
+          purchase:
+          - messages: ¿Cuál es el número, fecha y cvv?
+          - messages: '6385'
+          tdData:
+          - message: Quiero hacer una compra en línea, dame los datos de mi tarjeta
+              digital
+          detailsTerminationBlockedCards:
+            debitCard:
+            - Quiero los detalles de la tarjeta con terminacion 9127
+            creditCard:
+            - Quiero los detalles de la tarjeta con terminacion 8865
+          requestFullCardDetail:
+            debitCard:
+            - Quiero ver todos los detalles de mi tarjeta de debito con terminación
+              8632
+            creditCard:
+            - Quiero ver todos los detalles de mi tarjeta de credito con terminación
+              2816
+            digitalCard:
+            - Quiero ver todos los detalles de mi tarjeta digital con terminación
+              6385
+          cardDetailLimit:
+          - message: ¿Cuál es límite de crédito de mi tarjeta?
+          - message: '8632'
+          digitalNipCard:
+          - message: Quiero ver el NIP de mi tarjeta digital
+          - message: '6385'
+          onOffDataCredit:
+          - message: Quiero ver los datos de mi tarjeta de crédito
+          limitDate:
+          - message: ¿Cuál es la fecha límite de pago de esta tarjeta?
+          - message: '8632'
+          editAlias:
+          - message: ¿Cómo puedo modificar el alias de mi tarjeta?
+          - message: '8632'
+          - message: Elena Gutierrez Hernandez
+        tags:
+        - '6145280790'
+        - digital_butler_cards
+        - digital_butler_cards_details
+        - user_with_cards
+        - debit_card
+        - credit_card
+        - digital_card
+        authentication:
+          password: Glomo2025
+          user: '6145280790'
+          deviceId: C5DAFDB995384400B4FAFBFC4F22C40F
+      lockType: null
+      lockExpiration: null
+      id: 36076736
+    :headers:
+      content-length: '4079'
+      Server: nginx
+      Cache-Control: max-age=0
+      Connection: keep-alive
+      host: datamanager.globaldevtools.bbva.com
+      Vary: Accept-Encoding
+      Expires: Fri, 19 Dec 2025 07:54:24 GMT
+      Date: Fri, 19 Dec 2025 07:54:24 GMT
+      Content-Type: application/json; charset=utf-8
+    :status: 200 OK

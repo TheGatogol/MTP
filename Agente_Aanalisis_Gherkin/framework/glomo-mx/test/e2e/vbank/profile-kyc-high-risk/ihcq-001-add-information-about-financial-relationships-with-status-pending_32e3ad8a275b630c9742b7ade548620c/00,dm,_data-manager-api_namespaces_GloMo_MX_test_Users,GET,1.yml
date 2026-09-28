@@ -1,0 +1,43 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: f3517ee6-9577-46c7-b976-37be26b7292d
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: profile_kyc_high_risk,profile_relationship_financials,status_pending
+    lock: 'false'
+then:
+- return:
+    :body:
+    - data:
+        tags:
+        - '5539910393'
+        - profile_kyc_high_risk
+        - profile_relationship_financials
+        - status_pending
+        authentication:
+          password: Glomo2025
+          user: '5539910393'
+          deviceId: 1A263BEF71E17981935345D6C02A2FEA
+      lockExpiration: null
+      lockType: null
+      id: 36315534
+    :headers:
+      content-length: '280'
+      Server: nginx
+      Cache-Control: max-age=0
+      Connection: keep-alive
+      host: datamanager.globaldevtools.bbva.com
+      Vary: Accept-Encoding
+      Expires: Tue, 09 Dec 2025 19:20:23 GMT
+      Date: Tue, 09 Dec 2025 19:20:23 GMT
+      Content-Type: application/json; charset=utf-8
+    :status: 200 OK

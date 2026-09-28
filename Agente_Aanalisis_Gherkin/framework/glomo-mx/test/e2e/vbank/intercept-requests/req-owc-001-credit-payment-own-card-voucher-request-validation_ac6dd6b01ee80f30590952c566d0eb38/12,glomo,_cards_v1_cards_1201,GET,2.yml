@@ -1,0 +1,155 @@
+when:
+  sequence: 2
+  path: /SRVS_A02/cards/v2/cards/1201
+  method: GET
+  backend: glomo
+request:
+  headers:
+    sec-fetch-mode: cors
+    content-length: '0'
+    referer: http://localhost:8001/
+    sec-fetch-site: same-site
+    accept-language: es
+    origin: http://localhost:8001
+    tsec: 9ff90f41366cbdfa3ccb065551a180d40f42b83f
+    accept: application/json, text/html, */*; q=0.1
+    x-vbank-session: 7660df29-656f-4ce7-b0c5-d6f596b69a19
+    host: localhost:9000
+    content-type: application/json
+    connection: keep-alive
+    cache-control: no-cache, no-store, must-revalidate
+    accept-encoding: gzip, deflate, br
+    sec-fetch-dest: empty
+    user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 11_2_1) AppleWebKit/537.36
+      (KHTML, like Gecko) Chrome/89.0.4389.128 Safari/537.36
+  query:
+    expand: payment-methods,blocks,indicators
+then:
+- return:
+    data:
+      product:
+        name: comprobar máximo de caracteres
+        id: V1
+      holderName: Carlos Santana
+      images:
+      - description: Front face of the card
+        id: FRONT_CARD
+        url: https://cardcovers-stage.caasbbva.com/peru/491947_VISA-CORPORATE_front.png?width=120&height=76
+      - description: Back face of the card
+        id: BACK_CARD
+        url: /imageBack.jpg
+      numberType:
+        description: Permanent Account Number
+        id: PAN
+      brandAssociation:
+        description: VISA
+        id: VISA
+      blocks: []
+      physicalSupport:
+        description: Plástico normal
+        id: NORMAL_PLASTIC
+      cardType:
+        description: Tarjeta de crédito
+        id: CREDIT_CARD
+      disposedBalance:
+        currentBalances:
+        - amount: 1000000
+          currency: MXN
+        pendingBalances:
+        - amount: 0
+          currency: MXN
+        postedBalances:
+        - amount: 1000000
+          currency: MXN
+      indicators:
+      - description: Pagar tarjeta
+        id: DESTINATION_TRANSFER_FROM_ACCOUNT
+        isActive: 'true'
+      - description: Avance en línea
+        id: ORIGIN_TRANSFER_TO_ACCOUNT
+        isActive: 'true'
+      - description: Bloquear tarjeta
+        id: BLOCKABLE
+        isActive: 'true'
+      - description: Ver CVV
+        id: SECURITY_DATA_READ
+        isActive: 'true'
+      - description: Editar alias
+        id: EDITABLE_ALIAS
+        isActive: 'true'
+      availableBalance:
+        currentBalances:
+        - amount: 2000000
+          currency: MXN
+        pendingBalances:
+        - amount: 0
+          currency: MXN
+        postedBalances:
+        - amount: 2000000
+          currency: MXN
+      number: '4555457083071201'
+      grantedCredits:
+      - amount: 3000000
+        currency: MXN
+      bank:
+        name: BBVA Mexico
+        id: '504'
+      cutOffDate: '2016-10-01T12:00:00Z'
+      paymentMethods:
+      - nextPaymentDate: '2017-07-05T12:00:00Z'
+        description: Pago mínimo
+        id: MINIMUM_AMOUNT_PAYMENT
+        monetaryPayments:
+        - amount: 50000
+          currency: MXN
+      - nextPaymentDate: '2017-07-05T12:00:00Z'
+        description: Pago para no generar intereses
+        id: MINIMUM_AMOUNT_TO_AVOID_INTEREST_PAYMENT
+        monetaryPayments:
+        - amount: 0
+          currency: MXN
+      - nextPaymentDate: '2017-07-05T12:00:00Z'
+        description: Deuda de este mes
+        id: LAST_PERIOD_AMOUNT_PAYMENT
+        monetaryPayments:
+        - amount: 70000
+          currency: MXN
+      - nextPaymentDate: '2017-07-05T12:00:00Z'
+        description: Saldo al corte
+        id: TOTAL_AMOUNT_PAYMENT
+        monetaryPayments:
+        - amount: 75000
+          currency: MXN
+      alias: comprobar máximo de caracteres
+      id: '1201'
+      activationDate: '2016-07-01T13:32:02Z'
+      issueDate: '2016-07-01T12:05:13Z'
+      openingDate: '2016-07-01T11:31:45Z'
+      expirationDate: '**/**'
+      currencies:
+      - isMajor: true
+        currency: MXN
+      status:
+        id: OPERATIVE
+    :headers:
+      access-control-allow-origin: '*'
+      content-length: '4104'
+      Access-Control-Expose-Headers: tsec, vnd.bbva.access-token-type,vnd.bbva.access-token,
+        authenticationtype, authenticationdata, authenticationstate
+      Server: artichoke
+      Alt-Svc: clear
+      access-control-allow-headers: Content-Type, tsec, authenticationtype, authenticationdata,
+        authenticationstate, contactid, consumeruuid, consumerapplicationid, perimetertsec,
+        authorization, responsewarningcode, responsewarningdescription, cuf, field,
+        bcs-device-app-version, bcs-device-app-version
+      content-type: application/json;charset=UTF-8
+      Vary: Accept-Encoding
+      tsec: 9ff90f41366cbdfa3ccb065551a180d40f42b83f
+      X-Response-Time: 465ms
+      Date: Fri, 16 Apr 2021 07:10:56 GMT
+      Via: 1.1 google
+    :status: 200 OK
+    apiInfo:
+      name: cards
+      category: products
+      version: 0.19.0

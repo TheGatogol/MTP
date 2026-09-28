@@ -1,0 +1,139 @@
+when:
+  sequence: 1
+  path: /SRVS_A02/cards/v2/cards/1206
+  method: GET
+  backend: glomo
+request:
+  headers:
+    sec-fetch-mode: cors
+    content-length: '0'
+    referer: http://127.0.0.1:9090/
+    sec-fetch-site: cross-site
+    accept-language: es
+    origin: http://127.0.0.1:9090
+    x-forwarded-for: 10.23.124.100
+    tsec: 48f08737ae152eb40283d95aa5b0e17b0e681eb3
+    via: 1.1 tunnel-5b97b979-d4a5-4290-b81a-51520b1ebd4b (squid/3.5.27)
+    accept: application/json, text/html, */*; q=0.1
+    sec-ch-ua: '" Not;A Brand";v="99", "Google Chrome";v="91", "Chromium";v="91"'
+    sec-ch-ua-mobile: ?0
+    x-vbank-session: ae7b6cf3-4ea6-4d14-87b9-b3856eef54c3
+    host: localhost:9000
+    content-type: application/json
+    cache-control: no-cache, no-store, must-revalidate
+    accept-encoding: gzip
+    sec-fetch-dest: empty
+    user-agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko)
+      Chrome/91.0.4472.77 Safari/537.36
+  query:
+    expand: payment-methods,blocks,indicators
+then:
+- return:
+    data:
+      product:
+        name: BBVA Blue 6
+        id: VN
+      holderName: Carlos Santana
+      images:
+      - description: Front face of the card
+        id: FRONT_CARD
+        url: https://openapi.bbva.com/ccds/covers?pg=0T00000225&bin=554629&default_image=true&v=4&width=303&height=192&country=mx&app_id=com.bbva.wallet&issue_date=20160601
+      - description: Back face of the card
+        id: BACK_CARD
+        url: /imageBack.jpg
+      numberType:
+        description: Permanent Account Number
+        id: PAN
+      brandAssociation:
+        description: VISA
+        id: VISA
+      blocks: []
+      physicalSupport:
+        description: Plástico normal
+        id: NORMAL_PLASTIC
+      cardType:
+        description: Crédito Bancomer
+        id: CREDIT_CARD
+      disposedBalance:
+        currentBalances:
+        - amount: 20000
+          currency: MXN
+        pendingBalances:
+        - amount: 0
+          currency: MXN
+        postedBalances:
+        - amount: 15000
+          currency: MXN
+      indicators: []
+      availableBalance:
+        currentBalances:
+        - amount: 60000
+          currency: MXN
+        pendingBalances:
+        - amount: 50000
+          currency: MXN
+        postedBalances:
+        - amount: 15000
+          currency: MXN
+      number: '*71206'
+      grantedCredits:
+      - amount: 36000
+        currency: MXN
+      bank:
+        name: BBVA Bancomer
+        id: 549300WIWQK5Q9MCUN92
+      cutOffDate: '2017-12-09T12:00:00Z'
+      paymentMethods:
+      - nextPaymentDate: '2017-07-05T12:00:00Z'
+        description: Pago mínimo
+        id: MINIMUM_AMOUNT_PAYMENT
+        monetaryPayments:
+        - amount: 50000
+          currency: MXN
+      - nextPaymentDate: '2017-07-05T12:00:00Z'
+        description: Deuda de este mes
+        id: LAST_PERIOD_AMOUNT_PAYMENT
+        monetaryPayments:
+        - amount: 70000
+          currency: MXN
+      - nextPaymentDate: '2017-07-05T12:00:00Z'
+        description: Saldo al corte
+        id: TOTAL_AMOUNT_PAYMENT
+        monetaryPayments:
+        - amount: 75000
+          currency: MXN
+      alias: Tarjeta 1206
+      id: '1206'
+      simpleCode: '1206'
+      activationDate: '2017-10-01T14:11:31Z'
+      issueDate: '2017-10-01T12:55:22Z'
+      openingDate: '2017-10-01T12:44:22Z'
+      expirationDate: '**/**'
+      currencies:
+      - isMajor: true
+        currency: MXN
+      status:
+        id: OPERATIVE
+    :headers:
+      access-control-allow-origin: '*'
+      content-length: '3216'
+      Access-Control-Expose-Headers: tsec, vnd.bbva.access-token-type,vnd.bbva.access-token,
+        vnd.bbva.sso-pkcs7, authenticationtype, authenticationdata, authenticationstate,
+        authenticationchallenge
+      Server: artichoke
+      Alt-Svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      access-control-allow-headers: Content-Type, tsec, authenticationtype, authenticationdata,
+        authenticationstate, contactid, consumeruuid, consumerapplicationid, perimetertsec,
+        authorization, responsewarningcode, responsewarningdescription, cuf, field,
+        bcs-device-app-version, bcs-device-app-version, vnd.bbva.authorization
+      content-type: application/json;charset=UTF-8
+      Vary: Accept-Encoding
+      tsec: 48f08737ae152eb40283d95aa5b0e17b0e681eb3
+      X-Response-Time: 486ms
+      Date: Mon, 30 May 2022 06:55:05 GMT
+      Via: 1.1 google
+    :status: 200 OK
+    apiInfo:
+      name: cards
+      category: products
+      version: 0.19.0

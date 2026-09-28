@@ -1,0 +1,45 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: 3770df85-e718-44f4-9d77-4cb4e2931467
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: btrader2
+    lock: 'false'
+then:
+- return:
+    :body:
+    - data:
+        homeFutura: false
+        locale: es_mx
+        tags:
+        - btrader2
+        products:
+          btraderContract:
+          - name: BR
+            id: Td-tykaA8AoUq6PeOSi92ruTbofDiqVY-uGA56G2HK-xxq1ZdfWKNA
+        authentication:
+          password: Glomo2025
+          user: '5568535899'
+          deviceId: 06259DD1E4603F4569F88283E3D7D07D
+      lockExpiration: null
+      lockType: null
+      id: 35969739
+    :headers:
+      content-length: '334'
+      Cache-Control: max-age=0
+      Connection: keep-alive
+      host: datamanager.globaldevtools.bbva.com
+      Vary: Accept-Encoding
+      Expires: Tue, 17 Jun 2025 23:48:39 GMT
+      Date: Tue, 17 Jun 2025 23:48:39 GMT
+      Content-Type: application/json; charset=utf-8
+    :status: 200 OK

@@ -1,0 +1,29 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users/2645934/locks/14962453
+  method: PATCH
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '13'
+    x-vbank-session: 1fbd5331-2d80-47a5-a33b-ef6159067023
+    host: localhost:9999
+    connection: keep-alive
+    content-type: application/json
+    accept: application/json
+  body:
+    timeout: 1
+then:
+- return:
+    :body: "<html>\r\n<head><title>504 Gateway Time-out</title></head>\r\n<body>\r\
+      \n<center><h1>504 Gateway Time-out</h1></center>\r\n<hr><center>nginx</center>\r\
+      \n</body>\r\n</html>\r\n"
+    :headers:
+      Server: nginx
+      ECS-Entry-Point-Zone: ext
+      Connection: keep-alive
+      Content-Length: '160'
+      Date: Tue, 25 Oct 2022 17:57:17 GMT
+      Content-Type: text/html
+    :status: 504 Gateway Time-out

@@ -1,0 +1,37 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: loan_relocation_financial_health_offer
+    lock: 'false'
+then:
+- return:
+    :body:
+    - data:
+        locale: es_mx
+        tags:
+        - loan_relocation_financial_health_offer
+        authentication:
+          password: Glomo2026
+          user: '4771802397'
+          deviceId: FEBE20B0339453AAF1CB15A61CBBB662
+      id: 36613200
+    :headers:
+      Server: nginx
+      Cache-Control: max-age=0
+      Connection: keep-alive
+      host: datamanager.globaldevtools.bbva.com
+      Expires: Thu, 06 Aug 2026 01:25:56 GMT
+      Content-Length: '201'
+      Date: Thu, 06 Aug 2026 01:25:56 GMT
+      Content-Type: application/json; charset=utf-8
+    :status: 200 OK

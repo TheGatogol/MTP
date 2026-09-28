@@ -1,0 +1,47 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: dc239a3c-5afe-4da8-86a7-0f3f10a288e1
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: parent_control_alternate
+    lock: 'false'
+then:
+- return:
+    :body:
+    - data:
+        locale: es_mx
+        tags:
+        - parent_control_alternate
+        - '5518516877'
+        products:
+          cards:
+          - number: '4152313980608546'
+            id: 9YK9GXzCWZ_gN3U-fgQGGSviIQ1PDxrif49A4JqoZPM
+          accounts:
+          - number: '00743607001504615799'
+            alias: CUENTA
+        authentication:
+          password: Password00
+          user: '5531661999'
+          deviceId: 269F57452C80341406234FEDB9D2C847
+      lockExpiration: null
+      lockType: null
+      id: 35793110
+    :headers:
+      content-length: '429'
+      Server: nginx
+      Connection: keep-alive
+      host: datamanager.globaldevtools.bbva.com
+      Vary: Accept-Encoding
+      Date: Wed, 16 Oct 2024 03:57:43 GMT
+      Content-Type: application/json
+    :status: 200 OK

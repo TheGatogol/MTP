@@ -1,0 +1,49 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: a1f12d8c-7748-4f85-9a8d-7e4c166fa6bb
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: with_expense_groups,accounts
+    lock: 'false'
+then:
+- return:
+    :body:
+    - data:
+        data:
+          name: MARIA JESUS
+        debtors:
+          data:
+          - name: MÓNICA
+          - name: LUIS ENRIQUE
+          - name: OLIBIA
+          - name: PATRICIA DEL ROCIO
+        locale: es_mx
+        tags:
+        - with_expense_groups
+        - accounts
+        authentication:
+          password: Glomo2024
+          user: '6141829586'
+          deviceId: 42EE7DA2FD9AE34536E5615B51DECF7C
+      lockExpiration: '2024-12-28T17:10:59.877674Z'
+      lockType: SHARED
+      id: 35993381
+    :headers:
+      content-length: '426'
+      Cache-Control: max-age=0
+      Connection: keep-alive
+      host: datamanager.globaldevtools.bbva.com
+      Vary: Accept-Encoding
+      Expires: Sat, 28 Dec 2024 17:10:31 GMT
+      Date: Sat, 28 Dec 2024 17:10:31 GMT
+      Content-Type: application/json; charset=utf-8
+    :status: 200 OK

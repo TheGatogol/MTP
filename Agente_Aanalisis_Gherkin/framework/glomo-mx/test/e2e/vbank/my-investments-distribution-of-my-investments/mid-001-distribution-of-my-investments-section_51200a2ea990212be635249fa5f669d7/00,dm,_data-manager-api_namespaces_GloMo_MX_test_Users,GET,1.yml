@@ -1,0 +1,65 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: 2e581877-f060-45ad-8ddd-55753b035e5a
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: user_with_investments
+    lock: 'false'
+then:
+- return:
+    :body:
+    - data:
+        homeFutura: false
+        locale: es_mx
+        tags:
+        - '5520797659'
+        - user_with_investments
+        - investments_follow_up
+        products:
+          investmentFunds:
+          - name: 0007si9364 - 00740680002051159364
+            funds:
+            - fundId: TD9hg7AQ_0awymjpF_jCLM6ZD0b0Xefc0Jjh-EHKbilKRaIHzv9i5Q
+            id: Td-tykaA8AqlOkhoI2Rlj8Au0hCksEWK
+        authentication:
+          password: Glomo2023
+          user: '5520797659'
+          deviceId: D06462476237F4799176386C96B537D3
+      lockType: null
+      lockExpiration: null
+      id: 36056489
+    - data:
+        tags:
+        - my_investments
+        - user_with_investments
+        - '5510211255'
+        products:
+          investmentFunds:
+          - name: Si8302
+            id: LCNm6SJt-4kBOh6jiC_k_hkZOptrtH-7
+        authentication:
+          password: Glomo2024
+          user: '5510211255'
+          deviceId: 1460E2F60AE99F9D2CFA8A655406A4FD
+      lockType: null
+      lockExpiration: null
+      id: 35691285
+    :headers:
+      content-length: '817'
+      Cache-Control: max-age=0
+      Connection: keep-alive
+      host: datamanager.globaldevtools.bbva.com
+      Vary: Accept-Encoding
+      Expires: Sat, 21 Jun 2025 04:47:22 GMT
+      Date: Sat, 21 Jun 2025 04:47:22 GMT
+      Content-Type: application/json; charset=utf-8
+    :status: 200 OK

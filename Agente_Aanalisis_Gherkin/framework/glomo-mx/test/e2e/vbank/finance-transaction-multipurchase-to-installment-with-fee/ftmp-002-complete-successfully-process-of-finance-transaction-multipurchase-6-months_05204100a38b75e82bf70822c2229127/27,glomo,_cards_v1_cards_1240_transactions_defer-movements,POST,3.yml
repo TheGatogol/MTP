@@ -1,0 +1,159 @@
+when:
+  sequence: 3
+  path: /SRVS_A02/cards/v1/cards/1240/transactions/defer-movements
+  method: POST
+  backend: glomo
+request:
+  headers:
+    sec-fetch-mode: cors
+    referer: http://localhost:8001/
+    content-length: '727'
+    sec-fetch-site: same-site
+    accept-language: en-US
+    origin: http://localhost:8001
+    authenticationtype: '05'
+    tsec: 811e7ca6f2cc8dcb18a5813eb66d01f3f6672254
+    accept: application/json, text/html, */*; q=0.1
+    authenticationdata: otp-sms=123456
+    sec-ch-ua: ''
+    sec-ch-ua-mobile: ?0
+    x-vbank-session: 0ac6acd1-844e-4ec9-8a94-f602046b439d
+    sec-ch-ua-platform: ''
+    host: localhost:9000
+    content-type: application/json
+    connection: keep-alive
+    cache-control: no-cache, no-store, must-revalidate
+    authenticationstate: e3b0c44298
+    accept-encoding: gzip, deflate, br
+    sec-fetch-dest: empty
+    user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36
+      (KHTML, like Gecko) HeadlessChrome/108.0.5359.124 Safari/537.36
+  body:
+    product:
+      description: Crédito BBVA Saldo a favor
+    installment:
+      offer:
+        id: '85'
+      firstInstallmentDate: '2022-06-23'
+      financingCalculationFormat:
+        unit:
+          number: 6
+          frequency: MONTHLY
+        id: TOTAL_AMOUNT_PAYMENT
+      rate:
+        itemizeRates:
+        - rateType: PREFERENTIAL
+          itemizeRatesUnit:
+            unitRateType: PERCENTAGE
+            percentage: 30
+          description: Tasa de interes para el finananciamiento en porcentaje
+        - rateType: CAT
+          itemizeRatesUnit:
+            unitRateType: PERCENTAGE
+            percentage: 59.99
+          description: CAT
+      specificAmounts:
+      - amount:
+          amount: 7500.32
+          currency: MXN
+        id: CAPITAL
+      financingType:
+        id: MONTHS_WITHOUT_INTERESTS
+    transactions:
+    - id: MXN0021
+    - id: MXN0022
+    - id: MXN0023
+then:
+- return:
+    data:
+      operationDate: '2022-12-16'
+      product:
+        description: Crédito BBVA Saldo a favor
+      installment:
+        offer:
+          id: '85'
+        firstInstallmentDate: '2022-06-23'
+        financingCalculationFormat:
+          unit:
+            number: 6
+            frequency: MONTHLY
+          id: TOTAL_AMOUNT_PAYMENT
+        rate:
+          itemizeRates:
+          - rateType: PREFERENTIAL
+            itemizeRatesUnit:
+              unitRateType: PERCENTAGE
+              percentage: 30
+            description: Tasa de interes para el finananciamiento en porcentaje
+          - rateType: CAT
+            itemizeRatesUnit:
+              unitRateType: PERCENTAGE
+              percentage: 59.99
+            description: CAT
+          - rateType: ANNUAL
+            itemizeRatesUnit:
+              unitRateType: PERCENTAGE
+              percentage: 49.99
+            description: Fixed annual interest rate
+          - rateType: REGULAR
+            itemizeRatesUnit:
+              unitRateType: PERCENTAGE
+              percentage: 60.96
+            description: Regular credit card interest rate
+        specificAmounts:
+        - amount:
+            amount: 7500.32
+            currency: MXN
+          id: CAPITAL
+        - amount:
+            amount: 3000.13
+            currency: MXN
+          id: INSTALLMENT_AMOUNT
+        - amount:
+            amount: 9000.38
+            currency: MXN
+          id: TOTAL
+        - amount:
+            amount: 1500.06
+            currency: MXN
+          id: AMOUNT_INTEREST
+        fee:
+          itemizeFees:
+          - feeType: DEFER_FEE_WITH_IVA
+            itemizeFeeUnit:
+              unitType: AMOUNT
+              amount: 750.03
+              currency: MXN
+        financingType:
+          id: MONTHS_WITHOUT_INTERESTS
+      folio: '3503332306'
+      id: '778'
+      transactions:
+      - id: MXN0021
+      - id: MXN0022
+      - id: MXN0023
+    :headers:
+      Server: artichoke
+      Alt-Svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      access-control-allow-headers: Content-Type, tsec, authenticationtype, authenticationdata,
+        authenticationstate, contactid, consumeruuid, consumerapplicationid, perimetertsec,
+        authorization, responsewarningcode, responsewarningdescription, cuf, field,
+        bcs-device-app-version, bcs-device-app-version, vnd.bbva.authorization
+      tsec: 811e7ca6f2cc8dcb18a5813eb66d01f3f6672254
+      X-Response-Time: 497ms
+      Date: Fri, 16 Dec 2022 13:14:04 GMT
+      Allow: HEAD
+      Via: 1.1 google
+      access-control-allow-origin: '*'
+      Access-Control-Expose-Headers: tsec, vnd.bbva.access-token-type,vnd.bbva.access-token,
+        vnd.bbva.sso-pkcs7, authenticationtype, authenticationdata, authenticationstate,
+        authenticationchallenge
+      Vary: Accept-Encoding
+      Content-Length: '1492'
+      Content-Type: application/json; charset=utf-8
+    :status: 200 OK
+    responseStatus: 200
+    apiInfo:
+      name: cards
+      category: products
+      version: 0.19.0

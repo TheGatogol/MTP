@@ -1,0 +1,48 @@
+when:
+  sequence: 1
+  path: /SRVS_A02/app-settings/v0/public-settings/GLOMO-MX-1.0-PROD
+  method: GET
+  backend: glomo
+request:
+  headers:
+    sec-fetch-mode: cors
+    content-length: '0'
+    referer: http://localhost:8001/
+    sec-fetch-site: same-site
+    accept-language: es-MX
+    origin: http://localhost:8001
+    accept: application/json, text/html, */*; q=0.1
+    sec-ch-ua: '"Not_A Brand";v="8", "Chromium";v="120", "Google Chrome";v="120"'
+    sec-ch-ua-mobile: ?0
+    x-vbank-session: 4676c822-4eb8-460d-8be5-b7aed89cc604
+    sec-ch-ua-platform: '"Linux"'
+    host: localhost:9000
+    content-type: application/json
+    connection: keep-alive
+    cache-control: no-cache, no-store, must-revalidate
+    accept-encoding: gzip, deflate, br
+    sec-fetch-dest: empty
+    user-agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko)
+      Chrome/120.0.0.0 Safari/537.36
+  query:
+    key: sustainability_carbon_footprint
+then:
+- return:
+    data:
+    - value: '{"data":{"texts":{"alerts":{"noTransactionsAlert":{"titleId":"noFootprintTitle","micro":"emptystateday","useAltDescription":true,"ambient":"dark","possibleActions":[{"subtitleId":"noFootprintSubtitle","questionId":"suggestions","actions":["bringReceipts","payWithCard","pfmRecategorization"],"rules":[{"id":"appHasBringReceiptsFeature","value":true}]},{"subtitleId":"noFootprintSubtitle","questionId":"suggestions","actions":["payReceipts","domicileReceipts","payWithCard"],"rules":[{"id":"appHasBringReceiptsFeature","value":false},{"id":"clientHasCard","value":true}]},{"subtitleId":"noFootprintSubtitle","questionId":"suggestions","actions":["domicileReceipts","viewCards","payReceipts"],"rules":[{"id":"appHasBringReceiptsFeature","value":false},{"id":"clientHasCard","value":false}]}]},"noElectricityCategory":{"titleId":"noElectricityTitle","micro":"searchticket","possibleActions":[{"subtitleId":"needElectricityReceiptsSubtitle","questionId":"bringElectricityReceiptsQuestion","actions":["bringReceipts","pfmRecategorization"],"rules":[{"id":"appHasBringReceiptsFeature","value":true}]},{"subtitleId":"needElectricityExpensesSubtitle","questionId":"payElectricityReceiptsQuestion","actions":["payReceipts","domicileReceipts"],"rules":[{"id":"appHasBringReceiptsFeature","value":false},{"id":"appHasPayInAppFeature","value":true}]},{"subtitleId":"needElectricityExpensesSubtitle","questionId":"payElectricityReceiptsQuestion","actions":["domicileReceipts"],"rules":[{"id":"appHasBringReceiptsFeature","value":false},{"id":"appHasPayInAppFeature","value":false}]}]},"noGasCategory":{"titleId":"noGasTitle","micro":"searchticket","possibleActions":[{"subtitleId":"needGasReceiptsSubtitle","questionId":"bringGasReceiptsQuestion","actions":["bringReceipts","pfmRecategorization"],"rules":[{"id":"appHasBringReceiptsFeature","value":true}]},{"subtitleId":"needGasExpensesSubtitle","questionId":"payGasReceiptsQuestion","actions":["payReceipts","domicileReceipts"],"rules":[{"id":"appHasBringReceiptsFeature","value":false},{"id":"appHasPayInAppFeature","value":true}]},{"subtitleId":"needGasExpensesSubtitle","questionId":"payGasReceiptsQuestion","actions":["domicileReceipts"],"rules":[{"id":"appHasBringReceiptsFeature","value":false},{"id":"appHasPayInAppFeature","value":false}]}]},"noFuelsCategory":{"titleId":"noFuelsTitle","micro":"searchticket","possibleActions":[{"subtitleId":"needFuelsExpensesSubtitle","questionId":"useCardFuelsQuestion","actions":["payWithCard","pfmRecategorization"],"rules":[{"id":"clientHasCard","value":true},{"id":"appHasRecategorization","value":true}]},{"subtitleId":"needFuelsExpensesSubtitle","questionId":"useCardFuelsQuestion","actions":["accept"],"rules":[{"id":"clientHasCard","value":true},{"id":"appHasRecategorization","value":false}]},{"subtitleId":"needFuelsExpensesSubtitle","questionId":"contractCardFuelsQuestion","actions":["viewCards"],"rules":[{"id":"clientHasCard","value":false}]}]},"noHomeCategory":{"titleId":"noHomeTitle","micro":"searchticket","possibleActions":[{"subtitleId":"needHomeReceiptsSubtitle","questionId":"bringHomeReceiptsQuestion","actions":["bringReceipts","pfmRecategorization"],"rules":[{"id":"appHasBringReceiptsFeature","value":true}]},{"subtitleId":"needHomeReceiptsSubtitle","questionId":"payHomeReceiptsQuestion","actions":["payReceipts","domicileReceipts"],"rules":[{"id":"appHasBringReceiptsFeature","value":false},{"id":"appHasPayInAppFeature","value":true}]},{"subtitleId":"needHomeReceiptsSubtitle","questionId":"payHomeReceiptsQuestion","actions":["domicileReceipts"],"rules":[{"id":"appHasBringReceiptsFeature","value":false},{"id":"appHasPayInAppFeature","value":false}]}]},"noFuelsAndOtherCategory":{"titleId":"noFuelsAndOtherTitle","micro":"searchticket","possibleActions":[{"subtitleId":"needFuelsAndOtherInfoSubtitle","questionId":"bringReceiptsUseYourCardFuelsQuestion","actions":["bringReceipts","pfmRecategorization"],"rules":[{"id":"appHasBringReceiptsFeature","value":true}]},{"subtitleId":"needFuelsAndOtherInfoSubtitle","questionId":"bringReceiptsUseYourCardFuelsQuestion","actions":["payReceipts","domicileReceipts","payWithCard"],"rules":[{"id":"appHasBringReceiptsFeature","value":false},{"id":"countryClientsMustHaveCardLinkedWithAccount","value":true}]},{"subtitleId":"needFuelsAndOtherInfoSubtitle","questionId":"bringReceiptsUseYourCardFuelsQuestion","actions":["domicileReceipts","payReceipts"],"rules":[{"id":"appHasBringReceiptsFeature","value":false},{"id":"countryClientsMustHaveCardLinkedWithAccount","value":false},{"id":"clientHasCard","value":true}]},{"subtitleId":"needFuelsAndOtherInfoSubtitle","questionId":"bringReceiptsUseCardFuelsQuestion","actions":["domicileReceipts","viewCards"],"rules":[{"id":"appHasBringReceiptsFeature","value":false},{"id":"countryClientsMustHaveCardLinkedWithAccount","value":false},{"id":"clientHasCard","value":false}]}]},"highFuelsEmmisions":{"titleId":"highFuelsTitle","micro":"speedometerhigh","groupAction":"transportation","possibleActions":[{"subtitleId":"highFuelsSubtitle","questionId":"highEmissionsQuestion","actions":["viewAdvices"],"rules":[]}]},"highGasEmmisions":{"titleId":"highGasTitle","micro":"speedometerhigh","groupAction":"heating","possibleActions":[{"subtitleId":"highGasSubtitle","questionId":"highEmissionsQuestion","actions":["viewAdvices"],"rules":[]}]},"highElectricityEmmisions":{"titleId":"highElectricityTitle","micro":"speedometerhigh","groupAction":"electricity","possibleActions":[{"subtitleId":"highElectricitySubtitle","questionId":"highEmissionsQuestion","actions":["viewAdvices"],"rules":[]}]},"highHomeEmmisions":{"titleId":"highHomeTitle","micro":"speedometerhigh","groupAction":"heating","possibleActions":[{"subtitleId":"highHomeSubtitle","questionId":"highEmissionsQuestion","actions":["viewAdvices"],"rules":[]}]},"highHomeAndFuelsEmmisions":{"titleId":"highHomeAndFuelsTitle","micro":"speedometerhigh","groupAction":"transportation","possibleActions":[{"subtitleId":"highHomeAndFuelsSubtitle","questionId":"highEmissionsQuestion","actions":["viewAdvices"],"rules":[]}]}},"actions":{"bringReceipts":{"icon":"bbvaTicket","titleId":"bringReceiptsActionTitle","descriptionId":"payElectricityGas"},"domicileReceipts":{"titleId":"domicileReceiptsActionTitle","descriptionId":"enablePayReceipts","altDescriptions":[{"textId":"payElectricityGas"}],"icon":"bbvaTicket","modal":{"titleId":"domicileYourReceipts","descriptionId":"domicileReceiptsExplanation","buttonTextId":"accept","icon":"bbvaInfo"}},"payReceipts":{"titleId":"payReceiptsActionTitle","descriptionId":"payReceiptsActionDescription","icon":"bbvaMobile","rule":{"id":"appHasPayInAppFeature","value":true}},"accept":{"titleId":"accept"},"viewCards":{"titleId":"viewCardsActionTitle","descriptionId":"viewCardsActionDescription","altDescriptions":[{"textId":"payReceiptsAndFuels"}],"icon":"bbvaCard"},"payWithCard":{"titleId":"payWithCardActionTitle","descriptionId":"payReceiptsAndFuels","altDescriptions":[{"linkedWith":"bringReceipts","textId":"useCardFuels"},{"linkedWith":"domicileReceipts","textId":"payReceiptsAndFuels"}],"icon":"bbvaCard","rule":{"id":"appHasPayInAppFeature","value":true},"disableLink":true},"viewAdvices":{"titleId":"viewAdvicesActionTitle"},"pfmRecategorization":{"titleId":"pfmRecategorizationActionTitle","descriptionId":"pfmRecategorizationActionDescription","icon":"bbvaSales","rule":{"id":"appHasRecategorization","value":true}}},"recommendations":{"home-heat-boiler":{"url":"","isEnabled":true},"home-elec-leds":{"url":"","isEnabled":true},"tran-fuel-eco-trans":{"url":"","isEnabled":true},"home-heat-window":{"url":"","isEnabled":true},"circ-econ-comsuption":{"url":"","isEnabled":true},"home-elec-newappl":{"url":"","isEnabled":true},"circ-econ-earthcare":{"url":"","isEnabled":true},"home-elec-appliance":{"url":"","isEnabled":true},"home-elec-devices":{"url":"","isEnabled":true},"home-heat-temp":{"url":"","isEnabled":true},"tran-fuel-elec-car":{"url":"","isEnabled":true},"home-elec-panels":{"url":"","isEnabled":true}}}}}'
+      key: sustainability_carbon_footprint
+    :headers:
+      content-length: '9101'
+      x-amz-apigw-id: QROFfHDBIAMEPZA=
+      Access-Control-Allow-Origin: '*'
+      X-Amz-Cf-Pop: QRO51-P1
+      Connection: keep-alive
+      X-Amzn-Trace-Id: Root=1-65839089-34c53a77638cfb070af4ec3a;Sampled=0;lineage=c028ff5a:0
+      Date: Tue, 26 Dec 2023 21:14:30 GMT
+      ETag: '"50371C1E9AC73DBEB5593BEFB97A1CEF3A452F5B"'
+      x-amzn-RequestId: 48d7c28a-4e17-4595-859d-57bdf91303b3
+      X-Amz-Cf-Id: _7yU3y1micdtXOSWejRT9QzhdY0QJWdiwLT8SBBqh5rFPP4uPYNR5w==
+      Vary: Accept-Encoding
+      Set-Cookie: vbank-session=4676c822-4eb8-460d-8be5-b7aed89cc604
+      Content-Type: application/json; charset=UTF-8
+    :status: 200 OK

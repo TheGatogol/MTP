@@ -1,0 +1,95 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: 5c833787-eefe-4254-88be-237417bef13f
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: user_with_home_futura
+    lock: 'false'
+then:
+- return:
+    :body:
+    - data:
+        messagesGroupRequest:
+          accountAlias:
+          - ¿Cuál es alias de mi cuenta?
+          - '0424'
+          allAccountDetails:
+          - Quiero ver todos los detalles de mi cuenta de ahorro
+          - terminación 0424
+          editAccountAlias:
+          - Quiero editar el alias de mi cuenta
+          - OPCION 5
+          - CUENTA EXTRANJERA
+          accountParticipants:
+          - ¿Quienes son los intervinientes de mi cuenta?
+          - '0424'
+          contractProducts:
+            turnOffDebitCard:
+            - Quiero la tarjeta con terminación 2667
+            creditCardStatement:
+            - Quiero la tarjeta con terminación 7818
+            inactiveDebitCard:
+            - Quiero la tarjeta con terminación 3761
+            inactiveCreditCard:
+            - Quiero la tarjeta con terminación 0361
+            debitCard:
+            - Quiero la tarjeta con terminación 2461
+            turnOffCreditCard:
+            - Quiero la tarjeta con terminación 9455
+            blockedCreditCard:
+            - Quiero la tarjeta con terminación 9455
+            accountStatement:
+            - Quiero la tarjeta con terminación 7022
+            creditCard:
+            - Quiero la tarjeta con terminación 9455
+            blockedDebitCard:
+            - Quiero la tarjeta con terminación 3811
+          editAccountDetails:
+          - Quiero editar los detalles de mi cuenta
+          - '0424'
+          clabe:
+          - CLABE
+          - '0424'
+          mainAccountDetails:
+          - ¿cuales son los datos principales de mi cuenta?
+          - 0002AH1985
+          - CLABE
+          swift:
+          - Swift
+          - '0424'
+          someAccountDetails:
+          - Quiero ver Alias, CLABE Y código SWIFT
+          - 0002AH1985
+        tags:
+        - '5569632074'
+        - card_blocked
+        - user_with_pending_activation_card
+        - user_with_physical_credit_card
+        - user_with_physical_debit_card
+        - user_with_home_futura
+        authentication:
+          password: Glomo2024
+          user: '5569632074'
+          deviceId: C5DAFDB995384400B4FAFBFC4F22C40F
+      id: 36057009
+      lockType: null
+      lockExpiration: null
+    :headers:
+      content-length: '1688'
+      Cache-Control: max-age=0
+      Connection: keep-alive
+      host: datamanager.globaldevtools.bbva.com
+      Vary: Accept-Encoding
+      Expires: Tue, 05 Aug 2025 22:29:53 GMT
+      Date: Tue, 05 Aug 2025 22:29:53 GMT
+      Content-Type: application/json; charset=utf-8
+    :status: 200 OK

@@ -1,0 +1,68 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: aHd4eTFma3gwNTpLbVJleHhqenRZOWJ5RVF5MkpXZWsxcG8yRnhvQ1JHbzMzZXJ2dXB5
+    content-length: '0'
+    x-vbank-session: 104f0d51-dd20-4c25-b743-35336c73211d
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: investment_funds,multiple_funds
+then:
+- return:
+    :body:
+    - data:
+        tags:
+        - multiple_funds
+        - investment_funds
+        products:
+          investmentFunds:
+          - originalProduct:
+              fundId: Uvn6wi1Rh6AfdBLy0GPRyFin_Jm84Jyt
+              title:
+                name: Fondo de Inversión
+            name: CAMBIE NOMBRE INVERS
+            description:
+              masked: true
+              value: '00740010002050531537'
+            funds:
+            - netAssetValue:
+                amount: 21.535375
+                currency: MXN
+              fundId: R5JA7KYtjg8U2h-oNK8xcubmyaLa0q4XJxXJDS00sf01Er-p1_JewQ
+              serie: GB
+              fundPosition:
+                amount: 43.07
+                currency: MXN
+              numberFormats: []
+              title:
+                name: LIQUIDEZ DÓLARES
+                id: BBVADOL
+              ownedShares: 2
+            id: Uvn6wi1Rh6AfdBLy0GPRyFin_Jm84Jyt
+            primaryAmount:
+              amount: 43.16
+              currency: MXN
+              label: Saldo actual
+            currencies: []
+        authentication:
+          password: glomo2020
+          user: '5514160062'
+      id: 1454043
+      lockType: null
+      lockExpiration: null
+    :headers:
+      content-length: '866'
+      Strict-Transport-Security: max-age=15724800; includeSubDomains
+      Server: nginx
+      ECS-Entry-Point-Zone: ext
+      Connection: keep-alive
+      Vary: Accept-Encoding
+      Date: Tue, 31 Aug 2021 17:16:45 GMT
+      Content-Type: application/json
+    :status: 200 OK

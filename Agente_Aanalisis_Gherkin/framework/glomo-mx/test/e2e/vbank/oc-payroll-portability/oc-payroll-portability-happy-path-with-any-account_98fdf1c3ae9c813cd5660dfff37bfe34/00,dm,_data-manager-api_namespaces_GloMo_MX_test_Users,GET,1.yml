@@ -1,0 +1,128 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: 26ac981e-6580-4910-a2be-23c9d47d8b75
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: oc_payroll_portability_multi_accounts
+    lock: 'false'
+then:
+- return:
+    :body:
+    - data:
+        otp: '12345678'
+        tags:
+        - ocPayrollPortabilityMultiAccounts
+        - oc_payroll_portability_multi_accounts
+        products:
+          accounts:
+          - number: '00740010001502068448'
+            product:
+              name: Cuenta de Ahorro
+              id: AH
+            numberType:
+              id: CCC
+            alias: 0003AH1345
+            id: Uvn6wi1Rh6A2sDROminX8VtKy7lFOgrKQXysqvZMiCG4E-R-si1h0A
+            detail:
+              level: '04'
+              specificAmounts:
+              - amounts:
+                - amount: 999999999855
+                  currency: MXN
+                name: Saldo actual
+                id: CURRENT_BALANCE
+              - amounts:
+                - amount: 0
+                  currency: MXN
+                name: Saldo buen cobro
+                id: PENDING_DEPOSIT_BALANCE
+              indicators:
+              - name: Indica si la cuenta es de nómina
+                id: IS_PAYROLL_ACCOUNT
+                isActive: false
+              - name: Indica si la cuenta es eje
+                id: IS_PRINCIPAL_ACCOUNT
+                isActive: true
+              - name: Indica si la cuenta tiene pockets
+                id: HAS_POCKETS
+                isActive: false
+              - name: Indica si la cuenta es digital
+                id: IS_DIGITAL
+                isActive: false
+            productType: ACCOUNT
+            status:
+              name: Cuenta Activa
+              id: ACTIVE
+            subProductType:
+              name: TARJETA NOMINA BASIC
+              id: '0230'
+            signedAuthorization: {}
+          - number: '00740010001502069436'
+            product:
+              name: Cuenta de Ahorro
+              id: AH
+            numberType:
+              id: CCC
+            alias: 0005AH2164
+            id: Uvn6wi1Rh6A2sDROminX8Ys9ZaRwVKKx3ObIPUPi0r3I-A--Y3bFmQ
+            detail:
+              level: '04'
+              specificAmounts:
+              - amounts:
+                - amount: 0
+                  currency: MXN
+                name: Saldo actual
+                id: CURRENT_BALANCE
+              - amounts:
+                - amount: 0
+                  currency: MXN
+                name: Saldo buen cobro
+                id: PENDING_DEPOSIT_BALANCE
+              indicators:
+              - name: Indica si la cuenta es de nómina
+                id: IS_PAYROLL_ACCOUNT
+                isActive: false
+              - name: Indica si la cuenta es eje
+                id: IS_PRINCIPAL_ACCOUNT
+                isActive: false
+              - name: Indica si la cuenta tiene pockets
+                id: HAS_POCKETS
+                isActive: false
+              - name: Indica si la cuenta es digital
+                id: IS_DIGITAL
+                isActive: false
+            productType: ACCOUNT
+            status:
+              name: Cuenta Activa
+              id: ACTIVE
+            subProductType:
+              name: TARJETA NOMINA BASIC
+              id: '0230'
+            signedAuthorization: {}
+        authentication:
+          password: Glomo2023
+          user: '4891220273'
+          deviceId: 765C08FE853B93FA04E903E97B236B71
+      id: 3482055
+      lockType: null
+      lockExpiration: null
+    :headers:
+      content-length: '276'
+      Strict-Transport-Security: max-age=15768000
+      Server: nginx
+      ECS-Entry-Point-Zone: ext
+      Connection: keep-alive
+      host: datamanager.globaldevtools.bbva.com
+      Vary: Accept-Encoding
+      Date: Wed, 17 Jan 2024 02:16:59 GMT
+      Content-Type: application/json
+    :status: 200 OK

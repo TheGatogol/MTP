@@ -1,0 +1,41 @@
+when:
+  sequence: 5
+  path: /SRVS_A02/loyalty/v0/rewards
+  method: GET
+  backend: glomo
+request:
+  headers:
+    content-length: '0'
+    contactid: 15282fb8-cb3d-4ad9-b454-fde5f04d7ea7
+    host: localhost:9000
+    connection: Keep-Alive
+    content-type: application/json
+    tsec: 3dbcabd899b089784e5e4c029e79a85b0cd26777
+    cache-control: no-cache
+    accept-encoding: gzip
+    user-agent: GLOMO_MX/99.99.99 (Android;12;Google sdk_gphone64_arm64)
+    accept: application/json, text/html, */*; q=0.1
+  query:
+    billingPeriod: OPEN_PERIOD
+    contract.id: '0163'
+then:
+- return:
+    :body: Cannot read property 'filter' of undefined
+    :headers:
+      access-control-allow-origin: '*'
+      content-length: '42'
+      Access-Control-Expose-Headers: tsec, vnd.bbva.access-token-type,vnd.bbva.access-token,
+        vnd.bbva.sso-pkcs7, authenticationtype, authenticationdata, authenticationstate,
+        authenticationchallenge
+      Server: artichoke
+      Alt-Svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      access-control-allow-headers: Content-Type, tsec, authenticationtype, authenticationdata,
+        authenticationstate, contactid, consumeruuid, consumerapplicationid, perimetertsec,
+        authorization, responsewarningcode, responsewarningdescription, cuf, field,
+        bcs-device-app-version, bcs-device-app-version, vnd.bbva.authorization, device-id
+      content-type: text/plain;utf-8
+      tsec: 3dbcabd899b089784e5e4c029e79a85b0cd26777
+      X-Response-Time: 2ms
+      Date: Wed, 30 Aug 2023 10:57:02 GMT
+      Via: 1.1 google
+    :status: 500 Internal Server Error

@@ -1,0 +1,42 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: 79e7002b-a6bd-4d79-a27d-b6779c63f153
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: sustainability_preapproved_car_loan_offer
+    lock: 'false'
+then:
+- return:
+    :body:
+    - data:
+        homeFutura: false
+        locale: es_mx
+        tags:
+        - sustainability
+        - sustainability_preapproved_car_loan_offer
+        authentication:
+          password: Glomo2023
+          user: '5534348390'
+          deviceId: B0D2BD10D313355448D49B2A95F89024
+      id: 35868723
+      lockType: null
+      lockExpiration: null
+    :headers:
+      content-length: '270'
+      Cache-Control: max-age=0
+      Connection: keep-alive
+      host: datamanager.globaldevtools.bbva.com
+      Vary: Accept-Encoding
+      Expires: Thu, 24 Jul 2025 22:43:00 GMT
+      Date: Thu, 24 Jul 2025 22:43:00 GMT
+      Content-Type: application/json; charset=utf-8
+    :status: 200 OK

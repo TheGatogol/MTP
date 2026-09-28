@@ -1,0 +1,73 @@
+when:
+  sequence: 1
+  path: /SRVS_A02/cards/v1/cards/3420/transactions/defer-movements/simulate
+  method: POST
+  backend: glomo
+request:
+  headers:
+    sec-fetch-mode: cors
+    referer: http://localhost:8001/
+    content-length: '228'
+    sec-fetch-site: same-site
+    accept-language: es-ES,es;q=0.9
+    origin: http://localhost:8001
+    tsec: 649f9b146b1a3600eff00b23c77bfd1ac98b121d
+    accept: application/json, text/html, */*; q=0.1
+    sec-ch-ua: '"Not?A_Brand";v="8", "Chromium";v="108", "Google Chrome";v="108"'
+    sec-ch-ua-mobile: ?0
+    x-vbank-session: ef16244b-e516-49b3-81c7-edb4fc24a5cb
+    sec-ch-ua-platform: '"macOS"'
+    host: localhost:9000
+    content-type: application/json
+    connection: keep-alive
+    cache-control: no-cache, no-store, must-revalidate
+    accept-encoding: gzip, deflate, br
+    sec-fetch-dest: empty
+    user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36
+      (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36
+  body:
+    capital:
+      amount: 1000
+      currency: MXN
+    installments:
+    - rate:
+        itemizeRates:
+        - rateType: SIMULATION
+          itemizeRatesUnit:
+            unitRateType: PERCENTAGE
+            percentage: 49.99
+    operationType:
+      id: DEFER_MULTIPURCHASE
+then:
+- return:
+    severity: FATAL
+    :headers:
+      access-control-allow-origin: '*'
+      content-length: '323'
+      Access-Control-Expose-Headers: tsec, vnd.bbva.access-token-type,vnd.bbva.access-token,
+        vnd.bbva.sso-pkcs7, authenticationtype, authenticationdata, authenticationstate,
+        authenticationchallenge
+      Server: artichoke
+      Alt-Svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      access-control-allow-headers: Content-Type, tsec, authenticationtype, authenticationdata,
+        authenticationstate, contactid, consumeruuid, consumerapplicationid, perimetertsec,
+        authorization, responsewarningcode, responsewarningdescription, cuf, field,
+        bcs-device-app-version, bcs-device-app-version, vnd.bbva.authorization
+      Vary: Accept-Encoding
+      tsec: 649f9b146b1a3600eff00b23c77bfd1ac98b121d
+      X-Response-Time: 478ms
+      Date: Fri, 16 Dec 2022 14:07:24 GMT
+      Content-Type: application/json; charset=utf-8
+      Via: 1.1 google
+    httpStatus: 500
+    errorMessage: Acceso denegado, cambio de estado progresando
+    systemErrorCode: stateChangeGoOn
+    errorCode: ''
+    messages:
+    - code: default
+      message: 500 Error
+      type: ERROR
+    :status: 500 Internal Server Error
+    http-status: 500
+    version: 1
+    systemErrorDescription: Acceso denegado, cambio de estado progresando

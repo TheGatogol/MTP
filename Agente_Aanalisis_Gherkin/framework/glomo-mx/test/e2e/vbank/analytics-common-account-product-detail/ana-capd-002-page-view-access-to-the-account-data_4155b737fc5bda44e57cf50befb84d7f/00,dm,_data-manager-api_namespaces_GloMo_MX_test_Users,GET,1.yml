@@ -1,0 +1,104 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: 736b3218-ce92-430d-8e10-c1fa3b19d5ce
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: common_account
+then:
+- return:
+    :body:
+    - data:
+        data:
+          operationDate: 2021-03-25T00:00:00.000-0600
+          indicatorId: CHECK_PROTECTION
+          operationNumber: '000035321'
+          name: Indicates the check protection status of the account.
+          isActive: true
+        locale: es_mx
+        tags:
+        - account_in_pesos
+        - has_1_check_deposited_rejected
+        - has_1_check_deposited_charged
+        - has_2_check_deposited_charged
+        - has_2_check_deposited_rejected
+        - has_2_check_deposited_different_days
+        - has_6_check_deposited
+        - has_1_check_accepted_out_of_6
+        - has_2_check_same_day_out_of_6
+        - has_1_check_from_amount_out_of_6
+        - has_at_least_1_check_deposit_rejected
+        - has_at_least_1_check_deposit_charged
+        - common_account
+        - account_transactions9
+        products:
+          cards: []
+          loans: []
+          accounts:
+          - number: '00740010000473325156'
+            product:
+              name: Cuenta de Cheques
+              id: CH
+            numberType:
+              id: CCC
+            alias: Cuenta
+            id: Uvn6wi1Rh6CBr7akGICGbq_2fLrq1P0jIMsQonJ6yPk3d8X07qPD2A
+            detail:
+              level: '04'
+              specificAmounts:
+              - amounts:
+                - amount: 100004797
+                  currency: MXN
+                name: Saldo actual
+                id: CURRENT_BALANCE
+              - amounts:
+                - amount: 0
+                  currency: MXN
+                name: Saldo buen cobro
+                id: PENDING_DEPOSIT_BALANCE
+              indicators:
+              - name: Indica si la cuenta es de nómina
+                id: IS_PAYROLL_ACCOUNT
+                isActive: false
+              - name: Indica si la cuenta es eje
+                id: IS_PRINCIPAL_ACCOUNT
+                isActive: false
+              - name: Indica si la cuenta tiene pockets
+                id: HAS_POCKETS
+                isActive: false
+              - name: Indica si la cuenta es digital
+                id: IS_DIGITAL
+                isActive: false
+            productType: ACCOUNT
+            status:
+              name: Cuenta Activa
+              id: ACTIVE
+            subProductType:
+              name: LIBRETON PREMIUM
+              id: '0200'
+            signedAuthorization: {}
+        authentication:
+          password: password
+          user: '5520794758'
+          deviceId: CF3458DF1372E1EFF2C6E495C84026A9
+      lockType: null
+      lockExpiration: null
+      id: 3020224
+    :headers:
+      content-length: '1916'
+      Strict-Transport-Security: max-age=15768000
+      Server: nginx
+      ECS-Entry-Point-Zone: ext
+      Connection: keep-alive
+      Vary: Accept-Encoding
+      Date: Wed, 03 Aug 2022 18:48:15 GMT
+      Content-Type: application/json
+    :status: 200 OK

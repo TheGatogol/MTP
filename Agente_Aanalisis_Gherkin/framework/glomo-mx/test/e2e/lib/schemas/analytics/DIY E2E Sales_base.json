@@ -1,0 +1,767 @@
+{
+    "$id": "analytics/DIY E2E Sales_base",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Glomo - Analyticis basic structure",
+    "type": "object",
+    "properties": {
+      "versionDL": {
+        "type": "string",
+        "description": "DataLayer version",
+        "const": "20250414_5.0"
+      },
+      "pageInstanceID": {
+        "type": "string",
+        "description": "Environment from appConfig",
+        "pattern": "^(de|qa)$"
+      },
+      "page": {
+        "type": "object",
+        "properties": {
+          "pageInfo": {
+            "type": "object",
+            "properties": {
+              "pageName": {
+                "type": "string",
+                "description": "A concatenation of several other values",
+                "pattern": "^app:(publica|privada):(personas|general|negocios|empresas|patrimonial|gobierno|corporativos|personal|empresas y gobierno)(:([A-Za-z0-9_\\- ¿?'])+)+$"
+              },
+              "pageMode": {
+                "type": "string"
+              },
+              "pageIntent": {
+                "type": "string",
+                "pattern": "^(informacion|transaccion|home)$"
+              },
+              "pageSegment": {
+                "type": "string",
+                "pattern": "^(personas|general)$"
+              },
+              "sysEnv": {
+                "type": "string",
+                "const": "app"
+              },
+              "version": {
+                "type": "string"
+              },
+              "channel": {
+                "type": "string",
+                "const": "online"
+              },
+              "language": {
+                "type": "string",
+                "pattern": "^(ES|EN)$"
+              },
+              "geoRegion": {
+                "type": "string",
+                "const": ""
+              },
+              "level1": {
+                "type": "string",
+                "description": "Must be always informed, min length is 1",
+                "pattern": "^[a-z0-9\\s]{1,}$"
+              },
+              "level2": {
+                "type": "string",
+                "pattern": "^[a-z0-9\\s]{0,}$"
+              },
+              "level3": {
+                "type": "string",
+                "pattern": "^[a-z0-9\\s]{0,}$"
+              },
+              "level4": {
+                "type": "string",
+                "pattern": "^[a-z0-9\\s]{0,}$"
+              },
+              "level5": {
+                "type": "string",
+                "pattern": "^[a-z0-9\\s]{0,}$"
+              },
+              "level6": {
+                "type": "string",
+                "pattern": "^[a-z0-9\\s]{0,}$"
+              },
+              "level7": {
+                "type": "string",
+                "pattern": "^[a-z0-9\\s]{0,}$"
+              },
+              "level8": {
+                "type": "string",
+                "pattern": "^[a-z0-9\\s]{0,}$"
+              },
+              "level9": {
+                "type": "string",
+                "pattern": "^[a-z0-9\\s]{0,}$"
+              },
+              "level10": {
+                "type": "string",
+                "pattern": "^[a-z0-9\\s]{0,}$"
+              },
+              "area": {
+                "type": "string",
+                "pattern": "^(publica|privada)$"
+              },
+              "server": {
+                "type": "string",
+                "pattern": "[a-z0-9]{1,}"
+              },
+              "businessUnit": {
+                "type": "string",
+                "const": "BBVA Mexico"
+              },
+              "siteAppName": {
+                "type": "string",
+                "const": "App BBVA Mexico"
+              },
+              "projectName": {
+                "type": "string",
+                "pattern": "^([a-zA-Z0-9\\s]{1,})$"
+              },
+              "errorPage": {
+                "type": "string",
+                "pattern": "^([a-z\\s]{0,})$"
+              }
+            },
+            "required": [
+              "pageName",
+              "pageIntent",
+              "pageSegment",
+              "sysEnv",
+              "version",
+              "channel",
+              "language",
+              "geoRegion",
+              "level1",
+              "level2",
+              "level3",
+              "level4",
+              "level5",
+              "level6",
+              "level7",
+              "level8",
+              "level9",
+              "level10",
+              "area",
+              "server",
+              "businessUnit",
+              "siteAppName",
+              "projectName",
+              "errorPage"
+            ]
+          },
+          "pageActivity": {
+            "type": "object",
+            "properties": {
+              "search": {
+                "type": "object",
+                "properties": {
+                  "onSiteSearchResults": {
+                    "type": "string"
+                  },
+                  "onSiteSearchTerm": {
+                    "type": "string"
+                  },
+                  "onSiteSearchEnterTerm": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "onSiteSearchResults",
+                  "onSiteSearchTerm",
+                  "onSiteSearchEnterTerm"
+                ]
+              },
+              "link": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string",
+                    "pattern": "^([a-z\\s]{0,})$"
+                  },
+                  "url": {
+                    "type": "string",
+                     "pattern": "^([a-z\\s\\.]{0,})$"
+                  },
+                  "ext": {
+                    "type": "string",
+                     "pattern": "^([a-z]{0,})$"
+                  },
+                  "aux1": {
+                    "type": "string",
+                     "pattern": "^([a-z]{0,})$"
+                  },
+                  "aux2": {
+                    "type": "string",
+                     "pattern": "^([a-z]{0,})$"
+                  },
+                  "aux3": {
+                    "type": "string",
+                     "pattern": "^([a-z]{0,})$"
+                  }
+                },
+                "required": [
+                  "name",
+                  "url",
+                  "ext",
+                  "aux1",
+                  "aux2",
+                  "aux3"
+                ]
+              },
+              "video": {
+                "type": "object",
+                "properties": {
+                  "nameOfVideoDisplayed": {
+                    "type": "string",
+                    "pattern": "^([a-z]{0,})$"
+                  },
+                  "duration": {
+                    "type": "string",
+                    "pattern": "^[a-z0-9\\s]{0,}$"
+                  },
+                  "id": {
+                    "type": "string"
+                  },
+                  "player": {
+                    "type": "string"
+                  },
+                  "quality": {
+                    "type": "string"
+                  },
+                  "url": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "nameOfVideoDisplayed"
+                ]
+              },
+              "audio": {
+                "type": "object",
+                "properties": {
+                  "nameOfPodcastDisplayed": {
+                    "type": "string",
+                    "pattern": "^([a-z]{0,})$"
+                  },
+                  "duration": {
+                    "type": "string",
+                    "pattern": "^[a-z0-9\\s]{0,}$"
+                  },
+                  "id": {
+                    "type": "string"
+                  },
+                  "player": {
+                    "type": "string"
+                  },
+                  "quality": {
+                    "type": "string"
+                  },
+                  "url": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "nameOfPodcastDisplayed"
+                ]
+              },
+              "loginType": {
+                "type": "string",
+                "description": "Should only be informed if action:Login, which cannot be tested right now.",
+                "pattern": "^$"
+              },
+              "loginError": {
+                "type": "string",
+                "pattern": "^$"
+              }
+            },
+            "required": [
+              "search",
+              "link",
+              "video",
+              "audio"
+            ]
+          }
+        },
+        "required": [
+          "pageInfo",
+          "pageActivity"
+        ]
+      },
+      "optimization": {
+        "type": "object",
+        "properties": {
+          "attributes": {
+            "type": "array",
+            "items": {}
+          },
+          "event": {
+            "type": "object",
+            "properties": {
+              "eventName": {
+                "type": "string"
+              },
+              "optimizationEvent": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "eventName",
+              "optimizationEvent"
+            ]
+          }
+        },
+        "required": [
+          "attributes",
+          "event"
+        ]
+      },
+      "customerExperience": {
+        "type": "object",
+        "properties": {
+          "attributes": {
+            "type": "array",
+            "items": {
+                "properties": {
+                    "space": {
+                        "type": "string"
+                    },
+                    "spaceID": {
+                        "type": "string"
+                    },
+                    "spacePlacement": {
+                        "type": "string"
+                    },
+                    "collection": {
+                        "type": "string"
+                    },
+                    "collectionID": {
+                        "type": "string"
+                    },
+                    "collectionPosition": {
+                        "type": "string"
+                    },
+                    "collectionStatus": {
+                        "type": "string"
+                    },
+                    "collectionStatusTimeChange": {
+                        "type": "string"
+                    },
+                    "collectionType": {
+                        "type": "string"
+                    },
+                    "collectionExecutor": {
+                        "type": "string"
+                    },
+                    "item": {
+                        "type": "string"
+                    },
+                    "itemID": {
+                        "type": "string"
+                    },
+                    "itemPosition": {
+                        "type": "string"
+                    },
+                    "itemCategory": {
+                        "type": "string"
+                    },
+                    "itemStatus": {
+                        "type": "string"
+                    },
+                    "itemStatusTimeChange": {
+                        "type": "string"
+                    },
+                    "contractID": {
+                        "type": "string"
+                    }
+                }
+            }
+          }
+        }
+      },
+      "internalCampaign": {
+        "type": "object",
+        "properties": {
+          "attributes": {
+            "type": "array",
+            "items": {}
+          },
+          "event": {
+            "type": "object",
+            "properties": {
+              "eventInfo": {
+                "type": "object",
+                "properties": {
+                  "eventName": {
+                    "type": "string",
+                    "pattern": "^(IntCmpClick|IntCmpClose)?$"
+                },
+                "siteActionName": {
+                    "type": "string"
+                  }
+                }
+              }
+            },
+            "required": [
+              "eventInfo"
+            ]
+          }
+        },
+        "required": [
+          "attributes",
+          "event"
+        ]
+      },
+      "user": {
+        "type": "object",
+        "properties": {
+          "device": {
+            "type": "object",
+            "properties": {
+              "userAgent": {
+                "type": "string"
+              },
+              "mobile": {
+                "type": "string"
+              },
+              "root": {
+                "type": "string",
+                "pattern": "^(root|no root)?$"
+              },
+              "mode": {
+                "type": "string"
+              },
+              "IPAddress": {
+                "type": "string"
+              },
+              "advertisingID": {
+                "type": "string"
+              },
+              "usabilityMethod": {
+                "type": "string"
+              },
+              "signType": {
+                "type": "string"
+              },
+              "discreetMode": {
+                "type": "string"
+              },
+              "push": {
+                "type": "object",
+                "properties": {
+                  "agreement": {
+                    "type": "string"
+                },
+                  "deactivationPlace": {
+                    "type": "string"
+                }
+                }
+              },
+              "biometry": {
+                "type": "object",
+                "properties": {
+                  "agreement": {
+                    "type": "string"
+                },
+                  "deactivationPlace": {
+                    "type": "string"
+                }
+                }
+              }
+            },
+            "required": [
+              "userAgent",
+              "mobile"
+            ]
+          },
+          "consent": {
+                "type": "object",
+                "properties": {
+                  "advertising": {
+                    "type": "string"
+                },
+                  "analytics": {
+                    "type": "string"
+                },
+                  "optimization": {
+                    "type": "string"
+                },
+                  "version": {
+                    "type": "string"
+                },
+                  "technique": {
+                    "type": "string"
+                }
+                }
+              },
+          "userScoring": {
+            "type": "string"
+          },
+          "userState": {
+            "type": "string",
+            "pattern": "^(logado|no logado)$"
+          },
+          "IDs": {
+            "type": "array",
+            "items": {
+                "required": [
+                            "profileID"
+                        ],
+              "properties": {
+                "platformCode": {
+                  "type": "string"
+                },
+                "profileID": {
+                  "type": "string"
+                },
+                "userID": {
+                  "type": "string"
+                },
+                "prospectID": {
+                  "type": "string",
+                  "const": ""
+                },
+                "affiliateCompanyID": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "e": {
+            "type": "string"
+          },
+          "p": {
+            "type": "string"
+          },
+          "gClientID": {
+            "type": "string"
+          },
+          "gSessionID": {
+            "type": "string"
+          },
+          "mClientID": {
+            "type": "string"
+          },
+          "secondaryCIF": {
+            "type": "string"
+          },
+          "segment": {
+            "type": "object",
+            "properties": {
+              "global": {
+                "type": "string",
+                "pattern": "003001"
+              },
+              "profile": {
+                "type": "string",
+                "pattern": "^[a-z\\s]{0,}$"
+              },
+              "collectiveID": {
+                "type": "string"
+              },
+              "digitalizationLevel": {
+                "type": "string"
+              },
+              "operativeArea": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "global",
+              "profile"
+            ]
+          },
+          "gender": {
+            "type": "string",
+            "pattern": "^(masculino|femenino|desconocido)?$"
+          },
+          "country": {
+            "type": "string"
+          },
+          "state": {
+            "type": "string",
+            "pattern": "^([a-z\\s]{0,})$"
+          },
+          "age": {
+            "type": "string",
+            "pattern": "^([1-9][0-9]?|10[0-9]|110)?$"
+          },
+          "civilStatus": {
+            "type": "string",
+            "const": ""
+          },
+          "educationLevel": {
+            "type": "string",
+            "const": ""
+          },
+          "jobType": {
+            "type": "string",
+            "const": ""
+          }
+        },
+        "required": [
+          "device",
+          "userState",
+          "IDs",
+          "segment",
+          "country",
+          "state",
+          "civilStatus",
+          "educationLevel",
+          "jobType"
+        ]
+      },
+      "application": {
+        "type": "object",
+        "properties": {
+          "transactionID": {
+            "type": "string",
+            "pattern": "^([0-9]{0,})$"
+          },
+          "application": {
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "string",
+                "pattern": "^(contratacion|formulario|operativa|consulta|simulador|alta clientes|autogestion)?$"
+              },
+              "name": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "type",
+              "name"
+            ]
+          },
+          "fulfillmentModel": {
+            "type": "string",
+            "pattern": "^(online|offline|online/offline)?$"
+          },
+          "typology": {
+            "type": "string",
+            "pattern": "^([a-zA-Z0-9\\s]{0,})$"
+          },
+          "programTypeHired": {
+            "type": "string",
+            "pattern": "^([a-z\\s]{0,})$"
+          },
+          "offer": {
+            "type": "string",
+            "pattern": "^([a-z\\s]{0,})$"
+          },
+          "operationNumber": {
+            "type": "string",
+            "pattern": "^([a-zA-Z0-9]{0,})$"
+          },
+          "process": {
+            "type": "string",
+            "pattern": "^([a-z\\s]{0,})$"
+          },
+          "step": {
+            "type": "string",
+            "pattern": "^([a-z0-9\\s]{0,})$"
+          },
+          "interactionLevel": {
+            "type": "string",
+            "pattern": "^([a-z0-9]{0,})$"
+          },
+          "isQualifiedVisits": {
+            "type": "string",
+            "pattern": "^(true|false)?$"
+          },
+          "isVerifiedIdentity": {
+            "type": "string"
+          },
+          "isActivatedProducts": {
+            "type": "string"
+          },
+          "state": {
+            "type": "string",
+            "pattern": "^(contratado|rechazado|finalizado|aprobado|en revision)?$"
+          },
+          "errorType": {
+            "type": "string",
+            "pattern": "^([a-z\\s]{0,})$"
+          },
+          "expenses": {
+            "type": "string",
+            "pattern": "^[0-9]{0,}$"
+          },
+          "customFields": {
+            "type": "string",
+            "pattern": "^([a-z:0-9\\s]{0,})|^$"
+          },
+          "globalApplication": {
+            "type": "string",
+            "pattern": "^([a-z:\\s]{0,})$"
+          },
+          "declinedReason": {
+            "type": "string"
+           },
+           "reviewReason": {
+            "type": "string"
+           }
+        },
+        "required": [
+          "transactionID",
+          "application",
+          "typology",
+          "programTypeHired",
+          "offer",
+          "operationNumber",
+          "process",
+          "step",
+          "interactionLevel",
+          "isQualifiedVisits",
+          "state",
+          "errorType",
+          "earnings",
+          "expenses",
+          "customFields",
+          "globalApplication"
+        ]
+      },
+      "products": {
+        "type": "object",
+        "properties": {
+          "attributes": {
+            "type": "array",
+            "items": {}
+          },
+          "productPortfolio": {
+            "type": "array",
+            "items": {}
+          }
+        },
+        "required": [
+          "attributes",
+          "productPortfolio"
+        ]
+      },
+      "activationTools": {
+        "type": "object",
+        "properties": {
+          "adobeAnalytics": {
+            "type": "string"
+          },
+          "googleAnalytics": {
+            "type": "string"
+          },
+          "meta": {
+            "type": "string"
+          },
+          "googleAds": {
+            "type": "string"
+          },
+          "adServer": {
+            "type": "string"
+          },
+          "mobileAttribution": {
+            "type": "string"
+          },
+          "feedback": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }

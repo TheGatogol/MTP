@@ -1,0 +1,47 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: 4bfdab38-6095-491f-86b0-fc3ee61078b8
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: btrader4
+    lock: 'false'
+then:
+- return:
+    :body:
+    - data:
+        homeFutura: false
+        data:
+          issuerSearch: APPLE
+        locale: es_mx
+        tags:
+        - btrader4
+        products:
+          btraderContract:
+          - name: 0003PT7824
+            id: Td-tykaA8AoUq6PeOSi92ijRYJwFD1Xx1SfYJo0_RaMUCoptlX6dNg
+        authentication:
+          password: Glomo2024
+          user: '5524936024'
+          deviceId: E2CDE0405D18C464050A6E5881F8695B
+      lockExpiration: '2025-01-14T01:35:11.284255Z'
+      lockType: SHARED
+      id: 36016617
+    :headers:
+      content-length: '406'
+      Cache-Control: max-age=0
+      Connection: keep-alive
+      host: datamanager.globaldevtools.bbva.com
+      Vary: Accept-Encoding
+      Expires: Tue, 14 Jan 2025 01:34:53 GMT
+      Date: Tue, 14 Jan 2025 01:34:53 GMT
+      Content-Type: application/json; charset=utf-8
+    :status: 200 OK

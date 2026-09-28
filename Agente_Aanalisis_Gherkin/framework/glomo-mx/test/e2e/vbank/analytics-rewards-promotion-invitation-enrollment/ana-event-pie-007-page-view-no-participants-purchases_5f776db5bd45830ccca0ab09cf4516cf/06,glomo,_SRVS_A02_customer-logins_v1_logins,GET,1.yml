@@ -1,0 +1,78 @@
+when:
+  sequence: 1
+  path: /SRVS_A02/customer-logins/v1/logins
+  method: GET
+  backend: glomo
+request:
+  headers:
+    sec-fetch-mode: cors
+    content-length: '0'
+    referer: http://localhost:8001/
+    sec-fetch-site: same-site
+    accept-language: es-MX,es;q=0.9
+    origin: http://localhost:8001
+    authenticationtype: '58'
+    tsec: 27780b72810b2c6b33acf5c8fc78efd24e6a1bcb
+    accept: application/json, text/html, */*; q=0.1
+    sec-ch-ua: '"Chromium";v="134", "Not:A-Brand";v="24", "Google Chrome";v="134"'
+    authenticationdata: deviceid=11111111
+    sec-ch-ua-mobile: ?0
+    x-vbank-session: e0e63c9d-d022-4827-9457-5ef72fc454ae
+    sec-ch-ua-platform: '"macOS"'
+    host: localhost:9000
+    content-type: application/json
+    connection: keep-alive
+    cache-control: no-cache, no-store, must-revalidate
+    accept-encoding: gzip, deflate, br, zstd
+    sec-fetch-dest: empty
+    user-agent: GLOMO_MX/99.99.99 (Android;14;Samsung)
+  query:
+    customerId: MX00740D0416401
+then:
+- return:
+    data:
+      classifications:
+      - id: ECONOMIC_SECTOR
+        sector:
+          subsector:
+            id: '32'
+          id: F
+        segments: []
+      bank:
+        id: '0074'
+        branch:
+          id: '0010'
+      identityDocument:
+        documentType:
+          id: I
+        documentNumber: '7061221'
+      taxpayerIdentification:
+        documentNumber: PICM661216I09
+      personType:
+        firstName: PABLO
+        lastName: VASQUEZ
+        secondLastName: VASQUEZ
+        gender:
+          id: M
+        birthData:
+          birthDate: '1990-11-29'
+        id: NATURAL
+      segments: []
+    :headers:
+      access-control-allow-origin: '*'
+      content-length: '462'
+      Access-Control-Expose-Headers: tsec, vnd.bbva.access-token-type,vnd.bbva.access-token,
+        vnd.bbva.sso-pkcs7, authenticationtype, authenticationdata, authenticationstate,
+        authenticationchallenge
+      Server: artichoke
+      access-control-allow-headers: Content-Type, tsec, authenticationtype, authenticationdata,
+        authenticationstate, contactid, consumeruuid, consumerapplicationid, perimetertsec,
+        authorization, responsewarningcode, responsewarningdescription, cuf, field,
+        bcs-device-app-version, bcs-device-app-version, vnd.bbva.authorization, device-id,
+        Bcs-Device-Os-Name, bcs-device-app-name, bcs-device-dpi, BCS-Device-Id
+      Connection: keep-alive
+      Vary: Accept-Encoding
+      X-Response-Time: 6ms
+      Date: Tue, 29 Apr 2025 06:15:12 GMT
+      Content-Type: application/json; charset=utf-8
+    :status: 200 OK

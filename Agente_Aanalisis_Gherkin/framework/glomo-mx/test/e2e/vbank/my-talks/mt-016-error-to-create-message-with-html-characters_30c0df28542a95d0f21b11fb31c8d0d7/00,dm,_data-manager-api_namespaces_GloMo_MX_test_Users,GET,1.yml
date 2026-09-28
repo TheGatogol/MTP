@@ -1,0 +1,49 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: 4bbc3fe2-0fb1-4bf3-81bc-82a256c68284
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: account_with_conversations_error_html_characters
+    lock: 'false'
+then:
+- return:
+    :body:
+    - data:
+        statusNew: new
+        searchSubject: prue
+        titleConversationHTML: <h1>Hola</h1>
+        statusResolved: resolved
+        locale: es_mx
+        statusDraft: draft
+        statusSent: sent
+        tags:
+        - account_with_conversations_error_html_characters
+        authentication:
+          password: Password00
+          user: '5562010365'
+          deviceId: 43ED14F1FCBF072F580C319A4671BD8B
+        titleConversation: titulo de prueba
+      lockType: null
+      lockExpiration: null
+      id: 3546694
+    :headers:
+      content-length: '463'
+      Strict-Transport-Security: max-age=15768000
+      Server: nginx
+      ECS-Entry-Point-Zone: ext
+      Connection: keep-alive
+      host: datamanager.globaldevtools.bbva.com
+      Set-Cookie: vbank-session=4bbc3fe2-0fb1-4bf3-81bc-82a256c68284
+      Vary: Accept-Encoding
+      Date: Tue, 20 Jun 2023 16:23:46 GMT
+      Content-Type: application/json
+    :status: 200 OK

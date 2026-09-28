@@ -1,0 +1,51 @@
+when:
+  sequence: 1
+  path: /SRVS_A02/cards/v1/cards/0001/activate
+  method: POST
+  backend: glomo
+request:
+  headers:
+    sec-fetch-mode: cors
+    referer: http://127.0.0.1:9090/
+    content-length: '124'
+    sec-fetch-site: cross-site
+    accept-language: es
+    origin: http://127.0.0.1:9090
+    x-forwarded-for: 10.23.100.250
+    tsec: 17bafd8e89b6c69231b5f217271d6f0d3878d90f
+    via: 1.1 tunnel-e0eeee9b-d405-4798-945d-081f6a636da2 (squid/3.5.27)
+    accept: application/json, text/html, */*; q=0.1
+    sec-ch-ua: '" Not;A Brand";v="99", "Google Chrome";v="91", "Chromium";v="91"'
+    sec-ch-ua-mobile: ?0
+    x-vbank-session: 6fcdf997-2031-4ccf-9de9-8dc4162d7642
+    host: localhost:9000
+    content-type: application/json
+    cache-control: no-cache, no-store, must-revalidate
+    accept-encoding: gzip
+    sec-fetch-dest: empty
+    user-agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko)
+      Chrome/91.0.4472.77 Safari/537.36
+  body:
+    id: CVV2
+    value: 0201B810EFD9EBAACA938D0948B1C774A0BEA00EF13C26122DF973A13BBCD0ACA873F8018B767CDB809CED66FD63E841D604
+then:
+- return:
+    :body: ''
+    :headers:
+      access-control-allow-origin: '*'
+      content-length: '0'
+      Access-Control-Expose-Headers: tsec, vnd.bbva.access-token-type,vnd.bbva.access-token,
+        vnd.bbva.sso-pkcs7, authenticationtype, authenticationdata, authenticationstate,
+        authenticationchallenge
+      Server: artichoke
+      Alt-Svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      access-control-allow-headers: Content-Type, tsec, authenticationtype, authenticationdata,
+        authenticationstate, contactid, consumeruuid, consumerapplicationid, perimetertsec,
+        authorization, responsewarningcode, responsewarningdescription, cuf, field,
+        bcs-device-app-version, bcs-device-app-version, vnd.bbva.authorization
+      Vary: Accept-Encoding
+      tsec: 17bafd8e89b6c69231b5f217271d6f0d3878d90f
+      X-Response-Time: 582ms
+      Date: Mon, 30 May 2022 06:49:21 GMT
+      Via: 1.1 google
+    :status: 204 No Content

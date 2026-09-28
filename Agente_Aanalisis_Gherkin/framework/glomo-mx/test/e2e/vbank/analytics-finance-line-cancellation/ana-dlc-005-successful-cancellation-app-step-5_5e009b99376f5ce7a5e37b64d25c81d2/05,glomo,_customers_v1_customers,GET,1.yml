@@ -1,0 +1,149 @@
+when:
+  sequence: 1
+  path: /SRVS_A02/customers/v1/customers
+  method: GET
+  backend: glomo
+request:
+  headers:
+    sec-fetch-mode: cors
+    content-length: '0'
+    referer: http://localhost:8001/
+    sec-fetch-site: same-site
+    accept-language: es-MX,es;q=0.9
+    origin: http://localhost:8001
+    authenticationtype: '58'
+    tsec: 412193cdf06f48974331288ab0ba5785fedd7bdd
+    accept: application/json, text/html, */*; q=0.1
+    authenticationdata: deviceid=11111111
+    sec-ch-ua: '"Not A(Brand";v="99", "Google Chrome";v="121", "Chromium";v="121"'
+    sec-ch-ua-mobile: ?0
+    x-vbank-session: 6ded0d84-2f94-4076-8a4d-349d401aca88
+    sec-ch-ua-platform: '"macOS"'
+    host: localhost:9000
+    content-type: application/json
+    connection: keep-alive
+    cache-control: no-cache, no-store, must-revalidate
+    accept-encoding: gzip, deflate, br
+    sec-fetch-dest: empty
+    user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36
+      (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36
+    query:
+      expand: indicators,classifications
+then:
+- return:
+    data:
+    - lastName: Santana
+      gender:
+        name: masculino
+        id: MALE
+      birthData:
+        country:
+          name: México
+          id: MX
+        city: Autlan
+        state:
+          name: Jalisco
+          id: JALISCO
+        birthDate: '1947-07-20T00:00:00.000Z'
+      nationalities:
+      - name: Mexicana
+        id: MX
+      indicators:
+      - indicatorId: ARCO
+        name: Indica si el cliente que ejerce sus derechos ARCO, solicitan la suspensión
+          del tratamiento de sus datos personales para todos los fines distintos de
+          los necesarios para el cumplimiento de la relación jurídica
+        isActive: false
+      - indicatorId: PAYROLL
+        name: ' Indica si el cliente tiene una nómina'
+        isActive: false
+      - indicatorId: EMPLOYEE
+        name: Indica si el cliente es empleado del banco
+        isActive: false
+      - indicatorId: ACTIVE_BIOMETRIC_ENROLLMENT
+        name: Indica si el cliente tiene activado enrolamiento biométrico
+        isActive: false
+      - indicatorId: DIGITAL_FIRM
+        name: Indica si el cliente tiene una firma digital
+        isActive: false
+      - indicatorId: BIOMETRIC_ENROLLMENT
+        name: Indicador si el cliente puede enrolar un biometrico
+        isActive: false
+      - indicatorId: REMOTE_MANAGER
+        name: Indica si el cliente contrata un servicio que consiste en tener a alguien
+          fisico o de forma remota que le ayuda a realizar las operaciones requeridas
+        isActive: false
+      - indicatorId: BANKER_ASSOCIATED
+        name: ' Indica si el cliente tiene un banquero físico asociado disponible
+          para realizar las operaciones bancarias requeridas'
+        isActive: false
+      - indicatorId: ENABLED_TO_DIRECT_DEBITS
+        name: Indica si el cliente tiene una prelación
+        isActive: false
+      - indicatorId: INSURANCE
+        name: Indica si el cliente tiene seguro contratado
+        isActive: false
+      suffix: JR
+      membershipDate: '1992-11-03T09:00:33Z'
+      firstName: Carlos
+      bank:
+        bankId: 549300WIWQK5Q9MCUN92
+        name: BBVA Bancomer
+        branch:
+          branchId: '33'
+          costCenter: '123'
+          name: Oficina 33
+      lastAccessDate: '2016-08-07T11:28:36.096Z'
+      customerId: W86cNgXoOlMZpOza4TkQxA
+      identityDocuments:
+      - country:
+          name: México
+          id: MX
+        documentType:
+          name: Documento Nacional de Identidad
+          id: DNI
+        documentNumber: 82735627A
+        state:
+          name: Jalisco
+          id: JALISCO
+        issueDate: '2008-08-19T09:00:33Z'
+        status:
+          name: Activo
+          id: Active
+        expirationDate: '2018-08-19T09:00:33Z'
+      personalTitle:
+        name: MR
+        id: MR
+      residence:
+        country:
+          name: México
+          id: MX
+        residenceType:
+          name: Permanente
+          id: PERMANENT
+        startDate: '1980-03-22T09:00:33Z'
+      maritalStatus:
+        name: Casado
+        id: MARRIED
+    :headers:
+      access-control-allow-origin: '*'
+      content-length: '2029'
+      Access-Control-Expose-Headers: tsec, vnd.bbva.access-token-type,vnd.bbva.access-token,
+        vnd.bbva.sso-pkcs7, authenticationtype, authenticationdata, authenticationstate,
+        authenticationchallenge
+      Server: artichoke
+      access-control-allow-headers: Content-Type, tsec, authenticationtype, authenticationdata,
+        authenticationstate, contactid, consumeruuid, consumerapplicationid, perimetertsec,
+        authorization, responsewarningcode, responsewarningdescription, cuf, field,
+        bcs-device-app-version, bcs-device-app-version, vnd.bbva.authorization, device-id
+      Connection: keep-alive
+      content-type: application/json;charset=UTF-8
+      Vary: Accept-Encoding
+      tsec: 412193cdf06f48974331288ab0ba5785fedd7bdd
+      X-Response-Time: 8ms
+      Date: Fri, 09 Feb 2024 12:44:06 GMT
+    :status: 200 OK
+    apiInfo:
+      name: customers
+      category: people
+      version: 0.24.0

@@ -1,0 +1,87 @@
+when:
+  sequence: 1
+  path: /SRVS_A02/cards/v0/cards/1207/limits
+  method: GET
+  backend: glomo
+request:
+  headers:
+    sec-fetch-mode: cors
+    content-length: '0'
+    referer: http://127.0.0.1:9090/
+    sec-fetch-site: cross-site
+    accept-language: es
+    origin: http://127.0.0.1:9090
+    x-forwarded-for: 10.23.108.31
+    tsec: 2fd6864b50977284349034a0b8544ac297615735
+    via: 1.1 tunnel-e0eeee9b-d405-4798-945d-081f6a636da2 (squid/3.5.27)
+    accept: application/json, text/html, */*; q=0.1
+    sec-ch-ua: '" Not;A Brand";v="99", "Google Chrome";v="91", "Chromium";v="91"'
+    sec-ch-ua-mobile: ?0
+    x-vbank-session: aaefe533-2f67-4ee6-ab84-2bac397128f7
+    host: localhost:9000
+    content-type: application/json
+    cache-control: no-cache, no-store, must-revalidate
+    accept-encoding: gzip
+    sec-fetch-dest: empty
+    user-agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko)
+      Chrome/91.0.4472.77 Safari/537.36
+then:
+- return:
+    data:
+    - isEditable: true
+      name: Límite mensual de compras en un comercio
+      disposedLimitPercentage: '0'
+      id: POS_DAILY
+      amountLimits:
+      - amount: 5000
+        currency: MXN
+      allowedInterval:
+        maximumAmount:
+          amount: 20000
+          currency: USD
+        minimumAmount:
+          amount: 50
+          currency: USD
+      disposedLimits:
+      - amount: 0
+        currency: MXN
+    - isEditable: true
+      name: Retiro de efectivo en cajero
+      disposedLimitPercentage: '15'
+      id: ATM_DAILY
+      amountLimits:
+      - amount: 15000
+        currency: MXN
+      allowedInterval:
+        maximumAmount:
+          amount: 20000
+          currency: USD
+        minimumAmount:
+          amount: 50
+          currency: USD
+      disposedLimits:
+      - amount: 1000
+        currency: MXN
+    :headers:
+      access-control-allow-origin: '*'
+      content-length: '1285'
+      Access-Control-Expose-Headers: tsec, vnd.bbva.access-token-type,vnd.bbva.access-token,
+        vnd.bbva.sso-pkcs7, authenticationtype, authenticationdata, authenticationstate,
+        authenticationchallenge
+      Server: artichoke
+      Alt-Svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      access-control-allow-headers: Content-Type, tsec, authenticationtype, authenticationdata,
+        authenticationstate, contactid, consumeruuid, consumerapplicationid, perimetertsec,
+        authorization, responsewarningcode, responsewarningdescription, cuf, field,
+        bcs-device-app-version, bcs-device-app-version, vnd.bbva.authorization
+      content-type: application/json;charset=UTF-8
+      Vary: Accept-Encoding
+      tsec: 2fd6864b50977284349034a0b8544ac297615735
+      X-Response-Time: 503ms
+      Date: Mon, 30 May 2022 06:52:56 GMT
+      Via: 1.1 google
+    :status: 200 OK
+    apiInfo:
+      name: cards
+      category: products
+      version: 0.19.0

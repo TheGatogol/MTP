@@ -1,0 +1,109 @@
+when:
+  sequence: 1
+  path: /SRVS_A02/security/v1/software-tokens/register
+  method: POST
+  backend: glomo
+request:
+  headers:
+    sec-fetch-mode: cors
+    referer: http://localhost:8001/
+    content-length: '270'
+    sec-fetch-site: same-site
+    accept-language: es-MX,es;q=0.9
+    origin: http://localhost:8001
+    tsec: ZXlKaFlYQWlPaUl4TURBd01EQTRPQ0lzSW10bGVWWmxjbk5wYjI0aU9qRXNJbUZ3Y0Vsa0lqb2lRVkJRTVNJc0ltdHBaQ0k2SWtGUVVERXViRzlqWVd3dU1TSXNJbVZ1WXlJNklrRXhPVEpIUTAwaUxDSnJaWGxVZVhCbElqb2liRzlqWVd3aUxDSmhiR2NpT2lKa2FYSWlMQ0owYzJWalNXUWlPaUl4TkRWaU5EZzNNaTB6T0Roa0xUUmhNbUl0WW1NM055MDRNRFpqWm1WaU16Rm1aak1pZlEuLnJFZUg1bzNGSWdmOGJFVHcua0dXd1pWLVFfS1dJZWNFMlNyNVRxRWhVeXRqalRYYzVOVjNCN2xtSjhBRjJlaHhwTTV4d0NmQmF6X0xGRm5qN21ha2lvNzdqa2VVRUlaOER4aTE0ZHVwU3hGMTZwSHlXRWsydjBJZUxSRTBMSzlqd281Znp3WmFKWnBZQmVja29wYzRPYWJyb3ZUYzdqMnZmVEJGcmVqMDZ3c1hwa3lLaGpFdjVndGxVaTVLc0xLTm1QV0ZMWnJJOVVrc2VreWhmVlRIX2h1bmpmWVJlT1IwdlFaWVo3a1lCZS0zZGJXNGJZNzlEYVprQUZPSDQ3LTFRUDNlSkNMMzIxQ2xxcmJqWVlkWUNYN3hyUlh0SXBrYVM0R0xoSTNKN19FQVNsYldySVQ1Sk5RUkZEZWlwVThMZjVHT25BSkU1Zmk4WjBCRHhnOXMxWVZXMHRnZ1BRX0RtaW5jZ0hRbUEzcVpTNEpqb2VMRXpqS2wtSHRGcWVZb21lcVNsQlpfdmVpTHhXNFNZWDFXV1lkRjNpSXVzYzBkWXZJZ0toZ3dUYUtPV0pDYUkxZUJycHRKS3BJdFlHYnBEVm45aWl5cGVlV0hla29jX2xOeXJJUjJFaVhlOEtLQzRTV3pxQ0pNR09iTThHQXBubTVvZDBvUUJqX0RYelF3T2hReVVvcDRHb19PaDMzcWFseEF4SFRkNW5mWmVuWFF1Nm5mWlY5dnJlOGNLaG00SV83bm9zZ25MWHk2dkZ0d2FLclFaVDhGUGE2WGZ3czdlU0Q3UWwyT2dZRERlR2gyYm1rbWhBN1prTVdiZ21pdmhWN3JVRUg5TjJYQkVvT2hid1dmZHBFbDJGMHI0aGFfMHA4YjVtdm40UW5lcWM0T2FYSnZWaHJsOHVZU1RIU3VVeFV0OGZYeVp5QjFaZEYxc29WVUNfeWJ1RlAwVTY5NFkyUGc0bWM2OFhOUFdtQk9ySXlPVUdFRlZJOTdHTGI2QXN6VWE1QU00RmF6aXp0ei1qWHdFZ0dRZ1BkZTVoeWtQSmNlcGhkWXFhTHpJMjl2NWd1UklNUnR6LTVtbTlFbFNlVjQzcTFvMHl3Y2V3cG1YMnZIVTc0ZGVyRDFHYWtwX3BBUlpQUG9GUWZWZ2xFcUtxSWJUSkhsaEZNclZRNXQ4cHRGUjNLNTFIUUo1ZnNRWGJiOURmQmo2ZGpyaTFHeWxXVXduVU5yTzlpQ0I4UENmUERkY0t0TU1uSWk5S3FqU3VabC1GZkZNOEZlVmZkZUNGN1hOUFhvNXNyVXVxZVk1NlBManFEQ29PSUI5U0lNSC5WS0VDbWtPWmR3V0liZk9OTFh1QlhR
+    accept: application/json, text/html, */*; q=0.1
+    sec-ch-ua: '"Chromium";v="134", "Not:A-Brand";v="24", "Google Chrome";v="134"'
+    sec-ch-ua-mobile: ?0
+    x-vbank-session: e6aa59e2-0322-4fa3-bc00-c52ee875910e
+    sec-ch-ua-platform: '"macOS"'
+    host: localhost:9000
+    content-type: application/json
+    connection: keep-alive
+    cache-control: no-cache, no-store, must-revalidate
+    accept-encoding: gzip, deflate, br, zstd
+    sec-fetch-dest: empty
+    user-agent: GLOMO_MX/99.99.99 (Android;14;Samsung)
+  body:
+    contactDetail:
+      contact: '5583267545'
+      contactType:
+        id: MOBILE_NUMBER
+    contract:
+      number: '4152313986023385'
+      numberType:
+        id: PAN
+    customerId: BlkMcc0nnOfgZxkb_wPSyQ
+    registerType:
+      id: ACTIVATION
+    device:
+      id: 0123456789ABCDEF0123456789ABCDEF
+then:
+- return:
+    severity: FATAL
+    error-message: Parámetros obligatorios no informados
+    consumer-request-id: 818aba56-cdc2-4461-8727-4ffef807da22
+    :headers:
+      X-EdgeConnect-Origin-MEX-Latency: '281'
+      Access-Control-Allow-Origin: '*'
+      ECS-Entry-Point-Zone: ext
+      Access-Control-Allow-Methods: GET, POST, DELETE, PUT, OPTIONS, PATCH
+      X-Content-Type-Options: nosniff
+      old-catalog: 'true'
+      Connection: close
+      tsec: ZXlKaFlYQWlPaUl4TURBd01EQTRPQ0lzSW10bGVWWmxjbk5wYjI0aU9qRXNJbUZ3Y0Vsa0lqb2lRVkJRTVNJc0ltdHBaQ0k2SWtGUVVERXViRzlqWVd3dU1TSXNJbVZ1WXlJNklrRXhPVEpIUTAwaUxDSnJaWGxVZVhCbElqb2liRzlqWVd3aUxDSmhiR2NpT2lKa2FYSWlMQ0owYzJWalNXUWlPaUl4TkRWaU5EZzNNaTB6T0Roa0xUUmhNbUl0WW1NM055MDRNRFpqWm1WaU16Rm1aak1pZlEuLnJFZUg1bzNGSWdmOGJFVHcua0dXd1pWLVFfS1dJZWNFMlNyNVRxRWhVeXRqalRYYzVOVjNCN2xtSjhBRjJlaHhwTTV4d0NmQmF6X0xGRm5qN21ha2lvNzdqa2VVRUlaOER4aTE0ZHVwU3hGMTZwSHlXRWsydjBJZUxSRTBMSzlqd281Znp3WmFKWnBZQmVja29wYzRPYWJyb3ZUYzdqMnZmVEJGcmVqMDZ3c1hwa3lLaGpFdjVndGxVaTVLc0xLTm1QV0ZMWnJJOVVrc2VreWhmVlRIX2h1bmpmWVJlT1IwdlFaWVo3a1lCZS0zZGJXNGJZNzlEYVprQUZPSDQ3LTFRUDNlSkNMMzIxQ2xxcmJqWVlkWUNYN3hyUlh0SXBrYVM0R0xoSTNKN19FQVNsYldySVQ1Sk5RUkZEZWlwVThMZjVHT25BSkU1Zmk4WjBCRHhnOXMxWVZXMHRnZ1BRX0RtaW5jZ0hRbUEzcVpTNEpqb2VMRXpqS2wtSHRGcWVZb21lcVNsQlpfdmVpTHhXNFNZWDFXV1lkRjNpSXVzYzBkWXZJZ0toZ3dUYUtPV0pDYUkxZUJycHRKS3BJdFlHYnBEVm45aWl5cGVlV0hla29jX2xOeXJJUjJFaVhlOEtLQzRTV3pxQ0pNR09iTThHQXBubTVvZDBvUUJqX0RYelF3T2hReVVvcDRHb19PaDMzcWFseEF4SFRkNW5mWmVuWFF1Nm5mWlY5dnJlOGNLaG00SV83bm9zZ25MWHk2dkZ0d2FLclFaVDhGUGE2WGZ3czdlU0Q3UWwyT2dZRERlR2gyYm1rbWhBN1prTVdiZ21pdmhWN3JVRUg5TjJYQkVvT2hid1dmZHBFbDJGMHI0aGFfMHA4YjVtdm40UW5lcWM0T2FYSnZWaHJsOHVZU1RIU3VVeFV0OGZYeVp5QjFaZEYxc29WVUNfeWJ1RlAwVTY5NFkyUGc0bWM2OFhOUFdtQk9ySXlPVUdFRlZJOTdHTGI2QXN6VWE1QU00RmF6aXp0ei1qWHdFZ0dRZ1BkZTVoeWtQSmNlcGhkWXFhTHpJMjl2NWd1UklNUnR6LTVtbTlFbFNlVjQzcTFvMHl3Y2V3cG1YMnZIVTc0ZGVyRDFHYWtwX3BBUlpQUG9GUWZWZ2xFcUtxSWJUSkhsaEZNclZRNXQ4cHRGUjNLNTFIUUo1ZnNRWGJiOURmQmo2ZGpyaTFHeWxXVXduVU5yTzlpQ0I4UENmUERkY0t0TU1uSWk5S3FqU3VabC1GZkZNOEZlVmZkZUNGN1hOUFhvNXNyVXVxZVk1NlBManFEQ29PSUI5U0lNSC5WS0VDbWtPWmR3V0liZk9OTFh1QlhR
+      Access-Control-Allow-Headers: remaining-time, Bbva-User-Agent, Accept-Encoding,
+        Accept, Content-Type, tsec, consumerrequestid, authenticationchallenge, authenticationtype,
+        authenticationdata, authenticationstate, contactid, consumeruuid, consumerapplicationid,
+        perimetertsec, authorization, responsewarningcode, responsewarningdescription,
+        cuf, prefer, phoneNumber, Location, X-RHO-PARENTSPANID, X-RHO-TRACEID, preferredauthenticationtype,
+        X-HTTP-Method-Override, Access-Control-Allow-Methods, iv-remote-address, thirdparty-x-forwarded-for,
+        thirdparty-user-agent, thirdparty-geolocation, thirdparty-calculated-scoring,
+        thirdparty-deviceid, vnd.bbva.security-client-certificate, order-preferredaction,
+        authenticationresponse, Access-Control-Max-Age, BCS-Device-Id, BCS-Device-OS-Name,
+        BCS-Device-Model-Name, BCS-Device-Model-Manufacturer, BCS-Device-Screen-Size,
+        BCS-Device-OS-Version, BCS-Device-DPI, BCS-Device-App-Name, BCS-Device-App-Version,
+        Third-Party-Application-Id, ECS-Signature-Platform-Use-Case, BCS-Process-Code,
+        BCS-Operation-Tracer, BCS-Process-Tracer, vnd.bbva.user-id, order-preferredaction,
+        order-id, order-accepteddisclaimers, x-forwarded-for, Date, order-hmac, x-dmz-orgn,
+        onsite-accountTerm, onsite-logicalTerm, Akamai-BM-Telemetry, BCS-Third-Party-Session-Id,
+        Cache-Control, clave, Content-Encoding, ECS-Entry-Point-Zone, firma, Geolocation,
+        Third-Party-Collaborator-Id, user-agent, Via, order-signed, loginauthenticationtype,
+        x-cau
+      Date: Thu, 13 Mar 2025 03:28:42 GMT
+      Referrer-Policy: same-origin
+      X-Frame-Options: sameorigin
+      Strict-Transport-Security: max-age=31536000; includeSubDomains
+      Access-Control-Expose-Headers: remaining-time, Bbva-User-Agent, Accept-Encoding,
+        Accept, Content-Type, tsec, consumerrequestid, authenticationchallenge, authenticationtype,
+        authenticationdata, authenticationstate, contactid, consumeruuid, consumerapplicationid,
+        perimetertsec, authorization, responsewarningcode, responsewarningdescription,
+        cuf, prefer, phoneNumber, Location, X-RHO-PARENTSPANID, X-RHO-TRACEID, preferredauthenticationtype,
+        X-HTTP-Method-Override, Access-Control-Allow-Methods, iv-remote-address, thirdparty-x-forwarded-for,
+        thirdparty-user-agent, thirdparty-geolocation, thirdparty-calculated-scoring,
+        thirdparty-deviceid, vnd.bbva.security-client-certificate, order-preferredaction,
+        authenticationresponse, Access-Control-Max-Age, BCS-Device-Id, BCS-Device-OS-Name,
+        BCS-Device-Model-Name, BCS-Device-Model-Manufacturer, BCS-Device-Screen-Size,
+        BCS-Device-OS-Version, BCS-Device-DPI, BCS-Device-App-Name, BCS-Device-App-Version,
+        Third-Party-Application-Id, ECS-Signature-Platform-Use-Case, BCS-Process-Code,
+        BCS-Operation-Tracer, BCS-Process-Tracer, vnd.bbva.user-id, order-preferredaction,
+        order-id, order-accepteddisclaimers, x-forwarded-for, Date, order-hmac, x-dmz-orgn,
+        onsite-accountTerm, onsite-logicalTerm, Akamai-BM-Telemetry, BCS-Third-Party-Session-Id,
+        Cache-Control, clave, Content-Encoding, ECS-Entry-Point-Zone, firma, Geolocation,
+        Third-Party-Collaborator-Id, user-agent, Via, order-signed, loginauthenticationtype,
+        x-cau
+      Cache-Control: no-cache,no-store,must-revalidate
+      Content-Security-Policy: script-src 'self'
+      Set-Cookie: vbank-session=e6aa59e2-0322-4fa3-bc00-c52ee875910e
+      Expires: '-1'
+      X-XSS-Protection: 1; mode=block
+      Content-Length: '327'
+      X-EdgeConnect-MidMile-RTT: '29'
+      consumerrequestid: 818aba56-cdc2-4461-8727-4ffef807da22
+      Content-Type: application/json; charset=UTF-8
+    system-error-code: mandatoryParametersMissing
+    :status: 400 Bad Request
+    http-status: 400
+    system-error-description: Parámetros obligatorios no informados
+    error-code: mandatoryParametersMissing
+    version: 1

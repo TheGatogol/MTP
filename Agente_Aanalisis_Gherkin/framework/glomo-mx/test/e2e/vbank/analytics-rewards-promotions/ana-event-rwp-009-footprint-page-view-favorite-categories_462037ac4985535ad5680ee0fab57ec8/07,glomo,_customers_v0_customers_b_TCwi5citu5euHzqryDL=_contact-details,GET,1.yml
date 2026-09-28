@@ -1,0 +1,99 @@
+when:
+  sequence: 1
+  path: /SRVS_A02/customers/v0/customers/b_TCwi5citu5euHzqryDL=/contact-details
+  method: GET
+  backend: glomo
+request:
+  headers:
+    sec-fetch-mode: cors
+    content-length: '0'
+    referer: http://localhost:8001/
+    sec-fetch-site: same-site
+    accept-language: es-MX,es;q=0.9
+    origin: http://localhost:8001
+    tsec: 93d7da55e8cadbc4c07e6b6f51f72ab0cfb81450
+    accept: application/json, text/html, */*; q=0.1
+    sec-ch-ua: '"Chromium";v="116", "Not)A;Brand";v="24", "Google Chrome";v="116"'
+    sec-ch-ua-mobile: ?0
+    x-vbank-session: f52c9e87-9caf-4180-bb37-9a9f9da46313
+    sec-ch-ua-platform: '"macOS"'
+    host: localhost:9000
+    content-type: application/json
+    connection: keep-alive
+    cache-control: no-cache, no-store, must-revalidate
+    accept-encoding: gzip, deflate, br
+    sec-fetch-dest: empty
+    user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36
+      (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36
+then:
+- return:
+    data:
+    - regionalCode: '045'
+      country:
+        name: México
+        id: MX
+      extension: '555'
+      isPreferential: true
+      adsAllowed: true
+      contact: '****hez@bbva.com'
+      contactType:
+        name: email
+        id: EMAIL
+      contactDetailId: '1234'
+      isChecked: true
+    - regionalCode: '045'
+      country:
+        name: Mexico
+        id: MX
+      extension: '555'
+      isPreferential: true
+      adsAllowed: true
+      contact: '****1555'
+      phoneCompany:
+        name: Movistar
+        id: '123456'
+      contactType:
+        name: Phone number
+        id: PHONE_NUMBER
+      contactDetailId: '1235'
+      isChecked: true
+    - regionalCode: '045'
+      country:
+        name: Mexico
+        id: MX
+      extension: '555'
+      isPreferential: true
+      adsAllowed: true
+      contact: '****1555'
+      phoneCompany:
+        name: Movistar
+        id: '123456'
+      contactType:
+        name: Mobile number
+        id: MOBILE_NUMBER
+      contactDetailId: '1235'
+      isChecked: true
+    :headers:
+      content-length: '1406'
+      Server: artichoke
+      Alt-Svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      access-control-allow-headers: Content-Type, tsec, authenticationtype, authenticationdata,
+        authenticationstate, contactid, consumeruuid, consumerapplicationid, perimetertsec,
+        authorization, responsewarningcode, responsewarningdescription, cuf, field,
+        bcs-device-app-version, bcs-device-app-version, vnd.bbva.authorization, device-id
+      tsec: 93d7da55e8cadbc4c07e6b6f51f72ab0cfb81450
+      X-Response-Time: 600ms
+      Date: Mon, 28 Aug 2023 11:18:24 GMT
+      Via: 1.1 google
+      access-control-allow-origin: '*'
+      Access-Control-Expose-Headers: tsec, vnd.bbva.access-token-type,vnd.bbva.access-token,
+        vnd.bbva.sso-pkcs7, authenticationtype, authenticationdata, authenticationstate,
+        authenticationchallenge
+      Cache-Control: private, no-store
+      content-type: application/json;charset=UTF-8
+      Vary: Accept-Encoding
+    :status: 200 OK
+    apiInfo:
+      name: customers
+      category: people
+      version: 0.24.0

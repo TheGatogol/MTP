@@ -1,0 +1,69 @@
+when:
+  sequence: 1
+  path: /QSRV_A02/TechArchitecture/mx/grantingTicket/V02
+  method: POST
+  backend: glomo
+request:
+  headers:
+    sec-fetch-mode: cors
+    referer: http://localhost:8001/
+    content-length: '260'
+    sec-fetch-site: same-site
+    accept-language: es-ES,es-MX;q=0.9,es;q=0.8
+    origin: http://localhost:8001
+    accept: application/json, text/html, */*; q=0.1
+    sec-ch-ua: '"Not?A_Brand";v="8", "Chromium";v="108", "Google Chrome";v="108"'
+    sec-ch-ua-mobile: ?0
+    x-vbank-session: c6e7d740-53fe-4702-b4ea-57421b6cf4e1
+    sec-ch-ua-platform: '"macOS"'
+    host: localhost:9000
+    content-type: application/json
+    connection: keep-alive
+    cache-control: no-cache, no-store, must-revalidate
+    accept-encoding: gzip, deflate, br
+    sec-fetch-dest: empty
+    user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36
+      (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36
+  body:
+    backendUserRequest:
+      accessCode: '9988770001'
+      dialogId: ''
+      userId: ''
+    authentication:
+      authenticationData:
+      - authenticationData:
+        - micd1122
+        idAuthenticationData: password
+      consumerID: '10000187'
+      authenticationType: '02'
+      userID: '9988770001'
+then:
+- return:
+    backendUserResponse:
+      clientId: b_TCwi5citu5euHzqryDL=
+      accountingTerminal: Q7P
+      clientStatus: A1
+      userType: ''
+    authenticationResponse:
+      authenticationData: []
+      authenticationState: OK
+    :headers:
+      content-length: '251'
+      Server: artichoke
+      Alt-Svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      access-control-allow-headers: Content-Type, tsec, authenticationtype, authenticationdata,
+        authenticationstate, contactid, consumeruuid, consumerapplicationid, perimetertsec,
+        authorization, responsewarningcode, responsewarningdescription, cuf, field,
+        bcs-device-app-version, bcs-device-app-version, vnd.bbva.authorization
+      tsec: 85190d77ae0396ed854cbb50355e3b0dea63a8c8
+      X-Response-Time: 535ms
+      Date: Tue, 11 Apr 2023 13:46:24 GMT
+      Allow: DELETE
+      Via: 1.1 google
+      access-control-allow-origin: '*'
+      Access-Control-Expose-Headers: tsec, vnd.bbva.access-token-type,vnd.bbva.access-token,
+        vnd.bbva.sso-pkcs7, authenticationtype, authenticationdata, authenticationstate,
+        authenticationchallenge
+      content-type: application/json;charset=UTF-8
+      Vary: Accept-Encoding
+    :status: 200 OK

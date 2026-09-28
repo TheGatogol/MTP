@@ -1,0 +1,40 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: 438d51b7-8b3a-42be-87b1-05a41091d290
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: postal_address_management
+    lock: 'false'
+then:
+- return:
+    :body:
+    - data:
+        locale: es_mx
+        tags:
+        - postal_address_management
+        - '7224973183'
+        authentication:
+          password: Glomo2025
+          user: '7224973183'
+          deviceId: 14596056054D2872B6A64F45560D4473
+      lockExpiration: null
+      lockType: null
+      id: 36043980
+    :headers:
+      Cache-Control: max-age=0
+      Connection: keep-alive
+      host: datamanager.globaldevtools.bbva.com
+      Expires: Fri, 21 Feb 2025 18:41:39 GMT
+      Content-Length: '250'
+      Date: Fri, 21 Feb 2025 18:41:39 GMT
+      Content-Type: application/json; charset=utf-8
+    :status: 200 OK

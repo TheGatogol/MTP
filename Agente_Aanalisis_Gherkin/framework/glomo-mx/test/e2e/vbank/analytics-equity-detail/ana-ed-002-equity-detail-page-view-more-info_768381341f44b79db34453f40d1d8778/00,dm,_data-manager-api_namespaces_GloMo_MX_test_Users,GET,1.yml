@@ -1,0 +1,42 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: 15f0462c-9828-4e4d-9a67-0f2b10d05fbe
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: equity
+then:
+- return:
+    :body:
+    - data:
+        locale: es_mx
+        tags:
+        - equity
+        products:
+          equityContract:
+          - name: 0002pt0443
+            id: Td-tykaA8ArRimV-VXQVtmNMRLafY7g5aj6D2y8wNwdIxT5INNxnRw
+        authentication:
+          password: glomo2022
+          user: '5537320358'
+          deviceId: 9B5A4B809ECE29ED3DE19716946AB331
+      lockType: null
+      lockExpiration: null
+      id: 2648666
+    :headers:
+      Strict-Transport-Security: max-age=15768000
+      Server: nginx
+      ECS-Entry-Point-Zone: ext
+      Connection: keep-alive
+      Content-Length: '216'
+      Date: Tue, 23 Aug 2022 21:10:25 GMT
+      Content-Type: application/json
+    :status: 200 OK

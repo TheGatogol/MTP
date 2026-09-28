@@ -1,0 +1,58 @@
+when:
+  sequence: 2
+  path: /SRVS_A02/cards/v0/cards/1210/activations/ON_OFF
+  method: PATCH
+  backend: glomo
+request:
+  headers:
+    sec-fetch-mode: cors
+    referer: http://localhost:8001/
+    content-length: '18'
+    sec-fetch-site: same-site
+    accept-language: es
+    origin: http://localhost:8001
+    tsec: 68542cbcdbe5568eaef6a0624e423e5324bb2a17
+    accept: application/json, text/html, */*; q=0.1
+    sec-ch-ua: '" Not A;Brand";v="99", "Chromium";v="99", "Google Chrome";v="99"'
+    sec-ch-ua-mobile: ?0
+    x-vbank-session: 7b76d95a-1379-4ba5-991b-e6ce7a96df34
+    sec-ch-ua-platform: '"macOS"'
+    host: localhost:9000
+    content-type: application/json
+    connection: keep-alive
+    cache-control: no-cache, no-store, must-revalidate
+    accept-encoding: gzip, deflate, br
+    sec-fetch-dest: empty
+    user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36
+      (KHTML, like Gecko) Chrome/99.0.4844.83 Safari/537.36
+  body:
+    isActive: false
+then:
+- return:
+    data:
+      name: Activation for global card usage
+      isActive: false
+      activationId: ON_OFF
+    :headers:
+      access-control-allow-origin: '*'
+      content-length: '212'
+      Access-Control-Expose-Headers: tsec, vnd.bbva.access-token-type,vnd.bbva.access-token,
+        vnd.bbva.sso-pkcs7, authenticationtype, authenticationdata, authenticationstate,
+        authenticationchallenge
+      Server: artichoke
+      Alt-Svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      access-control-allow-headers: Content-Type, tsec, authenticationtype, authenticationdata,
+        authenticationstate, contactid, consumeruuid, consumerapplicationid, perimetertsec,
+        authorization, responsewarningcode, responsewarningdescription, cuf, field,
+        bcs-device-app-version, bcs-device-app-version, vnd.bbva.authorization
+      content-type: application/json;charset=UTF-8
+      Vary: Accept-Encoding
+      tsec: 68542cbcdbe5568eaef6a0624e423e5324bb2a17
+      X-Response-Time: 485ms
+      Date: Thu, 24 Mar 2022 19:31:59 GMT
+      Via: 1.1 google
+    :status: 200 OK
+    apiInfo:
+      name: cards
+      category: products
+      version: 0.19.0

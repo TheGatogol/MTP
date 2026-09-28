@@ -1,0 +1,68 @@
+when:
+  sequence: 1
+  path: /QSRV_A02/TechArchitecture/mx/grantingTicket/V02
+  method: POST
+  backend: glomo
+request:
+  headers:
+    sec-fetch-mode: cors
+    referer: http://localhost:8001/
+    content-length: '259'
+    sec-fetch-site: same-site
+    accept-language: es-MX,es;q=0.9
+    origin: http://localhost:8001
+    accept: application/json, text/html, */*; q=0.1
+    sec-ch-ua: '"Google Chrome";v="113", "Chromium";v="113", "Not-A.Brand";v="24"'
+    sec-ch-ua-mobile: ?0
+    x-vbank-session: 5f79cb64-4826-47f8-aeaa-68bd544c4e47
+    sec-ch-ua-platform: '"macOS"'
+    host: localhost:9000
+    content-type: application/json
+    connection: keep-alive
+    cache-control: no-cache, no-store, must-revalidate
+    accept-encoding: gzip, deflate, br
+    sec-fetch-dest: empty
+    user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36
+      (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36
+  body:
+    backendUserRequest:
+      accessCode: '9921223388'
+      dialogId: ''
+      userId: ''
+    authentication:
+      authenticationData:
+      - authenticationData:
+        - rewards
+        idAuthenticationData: password
+      consumerID: '10000187'
+      authenticationType: '02'
+      userID: '9921223388'
+then:
+- return:
+    backendUserResponse:
+      clientId: b_TCwi5citu5euHzqryDL=
+      accountingTerminal: Q7P
+      clientStatus: A1
+      userType: ''
+    authenticationResponse:
+      authenticationData: []
+      authenticationState: OK
+    :headers:
+      access-control-allow-origin: '*'
+      content-length: '251'
+      Access-Control-Expose-Headers: tsec, vnd.bbva.access-token-type,vnd.bbva.access-token,
+        vnd.bbva.sso-pkcs7, authenticationtype, authenticationdata, authenticationstate,
+        authenticationchallenge
+      Server: artichoke
+      access-control-allow-headers: Content-Type, tsec, authenticationtype, authenticationdata,
+        authenticationstate, contactid, consumeruuid, consumerapplicationid, perimetertsec,
+        authorization, responsewarningcode, responsewarningdescription, cuf, field,
+        bcs-device-app-version, bcs-device-app-version, vnd.bbva.authorization
+      Connection: keep-alive
+      content-type: application/json;charset=UTF-8
+      Vary: Accept-Encoding
+      tsec: 8b03a7409355d1c0af88e47d0ed7fa2a526dadb7
+      X-Response-Time: 7ms
+      Date: Wed, 10 May 2023 19:06:40 GMT
+      Allow: DELETE
+    :status: 200 OK

@@ -1,0 +1,59 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: fb60fe31-3e4c-4c52-aaf9-073f2020400e
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: aftersales,financing_line,choose_your_term
+    lock: 'false'
+then:
+- return:
+    :body:
+    - data:
+        locale: es_mx
+        tags:
+        - '3321994995'
+        - aftersales
+        - financing_line
+        - choose_your_term
+        products:
+          cards:
+          - number: '4152313972011865'
+            cardId: 9YK9GXzCWZ8pErDCoGkyk-6-6KJ7cRkcr-Z1EKPoh40
+            cardType:
+              id: DEBIT_CARD
+            alias: 0001AH9486
+            id: 9YK9GXzCWZ8pErDCoGkyk-6-6KJ7cRkcr-Z1EKPoh40
+            title:
+              name: Cuenta de Ahorro
+              id: AH
+            status:
+              id: OPERATIVE
+          relatedContracts:
+          - provision: ksj4BvrajGrStyWHbwHR2GRNQ5Oety4m
+            account: MX007400749200000149
+        authentication:
+          password: Glomo2024
+          user: '3321994995'
+          deviceId: CFDBEC9FA0C88FF48E62541814FB2F18
+      lockExpiration: '2025-05-09T23:41:42.918938Z'
+      lockType: SHARED
+      id: 36085254
+    :headers:
+      content-length: '716'
+      Cache-Control: max-age=0
+      Connection: keep-alive
+      host: datamanager.globaldevtools.bbva.com
+      Vary: Accept-Encoding
+      Expires: Fri, 09 May 2025 23:41:35 GMT
+      Date: Fri, 09 May 2025 23:41:35 GMT
+      Content-Type: application/json; charset=utf-8
+    :status: 200 OK

@@ -1,0 +1,92 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: f7f62a48-cfaa-45a5-aad5-c91080443df1
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: oc_cash_mpos_purchase
+    lock: 'false'
+then:
+- return:
+    :body:
+    - data:
+        address:
+          externalNumber: '387'
+          street: Campos Elíseos
+          neighborhood: Miguel Hidalgo
+          postalCode: '11540'
+          municipality: Polanco
+          state: Ciudad de México
+        tags:
+        - oc_cash_mpos_purchase
+        products:
+        - accounts:
+          - number: '1503282614'
+        localstorage:
+          onboardingDone:
+            isOpenPayUser: true
+            isOnboardingDone: true
+            merchants:
+            - name: Comercio 6142519456
+              id: mfxqzgmvncocld15pzb2
+              products:
+              - paymentMethods:
+                - name: Link de Cobro
+                  id: PAYMENT_LINK
+                - name: Tarjeta Presente
+                  id: PRESENT_CARD
+                name: Mobile POS
+                id: MPOS
+              - paymentMethods:
+                - name: Tarjeta Presente
+                  id: PRESENT_CARD
+                name: Tap on Phone
+                id: TAP_ON_PHONE
+          onboardingNotDone:
+            isOpenPayUser: true
+            merchants:
+            - name: Bufandas Moralejo
+              id: ias2a45fskfji1
+              products:
+              - paymentMethods:
+                - name: Tarjeta Presente
+                  id: PRESENT_CARD
+                - name: Link de Cobro
+                  id: PAYMENT_LINK
+                name: Mobile POS
+                id: MPOS
+            - name: Quesadillas Moralejo
+              id: ias2a45fskfji2
+              products:
+              - paymentMethods:
+                - name: Tarjeta Presente
+                  id: PRESENT_CARD
+                - name: Link de Cobro
+                  id: PAYMENT_LINK
+                name: Mobile POS
+                id: MPOS
+        authentication:
+          password: Glomo2024
+          user: '6142519456'
+          deviceId: 9B95038D34C2E5F37AF6D458F3E29982
+      lockExpiration: '2025-09-30T19:52:04.376416Z'
+      lockType: SHARED
+      id: 36229041
+    :headers:
+      content-length: '1452'
+      Cache-Control: max-age=0
+      Connection: keep-alive
+      host: datamanager.globaldevtools.bbva.com
+      Vary: Accept-Encoding
+      Expires: Tue, 30 Sep 2025 19:51:16 GMT
+      Date: Tue, 30 Sep 2025 19:51:16 GMT
+      Content-Type: application/json; charset=utf-8
+    :status: 200 OK

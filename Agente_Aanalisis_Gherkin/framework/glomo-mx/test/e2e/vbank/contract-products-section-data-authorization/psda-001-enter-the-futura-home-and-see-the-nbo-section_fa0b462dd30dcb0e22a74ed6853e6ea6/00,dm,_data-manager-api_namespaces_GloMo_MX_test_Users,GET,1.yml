@@ -1,0 +1,42 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: 312c2773-cd39-43a5-b3a3-5e01e33427ef
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: contract_products_section_data_authorization,secondary_offer
+    lock: 'false'
+then:
+- return:
+    :body:
+    - data:
+        tags:
+        - contract_products_section_data_authorization
+        - secondary_offer
+        - '2228123767'
+        authentication:
+          password: Glomo2025
+          user: '2228123767'
+          deviceId: 21CB245B67E76A119C0196504A8EAF60
+      lockExpiration: null
+      lockType: null
+      id: 36261280
+    :headers:
+      content-length: '269'
+      Server: nginx
+      Cache-Control: max-age=0
+      Connection: keep-alive
+      host: datamanager.globaldevtools.bbva.com
+      Vary: Accept-Encoding
+      Expires: Fri, 17 Oct 2025 18:29:43 GMT
+      Date: Fri, 17 Oct 2025 18:29:43 GMT
+      Content-Type: application/json; charset=utf-8
+    :status: 200 OK

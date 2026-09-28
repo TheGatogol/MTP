@@ -1,0 +1,58 @@
+when:
+  sequence: 2
+  path: /SRVS_A02/loyalty/v0/rewards
+  method: GET
+  backend: glomo
+request:
+  headers:
+    sec-fetch-mode: cors
+    content-length: '0'
+    referer: http://localhost:8001/
+    sec-fetch-site: same-site
+    accept-language: es-ES,es-MX;q=0.9,es;q=0.8
+    origin: http://localhost:8001
+    tsec: 2f85c4ab52aa02c60a3a7d1875b56876e35b2953
+    accept: application/json, text/html, */*; q=0.1
+    sec-ch-ua: '"Not?A_Brand";v="8", "Chromium";v="108", "Google Chrome";v="108"'
+    sec-ch-ua-mobile: ?0
+    x-vbank-session: 3ef3e14f-0ffd-48a7-bdfb-7c7327052954
+    sec-ch-ua-platform: '"macOS"'
+    host: localhost:9000
+    content-type: application/json
+    connection: keep-alive
+    cache-control: no-cache, no-store, must-revalidate
+    accept-encoding: gzip, deflate, br
+    sec-fetch-dest: empty
+    user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36
+      (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36
+  query:
+    billingPeriod: OPEN_PERIOD
+    contract.id: '0070'
+then:
+  - return:
+      severity: FATAL
+      error-message: Server error
+      consumer-request-id: 207a2723-e82b-4c47-a64c-ea8836f245cd
+      :headers:
+        access-control-allow-origin: '*'
+        Access-Control-Expose-Headers: tsec, vnd.bbva.access-token-type,vnd.bbva.access-token,
+          vnd.bbva.sso-pkcs7, authenticationtype, authenticationdata, authenticationstate,
+          authenticationchallenge
+        Server: artichoke
+        Alt-Svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+        access-control-allow-headers: Content-Type, tsec, authenticationtype, authenticationdata,
+          authenticationstate, contactid, consumeruuid, consumerapplicationid, perimetertsec,
+          authorization, responsewarningcode, responsewarningdescription, cuf, field,
+          bcs-device-app-version, bcs-device-app-version, vnd.bbva.authorization
+        tsec: fcece9dd27adade7e57d7c7f4e72865d63f8d485
+        Content-Length: '264'
+        X-Response-Time: 1ms
+        Date: Wed, 29 Mar 2023 12:45:43 GMT
+        Content-Type: application/json; charset=utf-8
+        Via: 1.1 google
+      system-error-code: serviceNotAvailable
+      :status: 500 Internal Server Error
+      http-status: 500
+      system-error-description: Service not available right now
+      error-code: '161'
+      version: 1

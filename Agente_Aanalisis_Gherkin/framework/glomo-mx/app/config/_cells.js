@@ -1,0 +1,71 @@
+'use strict';
+
+module.exports = {
+  'cache': true,
+  'debug': true,
+  'prplLevel': 1,
+  'preCache': true,
+  'preRender': true,
+  'componentsPath': 'components/',
+  'litComponentsPath': 'node_modules/',
+  'composerEndpoint': 'composerMocks/',
+  'mainNode': 'app__content',
+  'deployEndpoint': '',
+  'i18nPath': 'locales/',
+  'perfMonitor': '',
+  'transpile': true,
+  'viewLimit': 20,
+  'transpileExclude': [
+    'webcomponentsjs',
+    'apng-canvas',
+    'async',
+    'bgadp-*',
+    'bodymovin',
+    'cells-cleave-import',
+    'cleave-import',
+    'cropperjs',
+    'd3',
+    'device-js',
+    'es6-promise',
+    'fast-json-patch',
+    'inert',
+    'jquery',
+    'jsoneditor',
+    'lodash',
+    'marked',
+    'moment',
+    'moment-timezone',
+    'nuxeo-ui-elements',
+    'prism',
+    'select2',
+    'shadycss',
+    'Swiper'
+  ],
+  'localStorageKeys': [
+    'app_settings',
+    'closed_offers_in_session',
+    'isOpenPayUser',
+    'reminded',
+    'feature_flag',
+    'fido_info_register',
+    'notifications',
+    'isMonoEnterpriseDebitCardClient',
+    'softTokenUserId',
+    'pbio_onboarding',
+    'feedback_client_voice_connect',
+    'language_app_selected'
+  ],
+  'locales': {
+    'defaultLanguage': 'es-MX',
+    'languages': ['es', 'es-MX', 'en'],
+    'intlInputFileNames': [ 'locales' ],
+    'intlFileName': 'locales',
+    'enabledI18n': true
+  },
+  'enableLitElement': true,
+  'appModules': ['@bbva-web-components-widgets', '@glomo-web-components', '@bbva-spherica-components'],
+  'extraDependencies': [
+    'cells-adobe-target'
+  ],
+  'buildTargets': ['chrome >= 88', 'safari >= 14', 'last 1 Android versions']
+};

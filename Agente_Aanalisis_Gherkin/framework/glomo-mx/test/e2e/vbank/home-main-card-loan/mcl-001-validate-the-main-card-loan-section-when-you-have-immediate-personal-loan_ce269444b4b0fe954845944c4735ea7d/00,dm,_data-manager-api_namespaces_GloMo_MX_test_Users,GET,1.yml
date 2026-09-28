@@ -1,0 +1,42 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: fb6bf735-f4f6-44d1-b27b-56c0edc1b05c
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: futura_main_card_loan
+    lock: 'false'
+then:
+- return:
+    :body:
+    - data:
+        locale: es_mx
+        tags:
+        - futura_main_card_loan
+        - futura
+        - '5511584361'
+        authentication:
+          password: Glomo2024
+          user: '5511584361'
+          deviceId: 11223344556677889900AABBCCDDEEFF
+      lockExpiration: null
+      lockType: null
+      id: 36124751
+    :headers:
+      content-length: '256'
+      Cache-Control: max-age=0
+      Connection: keep-alive
+      host: datamanager.globaldevtools.bbva.com
+      Vary: Accept-Encoding
+      Expires: Tue, 17 Jun 2025 19:24:13 GMT
+      Date: Tue, 17 Jun 2025 19:24:13 GMT
+      Content-Type: application/json; charset=utf-8
+    :status: 200 OK

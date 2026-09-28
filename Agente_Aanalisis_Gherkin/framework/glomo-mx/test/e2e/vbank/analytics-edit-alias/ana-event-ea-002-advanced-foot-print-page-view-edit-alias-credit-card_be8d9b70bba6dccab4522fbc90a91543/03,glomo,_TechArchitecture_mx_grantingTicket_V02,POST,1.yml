@@ -1,0 +1,68 @@
+when:
+  sequence: 1
+  path: /QSRV_A02/TechArchitecture/mx/grantingTicket/V02
+  method: POST
+  backend: glomo
+request:
+  headers:
+    sec-fetch-mode: cors
+    referer: http://localhost:8001/
+    content-length: '258'
+    sec-fetch-site: same-site
+    accept-language: es
+    origin: http://localhost:8001
+    accept: application/json, text/html, */*; q=0.1
+    sec-ch-ua: '"Chromium";v="94", "Google Chrome";v="94", ";Not A Brand";v="99"'
+    sec-ch-ua-mobile: ?0
+    x-vbank-session: fbf61457-d6e4-4863-893e-1eddd797d146
+    sec-ch-ua-platform: '"Windows"'
+    host: localhost:9000
+    content-type: application/json
+    connection: keep-alive
+    cache-control: no-cache, no-store, must-revalidate
+    accept-encoding: gzip, deflate, br
+    sec-fetch-dest: empty
+    user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML,
+      like Gecko) Chrome/94.0.4606.61 Safari/537.36
+  body:
+    backendUserRequest:
+      accessCode: '3300000025'
+      dialogId: ''
+      userId: ''
+    authentication:
+      authenticationData:
+      - authenticationData:
+        - '147258'
+        idAuthenticationData: password
+      consumerID: '10000033'
+      authenticationType: '02'
+      userID: '3300000025'
+then:
+- return:
+    backendUserResponse:
+      clientId: b_TCwi5citu5euHzqryDL=
+      accountingTerminal: Q7P
+      clientStatus: A1
+      userType: ''
+    authenticationResponse:
+      authenticationData: []
+      authenticationState: OK
+    :headers:
+      content-length: '251'
+      Server: artichoke
+      Alt-Svc: clear
+      access-control-allow-headers: Content-Type, tsec, authenticationtype, authenticationdata,
+        authenticationstate, contactid, consumeruuid, consumerapplicationid, perimetertsec,
+        authorization, responsewarningcode, responsewarningdescription, cuf, field,
+        bcs-device-app-version, bcs-device-app-version
+      tsec: ac0f6f80a53b420995fe3baebdd71ae4920f66cc
+      X-Response-Time: 486ms
+      Date: Tue, 05 Oct 2021 14:46:01 GMT
+      Allow: DELETE
+      Via: 1.1 google
+      access-control-allow-origin: '*'
+      Access-Control-Expose-Headers: tsec, vnd.bbva.access-token-type,vnd.bbva.access-token,
+        authenticationtype, authenticationdata, authenticationstate
+      content-type: application/json;charset=UTF-8
+      Vary: Accept-Encoding
+    :status: 200 OK

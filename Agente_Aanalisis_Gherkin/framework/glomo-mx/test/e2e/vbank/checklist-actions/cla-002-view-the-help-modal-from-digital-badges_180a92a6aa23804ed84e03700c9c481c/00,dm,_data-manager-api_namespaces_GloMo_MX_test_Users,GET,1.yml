@@ -1,0 +1,65 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: checklist_actions_credit_card,without_completed_challenge
+    lock: 'false'
+then:
+- return:
+    :body:
+    - data:
+        payloadPushNotification:
+          filter:
+            args:
+            - terminationValue: '0216'
+              action: checklistActions
+              key: checklistActions
+        challenges:
+          expedite:
+          - name: transfers
+            id: CLACTRFP
+          - name: wallet
+            id: CLACPWPP
+          - name: pay card
+            id: CLACCCPA
+          security:
+          - name: biometrics
+            id: CLACSAM
+          - name: digital card
+            id: CLACDCGB
+          - name: recipients
+            id: CLACPRCT
+          opportunities:
+          - name: piggy banks
+            id: CLACPWED
+        tags:
+        - '2731197491'
+        - checklist_actions_credit_card
+        - without_completed_challenge
+        - credit_card
+        - debit_card
+        authentication:
+          password: Glomo2026
+          user: '2731197491'
+          deviceId: 7EA293CCF6AED499EC597A26D619537B
+      id: 36742578
+    :headers:
+      content-length: '694'
+      Server: nginx
+      Cache-Control: max-age=0
+      Connection: keep-alive
+      host: datamanager.globaldevtools.bbva.com
+      Vary: Accept-Encoding
+      Expires: Fri, 24 Jul 2026 18:30:25 GMT
+      Date: Fri, 24 Jul 2026 18:30:25 GMT
+      Content-Type: application/json; charset=utf-8
+    :status: 200 OK

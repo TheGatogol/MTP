@@ -1,0 +1,41 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: e3e7da04-47d4-4292-afa9-59d4ba454dda
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: profile,native_digital
+    lock: 'false'
+then:
+- return:
+    :body:
+    - data:
+        locale: es_mx
+        tags:
+        - '2288306892'
+        - profile
+        - native_digital
+        authentication:
+          password: Glomo2025
+          user: '2288306892'
+          deviceId: 5961DFD1E22FE1C2C8AB3187EBB13F4C
+      lockExpiration: null
+      lockType: null
+      id: 36059055
+    :headers:
+      Cache-Control: max-age=0
+      Connection: keep-alive
+      host: datamanager.globaldevtools.bbva.com
+      Expires: Mon, 17 Feb 2025 16:56:57 GMT
+      Content-Length: '250'
+      Date: Mon, 17 Feb 2025 16:56:57 GMT
+      Content-Type: application/json; charset=utf-8
+    :status: 200 OK

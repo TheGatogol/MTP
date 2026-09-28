@@ -1,0 +1,58 @@
+when:
+  sequence: 1
+  path: /SRVS_A02/cards/v1/cards/0002/pin
+  method: GET
+  backend: glomo
+request:
+  headers:
+    sec-fetch-mode: cors
+    content-length: '0'
+    referer: http://127.0.0.1:9090/
+    sec-fetch-site: cross-site
+    accept-language: es
+    origin: http://127.0.0.1:9090
+    x-forwarded-for: 10.23.119.224
+    tsec: aa4d4164b4431c91b5d736074d589d2d5a189a0c
+    via: 1.1 tunnel-5b97b979-d4a5-4290-b81a-51520b1ebd4b (squid/3.5.27)
+    accept: application/json, text/html, */*; q=0.1
+    sec-ch-ua: '" Not;A Brand";v="99", "Google Chrome";v="91", "Chromium";v="91"'
+    sec-ch-ua-mobile: ?0
+    x-vbank-session: 951e3aa2-3ec4-4371-82db-77b4bacf0539
+    host: localhost:9000
+    content-type: application/json
+    cache-control: no-cache, no-store, must-revalidate
+    accept-encoding: gzip
+    sec-fetch-dest: empty
+    user-agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko)
+      Chrome/91.0.4472.77 Safari/537.36
+  query:
+    cvv: 0201B810EFD9EBAACA938D0948B1C774A0BEA00EF13C26122DF973A13BBCD0ACA873F8018B767CDB809CED66FD63E841D604
+    publicKey: '09028393384949'
+    publicKeyExponent: '010001'
+then:
+- return:
+    data:
+      pin: '1234'
+    :headers:
+      access-control-allow-origin: '*'
+      content-length: '130'
+      Access-Control-Expose-Headers: tsec, vnd.bbva.access-token-type,vnd.bbva.access-token,
+        vnd.bbva.sso-pkcs7, authenticationtype, authenticationdata, authenticationstate,
+        authenticationchallenge
+      Server: artichoke
+      Alt-Svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      access-control-allow-headers: Content-Type, tsec, authenticationtype, authenticationdata,
+        authenticationstate, contactid, consumeruuid, consumerapplicationid, perimetertsec,
+        authorization, responsewarningcode, responsewarningdescription, cuf, field,
+        bcs-device-app-version, bcs-device-app-version, vnd.bbva.authorization
+      content-type: application/json;charset=UTF-8
+      Vary: Accept-Encoding
+      tsec: aa4d4164b4431c91b5d736074d589d2d5a189a0c
+      X-Response-Time: 504ms
+      Date: Mon, 30 May 2022 06:51:08 GMT
+      Via: 1.1 google
+    :status: 200 OK
+    apiInfo:
+      name: cards
+      category: products
+      version: 0.19.0

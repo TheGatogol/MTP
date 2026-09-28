@@ -1,0 +1,45 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: bfe211a2-ab99-4a88-ba30-6935893501e0
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: direct_debit,domiciliation_rejected_charge
+    lock: 'false'
+then:
+- return:
+    :body:
+    - data:
+        notifications:
+          domiciliationNotice: 6601d7b2156fdc6e478f4eaf
+        tags:
+        - direct_debit
+        - domiciliation_rejected_charge
+        - '8688359456'
+        products: {}
+        authentication:
+          password: Glomo2023
+          user: '8688359456'
+          deviceId: 7DC0C284951B35F9DC4794CE62F2FB3C
+      lockExpiration: '2024-04-04T22:01:19.761622Z'
+      lockType: SHARED
+      id: 35811999
+    :headers:
+      content-length: '366'
+      Strict-Transport-Security: max-age=15768000
+      Server: nginx
+      ECS-Entry-Point-Zone: ext
+      Connection: keep-alive
+      host: datamanager.globaldevtools.bbva.com
+      Vary: Accept-Encoding
+      Date: Thu, 04 Apr 2024 22:00:44 GMT
+      Content-Type: application/json
+    :status: 200 OK

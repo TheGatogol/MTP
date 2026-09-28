@@ -1,0 +1,51 @@
+when:
+  sequence: 1
+  path: /SRVS_A02/accounts/v0/documentation-dossiers
+  method: GET
+  backend: glomo
+request:
+  headers:
+    sec-fetch-mode: cors
+    content-length: '0'
+    referer: http://localhost:8001/
+    sec-fetch-site: same-site
+    accept-language: es-MX,es;q=0.9
+    origin: http://localhost:8001
+    tsec: 186064ad2b9a6d7e492cfa914bf866a038249a59
+    accept: application/json, text/html, */*; q=0.1
+    sec-ch-ua: '"Google Chrome";v="113", "Chromium";v="113", "Not-A.Brand";v="24"'
+    sec-ch-ua-mobile: ?0
+    x-vbank-session: 4aa5fe44-1101-4b3b-8da4-76004d90ec02
+    sec-ch-ua-platform: '"macOS"'
+    host: localhost:9000
+    content-type: application/json
+    connection: keep-alive
+    cache-control: no-cache, no-store, must-revalidate
+    accept-encoding: gzip, deflate, br
+    sec-fetch-dest: empty
+    user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36
+      (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36
+  query:
+    indicators.id: IS_PAYROLL_ACCOUNT
+    indicators.isActive: 'TRUE'
+then:
+- return:
+    :body: Not Found
+    :headers:
+      access-control-allow-origin: '*'
+      Access-Control-Expose-Headers: tsec, vnd.bbva.access-token-type,vnd.bbva.access-token,
+        vnd.bbva.sso-pkcs7, authenticationtype, authenticationdata, authenticationstate,
+        authenticationchallenge
+      Server: artichoke
+      access-control-allow-headers: Content-Type, tsec, authenticationtype, authenticationdata,
+        authenticationstate, contactid, consumeruuid, consumerapplicationid, perimetertsec,
+        authorization, responsewarningcode, responsewarningdescription, cuf, field,
+        bcs-device-app-version, bcs-device-app-version, vnd.bbva.authorization
+      Connection: keep-alive
+      Vary: Accept-Encoding
+      tsec: 186064ad2b9a6d7e492cfa914bf866a038249a59
+      Content-Length: '9'
+      X-Response-Time: 2ms
+      Date: Wed, 10 May 2023 18:04:39 GMT
+      Content-Type: text/plain; charset=utf-8
+    :status: 404 Not Found

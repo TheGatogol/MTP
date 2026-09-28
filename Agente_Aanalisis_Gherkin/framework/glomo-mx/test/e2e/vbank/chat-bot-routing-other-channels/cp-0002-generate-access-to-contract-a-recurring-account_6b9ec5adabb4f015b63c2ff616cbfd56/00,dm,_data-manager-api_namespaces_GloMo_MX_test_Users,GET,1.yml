@@ -1,0 +1,39 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: 3cb5f571-38f3-46f5-88bc-e2787840f187
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: user_with_routing_others_channels
+    lock: 'false'
+then:
+- return:
+    :body:
+    - data:
+        locale: es_mx
+        tags:
+        - user_with_routing_others_channels
+        authentication:
+          password: Glomo2025
+          user: '3330269898'
+          deviceId: 95D61F103FE21475F5DED352D924EEC6
+      lockExpiration: null
+      lockType: null
+      id: 36227792
+    :headers:
+      Cache-Control: max-age=0
+      Connection: keep-alive
+      host: datamanager.globaldevtools.bbva.com
+      Expires: Tue, 23 Sep 2025 01:11:48 GMT
+      Content-Length: '244'
+      Date: Tue, 23 Sep 2025 01:11:48 GMT
+      Content-Type: application/json; charset=utf-8
+    :status: 200 OK

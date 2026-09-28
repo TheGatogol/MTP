@@ -1,0 +1,92 @@
+when:
+  sequence: 1
+  path: /SRVS_A02/personal-finances/v1/pfms/0101/groups/1/top-amount-categories
+  method: GET
+  backend: glomo
+request:
+  headers:
+    sec-fetch-mode: cors
+    content-length: '0'
+    referer: http://127.0.0.1:9090/
+    sec-fetch-site: cross-site
+    accept-language: es
+    origin: http://127.0.0.1:9090
+    x-forwarded-for: 10.23.99.95
+    tsec: 3d1ae36f5403b2997d72fba360edba220b3f18bd
+    via: 1.1 tunnel-5b97b979-d4a5-4290-b81a-51520b1ebd4b (squid/3.5.27)
+    accept: application/json, text/html, */*; q=0.1
+    sec-ch-ua: '" Not;A Brand";v="99", "Google Chrome";v="91", "Chromium";v="91"'
+    sec-ch-ua-mobile: ?0
+    x-vbank-session: 4a83b366-7eff-41c4-9926-77487f7717fd
+    host: localhost:9000
+    content-type: application/json
+    cache-control: no-cache, no-store, must-revalidate
+    accept-encoding: gzip
+    sec-fetch-dest: empty
+    user-agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko)
+      Chrome/91.0.4472.77 Safari/537.36
+  query:
+    period.startDate: '2022-05-01'
+    period.endDate: '2022-05-31'
+then:
+- return:
+    data:
+      period:
+        endDate: '2022-05-31'
+        startDate: '2022-05-01'
+      categories:
+      - image:
+          id: creditcard
+          url: https://upload.wikimedia.org/wikipedia/commons/1/1e/Default-avatar.jpg
+        totalAmounts:
+        - amount: 1500
+          pfmTransactionType: TAXONOMIC_MOVEMENTS
+          currency: MXN
+        name: Paysheet, pension, subsidy
+        id: '16'
+      - image:
+          id: dollar
+          url: https://upload.wikimedia.org/wikipedia/commons/1/1e/Default-avatar.jpg
+        totalAmounts:
+        - amount: 500
+          pfmTransactionType: TAXONOMIC_MOVEMENTS
+          currency: MXN
+        name: Transfer received
+        id: '23'
+      - image:
+          id: dollar
+          url: https://upload.wikimedia.org/wikipedia/commons/1/1e/Default-avatar.jpg
+        totalAmounts:
+        - amount: 70
+          pfmTransactionType: TAXONOMIC_MOVEMENTS
+          currency: MXN
+        name: Dividends and settlements
+        id: '18'
+      others:
+        totalAmounts:
+        - amount: 90
+          pfmTransactionType: TAXONOMIC_MOVEMENTS
+          currency: MXN
+    :headers:
+      access-control-allow-origin: '*'
+      content-length: '1619'
+      Access-Control-Expose-Headers: tsec, vnd.bbva.access-token-type,vnd.bbva.access-token,
+        vnd.bbva.sso-pkcs7, authenticationtype, authenticationdata, authenticationstate,
+        authenticationchallenge
+      Server: artichoke
+      Alt-Svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      access-control-allow-headers: Content-Type, tsec, authenticationtype, authenticationdata,
+        authenticationstate, contactid, consumeruuid, consumerapplicationid, perimetertsec,
+        authorization, responsewarningcode, responsewarningdescription, cuf, field,
+        bcs-device-app-version, bcs-device-app-version, vnd.bbva.authorization
+      content-type: application/json;charset=UTF-8
+      Vary: Accept-Encoding
+      tsec: 3d1ae36f5403b2997d72fba360edba220b3f18bd
+      X-Response-Time: 501ms
+      Date: Mon, 30 May 2022 06:54:02 GMT
+      Via: 1.1 google
+    :status: 200 OK
+    apiInfo:
+      name: personal-finances
+      category: finances
+      version: 1.6.0

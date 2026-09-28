@@ -1,0 +1,47 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: b94107a1-110c-4e20-bc0a-1fcc9aec3b0b
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: loan_payment,payment_personal,overdue_payment
+    lock: 'false'
+then:
+- return:
+    :body:
+    - data:
+        locale: es_mx
+        tags:
+        - '5562086665'
+        - loan_payment
+        - payment_personal
+        - overdue_payment
+        products:
+          account:
+            id: yEAHmSLzjOaqPJDG9TnB_IMIcpvFvE96
+        authentication:
+          password: Glomo2023
+          user: '5562086665'
+          deviceId: DDA4CF8FC9D52CE4FFA02E9727790800
+      lockExpiration: null
+      lockType: null
+      id: 35619588
+    :headers:
+      content-length: '276'
+      Strict-Transport-Security: max-age=15768000
+      Server: nginx
+      ECS-Entry-Point-Zone: ext
+      Connection: keep-alive
+      host: datamanager.globaldevtools.bbva.com
+      Vary: Accept-Encoding
+      Date: Thu, 07 Sep 2023 17:56:21 GMT
+      Content-Type: application/json
+    :status: 200 OK

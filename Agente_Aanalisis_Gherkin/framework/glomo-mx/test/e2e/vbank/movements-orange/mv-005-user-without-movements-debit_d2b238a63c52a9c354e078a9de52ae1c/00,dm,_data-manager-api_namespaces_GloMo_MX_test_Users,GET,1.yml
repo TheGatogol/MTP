@@ -1,0 +1,78 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: c7a07379-cf2b-4b67-a0d6-41a84176ee56
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: tdc_and_tdd_without_movements
+    lock: 'false'
+then:
+- return:
+    :body:
+    - data:
+        locale: es_mx
+        tags:
+        - tdc_and_tdd_without_movements
+        products:
+          cards:
+          - number: '4772131838626977'
+            product:
+              name: ORO BBVA
+              id: AV
+            cardId: 0002tc5667
+            cardType:
+              name: Tarjeta de crédito
+              id: CREDIT_CARD
+            activations:
+            - isActive: true
+            transactions: []
+            status:
+              description: VIGENTE
+              id: OPERATIVE
+          - number: '4152313944733166'
+            product:
+              name: DEBITO BBVA
+              id: VD
+            relatedContracts:
+            - contractId: '00740010001501328412'
+              id: R4WYM5M0QX2Z9C49WMT2F2RNMHX62JQ7QANVHYP5ZDPC4P3MER10BZZSEE8ABRA4MMG4AQ4HY5WZM
+            cardId: 0001ah8412
+            cardType:
+              name: TARJETA DE DEBITO
+              id: DEBIT_CARD
+            activations:
+            - isActive: true
+            transactions: []
+            status:
+              name: VIGENTE
+              id: OPERATIVE
+          accounts:
+          - number: '00740010001501328412'
+            alias: 0001AH8412
+            id: '0230'
+            transactions: []
+        authentication:
+          password: Glomo2023
+          user: '6682476892'
+          deviceId: 084DE07AD8CD8BD00D5A2468A69F9262
+      lockExpiration: null
+      lockType: null
+      id: 35781181
+    :headers:
+      content-length: '1076'
+      Cache-Control: max-age=0
+      Connection: keep-alive
+      host: datamanager.globaldevtools.bbva.com
+      Vary: Accept-Encoding
+      Expires: Tue, 25 Feb 2025 22:34:11 GMT
+      Date: Tue, 25 Feb 2025 22:34:11 GMT
+      Content-Type: application/json; charset=utf-8
+    :status: 200 OK

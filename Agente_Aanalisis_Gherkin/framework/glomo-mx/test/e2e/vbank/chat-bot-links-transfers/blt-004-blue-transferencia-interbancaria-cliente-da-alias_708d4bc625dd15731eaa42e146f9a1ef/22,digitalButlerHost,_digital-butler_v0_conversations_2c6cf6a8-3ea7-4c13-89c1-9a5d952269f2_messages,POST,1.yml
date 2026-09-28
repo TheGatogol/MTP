@@ -1,0 +1,75 @@
+when:
+  sequence: 1
+  path: /digital-butler/v0/conversations/2c6cf6a8-3ea7-4c13-89c1-9a5d952269f2/messages
+  method: POST
+  backend: digitalButlerHost
+request:
+  body:
+    interactionType: EVENT
+    customerMetaData:
+      appVersion: 3.1
+      origin: futura
+    message: WELCOME
+    event: WELCOME
+then:
+- return:
+    data:
+      messageTracking:
+        subCategory: NA
+        category: NA
+        intent: service.assistance.whatCanYouDo
+      conversationId: 2c6cf6a8-3ea7-4c13-89c1-9a5d952269f2
+      messages:
+      - messageType: BOT_TEXT
+        id: b36de615-92f5-48bf-9da8-1f04b9c63f0d
+        detail:
+        - content: ¡Hola! Soy Blue, tu asistente virtual. ¿En qué puedo apoyarte?
+      - messageType: LINK
+        id: b36de615-92f5-48bf-9da8-1f04b9c63f0d
+        detail:
+        - messageType: LINK
+          messagePayload:
+            payloadType: EVENT
+            content: onboarding
+          channel: app
+          isProcessed: true
+          linkType: MESSAGE
+          message: Quiero saber cómo puedes ayudarme
+          title: Quiero saber cómo puedes ayudarme
+      - messageType: LINK
+        id: b36de615-92f5-48bf-9da8-1f04b9c63f0d
+        detail:
+        - messageType: LINK
+          messagePayload:
+            payloadType: EVENT
+            content: futuraOnboarding
+          isProcessed: true
+          channel: app
+          linkType: MESSAGE
+          title: Saber por qué cambió mi app
+          message: Saber por qué cambió mi app
+      - messageType: LINK
+        id: b36de615-92f5-48bf-9da8-1f04b9c63f0d
+        detail:
+        - messageType: LINK
+          messagePayload:
+            payloadType: EVENT
+            content: chatGPTOffer
+          isProcessed: true
+          channel: app
+          linkType: MESSAGE
+          title: Quiero obtener ChatGPT Go sin costo
+          message: Quiero obtener ChatGPT Go sin costo
+      suggestions: []
+    :headers:
+      access-control-allow-origin: '*'
+      content-length: '1295'
+      x-envoy-upstream-service-time: '1028'
+      Server: nginx
+      Cache-Control: max-age=0
+      Connection: keep-alive
+      Vary: Accept-Encoding
+      Expires: Tue, 19 May 2026 16:41:08 GMT
+      Date: Tue, 19 May 2026 16:41:08 GMT
+      Content-Type: application/json; charset=utf-8
+    :status: 200 OK

@@ -1,0 +1,76 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: 97aa1584-a523-447b-ada1-86e36a3f05e9
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: has_insurance_policy
+    lock: 'false'
+then:
+- return:
+    :body:
+    - data:
+        locale: es_mx
+        tags:
+        - '5561427752'
+        - has_insurance_policy
+        products:
+          insurances:
+          - number: '    1347310005         1'
+            alias: VALUE
+            id: YJ-i4dtYULucHjC3tXsEtqMhloGtAZ2y3gB_qpNE2E8
+            detail:
+              template:
+                id: peTXkNxL1nk
+              statusDate: '2024-01-01'
+              nextPaymentDate: 1970-01-01T00:00:00.000-0600
+              dueDate: '2025-01-01'
+              renewalType:
+                id: AUTOMATIC
+              installmentFrequency: MONTHLY
+              specificAmounts:
+              - amounts:
+                - amount: 5683.44
+                  currency: MXN
+                name: Prima Total Anual
+                id: PRIMATOTALANUAL
+              lastPaymentDate: 1970-01-01T00:00:00.000-0600
+              hasPendingPayments: true
+              commertialProductId: '4046'
+              startDate: '2024-01-01'
+              productDescription: Vidasegura Dinamico
+              status: FORMALIZED
+            participant:
+              lastName: PEREZ
+              secondLastName: MENDOZA
+              name: MARIA ISABEL
+              participantType:
+                id: HOLDER
+            productType: INSURANCE
+            subProductType:
+              id: VIDA INDIVIDUAL
+        authentication:
+          password: Glomo2023
+          user: '5561427752'
+          deviceId: 561C89695F6848A2EDAB6F14B2049C27
+      lockExpiration: null
+      lockType: null
+      id: 36009428
+    :headers:
+      content-length: '1145'
+      Cache-Control: max-age=0
+      Connection: keep-alive
+      host: datamanager.globaldevtools.bbva.com
+      Vary: Accept-Encoding
+      Expires: Wed, 18 Dec 2024 22:20:20 GMT
+      Date: Wed, 18 Dec 2024 22:20:20 GMT
+      Content-Type: application/json; charset=utf-8
+    :status: 200 OK

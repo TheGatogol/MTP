@@ -1,0 +1,168 @@
+when:
+  sequence: 1
+  path: /SRVS_A02/cards/v2/cards/1109
+  method: GET
+  backend: glomo
+request:
+  headers:
+    sec-fetch-mode: cors
+    content-length: '0'
+    referer: http://127.0.0.1:9090/
+    sec-fetch-site: cross-site
+    accept-language: es
+    origin: http://127.0.0.1:9090
+    x-forwarded-for: 10.23.116.230
+    tsec: a6bb2208499ebed3adfbb6110f940088c31138a2
+    via: 1.1 tunnel-54d1c339-272f-4b0b-b9ff-d5939a961314 (squid/3.5.27)
+    accept: application/json, text/html, */*; q=0.1
+    sec-ch-ua: '" Not;A Brand";v="99", "Google Chrome";v="91", "Chromium";v="91"'
+    sec-ch-ua-mobile: ?0
+    x-vbank-session: ab4d648d-8745-4b38-9b95-07c63c7ab17a
+    host: localhost:9000
+    content-type: application/json
+    cache-control: no-cache, no-store, must-revalidate
+    accept-encoding: gzip
+    sec-fetch-dest: empty
+    user-agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko)
+      Chrome/91.0.4472.77 Safari/537.36
+  query:
+    expand: payment-methods,blocks,indicators
+then:
+- return:
+    data:
+      product:
+        name: Tarjeta de crédito
+        id: CREDIT_MX
+      holderName: Hugo Sánchez
+      images:
+      - description: Front face of the card
+        id: FRONT_CARD
+        url: https://__/wrong-url.jpg
+      - description: Back face of the card
+        id: BACK_CARD
+        url: /imageBack.jpg
+      numberType:
+        description: Permanent Account Number
+        id: PAN
+      brandAssociation:
+        description: VISA
+        id: VISA
+      blocks: []
+      physicalSupport:
+        description: Plástico normal
+        id: NORMAL_PLASTIC
+      cardType:
+        description: Tarjeta de crédito
+        id: CREDIT_CARD
+      disposedBalance:
+        currentBalances:
+        - amount: 64879
+          currency: MXN
+        pendingBalances:
+        - amount: -1000
+          currency: MXN
+        postedBalances:
+        - amount: 65879
+          currency: MXN
+      indicators:
+      - description: Editar alias
+        id: EDITABLE_ALIAS
+        isActive: true
+      - description: Ver CVV
+        id: SECURITY_DATA_READ
+        isActive: true
+      - description: Compra tiempo aire
+        id: ORIGIN_MOBILE_PHONE_RECHARGES
+        isActive: true
+      - description: Bloquear tarjeta
+        id: BLOCKABLE
+        isActive: true
+      - description: Cancelar tarjeta
+        id: CANCELABLE
+        isActive: true
+      - description: Pago de servicios
+        id: ORIGIN_SERVICE_PAYMENT
+        isActive: true
+      - description: Pagar tarjeta
+        id: DESTINATION_TRANSFER_FROM_ACCOUNT
+        isActive: true
+      - description: Traspaso a mis cuentas
+        id: ORIGIN_TRANSFER_TO_ACCOUNT
+        isActive: true
+      availableBalance:
+        currentBalances:
+        - amount: 1121
+          currency: MXN
+        pendingBalances:
+        - amount: 1000
+          currency: MXN
+        postedBalances:
+        - amount: 2121
+          currency: MXN
+      number: '4165573837658124'
+      grantedCredits:
+      - amount: 66000
+        currency: MXN
+      bank:
+        name: BBVA Bancomer
+        id: 549300WIWQK5Q9MCUN92
+      cutOffDate: '2017-10-01T12:00:00Z'
+      paymentMethods:
+      - nextPaymentDate: '2017-10-01T12:00:00Z'
+        description: Pago mínimo
+        id: MINIMUM_AMOUNT_PAYMENT
+        monetaryPayments:
+        - amount: 2000
+          currency: MXN
+      - nextPaymentDate: '2017-10-01T12:00:00Z'
+        description: Pago para no generar intereses
+        id: MINIMUM_AMOUNT_TO_AVOID_INTEREST_PAYMENT
+        monetaryPayments:
+        - amount: 3000
+          currency: MXN
+      - nextPaymentDate: '2017-10-01T12:00:00Z'
+        description: Deuda de este mes
+        id: LAST_PERIOD_AMOUNT_PAYMENT
+        monetaryPayments:
+        - amount: 5000
+          currency: MXN
+      - nextPaymentDate: '2017-10-01T12:00:00Z'
+        description: Saldo al corte
+        id: TOTAL_AMOUNT_PAYMENT
+        monetaryPayments:
+        - amount: 5300
+          currency: MXN
+      alias: Tarjeta incorrecta
+      id: '1109'
+      activationDate: '2016-07-01T13:32:02Z'
+      issueDate: '2016-07-01T12:05:13Z'
+      openingDate: '2016-07-01T11:31:45Z'
+      expirationDate: '**/**'
+      currencies:
+      - isMajor: true
+        currency: MXN
+      status:
+        id: OPERATIVE
+    :headers:
+      access-control-allow-origin: '*'
+      content-length: '4398'
+      Access-Control-Expose-Headers: tsec, vnd.bbva.access-token-type,vnd.bbva.access-token,
+        vnd.bbva.sso-pkcs7, authenticationtype, authenticationdata, authenticationstate,
+        authenticationchallenge
+      Server: artichoke
+      Alt-Svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      access-control-allow-headers: Content-Type, tsec, authenticationtype, authenticationdata,
+        authenticationstate, contactid, consumeruuid, consumerapplicationid, perimetertsec,
+        authorization, responsewarningcode, responsewarningdescription, cuf, field,
+        bcs-device-app-version, bcs-device-app-version, vnd.bbva.authorization
+      content-type: application/json;charset=UTF-8
+      Vary: Accept-Encoding
+      tsec: a6bb2208499ebed3adfbb6110f940088c31138a2
+      X-Response-Time: 484ms
+      Date: Mon, 30 May 2022 06:48:46 GMT
+      Via: 1.1 google
+    :status: 200 OK
+    apiInfo:
+      name: cards
+      category: products
+      version: 0.19.0

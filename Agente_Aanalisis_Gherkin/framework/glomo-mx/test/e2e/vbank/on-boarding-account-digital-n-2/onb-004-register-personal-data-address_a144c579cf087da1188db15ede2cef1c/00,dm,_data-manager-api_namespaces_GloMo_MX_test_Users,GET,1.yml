@@ -1,0 +1,60 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: e3974778-f096-4e7c-9dfc-75edf496343b
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: open_an_account
+    lock: 'false'
+then:
+- return:
+    :body:
+    - data:
+        address:
+        - zipCode: '54715'
+          street: Calle 54
+          invalidZP: '2029'
+          outsideNumber: '5'
+          colonies: C3180
+          internalNumber: '304'
+          wrongZP: '00000'
+        data:
+        - numberIne: '159066068'
+          secondLastName: Casio
+          placeOfBirth: DF
+          firstLastName: Lopez
+          gender: MALE
+          name: Cristian Omar
+        locale: es_mx
+        people:
+          customer:
+            birthData:
+              invalidBirthDate: '2023-08-26'
+              birthDate: '1996-08-26'
+        tags:
+        - '5570130950'
+        - open_an_account
+        authentication:
+          user: '5570130950'
+      lockExpiration: null
+      lockType: null
+      id: 35617192
+    :headers:
+      content-length: '591'
+      Strict-Transport-Security: max-age=15768000
+      Server: nginx
+      ECS-Entry-Point-Zone: ext
+      Connection: keep-alive
+      host: datamanager.globaldevtools.bbva.com
+      Vary: Accept-Encoding
+      Date: Wed, 30 Aug 2023 01:31:50 GMT
+      Content-Type: application/json
+    :status: 200 OK

@@ -1,0 +1,85 @@
+when:
+  sequence: 1
+  path: /SRVS_A02/customer-logins/v1/logins
+  method: GET
+  backend: glomo
+request:
+  headers:
+    sec-fetch-mode: cors
+    content-length: "0"
+    referer: http://localhost:8001/
+    sec-fetch-site: same-site
+    accept-language: es
+    origin: http://localhost:8001
+    authenticationtype: "58"
+    tsec: 74189cf8967ffeb19754f7552327659dd1cca12c
+    accept: application/json, text/html, */*; q=0.1
+    authenticationdata: deviceid=11111111
+    sec-ch-ua: '"Google Chrome";v="93", " Not;A Brand";v="99", "Chromium";v="93"'
+    sec-ch-ua-mobile: ?0
+    x-vbank-session: 9ed7d97e-44e3-49b1-9d78-ec40826fd039
+    sec-ch-ua-platform: '"macOS"'
+    host: localhost:9000
+    content-type: application/json
+    connection: keep-alive
+    cache-control: no-cache, no-store, must-revalidate
+    accept-encoding: gzip, deflate, br
+    sec-fetch-dest: empty
+    user-agent: GLOMO_MX/99.99.99;Mozilla/5.0 (Linux; U; Android 4.0.2; en-us;
+      Galaxy Nexus Build/ICL53F) AppleWebKit/534.30 (KHTML, like Gecko)
+      Version/4.0 Mobile Safari/534.30
+  query: {}
+then:
+- return:
+    data:
+      classifications:
+        - id: ECONOMIC_SECTOR
+          sector:
+            id: F
+            subSector:
+              id: "32"
+          segments: []
+      bank:
+        id: "0074"
+        branch:
+          id: "0010"
+      identityDocument:
+        documentType:
+          id: I
+        documentNumber: 52341234A
+      personType:
+        firstName: Cesar
+        lastName: Ramón
+        gender:
+          id: M
+        birthData:
+          birthDate: "1984-05-13T00:00:00.000Z"
+        id: NATURAL
+      segments: []
+    :headers:
+      access-control-allow-origin: "*"
+      content-length: "2029"
+      Access-Control-Expose-Headers: tsec,
+        vnd.bbva.access-token-type,vnd.bbva.access-token, authenticationtype,
+        authenticationdata, authenticationstate
+      Server: artichoke
+      access-control-allow-headers: Content-Type, tsec, authenticationtype,
+        authenticationdata, authenticationstate, contactid, consumeruuid,
+        consumerapplicationid, perimetertsec, authorization,
+        responsewarningcode, responsewarningdescription, cuf, field,
+        bcs-device-app-version, bcs-device-app-version
+      Connection: keep-alive
+      content-type: application/json;charset=UTF-8
+      Vary: Accept-Encoding
+      tsec: 74189cf8967ffeb19754f7552327659dd1cca12c
+      X-Response-Time: 7ms
+      Date: Thu, 23 Sep 2021 19:24:37 GMT
+    :status: 200 OK
+    apiInfo:
+      name: customers
+      category: people
+      version: 0.24.0
+    messages:
+      - code: KNA1008
+        message: CONSULTA REALIZADA
+        type: WARNING

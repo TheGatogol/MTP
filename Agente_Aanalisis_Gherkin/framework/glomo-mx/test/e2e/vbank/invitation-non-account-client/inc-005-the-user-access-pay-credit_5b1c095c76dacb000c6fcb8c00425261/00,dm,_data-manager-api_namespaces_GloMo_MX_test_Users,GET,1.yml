@@ -1,0 +1,47 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: 76ea2127-0098-4d1c-9cd6-c0a7549e051b
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: monoproduct
+    lock: 'false'
+then:
+- return:
+    :body:
+    - data:
+        locale: es_mx
+        tags:
+        - '5516104456'
+        - dashboard_non_invitation
+        - monoproduct
+        monoproduct: true
+        products:
+          account:
+            id: VgfAoxj8ArWoZzyzaxv2SFLE7YYiOxs_
+        authentication:
+          password: Qwerty12
+          user: '5514767485'
+          deviceId: B55CD031D72B38B7DB30D87548AC8781
+      lockExpiration: null
+      lockType: null
+      id: 3508841
+    :headers:
+      content-length: '262'
+      Strict-Transport-Security: max-age=15768000
+      Server: nginx
+      ECS-Entry-Point-Zone: ext
+      Connection: keep-alive
+      host: datamanager.globaldevtools.bbva.com
+      Vary: Accept-Encoding
+      Date: Mon, 30 Oct 2023 19:41:49 GMT
+      Content-Type: application/json
+    :status: 200 OK

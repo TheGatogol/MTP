@@ -1,0 +1,51 @@
+when:
+  sequence: 9
+  path: /SRVS_A02/loyalty/v0/rewards
+  method: GET
+  backend: glomo
+request:
+  headers:
+    sec-fetch-mode: cors
+    content-length: '0'
+    referer: http://localhost:8001/
+    sec-fetch-site: same-site
+    accept-language: es-MX,es;q=0.9
+    origin: http://localhost:8001
+    tsec: 20c9aaf8870541ce4af905ddd0946fec2681d649
+    accept: application/json, text/html, */*; q=0.1
+    sec-ch-ua: '"Google Chrome";v="113", "Chromium";v="113", "Not-A.Brand";v="24"'
+    sec-ch-ua-mobile: ?0
+    x-vbank-session: 54e3f41b-50c7-483b-811d-2ec91f975b6d
+    sec-ch-ua-platform: '"macOS"'
+    host: localhost:9000
+    content-type: application/json
+    connection: keep-alive
+    cache-control: no-cache, no-store, must-revalidate
+    accept-encoding: gzip, deflate, br
+    sec-fetch-dest: empty
+    user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36
+      (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36
+  query:
+    billingPeriod: OPEN_PERIOD
+    contract.id: '0055'
+then:
+- return:
+    :body: ''
+    :headers:
+      access-control-allow-origin: '*'
+      content-length: '0'
+      Access-Control-Expose-Headers: tsec, vnd.bbva.access-token-type,vnd.bbva.access-token,
+        vnd.bbva.sso-pkcs7, authenticationtype, authenticationdata, authenticationstate,
+        authenticationchallenge
+      Server: artichoke
+      Alt-Svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      access-control-allow-headers: Content-Type, tsec, authenticationtype, authenticationdata,
+        authenticationstate, contactid, consumeruuid, consumerapplicationid, perimetertsec,
+        authorization, responsewarningcode, responsewarningdescription, cuf, field,
+        bcs-device-app-version, bcs-device-app-version, vnd.bbva.authorization
+      Vary: Accept-Encoding
+      tsec: 20c9aaf8870541ce4af905ddd0946fec2681d649
+      X-Response-Time: 475ms
+      Date: Thu, 11 May 2023 16:55:42 GMT
+      Via: 1.1 google
+    :status: 204 No Content

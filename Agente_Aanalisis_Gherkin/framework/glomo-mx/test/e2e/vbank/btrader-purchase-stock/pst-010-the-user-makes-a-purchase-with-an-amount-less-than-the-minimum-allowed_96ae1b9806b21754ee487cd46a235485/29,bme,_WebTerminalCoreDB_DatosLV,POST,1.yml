@@ -1,0 +1,60 @@
+when:
+  sequence: 1
+  path: /WebTerminalCoreDB/DatosLV
+  method: POST
+  backend: bme
+request:
+  headers:
+    sec-fetch-mode: cors
+    referer: http://localhost:8001/
+    content-length: '131'
+    sec-fetch-site: same-site
+    accept-language: es-MX,es;q=0.9
+    origin: http://localhost:8001
+    accept: application/json, text/plain, */*; q=0.01
+    sec-ch-ua: '"Google Chrome";v="137", "Chromium";v="137", "Not/A)Brand";v="24"'
+    sec-ch-ua-mobile: ?0
+    x-vbank-session: 3770df85-e718-44f4-9d77-4cb4e2931467
+    sec-ch-ua-platform: '"macOS"'
+    x-requested-with: XMLHttpRequest
+    host: localhost:9003
+    content-type: application/json
+    connection: keep-alive
+    cache-control: no-cache, no-store, must-revalidate
+    accept-encoding: gzip, deflate, br, zstd
+    sec-fetch-dest: empty
+    user-agent: GLOMO_MX/99.99.99 (Android;14;Samsung)
+  body:
+    Sesion: 38ABF5A8C9594551B7FFF3BFCF596772
+    TipoPeticion: '12'
+    Instrumentos: AAPL *,NAFTRAC ISHRS
+    Descriptores: 40,420,642
+then:
+- return:
+    datos:
+      LV:
+        V:
+        - D80001: AAPL
+          D40: US0378331005
+          D420: '3717.62'
+          D80002: '*'
+          MV: M2AAPL1
+          D642: '2'
+        - D80001: NAFTRAC
+          D40: MX1BNA060014
+          D420: '57.05'
+          D80002: ISHRS
+          MV: M3NAF02
+          D642: '2'
+    :headers:
+      content-length: '229'
+      Server: Microsoft-IIS/10.0
+      Access-Control-Allow-Origin: http://localhost:8001
+      Access-Control-Allow-Credentials: 'true'
+      Vary: Origin
+      X-Response-Time-ms: '73'
+      Date: Tue, 17 Jun 2025 23:48:58 GMT
+      Content-Type: application/json; charset=utf-8
+      X-Powered-By: ASP.NET
+    :status: 200 OK
+    error: 0

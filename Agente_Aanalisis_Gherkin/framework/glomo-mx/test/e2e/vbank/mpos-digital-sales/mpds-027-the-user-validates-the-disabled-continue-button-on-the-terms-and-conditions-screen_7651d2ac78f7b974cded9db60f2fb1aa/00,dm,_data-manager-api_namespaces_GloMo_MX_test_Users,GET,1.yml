@@ -1,0 +1,53 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: 67c1f7de-ec8c-41b5-8688-27a92c4bb897
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: one_account,oc_cash_zone
+    lock: 'false'
+then:
+- return:
+    :body:
+    - data:
+        address:
+          externalNumber: '387'
+          street: Campos Elíseos
+          postalCode: '11540'
+          municipality: Polanco
+          state: Ciudad de México
+          neighborhood: Miguel Hidalgo
+          internalNumber: '3'
+        data:
+          address: PEDRO LASCURAIN 77318184-81433856 ATOTONILCO, 40464, GUERRERO
+          phone: '4434802268'
+          email: fdgpruebas003@gmail.com
+        tags:
+        - '4434802268'
+        - oc_cash_zone
+        - one_account
+        authentication:
+          password: Glomo2025
+          user: '4434802268'
+          deviceId: 9B95038D34C2E5F37AF6D458F3E29982
+      id: 35937031
+      lockType: null
+      lockExpiration: null
+    :headers:
+      content-length: '582'
+      Cache-Control: max-age=0
+      Connection: keep-alive
+      host: datamanager.globaldevtools.bbva.com
+      Vary: Accept-Encoding
+      Expires: Tue, 05 Aug 2025 06:01:43 GMT
+      Date: Tue, 05 Aug 2025 06:01:43 GMT
+      Content-Type: application/json; charset=utf-8
+    :status: 200 OK

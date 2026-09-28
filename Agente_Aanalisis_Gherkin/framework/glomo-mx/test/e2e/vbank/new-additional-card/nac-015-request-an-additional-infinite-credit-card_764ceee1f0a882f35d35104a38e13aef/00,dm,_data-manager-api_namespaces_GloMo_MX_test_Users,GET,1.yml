@@ -1,0 +1,47 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: 0e2a897e-06b8-45f4-a529-87749b0d133b
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: additional_card_infinite
+    lock: 'false'
+then:
+- return:
+    :body:
+    - data:
+        tags:
+        - '5618459277'
+        - additional_card_infinite
+        products:
+          cards:
+          - number: '4555040401233629'
+            cardId: F1y75eJWQwSn9iopog-Z_JXBHoiSkZBoDYeDTSP1F_w
+            title:
+              name: INFINITE BBVA
+        authentication:
+          password: Glomo2023
+          user: '5618459277'
+          deviceId: 291DEECB93987CCBAC3C1D892ECDD006
+      lockExpiration: null
+      lockType: null
+      id: 3508182
+    :headers:
+      content-length: '379'
+      Strict-Transport-Security: max-age=15768000
+      Server: nginx
+      ECS-Entry-Point-Zone: ext
+      Connection: keep-alive
+      host: datamanager.globaldevtools.bbva.com
+      Vary: Accept-Encoding
+      Date: Wed, 15 Nov 2023 23:04:33 GMT
+      Content-Type: application/json
+    :status: 200 OK

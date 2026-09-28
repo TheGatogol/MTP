@@ -1,0 +1,68 @@
+when:
+  sequence: 2
+  path: /digital-butler/v0/conversations/b067dc02-cfd1-49b5-826d-3288fb6d573d/messages
+  method: POST
+  backend: digitalButlerHost
+request:
+  body:
+    interactionType: TEXT
+    customerMetaData:
+      appVersion: 3.1
+      origin: futura
+    message: Envia una transferencia a Paola de 150 con la nota comida escuela
+    params: []
+then:
+- return:
+    data:
+      messageTracking:
+        subCategory: Transfers
+        category: Collection and Payment
+        intent: operation.transfer
+      conversationId: b067dc02-cfd1-49b5-826d-3288fb6d573d
+      messages:
+      - messageType: BOT_TEXT
+        id: a7b755a4-f4f1-402d-a0b5-c8aeda325413
+        detail:
+        - content: 'Para <span style=''font-weight: 500;''>enviar dinero</span> solo necesitas uno de estos datos: número de cuenta, cuenta CLABE o número de celular del destinatario. Entra en este enlace para realizarla.'
+      - messageType: LINK
+        id: f015f288-e0bd-44ca-987a-432d2430131b
+        detail:
+        - messageType: LINK
+          channel: app
+          linkType: NAVIGATION
+          title: "Continuar en Transferir & Dimo®"
+          icon: sphericaTransfer
+          id: transfers
+          params:
+          - name: api
+            value:
+            - transfersAndDimo
+          - name: sender
+            value: Uvn6wi1Rh6DA3Hw967O6LsxYkwCeSTZ0cQwUV0Giaj2kAbfG0ROOUA
+          - name: type
+            value: magic-search
+          - name: inputReceiver
+            value: '{"inputValue":"00740010001507094579","itemSelected":{}}'
+          - name: receiver
+            value: '{"bank":{"id":"0012","name":"BBVA"},"number":"00740010001507094579","person":{"firstName":"DAVID ARTURO","lastName":"S"},"name":"David Arturo S","numberType":{"id":"CCC","name":"Customer Account Code"},"productType":{"id":"ACCOUNT","name":"Account type"},"blueInputValue":""}'
+          - name: amount
+            value: '150'
+          - name: senderCurrency
+            value: MXN
+          - name: concept
+            value: comida escuela
+      - messageType: BINARY_FEEDBACK
+        id: a7b755a4-f4f1-402d-a0b5-c8aeda325413
+        detail:
+        - channel: app
+          rating: NONE
+          content: ¿Resolví tu consulta?
+          forms:
+            negative:
+              id: BENSON
+            origin:
+              id: BINARIO
+            positive:
+              id: BENSON
+      suggestions: []
+    :status: 200 OK

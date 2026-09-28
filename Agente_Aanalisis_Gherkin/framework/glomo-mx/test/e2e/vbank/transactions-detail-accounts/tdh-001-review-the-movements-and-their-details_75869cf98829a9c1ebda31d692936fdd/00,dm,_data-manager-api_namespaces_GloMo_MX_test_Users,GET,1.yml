@@ -1,0 +1,102 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: 48fffc9b-e3db-432a-b9d7-7400ba7dfb46
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: common_account_movements
+    lock: 'false'
+then:
+- return:
+    :body:
+    - data:
+        transactions:
+        - transactionType:
+            name: Transaction cannot be categorized in one of the other that are listed
+              above.
+            id: UNCATEGORIZED
+            internalCode:
+              name: CARGO EN CUENTA.
+              id: '056'
+          operationDate: 2024-11-04T18:18:00.000-0600
+          additionalInformation:
+            reference: 'PEDMTO: 4007436'
+            computer:
+              id: OJoq9F4BnAn4BjqDg2ota8iYHCw=
+            additionalData: LC:032404UE2ZP144057218  PAT:3903 430
+            rewardBenefits: []
+            user:
+              id: OJosj4BKx/5EJLyguWG9P6wDxltRS9Ex
+          concept: PAGO IMPUESTOS ADUANALES
+          contract:
+            id: gtmRf9_JDKUBnV59Ph1CcG0q6ALj3THX
+          operationAmounts:
+          - amount: -46786
+            currency: MXN
+            id: CONTRACT_AMOUNT
+          - amount: -46786
+            currency: MXN
+            id: ORIGIN_AMOUNT
+          moneyFlow:
+            name: Cash flow that is taken from the product contract.
+            id: EXPENSE
+          id: 9YX60ZYj8CYQ1fSjHWWOQ1vj2CKOqCh0ZGre56IJa_o
+          valueDate: 2024-11-04T00:00:00.000-0600
+          branch:
+            id: MX00740980
+          accountedDate: 2024-11-04T00:00:00.000-0600
+          status:
+            name: Cash flow that is taken from the product contract.
+            id: SETTLED
+        tags:
+        - '5547125202'
+        - common_account_movements
+        products:
+          accounts:
+          - number: '00743616002977973837'
+            product:
+              id: AH
+            alias: 0002AH3837
+            id: gtmRf9_JDKUBnV59Ph1CcGLheJptdLsi7BICHT-p9lTFpEAVFzfUzQ
+            detail:
+              specificAmounts:
+              - amounts:
+                - amount: 83000
+                  currency: MXN
+                name: Saldo actual
+                id: CURRENT_BALANCE
+              - amounts:
+                - amount: 0
+                  currency: MXN
+                name: Saldo buen cobro
+                id: PENDING_DEPOSIT_BALANCE
+            simpleCode: Uvn6wi1Rh6C2SUA9S2s4kapqDIV6g7Xn
+            productType: ACCOUNT
+            subProductType:
+              name: Cuenta de Ahorro
+              id: '0231'
+        authentication:
+          password: Glomo2024
+          user: '5547125202'
+          deviceId: 150407A391C6C8E43BFC3AC5BD3BD27A
+      id: 35990500
+      lockExpiration: null
+      lockType: null
+    :headers:
+      content-length: '1900'
+      Cache-Control: max-age=0
+      Connection: keep-alive
+      host: datamanager.globaldevtools.bbva.com
+      Vary: Accept-Encoding
+      Expires: Thu, 30 Jan 2025 15:36:52 GMT
+      Date: Thu, 30 Jan 2025 15:36:52 GMT
+      Content-Type: application/json; charset=utf-8
+    :status: 200 OK

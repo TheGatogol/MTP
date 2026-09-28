@@ -1,0 +1,64 @@
+when:
+  sequence: 1
+  path: /SRVS_A02/personal-finances/v1/pfms/initialize
+  method: POST
+  backend: glomo
+request:
+  headers:
+    sec-fetch-mode: cors
+    referer: http://127.0.0.1:9090/
+    content-length: '23'
+    sec-fetch-site: cross-site
+    accept-language: es
+    origin: http://127.0.0.1:9090
+    x-forwarded-for: 10.23.106.249
+    tsec: 5cf9bd22e38cf661bba1d563cab6dc7f94ad7760
+    via: 1.1 tunnel-54d1c339-272f-4b0b-b9ff-d5939a961314 (squid/3.5.27)
+    accept: application/json, text/html, */*; q=0.1
+    sec-ch-ua: '" Not;A Brand";v="99", "Google Chrome";v="91", "Chromium";v="91"'
+    sec-ch-ua-mobile: ?0
+    x-vbank-session: d93c7775-8481-4aa9-8c4b-dd475ab064ec
+    host: localhost:9000
+    content-type: application/json
+    cache-control: no-cache, no-store, must-revalidate
+    accept-encoding: gzip
+    sec-fetch-dest: empty
+    user-agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko)
+      Chrome/91.0.4472.77 Safari/537.36
+  body:
+    relatedContracts: []
+then:
+- return:
+    severity: FATAL
+    system-error-cause: Selected contracts couldn't be found for logged user.
+    consumer-request-id: 207a2723-e82b-4c47-a64c-ea8836f245cd
+    :headers:
+      access-control-allow-origin: '*'
+      content-length: '481'
+      Access-Control-Expose-Headers: tsec, vnd.bbva.access-token-type,vnd.bbva.access-token,
+        vnd.bbva.sso-pkcs7, authenticationtype, authenticationdata, authenticationstate,
+        authenticationchallenge
+      Server: artichoke
+      Alt-Svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      access-control-allow-headers: Content-Type, tsec, authenticationtype, authenticationdata,
+        authenticationstate, contactid, consumeruuid, consumerapplicationid, perimetertsec,
+        authorization, responsewarningcode, responsewarningdescription, cuf, field,
+        bcs-device-app-version, bcs-device-app-version, vnd.bbva.authorization
+      content-type: application/json;charset=UTF-8
+      Vary: Accept-Encoding
+      tsec: 5cf9bd22e38cf661bba1d563cab6dc7f94ad7760
+      X-Response-Time: 471ms
+      Date: Mon, 30 May 2022 06:53:03 GMT
+      Via: 1.1 google
+    system-error-code: '400'
+    http-status: 400
+    system-error-description: Bad Request
+    error-code: '400'
+    version: 1
+    error-message: Bad Request
+    httpStatus: 400
+    messages:
+    - message: Error 400 genérico
+      type: FATAL
+      parameters: []
+    :status: 400 Bad Request

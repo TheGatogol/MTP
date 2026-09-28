@@ -1,0 +1,68 @@
+when:
+  sequence: 1
+  path: /SRVS_A02/cards/v1/cards/0001/indicators
+  method: GET
+  backend: glomo
+request:
+  headers:
+    sec-fetch-mode: cors
+    content-length: '0'
+    referer: http://localhost:8001/
+    sec-fetch-site: same-site
+    accept-language: es-MX,es;q=0.9
+    origin: http://localhost:8001
+    tsec: b9c40487f522f10c9c426e2ddfdcadd292baf585
+    accept: application/json, text/html, */*; q=0.1
+    sec-ch-ua: '"Chromium";v="124", "Google Chrome";v="124", "Not-A.Brand";v="99"'
+    sec-ch-ua-mobile: ?0
+    x-vbank-session: 6300285d-3cc1-46fa-86db-6b8fc67dc1df
+    sec-ch-ua-platform: '"macOS"'
+    host: localhost:9000
+    content-type: application/json
+    connection: keep-alive
+    cache-control: no-cache, no-store, must-revalidate
+    accept-encoding: gzip, deflate, br, zstd
+    sec-fetch-dest: empty
+    user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36
+      (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36
+then:
+- return:
+    data:
+    - description: Indica si los datos de seguridad de la tarjeta pueden ser leídos.
+      id: SECURITY_DATA_READ
+      isActive: true
+    - description: Indica si el CVV2 es dinámico
+      id: DINAMIC_CVV
+      isActive: false
+    - description: The card can be associable to nfc.
+      id: ASSOCIABLE_TO_NFC
+      isActive: false
+    - description: Indica si la tarjeta puede tener tarjetas asociadas
+      id: ASSOCIABLE_TO_ADDITIONAL_CARDS
+      isActive: true
+    - description: Indica si la tarjeta es limpia
+      id: IS_CLEAN_CARD
+      isActive: true
+    :headers:
+      access-control-allow-origin: '*'
+      content-length: '798'
+      Access-Control-Expose-Headers: tsec, vnd.bbva.access-token-type,vnd.bbva.access-token,
+        vnd.bbva.sso-pkcs7, authenticationtype, authenticationdata, authenticationstate,
+        authenticationchallenge
+      Server: artichoke
+      Alt-Svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      access-control-allow-headers: Content-Type, tsec, authenticationtype, authenticationdata,
+        authenticationstate, contactid, consumeruuid, consumerapplicationid, perimetertsec,
+        authorization, responsewarningcode, responsewarningdescription, cuf, field,
+        bcs-device-app-version, bcs-device-app-version, vnd.bbva.authorization, device-id
+      content-type: application/json;charset=UTF-8
+      Vary: Accept-Encoding
+      tsec: b9c40487f522f10c9c426e2ddfdcadd292baf585
+      X-Response-Time: 488ms
+      Date: Tue, 23 Apr 2024 17:53:26 GMT
+      Via: 1.1 google
+    :status: 200 OK
+    apiInfo:
+      name: cards
+      category: products
+      version: 0.19.0

@@ -1,0 +1,109 @@
+when:
+  sequence: 1
+  path: /SRVS_A02/cards/v0/cards/4001/transactions/000B0007
+  method: GET
+  backend: glomo
+request:
+  headers:
+    sec-fetch-mode: cors
+    content-length: '0'
+    referer: http://localhost:8001/
+    sec-fetch-site: same-site
+    accept-language: es-MX,es;q=0.9
+    origin: http://localhost:8001
+    tsec: e0abea931afdd70beed2b4604ac5d22f2e29ab19
+    accept: application/json, text/html, */*; q=0.1
+    sec-ch-ua: '"Chromium";v="116", "Not)A;Brand";v="24", "Google Chrome";v="116"'
+    sec-ch-ua-mobile: ?0
+    x-vbank-session: 8adb1fe3-0244-4ccc-9a99-8ebca0596135
+    sec-ch-ua-platform: '"macOS"'
+    host: localhost:9000
+    content-type: application/json
+    connection: keep-alive
+    cache-control: no-cache, no-store, must-revalidate
+    accept-encoding: gzip, deflate, br
+    sec-fetch-dest: empty
+    user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36
+      (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36
+then:
+- return:
+    data:
+      operationDate: 2023-09
+      additionalInformation:
+        reference: Reference example
+        additionalData: Additional data example
+        rewardBenefits:
+        - description: Benefit is a non monetary value.
+          id: POINTS
+      concept: RW BENEFICTS POINTS - FINANCING AVAILABLE
+      contract:
+        number: '4555457083074001'
+        product:
+          name: Tarjetas
+          id: CARDS
+        numberType:
+          name: Permanent Account Number
+          id: PAN
+        alias: Reward Beneficts movements
+        id: '4001'
+      accountedDate: 2023-09
+      financingType:
+        name: financing available
+        id: FINANCING_AVAILABLE
+      originAmount:
+        amount: 3400.26
+        currency: MXN
+      transactionType:
+        name: Compra
+        id: PURCHASE
+      valuationDate: 2023-09
+      id: 000B0007
+      detail:
+        authorizationNumber: XMZ44SDDE3
+        store:
+          name: Starbucks
+          logo:
+            name: Logo Starbucks
+            id: '1234'
+            url: http://.../logo-starbucks.jpg
+          id: wejb234-324kj2bfw
+          terminal: '445553334665656'
+          category:
+            name: Servicios
+            id: 5ewewewewee443ewe434343
+            url: http://.../logo-sector-servicios.jpg
+        paymentChannel:
+          name: Contactless EMV
+          id: CONTACTLESS_EMV
+        points:
+          obtained: 10
+      localAmount:
+        amount: 3400.26
+        currency: MXN
+      status:
+        name: Pending
+        id: PENDING
+    :headers:
+      content-length: '1907'
+      Server: artichoke
+      Alt-Svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      access-control-allow-headers: Content-Type, tsec, authenticationtype, authenticationdata,
+        authenticationstate, contactid, consumeruuid, consumerapplicationid, perimetertsec,
+        authorization, responsewarningcode, responsewarningdescription, cuf, field,
+        bcs-device-app-version, bcs-device-app-version, vnd.bbva.authorization, device-id
+      tsec: e0abea931afdd70beed2b4604ac5d22f2e29ab19
+      X-Response-Time: 503ms
+      Date: Fri, 08 Sep 2023 01:38:29 GMT
+      Via: 1.1 google
+      access-control-allow-origin: '*'
+      Access-Control-Expose-Headers: tsec, vnd.bbva.access-token-type,vnd.bbva.access-token,
+        vnd.bbva.sso-pkcs7, authenticationtype, authenticationdata, authenticationstate,
+        authenticationchallenge
+      Cache-Control: private, no-store
+      content-type: application/json;charset=UTF-8
+      Vary: Accept-Encoding
+    :status: 200 OK
+    apiInfo:
+      name: cards
+      category: products
+      version: 0.19.0

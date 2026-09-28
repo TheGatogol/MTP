@@ -1,0 +1,68 @@
+when:
+  sequence: 1
+  path: /SRVS_A02/cards/v1/cards/4001/indicators
+  method: GET
+  backend: glomo
+request:
+  headers:
+    sec-fetch-mode: cors
+    content-length: '0'
+    referer: http://localhost:8001/
+    sec-fetch-site: same-site
+    accept-language: es-MX,es;q=0.9
+    origin: http://localhost:8001
+    tsec: 796ff32ba6f5bfa442daac80ab01162180b02b4e
+    accept: application/json, text/html, */*; q=0.1
+    sec-ch-ua: '"Chromium";v="116", "Not)A;Brand";v="24", "Google Chrome";v="116"'
+    sec-ch-ua-mobile: ?0
+    x-vbank-session: 26f52809-1aa5-44f0-804c-0ef437fbd8a4
+    sec-ch-ua-platform: '"macOS"'
+    host: localhost:9000
+    content-type: application/json
+    connection: keep-alive
+    cache-control: no-cache, no-store, must-revalidate
+    accept-encoding: gzip, deflate, br
+    sec-fetch-dest: empty
+    user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36
+      (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36
+then:
+- return:
+    data:
+    - description: Ver CVV
+      id: SECURITY_DATA_READ
+      isActive: true
+    - description: Avance en línea
+      id: ORIGIN_TRANSFER_TO_ACCOUNT
+      isActive: true
+    - description: Editar alias
+      id: EDITABLE_ALIAS
+      isActive: true
+    - description: Pagar tarjeta
+      id: DESTINATION_TRANSFER_FROM_ACCOUNT
+      isActive: true
+    - description: Bloquear tarjeta
+      id: BLOCKABLE
+      isActive: true
+    :headers:
+      access-control-allow-origin: '*'
+      content-length: '660'
+      Access-Control-Expose-Headers: tsec, vnd.bbva.access-token-type,vnd.bbva.access-token,
+        vnd.bbva.sso-pkcs7, authenticationtype, authenticationdata, authenticationstate,
+        authenticationchallenge
+      Server: artichoke
+      Alt-Svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      access-control-allow-headers: Content-Type, tsec, authenticationtype, authenticationdata,
+        authenticationstate, contactid, consumeruuid, consumerapplicationid, perimetertsec,
+        authorization, responsewarningcode, responsewarningdescription, cuf, field,
+        bcs-device-app-version, bcs-device-app-version, vnd.bbva.authorization, device-id
+      content-type: application/json;charset=UTF-8
+      Vary: Accept-Encoding
+      tsec: 796ff32ba6f5bfa442daac80ab01162180b02b4e
+      X-Response-Time: 454ms
+      Date: Wed, 06 Sep 2023 16:34:50 GMT
+      Via: 1.1 google
+    :status: 200 OK
+    apiInfo:
+      name: cards
+      category: products
+      version: 0.19.0

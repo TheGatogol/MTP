@@ -1,0 +1,70 @@
+when:
+  sequence: 2
+  path: /digital-butler/v0/conversations/507a3020-7894-4c51-9811-6fd8bde075da/messages
+  method: POST
+  backend: digitalButlerHost
+request:
+  body:
+    interactionType: TEXT
+    customerMetaData:
+      appVersion: 3.1
+      origin: futura
+    message: Blue quiero hacer una transferencia de mi tdc a mi cuenta pago
+    params: []
+then:
+- return:
+    data:
+      conversationId: 507a3020-7894-4c51-9811-6fd8bde075da
+      messages:
+      - id: 3f9dbcd3-de16-4a12-ade8-57216af01a59
+        messageType: BOT_TEXT
+        detail:
+        - content: 'He preparado los detalles de tu <span style=''font-weight: 500;''>transferencia</span>
+            con la información que me diste. En el siguiente paso podrás revisarlos
+            y editarlos <span style=''font-weight: 500;''>antes de confirmar el envío.</span>'
+      - id: 3f9dbcd3-de16-4a12-ade8-57216af01a59
+        messageType: LINK
+        detail:
+        - messageType: LINK
+          channel: app
+          linkType: NAVIGATION
+          title: "Continuar en Transferir & Dimo\xAE"
+          icon: sphericaTransfer
+          id: transfers
+          params:
+          - name: api
+            value:
+            - transfersAndDimo
+          - name: sender
+            value: NvujFavMfE2H_te1daJul84RzXy0GynMvjb8XZ1DMFI
+          - name: type
+            value: own-transfer
+          - name: inputReceiver
+            value: '{"inputValue":"undefined","itemSelected":{}}'
+          - name: receiver
+            value: Uvn6wi1Rh6DA3Hw967O6LsxYkwCeSTZ0cQwUV0Giaj2kAbfG0ROOUA
+          - name: amount
+            value: '500'
+          - name: senderCurrency
+            value: MXN
+          - name: concept
+            value: transferencia blue
+      - id: 3f9dbcd3-de16-4a12-ade8-57216af01a59
+        messageType: BINARY_FEEDBACK
+        detail:
+        - rating: NONE
+          forms:
+            origin:
+              id: BINARIO
+            positive:
+              id: BENSON
+            negative:
+              id: BENSON
+          content: "¿He resuelto tu consulta?"
+          channel: app
+      suggestions: []
+      messageTracking:
+        category: Funds Movement
+        subCategory: Internal Funds Transfer
+        intent: operation.transfer
+    :status: 200 OK

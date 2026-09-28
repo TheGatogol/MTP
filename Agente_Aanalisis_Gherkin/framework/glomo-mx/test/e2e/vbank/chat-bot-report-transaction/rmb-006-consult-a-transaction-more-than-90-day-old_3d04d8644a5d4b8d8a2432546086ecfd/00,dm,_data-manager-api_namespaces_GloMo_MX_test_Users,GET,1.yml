@@ -1,0 +1,107 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: 00292f18-da9c-4ac6-b753-6e12ec0ad9a4
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: user_with_movements
+    lock: 'false'
+then:
+- return:
+    :body:
+    - data:
+        messagesGroupRequest:
+          accountAlias:
+          - ¿Cuál es alias de mi cuenta?
+          - '8396'
+          allAccountDetails:
+          - Quiero ver todos los detalles de mi cuenta de ahorro
+          - terminación 1492
+          editAccountAlias:
+          - Quiero editar el alias de mi cuenta
+          - OPCION 5
+          - CUENTA EXTRANJERA
+          accountParticipants:
+          - ¿Quienes son los intervinientes de mi cuenta?
+          - '1969'
+          contractProducts:
+            creditCardWithMovements:
+            - Quiero la tarjeta con terminación 2708
+            accountWithFiveMovements:
+            - Quiero la tarjeta con terminación 2708
+            cardWithFiveMovements:
+            - Quiero la tarjeta con terminación 9455
+            accountWithMovements:
+            - Quiero la tarjeta con terminación 3761
+            cardWithMovements:
+            - Quiero la tarjeta con terminación 2708
+            accountWithCardlessWithdrawal:
+            - Quiero la tarjeta con terminación 0361
+            accountWithDevolutionMovement:
+            - Quiero la tarjeta con terminación 0361
+            cardWithOldMovements:
+            - Quiero la tarjeta con terminación 9455
+            cardWithPurchases:
+            - Quiero la tarjeta con terminación 0361
+            accountCashIncome:
+            - Quiero la tarjeta con terminación 0361
+            debitCardWithMovements:
+            - Quiero la tarjeta con terminación 3761
+            accountWithoutMovements:
+            - Quiero la tarjeta con terminación 9455
+            accountWithOldMovements:
+            - Quiero la tarjeta con terminación 3761
+            cardWithoutMovements:
+            - Quiero la tarjeta con terminación 2708
+            cardWithPurchaseInTransit:
+            - Quiero la tarjeta con terminación 0361
+          editAccountDetails:
+          - Quiero editar los detalles de mi cuenta
+          - Alias
+          clabe:
+          - CLABE
+          - '1969'
+          mainAccountDetails:
+          - ¿cuales son los datos principales de mi cuenta?
+          - 0002AH1985
+          - CLABE
+          swift:
+          - Swift
+          - '8396'
+          someAccountDetails:
+          - Quiero ver Alias, CLABE Y código SWIFT
+          - 0002AH1985
+        tags:
+        - '4493634260'
+        - user_with_movements
+        - user_with_movements_spei
+        - account_with_devolution_movement
+        - account_with_movements_withdrawal
+        - user_with_movements_cash_income
+        - user_with_movements_status_in_transit
+        - user_with_purchases
+        authentication:
+          password: Glomo2024
+          user: '4493634260'
+          deviceId: C5DAFDB995384400B4FAFBFC4F22C40F
+      lockExpiration: null
+      lockType: null
+      id: 36070023
+    :headers:
+      content-length: '2187'
+      Cache-Control: max-age=0
+      Connection: keep-alive
+      host: datamanager.globaldevtools.bbva.com
+      Vary: Accept-Encoding
+      Expires: Tue, 29 Apr 2025 23:52:48 GMT
+      Date: Tue, 29 Apr 2025 23:52:48 GMT
+      Content-Type: application/json; charset=utf-8
+    :status: 200 OK

@@ -1,0 +1,791 @@
+when:
+  sequence: 1
+  path: /SRVS_A02/transfers/v0/mobile-transfers
+  method: GET
+  backend: glomo
+request:
+  headers:
+    sec-fetch-mode: cors
+    content-length: '0'
+    referer: http://localhost:8001/
+    sec-fetch-site: same-site
+    accept-language: es-MX
+    origin: http://localhost:8001
+    tsec: ZXlKaFlYQWlPaUl4TURBd01EQXpNeUlzSW10bGVWWmxjbk5wYjI0aU9qRXNJbUZ3Y0Vsa0lqb2lRVkJRTVNJc0ltdHBaQ0k2SWtGUVVERXViRzlqWVd3dU1TSXNJbVZ1WXlJNklrRXhPVEpIUTAwaUxDSnJaWGxVZVhCbElqb2liRzlqWVd3aUxDSmhiR2NpT2lKa2FYSWlMQ0owYzJWalNXUWlPaUpqWkdObE9UQmlOeTFtTldWa0xUUTVORE10T1dKbU5DMWlPREl5TVRnMFpHVTFNbVFpZlEuLnA1OEw2aUZET2ZBenJTb1YuZzlZTGhYQjFIZU9qOVRaQzdiNF94dHFYdGtQakF6X0huLU80SW52LVE2YkFpMUU4ZklfMk5UcUZ2V0dVSUx6azN5WnVyYW93MF85NHBRU053azBsZnVDMW1MMUhBUTFFcWt2eGEwSmoweVJyUDdIUERNMEFlamFLZzV3bVdxNXpLOW1QNDAyZ2pxc1I4dEV4bV94aEUybFQ5bk91VTFCTjdpWVBjdlJUM2tKcDhINFh2Q3lfaEYtN0lIcldOZW9oRkEyNUdkUUdiQTVCWVI2bGd2T3F3NV9kY0JKOThrUHA2RTkzRlpCdzFGY2hnTWR6UFJIajBka0FuRW9XMmRpN2hqblZFUXBwSmc0OWVvdWc3eVd3Wkc1c2RlcExmUWEycjBuVHpEY1FpSW1xY1NuaTZ2ZGdCMmdxUWt2dGFmQUhTUGZPT2VmZWxwUVZzVHh6SUNnSUJKWjVpN3BBRFpnOVllRk52R0ZSblNzSHZiYlBCWUFfWUJHRmtRXzg5a280d2FlN1B0ZXVsMGpNMW1hUUNrbktlUTFncm50eFVUdjdkUjItUDVNaU5fX1hwRlY3dWctdVNZbkJoUHZPN1o4RGlhTkdtRTNUQjVLdkZIaVI1N3pJTjY1cjR3U2JkeHE5MFoyS0hnSFluQkJwUmp6V2g0QnlnN191am5icC1ub2VqeVlFenNWYXZ0UWYzZThYTXI4U191NjdGUnVuZW9laHVlNlU4b3Jzak53T1ZDZE5IbUVBQ3h5aVF4clFWbURIX0IxZUF6b2R4REhYM3o0ckUyQzlaYjFOUjc2bHcxNG5UNE1sd3VBdFY4dEh6Ukg5WGVEbUphRldtMk9zYWtWeXJLem92VTNidmdSNkVGZWpCTnZKLVVTbEpHdnhZdVFBVGVreGlnUEdGbndvYVEyTWhrWFZmM2ozLWpSUVo0VndZcHhSTTNyZnhyQk80Mnp6dllJY1VQSVd4cTFfZmRpdUtsMmxWY0lDaFprQmpBYm84VnZTTllXVWo4YlV6TVBnVm0wc2NlUnBfdlE2NnZWWlRlZVkzc1NoS1AyUzFBdGtjcTBVazVJT2toOEc2UG9vMnV5MFp1SXRRRWstbmxXR3E0SHR6dnhkOHN6dm9MMUt3Uk1jUTdlREd2X3FISlBaSm51a1ZGT194T2dVd1NJSDFMeERhY2FHOVI1ZW1GVE1oYVlOeHlOQ1dpMFo0MjlyR1c3TE5JNWJsQ0FtZTcxTGFKYVBrU1hLX0lmdENEWkVpRmZ2TlpFOFJMeFFybWdZSHpKUktxbENRNkxaSUdNXzV0MnhSWThiSGNKUHpBVFJMVXNhSUNSZndmYTd5NHUwUG1YWXE2RnVLNV9hX0dEcEpoSnFuSjczUlZnTmszWkNqQlZYV2ctblFPUXktUlR5OU9DcVpVWFU5andIQjkxQ0ltUEs2ZVlRLVE2S013VkhsQVAtVUZiUlBNNEFmZXpVNGFSY3BHUEg3ekt4aVpoTUdSd3hwRDZKZXlLeTdOSTJaY09DVVdzSDN2cmVWYWtiWE42RDNULTc4VzdUN1Q2bmNQVk41OUtTaERXVC1Yel9zMmtteXZBZC14SEFINWJOWkEyMUgwR3NOV181eGJhaHF1cWg0Wm1sWGtiQW5aVjllY2paX0ItR2Z2XzktTmRjS0o1U0VlU244eVJJUG82NXlSQndQUHhmN2toUzUxY3JRUmliVmtUVVhiaWtKVTVYd3BoYXFudFMxM2lXZVdLTVV3cDVKSk5aRDVSRE1HVGE0dUhsU0JfTmZ0Nmx6MVhoRDBzTFp6TWt4Um5fTTFRS1BTVzJEQmtnR2dNVWdSVXB2cjZxMHJrT0o5dDhIMVdWNGVxeXp6aHQ1bkotc3pHN05PTmdwclRCVXloV2ZPR1FJb1ZaZXhvcUR0STlxZ2JLLXY5enZfazU3VGJDUnM3Q0ZXdFBVNjl5SFg3MTBuOUJlZm1ydVNERm0xUnZiemd4eDdJaFI5b3RHZ1V3QnJ6ZG9HcWFTYkxrQzdJWUpESTVuVkp3UEhRQWJ4WnI2M2lfaWRBRWdkZUthaXJFcmREVWhGZjE1T0pMRFllSUtZWExrUUZWME9ENm8tUDNuQ3ZzbjIyY0dnUGNkOG5XNG9MeE5sbV80d2F3U2R1Zml5SEVDU1c4RVotdEZiQmVZY2tlRkZhUnZ0dllxcHJIX2VQQjVuNFNsSXZsaEJtcEJpRlF4QVZwZ1hJOTBaNUZJeEZKcnN2Tml2VGs3MGM4MGZHOUFfTndQcmpXbFpVVndicGxHTml1bWQyZ0NISGdzNXd3SVVJX3V1UXl4WVdCNWFVOC1xM2MwdllPMmhoSFJIWTIuX0RNaGRkVjZSYjE5SkF0TVc5dGFhdw==
+    accept: application/json, text/html, */*; q=0.1
+    sec-ch-ua: ''
+    sec-ch-ua-mobile: ?0
+    x-vbank-session: e53b2400-5455-4bab-bb1f-c70a908c8ede
+    sec-ch-ua-platform: ''
+    host: localhost:9000
+    content-type: application/json
+    connection: keep-alive
+    cache-control: no-cache, no-store, must-revalidate
+    accept-encoding: gzip, deflate, br
+    sec-fetch-dest: empty
+    user-agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko)
+      HeadlessChrome/101.0.4951.64 Safari/537.36
+  query:
+    status.id: REJECTED
+then:
+- return:
+    pagination:
+      links:
+        next: '0026425399'
+    data:
+    - date: '2022-01-11T10:09:00.000-06:00'
+      mobileTransferId: gE28nuJV7OuXxUM2xg-tjQ
+      receiver:
+        mobile: '5569631475'
+        holder:
+          holderName: NEREA BARROS MTP
+      dueDate: 2022-01-18T00:00:00.0-0600
+      sentMoney:
+      - amount: 500.0
+        isMajor: true
+        currency: MXN
+      status:
+        name: REJECTED
+        id: REJECTED
+    - date: '2022-01-11T10:09:00.000-06:00'
+      mobileTransferId: H-TMg-eAxpjWT3q9L9VW5A
+      receiver:
+        mobile: '5569631475'
+        holder:
+          holderName: NEREA BARROS MTP
+      dueDate: 2022-01-18T00:00:00.0-0600
+      sentMoney:
+      - amount: 200.0
+        isMajor: true
+        currency: MXN
+      status:
+        name: REJECTED
+        id: REJECTED
+    - date: '2022-01-07T13:43:00.000-06:00'
+      mobileTransferId: 3q5ovOoat_RRC-l-fuTcjQ
+      receiver:
+        mobile: '5569631475'
+        holder:
+          holderName: NEREA BARROS MTP
+      dueDate: 2022-01-14T00:00:00.0-0600
+      sentMoney:
+      - amount: 300.0
+        isMajor: true
+        currency: MXN
+      status:
+        name: REJECTED
+        id: REJECTED
+    - date: '2022-01-07T13:43:00.000-06:00'
+      mobileTransferId: ACkh0yV7Z8NMV9sVVbbxzQ
+      receiver:
+        mobile: '5569631475'
+        holder:
+          holderName: NEREA BARROS MTP
+      dueDate: 2022-01-14T00:00:00.0-0600
+      sentMoney:
+      - amount: 100.0
+        isMajor: true
+        currency: MXN
+      status:
+        name: REJECTED
+        id: REJECTED
+    - date: '2022-01-07T13:42:00.000-06:00'
+      mobileTransferId: 9bO1CXsCDvZ6rHsjg6ATsw
+      receiver:
+        mobile: '5569631475'
+        holder:
+          holderName: NEREA BARROS MTP
+      dueDate: 2022-01-14T00:00:00.0-0600
+      sentMoney:
+      - amount: 500.0
+        isMajor: true
+        currency: MXN
+      status:
+        name: REJECTED
+        id: REJECTED
+    - date: '2022-01-07T17:17:00.000-06:00'
+      mobileTransferId: SGhfHqK3aHENGYMTST_m7Q
+      receiver:
+        mobile: '5569631475'
+        holder:
+          holderName: NEREA BARROS MTP
+      dueDate: 2022-01-14T00:00:00.0-0600
+      sentMoney:
+      - amount: 1000.0
+        isMajor: true
+        currency: MXN
+      status:
+        name: REJECTED
+        id: REJECTED
+    - date: '2022-01-07T17:17:00.000-06:00'
+      mobileTransferId: aVUFVQjSlcEpi0m7ldlyHg
+      receiver:
+        mobile: '5569631475'
+        holder:
+          holderName: NEREA BARROS MTP
+      dueDate: 2022-01-14T00:00:00.0-0600
+      sentMoney:
+      - amount: 300.0
+        isMajor: true
+        currency: MXN
+      status:
+        name: REJECTED
+        id: REJECTED
+    - date: '2022-01-07T14:42:00.000-06:00'
+      mobileTransferId: 4nxhfofWF3unwPfCw26fVQ
+      receiver:
+        mobile: '5569631475'
+        holder:
+          holderName: NEREA BARROS MTP
+      dueDate: 2022-01-14T00:00:00.0-0600
+      sentMoney:
+      - amount: 300.0
+        isMajor: true
+        currency: MXN
+      status:
+        name: REJECTED
+        id: REJECTED
+    - date: '2022-01-07T14:41:00.000-06:00'
+      mobileTransferId: yWv_ZsRrENWKfzAOU90_3g
+      receiver:
+        mobile: '5569631475'
+        holder:
+          holderName: NEREA BARROS MTP
+      dueDate: 2022-01-14T00:00:00.0-0600
+      sentMoney:
+      - amount: 300.0
+        isMajor: true
+        currency: MXN
+      status:
+        name: REJECTED
+        id: REJECTED
+    - date: '2022-01-04T09:30:00.000-06:00'
+      mobileTransferId: SnPgNQYk2FgHWJo6Bc3bfg
+      receiver:
+        mobile: '5569631475'
+        holder:
+          holderName: NEREA BARROS MTP
+      dueDate: 2022-01-11T00:00:00.0-0600
+      sentMoney:
+      - amount: 1500.0
+        isMajor: true
+        currency: MXN
+      status:
+        name: REJECTED
+        id: REJECTED
+    - date: '2022-01-04T09:30:00.000-06:00'
+      mobileTransferId: 2pU0lw5WhgiiDXX31OeFPg
+      receiver:
+        mobile: '5569631475'
+        holder:
+          holderName: NEREA BARROS MTP
+      dueDate: 2022-01-11T00:00:00.0-0600
+      sentMoney:
+      - amount: 300.0
+        isMajor: true
+        currency: MXN
+      status:
+        name: REJECTED
+        id: REJECTED
+    - date: '2022-01-03T14:25:00.000-06:00'
+      mobileTransferId: 41Cls-CraXBzvFfoShK6_w
+      receiver:
+        mobile: '5569631475'
+        holder:
+          holderName: NEREA BARROS MTP
+      dueDate: 2022-01-10T00:00:00.0-0600
+      sentMoney:
+      - amount: 500.0
+        isMajor: true
+        currency: MXN
+      status:
+        name: REJECTED
+        id: REJECTED
+    - date: '2022-01-03T14:25:00.000-06:00'
+      mobileTransferId: LFrkSHMvWEbJpUfpvH5IZg
+      receiver:
+        mobile: '5569631475'
+        holder:
+          holderName: NEREA BARROS MTP
+      dueDate: 2022-01-10T00:00:00.0-0600
+      sentMoney:
+      - amount: 100.0
+        isMajor: true
+        currency: MXN
+      status:
+        name: REJECTED
+        id: REJECTED
+    - date: '2021-12-20T12:02:00.000-06:00'
+      mobileTransferId: 6VrQlWEZ511jcolzzaK3RA
+      receiver:
+        mobile: '5569631475'
+        holder:
+          holderName: NEREA BARROS MTP
+      dueDate: 2021-12-27T00:00:00.0-0600
+      sentMoney:
+      - amount: 200.0
+        isMajor: true
+        currency: MXN
+      status:
+        name: REJECTED
+        id: REJECTED
+    - date: '2021-12-15T13:20:00.000-06:00'
+      mobileTransferId: MSbVRGe0qgfnd3xf9Aak-Q
+      receiver:
+        mobile: '5569631475'
+        holder:
+          holderName: NEREA BARROS MTP
+      dueDate: 2021-12-22T00:00:00.0-0600
+      sentMoney:
+      - amount: 300.0
+        isMajor: true
+        currency: MXN
+      status:
+        name: REJECTED
+        id: REJECTED
+    - date: '2021-12-15T13:20:00.000-06:00'
+      mobileTransferId: kHKHa4nyRYX9ZMcNhyLBVA
+      receiver:
+        mobile: '5569631475'
+        holder:
+          holderName: NEREA BARROS MTP
+      dueDate: 2021-12-22T00:00:00.0-0600
+      sentMoney:
+      - amount: 300.0
+        isMajor: true
+        currency: MXN
+      status:
+        name: REJECTED
+        id: REJECTED
+    - date: '2021-12-15T18:14:00.000-06:00'
+      mobileTransferId: 1E-eJInvpBmBeUuZ9TkuCg
+      receiver:
+        mobile: '5569631475'
+        holder:
+          holderName: NEREA BARROS MTP
+      dueDate: 2021-12-22T00:00:00.0-0600
+      sentMoney:
+      - amount: 1500.0
+        isMajor: true
+        currency: MXN
+      status:
+        name: REJECTED
+        id: REJECTED
+    - date: '2021-12-15T18:12:00.000-06:00'
+      mobileTransferId: MjUwvKIBHuOGvPSkumZwEA
+      receiver:
+        mobile: '5569631475'
+        holder:
+          holderName: NEREA BARROS MTP
+      dueDate: 2021-12-22T00:00:00.0-0600
+      sentMoney:
+      - amount: 200.0
+        isMajor: true
+        currency: MXN
+      status:
+        name: REJECTED
+        id: REJECTED
+    - date: '2021-12-14T12:30:00.000-06:00'
+      mobileTransferId: -X3gFR1EjoB2kge_jdO2oQ
+      receiver:
+        mobile: '5569631475'
+        holder:
+          holderName: NEREA BARROS MTP
+      dueDate: 2021-12-21T00:00:00.0-0600
+      sentMoney:
+      - amount: 1000.0
+        isMajor: true
+        currency: MXN
+      status:
+        name: REJECTED
+        id: REJECTED
+    - date: '2021-12-14T12:08:00.000-06:00'
+      mobileTransferId: n7tFkFj-YJL6lg36YKjSdA
+      receiver:
+        mobile: '5569631475'
+        holder:
+          holderName: NEREA BARROS MTP
+      dueDate: 2021-12-21T00:00:00.0-0600
+      sentMoney:
+      - amount: 1500.0
+        isMajor: true
+        currency: MXN
+      status:
+        name: REJECTED
+        id: REJECTED
+    - date: '2021-12-14T12:08:00.000-06:00'
+      mobileTransferId: twYP8ua5l6KjSSEI43J0HA
+      receiver:
+        mobile: '5569631475'
+        holder:
+          holderName: NEREA BARROS MTP
+      dueDate: 2021-12-21T00:00:00.0-0600
+      sentMoney:
+      - amount: 300.0
+        isMajor: true
+        currency: MXN
+      status:
+        name: REJECTED
+        id: REJECTED
+    - date: '2021-12-14T12:07:00.000-06:00'
+      mobileTransferId: GvIskmtIo_iym2ZcXYFCxg
+      receiver:
+        mobile: '5569631475'
+        holder:
+          holderName: NEREA BARROS MTP
+      dueDate: 2021-12-21T00:00:00.0-0600
+      sentMoney:
+      - amount: 1500.0
+        isMajor: true
+        currency: MXN
+      status:
+        name: REJECTED
+        id: REJECTED
+    - date: '2021-12-14T11:44:00.000-06:00'
+      mobileTransferId: 8mcfVI93B78ujFccQyY8AQ
+      receiver:
+        mobile: '5569631475'
+        holder:
+          holderName: NEREA BARROS MTP
+      dueDate: 2021-12-21T00:00:00.0-0600
+      sentMoney:
+      - amount: 300.0
+        isMajor: true
+        currency: MXN
+      status:
+        name: REJECTED
+        id: REJECTED
+    - date: '2021-12-13T17:27:00.000-06:00'
+      mobileTransferId: ofpZIpb5hvFLC5YtEFTNtw
+      receiver:
+        mobile: '5569631475'
+        holder:
+          holderName: NEREA BARROS MTP
+      dueDate: 2021-12-20T00:00:00.0-0600
+      sentMoney:
+      - amount: 1500.0
+        isMajor: true
+        currency: MXN
+      status:
+        name: REJECTED
+        id: REJECTED
+    - date: '2021-12-13T17:23:00.000-06:00'
+      mobileTransferId: ijbB4iu0Lk1xgJCrP-dhIA
+      receiver:
+        mobile: '5569631475'
+        holder:
+          holderName: NEREA BARROS MTP
+      dueDate: 2021-12-20T00:00:00.0-0600
+      sentMoney:
+      - amount: 300.0
+        isMajor: true
+        currency: MXN
+      status:
+        name: REJECTED
+        id: REJECTED
+    - date: '2021-12-13T15:12:00.000-06:00'
+      mobileTransferId: q1Gj3Gpr8OiN1C6QLoMMmA
+      receiver:
+        mobile: '5569631475'
+        holder:
+          holderName: NEREA BARROS MTP
+      dueDate: 2021-12-20T00:00:00.0-0600
+      sentMoney:
+      - amount: 100.0
+        isMajor: true
+        currency: MXN
+      status:
+        name: REJECTED
+        id: REJECTED
+    - date: '2021-12-03T17:34:00.000-06:00'
+      mobileTransferId: dexpTMDUFtyOnheYlpPQWg
+      receiver:
+        mobile: '5569631475'
+        holder:
+          holderName: NEREA BARROS MTP
+      dueDate: 2021-12-10T00:00:00.0-0600
+      sentMoney:
+      - amount: 300.0
+        isMajor: true
+        currency: MXN
+      status:
+        name: REJECTED
+        id: REJECTED
+    - date: '2021-12-02T12:44:00.000-06:00'
+      mobileTransferId: Y5-MOxA73pL-0JFvkOCGGg
+      receiver:
+        mobile: '5569631475'
+        holder:
+          holderName: NEREA BARROS MTP
+      dueDate: 2021-12-09T00:00:00.0-0600
+      sentMoney:
+      - amount: 300.0
+        isMajor: true
+        currency: MXN
+      status:
+        name: REJECTED
+        id: REJECTED
+    - date: '2021-12-02T12:13:00.000-06:00'
+      mobileTransferId: PJhND2NIAtsWzYcXZQU_aQ
+      receiver:
+        mobile: '5569631475'
+        holder:
+          holderName: NEREA BARROS MTP
+      dueDate: 2021-12-09T00:00:00.0-0600
+      sentMoney:
+      - amount: 500.0
+        isMajor: true
+        currency: MXN
+      status:
+        name: REJECTED
+        id: REJECTED
+    - date: '2021-12-02T12:12:00.000-06:00'
+      mobileTransferId: I6GeO13BvQxHjnr3XP5dfA
+      receiver:
+        mobile: '5569631475'
+        holder:
+          holderName: NEREA BARROS MTP
+      dueDate: 2021-12-09T00:00:00.0-0600
+      sentMoney:
+      - amount: 300.0
+        isMajor: true
+        currency: MXN
+      status:
+        name: REJECTED
+        id: REJECTED
+    - date: '2021-12-02T12:12:00.000-06:00'
+      mobileTransferId: YbH3aZPWqZkNTI23ln0i1Q
+      receiver:
+        mobile: '5569631475'
+        holder:
+          holderName: NEREA BARROS MTP
+      dueDate: 2021-12-09T00:00:00.0-0600
+      sentMoney:
+      - amount: 300.0
+        isMajor: true
+        currency: MXN
+      status:
+        name: REJECTED
+        id: REJECTED
+    - date: '2021-12-01T16:10:00.000-06:00'
+      mobileTransferId: B6HYOF9wOK2bKIoTnixr2w
+      receiver:
+        mobile: '5569631475'
+        holder:
+          holderName: NEREA BARROS MTP
+      dueDate: 2021-12-08T00:00:00.0-0600
+      sentMoney:
+      - amount: 300.0
+        isMajor: true
+        currency: MXN
+      status:
+        name: REJECTED
+        id: REJECTED
+    - date: '2021-11-30T14:25:00.000-06:00'
+      mobileTransferId: y5tmLpNjajV8_sedOci2zQ
+      receiver:
+        mobile: '5569631475'
+        holder:
+          holderName: NEREA BARROS MTP
+      dueDate: 2021-12-07T00:00:00.0-0600
+      sentMoney:
+      - amount: 500.0
+        isMajor: true
+        currency: MXN
+      status:
+        name: REJECTED
+        id: REJECTED
+    - date: '2021-11-22T13:35:00.000-06:00'
+      mobileTransferId: Xl1FxVafimNfDY4dpRnRTA
+      receiver:
+        mobile: '5569631475'
+        holder:
+          holderName: NEREA BARROS MTP
+      dueDate: 2021-11-29T00:00:00.0-0600
+      sentMoney:
+      - amount: 500.0
+        isMajor: true
+        currency: MXN
+      status:
+        name: REJECTED
+        id: REJECTED
+    - date: '2021-11-22T13:35:00.000-06:00'
+      mobileTransferId: HWLp1Jr10K-eveQvsVW90w
+      receiver:
+        mobile: '5569631475'
+        holder:
+          holderName: NEREA BARROS MTP
+      dueDate: 2021-11-29T00:00:00.0-0600
+      sentMoney:
+      - amount: 100.0
+        isMajor: true
+        currency: MXN
+      status:
+        name: REJECTED
+        id: REJECTED
+    - date: '2021-11-22T13:35:00.000-06:00'
+      mobileTransferId: pFSx8ShyZCaaxEovuKR37w
+      receiver:
+        mobile: '5569631475'
+        holder:
+          holderName: NEREA BARROS MTP
+      dueDate: 2021-11-29T00:00:00.0-0600
+      sentMoney:
+      - amount: 1000.0
+        isMajor: true
+        currency: MXN
+      status:
+        name: REJECTED
+        id: REJECTED
+    - date: '2021-11-22T12:38:00.000-06:00'
+      mobileTransferId: _hHpRbUBC5jNaUhCcQSU8A
+      receiver:
+        mobile: '5569631476'
+        holder:
+          holderName: NEREA BARROS MTP
+      dueDate: 2021-11-29T00:00:00.0-0600
+      sentMoney:
+      - amount: 8000.0
+        isMajor: true
+        currency: MXN
+      status:
+        name: REJECTED
+        id: REJECTED
+    - date: '2021-11-22T12:37:00.000-06:00'
+      mobileTransferId: U4-HxjU7xg6Fh4FmFGmQVA
+      receiver:
+        mobile: '5569631476'
+        holder:
+          holderName: NEREA BARROS MTP
+      dueDate: 2021-11-29T00:00:00.0-0600
+      sentMoney:
+      - amount: 1500.0
+        isMajor: true
+        currency: MXN
+      status:
+        name: REJECTED
+        id: REJECTED
+    - date: '2021-11-22T12:36:00.000-06:00'
+      mobileTransferId: Jv7lLpSaPrUPnICH2OJXLw
+      receiver:
+        mobile: '5569631476'
+        holder:
+          holderName: NEREA BARROS MTP
+      dueDate: 2021-11-29T00:00:00.0-0600
+      sentMoney:
+      - amount: 200.0
+        isMajor: true
+        currency: MXN
+      status:
+        name: REJECTED
+        id: REJECTED
+    - date: '2021-11-16T13:03:00.000-06:00'
+      mobileTransferId: mRg2UXLuVS6P6Ec4pG2lTw
+      receiver:
+        mobile: '5569631475'
+        holder:
+          holderName: NEREA BARROS MTP
+      dueDate: 2021-11-23T00:00:00.0-0600
+      sentMoney:
+      - amount: 1000.0
+        isMajor: true
+        currency: MXN
+      status:
+        name: REJECTED
+        id: REJECTED
+    - date: '2021-11-16T12:50:00.000-06:00'
+      mobileTransferId: fEGbWTwwkr68TinnBJhrtg
+      receiver:
+        mobile: '5569631475'
+        holder:
+          holderName: NEREA BARROS MTP
+      dueDate: 2021-11-23T00:00:00.0-0600
+      sentMoney:
+      - amount: 300.0
+        isMajor: true
+        currency: MXN
+      status:
+        name: REJECTED
+        id: REJECTED
+    - date: '2021-11-08T21:12:00.000-06:00'
+      mobileTransferId: l_3ldQn5RAFbSm6ZlN1c9g
+      receiver:
+        mobile: '5569631475'
+        holder:
+          holderName: NEREA BARROS MTP
+      dueDate: 2021-11-15T00:00:00.0-0600
+      sentMoney:
+      - amount: 200.0
+        isMajor: true
+        currency: MXN
+      status:
+        name: REJECTED
+        id: REJECTED
+    - date: '2021-11-05T13:43:00.000-06:00'
+      mobileTransferId: iu9hL4AaCqjwzlFxmQDZ1g
+      receiver:
+        mobile: '5569631475'
+        holder:
+          holderName: NEREA BARROS MTP
+      dueDate: 2021-11-12T00:00:00.0-0600
+      sentMoney:
+      - amount: 300.0
+        isMajor: true
+        currency: MXN
+      status:
+        name: REJECTED
+        id: REJECTED
+    - date: '2021-11-03T21:25:00.000-06:00'
+      mobileTransferId: LLdpHlu1KqzPlByiQnqTZg
+      receiver:
+        mobile: '5569631475'
+        holder:
+          holderName: NEREA BARROS MTP
+      dueDate: 2021-11-10T00:00:00.0-0600
+      sentMoney:
+      - amount: 2900.0
+        isMajor: true
+        currency: MXN
+      status:
+        name: REJECTED
+        id: REJECTED
+    - date: '2021-11-03T21:23:00.000-06:00'
+      mobileTransferId: 3YDJWm_E7vLFThCcgH1DGw
+      receiver:
+        mobile: '5569631475'
+        holder:
+          holderName: NEREA BARROS MTP
+      dueDate: 2021-11-10T00:00:00.0-0600
+      sentMoney:
+      - amount: 1000.0
+        isMajor: true
+        currency: MXN
+      status:
+        name: REJECTED
+        id: REJECTED
+    - date: '2021-11-03T21:22:00.000-06:00'
+      mobileTransferId: rSB-txJBLkRt97wsQ0oBOg
+      receiver:
+        mobile: '5569631475'
+        holder:
+          holderName: NEREA BARROS MTP
+      dueDate: 2021-11-10T00:00:00.0-0600
+      sentMoney:
+      - amount: 3000.0
+        isMajor: true
+        currency: MXN
+      status:
+        name: REJECTED
+        id: REJECTED
+    - date: '2021-11-03T21:20:00.000-06:00'
+      mobileTransferId: WREzzU8qkpJmPxGM0rl-Qg
+      receiver:
+        mobile: '5569631475'
+        holder:
+          holderName: NEREA BARROS MTP
+      dueDate: 2021-11-10T00:00:00.0-0600
+      sentMoney:
+      - amount: 6800.0
+        isMajor: true
+        currency: MXN
+      status:
+        name: REJECTED
+        id: REJECTED
+    - date: '2021-11-03T21:18:00.000-06:00'
+      mobileTransferId: FVwOEw8HgrSzlTwkkh6opg
+      receiver:
+        mobile: '5569631475'
+        holder:
+          holderName: NEREA BARROS MTP
+      dueDate: 2021-11-10T00:00:00.0-0600
+      sentMoney:
+      - amount: 5000.0
+        isMajor: true
+        currency: MXN
+      status:
+        name: REJECTED
+        id: REJECTED
+    - date: '2021-11-01T15:11:00.000-06:00'
+      mobileTransferId: KZx5Di6OUYgdRBhkAxNB5g
+      receiver:
+        mobile: '5569631475'
+        holder:
+          holderName: NEREA BARROS MTP
+      dueDate: 2021-11-08T00:00:00.0-0600
+      sentMoney:
+      - amount: 1500.0
+        isMajor: true
+        currency: MXN
+      status:
+        name: REJECTED
+        id: REJECTED
+    - date: '2021-11-01T15:09:00.000-06:00'
+      mobileTransferId: eQd1yIUwxOjkN-PpOq5W4Q
+      receiver:
+        mobile: '5569631475'
+        holder:
+          holderName: NEREA BARROS MTP
+      dueDate: 2021-11-08T00:00:00.0-0600
+      sentMoney:
+      - amount: 1000.0
+        isMajor: true
+        currency: MXN
+      status:
+        name: REJECTED
+        id: REJECTED
+    :headers:
+      content-length: '15623'
+      Access-Control-Allow-Origin: '*'
+      ECS-Entry-Point-Zone: ext
+      Access-Control-Allow-Methods: GET, POST, DELETE, PUT, OPTIONS, PATCH
+      Referrer-Policy: same-origin
+      X-Frame-Options: sameorigin
+      ResponseWarningCode: CNA0001
+      Strict-Transport-Security: max-age=31536000; includeSubDomains
+      Access-Control-Expose-Headers: Accept-Encoding, Accept, Content-Type, tsec,
+        consumerrequestid, authenticationchallenge, authenticationtype, authenticationdata,
+        authenticationstate, contactid, consumeruuid, consumerapplicationid, perimetertsec,
+        authorization, responsewarningcode, responsewarningdescription, cuf, prefer,
+        phoneNumber, Location, X-RHO-PARENTSPANID, X-RHO-TRACEID, preferredauthenticationtype,
+        X-HTTP-Method-Override, Access-Control-Allow-Methods, iv-remote-address, thirdparty-x-forwarded-for,
+        thirdparty-user-agent, thirdparty-geolocation, thirdparty-calculated-scoring,
+        thirdparty-deviceid, vnd.bbva.security-client-certificate, order-preferredaction,
+        authenticationresponse, Access-Control-Max-Age, BCS-Device-Id, BCS-Device-OS-Name,
+        BCS-Device-Model-Name, BCS-Device-Model-Manufacturer, BCS-Device-Screen-Size,
+        BCS-Device-OS-Version, BCS-Device-DPI, BCS-Device-App-Name, BCS-Device-App-Version,
+        Third-Party-Application-Id, ECS-Signature-Platform-Use-Case, BCS-Process-Code,
+        BCS-Operation-Tracer, BCS-Process-Tracer, vnd.bbva.user-id, order-preferredaction,
+        order-id, order-accepteddisclaimers, x-forwarded-for, Date, x-dmz-orgn, onsite-accountTerm,
+        onsite-logicalTerm, Akamai-BM-Telemetry
+      Content-Security-Policy: script-src 'self'
+      Set-Cookie: vbank-session=e53b2400-5455-4bab-bb1f-c70a908c8ede
+      X-XSS-Protection: 1; mode=block
+      consumerrequestid: 4aedff85-60c5-47db-af40-97150e9097f6
+      Content-Type: application/json; charset=UTF-8
+      X-EdgeConnect-Origin-MEX-Latency: '290'
+      X-Content-Type-Options: nosniff
+      old-catalog: 'true'
+      Connection: keep-alive
+      tsec: ZXlKaFlYQWlPaUl4TURBd01EQXpNeUlzSW10bGVWWmxjbk5wYjI0aU9qRXNJbUZ3Y0Vsa0lqb2lRVkJRTVNJc0ltdHBaQ0k2SWtGUVVERXViRzlqWVd3dU1TSXNJbVZ1WXlJNklrRXhPVEpIUTAwaUxDSnJaWGxVZVhCbElqb2liRzlqWVd3aUxDSmhiR2NpT2lKa2FYSWlMQ0owYzJWalNXUWlPaUpqWkdObE9UQmlOeTFtTldWa0xUUTVORE10T1dKbU5DMWlPREl5TVRnMFpHVTFNbVFpZlEuLnA1OEw2aUZET2ZBenJTb1YuZzlZTGhYQjFIZU9qOVRaQzdiNF94dHFYdGtQakF6X0huLU80SW52LVE2YkFpMUU4ZklfMk5UcUZ2V0dVSUx6azN5WnVyYW93MF85NHBRU053azBsZnVDMW1MMUhBUTFFcWt2eGEwSmoweVJyUDdIUERNMEFlamFLZzV3bVdxNXpLOW1QNDAyZ2pxc1I4dEV4bV94aEUybFQ5bk91VTFCTjdpWVBjdlJUM2tKcDhINFh2Q3lfaEYtN0lIcldOZW9oRkEyNUdkUUdiQTVCWVI2bGd2T3F3NV9kY0JKOThrUHA2RTkzRlpCdzFGY2hnTWR6UFJIajBka0FuRW9XMmRpN2hqblZFUXBwSmc0OWVvdWc3eVd3Wkc1c2RlcExmUWEycjBuVHpEY1FpSW1xY1NuaTZ2ZGdCMmdxUWt2dGFmQUhTUGZPT2VmZWxwUVZzVHh6SUNnSUJKWjVpN3BBRFpnOVllRk52R0ZSblNzSHZiYlBCWUFfWUJHRmtRXzg5a280d2FlN1B0ZXVsMGpNMW1hUUNrbktlUTFncm50eFVUdjdkUjItUDVNaU5fX1hwRlY3dWctdVNZbkJoUHZPN1o4RGlhTkdtRTNUQjVLdkZIaVI1N3pJTjY1cjR3U2JkeHE5MFoyS0hnSFluQkJwUmp6V2g0QnlnN191am5icC1ub2VqeVlFenNWYXZ0UWYzZThYTXI4U191NjdGUnVuZW9laHVlNlU4b3Jzak53T1ZDZE5IbUVBQ3h5aVF4clFWbURIX0IxZUF6b2R4REhYM3o0ckUyQzlaYjFOUjc2bHcxNG5UNE1sd3VBdFY4dEh6Ukg5WGVEbUphRldtMk9zYWtWeXJLem92VTNidmdSNkVGZWpCTnZKLVVTbEpHdnhZdVFBVGVreGlnUEdGbndvYVEyTWhrWFZmM2ozLWpSUVo0VndZcHhSTTNyZnhyQk80Mnp6dllJY1VQSVd4cTFfZmRpdUtsMmxWY0lDaFprQmpBYm84VnZTTllXVWo4YlV6TVBnVm0wc2NlUnBfdlE2NnZWWlRlZVkzc1NoS1AyUzFBdGtjcTBVazVJT2toOEc2UG9vMnV5MFp1SXRRRWstbmxXR3E0SHR6dnhkOHN6dm9MMUt3Uk1jUTdlREd2X3FISlBaSm51a1ZGT194T2dVd1NJSDFMeERhY2FHOVI1ZW1GVE1oYVlOeHlOQ1dpMFo0MjlyR1c3TE5JNWJsQ0FtZTcxTGFKYVBrU1hLX0lmdENEWkVpRmZ2TlpFOFJMeFFybWdZSHpKUktxbENRNkxaSUdNXzV0MnhSWThiSGNKUHpBVFJMVXNhSUNSZndmYTd5NHUwUG1YWXE2RnVLNV9hX0dEcEpoSnFuSjczUlZnTmszWkNqQlZYV2ctblFPUXktUlR5OU9DcVpVWFU5andIQjkxQ0ltUEs2ZVlRLVE2S013VkhsQVAtVUZiUlBNNEFmZXpVNGFSY3BHUEg3ekt4aVpoTUdSd3hwRDZKZXlLeTdOSTJaY09DVVdzSDN2cmVWYWtiWE42RDNULTc4VzdUN1Q2bmNQVk41OUtTaERXVC1Yel9zMmtteXZBZC14SEFINWJOWkEyMUgwR3NOV181eGJhaHF1cWg0Wm1sWGtiQW5aVjllY2paX0ItR2Z2XzktTmRjS0o1U0VlU244eVJJUG82NXlSQndQUHhmN2toUzUxY3JRUmliVmtUVVhiaWtKVTVYd3BoYXFudFMxM2lXZVdLTVV3cDVKSk5aRDVSRE1HVGE0dUhsU0JfTmZ0Nmx6MVhoRDBzTFp6TWt4Um5fTTFRS1BTVzJEQmtnR2dNVWdSVXB2cjZxMHJrT0o5dDhIMVdWNGVxeXp6aHQ1bkotc3pHN05PTmdwclRCVXloV2ZPR1FJb1ZaZXhvcUR0STlxZ2JLLXY5enZfazU3VGJDUnM3Q0ZXdFBVNjl5SFg3MTBuOUJlZm1ydVNERm0xUnZiemd4eDdJaFI5b3RHZ1V3QnJ6ZG9HcWFTYkxrQzdJWUpESTVuVkp3UEhRQWJ4WnI2M2lfaWRBRWdkZUthaXJFcmREVWhGZjE1T0pMRFllSUtZWExrUUZWME9ENm8tUDNuQ3ZzbjIyY0dnUGNkOG5XNG9MeE5sbV80d2F3U2R1Zml5SEVDU1c4RVotdEZiQmVZY2tlRkZhUnZ0dllxcHJIX2VQQjVuNFNsSXZsaEJtcEJpRlF4QVZwZ1hJOTBaNUZJeEZKcnN2Tml2VGs3MGM4MGZHOUFfTndQcmpXbFpVVndicGxHTml1bWQyZ0NISGdzNXd3SVVJX3V1UXl4WVdCNWFVOC1xM2MwdllPMmhoSFJIWTIuX0RNaGRkVjZSYjE5SkF0TVc5dGFhdw==
+      Access-Control-Allow-Headers: Accept-Encoding, Accept, Content-Type, tsec, consumerrequestid,
+        authenticationchallenge, authenticationtype, authenticationdata, authenticationstate,
+        contactid, consumeruuid, consumerapplicationid, perimetertsec, authorization,
+        responsewarningcode, responsewarningdescription, cuf, prefer, phoneNumber,
+        Location, X-RHO-PARENTSPANID, X-RHO-TRACEID, preferredauthenticationtype,
+        X-HTTP-Method-Override, Access-Control-Allow-Methods, iv-remote-address, thirdparty-x-forwarded-for,
+        thirdparty-user-agent, thirdparty-geolocation, thirdparty-calculated-scoring,
+        thirdparty-deviceid, vnd.bbva.security-client-certificate, order-preferredaction,
+        authenticationresponse, Access-Control-Max-Age, BCS-Device-Id, BCS-Device-OS-Name,
+        BCS-Device-Model-Name, BCS-Device-Model-Manufacturer, BCS-Device-Screen-Size,
+        BCS-Device-OS-Version, BCS-Device-DPI, BCS-Device-App-Name, BCS-Device-App-Version,
+        Third-Party-Application-Id, ECS-Signature-Platform-Use-Case, BCS-Process-Code,
+        BCS-Operation-Tracer, BCS-Process-Tracer, vnd.bbva.user-id, order-preferredaction,
+        order-id, order-accepteddisclaimers, x-forwarded-for, Date, x-dmz-orgn, onsite-accountTerm,
+        onsite-logicalTerm, Akamai-BM-Telemetry
+      Date: Wed, 25 May 2022 17:06:01 GMT
+      Cache-Control: no-cache,no-store,must-revalidate
+      Vary: Accept-Encoding
+      Expires: '-1'
+      ResponseWarningDescription: OPERACION REALIZADA CORRECTAMENTE
+      X-EdgeConnect-MidMile-RTT: '29'
+    :status: 200 OK

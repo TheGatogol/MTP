@@ -1,0 +1,49 @@
+when:
+  sequence: 2
+  path: /app-settings/v0/public-settings/GLOMO-MX-1.0-TEST
+  method: GET
+  backend: cgs
+request:
+  headers:
+    sec-fetch-mode: cors
+    content-length: '0'
+    referer: http://localhost:8001/
+    sec-fetch-site: same-site
+    accept-language: es-MX,es;q=0.9
+    origin: http://localhost:8001
+    accept: application/json, text/html, */*; q=0.1
+    sec-ch-ua: '"Chromium";v="142", "Google Chrome";v="142", "Not_A Brand";v="99"'
+    sec-ch-ua-mobile: ?0
+    x-vbank-session: b1da8235-cad1-4414-93a2-58c95033e059
+    x-api-key: psJbscoM0i9O4L40SzKW02i8XhfR80df1iB9ODgj
+    sec-ch-ua-platform: '"macOS"'
+    host: localhost:9085
+    content-type: application/json
+    connection: keep-alive
+    cache-control: no-cache, no-store, must-revalidate
+    accept-encoding: gzip, deflate, br, zstd
+    sec-fetch-dest: empty
+    user-agent: GLOMO_MX/99.99.99 (Android;14;Samsung)
+  query:
+    key: scheduled_donations
+then:
+- return:
+    data:
+    - value: '{"data":{"fundraising":[{"minValue":"20","firstValue":"50","secondValue":"100","thirdValue":"200","maxValue":"8000","stationId":"08055","stationName":"Fundación
+        BBVA México","endDate":"0001-01-01","donationPeriod":"MONTHLY","productId":"DONATIVOS_FUNDACIONBBVA","productIdValue":"GMDDFGV001","numberTypeId":"SIMPLE_ACCOUNT","operationType":"Alta
+        del donativo"}]}}'
+      key: scheduled_donations
+    :headers:
+      x-amz-apigw-id: L7YJME37IAMF_pg=
+      Cache-Control: max-age=300
+      Access-Control-Allow-Origin: '*'
+      ETag: '"36d465879f0c891f75f675c3debd868b230dbf1e"'
+      x-amzn-RequestId: 0f580fd6-83c1-42b0-926b-d15cee4f2aba
+      Connection: keep-alive
+      Vary: Accept-Encoding
+      Expires: Thu, 04 Dec 2025 23:52:44 GMT
+      Content-Length: '491'
+      X-Amzn-Trace-Id: Root=1-6847a0a0-ba7d19265f4dda2d0e29d554;Parent=391343bf9365854a;Sampled=0;Lineage=1:06614fa4:0
+      Date: Thu, 04 Dec 2025 23:47:44 GMT
+      Content-Type: application/json; charset=UTF-8
+    :status: 200 OK

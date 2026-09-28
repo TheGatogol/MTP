@@ -1,0 +1,76 @@
+when:
+  sequence: 1
+  path: /SRVS_A02/cards/v1/cards/1297/payments/simulate
+  method: POST
+  backend: glomo
+request:
+  headers:
+    sec-fetch-mode: cors
+    referer: http://localhost:8001/
+    content-length: '59'
+    sec-fetch-site: same-site
+    accept-language: es
+    origin: http://localhost:8001
+    tsec: 9fd64b8da60a85383a48671934c44c8026e2e5a6
+    accept: application/json, text/html, */*; q=0.1
+    x-vbank-session: 36b980b6-4d8a-451d-a5a1-d4cf32f877ca
+    host: localhost:9000
+    content-type: application/json
+    connection: keep-alive
+    cache-control: no-cache, no-store, must-revalidate
+    accept-encoding: gzip, deflate, br
+    sec-fetch-dest: empty
+    user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36
+      (KHTML, like Gecko) Chrome/89.0.4389.82 Safari/537.36
+  body:
+    paymentAmounts:
+    - amount: '80000.00'
+      currency: MXN
+then:
+- return:
+    data:
+      fees:
+        totalFees:
+          amount: 20
+          currency: MXN
+        itemizeFees:
+        - amount:
+            amount: 10
+            currency: MXN
+          percentage: 1
+          name: Direct periodic
+          feeType: DIRECT_PERIODIC
+        - amount:
+            amount: 10
+            currency: MXN
+          percentage: 1
+          name: Interés
+          feeType: INTEREST
+      paymentAmounts:
+      - amount: 80000
+        currency: MXN
+      simulationDate: '2021-03-09'
+      rate: 1
+    :headers:
+      access-control-allow-origin: '*'
+      content-length: '465'
+      Access-Control-Expose-Headers: tsec, vnd.bbva.access-token-type,vnd.bbva.access-token,
+        authenticationtype, authenticationdata, authenticationstate
+      Server: artichoke
+      Alt-Svc: clear
+      access-control-allow-headers: Content-Type, tsec, authenticationtype, authenticationdata,
+        authenticationstate, contactid, consumeruuid, consumerapplicationid, perimetertsec,
+        authorization, responsewarningcode, responsewarningdescription, cuf, field,
+        bcs-device-app-version, bcs-device-app-version
+      Vary: Accept-Encoding
+      tsec: 9fd64b8da60a85383a48671934c44c8026e2e5a6
+      X-Response-Time: 496ms
+      Date: Tue, 09 Mar 2021 00:09:39 GMT
+      Content-Type: application/json; charset=utf-8
+      Via: 1.1 google
+    :status: 200 OK
+    responseStatus: 200
+    apiInfo:
+      name: cards
+      category: products
+      version: 0.19.0

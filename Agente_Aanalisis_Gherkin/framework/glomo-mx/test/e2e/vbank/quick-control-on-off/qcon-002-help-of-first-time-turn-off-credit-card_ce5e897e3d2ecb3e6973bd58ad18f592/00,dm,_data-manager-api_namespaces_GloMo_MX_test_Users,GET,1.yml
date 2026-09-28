@@ -1,0 +1,933 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: 7acfba3f-9420-4db4-bb0c-124b4252903a
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: transactions,cards_off
+    lock: 'false'
+then:
+- return:
+    :body:
+    - data:
+        homeFutura: false
+        clientStatus: A1
+        locale: es_mx
+        tags:
+        - '5519655657'
+        - transactions
+        - cards_off
+        products:
+          cards:
+          - numberType:
+              name: Permanent Account Number
+              id: PAN
+            brandAssociation:
+              name: VISA
+              id: VISA
+            cardAgreement: '234600'
+            title:
+              name: Crédito BBVA OPERATIVE
+              id: V1
+            availableBalance:
+              currentBalances:
+              - amount: 2000000
+                currency: MXN
+              pendingBalances:
+              - amount: 0
+                currency: MXN
+              postedBalances:
+              - amount: 2000000
+                currency: MXN
+            number: '4772137361780727'
+            bank:
+              name: BBVA Mexico
+              id: '504'
+            pin: '1234'
+            cutOffDate: '2016-10-01T12:00:00Z'
+            paymentMethods:
+            - period:
+                name: Monthly payment
+                id: MONTHLY
+              paymentAmounts:
+              - values:
+                - amount: 50000
+                  currency: MXN
+                name: Pago mínimo
+                id: MINIMUM_AMOUNT
+              - values:
+                - amount: 3000
+                  currency: MXN
+                name: Pago para no generar intereses
+                id: MINIMUM_AMOUNT_TO_AVOID_INTEREST
+              - values:
+                - amount: 70000
+                  currency: MXN
+                name: Deuda de este mes
+                id: LAST_PERIOD_AMOUNT
+              - values:
+                - amount: 75000
+                  currency: MXN
+                name: Saldo al corte
+                id: TOTAL_DEBT_AMOUNT
+              endDate: '2017-07-05T12:00:00Z'
+              name: Free amount payment
+              id: FREE_AMOUNT_PAYMENT
+            alias: 0002TC5667
+            issueDate: '2016-07-01T12:05:13Z'
+            openingDate: '2016-07-01T11:31:45Z'
+            limits:
+            - isEditable: true
+              name: Límite mensual de compras en un comercio
+              disposedLimitPercentage: 25
+              id: POS_DAILY
+              amountLimits:
+              - amount: 5000
+                currency: MXP
+              allowedInterval:
+                maximumAmount:
+                  amount: 20000
+                  currency: MXP
+                minimumAmount:
+                  amount: 50
+                  currency: MXP
+              disposedLimits:
+              - amount: 5000
+                currency: MXP
+            - isEditable: true
+              name: Retiro de efectivo en cajero
+              disposedLimitPercentage: 15
+              id: ATM_DAILY
+              amountLimits:
+              - amount: 15000
+                currency: MXN
+              allowedInterval:
+                maximumAmount:
+                  amount: 20000
+                  currency: USD
+                minimumAmount:
+                  amount: 50
+                  currency: USD
+              disposedLimits:
+              - amount: 1000
+                currency: MXN
+            - isEditable: true
+              name: Retiro de efectivo en oficina
+              disposedLimitPercentage: 15
+              id: OFFICE_DAILY
+              amountLimits:
+              - amount: 12000
+                currency: MXN
+              allowedInterval:
+                maximumAmount:
+                  amount: 20000
+                  currency: USD
+                minimumAmount:
+                  amount: 100
+                  currency: USD
+              disposedLimits:
+              - amount: 2000
+                currency: MXN
+            - isEditable: true
+              name: Transaction
+              id: TRANSACTION_DAILY
+              amountLimits:
+              - amount: 2000
+                currency: MXN
+              allowedInterval:
+                maximumAmount:
+                  amount: 5000
+                  currency: USD
+                minimumAmount:
+                  amount: 1000
+                  currency: USD
+              disposedLimits:
+              - amount: 100
+                currency: MXN
+            productType:
+              id: CARD
+            participants:
+            - participantId: '1234123276'
+              lastName: Sánchez
+              firstName: Hugo
+              participantType:
+                name: Titular
+                id: HOLDER
+            expirationDate: '2022-03-01T13:32:02Z'
+            offers:
+            - isEditable: true
+              rates:
+              - mode:
+                  id: PERCENTAGE
+                rateType:
+                  name: CAT
+                  id: CAT
+                unit:
+                  percentage: 38.2
+                calculationDate: '2017-05-23'
+              details:
+                suggestedAmount:
+                - amount: 700
+                  currency: MXN
+                - amount: 50
+                  currency: USD
+                maximumAmount:
+                - amount: 1000
+                  currency: MXN
+                - amount: 100
+                  currency: USD
+                minimumAmount:
+                - amount: 100
+                  currency: MXN
+                - amount: 10
+                  currency: USD
+                allowedAmounts:
+                - amounts:
+                  - amount: 100
+                  - amount: 200
+                  currency: MXN
+                - amounts:
+                  - amount: 10
+                  - amount: 20
+                  currency: USD
+              id: '0000000492'
+              type:
+                name: Aumente la línea de crédito actualmente disponible para el cliente
+                  en su tarjeta.
+                id: CREDIT_LIMIT_INCREASE
+            images:
+            - name: Front face of the card
+              id: FRONT_CARD
+              url: https://cardcovers.caasbbva.com/mexico/477291-AC.png.imgcaas.w320.png
+            - name: Back face of the card
+              id: BACK_CARD
+              url: /imageBack.jpg
+            holderName: Carlos Santana Ramirez De Todos los Santos De Jesus Santamaria
+            blocks: []
+            physicalSupport:
+              name: Plástico normal
+              id: NORMAL_PLASTIC
+            cardType:
+              name: Tarjeta de crédito
+              id: CREDIT_CARD
+            disposedBalance:
+              currentBalances:
+              - amount: 1000000
+                currency: MXN
+              pendingBalances:
+              - amount: 0
+                currency: MXN
+              postedBalances:
+              - amount: 1000000
+                currency: MXN
+            indicators:
+            - indicatorId: ASSOCIABLE_TO_NFC
+              name: The card can be associable to nfc.
+              isActive: true
+            - indicatorId: ASSOCIABLE_TO_STICKER_CARDS
+              name: Indica si la tarjeta cuenta con sticker asociado
+              isActive: false
+            - indicatorId: ASSOCIABLE_TO_VIRTUAL_CARDS
+              name: The card can be related to virtual cards
+              isActive: true
+            - indicatorId: BLOCKABLE
+              name: Bloquear tarjeta
+              isActive: false
+            - indicatorId: BLOCKABLE_NIP
+              name: Indica si la tarjeta puede modificar el nip de forma online por
+                una aplicación
+              isActive: false
+            - indicatorId: SECURITY_DATA_READ
+              name: Indica si los datos de seguridad de la tarjeta pueden ser leídos.
+              isActive: true
+            - indicatorId: DINAMIC_CVV
+              name: Indica si el CVV2 es dinámico
+              isActive: false
+            - indicatorId: IS_ADDITIONAL
+              name: IS_ADDITIONAL
+              isActive: false
+            - indicatorId: ASSOCIABLE_TO_ADDITIONAL_CARDS
+              name: Indica si la tarjeta puede tener tarjetas asociadas
+              isActive: true
+            transactions:
+            - operationDate: YEAR(CURRENT_TIMESTAMP)-MONTH(CURRENT_TIMESTAMP)-06T10:05:01.090Z
+              additionalInformation:
+                reference: Reference example
+                additionalData: Additional data example
+              concept: COM MEX VILLA COAPA
+              contract:
+                number: '4555457083071230'
+                product:
+                  name: Tarjetas
+                  id: CARDS
+                numberType:
+                  name: Permanent Account Number
+                  id: PAN
+                alias: Tarjeta 1230 - Operative
+                id: '1230'
+              accountedDate: YEAR(CURRENT_TIMESTAMP)-MONTH(CURRENT_TIMESTAMP)-06T12:35:01.090Z
+              financingType:
+                name: Non financing
+                id: NON_FINANCING
+              originAmount:
+                amount: -500
+                currency: MXN
+              transactionType:
+                name: Compra
+                id: PURCHASE
+              valuationDate: YEAR(CURRENT_TIMESTAMP)-MONTH(CURRENT_TIMESTAMP)-06T12:35:01Z
+              id: 3699A0441
+              detail:
+                authorizationNumber: XMZ44SDDE3
+                store:
+                  name: Starbucks
+                  logo:
+                    name: Logo Starbucks
+                    id: '1234'
+                    url: http://.../logo-starbucks.jpg
+                  id: wejb234-324kj2bfw
+                  terminal: '445553334665656'
+                  category:
+                    name: Servicios
+                    id: 5ewewewewee443ewe434343
+                    url: http://.../logo-sector-servicios.jpg
+                points:
+                  obtained: 10
+                paymentChannel:
+                  name: Contactless EMV
+                  id: CONTACTLESS_EMV
+              status:
+                name: Pending
+                id: PENDING
+              localAmount:
+                amount: -500
+                currency: MXN
+            - originAmount:
+                amount: -99
+                currency: MXN
+              transactionType:
+                name: Compra
+                id: PURCHASE
+              operationDate: YEAR(CURRENT_TIMESTAMP)-MONTH(CURRENT_TIMESTAMP)-06T10:05:01.090Z
+              additionalInformation:
+                reference: Reference example
+                additionalData: Additional data example
+              valuationDate: YEAR(CURRENT_TIMESTAMP)-MONTH(CURRENT_TIMESTAMP)-06T12:35:01Z
+              concept: NETFLIX
+              contract:
+                number: '4555457083071230'
+                product:
+                  name: Tarjetas
+                  id: CARDS
+                numberType:
+                  name: Permanent Account Number
+                  id: PAN
+                alias: Tarjeta 1230 - Operative
+                id: '1230'
+              id: 3699A0442
+              accountedDate: YEAR(CURRENT_TIMESTAMP)-MONTH(CURRENT_TIMESTAMP)-06T12:35:01.090Z
+              financingType:
+                name: Non financing
+                id: NON_FINANCING
+              status:
+                name: Authorized
+                id: AUTHORIZED
+              localAmount:
+                amount: -99
+                currency: MXN
+            - originAmount:
+                amount: -1500
+                currency: MXN
+              transactionType:
+                name: Compra
+                id: PURCHASE
+              operationDate: YEAR(CURRENT_TIMESTAMP)-MONTH(CURRENT_TIMESTAMP)-06T10:05:01.090Z
+              additionalInformation:
+                reference: Reference example
+                additionalData: Additional data example
+              valuationDate: YEAR(CURRENT_TIMESTAMP)-MONTH(CURRENT_TIMESTAMP)-06T12:35:01Z
+              concept: EL GLOBO GAL COAPA
+              contract:
+                number: '4555457083071230'
+                product:
+                  name: Tarjetas
+                  id: CARDS
+                numberType:
+                  name: Permanent Account Number
+                  id: PAN
+                alias: Tarjeta 1230 - Operative
+                id: '1230'
+              id: 3699A0443
+              accountedDate: YEAR(CURRENT_TIMESTAMP)-MONTH(CURRENT_TIMESTAMP)-06T12:35:01.090Z
+              financingType:
+                name: Non financing
+                id: NON_FINANCING
+              status:
+                name: Pending
+                id: PENDING
+              localAmount:
+                amount: -1500
+                currency: MXN
+            - originAmount:
+                amount: -499
+                currency: MXN
+              transactionType:
+                name: Compra
+                id: PURCHASE
+              operationDate: YEAR(CURRENT_TIMESTAMP)-MONTH(CURRENT_TIMESTAMP)-06T10:05:01.090Z
+              additionalInformation:
+                reference: Reference example
+                additionalData: Additional data example
+              valuationDate: YEAR(CURRENT_TIMESTAMP)-MONTH(CURRENT_TIMESTAMP)-06T12:35:01Z
+              concept: IMAGINARIA
+              contract:
+                number: '4555457083071230'
+                product:
+                  name: Tarjetas
+                  id: CARDS
+                numberType:
+                  name: Permanent Account Number
+                  id: PAN
+                alias: Tarjeta 1230 - Operative
+                id: '1230'
+              id: 3699A0444
+              accountedDate: YEAR(CURRENT_TIMESTAMP)-MONTH(CURRENT_TIMESTAMP)-06T12:35:01.090Z
+              financingType:
+                name: Non financing
+                id: NON_FINANCING
+              status:
+                name: Authorized
+                id: AUTHORIZED
+              localAmount:
+                amount: -499
+                currency: MXN
+            - originAmount:
+                amount: -63.91
+                currency: MXN
+              transactionType:
+                name: Compra
+                id: PURCHASE
+              operationDate: YEAR(CURRENT_TIMESTAMP)-MONTH(CURRENT_TIMESTAMP)-06T10:05:01.090Z
+              additionalInformation:
+                reference: Reference example
+                additionalData: Additional data example
+              valuationDate: YEAR(CURRENT_TIMESTAMP)-MONTH(CURRENT_TIMESTAMP)-06T12:35:01Z
+              concept: Viajes Iberia
+              contract:
+                number: '4555457083071230'
+                product:
+                  name: Tarjetas
+                  id: CARDS
+                numberType:
+                  name: Permanent Account Number
+                  id: PAN
+                alias: Tarjeta 1230 - Operative
+                id: '1230'
+              id: 3699A0445
+              accountedDate: YEAR(CURRENT_TIMESTAMP)-MONTH(CURRENT_TIMESTAMP)-06T12:35:01.090Z
+              financingType:
+                name: Non financing
+                id: NON_FINANCING
+              status:
+                name: Authorized
+                id: AUTHORIZED
+              localAmount:
+                amount: -63.91
+                currency: MXN
+            - operationDate: YEAR(CURRENT_TIMESTAMP)-MONTH(CURRENT_TIMESTAMP)-06T10:05:01.090Z
+              additionalInformation:
+                reference: Reference example
+                additionalData: Additional data example
+              concept: RETIRO DE EFECTIVO DM
+              contract:
+                number: '4555457083071230'
+                product:
+                  name: Tarjetas
+                  id: CARDS
+                numberType:
+                  name: Permanent Account Number
+                  id: PAN
+                alias: Tarjeta 1230 - Operative
+                id: '1230'
+              accountedDate: YEAR(CURRENT_TIMESTAMP)-MONTH(CURRENT_TIMESTAMP)-06T12:35:01.090Z
+              financingType:
+                name: Non financing
+                id: NON_FINANCING
+              originAmount:
+                amount: -2600
+                currency: MXN
+              transactionType:
+                name: Retiro de efectivo
+                id: CASH_WITHDRAWAL
+              valuationDate: YEAR(CURRENT_TIMESTAMP)-MONTH(CURRENT_TIMESTAMP)-06T12:35:01Z
+              id: 3699A0002
+              detail:
+                isCredit: false
+                originType: BRANCH
+                bank:
+                  name: BBVA
+                  id: '0182'
+                branch:
+                  name: Nombre oficina
+                  id: '2234'
+              status:
+                name: Authorized
+                id: AUTHORIZED
+              localAmount:
+                amount: -2600
+                currency: MXN
+            - operationDate: YEAR(CURRENT_TIMESTAMP)-MONTH(CURRENT_TIMESTAMP)-06T10:05:01.090Z
+              additionalInformation:
+                reference: Reference example
+                additionalData: Additional data example
+              concept: 'devolución: corte ingles'
+              contract:
+                number: '4555457083071230'
+                product:
+                  name: Tarjetas
+                  id: CARDS
+                numberType:
+                  name: Permanent Account Number
+                  id: PAN
+                alias: Tarjeta 1230 - Operative
+                id: '1230'
+              accountedDate: YEAR(CURRENT_TIMESTAMP)-MONTH(CURRENT_TIMESTAMP)-06T12:35:01.090Z
+              financingType:
+                name: Non financing
+                id: NON_FINANCING
+              originAmount:
+                amount: -29900
+                currency: MXN
+              transactionType:
+                name: Refund
+                id: REFUND
+              valuationDate: YEAR(CURRENT_TIMESTAMP)-MONTH(CURRENT_TIMESTAMP)-06T12:35:01Z
+              id: 999A1125
+              detail:
+                store:
+                  name: ZARA
+                  logo:
+                    name: Logo Zara
+                    id: '1234'
+                    url: http://.../logo-zara.png
+                  id: wejb234-324kj2bfw
+                paymentChannel:
+                  name: Contactless EMV
+                  id: CONTACTLESS_EMV
+              status:
+                name: Settled
+                id: SETTLED
+              localAmount:
+                amount: -57
+                currency: MXN
+            - operationDate: YEAR(CURRENT_TIMESTAMP)-MONTH(CURRENT_TIMESTAMP)-06T10:05:01.090Z
+              additionalInformation:
+                reference: '96662221584'
+                additionalData: PAGO DE SEGURO AUTO
+              concept: Transferencia emitida por 323 €
+              contract:
+                number: '4555457083071230'
+                product:
+                  name: Tarjetas
+                  id: CARDS
+                numberType:
+                  name: Permanent Account Number
+                  id: PAN
+                alias: Tarjeta 1230 - Operative
+                id: '1230'
+              accountedDate: YEAR(CURRENT_TIMESTAMP)-MONTH(CURRENT_TIMESTAMP)-06T12:35:01.090Z
+              financingType:
+                name: Non financing
+                id: NON_FINANCING
+              tags:
+              - SEGURO
+              - FORD
+              transactionType:
+                name: Transferir crédito
+                id: TRANSFER_CREDIT
+              moneyFlow:
+                name: Income
+                id: INCOME
+              id: 3699A0806
+              detail:
+                transferDescription: transferencia del seguro del coche
+                receiver:
+                  lastName: Hernandez
+                  firstName: Edwin
+                  contract:
+                    number: 0182 4423 10 2391913965
+                    bank:
+                      name: Bancomer Mexico
+                      id: BANCOMER
+                    numberType:
+                      name: Codigo Cuenta Cliente
+                      id: CCC
+                  middleName: Roberto
+                references:
+                - name: tracking
+                  id: TRACKING
+                  value: '3423423423'
+                sender:
+                  lastName: Trampas Ojeda
+                  firstName: Carlos
+                  contract:
+                    number: 0182 4423 10 2391913965
+                    bank:
+                      name: Bancomer Mexico
+                      id: BANCOMER
+                    numberType:
+                      name: Codigo Cuenta Cliente
+                      id: CCC
+                isInternational: false
+                customExternalReference:
+                  trackingInformation:
+                    rel: tracking
+                    href: http://www.banxico.org.mx/cep
+                  value: '34234244443423'
+              category:
+                name: Transfer from the same customer
+                id: OWN_TRANSFER
+              status:
+                name: Settled
+                id: SETTLED
+              localAmount:
+                amount: 323
+                currency: EUR
+            - operationDate: YEAR(CURRENT_TIMESTAMP)-MONTH(CURRENT_TIMESTAMP)-06T10:05:01.090Z
+              additionalInformation:
+                reference: '96662221584'
+                additionalData: PAGO RESORT
+              concept: Transfer of 10€
+              contract:
+                number: '4555457083071230'
+                product:
+                  name: Tarjetas
+                  id: CARDS
+                numberType:
+                  name: Permanent Account Number
+                  id: PAN
+                alias: Tarjeta 1230 - Operative
+                id: '1230'
+              accountedDate: YEAR(CURRENT_TIMESTAMP)-MONTH(CURRENT_TIMESTAMP)-06T12:35:01.090Z
+              financingType:
+                name: Non financing
+                id: NON_FINANCING
+              tags:
+              - TRAVEL
+              transactionType:
+                name: transfer Debit
+                id: TRANSFER_DEBIT
+              moneyFlow:
+                name: Expense
+                id: EXPENSE
+              id: 3699A0807
+              detail:
+                transferDescription: Cooper family travel
+                receiver:
+                  lastName: Dunn O'Leary
+                  firstName: Ryan
+                  identityDocument:
+                    country:
+                      name: Reino Unido
+                      id: UK
+                    documentType:
+                      name: Pasaporte
+                      id: PASSPORT
+                    documentNumber: A******2R
+                    status:
+                      name: Activo
+                      id: ACTIVE
+                    expirationDate: '2019-12-02'
+                  contract:
+                    number: UK90 1213 **** **** **** 0965
+                    bank:
+                      name: HSBC
+                      id: '1213'
+                    numberType:
+                      name: International Bank Account Number
+                      id: IBAN
+                sender:
+                  lastName: Dominguez
+                  firstName: Luis
+                  middleName: Alberto
+                isInternational: true
+              category:
+                name: International transfer
+                id: INTERBANK_TRANSFER
+              status:
+                name: Settled
+                id: SETTLED
+              localAmount:
+                amount: 10
+                currency: EUR
+            - operationDate: YEAR(CURRENT_TIMESTAMP)-MONTH(CURRENT_TIMESTAMP)-06T10:05:01.090Z
+              additionalInformation:
+                reference: '31092233'
+                additionalData: Operación realizada en ATMM on 2016-02-28
+              concept: Tarjeta de débito mensual
+              contract:
+                number: '4555457083071230'
+                product:
+                  name: Tarjetas
+                  id: CARDS
+                numberType:
+                  name: Permanent Account Number
+                  id: PAN
+                alias: Tarjeta 1230 - Operative
+                id: '1230'
+              accountedDate: YEAR(CURRENT_TIMESTAMP)-MONTH(CURRENT_TIMESTAMP)-06T12:35:01.090Z
+              financingType:
+                name: No financiamiento
+                id: NON_FINANCING
+              transactionType:
+                name: Cuota de tarjeta de crédito
+                id: CREDIT_CARD_INSTALLMENT
+              moneyFlow:
+                name: Income
+                id: INCOME
+              id: 3699A0808
+              detail:
+                originType: ATM
+                authorizationNumber: '45678908'
+                installmentPeriod:
+                  finalDate: '2016-04-30'
+                  initalDate: '2016-04-01'
+                  description: April 2016 Statement
+                branch:
+                  name: Bancomer
+                  id: '00740172'
+                paymentAmountType:
+                  name: Other amounts
+                  id: OTHER_AMOUNTS
+                paymentType:
+                  name: Total Amount Payment
+                  id: TOTAL_AMOUNT_PAYMENT
+              category:
+                name: Operación realizada en ATM
+                id: ATM_OPERATION
+              status:
+                name: Settled
+                id: SETTLED
+              localAmount:
+                amount: 285.06
+                currency: EUR
+            - operationDate: YEAR(CURRENT_TIMESTAMP)-MONTH(CURRENT_TIMESTAMP)-06T10:05:01.090Z
+              additionalInformation:
+                reference: '96662221584'
+                additionalData: ABONO DE INVERSION
+              concept: ABONO DE INVERSION
+              contract:
+                number: '4555457083071230'
+                product:
+                  name: Tarjetas
+                  id: CARDS
+                numberType:
+                  name: Permanent Account Number
+                  id: PAN
+                alias: Tarjeta 1230 - Operative
+                id: '1230'
+              accountedDate: YEAR(CURRENT_TIMESTAMP)-MONTH(CURRENT_TIMESTAMP)-06T12:35:01.090Z
+              financingType:
+                name: No financiamiento
+                id: NON_FINANCING
+              tags:
+              - DEPOSIT
+              transactionType:
+                name: Uncategorized
+                id: UNCATEGORIZED
+              moneyFlow:
+                name: Expense
+                id: EXPENSE
+              id: 3699A0809
+              category:
+                name: Deposit
+                id: DEPOSIT
+              status:
+                name: Settled
+                id: SETTLED
+              localAmount:
+                amount: 40
+                currency: EUR
+            - transactionType:
+                name: Contribución voluntaria
+                id: DEPOSIT_CONTRIBUTION
+              operationDate: YEAR(CURRENT_TIMESTAMP)-MONTH(CURRENT_TIMESTAMP)-06T10:05:01.090Z
+              valuationDate: YEAR(CURRENT_TIMESTAMP)-MONTH(CURRENT_TIMESTAMP)-06T12:35:01Z
+              concept: Contribución voluntaria
+              contract:
+                number: '4555457083071230'
+                product:
+                  name: Tarjetas
+                  id: CARDS
+                numberType:
+                  name: Permanent Account Number
+                  id: PAN
+                alias: Tarjeta 1230 - Operative
+                id: '1230'
+              moneyFlow:
+                name: Income
+                id: INCOME
+              id: 3699A0811
+              detail:
+                interestRate: '15.30'
+                interestPayment:
+                  liquidationType:
+                    name: Plazo de Liquidación
+                    id: LIQUIDATION_DEADLINE
+                  liquidationWindows:
+                  - period:
+                      name: Día de trabajo
+                      id: WORKING_DAY
+                    endDate: '2016-02-28'
+                    interests:
+                    - netBenefit:
+                        amount: 8
+                        currency: EUR
+                      grossBenefit:
+                        amount: 10
+                        currency: EUR
+                    startDate: '2016-02-28'
+                relatedContracts:
+                - relationType:
+                    name: Contribuir para depositar
+                    id: CONTRIBUTE_TO_DEPOSIT
+                  number: '1368061548'
+                  product:
+                    name: Account
+                    id: ACCOUNTS
+                  numberType:
+                    name: Local Internal Code
+                    id: LIC
+                  id: 81khbr-583310-8c12cc-fdfe18
+                totalProfit:
+                  yieldPeriod:
+                    name: ANNUAL
+                    id: ANNUAL
+                  valueType:
+                    id: PERCENTAGE
+                  value: 2
+                maturityDate: '2016-02-12'
+                interestPurpose:
+                  name: Reinvest
+                  id: REINVEST
+                realTotalProfit:
+                  yieldPeriod:
+                    name: ANNUAL
+                    id: ANNUAL
+                  valueType:
+                    id: PERCENTAGE
+                  value: 2
+                term:
+                  number: D016
+                  depositTimeType:
+                    id: MONTH
+                capitalPurpose:
+                  name: Reinvest
+                  id: REINVEST
+                currencies:
+                - isMajor: true
+                  currency: MXN
+              accountedDate: YEAR(CURRENT_TIMESTAMP)-MONTH(CURRENT_TIMESTAMP)-06T12:35:01.090Z
+              financingType:
+                name: No financiamiento
+                id: NON_FINANCING
+              status:
+                name: Settled
+                id: SETTLED
+              localAmount:
+                amount: 4000
+                currency: MXN
+            grantedCredits:
+            - amount: 3000000
+              currency: MXN
+            relatedContracts: []
+            security_data:
+            - code: '001'
+              name: Card Verification Value
+              id: CVV
+            cardId: AwJSjjYVl5vZrS6K8tRGb2EjHTTcrzwDJ-JOxTf5HQk
+            activations:
+            - name: Activation for global card usage
+              isActive: true
+              activationId: ON_OFF
+            blockTypes:
+            - name: Indicates that the card is blocked because of damage.
+              id: DAMAGE
+            - name: Card blocked by lost.
+              id: LOST
+            - name: Indicates that the card is blocked because of stolen.
+              id: STOLEN
+            userAccessControl:
+            - canOperate: false
+            conditions:
+            - conditionId: REISSUE
+              outcomes:
+              - outcomeType:
+                  name: Fee amount
+                  id: FEE_AMOUNT
+                feeAmount:
+                  amount: 250
+                  currency: MXN
+              name: Restitución
+            activationDate: '2016-07-01T13:32:02Z'
+            rewards:
+            - unitType:
+                name: Puntos
+                id: POINTS
+              isRedeemable: false
+              nonMonetaryValueExpirationDate: '2018-10-19'
+              rewardId: BANCOMER_POINTS
+              balance:
+                endDate: '2018-09-01'
+                rewardBreakDown:
+                - id: GENERATED
+                  nonMonetaryValue: 7030
+                - id: APPLIED
+                  nonMonetaryValue: 150
+                - id: EXPIRED
+                  nonMonetaryValue: 110
+                - id: CURRENT
+                  nonMonetaryValue: 8000
+                - id: PREVIOUS
+                  nonMonetaryValue: 1230
+                startDate: '2018-08-01'
+              name: Puntos bancomer
+              nonMonetaryValueCloseToExpire: 1240
+              nonMonetaryValue: 8000
+              nonMonetaryRedemptionSavings:
+                amount: 8
+                currency: MXN
+            status:
+              name: Operative card
+              description: Operative card
+              id: OPERATIVE
+            currencies:
+            - isMajor: true
+              currency: MXN
+        authentication:
+          password: Glomo2025
+          user: '5519655657'
+          deviceId: 03A15D825A50CA31CBF4E429D7500A90
+        sendRawCardNumber: true
+      id: 35805147
+      lockType: null
+      lockExpiration: null
+    :headers:
+      content-length: '21963'
+      Strict-Transport-Security: max-age=15768000
+      Server: nginx
+      ECS-Entry-Point-Zone: ext
+      Connection: keep-alive
+      host: datamanager.globaldevtools.bbva.com
+      Vary: Accept-Encoding
+      Date: Thu, 14 Mar 2024 01:12:17 GMT
+      Content-Type: application/json
+    :status: 200 OK

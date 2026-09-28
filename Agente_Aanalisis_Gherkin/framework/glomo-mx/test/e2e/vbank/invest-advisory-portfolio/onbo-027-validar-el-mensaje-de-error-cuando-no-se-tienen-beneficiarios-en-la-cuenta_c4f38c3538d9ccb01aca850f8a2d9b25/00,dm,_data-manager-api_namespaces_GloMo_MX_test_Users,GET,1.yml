@@ -1,0 +1,41 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: f8d08fc7-a2c3-40dd-81f0-aef9de399d7e
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: invest_advisory_error_onboarding
+    lock: 'false'
+then:
+- return:
+    :body:
+    - data:
+        offers:
+          investAdvisory: VUIco02l0HCGv7zO5bNh4E3Wpede4L5V
+        locale: es_mx
+        tags:
+        - invest_advisory_error_onboarding
+        authentication:
+          password: Glomo2024
+          user: '5592127865'
+          deviceId: 871525B2B64076A2DA7E49694483D9E6
+      lockType: null
+      lockExpiration: null
+      id: 35958880
+    :headers:
+      content-length: '309'
+      Server: nginx
+      Connection: keep-alive
+      host: datamanager.globaldevtools.bbva.com
+      Vary: Accept-Encoding
+      Date: Wed, 23 Oct 2024 18:42:33 GMT
+      Content-Type: application/json
+    :status: 200 OK

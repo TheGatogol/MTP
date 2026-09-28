@@ -1,0 +1,55 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: eeb362b5-a227-450b-87d7-828b0dcb21ef
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: sustainability_carbon_footprint_offset_user
+    lock: 'false'
+then:
+- return:
+    :body:
+    - data:
+        text:
+          contributeProject: Aportar a proyectos
+        tags:
+        - sustainability_carbon_footprint_offset_user
+        authentication:
+          password: Glomo2025
+          user: '5523029950'
+          deviceId: 24A7D81D402C7E9035E41C45258CE7E2
+      lockExpiration: null
+      lockType: null
+      id: 36044832
+    - data:
+        text:
+          contributeProject: Aportar a proyectos
+        tags:
+        - sustainability_carbon_footprint_offset_user
+        - with_contributions
+        authentication:
+          password: Glomo2023
+          user: '4772593385'
+          deviceId: 207DCC69BAD1C56366AF0C5BBA3DC211
+      lockExpiration: null
+      lockType: null
+      id: 36239221
+    :headers:
+      content-length: '599'
+      Server: nginx
+      Cache-Control: max-age=0
+      Connection: keep-alive
+      host: datamanager.globaldevtools.bbva.com
+      Vary: Accept-Encoding
+      Expires: Mon, 13 Oct 2025 22:19:18 GMT
+      Date: Mon, 13 Oct 2025 22:19:18 GMT
+      Content-Type: application/json; charset=utf-8
+    :status: 200 OK

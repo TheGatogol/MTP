@@ -1,0 +1,51 @@
+when:
+  sequence: 1
+  path: /SRVS_A02/personal-finances/v1/pfms
+  method: GET
+  backend: glomo
+request:
+  headers:
+    sec-fetch-mode: cors
+    content-length: '0'
+    referer: http://localhost:8001/
+    sec-fetch-site: same-site
+    accept-language: en-US
+    origin: http://localhost:8001
+    tsec: e6492efda74117afe0f74deb6f1e898c7609d13b
+    accept: application/json, text/html, */*; q=0.1
+    sec-ch-ua: ''
+    sec-ch-ua-mobile: ?0
+    x-vbank-session: 58e12462-fd8a-4080-aa4f-719649b981b3
+    sec-ch-ua-platform: ''
+    host: localhost:9000
+    content-type: application/json
+    connection: keep-alive
+    cache-control: no-cache, no-store, must-revalidate
+    accept-encoding: gzip, deflate, br
+    sec-fetch-dest: empty
+    user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36
+      (KHTML, like Gecko) HeadlessChrome/108.0.5359.98 Safari/537.36
+  query:
+    expand: groups
+    isDefault: 'true'
+then:
+- return:
+    :body: Cannot read property 'length' of undefined
+    :headers:
+      access-control-allow-origin: '*'
+      content-length: '42'
+      Access-Control-Expose-Headers: tsec, vnd.bbva.access-token-type,vnd.bbva.access-token,
+        vnd.bbva.sso-pkcs7, authenticationtype, authenticationdata, authenticationstate,
+        authenticationchallenge
+      Server: artichoke
+      Alt-Svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      access-control-allow-headers: Content-Type, tsec, authenticationtype, authenticationdata,
+        authenticationstate, contactid, consumeruuid, consumerapplicationid, perimetertsec,
+        authorization, responsewarningcode, responsewarningdescription, cuf, field,
+        bcs-device-app-version, bcs-device-app-version, vnd.bbva.authorization
+      content-type: text/plain;utf-8
+      tsec: e6492efda74117afe0f74deb6f1e898c7609d13b
+      X-Response-Time: 2ms
+      Date: Wed, 14 Dec 2022 10:46:51 GMT
+      Via: 1.1 google
+    :status: 500 Internal Server Error

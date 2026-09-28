@@ -1,0 +1,101 @@
+when:
+  sequence: 1
+  path: /SRVS_A02/customers/v1/customers
+  method: GET
+  backend: glomo
+request:
+  headers:
+    sec-fetch-mode: cors
+    content-length: '0'
+    referer: http://127.0.0.1:9090/
+    sec-fetch-site: cross-site
+    accept-language: es
+    origin: http://127.0.0.1:9090
+    x-forwarded-for: 10.23.110.105
+    tsec: 5cad17c3b5a28297b37e9ade54c89fad3f9484a1
+    via: 1.1 tunnel-54d1c339-272f-4b0b-b9ff-d5939a961314 (squid/3.5.27)
+    accept: application/json, text/html, */*; q=0.1
+    sec-ch-ua: '" Not;A Brand";v="99", "Google Chrome";v="91", "Chromium";v="91"'
+    sec-ch-ua-mobile: ?0
+    x-vbank-session: 0bf91aaf-c863-4bdc-b8bd-890b9cbd82b5
+    host: localhost:9000
+    content-type: application/json
+    cache-control: no-cache, no-store, must-revalidate
+    accept-encoding: gzip
+    sec-fetch-dest: empty
+    user-agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko)
+      Chrome/91.0.4472.77 Safari/537.36
+  query:
+    expand: indicators
+then:
+- return:
+    data:
+    - lastName: Santana
+      gender:
+        id: MALE
+      birthData:
+        country:
+          name: México
+          id: MX
+        city: Autlan
+        state:
+          name: Jalisco
+          id: JALISCO
+        birthDate: '1947-07-20T00:00:00.000Z'
+      nationalities:
+      - id: MX
+      suffix: JR
+      indicators:
+      - indicatorId: INSURANCE
+        name: Indica si el cliente tiene seguro contratado
+        isActive: false
+      firstName: Carlos
+      bank:
+        name: BBVA Bancomer
+        branch:
+          costCenter: {}
+          name: Oficina 33
+      lastAccessDate: '2016-08-07T11:28:36.096Z'
+      customerId: b_TCwi5citu5euHzqryDL=
+      identityDocuments:
+      - country:
+          name: México
+          id: MX
+        documentType:
+          id: DNI
+        documentNumber: 82735627A
+        state:
+          name: Jalisco
+          id: JALISCO
+        issueDate: '2008-08-19T09:00:33Z'
+        status:
+          id: Active
+        expirationDate: '2018-08-19T09:00:33Z'
+      personalTitle:
+        name: MR
+        id: MR
+      maritalStatus:
+        id: MARRIED
+    :headers:
+      access-control-allow-origin: '*'
+      content-length: '1667'
+      Access-Control-Expose-Headers: tsec, vnd.bbva.access-token-type,vnd.bbva.access-token,
+        vnd.bbva.sso-pkcs7, authenticationtype, authenticationdata, authenticationstate,
+        authenticationchallenge
+      Server: artichoke
+      Alt-Svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      access-control-allow-headers: Content-Type, tsec, authenticationtype, authenticationdata,
+        authenticationstate, contactid, consumeruuid, consumerapplicationid, perimetertsec,
+        authorization, responsewarningcode, responsewarningdescription, cuf, field,
+        bcs-device-app-version, bcs-device-app-version, vnd.bbva.authorization
+      content-type: application/json;charset=UTF-8
+      Vary: Accept-Encoding
+      tsec: 5cad17c3b5a28297b37e9ade54c89fad3f9484a1
+      X-Response-Time: 528ms
+      Date: Mon, 30 May 2022 06:49:29 GMT
+      Via: 1.1 google
+    :status: 200 OK
+    apiInfo:
+      name: customers
+      category: people
+      version: 1.82.0

@@ -1,0 +1,38 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: f809a9c8-2802-4c74-887f-03b7645f4467
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: transaction_approved_with_exceeded_mtu
+    lock: 'false'
+then:
+- return:
+    :body:
+    - data:
+        tags:
+        - transaction_approved_with_exceeded_mtu
+        authentication:
+          password: Glomo2025
+          user: '7779064075'
+          deviceId: 5B8C1BA874C08A187BB104684A83722E
+      lockType: null
+      lockExpiration: null
+      id: 36242021
+    :headers:
+      Cache-Control: max-age=0
+      Connection: keep-alive
+      host: datamanager.globaldevtools.bbva.com
+      Expires: Wed, 24 Sep 2025 20:20:10 GMT
+      Content-Length: '230'
+      Date: Wed, 24 Sep 2025 20:20:10 GMT
+      Content-Type: application/json; charset=utf-8
+    :status: 200 OK

@@ -1,0 +1,155 @@
+when:
+  sequence: 1
+  path: /SRVS_A02/cards/v1/cards/1376/transactions
+  method: GET
+  backend: glomo
+request:
+  headers:
+    sec-fetch-mode: cors
+    content-length: '0'
+    referer: http://localhost:8001/
+    sec-fetch-site: same-site
+    origin: http://localhost:8001
+    tsec: d526bacbf720513caa2d12e44eff907abe7b5eba
+    accept: application/json, text/html, */*; q=0.1
+    sec-ch-ua: '"Not A(Brand";v="99", "HeadlessChrome";v="121", "Chromium";v="121"'
+    sec-ch-ua-mobile: ?0
+    x-vbank-session: 3f36cbda-a8eb-474d-ac30-add62c0156d6
+    sec-ch-ua-platform: '"macOS"'
+    host: localhost:9000
+    content-type: application/json
+    connection: keep-alive
+    cache-control: no-cache, no-store, must-revalidate
+    accept-encoding: gzip, deflate, br
+    sec-fetch-dest: empty
+    user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36
+      (KHTML, like Gecko) HeadlessChrome/121.0.6167.139 Safari/537.36
+  query:
+    toOperationDate: '2024-02-05'
+    fromOperationDate: '2023-11-05'
+then:
+- return:
+    data:
+    - originAmount:
+        amount: -500
+        currency: MXN
+      transactionType:
+        name: Compra
+        id: PURCHASE
+      operationDate: '2024-02-01T10:05:01.090Z'
+      additionalInformation:
+        reference: Reference example
+        additionalData: Additional data example
+      valuationDate: '2024-02-01T12:35:01Z'
+      concept: COM MEX VILLA COAPA
+      contract:
+        number: '4555457083071376'
+        product:
+          name: Tarjetas
+          id: CARDS
+        numberType:
+          name: Permanent Account Number
+          id: PAN
+        alias: Tarjeta 1376 - Operative - Pdt.Entrega
+        id: '1376'
+      id: 3699A0441
+      accountedDate: '2024-02-01T12:35:01.090Z'
+      financingType:
+        name: Non financing
+        id: NON_FINANCING
+      localAmount:
+        amount: -500
+        currency: MXN
+      status:
+        name: Pending
+        id: PENDING
+    - originAmount:
+        amount: -2600
+        currency: MXN
+      transactionType:
+        name: Retiro de efectivo
+        id: CASH_WITHDRAWAL
+      operationDate: '2024-02-01T10:05:01.090Z'
+      additionalInformation:
+        reference: Reference example
+        additionalData: Additional data example
+      valuationDate: '2024-02-01T12:35:01Z'
+      concept: RETIRO DE EFECTIVO DM
+      contract:
+        number: '4555457083071376'
+        product:
+          name: Tarjetas
+          id: CARDS
+        numberType:
+          name: Permanent Account Number
+          id: PAN
+        alias: Tarjeta 1376 - Operative - Pdt.Entrega
+        id: '1376'
+      id: 3699A0002
+      accountedDate: '2024-02-01T12:35:01.090Z'
+      financingType:
+        name: Non financing
+        id: NON_FINANCING
+      localAmount:
+        amount: -2600
+        currency: MXN
+      status:
+        name: Authorized
+        id: AUTHORIZED
+    - originAmount:
+        amount: -29900
+        currency: MXN
+      transactionType:
+        name: Refund
+        id: REFUND
+      operationDate: '2024-02-01T10:05:01.090Z'
+      additionalInformation:
+        reference: Reference example
+        additionalData: Additional data example
+      valuationDate: '2024-02-01T12:35:01Z'
+      concept: 'devolución: corte ingles'
+      contract:
+        number: '4555457083071376'
+        product:
+          name: Tarjetas
+          id: CARDS
+        numberType:
+          name: Permanent Account Number
+          id: PAN
+        alias: Tarjeta 1376 - Operative - Pdt.Entrega
+        id: '1376'
+      id: 999A1125
+      accountedDate: '2024-02-01T12:35:01.090Z'
+      financingType:
+        name: Non financing
+        id: NON_FINANCING
+      localAmount:
+        amount: -57
+        currency: MXN
+      status:
+        name: Settled
+        id: SETTLED
+    :headers:
+      content-length: '3519'
+      Server: artichoke
+      Alt-Svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      access-control-allow-headers: Content-Type, tsec, authenticationtype, authenticationdata,
+        authenticationstate, contactid, consumeruuid, consumerapplicationid, perimetertsec,
+        authorization, responsewarningcode, responsewarningdescription, cuf, field,
+        bcs-device-app-version, bcs-device-app-version, vnd.bbva.authorization, device-id
+      tsec: d526bacbf720513caa2d12e44eff907abe7b5eba
+      X-Response-Time: 501ms
+      Date: Mon, 05 Feb 2024 20:55:47 GMT
+      Via: 1.1 google
+      access-control-allow-origin: '*'
+      Access-Control-Expose-Headers: tsec, vnd.bbva.access-token-type,vnd.bbva.access-token,
+        vnd.bbva.sso-pkcs7, authenticationtype, authenticationdata, authenticationstate,
+        authenticationchallenge
+      Cache-Control: private, no-store
+      content-type: application/json;charset=UTF-8
+      Vary: Accept-Encoding
+    :status: 200 OK
+    apiInfo:
+      name: cards
+      category: products
+      version: 0.19.0

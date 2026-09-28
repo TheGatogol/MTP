@@ -1,0 +1,56 @@
+when:
+  sequence: 9
+  path: /SRVS_A02/cards/v1/cards/ab7945/replacements
+  method: POST
+  backend: glomo
+request:
+  headers:
+    sec-fetch-mode: cors
+    referer: http://localhost:8001/
+    content-length: '39'
+    sec-fetch-site: same-site
+    accept-language: es-MX,es;q=0.9
+    origin: http://localhost:8001
+    authenticationtype: '05'
+    tsec: 571430865f87d62dd809712116c9b316382e32a1
+    accept: application/json, text/html, */*; q=0.1
+    sec-ch-ua: '"Not(A:Brand";v="8", "Chromium";v="144", "Google Chrome";v="144"'
+    authenticationdata: otp-sms=123456
+    sec-ch-ua-mobile: ?0
+    x-vbank-session: 007b18fb-2651-4583-88ad-94d82222ac28
+    sec-ch-ua-platform: '"macOS"'
+    host: localhost:9000
+    content-type: application/json
+    connection: keep-alive
+    authenticationstate: e3b0c44298
+    cache-control: no-cache, no-store, must-revalidate
+    accept-encoding: gzip, deflate, br, zstd
+    sec-fetch-dest: empty
+    user-agent: GLOMO_MX/99.99.99 (Android;14;Samsung)
+  body:
+    feesApply: false
+    blockReference: ''
+then:
+- delay: 75
+- return:
+    :body: error500 is not defined
+    :headers:
+      access-control-allow-origin: '*'
+      content-length: '23'
+      Access-Control-Expose-Headers: tsec, vnd.bbva.access-token-type,vnd.bbva.access-token,
+        vnd.bbva.sso-pkcs7, authenticationtype, authenticationdata, authenticationstate,
+        authenticationchallenge
+      Server: artichoke
+      access-control-allow-headers: Content-Type, tsec, authenticationtype, authenticationdata,
+        authenticationstate, contactid, consumeruuid, consumerapplicationid, perimetertsec,
+        authorization, responsewarningcode, responsewarningdescription, cuf, field,
+        bcs-device-app-version, bcs-device-app-version, vnd.bbva.authorization, device-id,
+        Bcs-Device-Os-Name, bcs-device-app-name, bcs-device-dpi, BCS-Device-Id
+      Connection: keep-alive
+      content-type: text/plain;utf-8
+      Vary: Accept-Encoding
+      tsec: 571430865f87d62dd809712116c9b316382e32a1
+      X-Response-Time: 2031ms
+      Date: Mon, 16 Feb 2026 20:25:20 GMT
+      Allow: POST
+    :status: 500 Internal Server Error

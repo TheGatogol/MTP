@@ -1,0 +1,11 @@
+export {default as faqDetailPoints} from './faqDetailPoints';
+export {default as invitationEnrollmentPromotions} from './invitationEnrollmentPromotions';
+export {default as myBbvaCards} from './myBbvaCards';
+export {default as pointsPurchase} from './pointsPurchase';
+export {default as pointsPurchaseReceipt} from './pointsPurchaseReceipt';
+export {default as pointsRaffle} from './pointsRaffle';
+export {default as pointsTransfer} from './pointsTransfer';
+export {default as pointsTransferReview} from './pointsTransferReview';
+export {default as rewardsLanding} from './rewardsLanding';
+export {default as rewardsLandingFilteredPoints} from './rewardsLandingFilteredPoints';
+export {default as rewardOriginCard} from './rewardOriginCard';

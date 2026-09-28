@@ -1,0 +1,83 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: a617c8c7-f1e3-450a-b214-1205120928db
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: debt_expenses_group
+    lock: 'false'
+then:
+- return:
+    :body:
+    - data:
+        data:
+          name: PATRICIA DEL ROCIO
+        debtors:
+          data:
+          - name: MARIA JESUS
+          - name: OLIBIA
+          - name: SILVIA SOLEDAD
+          - name: MIKE
+        locale: es_mx
+        tags:
+        - '5521360473'
+        - debt_expenses_group
+        products:
+          cards:
+          - number: '00740010001503806965'
+            cardId: Uvn6wi1Rh6A7FCvyfOi-JqDAJrb8ReLAa8uc1j4ue5Xz5ouSt4tX9Q
+            alias: 0002AH6965
+          - number: '4152313973405298'
+            cardId: 9YK9GXzCWZ_yya93SG7tWoDmQagPyWnGlv00dV0Syu4
+            alias: 0001AH6096
+        authentication:
+          password: Glomo2024
+          user: '5521360473'
+          deviceId: 42EE7DA2FD9AE34536E5615B51DECF7C
+      lockExpiration: null
+      lockType: null
+      id: 36002897
+    - data:
+        data:
+          name: MARIA ANGELINA
+        debtors:
+          data:
+          - name: LUIS ENRIQUE
+          - name: OLIBIA
+          - name: SILVIA SOLEDAD
+        locale: es_mx
+        tags:
+        - '5537429385'
+        - dimo_payments
+        - debt_expenses_group
+        products:
+        - accountId:
+          - other:
+            - id: 0001ah5471 - 00740010001503805471
+            - id: 0002ah6426 - 00740010001503806426
+            - id: 0003ah5784 - 00743902002634905784
+        authentication:
+          password: Glomo2024
+          user: '5537429385'
+          deviceId: 42EE7DA2FD9AE34536E5615B51DECF7C
+      lockExpiration: null
+      lockType: null
+      id: 36021592
+    :headers:
+      content-length: '1234'
+      Cache-Control: max-age=0
+      Connection: keep-alive
+      host: datamanager.globaldevtools.bbva.com
+      Vary: Accept-Encoding
+      Expires: Wed, 29 Jan 2025 06:26:04 GMT
+      Date: Wed, 29 Jan 2025 06:26:04 GMT
+      Content-Type: application/json; charset=utf-8
+    :status: 200 OK

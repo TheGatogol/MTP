@@ -1,0 +1,143 @@
+#!groovy
+
+@Library("workflowlibs") _
+
+pipeline {
+
+  agent none
+
+  options {
+    ansiColor('xterm')
+    buildDiscarder(logRotator(
+      numToKeepStr:
+        env.BRANCH_NAME ==~ /develop/ ? '10' :
+        env.BRANCH_NAME ==~ /release\/.*/ ? '10' :
+        env.BRANCH_NAME ==~ /feature\/.*|bugfix\/.*|hotfix\/.*|PR-.*/ ? '3' : '1',
+    ))
+    disableConcurrentBuilds()
+    skipDefaultCheckout()
+    disableResume()
+  }
+
+  stages {
+
+    stage('Cells workflow') {
+
+      steps {
+
+        script {
+
+          globalBootstrap {
+
+            libraryName = "cellsworkflowlibs"
+            libraryBranch = "4.12.3-cs.2"
+
+            entrypointParams = [
+
+              type                        : "cellsFullApp",
+
+              logLevel                    : "WARNING",
+
+              agentSize                   : "xxl",
+              nodeMem                     : 19456,
+              gradleMem                   : 8192,
+
+              country                     : "mx",
+              sphericaControls            : false,
+              samuelAnalysis              : true,
+              sonarAnalysis               : true,
+              lint                        : true,
+              lintProject                 : true,
+              test                        : true,
+              abortOnLintFailure          : true,
+              sonarConfig                 : [ qualityGate: 'glomo.app', qualityProfile: 'cells.app', waitForQualityGate: true, wiggumReports: false ],
+
+              appDomeConfig : [
+              credential: "app-dome-glomo-mx",
+              teamId: "48b8c130-79d4-11ef-b5d5-6d595195b64b",
+              androidFusionSetId: "0e76c162-adf7-447e-9aa5-dd3035ee3be4",
+              iosFusionSetId: "304f7c40-6eef-11f0-a0e2-793779434724"
+              ],
+
+              cellsConfig                 : [
+                buildCells                : true,
+                cellsAgentVersion         : "4.8.4",
+                agentSize                 : "4xl",
+                testsAgentSize            : "xxl",
+                andromedaJira             : "GLOMO(GL|MX)-(\\d+)",
+                integrationPattern        : false
+              ],
+
+              forceAndroidBuild           : "develop|release/.+",
+              forceIOSBuild               : "develop|release/.+",
+
+              androidConfig               : [
+                andromedaJira             : "GLOMO(GL|MX)-(\\d+)",
+                mappings                  : true,
+                agentSize                 : "xxl",
+                androidAgentVersion       : "4.6.0"
+              ],
+
+              iosConfig                   : [
+                andromedaJira             : "GLOMO(GL|MX)-(\\d+)",
+                CocoapodsVersion          : "1.13.0",
+                nodeIOS                   : "osx-ssd",
+                XcodeVersion              : "26"
+              ],
+
+              buildConfigs                : [
+                //androidDev                : [ build: "vulcanize", config: "mx/android-dev.js", deployPro: "false", forceDeleteJSMaps: "true" ],
+                androidDevSpherica        : [ build: "vulcanize", config: "mx/android-dev-spherica.js", deployPro: "false", forceDeleteJSMaps: "true" ],
+                //androidPreProd            : [ build: "vulcanize",  config: "mx/android-preProd.js", deployPro: "false",forceDeleteJSMaps: "true"],
+                //androidProd               : [ build: "vulcanize", config: "mx/android-prod.js", deployPro: "false", forceDeleteJSMaps: "true" ],
+                androidProdSpherica               : [ build: "vulcanize", config: "mx/android-prod-spherica.js", deployPro: "false", forceDeleteJSMaps: "true" ],
+                //androidVbank              : [ build: "vulcanize", config: "mx/android-vbank.js", deployPro: "false", forceDeleteJSMaps: "true" ],
+                //androidVirtual            : [ build: "vulcanize", config: "mx/android-virtual.js", deployPro: "false", forceDeleteJSMaps: "true" ],
+                //iosDev                    : [ build: "vulcanize", config: "mx/ios-dev.js", deployPro: "false", forceDeleteJSMaps: "true" ],
+                iosDevSpherica            : [ build: "vulcanize", config: "mx/ios-dev-spherica.js", deployPro: "false", forceDeleteJSMaps: "true" ],
+                //iosPreProd                : [ build: "vulcanize", config: "mx/ios-preProd.js", deployPro: "false", forceDeleteJSMaps: "true" ],
+                //iosProd                   : [ build: "vulcanize", config: "mx/ios-prod.js", deployPro: "false", forceDeleteJSMaps: "true" ],
+                iosProdSpherica                   : [ build: "vulcanize", config: "mx/ios-prod-spherica.js", deployPro: "false", forceDeleteJSMaps: "true" ],
+                //iosVbank                  : [ build: "vulcanize", config: "mx/ios-vbank.js", deployPro: "false", forceDeleteJSMaps: "true" ],
+                //iosVirtual                : [ build: "vulcanize", config: "mx/ios-virtual.js", deployPro: "false", forceDeleteJSMaps: "true" ],
+                //webDev                    : [ build: "vulcanize", config: "mx/web-dev.js", deployPro: "false", forceDeleteJSMaps: "true" ],
+                webDevSpherica            : [ build: "vulcanize", config: "mx/web-dev-spherica.js", deployPro: "false", forceDeleteJSMaps: "true" ],
+                //webQa                     : [ build: "vulcanize", config: "mx/web-qa.js", deployPro: "false", forceDeleteJSMaps: "true" ],
+                //webPreProd                : [ build: "vulcanize", config: "mx/web-preProd.js", deployPro: "false", forceDeleteJSMaps: "true" ],
+                //webProd                   : [ build: "vulcanize", config: "mx/web-prod.js", deployPro: "false", forceDeleteJSMaps: "true" ],
+                //webVbank                  : [ build: "vulcanize", config: "mx/web-vbank.js", deployPro: "false", forceDeleteJSMaps: "true", e2econfig: ['topic', 'integration', 'release', 'pr', 'performance'] ],
+                webVbankSpherica         : [ build: "vulcanize", config: "mx/web-vbank-spherica.js", deployPro: "false", forceDeleteJSMaps: "true", e2econfig: ['topic', 'integration', 'release', 'pr', 'performance'] ],
+                //webVirtual                : [ build: "vulcanize", config: "mx/web-virtual.js", deployPro: "false", forceDeleteJSMaps: "true" ]
+              ],
+
+               e2eTests                    : [
+                //performance               : [ branchConfig: [ branchRegEx: ["feature.+", "bugfix.+", "hotfix.+", "PR.*"] ], e2econfig: ['_jenkins/web/vbank-galatea-performance.js'], isLocalTest: true, rerun: 1, scenariosByNode: 87, testRunner: "pepino2+radish", checkExecutedTest: false ],
+                integration               : [ branchConfig: [ branchRegEx: ["develop"] ], e2econfig: ['_jenkins/web/vbank-galatea.js'], isLocalTest: false, remoteCredentials:'bot-glomo-galatea', rerun: 3, scenariosByNode: 240, testRunner: "pepino2+radish", checkExecutedTest: true, filters: ["smoke"] ],
+                release                   : [ branchConfig: [ branchRegEx: ["release.*"] ], e2econfig: ['_jenkins/web/vbank-galatea-video.js'], isLocalTest: false, remoteCredentials:'bot-glomo-galatea', rerun: 3, scenariosByNode: 240, testRunner: "pepino2+radish", checkExecutedTest: true, filters: ["smoke"] ],
+                topic                     : [ branchConfig: [ branchRegEx: ["feature.+", "bugfix.+", "hotfix.+"] ], e2econfig: ['_jenkins/web/vbank-galatea.js'], isLocalTest: false, remoteCredentials:'bot-glomo-galatea', rerun: 2, scenariosByNode: 240, testRunner: "pepino2+radish", checkExecutedTest: true, filters: ["smoke","acceptance","impact"] ],
+                //pr                        : [ branchConfig: [ branchRegEx: ["PR.*"] ], e2econfig: ['_jenkins/web/vbank-galatea.js'], isLocalTest: false, remoteCredentials:'bot-glomo-galatea', rerun: 3, scenariosByNode: 260, testRunner: "pepino2+radish", checkExecutedTest: true, filters: ["impact"] ],
+                //pr_channel                : [ branchConfig: [ branchRegEx: ["PR.*"] ], reviewerRegEx: ["glomo-channel-management.group@bbva.com"], e2econfig: ['_jenkins/web/vbank-galatea.js'], isLocalTest: false, remoteCredentials:'bot-glomo-galatea', rerun: 2, scenariosByNode: 260, testRunner: "pepino2+radish",filters: ["smoke","acceptance","impact"] ],
+                // Only for builds using backend, no vbank
+                use_backend_dev           : [ branchConfig: [ branchRegEx: ["PR.*"] ], e2econfig: ['_jenkins/web/backend-dev-galatea.js'], isLocalTest: false, remoteCredentials:'bot-glomo-galatea', rerun: 2, scenariosByNode: 260, testRunner: "pepino2+radish", checkExecutedTest: true ],
+                use_backend_qa            : [ branchConfig: [ branchRegEx: ["PR.*"] ], e2econfig: ['_jenkins/web/backend-qa-galatea.js'], isLocalTest: false, remoteCredentials:'bot-glomo-galatea', rerun: 2, scenariosByNode: 260, testRunner: "pepino2+radish", checkExecutedTest: true ]
+              ],
+
+/*
+              accessibility               : [
+                accessibility               : [ branchConfig: [ branchRegEx: ["feature.+", "bugfix.+", "hotfix.+", "PR.*"] ], e2econfig: ['_jenkins/web/vbank-accesibility.js'], isLocalTest: true, rerun: 1, scenariosByNode: 87, testRunner: "pepino2+radish" ],
+                               ],
+*/
+              deployS3                    : true,
+              deploySecGCP                : true,
+              deployConfig                : [
+                deployArtifactory         : true,
+                deployBucketGC            : true,
+                iosLink                   : "Installation"
+              ],
+            ]
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,41 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: 8c82f0c0-9a14-4f8f-8c2e-2b1128608e92
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: recurrent_payroll
+    lock: 'false'
+then:
+- return:
+    :body:
+    - data:
+        locale: es_mx
+        tags:
+        - recurrent_payroll
+        authentication:
+          password: Glomo2023
+          user: '5523729279'
+          deviceId: 1F4A90CAE0A9345267178B9947F6847E
+      lockType: null
+      lockExpiration: null
+      id: 3510542
+    :headers:
+      Strict-Transport-Security: max-age=15768000
+      Server: nginx
+      ECS-Entry-Point-Zone: ext
+      Connection: keep-alive
+      host: datamanager.globaldevtools.bbva.com
+      Set-Cookie: vbank-session=8c82f0c0-9a14-4f8f-8c2e-2b1128608e92
+      Content-Length: '227'
+      Date: Thu, 15 Jun 2023 03:23:53 GMT
+      Content-Type: application/json
+    :status: 200 OK

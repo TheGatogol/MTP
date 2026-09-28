@@ -1,0 +1,517 @@
+when:
+  sequence: 1
+  path: /SRVS_A02/financial-overview/v1/financial-overview
+  method: GET
+  backend: glomo
+request:
+  headers:
+    sec-fetch-mode: cors
+    content-length: '0'
+    referer: http://localhost:8001/
+    sec-fetch-site: same-site
+    origin: http://localhost:8001
+    tsec: 8f9cf98a76f764a1e41b825ac26a66c7e8efbfee
+    accept: application/json, text/html, */*; q=0.1
+    sec-ch-ua: '"HeadlessChrome";v="117", "Not;A=Brand";v="8", "Chromium";v="117"'
+    sec-ch-ua-mobile: ?0
+    x-vbank-session: 6061afe2-78dd-44a2-b5da-d7329b8adc74
+    sec-ch-ua-platform: '"macOS"'
+    host: localhost:9000
+    content-type: application/json
+    connection: keep-alive
+    cache-control: no-cache, no-store, must-revalidate
+    accept-encoding: gzip, deflate, br
+    sec-fetch-dest: empty
+    user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36
+      (KHTML, like Gecko) HeadlessChrome/117.0.5938.88 Safari/537.36
+then:
+- return:
+    data:
+      family:
+      - balances:
+        - amountBalance:
+          - amount: '1900000'
+            isMajor: 'false'
+            currency: MXN
+          name: Saldo disponible
+          id: CURRENT_BALANCE
+        - amountBalance:
+          - amount: '25000'
+            isMajor: 'false'
+            currency: MXN
+          name: Saldo buen cobro
+          id: PENDING_DEPOSIT_BALANCE
+        name: Cuenta corriente lcred
+        id: ACCOUNT
+      - balances:
+        - amountBalance:
+          - amount: '4000000'
+            isMajor: 'false'
+            currency: MXN
+          name: Saldo actual
+          id: CURRENT_BALANCE
+        - amountBalance:
+          - amount: '0'
+            isMajor: 'false'
+            currency: MXN
+          name: Saldo en tránsito
+          id: PENDING_CHARGE_BALANCE
+        - amountBalance:
+          - amount: '80000'
+            isMajor: 'false'
+            currency: MXN
+          name: Saldo disponible
+          id: AVAILABLE_BALANCE
+        name: Tarjeta 1291 - On - Associated virtual card
+        id: CARD
+      contracts:
+      - number: '050400010100120000'
+        product:
+          name: Cuenta corriente con línea de crédito
+          description: Cuenta corriente lcred
+          id: CORRIENTE_LCREDITO_CL
+        numberType:
+          id: LIC
+        relatedContracts:
+        - relationType:
+            name: Linked with
+            id: LINKED_WITH
+          contractProductType:
+            name: Cuentas
+            id: ACCOUNTS
+          contractId: '050400010100120000'
+          id: '050400010100120000'
+        alias: Cuenta corriente lcred
+        id: '1200'
+        detail:
+          specificAmounts:
+          - amounts:
+            - amount: 1900000
+              currency: MXN
+            name: Saldo disponible
+            id: CURRENT_BALANCE
+          - amounts:
+            - amount: 25000
+              currency: MXN
+            name: Saldo buen cobro
+            id: PENDING_DEPOSIT_BALANCE
+          level: N2
+          indicators:
+          - name: Editar alias
+            id: EDITABLE_ALIAS
+            isActive: true
+          - name: Transferencia
+            id: ORIGIN_TRANSFER_TO_ACCOUNT
+            isActive: true
+          - name: Traspaso
+            id: ORIGIN_INTERNAL_TRANSFER_TO_ACCOUNT
+            isActive: true
+          - name: Transferencia
+            id: ORIGIN_INTERNATIONAL_TRANSFER_TO_ACCOUNT
+            isActive: true
+          - name: Pago de servicio
+            id: ORIGIN_SERVICE_PAYMENT
+            isActive: true
+          - name: Avance en línea
+            id: DESTINATION_TRANSFER_FROM_CARD
+            isActive: true
+          - name: Avance en línea
+            id: DESTINATION_INTERNATIONAL_TRANSFER_FROM_CARD
+            isActive: true
+          - name: Recarga celular
+            id: ORIGIN_MOBILE_PHONE_RECHARGES
+            isActive: true
+          - name: Aporte solidario
+            id: ORIGIN_SOLIDARY_CONTRIBUTION
+            isActive: true
+          - name: Pago PreviRed
+            id: ORIGIN_TAX_PAYMENT
+            isActive: true
+        productType: ACCOUNT
+        status:
+          name: Cuenta operativa
+          id: ACTIVATED
+        subProductType:
+          name: Common
+          id: COMMON
+      - number: '4555457083071291'
+        product:
+          name: Crédito BBVA associated with a virtual card
+          description: Tarjeta 1291 - On - Associated virtual card
+          id: V1
+        numberType:
+          id: PAN
+        relatedContracts:
+        - relationType:
+            name: Linked with
+            id: LINKED_WITH
+          contractProductType:
+            name: Tarjetas
+            id: CARDS
+          contractId: '4552307083071293'
+          id: '4552307083071293'
+        alias: Tarjeta 1291 - On - Associated virtual card
+        id: '1291'
+        userAccessControl:
+        - canOperate: false
+        detail:
+          images:
+          - name: Front face of the card
+            id: FRONT_CARD
+            url: https://cardcovers.caasbbva.com/mexico/477291-AC.png.imgcaas.w320.png
+          - name: Back face of the card
+            id: BACK_CARD
+            url: /imageBack.jpg
+          specificAmounts:
+          - amounts:
+            - amount: 1000000
+              currency: MXN
+            name: Saldo actual
+            id: CURRENT_BALANCE
+          - amounts:
+            - amount: 0
+              currency: MXN
+            name: Saldo en tránsito
+            id: PENDING_CHARGE_BALANCE
+          - amounts:
+            - amount: 20000
+              currency: MXN
+            name: Saldo disponible
+            id: AVAILABLE_BALANCE
+          physicalSupport:
+            name: Plástico normal
+            id: NORMAL_PLASTIC
+          activations:
+          - name: Activation for global card usage
+            id: ON_OFF
+            isActive: true
+          indicators:
+          - name: The card can be associable to nfc.
+            id: ASSOCIABLE_TO_NFC
+            isActive: false
+          - name: Indica si la tarjeta cuenta con sticker asociado
+            id: ASSOCIABLE_TO_STICKER_CARDS
+            isActive: false
+          - name: The card can be related to virtual cards
+            id: ASSOCIABLE_TO_VIRTUAL_CARDS
+            isActive: false
+          - name: Bloquear tarjeta
+            id: BLOCKABLE
+            isActive: false
+          - name: Indica si la tarjeta puede modificar el nip de forma online por
+              una aplicación
+            id: BLOCKABLE_NIP
+            isActive: false
+          - name: Indica si los datos de seguridad de la tarjeta pueden ser leídos.
+            id: SECURITY_DATA_READ
+            isActive: true
+          - name: Indica si el CVV2 es dinámico
+            id: DINAMIC_CVV
+            isActive: false
+          - name: IS_ADDITIONAL
+            id: IS_ADDITIONAL
+            isActive: false
+          rewards:
+          - name: Puntos bancomer
+            id: BANCOMER_POINTS
+            nonMonetaryValue: 8000
+          expirationDate: '2022-03-01T13:32:02Z'
+        productType: CARD
+        status:
+          name: Operative card
+          id: OPERATIVE
+        subProductType:
+          name: Tarjeta de crédito
+          id: CREDIT_CARD
+      - number: '4555457083071292'
+        product:
+          name: Crédito BBVA associated with a virtual card
+          description: Tarjeta 1292 - Off - Associated virtual card
+          id: V1
+        numberType:
+          id: PAN
+        relatedContracts:
+        - relationType:
+            name: Linked with
+            id: LINKED_WITH
+          contractProductType:
+            name: Tarjetas
+            id: CARDS
+          contractId: '4552307083071294'
+          id: '4552307083071294'
+        alias: Tarjeta 1292 - Off - Associated virtual card
+        id: '1292'
+        userAccessControl:
+        - canOperate: false
+        detail:
+          images:
+          - name: Front face of the card
+            id: FRONT_CARD
+            url: https://cardcovers.caasbbva.com/mexico/477291-AC.png.imgcaas.w320.png
+          - name: Back face of the card
+            id: BACK_CARD
+            url: /imageBack.jpg
+          specificAmounts:
+          - amounts:
+            - amount: 1000000
+              currency: MXN
+            name: Saldo actual
+            id: CURRENT_BALANCE
+          - amounts:
+            - amount: 0
+              currency: MXN
+            name: Saldo en tránsito
+            id: PENDING_CHARGE_BALANCE
+          - amounts:
+            - amount: 20000
+              currency: MXN
+            name: Saldo disponible
+            id: AVAILABLE_BALANCE
+          physicalSupport:
+            name: Plástico normal
+            id: NORMAL_PLASTIC
+          activations:
+          - name: Activation for global card usage
+            id: ON_OFF
+            isActive: true
+          indicators:
+          - name: The card can be associable to nfc.
+            id: ASSOCIABLE_TO_NFC
+            isActive: false
+          - name: Indica si la tarjeta cuenta con sticker asociado
+            id: ASSOCIABLE_TO_STICKER_CARDS
+            isActive: false
+          - name: The card can be related to virtual cards
+            id: ASSOCIABLE_TO_VIRTUAL_CARDS
+            isActive: false
+          - name: Bloquear tarjeta
+            id: BLOCKABLE
+            isActive: false
+          - name: Indica si la tarjeta puede modificar el nip de forma online por
+              una aplicación
+            id: BLOCKABLE_NIP
+            isActive: false
+          - name: Indica si los datos de seguridad de la tarjeta pueden ser leídos.
+            id: SECURITY_DATA_READ
+            isActive: true
+          - name: Indica si el CVV2 es dinámico
+            id: DINAMIC_CVV
+            isActive: false
+          - name: IS_ADDITIONAL
+            id: IS_ADDITIONAL
+            isActive: false
+          rewards:
+          - name: Puntos bancomer
+            id: BANCOMER_POINTS
+            nonMonetaryValue: 8000
+          expirationDate: '2022-03-01T13:32:02Z'
+        productType: CARD
+        status:
+          name: Operative card
+          id: OPERATIVE
+        subProductType:
+          name: Tarjeta de crédito
+          id: CREDIT_CARD
+      - number: '4555457083071293'
+        product:
+          name: Crédito BBVA Virtual card
+          description: Tarjeta 1293 - Virtual card
+          id: XA
+        numberType:
+          id: PAN
+        relatedContracts:
+        - relationType:
+            name: Linked with
+            id: LINKED_WITH
+          contractProductType:
+            name: Tarjetas
+            id: CARDS
+          contractId: '4552307083071293'
+          id: '4552307083071293'
+        alias: Tarjeta 1293 - Virtual card
+        id: '1293'
+        userAccessControl:
+        - canOperate: false
+        detail:
+          images:
+          - name: Front face of the card
+            id: FRONT_CARD
+            url: https://cardcovers.caasbbva.com/mexico/477291-AC.png.imgcaas.w320.png
+          - name: Back face of the card
+            id: BACK_CARD
+            url: /imageBack.jpg
+          specificAmounts:
+          - amounts:
+            - amount: 1000000
+              currency: MXN
+            name: Saldo actual
+            id: CURRENT_BALANCE
+          - amounts:
+            - amount: 0
+              currency: MXN
+            name: Saldo en tránsito
+            id: PENDING_CHARGE_BALANCE
+          - amounts:
+            - amount: 20000
+              currency: MXN
+            name: Saldo disponible
+            id: AVAILABLE_BALANCE
+          physicalSupport:
+            name: DIGITAL
+            id: VIRTUAL
+          activations:
+          - name: Activation for global card usage
+            id: ON_OFF
+            isActive: true
+          indicators:
+          - name: The card can be associable to nfc.
+            id: ASSOCIABLE_TO_NFC
+            isActive: false
+          - name: Indica si la tarjeta cuenta con sticker asociado
+            id: ASSOCIABLE_TO_STICKER_CARDS
+            isActive: false
+          - name: The card can be related to virtual cards
+            id: ASSOCIABLE_TO_VIRTUAL_CARDS
+            isActive: false
+          - name: Bloquear tarjeta
+            id: BLOCKABLE
+            isActive: false
+          - name: Indica si la tarjeta puede modificar el nip de forma online por
+              una aplicación
+            id: BLOCKABLE_NIP
+            isActive: false
+          - name: Indica si los datos de seguridad de la tarjeta pueden ser leídos.
+            id: SECURITY_DATA_READ
+            isActive: true
+          - name: Indica si el CVV2 es dinámico
+            id: DINAMIC_CVV
+            isActive: false
+          - name: IS_ADDITIONAL
+            id: IS_ADDITIONAL
+            isActive: false
+          rewards:
+          - name: Puntos bancomer
+            id: BANCOMER_POINTS
+            nonMonetaryValue: 8000
+          expirationDate: '2022-03-01T13:32:02Z'
+        productType: CARD
+        status:
+          name: Operative card
+          id: OPERATIVE
+        subProductType:
+          name: Tarjeta de crédito
+          id: CREDIT_CARD
+      - number: '4555457083071294'
+        product:
+          name: Crédito BBVA Virtual card
+          description: Tarjeta 1294 - Virtual card
+          id: XA
+        numberType:
+          id: PAN
+        relatedContracts:
+        - relationType:
+            name: Linked with
+            id: LINKED_WITH
+          contractProductType:
+            name: Tarjetas
+            id: CARDS
+          contractId: '4552307083071294'
+          id: '4552307083071294'
+        alias: Tarjeta 1294 - Virtual card
+        id: '1294'
+        userAccessControl:
+        - canOperate: false
+        detail:
+          images:
+          - name: Front face of the card
+            id: FRONT_CARD
+            url: https://cardcovers.caasbbva.com/mexico/477291-AC.png.imgcaas.w320.png
+          - name: Back face of the card
+            id: BACK_CARD
+            url: /imageBack.jpg
+          specificAmounts:
+          - amounts:
+            - amount: 1000000
+              currency: MXN
+            name: Saldo actual
+            id: CURRENT_BALANCE
+          - amounts:
+            - amount: 0
+              currency: MXN
+            name: Saldo en tránsito
+            id: PENDING_CHARGE_BALANCE
+          - amounts:
+            - amount: 20000
+              currency: MXN
+            name: Saldo disponible
+            id: AVAILABLE_BALANCE
+          physicalSupport:
+            name: DIGITAL
+            id: VIRTUAL
+          activations:
+          - name: Activation for global card usage
+            id: ON_OFF
+            isActive: false
+          - name: Activation for global card usage
+            id: DCVV
+            isActive: false
+          indicators:
+          - name: The card can be associable to nfc.
+            id: ASSOCIABLE_TO_NFC
+            isActive: false
+          - name: Indica si la tarjeta cuenta con sticker asociado
+            id: ASSOCIABLE_TO_STICKER_CARDS
+            isActive: false
+          - name: The card can be related to virtual cards
+            id: ASSOCIABLE_TO_VIRTUAL_CARDS
+            isActive: false
+          - name: Bloquear tarjeta
+            id: BLOCKABLE
+            isActive: false
+          - name: Indica si la tarjeta puede modificar el nip de forma online por
+              una aplicación
+            id: BLOCKABLE_NIP
+            isActive: false
+          - name: Indica si los datos de seguridad de la tarjeta pueden ser leídos.
+            id: SECURITY_DATA_READ
+            isActive: true
+          - name: Indica si el CVV2 es dinámico
+            id: DINAMIC_CVV
+            isActive: false
+          - name: IS_ADDITIONAL
+            id: IS_ADDITIONAL
+            isActive: false
+          rewards:
+          - name: Puntos bancomer
+            id: BANCOMER_POINTS
+            nonMonetaryValue: 8000
+          expirationDate: '2022-03-01T13:32:02Z'
+        productType: CARD
+        status:
+          name: Operative card
+          id: OPERATIVE
+        subProductType:
+          name: Tarjeta de crédito
+          id: CREDIT_CARD
+    :headers:
+      access-control-allow-origin: '*'
+      content-length: '22108'
+      Access-Control-Expose-Headers: tsec, vnd.bbva.access-token-type,vnd.bbva.access-token,
+        vnd.bbva.sso-pkcs7, authenticationtype, authenticationdata, authenticationstate,
+        authenticationchallenge
+      Server: artichoke
+      access-control-allow-headers: Content-Type, tsec, authenticationtype, authenticationdata,
+        authenticationstate, contactid, consumeruuid, consumerapplicationid, perimetertsec,
+        authorization, responsewarningcode, responsewarningdescription, cuf, field,
+        bcs-device-app-version, bcs-device-app-version, vnd.bbva.authorization, device-id
+      Connection: keep-alive
+      content-type: application/json;charset=UTF-8
+      Vary: Accept-Encoding
+      tsec: 8f9cf98a76f764a1e41b825ac26a66c7e8efbfee
+      X-Response-Time: 308ms
+      Date: Tue, 19 Sep 2023 20:03:31 GMT
+    :status: 200 OK
+    apiInfo:
+      name: financial-overview
+      category: people
+      version: 0.7.0

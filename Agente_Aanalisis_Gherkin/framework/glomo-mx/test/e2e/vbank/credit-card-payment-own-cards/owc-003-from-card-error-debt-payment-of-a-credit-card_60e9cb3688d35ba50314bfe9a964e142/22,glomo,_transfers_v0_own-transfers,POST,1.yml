@@ -1,0 +1,70 @@
+when:
+  sequence: 1
+  path: /SRVS_A02/transfers/v0/own-transfers
+  method: POST
+  backend: glomo
+request:
+  headers:
+    sec-fetch-mode: cors
+    referer: http://localhost:8001/
+    content-length: '229'
+    sec-fetch-site: same-site
+    accept-language: es-MX,es;q=0.9
+    origin: http://localhost:8001
+    tsec: 63b0c139cddc6c41005e06bf9b836125047dca57
+    accept: application/json, text/html, */*; q=0.1
+    sec-ch-ua: '"Chromium";v="116", "Not)A;Brand";v="24", "Google Chrome";v="116"'
+    sec-ch-ua-mobile: ?0
+    x-vbank-session: d9438e04-edc1-47bb-8c8c-ac9a97434fbe
+    sec-ch-ua-platform: '"macOS"'
+    host: localhost:9000
+    content-type: application/json
+    connection: keep-alive
+    cache-control: no-cache, no-store, must-revalidate
+    accept-encoding: gzip, deflate, br
+    sec-fetch-dest: empty
+    user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36
+      (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36
+  body:
+    receiver:
+      contract:
+        number: '4555457083071201'
+        numberType:
+          id: PAN
+    sender:
+      contract:
+        number: '050400010100120000'
+        numberType:
+          id: LIC
+        contractId: '1200'
+    sentMoney:
+    - amount: 75000
+      currency: MXN
+then:
+- return:
+    severity: FATAL
+    error-message: Server error
+    consumer-request-id: 207a2723-e82b-4c47-a64c-ea8836f245cd
+    :headers:
+      access-control-allow-origin: '*'
+      Access-Control-Expose-Headers: tsec, vnd.bbva.access-token-type,vnd.bbva.access-token,
+        vnd.bbva.sso-pkcs7, authenticationtype, authenticationdata, authenticationstate,
+        authenticationchallenge
+      Server: artichoke
+      Alt-Svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      access-control-allow-headers: Content-Type, tsec, authenticationtype, authenticationdata,
+        authenticationstate, contactid, consumeruuid, consumerapplicationid, perimetertsec,
+        authorization, responsewarningcode, responsewarningdescription, cuf, field,
+        bcs-device-app-version, bcs-device-app-version, vnd.bbva.authorization, device-id
+      tsec: 63b0c139cddc6c41005e06bf9b836125047dca57
+      Content-Length: '264'
+      X-Response-Time: 2ms
+      Date: Sun, 27 Aug 2023 18:04:23 GMT
+      Content-Type: application/json; charset=utf-8
+      Via: 1.1 google
+    system-error-code: serviceNotAvailable
+    :status: 500 Internal Server Error
+    http-status: 500
+    system-error-description: Service not available right now
+    error-code: '161'
+    version: 1

@@ -1,0 +1,63 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: profile_recipients
+    lock: 'false'
+then:
+- return:
+    :body:
+    - data:
+        address:
+          zipCode: '97000'
+          outerN: '89'
+          colony: PRIVADA DEL MAESTRO
+          innerN: '89'
+          street: Avenida insurgentes
+          cpFewerThan5: '5300'
+          invalidCP: '00000'
+          streetLongName: abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz
+        beneficiary:
+          percentageOne: '10'
+          percentageFour: '10'
+          percentageThree: '50'
+          birthDay: '1992-12-13'
+          lastName: Lopez
+          secondLastName: Perez
+          percentageSix: '10'
+          name: Raul
+          relationship: '[value=''Otro'']'
+          percentageFive: '10'
+          newAddress: false
+          percentageTwo: '10'
+        locale: es_mx
+        tags:
+        - profile_recipients
+        - '5578475284'
+        products:
+          accounts: '00740010001506409096'
+        authentication:
+          password: Glomo2025
+          user: '4831314376'
+          deviceId: B470758CAA157B3B1590082A45EFDE20
+      id: 36441007
+    :headers:
+      content-length: '754'
+      Server: nginx
+      Cache-Control: max-age=0
+      Connection: keep-alive
+      host: datamanager.globaldevtools.bbva.com
+      Vary: Accept-Encoding
+      Expires: Sat, 11 Apr 2026 20:17:59 GMT
+      Date: Sat, 11 Apr 2026 20:17:59 GMT
+      Content-Type: application/json; charset=utf-8
+    :status: 200 OK

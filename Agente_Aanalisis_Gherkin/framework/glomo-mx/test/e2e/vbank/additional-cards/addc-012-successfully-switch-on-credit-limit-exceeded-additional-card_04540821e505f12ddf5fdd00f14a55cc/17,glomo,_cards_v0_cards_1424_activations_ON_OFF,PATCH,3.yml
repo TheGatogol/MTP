@@ -1,0 +1,54 @@
+when:
+  sequence: 3
+  path: /SRVS_A02/cards/v0/cards/1424/activations/ON_OFF
+  method: PATCH
+  backend: glomo
+request:
+  headers:
+    sec-fetch-mode: cors
+    referer: http://localhost:8001/
+    content-length: '17'
+    sec-fetch-site: same-site
+    accept-language: es
+    origin: http://localhost:8001
+    tsec: 2958bfe7dc2db710deab177837a00e75d3fd455b
+    accept: application/json, text/html, */*; q=0.1
+    x-vbank-session: f232da03-9b8f-4555-8070-c0d59830e2a5
+    host: localhost:9000
+    content-type: application/json
+    connection: keep-alive
+    cache-control: no-cache, no-store, must-revalidate
+    accept-encoding: gzip, deflate, br
+    sec-fetch-dest: empty
+    user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36
+      (KHTML, like Gecko) Chrome/89.0.4389.82 Safari/537.36
+  body:
+    isActive: true
+then:
+- return:
+    data:
+      name: Activation for global card usage
+      isActive: true
+      activationId: ON_OFF
+    :headers:
+      access-control-allow-origin: '*'
+      content-length: '211'
+      Access-Control-Expose-Headers: tsec, vnd.bbva.access-token-type,vnd.bbva.access-token,
+        authenticationtype, authenticationdata, authenticationstate
+      Server: artichoke
+      Alt-Svc: clear
+      access-control-allow-headers: Content-Type, tsec, authenticationtype, authenticationdata,
+        authenticationstate, contactid, consumeruuid, consumerapplicationid, perimetertsec,
+        authorization, responsewarningcode, responsewarningdescription, cuf, field,
+        bcs-device-app-version, bcs-device-app-version
+      content-type: application/json;charset=UTF-8
+      Vary: Accept-Encoding
+      tsec: 2958bfe7dc2db710deab177837a00e75d3fd455b
+      X-Response-Time: 474ms
+      Date: Fri, 12 Mar 2021 17:36:31 GMT
+      Via: 1.1 google
+    :status: 200 OK
+    apiInfo:
+      name: cards
+      category: products
+      version: 0.19.0

@@ -1,0 +1,40 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: investment_profile_proactive_advisor_profiled_user
+    lock: 'false'
+then:
+- return:
+    :body:
+    - data:
+        tags:
+        - investment_profile_proactive_advisor_profiled_user
+        customer:
+          id: D1373094
+        offers:
+          investAdvisory: 'VUIco02l0HCGv7zO5bNh4E3Wpede4L5V'
+        authentication:
+          password: Glomo2026
+          user: '5535141293'
+          deviceId: F6D4C73F21805250396A7A5BBA918166
+      id: 36749501
+    :headers:
+      Server: nginx
+      Cache-Control: max-age=0
+      Connection: keep-alive
+      host: datamanager.globaldevtools.bbva.com
+      Expires: Thu, 23 Jul 2026 01:34:20 GMT
+      Content-Length: '225'
+      Date: Thu, 23 Jul 2026 01:34:20 GMT
+      Content-Type: application/json; charset=utf-8
+    :status: 200 OK

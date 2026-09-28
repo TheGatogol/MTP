@@ -1,0 +1,41 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: d8f7dedd-5b00-4e67-979e-d6fcc7dc1a75
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: car_loan,user_rejected_credit_bureau
+    lock: 'false'
+then:
+- return:
+    :body:
+    - data:
+        locale: es_mx
+        tags:
+        - car_loan
+        - user_rejected_credit_bureau
+        authentication:
+          password: Glomo2023
+          user: '5534348572'
+          deviceId: 2734B2CC385ED6975697EBE607596DA4
+      lockExpiration: null
+      lockType: null
+      id: 35617196
+    :headers:
+      Strict-Transport-Security: max-age=15768000
+      Server: nginx
+      ECS-Entry-Point-Zone: ext
+      Connection: keep-alive
+      host: datamanager.globaldevtools.bbva.com
+      Content-Length: '250'
+      Date: Mon, 11 Dec 2023 17:28:15 GMT
+      Content-Type: application/json
+    :status: 200 OK

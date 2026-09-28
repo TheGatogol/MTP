@@ -1,0 +1,172 @@
+when:
+  sequence: 1
+  path: /SRVS_A02/cards/v1/cards/1291
+  method: GET
+  backend: glomo
+request:
+  headers:
+    sec-fetch-mode: cors
+    content-length: '0'
+    referer: http://localhost:8001/
+    sec-fetch-site: same-site
+    origin: http://localhost:8001
+    tsec: 3ab1265ff61dc201c2bffa324e2a21c5c219c72a
+    accept: application/json, text/html, */*; q=0.1
+    sec-ch-ua: '"HeadlessChrome";v="117", "Not;A=Brand";v="8", "Chromium";v="117"'
+    sec-ch-ua-mobile: ?0
+    x-vbank-session: 960fda07-06ec-46ec-9082-bbc99225d1fe
+    sec-ch-ua-platform: '"macOS"'
+    host: localhost:9000
+    content-type: application/json
+    connection: keep-alive
+    cache-control: no-cache, no-store, must-revalidate
+    accept-encoding: gzip, deflate, br
+    sec-fetch-dest: empty
+    user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36
+      (KHTML, like Gecko) HeadlessChrome/117.0.5938.88 Safari/537.36
+  query:
+    expand: payment-methods,blocks,indicators,activations
+then:
+- return:
+    data:
+      numberType:
+        description: Permanent Account Number
+        id: PAN
+      brandAssociation:
+        description: VISA
+        id: VISA
+      availableBalance:
+        currentBalances:
+        - amount: 20000
+          currency: MXN
+        pendingBalances:
+        - amount: 0
+          currency: MXN
+        postedBalances:
+        - amount: 20000
+          currency: MXN
+      number: '4555457083071291'
+      bank:
+        name: BBVA Mexico
+        id: '504'
+      cutOffDate: '2016-10-01T12:00:00Z'
+      paymentMethods:
+      - nextPaymentDate: '2017-07-05T12:00:00Z'
+        description: Pago mínimo
+        id: MINIMUM_AMOUNT_PAYMENT
+        monetaryPayments:
+        - amount: 0
+          currency: MXN
+      - nextPaymentDate: '2017-07-05T12:00:00Z'
+        description: Pago para no generar intereses
+        id: MINIMUM_AMOUNT_TO_AVOID_INTEREST_PAYMENT
+        monetaryPayments:
+        - amount: 0
+          currency: MXN
+      - nextPaymentDate: '2017-07-05T12:00:00Z'
+        description: Deuda de este mes
+        id: LAST_PERIOD_AMOUNT_PAYMENT
+        monetaryPayments:
+        - amount: 70000
+          currency: MXN
+      - nextPaymentDate: '2017-07-05T12:00:00Z'
+        description: Saldo al corte
+        id: TOTAL_AMOUNT_PAYMENT
+        monetaryPayments:
+        - amount: 75000
+          currency: MXN
+      alias: Tarjeta 1291 - On - Associated virtual card
+      id: '1291'
+      issueDate: '2016-07-01T12:05:13Z'
+      openingDate: '2016-07-01T11:31:45Z'
+      expirationDate: '**/**'
+      product:
+        name: Crédito BBVA associated with a virtual card
+        id: V1
+      holderName: Carlos Santana
+      images:
+      - name: Front face of the card
+        id: FRONT_CARD
+        url: https://cardcovers.caasbbva.com/mexico/477291-AC.png.imgcaas.w320.png
+      - name: Back face of the card
+        id: BACK_CARD
+        url: /imageBack.jpg
+      blocks: []
+      physicalSupport:
+        description: Plástico normal
+        id: NORMAL_PLASTIC
+      cardType:
+        description: Tarjeta de crédito
+        id: CREDIT_CARD
+      disposedBalance:
+        currentBalances:
+        - amount: 1000000
+          currency: MXN
+        pendingBalances:
+        - amount: 0
+          currency: MXN
+        postedBalances:
+        - amount: 1000000
+          currency: MXN
+      indicators:
+      - description: The card can be associable to nfc.
+        id: ASSOCIABLE_TO_NFC
+        isActive: false
+      - description: Indica si la tarjeta cuenta con sticker asociado
+        id: ASSOCIABLE_TO_STICKER_CARDS
+        isActive: false
+      - description: The card can be related to virtual cards
+        id: ASSOCIABLE_TO_VIRTUAL_CARDS
+        isActive: false
+      - description: Bloquear tarjeta
+        id: BLOCKABLE
+        isActive: false
+      - description: Indica si la tarjeta puede modificar el nip de forma online por
+          una aplicación
+        id: BLOCKABLE_NIP
+        isActive: false
+      - description: Indica si los datos de seguridad de la tarjeta pueden ser leídos.
+        id: SECURITY_DATA_READ
+        isActive: true
+      - description: Indica si el CVV2 es dinámico
+        id: DINAMIC_CVV
+        isActive: false
+      - description: IS_ADDITIONAL
+        id: IS_ADDITIONAL
+        isActive: false
+      transactions: []
+      grantedCredits:
+      - amount: 3000000
+        currency: MXN
+      activations:
+      - name: Activation for global card usage
+        isActive: true
+        activationId: ON_OFF
+      activationDate: '2016-07-01T13:32:02Z'
+      currencies:
+      - isMajor: true
+        currency: MXN
+      status:
+        id: OPERATIVE
+    :headers:
+      access-control-allow-origin: '*'
+      content-length: '4816'
+      Access-Control-Expose-Headers: tsec, vnd.bbva.access-token-type,vnd.bbva.access-token,
+        vnd.bbva.sso-pkcs7, authenticationtype, authenticationdata, authenticationstate,
+        authenticationchallenge
+      Server: artichoke
+      access-control-allow-headers: Content-Type, tsec, authenticationtype, authenticationdata,
+        authenticationstate, contactid, consumeruuid, consumerapplicationid, perimetertsec,
+        authorization, responsewarningcode, responsewarningdescription, cuf, field,
+        bcs-device-app-version, bcs-device-app-version, vnd.bbva.authorization, device-id
+      Connection: keep-alive
+      content-type: application/json;charset=UTF-8
+      Vary: Accept-Encoding
+      tsec: 3ab1265ff61dc201c2bffa324e2a21c5c219c72a
+      X-Response-Time: 51ms
+      Date: Tue, 19 Sep 2023 20:10:01 GMT
+    :status: 200 OK
+    apiInfo:
+      name: cards
+      category: products
+      version: 0.19.0

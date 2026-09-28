@@ -1,0 +1,64 @@
+when:
+  sequence: 1
+  path: /SRVS_A02/personal-finances/v1/pfms/initialize
+  method: POST
+  backend: glomo
+request:
+  headers:
+    sec-fetch-mode: cors
+    referer: http://localhost:8001/
+    content-length: '23'
+    sec-fetch-site: same-site
+    accept-language: en-US
+    origin: http://localhost:8001
+    tsec: ef37f998d6e6528a75c2b88885f0a8487fc264fc
+    accept: application/json, text/html, */*; q=0.1
+    sec-ch-ua: ''
+    sec-ch-ua-mobile: ?0
+    x-vbank-session: a0de52d3-a775-4f3c-b067-4ac94df5b5a4
+    sec-ch-ua-platform: ''
+    host: localhost:9000
+    content-type: application/json
+    connection: keep-alive
+    cache-control: no-cache, no-store, must-revalidate
+    accept-encoding: gzip, deflate, br
+    sec-fetch-dest: empty
+    user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36
+      (KHTML, like Gecko) HeadlessChrome/108.0.5359.124 Safari/537.36
+  body:
+    relatedContracts: []
+then:
+- return:
+    severity: FATAL
+    system-error-cause: Selected contracts couldn't be found for logged user.
+    consumer-request-id: 207a2723-e82b-4c47-a64c-ea8836f245cd
+    :headers:
+      access-control-allow-origin: '*'
+      content-length: '481'
+      Access-Control-Expose-Headers: tsec, vnd.bbva.access-token-type,vnd.bbva.access-token,
+        vnd.bbva.sso-pkcs7, authenticationtype, authenticationdata, authenticationstate,
+        authenticationchallenge
+      Server: artichoke
+      Alt-Svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      access-control-allow-headers: Content-Type, tsec, authenticationtype, authenticationdata,
+        authenticationstate, contactid, consumeruuid, consumerapplicationid, perimetertsec,
+        authorization, responsewarningcode, responsewarningdescription, cuf, field,
+        bcs-device-app-version, bcs-device-app-version, vnd.bbva.authorization
+      content-type: application/json;charset=UTF-8
+      Vary: Accept-Encoding
+      tsec: ef37f998d6e6528a75c2b88885f0a8487fc264fc
+      X-Response-Time: 463ms
+      Date: Fri, 16 Dec 2022 13:05:17 GMT
+      Via: 1.1 google
+    system-error-code: '400'
+    http-status: 400
+    system-error-description: Bad Request
+    error-code: '400'
+    version: 1
+    error-message: Bad Request
+    httpStatus: 400
+    messages:
+    - message: Error 400 genérico
+      type: FATAL
+      parameters: []
+    :status: 400 Bad Request

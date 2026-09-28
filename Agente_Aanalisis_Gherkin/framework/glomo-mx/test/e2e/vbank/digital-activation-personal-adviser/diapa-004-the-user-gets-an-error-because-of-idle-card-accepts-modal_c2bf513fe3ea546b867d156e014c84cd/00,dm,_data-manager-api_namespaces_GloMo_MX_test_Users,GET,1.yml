@@ -1,0 +1,45 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: e29eb014-f3b0-4fc3-9bea-ed953b3523c5
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: personal_adviser,ne_status,idle_card,without_alerts
+    lock: 'false'
+then:
+- return:
+    :body:
+    - data:
+        data:
+          tdd: '4152313945123995'
+          phone: '2323220656'
+        locale: es_mx
+        tags:
+        - '2323220656'
+        - personal_adviser
+        - ne_status
+        - idle_card
+        - without_alerts
+        authentication:
+          user: '2323220656'
+      lockType: null
+      lockExpiration: null
+      id: 3552454
+    :headers:
+      Strict-Transport-Security: max-age=15768000
+      Server: nginx
+      ECS-Entry-Point-Zone: ext
+      Connection: keep-alive
+      Set-Cookie: vbank-session=e29eb014-f3b0-4fc3-9bea-ed953b3523c5
+      Content-Length: '271'
+      Date: Mon, 05 Jun 2023 23:25:25 GMT
+      Content-Type: application/json
+    :status: 200 OK

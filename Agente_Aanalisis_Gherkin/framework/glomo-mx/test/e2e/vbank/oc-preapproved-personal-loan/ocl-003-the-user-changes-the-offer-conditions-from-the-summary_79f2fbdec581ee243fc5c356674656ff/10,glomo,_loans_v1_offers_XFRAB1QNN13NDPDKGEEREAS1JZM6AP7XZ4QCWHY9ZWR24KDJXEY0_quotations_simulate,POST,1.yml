@@ -1,0 +1,136 @@
+when:
+  sequence: 1
+  path: /SRVS_A02/loans/v1/offers/XFRAB1QNN13NDPDKGEEREAS1JZM6AP7XZ4QCWHY9ZWR24KDJXEY0/quotations/simulate
+  method: POST
+  backend: glomo
+request:
+  headers:
+    sec-fetch-mode: cors
+    referer: http://localhost:8001/
+    content-length: '96'
+    sec-fetch-site: same-site
+    accept-language: es
+    origin: http://localhost:8001
+    tsec: 9e23465b321214132e74d7c43efa1d6e95ab35a1
+    accept: application/json, text/html, */*; q=0.1
+    sec-ch-ua: '"Google Chrome";v="93", " Not;A Brand";v="99", "Chromium";v="93"'
+    sec-ch-ua-mobile: ?0
+    x-vbank-session: f3a96fe4-79d4-49e9-9814-53b3cae0ee19
+    sec-ch-ua-platform: '"macOS"'
+    host: localhost:9000
+    content-type: application/json
+    connection: keep-alive
+    cache-control: no-cache, no-store, must-revalidate
+    accept-encoding: gzip, deflate, br
+    sec-fetch-dest: empty
+    user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36
+      (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36
+  body:
+    terms:
+      number: 12
+      frequency: MONTHLY
+    initialAmount:
+      amount: 228700
+      currency: MXN
+then:
+- return:
+    data:
+      product:
+        subproduct:
+          id: CN52
+        id: NO_VALUE
+      terms:
+        number: 12
+        frequency: MONTHLY
+      initialAmount:
+        amount: 228700
+        currency: MXN
+      rates:
+      - mode:
+          name: Percentage
+          id: PERCENTAGE
+        rateType:
+          name: Costo Anual Total
+          id: CAT
+        unit:
+          percentage: 50.9
+        calculationDate: '2021-05-31'
+      - mode:
+          name: Percentage
+          id: PERCENTAGE
+        rateType:
+          name: Tasa Anual
+          id: TASA_ANUAL
+        unit:
+          percentage: 38.16
+      - mode:
+          name: Percentage
+          id: PERCENTAGE
+        rateType:
+          name: Tasa Mensual
+          id: TASA_MENSUAL
+        unit:
+          percentage: 3.18
+      - mode:
+          name: Percentage
+          id: PERCENTAGE
+        rateType:
+          name: Tasa Ordinaria
+          id: TASA_ORDINARIA
+        unit:
+          percentage: 38.16
+      - mode:
+          name: Percentage
+          id: PERCENTAGE
+        rateType:
+          name: Tasa Moratoria
+          id: TASA_MORATORIA
+        unit:
+          percentage: 76.32
+      additionalProducts:
+      - number: 3000H00173
+        isDefaultSelected: true
+        amount:
+          amount: 1356.15
+        id: SEGURO DE VIDA Y DESEMPLEO
+        managementCompany:
+          name: SEGUROS BBV-PROBURSA
+          id: SEGUROS BBV-PROBURSA
+        isMandatory: true
+        productType:
+          name: Insurances
+          id: INSURANCES
+      purposeGroup:
+        name: Destino
+        id: '00156'
+      loanBreakDown:
+      - amount: 1910.57
+        name: Installment
+        currency: MXN
+        id: INSTALLMENT
+      - amount: 41500
+        name: Gross amount
+        currency: MXN
+        id: GROSS_AMOUNT
+      - amount: 88194.2
+        name: Total cost
+        currency: MXN
+        id: TOTAL_COST
+    :headers:
+      access-control-allow-origin: '*'
+      content-length: '1437'
+      Access-Control-Expose-Headers: tsec, vnd.bbva.access-token-type,vnd.bbva.access-token,
+        authenticationtype, authenticationdata, authenticationstate
+      Server: artichoke
+      access-control-allow-headers: Content-Type, tsec, authenticationtype, authenticationdata,
+        authenticationstate, contactid, consumeruuid, consumerapplicationid, perimetertsec,
+        authorization, responsewarningcode, responsewarningdescription, cuf, field,
+        bcs-device-app-version, bcs-device-app-version
+      Connection: keep-alive
+      content-type: application/json;charset=UTF-8
+      location: XFRAB1QNN13NDPDKGEEREAS1JZM6AP7XZ4QCWHY9ZWR24KDJXEY0/quotations/
+      Vary: Accept-Encoding
+      tsec: 9e23465b321214132e74d7c43efa1d6e95ab35a1
+      X-Response-Time: 250ms
+      Date: Thu, 23 Sep 2021 20:07:15 GMT
+    :status: 200 OK

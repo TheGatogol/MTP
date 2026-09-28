@@ -1,0 +1,63 @@
+when:
+  sequence: 1
+  path: /api/v2/webchat/guest/conversations
+  method: POST
+  backend: genesysHost
+request:
+  headers:
+    sec-fetch-mode: cors
+    referer: http://localhost:8001/
+    content-length: '233'
+    sec-fetch-site: same-site
+    accept-language: es-MX,es;q=0.9
+    origin: http://localhost:8001
+    accept: application/json, text/plain, */*; q=0.01
+    authorization: Bearer
+    sec-ch-ua: '"Google Chrome";v="111", "Not(A:Brand";v="8", "Chromium";v="111"'
+    sec-ch-ua-mobile: ?0
+    x-vbank-session: 7e9ee36a-8afb-49ea-a98f-249b06e0df8a
+    sec-ch-ua-platform: '"macOS"'
+    x-requested-with: XMLHttpRequest
+    host: localhost:9877
+    content-type: application/json
+    connection: keep-alive
+    cache-control: no-cache, no-store, must-revalidate
+    accept-encoding: gzip, deflate, br
+    sec-fetch-dest: empty
+    user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36
+      (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36
+  body:
+    organizationId: 7156cb94-8e0e-4e0c-824f-9c2382945fc
+    memberInfo:
+      displayName: InApp Chat Glomo
+    routingTarget:
+      targetAddress: ChatGlomoAtencion
+      targetType: queue
+    deploymentId: 1632ee99-70fe-4c73-b5e9-ee89bdc39c64
+then:
+- return:
+    code: bad request
+    :headers:
+      X-Cache: Error from cloudfront
+      Access-Control-Allow-Origin: http://localhost:8001
+      Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS, HEAD, PATCH
+      X-Amz-Cf-Pop: DFW57-P3
+      Connection: keep-alive
+      ININ-Correlation-Id: 76b12df4-85bc-4ccb-b3f1-823a36496695
+      Date: Mon, 27 Mar 2023 03:22:05 GMT
+      Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept,
+        Authorization, DNT, User-Agent, Keep-Alive, Cache-Control, ININ-Client-Path
+      Via: 1.1 59497ef468b7865e50a29697db460df2.cloudfront.net (CloudFront)
+      Strict-Transport-Security: max-age=600; includeSubDomains
+      Access-Control-Expose-Headers: Retry-After,inin-correlation-id
+      Cache-Control: no-cache, no-store, must-revalidate
+      X-Amz-Cf-Id: MRXbmXcLrN1hx4UZDI54WmKf1yNupiYzBSRqvjPR-0-PF6YilG9sRA==
+      Content-Length: '155'
+      Access-Control-Max-Age: '86400'
+      Content-Type: application/json
+    contextId: 76b12df4-85bc-4ccb-b3f1-823a36496695
+    details: []
+    :status: 400 Bad Request
+    message: Error accessing web deployment.
+    errors: []
+    status: 400

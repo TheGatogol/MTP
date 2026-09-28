@@ -1,0 +1,62 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: 0ccf064c-6a4e-4ce4-b6e1-e071c3f2baa1
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: monthly_payment
+    lock: 'false'
+then:
+- return:
+    :body:
+    - data:
+        data:
+          catalogs:
+            catalogs: []
+            nonGovernmentalOrganizations: []
+        locale: es_mx
+        tags:
+        - '5549482061'
+        - financing_line
+        - monthly_payment
+        products:
+          cards:
+          - number: '4152313942650271'
+            cardId: 9YK9GXzCWZ8FPKXCSW5ubif6WMp0jPbdl7_w4-NX8NY=
+            cardType:
+              id: DEBIT_CARD
+            alias: 0001ah4747
+            id: 9YK9GXzCWZ8FPKXCSW5ubif6WMp0jPbdl7_w4-NX8NY=
+            title:
+              name: AZUL BBVA
+              id: AC
+            status:
+              id: OPERATIVE
+          accounts:
+            number: '00740010001501204747'
+        authentication:
+          password: Glomo2023
+          user: '5549482061'
+          deviceId: 4A216E901E85DD988E9772A1065D231A
+      lockType: SHARED
+      lockExpiration: '2024-05-16T17:42:58.385873Z'
+      id: 35832195
+    :headers:
+      content-length: '712'
+      Strict-Transport-Security: max-age=15768000
+      Server: nginx
+      ECS-Entry-Point-Zone: ext
+      Connection: keep-alive
+      host: datamanager.globaldevtools.bbva.com
+      Vary: Accept-Encoding
+      Date: Thu, 16 May 2024 17:42:30 GMT
+      Content-Type: application/json
+    :status: 200 OK

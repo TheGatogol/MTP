@@ -1,0 +1,62 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: ba1fb3ae-467f-415a-910a-c1f22b5aa4e2
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: financing_line,late_payments
+    lock: 'false'
+then:
+- return:
+    :body:
+    - data:
+        data:
+          catalogs:
+            catalogs: []
+            nonGovernmentalOrganizations: []
+        locale: es_mx
+        tags:
+        - '5530514388'
+        - financing_line
+        - late_payments
+        products:
+          cards:
+          - number: '4152313966884012'
+            cardId: 9YK9GXzCWZ8K9RGCpbwd25GCleDDTKngQBbr55s3Y08
+            cardType:
+              id: DEBIT_CARD
+            alias: 0001ah6370
+            id: 9YK9GXzCWZ8K9RGCpbwd25GCleDDTKngQBbr55s3Y08
+            title:
+              name: AZUL BBVA
+              id: AC
+            status:
+              id: OPERATIVE
+          accounts:
+            number: '00740010001502116370'
+        authentication:
+          password: Glomo2024
+          user: '5530514388'
+          deviceId: D76C7F92FAB740B15A484CAAB8DF3E46
+      lockType: null
+      lockExpiration: null
+      id: 35817843
+    :headers:
+      content-length: '679'
+      Strict-Transport-Security: max-age=15768000
+      Server: nginx
+      ECS-Entry-Point-Zone: ext
+      Connection: keep-alive
+      host: datamanager.globaldevtools.bbva.com
+      Vary: Accept-Encoding
+      Date: Mon, 20 May 2024 18:50:28 GMT
+      Content-Type: application/json
+    :status: 200 OK

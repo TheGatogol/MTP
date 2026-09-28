@@ -1,0 +1,104 @@
+when:
+  sequence: 1
+  path: /SRVS_A02/customer-logins/v0/indicators
+  method: GET
+  backend: glomo
+request:
+  headers:
+    sec-fetch-mode: cors
+    content-length: "0"
+    referer: http://127.0.0.1:9090/
+    sec-fetch-site: cross-site
+    accept-language: es
+    origin: http://127.0.0.1:9090
+    authenticationtype: "58"
+    x-forwarded-for: 10.23.121.140
+    tsec: 6da97d6502f7a240373123c76831528a805c77c1
+    via: 1.1 tunnel-e0eeee9b-d405-4798-945d-081f6a636da2 (squid/3.5.27)
+    accept: application/json, text/html, */*; q=0.1
+    sec-ch-ua: '" Not;A Brand";v="99", "Google Chrome";v="91", "Chromium";v="91"'
+    authenticationdata: deviceid=11111111
+    sec-ch-ua-mobile: ?0
+    x-vbank-session: 7e1b885f-ef97-4ba2-be4a-e8e95da9c115
+    host: localhost:9000
+    content-type: application/json
+    cache-control: no-cache, no-store, must-revalidate
+    accept-encoding: gzip
+    sec-fetch-dest: empty
+    user-agent: GLOMO_MX/99.99.99;Mozilla/5.0 (Linux; U; Android 4.0.2; en-us;
+      Galaxy Nexus Build/ICL53F) AppleWebKit/534.30 (KHTML, like Gecko)
+      Version/4.0 Mobile Safari/534.30
+then:
+  - return:
+      data:
+        customerId: b_TCwi5citu5euHzqryDL=
+        nationalities:
+          - description: mx
+            id: MX
+        indicators:
+          - description: Indica si el cliente que ejerce sus derechos ARCO, solicitan la
+              suspensión del tratamiento de sus datos personales para todos los
+              fines distintos de los necesarios para el cumplimiento de la
+              relación jurídica.
+            id: ARCO
+            isActive: false
+          - description: Indica si el cliente tiene activado enrolamiento biométrico.
+            id: ACTIVE_BIOMETRIC_ENROLLMENT
+            isActive: false
+          - description: Indica si el cliente puede enrolar un biométrico.
+            id: BIOMETRIC_ENROLLMENT
+            isActive: false
+          - description: Indica si el cliente es empleado del banco.
+            id: EMPLOYEE
+            isActive: false
+          - description: Indica si el cliente contrata un servicio que consiste en tener a
+              alguien físico o de forma remota que le ayuda a realizar las
+              operaciones requeridas.
+            id: REMOTE_MANAGER
+            isActive: false
+          - description: Indica si el cliente tiene un banquero físico asociado disponible
+              para realizar las operaciones bancarias requeridas.
+            id: BANKER_ASSOCIATED
+            isActive: false
+          - description: Indica si el cliente tiene un banquero físico asociado disponible
+              para realizar las operaciones bancarias requeridas.
+            id: PAYROLL
+            isActive: false
+          - description: Indica si el cliente tiene una firma digital.
+            id: DIGITAL_FIRM
+            isActive: false
+          - description: Indica si el cliente tiene una prelación.
+            id: ENABLED_TO_DIRECT_DEBITS
+            isActive: false
+          - description: Indica si el cliente tiene seguro contratado.
+            id: INSURANCE
+            isActive: false
+      :headers:
+        access-control-allow-origin: "*"
+        content-length: "2029"
+        Access-Control-Expose-Headers: tsec,
+          vnd.bbva.access-token-type,vnd.bbva.access-token, vnd.bbva.sso-pkcs7,
+          authenticationtype, authenticationdata, authenticationstate,
+          authenticationchallenge
+        Server: artichoke
+        Alt-Svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+        access-control-allow-headers: Content-Type, tsec, authenticationtype,
+          authenticationdata, authenticationstate, contactid, consumeruuid,
+          consumerapplicationid, perimetertsec, authorization,
+          responsewarningcode, responsewarningdescription, cuf, field,
+          bcs-device-app-version, bcs-device-app-version, vnd.bbva.authorization
+        content-type: application/json;charset=UTF-8
+        Vary: Accept-Encoding
+        tsec: 6da97d6502f7a240373123c76831528a805c77c1
+        X-Response-Time: 498ms
+        Date: Mon, 30 May 2022 06:56:27 GMT
+        Via: 1.1 google
+      :status: 200 OK
+      apiInfo:
+        name: customers
+        category: people
+        version: 0.24.0
+      messages:
+        - code: KNA1008
+          message: CONSULTA REALIZADA
+          type: WARNING

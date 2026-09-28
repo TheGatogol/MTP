@@ -1,0 +1,1240 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: df5a458e-e332-480a-a7e6-acfe9ff9078d
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: financial_line_active,delinquent_charges
+    lock: 'false'
+then:
+- return:
+    :body:
+    - data:
+        homeFutura: false
+        cardsConfig:
+          paymentsConfig:
+            simulateConfig:
+              feesConfig:
+                fees:
+                  totalFees:
+                    amount: 20
+                    currency: MXN
+                  itemizeFees:
+                  - amount:
+                      amount: 10
+                      currency: MXN
+                    percentage: 1
+                    name: Direct periodic
+                    feeType: DIRECT_PERIODIC
+                  - amount:
+                      amount: 10
+                      currency: MXN
+                    percentage: 1
+                    name: Interés
+                    feeType: INTEREST
+                emptyOriginFees:
+                  totalFees:
+                    amount: 20
+                    currency: MXN
+                zeroFees:
+                  totalFees:
+                    amount: 0
+                    currency: MXN
+                  itemizeFees:
+                  - amount:
+                      amount: 0
+                      currency: MXN
+                    percentage: 0
+                    name: Direct periodic
+                    feeType: DIRECT_PERIODIC
+              taxesConfig:
+                zeroTaxes:
+                  totalTaxes:
+                    amount: 0
+                    currency: MXN
+                  itemizeTaxes:
+                  - amount:
+                      amount: 0
+                      currency: MXN
+                    percentage: 0
+                    name: Tariff
+                    taxType: TARIFF
+                taxes:
+                  totalTaxes:
+                    amount: 10
+                    currency: MXN
+                  itemizeTaxes:
+                  - amount:
+                      amount: 10
+                      currency: MXN
+                    percentage: 1
+                    name: Tariff
+                    taxType: TARIFF
+              exchangeRateConfig:
+                exchangeRate:
+                  date: '2020-01-30'
+                  targetCurrency: USD
+                  values:
+                    exchangeType: PURCHASE
+                    factor:
+                      value: 49
+                      ratio: 49.44
+                  baseCurrency: MXN
+        data:
+          catalogs:
+            catalogs: []
+            nonGovernmentalOrganizations: []
+        clientStatus: A1
+        enterprises:
+          promotions:
+            promotions: []
+            categories: []
+            promotion: []
+        flexibleFinancings:
+          financingLines:
+          - fees:
+              itemizeFees:
+              - itemizeFeeUnits:
+                - unitType: AMOUNT
+                  amount: 600
+                  currency: MXN
+                - unitType: AMOUNT
+                  amount: 32
+                  currency: USD
+                - unitType: PERCENTAGE
+                  percentage: 6
+                feeType: MICROLOAN_FEE
+            product:
+              name: Financing Line
+              subproduct:
+                name: Pay and Plan 2.0
+                id: PYP0
+              id: '100'
+            formats:
+            - number: '001801019200000001'
+              numberType:
+                id: CLABE
+            numberType:
+              name: Local Internal Code.
+              id: LIC
+            deleteFinancingLineData:
+              relatedContracts:
+              - relationType:
+                  description: Charge account to which the financing will be made
+                  id: CHARGE_ACCOUNT
+                id: 374765HDHRT
+                contractDetails:
+                  number: ES90 0182 1642 0302 0153 5555
+                  numberType:
+                    name: Local Internal Code.
+                    id: LIC
+                  contractType: INTERNAL_CONTRACT
+                  contractId: 234234JFHGR
+                  description: Internal contract description
+              contract:
+                number: '007401019200000001'
+              operationTracking:
+                operationDate: '2023-12-04T18:00:30+01:00'
+                operationNumber: 98273489234AAS
+                operationType: CONTRACT_TERMINATION
+            rates:
+              itemizeRates:
+              - rateType: CAT
+                itemizeRateUnits:
+                - unitType: AMOUNT
+                  amount: 200
+                  currency: MXN
+                - unitType: AMOUNT
+                  amount: 10
+                  currency: USD
+                - unitType: PERCENTAGE
+                  percentage: 15
+                calculationDate: '2023-12-04'
+              - rateType: ISR
+                itemizeRateUnits:
+                - unitType: PERCENTAGE
+                  percentage: 20
+            document: JVBERi0xLjIgDQo5IDAgb2JqDQo8PA0KPj4NCnN0cmVhbQ0KQlQvIDMyIFRmKCAgSGVsbG8gV29ybGQgICApJyBFVA0KZW5kc3RyZWFtDQplbmRvYmoNCjQgMCBvYmoNCjw8DQovVHlwZSAvUGFnZQ0KL1BhcmVudCA1IDAgUg0KL0NvbnRlbnRzIDkgMCBSDQo+Pg0KZW5kb2JqDQo1IDAgb2JqDQo8PA0KL0tpZHMgWzQgMCBSIF0NCi9Db3VudCAxDQovVHlwZSAvUGFnZXMNCi9NZWRpYUJveCBbIDAgMCAyNTAgNTAgXQ0KPj4NCmVuZG9iag0KMyAwIG9iag0KPDwNCi9QYWdlcyA1IDAgUg0KL1R5cGUgL0NhdGFsb2cNCj4+DQplbmRvYmoNCnRyYWlsZXINCjw8DQovUm9vdCAzIDAgUg0KPj4NCiUlRU9G
+            taxes:
+              itemizeTaxes:
+              - itemizeTaxUnits:
+                - unitType: PERCENTAGE
+                  percentage: 20
+                taxType: ISR
+            number: '007401019200000001'
+            balances:
+            - amounts:
+              - amount: 5000
+                currency: MXN
+              id: AVAILABLE_BALANCE
+            - amounts:
+              - amount: 5000
+                currency: MXN
+              id: TOTAL_DEBT
+            relatedContracts:
+            - relationType:
+                description: Charge account to which the financing will be made
+                id: CHARGE_ACCOUNT
+              id: 374765HDHRT
+              contractDetails:
+                number: '050400010100120000'
+                product:
+                  name: LIBRETON
+                  subproduct:
+                    name: Deposit account designed.
+                    id: SAVINGS_ACCOUNT
+                  id: 36465JDJR
+                  productType:
+                    name: An account as a financing product.
+                    id: ACCOUNT
+                numberType:
+                  name: Local Internal Code.
+                  id: LIC
+                contractType: INTERNAL_CONTRACT
+                contractId: '1200'
+                description: Internal contract description
+            contractingDate: '2023-12-04'
+            cutOffDate: '2023-06-27'
+            specificAmounts:
+            - amounts:
+              - amount: 5000
+                currency: MXN
+              id: GRANTED_AMOUNT
+            maturityDate: '2023-12-23'
+            specificDates:
+            - specificDateType: LAST_PAYMENT_LENGTH
+              termType: MONTHS
+              term: 9
+              valueDate: '2024-12-20'
+            id: ASDAS2342345
+            isDirectDebit: true
+            financialStatements:
+            - cutOffDate: '2023-12-28'
+              id: 1hhn22-wepaq94z
+              isActive: false
+            - cutOffDate: '2023-11-28'
+              id: 1hhn22-wepaq44g
+              isActive: true
+            - cutOffDate: '2023-10-28'
+              id: 1hhn22-wepaq44g
+              isActive: true
+            - cutOffDate: '2023-09-28'
+              id: 1hhn22-wepaq44gxzxzq
+              isActive: true
+            - cutOffDate: '2023-08-28'
+              id: xzxjjdsds-23232nkdjs
+              isActive: true
+            - cutOffDate: '2023-07-27'
+              id: 1hsankjsds-cxxcwwwqq
+              isActive: true
+            - cutOffDate: '2023-06-28'
+              id: 1hhn22-sasas13456gfg
+              isActive: true
+            - cutOffDate: '2023-05-28'
+              id: 1hhn22-wepa34343244g
+              isActive: true
+            - cutOffDate: '2023-04-28'
+              id: 1hhn22-wepfsdfds4wwg
+              isActive: true
+            - cutOffDate: '2023-03-28'
+              id: 1hhn22-wepfsdfds4wwg
+              isActive: true
+            - cutOffDate: '2023-02-28'
+              id: 1hhn22-wepfsdfds4wwg
+              isActive: true
+            - cutOffDate: '2023-01-28'
+              id: 1hhn22-wepfsdfds4wwg
+              isActive: true
+            - cutOffDate: '2022-12-28'
+              id: 1hhn22-wepfsdfds4wwg
+              isActive: true
+            - cutOffDate: '2022-11-28'
+              id: 1hhn22-wepfsdfds4wwg
+              isActive: true
+            - cutOffDate: '2022-10-28'
+              id: 1hhn22-wepfsdfds4wwg
+              isActive: true
+            - cutOffDate: '2022-09-28'
+              id: 1hhn22-wepfsdfds4wwg
+              isActive: true
+            status:
+              description: Active financing line
+              id: ACTIVE
+              subStatus:
+                description: Available financing line
+                id: AVAILABLE
+            customer:
+              id: 845FD45
+            currencies:
+            - isMajor: true
+              id: MXN
+            - id: USD
+          - fees:
+              itemizeFees:
+              - itemizeFeeUnits:
+                - unitType: AMOUNT
+                  amount: 600
+                  currency: MXN
+                - unitType: AMOUNT
+                  amount: 32
+                  currency: USD
+                - unitType: PERCENTAGE
+                  percentage: 6
+                feeType: MICROLOAN_FEE
+            product:
+              name: Financing Line
+              subproduct:
+                name: Pay and Plan 2.0
+                id: PYP0
+              id: '100'
+            formats:
+            - number: '001801019200000001'
+              numberType:
+                id: CLABE
+            numberType:
+              name: Local Internal Code.
+              id: LIC
+            deleteFinancingLineData:
+              relatedContracts:
+              - relationType:
+                  description: Charge account to which the financing will be made
+                  id: CHARGE_ACCOUNT
+                id: 374765HDHRT
+                contractDetails:
+                  number: ES90 0182 1642 0302 0153 5555
+                  numberType:
+                    name: Local Internal Code.
+                    id: LIC
+                  contractType: INTERNAL_CONTRACT
+                  contractId: 234234JFHGR
+                  description: Internal contract description
+              contract:
+                number: '007401019200000001'
+              operationTracking:
+                operationDate: '2023-12-04T18:00:30+01:00'
+                operationNumber: 98273489234AAS
+                operationType: CONTRACT_TERMINATION
+            rates:
+              itemizeRates:
+              - rateType: CAT
+                itemizeRateUnits:
+                - unitType: AMOUNT
+                  amount: 200
+                  currency: MXN
+                - unitType: AMOUNT
+                  amount: 10
+                  currency: USD
+                - unitType: PERCENTAGE
+                  percentage: 15
+                calculationDate: '2023-12-04'
+              - rateType: ISR
+                itemizeRateUnits:
+                - unitType: PERCENTAGE
+                  percentage: 20
+            document: JVBERi0xLjIgDQo5IDAgb2JqDQo8PA0KPj4NCnN0cmVhbQ0KQlQvIDMyIFRmKCAgSGVsbG8gV29ybGQgICApJyBFVA0KZW5kc3RyZWFtDQplbmRvYmoNCjQgMCBvYmoNCjw8DQovVHlwZSAvUGFnZQ0KL1BhcmVudCA1IDAgUg0KL0NvbnRlbnRzIDkgMCBSDQo+Pg0KZW5kb2JqDQo1IDAgb2JqDQo8PA0KL0tpZHMgWzQgMCBSIF0NCi9Db3VudCAxDQovVHlwZSAvUGFnZXMNCi9NZWRpYUJveCBbIDAgMCAyNTAgNTAgXQ0KPj4NCmVuZG9iag0KMyAwIG9iag0KPDwNCi9QYWdlcyA1IDAgUg0KL1R5cGUgL0NhdGFsb2cNCj4+DQplbmRvYmoNCnRyYWlsZXINCjw8DQovUm9vdCAzIDAgUg0KPj4NCiUlRU9G
+            taxes:
+              itemizeTaxes:
+              - itemizeTaxUnits:
+                - unitType: PERCENTAGE
+                  percentage: 20
+                taxType: ISR
+            number: '007401019200000001'
+            balances:
+            - amounts:
+              - amount: 5000
+                currency: MXN
+              id: AVAILABLE_BALANCE
+            - amounts:
+              - amount: 5000
+                currency: MXN
+              id: TOTAL_DEBT
+            relatedContracts:
+            - relationType:
+                description: Charge account to which the financing will be made
+                id: CHARGE_ACCOUNT
+              id: 374765HDHRT
+              contractDetails:
+                number: '4152307083071256'
+                product:
+                  name: LIBRETON
+                  subproduct:
+                    name: Deposit account designed.
+                    id: SAVINGS_ACCOUNT
+                  id: 36465JDJR
+                  productType:
+                    name: An account as a financing product.
+                    id: ACCOUNT
+                numberType:
+                  name: Local Internal Code.
+                  id: LIC
+                contractType: INTERNAL_CONTRACT
+                contractId: '1301'
+                description: Internal contract description
+            contractingDate: '2023-12-04'
+            cutOffDate: '2023-06-27'
+            specificAmounts:
+            - amounts:
+              - amount: 5000
+                currency: MXN
+              id: GRANTED_AMOUNT
+            maturityDate: '2023-12-23'
+            specificDates:
+            - specificDateType: LAST_PAYMENT_LENGTH
+              termType: MONTHS
+              term: 9
+              valueDate: '2024-12-20'
+            id: ASDAS2342346
+            isDirectDebit: true
+            financialStatements:
+            - cutOffDate: '2023-12-28'
+              id: 1hhn22-wepaq94z
+              isActive: true
+            status:
+              description: Active financing line
+              id: ACTIVE
+              subStatus:
+                description: Available financing line
+                id: AVAILABLE
+            customer:
+              id: 845FD45
+            currencies:
+            - isMajor: true
+              id: MXN
+            - id: USD
+          - fees:
+              itemizeFees:
+              - itemizeFeeUnits:
+                - unitType: AMOUNT
+                  amount: 600
+                  currency: MXN
+                - unitType: AMOUNT
+                  amount: 32
+                  currency: USD
+                - unitType: PERCENTAGE
+                  percentage: 6
+                feeType: MICROLOAN_FEE
+            product:
+              name: Financing Line
+              subproduct:
+                name: Pay and Plan 2.0
+                id: PYP0
+              id: '100'
+            formats:
+            - number: '001801019200000001'
+              numberType:
+                id: CLABE
+            numberType:
+              name: Local Internal Code.
+              id: LIC
+            deleteFinancingLineData:
+              relatedContracts:
+              - relationType:
+                  description: Charge account to which the financing will be made
+                  id: CHARGE_ACCOUNT
+                id: 374765HDHRT
+                contractDetails:
+                  number: ES90 0182 1642 0302 0153 5555
+                  numberType:
+                    name: Local Internal Code.
+                    id: LIC
+                  contractType: INTERNAL_CONTRACT
+                  contractId: 234234JFHGR
+                  description: Internal contract description
+              contract:
+                number: '007401019200000001'
+              operationTracking:
+                operationDate: '2023-12-04T18:00:30+01:00'
+                operationNumber: 98273489234AAS
+                operationType: CONTRACT_TERMINATION
+            rates:
+              itemizeRates:
+              - rateType: CAT
+                itemizeRateUnits:
+                - unitType: AMOUNT
+                  amount: 200
+                  currency: MXN
+                - unitType: AMOUNT
+                  amount: 10
+                  currency: USD
+                - unitType: PERCENTAGE
+                  percentage: 15
+                calculationDate: '2023-12-04'
+              - rateType: ISR
+                itemizeRateUnits:
+                - unitType: PERCENTAGE
+                  percentage: 20
+            taxes:
+              itemizeTaxes:
+              - itemizeTaxUnits:
+                - unitType: PERCENTAGE
+                  percentage: 20
+                taxType: ISR
+            number: '007401019200000001'
+            balances:
+            - amounts:
+              - amount: 5000
+                currency: MXN
+              id: AVAILABLE_BALANCE
+            - amounts:
+              - amount: 5000
+                currency: MXN
+              id: TOTAL_DEBT
+            relatedContracts:
+            - relationType:
+                description: Charge account to which the financing will be made
+                id: CHARGE_ACCOUNT
+              id: 374765HDHRT
+              contractDetails:
+                number: '05040001010012130200'
+                product:
+                  name: LIBRETON
+                  subproduct:
+                    name: Deposit account designed.
+                    id: SAVINGS_ACCOUNT
+                  id: 36465JDJR
+                  productType:
+                    name: An account as a financing product.
+                    id: ACCOUNT
+                numberType:
+                  name: Local Internal Code.
+                  id: LIC
+                contractType: INTERNAL_CONTRACT
+                contractId: '1302'
+                description: Internal contract description
+            contractingDate: '2023-12-04'
+            cutOffDate: '2023-06-27'
+            specificAmounts:
+            - amounts:
+              - amount: 5000
+                currency: MXN
+              id: GRANTED_AMOUNT
+            maturityDate: '2023-12-23'
+            specificDates:
+            - specificDateType: LAST_PAYMENT_LENGTH
+              termType: MONTHS
+              term: 9
+              valueDate: '2024-12-20'
+            id: ASDAS2342349
+            isDirectDebit: true
+            financialStatements: []
+            status:
+              description: Active financing line
+              id: ACTIVE
+              subStatus:
+                description: Available financing line
+                id: AVAILABLE
+            customer:
+              id: 845FD45
+            currencies:
+            - isMajor: true
+              id: MXN
+            - id: USD
+          - fees:
+              itemizeFees:
+              - itemizeFeeUnits:
+                - unitType: AMOUNT
+                  amount: 600
+                  currency: MXN
+                - unitType: AMOUNT
+                  amount: 32
+                  currency: USD
+                - unitType: PERCENTAGE
+                  percentage: 6
+                feeType: MICROLOAN_FEE
+            product:
+              name: Financing Line
+              subproduct:
+                name: Pay and Plan 2.0
+                id: PYP0
+              id: '100'
+            formats:
+            - number: '001801019200000001'
+              numberType:
+                id: CLABE
+            numberType:
+              name: Local Internal Code.
+              id: LIC
+            deleteFinancingLineData:
+              relatedContracts:
+              - relationType:
+                  description: Charge account to which the financing will be made
+                  id: CHARGE_ACCOUNT
+                id: 374765HDHRT
+                contractDetails:
+                  number: ES90 0182 1642 0302 0153 5555
+                  numberType:
+                    name: Local Internal Code.
+                    id: LIC
+                  contractType: INTERNAL_CONTRACT
+                  contractId: 234234JFHGR
+                  description: Internal contract description
+              contract:
+                number: '007401019200000001'
+              operationTracking:
+                operationDate: '2023-12-04T18:00:30+01:00'
+                operationNumber: 98273489234AAS
+                operationType: CONTRACT_TERMINATION
+            rates:
+              itemizeRates:
+              - rateType: CAT
+                itemizeRateUnits:
+                - unitType: AMOUNT
+                  amount: 200
+                  currency: MXN
+                - unitType: AMOUNT
+                  amount: 10
+                  currency: USD
+                - unitType: PERCENTAGE
+                  percentage: 15
+                calculationDate: '2023-12-04'
+              - rateType: ISR
+                itemizeRateUnits:
+                - unitType: PERCENTAGE
+                  percentage: 20
+            document: JVBERi0xLjIgDQo5IDAgb2JqDQo8PA0KPj4NCnN0cmVhbQ0KQlQvIDMyIFRmKCAgSGVsbG8gV29ybGQgICApJyBFVA0KZW5kc3RyZWFtDQplbmRvYmoNCjQgMCBvYmoNCjw8DQovVHlwZSAvUGFnZQ0KL1BhcmVudCA1IDAgUg0KL0NvbnRlbnRzIDkgMCBSDQo+Pg0KZW5kb2JqDQo1IDAgb2JqDQo8PA0KL0tpZHMgWzQgMCBSIF0NCi9Db3VudCAxDQovVHlwZSAvUGFnZXMNCi9NZWRpYUJveCBbIDAgMCAyNTAgNTAgXQ0KPj4NCmVuZG9iag0KMyAwIG9iag0KPDwNCi9QYWdlcyA1IDAgUg0KL1R5cGUgL0NhdGFsb2cNCj4+DQplbmRvYmoNCnRyYWlsZXINCjw8DQovUm9vdCAzIDAgUg0KPj4NCiUlRU9G
+            taxes:
+              itemizeTaxes:
+              - itemizeTaxUnits:
+                - unitType: PERCENTAGE
+                  percentage: 20
+                taxType: ISR
+            number: '007401019200000001'
+            balances:
+            - amounts:
+              - amount: 500
+                currency: MXN
+              id: AVAILABLE_BALANCE
+            - amounts:
+              - amount: 50
+                currency: MXN
+              id: DISPOSED_BALANCE
+            - amounts:
+              - amount: 5000
+                currency: MXN
+              id: TOTAL_DEBT
+            relatedContracts:
+            - relationType:
+                description: Charge account to which the financing will be made
+                id: CHARGE_ACCOUNT
+              id: 374765HDHRT
+              contractDetails:
+                number: '05040001010012000000'
+                product:
+                  name: LIBRETON
+                  subproduct:
+                    name: Deposit account designed.
+                    id: SAVINGS_ACCOUNT
+                  id: 36465JDJR
+                  productType:
+                    name: An account as a financing product.
+                    id: ACCOUNT
+                numberType:
+                  name: Local Internal Code.
+                  id: LIC
+                contractType: INTERNAL_CONTRACT
+                contractId: '0000'
+                description: Internal contract description
+            contractingDate: '2023-12-04'
+            cutOffDate: '2023-06-27'
+            specificAmounts:
+            - amounts:
+              - amount: 5000
+                currency: MXN
+              id: GRANTED_AMOUNT
+            maturityDate: '2023-12-23'
+            specificDates:
+            - specificDateType: LAST_PAYMENT_LENGTH
+              termType: MONTHS
+              term: 9
+              valueDate: '2024-12-20'
+            id: ASDAS2342347
+            isDirectDebit: true
+            financialStatements:
+            - cutOffDate: '2023-12-28'
+              id: 1hhn22-wepaq94z
+              isActive: false
+            - cutOffDate: '2023-11-28'
+              id: 1hhn22-wepaq44g
+              isActive: true
+            - cutOffDate: '2023-10-28'
+              id: 1hhn22-wepaq44g
+              isActive: true
+            - cutOffDate: '2023-09-28'
+              id: 1hhn22-wepaq44gxzxzq
+              isActive: true
+            - cutOffDate: '2023-08-28'
+              id: xzxjjdsds-23232nkdjs
+              isActive: true
+            - cutOffDate: '2023-07-27'
+              id: 1hsankjsds-cxxcwwwqq
+              isActive: true
+            - cutOffDate: '2023-06-28'
+              id: 1hhn22-sasas13456gfg
+              isActive: true
+            - cutOffDate: '2023-05-28'
+              id: 1hhn22-wepa34343244g
+              isActive: true
+            - cutOffDate: '2023-04-28'
+              id: 1hhn22-wepfsdfds4wwg
+              isActive: true
+            - cutOffDate: '2023-03-28'
+              id: 1hhn22-wepfsdfds4wwg
+              isActive: true
+            - cutOffDate: '2023-02-28'
+              id: 1hhn22-wepfsdfds4wwg
+              isActive: true
+            - cutOffDate: '2023-01-28'
+              id: 1hhn22-wepfsdfds4wwg
+              isActive: true
+            - cutOffDate: '2022-12-28'
+              id: 1hhn22-wepfsdfds4wwg
+              isActive: true
+            - cutOffDate: '2022-11-28'
+              id: 1hhn22-wepfsdfds4wwg
+              isActive: true
+            - cutOffDate: '2022-10-28'
+              id: 1hhn22-wepfsdfds4wwg
+              isActive: true
+            - cutOffDate: '2022-09-28'
+              id: 1hhn22-wepfsdfds4wwg
+              isActive: true
+            status:
+              description: Active financing line
+              id: ACTIVE
+              subStatus:
+                description: Available financing line
+                id: AVAILABLE
+            customer:
+              id: 845FD45
+            currencies:
+            - isMajor: true
+              id: MXN
+            - id: USD
+          - fees:
+              itemizeFees:
+              - itemizeFeeUnits:
+                - unitType: AMOUNT
+                  amount: 600
+                  currency: MXN
+                - unitType: AMOUNT
+                  amount: 32
+                  currency: USD
+                - unitType: PERCENTAGE
+                  percentage: 6
+                feeType: MICROLOAN_FEE
+            product:
+              name: Financing Line
+              subproduct:
+                name: Pay and Plan 2.0
+                id: PYP0
+              id: '100'
+            formats:
+            - number: '001801019200000001'
+              numberType:
+                id: CLABE
+            numberType:
+              name: Local Internal Code.
+              id: LIC
+            deleteFinancingLineData:
+              relatedContracts:
+              - relationType:
+                  description: Charge account to which the financing will be made
+                  id: CHARGE_ACCOUNT
+                id: 374765HDHRT
+                contractDetails:
+                  number: ES90 0182 1642 0302 0153 5555
+                  numberType:
+                    name: Local Internal Code.
+                    id: LIC
+                  contractType: INTERNAL_CONTRACT
+                  contractId: 234234JFHGR
+                  description: Internal contract description
+              contract:
+                number: '007401019200000001'
+              operationTracking:
+                operationDate: '2023-12-04T18:00:30+01:00'
+                operationNumber: 98273489234AAS
+                operationType: CONTRACT_TERMINATION
+            rates:
+              itemizeRates:
+              - rateType: CAT
+                itemizeRateUnits:
+                - unitType: AMOUNT
+                  amount: 200
+                  currency: MXN
+                - unitType: AMOUNT
+                  amount: 10
+                  currency: USD
+                - unitType: PERCENTAGE
+                  percentage: 15
+                calculationDate: '2023-12-04'
+              - rateType: ISR
+                itemizeRateUnits:
+                - unitType: PERCENTAGE
+                  percentage: 20
+            document: JVBERi0xLjIgDQo5IDAgb2JqDQo8PA0KPj4NCnN0cmVhbQ0KQlQvIDMyIFRmKCAgSGVsbG8gV29ybGQgICApJyBFVA0KZW5kc3RyZWFtDQplbmRvYmoNCjQgMCBvYmoNCjw8DQovVHlwZSAvUGFnZQ0KL1BhcmVudCA1IDAgUg0KL0NvbnRlbnRzIDkgMCBSDQo+Pg0KZW5kb2JqDQo1IDAgb2JqDQo8PA0KL0tpZHMgWzQgMCBSIF0NCi9Db3VudCAxDQovVHlwZSAvUGFnZXMNCi9NZWRpYUJveCBbIDAgMCAyNTAgNTAgXQ0KPj4NCmVuZG9iag0KMyAwIG9iag0KPDwNCi9QYWdlcyA1IDAgUg0KL1R5cGUgL0NhdGFsb2cNCj4+DQplbmRvYmoNCnRyYWlsZXINCjw8DQovUm9vdCAzIDAgUg0KPj4NCiUlRU9G
+            taxes:
+              itemizeTaxes:
+              - itemizeTaxUnits:
+                - unitType: PERCENTAGE
+                  percentage: 20
+                taxType: ISR
+            number: '007401019200000001'
+            balances:
+            - amounts:
+              - amount: 500
+                currency: MXN
+              id: AVAILABLE_BALANCE
+            - amounts:
+              - amount: 50
+                currency: MXN
+              id: OVERDUE_BALANCE
+            - amounts:
+              - amount: 5000
+                currency: MXN
+              id: TOTAL_DEBT
+            relatedContracts:
+            - relationType:
+                description: Charge account to which the financing will be made
+                id: CHARGE_ACCOUNT
+              id: 374765HDHRT
+              contractDetails:
+                number: '01020304050607083320'
+                product:
+                  name: LIBRETON
+                  subproduct:
+                    name: Deposit account designed.
+                    id: SAVINGS_ACCOUNT
+                  id: 36465JDJR
+                  productType:
+                    name: An account as a financing product.
+                    id: ACCOUNT
+                numberType:
+                  name: Local Internal Code.
+                  id: LIC
+                contractType: INTERNAL_CONTRACT
+                contractId: '3320'
+                description: Internal contract description
+            contractingDate: '2023-12-04'
+            cutOffDate: '2023-06-27'
+            specificAmounts:
+            - amounts:
+              - amount: 5000
+                currency: MXN
+              id: GRANTED_AMOUNT
+            maturityDate: '2023-12-23'
+            specificDates:
+            - specificDateType: LAST_PAYMENT_LENGTH
+              termType: MONTHS
+              term: 9
+              valueDate: '2024-12-20'
+            id: ASDAS2342348
+            isDirectDebit: true
+            financialStatements:
+            - cutOffDate: '2023-12-28'
+              id: 1hhn22-wepaq94z
+              isActive: false
+            - cutOffDate: '2023-11-28'
+              id: 1hhn22-wepaq44g
+              isActive: true
+            - cutOffDate: '2023-10-28'
+              id: 1hhn22-wepaq44g
+              isActive: true
+            - cutOffDate: '2023-09-28'
+              id: 1hhn22-wepaq44gxzxzq
+              isActive: true
+            - cutOffDate: '2023-08-28'
+              id: xzxjjdsds-23232nkdjs
+              isActive: true
+            - cutOffDate: '2023-07-27'
+              id: 1hsankjsds-cxxcwwwqq
+              isActive: true
+            - cutOffDate: '2023-06-28'
+              id: 1hhn22-sasas13456gfg
+              isActive: true
+            - cutOffDate: '2023-05-28'
+              id: 1hhn22-wepa34343244g
+              isActive: true
+            - cutOffDate: '2023-04-28'
+              id: 1hhn22-wepfsdfds4wwg
+              isActive: true
+            - cutOffDate: '2023-03-28'
+              id: 1hhn22-wepfsdfds4wwg
+              isActive: true
+            - cutOffDate: '2023-02-28'
+              id: 1hhn22-wepfsdfds4wwg
+              isActive: true
+            - cutOffDate: '2023-01-28'
+              id: 1hhn22-wepfsdfds4wwg
+              isActive: true
+            - cutOffDate: '2022-12-28'
+              id: 1hhn22-wepfsdfds4wwg
+              isActive: true
+            - cutOffDate: '2022-11-28'
+              id: 1hhn22-wepfsdfds4wwg
+              isActive: true
+            - cutOffDate: '2022-10-28'
+              id: 1hhn22-wepfsdfds4wwg
+              isActive: true
+            - cutOffDate: '2022-09-28'
+              id: 1hhn22-wepfsdfds4wwg
+              isActive: true
+            status:
+              description: Active financing line
+              id: ACTIVE
+              subStatus:
+                description: Unavailable financing line
+                id: DELINQUENCY
+            customer:
+              id: 845FD45
+            currencies:
+            - isMajor: true
+              id: MXN
+            - id: USD
+          - fees:
+              itemizeFees:
+              - itemizeFeeUnits:
+                - unitType: AMOUNT
+                  amount: 600
+                  currency: MXN
+                - unitType: AMOUNT
+                  amount: 32
+                  currency: USD
+                - unitType: PERCENTAGE
+                  percentage: 6
+                feeType: MICROLOAN_FEE
+            product:
+              name: Financing Line
+              subproduct:
+                name: Pay and Plan 2.0
+                id: PYP0
+              id: '100'
+            formats:
+            - number: '001801019200000001'
+              numberType:
+                id: CLABE
+            numberType:
+              name: Local Internal Code.
+              id: LIC
+            deleteFinancingLineData:
+              relatedContracts:
+              - relationType:
+                  description: Charge account to which the financing will be made
+                  id: CHARGE_ACCOUNT
+                id: 374765HDHRT
+                contractDetails:
+                  number: ES90 0182 1642 0302 0153 5555
+                  numberType:
+                    name: Local Internal Code.
+                    id: LIC
+                  contractType: INTERNAL_CONTRACT
+                  contractId: 234234JFHGR
+                  description: Internal contract description
+              contract:
+                number: '007401019200000001'
+              operationTracking:
+                operationDate: '2023-12-04T18:00:30+01:00'
+                operationNumber: 98273489234AAS
+                operationType: CONTRACT_TERMINATION
+            rates:
+              itemizeRates:
+              - rateType: CAT
+                itemizeRateUnits:
+                - unitType: AMOUNT
+                  amount: 200
+                  currency: MXN
+                - unitType: AMOUNT
+                  amount: 10
+                  currency: USD
+                - unitType: PERCENTAGE
+                  percentage: 15
+                calculationDate: '2023-12-04'
+              - rateType: ISR
+                itemizeRateUnits:
+                - unitType: PERCENTAGE
+                  percentage: 20
+            taxes:
+              itemizeTaxes:
+              - itemizeTaxUnits:
+                - unitType: PERCENTAGE
+                  percentage: 20
+                taxType: ISR
+            number: '007401019200000001'
+            balances:
+            - amounts:
+              - amount: 5000
+                currency: MXN
+              id: AVAILABLE_BALANCE
+            - amounts:
+              - amount: 5000
+                currency: MXN
+              id: TOTAL_DEBT
+            relatedContracts:
+            - relationType:
+                description: Charge account to which the financing will be made
+                id: CHARGE_ACCOUNT
+              id: 374765HDHRT
+              contractDetails:
+                number: '01020304050607083321'
+                product:
+                  name: LIBRETON
+                  subproduct:
+                    name: Deposit account designed.
+                    id: SAVINGS_ACCOUNT
+                  id: 36465JDJR
+                  productType:
+                    name: An account as a financing product.
+                    id: ACCOUNT
+                numberType:
+                  name: Local Internal Code.
+                  id: LIC
+                contractType: INTERNAL_CONTRACT
+                contractId: '3321'
+                description: Internal contract description
+            contractingDate: '2023-12-04'
+            cutOffDate: '2023-06-27'
+            specificAmounts:
+            - amounts:
+              - amount: 5000
+                currency: MXN
+              id: GRANTED_AMOUNT
+            maturityDate: '2023-12-23'
+            specificDates:
+            - specificDateType: LAST_PAYMENT_LENGTH
+              termType: MONTHS
+              term: 9
+              valueDate: '2024-12-20'
+            id: ASDAS2342350
+            isDirectDebit: true
+            financialStatementsError: true
+            status:
+              description: Active financing line
+              id: ACTIVE
+              subStatus:
+                description: Available financing line
+                id: AVAILABLE
+            customer:
+              id: 845FD45
+            currencies:
+            - isMajor: true
+              id: MXN
+            - id: USD
+        tags:
+        - financial_line_active
+        - delinquent_charges
+        products:
+          cards:
+          - number: '4152313965947257'
+            product:
+              name: DEBITO BBVA
+              id: VD
+            numberType:
+              id: PAN
+            relatedContracts:
+            - canOperate: N
+              contractId: '00740010001501929823'
+              id: Uvn6wi1Rh6DNaQfAEyEYFXlCOCy-mS9uh-FKF_h0xqGmXdFnP0W-2Q
+            cardId: 9YK9GXzCWZ-rn5Te5TNt7cjFnwY4GET2Hsz_4rXj4Ig
+            alias: 0001AH9823
+            detail:
+              images:
+              - name: Front face of the card
+                id: FRONT_CARD
+                url: https://cardcovers.caasbbva.com/mexico/415231-VD.png.imgcaas.w320.png
+              specificAmounts:
+              - amounts:
+                - amount: 999999655
+                  currency: MXN
+                name: Saldo actual
+                id: CURRENT_BALANCE
+              - amounts:
+                - amount: 8674
+                  currency: MXN
+                name: Saldo en tránsito
+                id: PENDING_CHARGE_BALANCE
+              - amounts:
+                - amount: 0
+                  currency: MXN
+                name: Saldo disponible
+                id: AVAILABLE_BALANCE
+              physicalSupport:
+                name: CONVENCIONAL
+                id: NORMAL_PLASTIC
+              activations:
+              - name: Indica si la tarjeta esta encendida o apagada
+                id: ON_OFF
+                isActive: true
+              indicators:
+              - name: Indica si la tarjeta cuenta con NFC
+                id: ASSOCIABLE_TO_NFC
+                isActive: true
+              - name: Indica si la tarjeta cuenta con sticker asociado
+                id: ASSOCIABLE_TO_STICKER_CARDS
+                isActive: false
+              - name: Indica si la tarjeta cuenta con una tarjeta virtual asociada
+                id: ASSOCIABLE_TO_VIRTUAL_CARDS
+                isActive: true
+              - name: Indica si la tarjeta puede ser bloqueada
+                id: BLOCKABLE
+                isActive: true
+              - name: Indica si la tarjeta puede modificar el nip de forma online
+                  por una aplicación
+                id: BLOCKABLE_NIP
+                isActive: false
+              - name: Indica si los datos de seguridad de la tarjeta pueden ser leídos
+                id: SECURITY_DATA_READ
+                isActive: false
+              - name: Indica si el CVV2 es dinámico
+                id: DINAMIC_CVV
+                isActive: true
+              - name: Indica si la tarjeta es adicional
+                id: IS_ADDITIONAL
+                isActive: false
+              rewards:
+              - name: Puntos Bancomer
+                id: BANCOMER_POINTS
+                nonMonetaryValue: 0
+              expirationDate: '2030-12-31'
+              agreementContract: '00740010001501929823'
+            simpleCode: 9YK9GXzCWZ-rn5Te5TNt7a_ZzGavn9MQ
+            userAccessControl:
+            - canOperate: false
+            productType: CARD
+            status:
+              name: VIGENTE
+              id: OPERATIVE
+            subProductType:
+              name: TARJETA DE DEBITO
+              id: DEBIT_CARD
+          loans:
+            loans: []
+          accounts:
+          - number: '00740010001501929823'
+            product:
+              name: Cuenta de Ahorro
+              id: AH
+            numberType:
+              id: CCC
+            alias: 0001AH9823
+            id: Uvn6wi1Rh6DNaQfAEyEYFRYBU2V0IssaU8DqWRvGBrU1cZWtgyqlrA
+            detail:
+              level: '04'
+              specificAmounts:
+              - amounts:
+                - amount: 999999655
+                  currency: MXN
+                name: Saldo actual
+                id: CURRENT_BALANCE
+              - amounts:
+                - amount: 0
+                  currency: MXN
+                name: Saldo buen cobro
+                id: PENDING_DEPOSIT_BALANCE
+              - amounts:
+                - amount: 0
+                  currency: MXN
+                name: '000000012'
+                id: ACCOUNT_MOVEMENT_NUMBER
+              indicators:
+              - name: Indica si la cuenta es de nómina
+                id: IS_PAYROLL_ACCOUNT
+                isActive: false
+              - name: Indica si la cuenta es eje
+                id: IS_PRINCIPAL_ACCOUNT
+                isActive: true
+              - name: Indica si la cuenta tiene pockets
+                id: HAS_POCKETS
+                isActive: false
+              - name: Indica si la cuenta es digital
+                id: IS_DIGITAL
+                isActive: false
+            simpleCode: Uvn6wi1Rh6DNaQfAEyEYFQSm1eBoGg_8
+            productType: ACCOUNT
+            status:
+              name: Cuenta Activa
+              id: ACTIVE
+            subProductType:
+              name: TARJETA NOMINA BASIC
+              id: '0230'
+            signedAuthorization:
+              name: Cuenta Individual
+              id: SINGLE
+          - number: '00740010001501930813'
+            product:
+              name: Cuenta de Ahorro
+              id: AH
+            numberType:
+              id: CCC
+            alias: 0002AH0813
+            id: Uvn6wi1Rh6DHrgu8bzmPaWVL8GTifAJ0lDOgxRzXx4-3m1tEaa1o-A
+            detail:
+              level: '04'
+              specificAmounts:
+              - amounts:
+                - amount: 1000000000
+                  currency: MXN
+                name: Saldo actual
+                id: CURRENT_BALANCE
+              - amounts:
+                - amount: 0
+                  currency: MXN
+                name: Saldo buen cobro
+                id: PENDING_DEPOSIT_BALANCE
+              - amounts:
+                - amount: 0
+                  currency: MXN
+                name: '000000001'
+                id: ACCOUNT_MOVEMENT_NUMBER
+              indicators:
+              - name: Indica si la cuenta es de nómina
+                id: IS_PAYROLL_ACCOUNT
+                isActive: false
+              - name: Indica si la cuenta es eje
+                id: IS_PRINCIPAL_ACCOUNT
+                isActive: false
+              - name: Indica si la cuenta tiene pockets
+                id: HAS_POCKETS
+                isActive: false
+              - name: Indica si la cuenta es digital
+                id: IS_DIGITAL
+                isActive: false
+            simpleCode: Uvn6wi1Rh6DHrgu8bzmPaYEwD3KBn4g9
+            productType: ACCOUNT
+            status:
+              name: Cuenta Activa
+              id: ACTIVE
+            subProductType:
+              name: TARJETA NOMINA BASIC
+              id: '0230'
+            signedAuthorization:
+              name: Cuenta Individual
+              id: SINGLE
+          deposits: []
+          investmentFunds: []
+        authentication:
+          password: Glomo2024
+          user: '9241966581'
+          deviceId: BE42C293C5DCB300C3AF1FBB7A63FDE4
+        sendRawCardNumber: true
+      id: 35821870
+      lockType: null
+      lockExpiration: null
+    :headers:
+      content-length: '30234'
+      Strict-Transport-Security: max-age=15768000
+      Server: nginx
+      ECS-Entry-Point-Zone: ext
+      Connection: keep-alive
+      host: datamanager.globaldevtools.bbva.com
+      Vary: Accept-Encoding
+      Date: Tue, 16 Apr 2024 20:57:18 GMT
+      Content-Type: application/json
+    :status: 200 OK

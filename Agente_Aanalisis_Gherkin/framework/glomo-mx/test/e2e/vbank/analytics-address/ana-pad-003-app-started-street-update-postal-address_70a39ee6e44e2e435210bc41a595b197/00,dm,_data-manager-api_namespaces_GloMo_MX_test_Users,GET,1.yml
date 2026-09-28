@@ -1,0 +1,52 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: e16f13af-4fa5-4020-82ba-70f92e77b7ab
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: without_address
+then:
+- return:
+    :body:
+    - data:
+        data:
+          numOCR: '1234567890123'
+          numInt: '25'
+          country: Mèxico
+          PC: '42970'
+          numExt: '10'
+          city: Tula
+          street: colonial
+          state: Hidalgo
+          validity: '2029'
+          wrongPC: '00000'
+          newStreet: Mtp
+        otp: '12345678'
+        locale: es_mx
+        tags:
+        - profile
+        - without_address
+        authentication:
+          password: '147258369'
+          user: '5544567850'
+          deviceId: A43A6B08CC23AE365DFC5B2003407CD0
+      lockType: null
+      lockExpiration: null
+      id: 2643974
+    :headers:
+      Strict-Transport-Security: max-age=15768000
+      Server: nginx
+      ECS-Entry-Point-Zone: ext
+      Connection: keep-alive
+      Content-Length: '479'
+      Date: Thu, 28 Jul 2022 17:25:06 GMT
+      Content-Type: application/json
+    :status: 200 OK

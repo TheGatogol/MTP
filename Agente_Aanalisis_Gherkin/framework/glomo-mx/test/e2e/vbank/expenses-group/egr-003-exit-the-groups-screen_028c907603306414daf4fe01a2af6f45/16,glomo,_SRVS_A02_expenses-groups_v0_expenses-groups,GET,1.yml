@@ -1,0 +1,982 @@
+when:
+  sequence: 1
+  path: /SRVS_A02/expenses-groups/v0/expenses-groups
+  method: GET
+  backend: glomo
+request:
+  headers:
+    sec-fetch-mode: cors
+    content-length: '0'
+    referer: http://localhost:8001/
+    sec-fetch-site: same-site
+    accept-language: es-MX,es;q=0.9
+    origin: http://localhost:8001
+    tsec: ZXlKaFlYQWlPaUl4TURBd01ERTROeUlzSW10bGVWWmxjbk5wYjI0aU9qRXNJbUZ3Y0Vsa0lqb2lRVkJRTVNJc0ltdHBaQ0k2SWtGUVVERXViRzlqWVd3dU1TSXNJbVZ1WXlJNklrRXhPVEpIUTAwaUxDSnJaWGxVZVhCbElqb2liRzlqWVd3aUxDSmhiR2NpT2lKa2FYSWlMQ0owYzJWalNXUWlPaUprTTJWaE5XWmxOQzAwTWpobExUUTJOV010WVRsaVl5MWlOak5qTURNd1lXTmtObUVpZlEuLnpqZXJJOEs1N2htZFMzU2guRHQ1TmhKTGlaY1QyZ211aFVVamVGUGFYb21tSVNfR0stVzllbXdyWE8xWE55UWg0aUo4XzNJMFlLZE5QcnU1UmxhU0dxTnpocHM2dXpKbVhfRGJWY3lOSzJEclR3aVhMekJsQXFxZDVNaGNZLXA2Rk1Sd1V3bUg1am5jZFZkNmE2OXVRRURQUGhEaF9pNUZMUDNMUmM0bHl2STNzUThmbnVNQ29aaXVWOF95SG1WQWRUMl9LUnViQ2NucEt2eTQ2dmtlZ0h4NG11VUxBSkEzNEd2bkhCN0JDRmY3Z1FxVDRNRmd5bFl6dVFSTTAwNWVRUXc0QkoyOFpaaWNoeEdORDhCeFZrdzA0d1pBaDRXVFRXSlhBU1phM3NxN3VsY2NPVXpoWURlSTlIYTZTUzhGT215dWFpRnZMdFBaRHVGWUNranB2TVRSTUxsQ3dDbkVRcjgxSGJXRHRaMi11UXEyZ1hzVFU2anVZTERaeWxXX2JSNlhYRWt5UWprM2VSUlZOZ3RCNlN1THhCRHljanlkQ0d3THk4dnhCeHZsUF9fT09zSzVmLTFmZF9lajE3bi1VZmdqYVpFQ2tfX0stUG54UGhUdDd4dTJ0VUFaMXl5dmdNZ1B4V3ZnVG8xXzNpZ2NUVFR5QnFtWTRNSkd3M0d2Zk1FdjBGLV9MVDlvZjVURTJiOEdURWtBbmhCZ19takkzb0p0bnBoWkVrd1htVFhzeEZYXzd6NV82RUNXa18xQVFzcm1KRVRfSWRESHBwdFluZDNYZE1tMVVjSDFWSkIwdncwU2FJTk5YMkVIc3ZmbzFodDdCNnVXU2VIakNyWFhDbEFGTV9ZTDZnWVBVeWNfZ09mTEZId29lMm9pR1JkQmZnT18xY3hmOXFYYkhPV2QxUUJFSkV6ekhxYUZZc1VmYXJZR08zQVVJcDA5NjUwbE5xdmoyV2xrY2ZfUUgyY3RHOTg2RXU4THhmei03WVBoMDVwaUx2UlJNejZGUjJ3MmZ5c2UwdkxxWFZHeFdoNlYxeEJzdDJKYnk2N3dnVXN3cWhLZUEySjFHaWJJa2dzNlZJUGRTVk51Zk1zbE5kWUNNaXJ5Mlo3VFRCLW1KRjMtUjh4OU40RHBhbHZmbUFiZFN0UHp1U1k2clVaTDlDMElfbnVjenZoOWFfMzU5NGR5UGxHR3J3dFRpT3F6VDRrbzR6QnBqNmRWcFdONGw4aW5RUWNDZEtkeGpOQjM5aXF1SU5fdVFUajA0OElYcThScHNlUjl0RmozaVVNZmlwbEZ4ZkNkUTBsbnRZRndvcldwXzR4UE55eHFpa2FRSi1hR3JRdERESG5zVGotSjdBLUlMaVJQaUZJdkhTUTlnbm5sMzlJX2UzSktkMFNlTU1ESXhBZUp2STBsNzBtc0tpeTdRZHgwOHNjRFBrNnA0bTRIUDRMS2lnaTN5cGlkcG1XakZVN2E3dU40b3JDaGx3bDRVTVZxU2hTSXVYajlXdV8tWGtoYl9YRmp3Q2RIYk1RYnpZNGxSbzJSbTVudE84YjFKVG1BVkJWdXBUeEI5bVJPbW5VN0VUd280YjltZ2pMNXVsVXhXMXNLeUFucDhiZm1jRHl0cGxxcEFrMVE5MVZJcWtRbVBtdHZ3T1k0OUR1dW9udjBpTUdaVnFIZ1NfTzFVbVZGQnBLelh6YWtZWkVhRjBuOFh3Sk9MYzdTazNxQkFzeUNKRHA3U1BPSTdWZFkzR1Rvd0dwMXlHaFVLV2MyeUk0UzZ2TmlPQXBjU2RibXVua0RFampMQmM3ZnJ1SjhoSG9tZGlpd3FqZGtBYjhsbEQyajF3V2hUTG8ycFRrRjdDNFlHdWhlVEJscHo1UUZSRHpPOFg2N1RiTHRIbkZhVVlKcEFvVFhiTGlaTWNzN0M4RlE3WExTNzNlLVVCZE1TVGJZRWlQSkYzckMxR1BmcXZnMU50UGF2T1Fhb0RQeXdyM0dubTcwbDR1a3Q4b0ZPR0RndzRYNGp2U2RvUmdXQTBpUHVSck4wbnByTlpfQUlNSjlOUEdJMWdBSU84SXRNSWU5aU5nMUowaHJPVzFUTzRZNHV0dWhPbHVwcTdXQzBQRFplMUVSdGMxbmVKNTlPdTVLOWhrQXg3cUt1T3hGVEw2VXN4czVMVW5wTmtLcExGdXBYYlI2dHJYeHFFbjBETHFfWGFoY1lyZldJY3Z4SHdfd1lCTlpHY3h4aFlibUQxRVBBenR0Ymx0Y2tTLXFLQ29kRkI3Wnh0Rzd2cndyU3V4aUY4SEdoT2JtMWJNS09scUNWUzdTWlF2dlpBbXpOVUYxTVZaZVpVQ19EbEpFRnJwVkVKMXFrSzlMeE03STJsMXhOMXR5VVhSVzI5T0ttcmlpb0VWNFRiNGlsN3ROLVE0MzN3cFVHN20zaHBrRHNwWFJ0YXBBdWdjVERsQ2JDTU9sNV9VV1lFSklVT1ZfcjNvRHlaX3d2aGtqOGlEZ3hRRGNfMDIzZDVacFU1aWNyNmpsOE1qR3l3OUZxenNYS2RVXzBHZEdTdkctVm9OeXlWbmlJUTlrc0Zic2pXQl9aQ0dwSlRVdE1FNUNSTlhMazlKXzRMTVAyRVBJLkpCd2tadTJnZVUteERxVFlmMk1ueFE=
+    accept: application/json, text/html, */*; q=0.1
+    sec-ch-ua: '"Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"'
+    sec-ch-ua-mobile: ?0
+    x-vbank-session: 570ea32c-0303-4aa8-87dd-314f16141319
+    sec-ch-ua-platform: '"macOS"'
+    host: localhost:9000
+    content-type: application/json
+    connection: keep-alive
+    cache-control: no-cache, no-store, must-revalidate
+    accept-encoding: gzip, deflate, br, zstd
+    sec-fetch-dest: empty
+    user-agent: GLOMO_MX/99.99.99 (Android;14;Samsung)
+  query:
+    orderBy: lastUpdateDate desc
+    pageSize: '40'
+    paginationKey: '0'
+then:
+- return:
+    pagination:
+      totalPages: 1
+      pageSize: 40
+      links:
+        last: /expenses-groups/v0/expenses-groups?orderBy=lastUpdateDate%20desc&paginationKey=LAST
+        first: /expenses-groups/v0/expenses-groups?orderBy=lastUpdateDate%20desc
+      page: 0
+      totalElements: 28
+    data:
+    - currentMember:
+        balance:
+          amount:
+            amount: 800.0
+            currency: MXN
+          status: NEGATIVE
+        alias: MARIA JESUS
+        id: '2046'
+        status:
+          id: ENABLED
+        invitationDate: 2024-12-26T21:47:44.000-0600
+      totalMembers: 4
+      images:
+      - name: default
+        link:
+          href: 'null'
+        id: '1'
+        imageType: ICON
+      - name: default
+        link:
+          href: https://assets.caasbbva.com/content/dam/caas/global/glomo/expenses-group/default/default.jpg
+        id: '2'
+        imageType: BACKGROUND_IMAGE
+      totalBalance:
+        amount: 2400.0
+        currency: MXN
+      lastUpdateDate: 2024-12-26T22:03:39.000-0600
+      name: payments
+      currency: MXN
+      id: '950'
+      status:
+        id: IN_PROGRESS
+    - currentMember:
+        balance:
+          amount:
+            amount: 450.0
+            currency: MXN
+          status: NEGATIVE
+        alias: MARIA JESUS
+        id: '1745'
+        status:
+          id: ENABLED
+        invitationDate: 2024-12-20T13:04:19.000-0600
+      totalMembers: 4
+      images:
+      - name: default
+        link:
+          href: 'null'
+        id: '1'
+        imageType: ICON
+      - name: default
+        link:
+          href: https://assets.caasbbva.com/content/dam/caas/global/glomo/expenses-group/default/default.jpg
+        id: '2'
+        imageType: BACKGROUND_IMAGE
+      totalBalance:
+        amount: 1800.0
+        currency: MXN
+      lastUpdateDate: 2024-12-26T21:41:51.000-0600
+      name: debt expenses
+      currency: MXN
+      id: '821'
+      status:
+        id: IN_PROGRESS
+    - currentMember:
+        balance:
+          amount:
+            amount: 100.0
+            currency: MXN
+          status: NEGATIVE
+        alias: MARIA JESUS
+        id: '1793'
+        status:
+          id: ENABLED
+        invitationDate: 2024-12-26T15:45:50.000-0600
+      totalMembers: 4
+      images:
+      - name: default
+        link:
+          href: 'null'
+        id: '1'
+        imageType: ICON
+      - name: default
+        link:
+          href: https://assets.caasbbva.com/content/dam/caas/global/glomo/expenses-group/default/default.jpg
+        id: '2'
+        imageType: BACKGROUND_IMAGE
+      totalBalance:
+        amount: 700.0
+        currency: MXN
+      lastUpdateDate: 2024-12-26T21:22:14.000-0600
+      name: third-party
+      currency: MXN
+      id: '843'
+      status:
+        id: IN_PROGRESS
+    - currentMember:
+        balance:
+          amount:
+            amount: 125.0
+            currency: MXN
+          status: POSITIVE
+        alias: MARIA JESUS
+        id: '1483'
+        status:
+          id: ENABLED
+        invitationDate: 2024-12-10T17:18:18.000-0600
+      totalMembers: 4
+      images:
+      - name: default
+        link:
+          href: 'null'
+        id: '1'
+        imageType: ICON
+      - name: default
+        link:
+          href: https://assets.caasbbva.com/content/dam/caas/global/glomo/expenses-group/default/default.jpg
+        id: '2'
+        imageType: BACKGROUND_IMAGE
+      totalBalance:
+        amount: 1940.0
+        currency: MXN
+      lastUpdateDate: 2024-12-26T15:24:46.000-0600
+      name: owe others
+      currency: MXN
+      id: '755'
+      status:
+        id: IN_PROGRESS
+    - currentMember:
+        balance:
+          amount:
+            amount: 100.0
+            currency: MXN
+          status: NEGATIVE
+        alias: MARIA JESUS
+        id: '1762'
+        status:
+          id: ENABLED
+        invitationDate: 2024-12-22T17:30:01.000-0600
+      totalMembers: 4
+      images:
+      - name: default
+        link:
+          href: 'null'
+        id: '1'
+        imageType: ICON
+      - name: default
+        link:
+          href: https://assets.caasbbva.com/content/dam/caas/global/glomo/expenses-group/default/default.jpg
+        id: '2'
+        imageType: BACKGROUND_IMAGE
+      totalBalance:
+        amount: 200.0
+        currency: MXN
+      lastUpdateDate: 2024-12-26T14:33:47.000-0600
+      name: owes to each other
+      currency: MXN
+      id: '825'
+      status:
+        id: IN_PROGRESS
+    - currentMember:
+        balance:
+          amount:
+            amount: 200.0
+            currency: MXN
+          status: NEGATIVE
+        alias: MARIA JESUS
+        id: '1750'
+        status:
+          id: ENABLED
+        invitationDate: 2024-12-20T17:15:52.000-0600
+      totalMembers: 5
+      images:
+      - name: default
+        link:
+          href: 'null'
+        id: '1'
+        imageType: ICON
+      - name: default
+        link:
+          href: https://assets.caasbbva.com/content/dam/caas/global/glomo/expenses-group/default/default.jpg
+        id: '2'
+        imageType: BACKGROUND_IMAGE
+      totalBalance:
+        amount: 800.0
+        currency: MXN
+      lastUpdateDate: 2024-12-26T13:50:54.000-0600
+      name: indebted to others
+      currency: MXN
+      id: '822'
+      status:
+        id: IN_PROGRESS
+    - currentMember:
+        balance:
+          amount:
+            amount: 100.0
+            currency: MXN
+          status: NEGATIVE
+        alias: MARIA JESUS
+        id: '1739'
+        status:
+          id: ENABLED
+        invitationDate: 2024-12-20T13:18:24.000-0600
+      totalMembers: 4
+      images:
+      - name: default
+        link:
+          href: 'null'
+        id: '1'
+        imageType: ICON
+      - name: default
+        link:
+          href: https://assets.caasbbva.com/content/dam/caas/global/glomo/expenses-group/default/default.jpg
+        id: '2'
+        imageType: BACKGROUND_IMAGE
+      totalBalance:
+        amount: 300.0
+        currency: MXN
+      lastUpdateDate: 2024-12-26T13:17:43.000-0600
+      name: indebted to me
+      currency: MXN
+      id: '788'
+      status:
+        id: IN_PROGRESS
+    - currentMember:
+        balance:
+          amount:
+            amount: 150.0
+            currency: MXN
+          status: NEGATIVE
+        alias: MARIA JESUS
+        id: '1732'
+        status:
+          id: ENABLED
+        invitationDate: 2024-12-19T23:55:54.000-0600
+      totalMembers: 4
+      images:
+      - name: default
+        link:
+          href: 'null'
+        id: '1'
+        imageType: ICON
+      - name: default
+        link:
+          href: https://assets.caasbbva.com/content/dam/caas/global/glomo/expenses-group/default/default.jpg
+        id: '2'
+        imageType: BACKGROUND_IMAGE
+      totalBalance:
+        amount: 450.0
+        currency: MXN
+      lastUpdateDate: 2024-12-26T13:13:21.000-0600
+      name: mark as paid all
+      currency: MXN
+      id: '786'
+      status:
+        id: IN_PROGRESS
+    - currentMember:
+        balance:
+          amount:
+            amount: 150.0
+            currency: MXN
+          status: NEGATIVE
+        alias: MARIA JESUS
+        id: '1735'
+        status:
+          id: ENABLED
+        invitationDate: 2024-12-20T00:00:14.000-0600
+      totalMembers: 4
+      images:
+      - name: default
+        link:
+          href: 'null'
+        id: '1'
+        imageType: ICON
+      - name: default
+        link:
+          href: https://assets.caasbbva.com/content/dam/caas/global/glomo/expenses-group/default/default.jpg
+        id: '2'
+        imageType: BACKGROUND_IMAGE
+      totalBalance:
+        amount: 450.0
+        currency: MXN
+      lastUpdateDate: 2024-12-26T13:13:02.000-0600
+      name: mark as paid one
+      currency: MXN
+      id: '787'
+      status:
+        id: IN_PROGRESS
+    - currentMember:
+        balance:
+          amount:
+            amount: 0.0
+            currency: MXN
+          status: ZERO
+        alias: MARIA JESUS
+        id: '1742'
+        status:
+          id: ENABLED
+        invitationDate: 2024-12-20T08:59:06.000-0600
+      totalMembers: 4
+      images:
+      - name: default
+        link:
+          href: 'null'
+        id: '1'
+        imageType: ICON
+      - name: default
+        link:
+          href: https://assets.caasbbva.com/content/dam/caas/global/glomo/expenses-group/default/default.jpg
+        id: '2'
+        imageType: BACKGROUND_IMAGE
+      totalBalance:
+        amount: 1100.0
+        currency: MXN
+      lastUpdateDate: 2024-12-26T13:12:47.000-0600
+      name: mark as paid only one
+      currency: MXN
+      id: '802'
+      status:
+        id: IN_PROGRESS
+    - currentMember:
+        balance:
+          amount:
+            amount: 500.0
+            currency: MXN
+          status: POSITIVE
+        alias: MARIA JESUS
+        id: '1406'
+        status:
+          id: ENABLED
+      totalMembers: 4
+      images:
+      - name: default
+        link:
+          href: 'null'
+        id: '1'
+        imageType: ICON
+      - name: default
+        link:
+          href: https://assets.caasbbva.com/content/dam/caas/global/glomo/expenses-group/default/default.jpg
+        id: '2'
+        imageType: BACKGROUND_IMAGE
+      totalBalance:
+        amount: 1000.0
+        currency: MXN
+      lastUpdateDate: 2024-12-26T13:11:43.000-0600
+      name: Grupo M
+      currency: MXN
+      id: '738'
+      status:
+        id: IN_PROGRESS
+    - currentMember:
+        balance:
+          amount:
+            amount: 1000.0
+            currency: MXN
+          status: NEGATIVE
+        alias: MARIA JESUS
+        id: '1373'
+        status:
+          id: ENABLED
+      totalMembers: 3
+      images:
+      - name: default
+        link:
+          href: 'null'
+        id: '1'
+        imageType: ICON
+      - name: default
+        link:
+          href: https://assets.caasbbva.com/content/dam/caas/global/glomo/expenses-group/default/default.jpg
+        id: '2'
+        imageType: BACKGROUND_IMAGE
+      totalBalance:
+        amount: 3000.0
+        currency: MXN
+      lastUpdateDate: 2024-12-26T13:06:33.000-0600
+      name: Grupo C
+      currency: MXN
+      id: '734'
+      status:
+        id: IN_PROGRESS
+    - currentMember:
+        balance:
+          amount:
+            amount: 0.0
+            currency: MXN
+          status: ZERO
+        alias: Maria Jesus
+        id: '1727'
+        status:
+          id: PENDING
+        invitationDate: 2024-12-19T16:24:54.000-0600
+      totalMembers: 4
+      images:
+      - name: cumpleaños
+        link:
+          href: 'null'
+        id: '1'
+        imageType: ICON
+      - name: cumpleaños
+        link:
+          href: https://assets.caasbbva.com/content/dam/caas/global/glomo/expenses-group/celebration/celebration.jpg
+        id: '2'
+        imageType: BACKGROUND_IMAGE
+      totalBalance:
+        amount: 0.0
+        currency: MXN
+      lastUpdateDate: 2024-12-26T10:33:08.000-0600
+      name: Cumpleaños A
+      currency: MXN
+      id: '785'
+      status:
+        id: NEW
+    - currentMember:
+        balance:
+          amount:
+            amount: 364.0
+            currency: MXN
+          status: POSITIVE
+        alias: MARIA JESUS
+        id: '1383'
+        status:
+          id: ENABLED
+      totalMembers: 3
+      images:
+      - name: default
+        link:
+          href: 'null'
+        id: '1'
+        imageType: ICON
+      - name: default
+        link:
+          href: https://assets.caasbbva.com/content/dam/caas/global/glomo/expenses-group/default/default.jpg
+        id: '2'
+        imageType: BACKGROUND_IMAGE
+      totalBalance:
+        amount: 546.0
+        currency: MXN
+      lastUpdateDate: 2024-12-19T16:02:32.000-0600
+      name: Grupo A
+      currency: MXN
+      id: '741'
+      status:
+        id: IN_PROGRESS
+    - currentMember:
+        balance:
+          amount:
+            amount: 2250.0
+            currency: MXN
+          status: POSITIVE
+        alias: MARIA JESUS
+        id: '1375'
+        status:
+          id: ENABLED
+      totalMembers: 4
+      images:
+      - name: default
+        link:
+          href: 'null'
+        id: '1'
+        imageType: ICON
+      - name: default
+        link:
+          href: https://assets.caasbbva.com/content/dam/caas/global/glomo/expenses-group/default/default.jpg
+        id: '2'
+        imageType: BACKGROUND_IMAGE
+      totalBalance:
+        amount: 3000.0
+        currency: MXN
+      lastUpdateDate: 2024-12-18T13:26:10.000-0600
+      name: Grupo D
+      currency: MXN
+      id: '735'
+      status:
+        id: IN_PROGRESS
+    - currentMember:
+        balance:
+          amount:
+            amount: 666.67
+            currency: MXN
+          status: POSITIVE
+        alias: MARIA JESUS
+        id: '1370'
+        status:
+          id: ENABLED
+      totalMembers: 3
+      images:
+      - name: default
+        link:
+          href: 'null'
+        id: '1'
+        imageType: ICON
+      - name: default
+        link:
+          href: https://assets.caasbbva.com/content/dam/caas/global/glomo/expenses-group/default/default.jpg
+        id: '2'
+        imageType: BACKGROUND_IMAGE
+      totalBalance:
+        amount: 1000.0
+        currency: MXN
+      lastUpdateDate: 2024-12-18T09:45:56.000-0600
+      name: Grupo B
+      currency: MXN
+      id: '733'
+      status:
+        id: IN_PROGRESS
+    - currentMember:
+        balance:
+          amount:
+            amount: 2400.0
+            currency: MXN
+          status: NEGATIVE
+        alias: MARIA JESUS
+        id: '1599'
+        status:
+          id: ENABLED
+        invitationDate: 2024-12-10T17:34:39.000-0600
+      totalMembers: 4
+      images:
+      - name: default
+        link:
+          href: 'null'
+        id: '1'
+        imageType: ICON
+      - name: default
+        link:
+          href: https://assets.caasbbva.com/content/dam/caas/global/glomo/expenses-group/default/default.jpg
+        id: '2'
+        imageType: BACKGROUND_IMAGE
+      totalBalance:
+        amount: 7700.0
+        currency: MXN
+      lastUpdateDate: 2024-12-17T18:39:51.000-0600
+      name: Grupo X
+      currency: MXN
+      id: '765'
+      status:
+        id: IN_PROGRESS
+    - currentMember:
+        balance:
+          amount:
+            amount: 4725.0
+            currency: MXN
+          status: POSITIVE
+        alias: 'Maria Jesús '
+        id: '1491'
+        status:
+          id: PENDING
+        invitationDate: 2024-12-10T17:28:46.000-0600
+      totalMembers: 4
+      images:
+      - name: default
+        link:
+          href: 'null'
+        id: '1'
+        imageType: ICON
+      - name: default
+        link:
+          href: https://assets.caasbbva.com/content/dam/caas/global/glomo/expenses-group/default/default.jpg
+        id: '2'
+        imageType: BACKGROUND_IMAGE
+      totalBalance:
+        amount: 6300.0
+        currency: MXN
+      lastUpdateDate: 2024-12-16T18:23:57.000-0600
+      name: Grupo U
+      currency: MXN
+      id: '757'
+      status:
+        id: IN_PROGRESS
+    - currentMember:
+        balance:
+          amount:
+            amount: 0.0
+            currency: MXN
+          status: ZERO
+        alias: Maria Jesus, Teste BBVA
+        id: '1648'
+        status:
+          id: PENDING
+        invitationDate: 2024-12-11T10:30:01.000-0600
+      totalMembers: 4
+      images:
+      - name: viaje
+        link:
+          href: 'null'
+        id: '1'
+        imageType: ICON
+      - name: viaje
+        link:
+          href: https://assets.caasbbva.com/content/dam/caas/global/glomo/expenses-group/trip/trip.jpg
+        id: '2'
+        imageType: BACKGROUND_IMAGE
+      totalBalance:
+        amount: 1000.0
+        currency: MXN
+      lastUpdateDate: 2024-12-16T18:10:09.000-0600
+      name: Viaje F
+      currency: MXN
+      id: '773'
+      status:
+        id: IN_PROGRESS
+    - currentMember:
+        balance:
+          amount:
+            amount: 250.0
+            currency: MXN
+          status: NEGATIVE
+        alias: MARIA JESUS
+        id: '1415'
+        status:
+          id: ENABLED
+      totalMembers: 5
+      images:
+      - name: default
+        link:
+          href: 'null'
+        id: '1'
+        imageType: ICON
+      - name: default
+        link:
+          href: https://assets.caasbbva.com/content/dam/caas/global/glomo/expenses-group/default/default.jpg
+        id: '2'
+        imageType: BACKGROUND_IMAGE
+      totalBalance:
+        amount: 1000.0
+        currency: MXN
+      lastUpdateDate: 2024-12-09T20:22:01.000-0600
+      name: Grupo O
+      currency: MXN
+      id: '740'
+      status:
+        id: IN_PROGRESS
+    - currentMember:
+        balance:
+          amount:
+            amount: 0.0
+            currency: MXN
+          status: ZERO
+        alias: MARIA JESUS
+        id: '1428'
+        status:
+          id: ENABLED
+      totalMembers: 5
+      images:
+      - name: default
+        link:
+          href: 'null'
+        id: '1'
+        imageType: ICON
+      - name: default
+        link:
+          href: https://assets.caasbbva.com/content/dam/caas/global/glomo/expenses-group/default/default.jpg
+        id: '2'
+        imageType: BACKGROUND_IMAGE
+      totalBalance:
+        amount: 0.0
+        currency: MXN
+      lastUpdateDate: 2024-12-09T13:32:21.000-0600
+      name: Grupo N
+      currency: MXN
+      id: '750'
+      status:
+        id: NEW
+    - currentMember:
+        balance:
+          amount:
+            amount: 0.0
+            currency: MXN
+          status: ZERO
+        alias: MARIA JESUS
+        id: '1424'
+        status:
+          id: ENABLED
+      totalMembers: 5
+      images:
+      - name: default
+        link:
+          href: 'null'
+        id: '1'
+        imageType: ICON
+      - name: default
+        link:
+          href: https://assets.caasbbva.com/content/dam/caas/global/glomo/expenses-group/default/default.jpg
+        id: '2'
+        imageType: BACKGROUND_IMAGE
+      totalBalance:
+        amount: 0.0
+        currency: MXN
+      lastUpdateDate: 2024-12-09T13:14:29.000-0600
+      name: Grupo L
+      currency: MXN
+      id: '749'
+      status:
+        id: NEW
+    - currentMember:
+        balance:
+          amount:
+            amount: 0.0
+            currency: MXN
+          status: ZERO
+        alias: MARIA JESUS
+        id: '1395'
+        status:
+          id: ENABLED
+      totalMembers: 4
+      images:
+      - name: default
+        link:
+          href: 'null'
+        id: '1'
+        imageType: ICON
+      - name: default
+        link:
+          href: https://assets.caasbbva.com/content/dam/caas/global/glomo/expenses-group/default/default.jpg
+        id: '2'
+        imageType: BACKGROUND_IMAGE
+      totalBalance:
+        amount: 0.0
+        currency: MXN
+      lastUpdateDate: 2024-12-09T12:45:43.000-0600
+      name: Grupo I
+      currency: MXN
+      id: '746'
+      status:
+        id: NEW
+    - currentMember:
+        balance:
+          amount:
+            amount: 0.0
+            currency: MXN
+          status: ZERO
+        alias: MARIA JESUS
+        id: '1387'
+        status:
+          id: ENABLED
+      totalMembers: 3
+      images:
+      - name: default
+        link:
+          href: 'null'
+        id: '1'
+        imageType: ICON
+      - name: default
+        link:
+          href: https://assets.caasbbva.com/content/dam/caas/global/glomo/expenses-group/default/default.jpg
+        id: '2'
+        imageType: BACKGROUND_IMAGE
+      totalBalance:
+        amount: 0.0
+        currency: MXN
+      lastUpdateDate: 2024-12-09T12:39:52.000-0600
+      name: Grupo E
+      currency: MXN
+      id: '743'
+      status:
+        id: NEW
+    - currentMember:
+        balance:
+          amount:
+            amount: 0.0
+            currency: MXN
+          status: ZERO
+        alias: MARIA JESUS
+        id: '1380'
+        status:
+          id: ENABLED
+      totalMembers: 2
+      images:
+      - name: default
+        link:
+          href: 'null'
+        id: '1'
+        imageType: ICON
+      - name: default
+        link:
+          href: https://assets.caasbbva.com/content/dam/caas/global/glomo/expenses-group/default/default.jpg
+        id: '2'
+        imageType: BACKGROUND_IMAGE
+      totalBalance:
+        amount: 0.0
+        currency: MXN
+      lastUpdateDate: 2024-12-09T12:32:43.000-0600
+      name: Grupo K
+      currency: MXN
+      id: '737'
+      status:
+        id: NEW
+    - currentMember:
+        balance:
+          amount:
+            amount: 0.0
+            currency: MXN
+          status: ZERO
+        alias: MARIA JESUS
+        id: '1398'
+        status:
+          id: ENABLED
+      totalMembers: 2
+      images:
+      - name: default
+        link:
+          href: 'null'
+        id: '1'
+        imageType: ICON
+      - name: default
+        link:
+          href: https://assets.caasbbva.com/content/dam/caas/global/glomo/expenses-group/default/default.jpg
+        id: '2'
+        imageType: BACKGROUND_IMAGE
+      totalBalance:
+        amount: 0.0
+        currency: MXN
+      lastUpdateDate: 2024-12-09T12:30:09.000-0600
+      name: Grupo J
+      currency: MXN
+      id: '748'
+      status:
+        id: NEW
+    - currentMember:
+        balance:
+          amount:
+            amount: 500.0
+            currency: MXN
+          status: POSITIVE
+        alias: MARIA JESUS
+        id: '1378'
+        status:
+          id: ENABLED
+      totalMembers: 2
+      images:
+      - name: default
+        link:
+          href: 'null'
+        id: '1'
+        imageType: ICON
+      - name: default
+        link:
+          href: https://assets.caasbbva.com/content/dam/caas/global/glomo/expenses-group/default/default.jpg
+        id: '2'
+        imageType: BACKGROUND_IMAGE
+      totalBalance:
+        amount: 1000.0
+        currency: MXN
+      lastUpdateDate: 2024-12-09T12:26:34.000-0600
+      name: Grupo H
+      currency: MXN
+      id: '736'
+      status:
+        id: IN_PROGRESS
+    - currentMember:
+        balance:
+          amount:
+            amount: 0.0
+            currency: MXN
+          status: ZERO
+        alias: MARIA JESUS
+        id: '1392'
+        status:
+          id: ENABLED
+      totalMembers: 3
+      images:
+      - name: default
+        link:
+          href: 'null'
+        id: '1'
+        imageType: ICON
+      - name: default
+        link:
+          href: https://assets.caasbbva.com/content/dam/caas/global/glomo/expenses-group/default/default.jpg
+        id: '2'
+        imageType: BACKGROUND_IMAGE
+      totalBalance:
+        amount: 0.0
+        currency: MXN
+      lastUpdateDate: 2024-12-09T11:32:24.000-0600
+      name: Grupo G
+      currency: MXN
+      id: '745'
+      status:
+        id: NEW
+    :headers:
+      content-length: '17573'
+      X-EdgeConnect-Origin-MEX-Latency: '322'
+      Access-Control-Allow-Origin: '*'
+      ECS-Entry-Point-Zone: ext
+      Access-Control-Allow-Methods: GET, POST, DELETE, PUT, OPTIONS, PATCH
+      X-Content-Type-Options: nosniff
+      Connection: keep-alive
+      tsec: ZXlKaFlYQWlPaUl4TURBd01ERTROeUlzSW10bGVWWmxjbk5wYjI0aU9qRXNJbUZ3Y0Vsa0lqb2lRVkJRTVNJc0ltdHBaQ0k2SWtGUVVERXViRzlqWVd3dU1TSXNJbVZ1WXlJNklrRXhPVEpIUTAwaUxDSnJaWGxVZVhCbElqb2liRzlqWVd3aUxDSmhiR2NpT2lKa2FYSWlMQ0owYzJWalNXUWlPaUprTTJWaE5XWmxOQzAwTWpobExUUTJOV010WVRsaVl5MWlOak5qTURNd1lXTmtObUVpZlEuLnpqZXJJOEs1N2htZFMzU2guRHQ1TmhKTGlaY1QyZ211aFVVamVGUGFYb21tSVNfR0stVzllbXdyWE8xWE55UWg0aUo4XzNJMFlLZE5QcnU1UmxhU0dxTnpocHM2dXpKbVhfRGJWY3lOSzJEclR3aVhMekJsQXFxZDVNaGNZLXA2Rk1Sd1V3bUg1am5jZFZkNmE2OXVRRURQUGhEaF9pNUZMUDNMUmM0bHl2STNzUThmbnVNQ29aaXVWOF95SG1WQWRUMl9LUnViQ2NucEt2eTQ2dmtlZ0h4NG11VUxBSkEzNEd2bkhCN0JDRmY3Z1FxVDRNRmd5bFl6dVFSTTAwNWVRUXc0QkoyOFpaaWNoeEdORDhCeFZrdzA0d1pBaDRXVFRXSlhBU1phM3NxN3VsY2NPVXpoWURlSTlIYTZTUzhGT215dWFpRnZMdFBaRHVGWUNranB2TVRSTUxsQ3dDbkVRcjgxSGJXRHRaMi11UXEyZ1hzVFU2anVZTERaeWxXX2JSNlhYRWt5UWprM2VSUlZOZ3RCNlN1THhCRHljanlkQ0d3THk4dnhCeHZsUF9fT09zSzVmLTFmZF9lajE3bi1VZmdqYVpFQ2tfX0stUG54UGhUdDd4dTJ0VUFaMXl5dmdNZ1B4V3ZnVG8xXzNpZ2NUVFR5QnFtWTRNSkd3M0d2Zk1FdjBGLV9MVDlvZjVURTJiOEdURWtBbmhCZ19takkzb0p0bnBoWkVrd1htVFhzeEZYXzd6NV82RUNXa18xQVFzcm1KRVRfSWRESHBwdFluZDNYZE1tMVVjSDFWSkIwdncwU2FJTk5YMkVIc3ZmbzFodDdCNnVXU2VIakNyWFhDbEFGTV9ZTDZnWVBVeWNfZ09mTEZId29lMm9pR1JkQmZnT18xY3hmOXFYYkhPV2QxUUJFSkV6ekhxYUZZc1VmYXJZR08zQVVJcDA5NjUwbE5xdmoyV2xrY2ZfUUgyY3RHOTg2RXU4THhmei03WVBoMDVwaUx2UlJNejZGUjJ3MmZ5c2UwdkxxWFZHeFdoNlYxeEJzdDJKYnk2N3dnVXN3cWhLZUEySjFHaWJJa2dzNlZJUGRTVk51Zk1zbE5kWUNNaXJ5Mlo3VFRCLW1KRjMtUjh4OU40RHBhbHZmbUFiZFN0UHp1U1k2clVaTDlDMElfbnVjenZoOWFfMzU5NGR5UGxHR3J3dFRpT3F6VDRrbzR6QnBqNmRWcFdONGw4aW5RUWNDZEtkeGpOQjM5aXF1SU5fdVFUajA0OElYcThScHNlUjl0RmozaVVNZmlwbEZ4ZkNkUTBsbnRZRndvcldwXzR4UE55eHFpa2FRSi1hR3JRdERESG5zVGotSjdBLUlMaVJQaUZJdkhTUTlnbm5sMzlJX2UzSktkMFNlTU1ESXhBZUp2STBsNzBtc0tpeTdRZHgwOHNjRFBrNnA0bTRIUDRMS2lnaTN5cGlkcG1XakZVN2E3dU40b3JDaGx3bDRVTVZxU2hTSXVYajlXdV8tWGtoYl9YRmp3Q2RIYk1RYnpZNGxSbzJSbTVudE84YjFKVG1BVkJWdXBUeEI5bVJPbW5VN0VUd280YjltZ2pMNXVsVXhXMXNLeUFucDhiZm1jRHl0cGxxcEFrMVE5MVZJcWtRbVBtdHZ3T1k0OUR1dW9udjBpTUdaVnFIZ1NfTzFVbVZGQnBLelh6YWtZWkVhRjBuOFh3Sk9MYzdTazNxQkFzeUNKRHA3U1BPSTdWZFkzR1Rvd0dwMXlHaFVLV2MyeUk0UzZ2TmlPQXBjU2RibXVua0RFampMQmM3ZnJ1SjhoSG9tZGlpd3FqZGtBYjhsbEQyajF3V2hUTG8ycFRrRjdDNFlHdWhlVEJscHo1UUZSRHpPOFg2N1RiTHRIbkZhVVlKcEFvVFhiTGlaTWNzN0M4RlE3WExTNzNlLVVCZE1TVGJZRWlQSkYzckMxR1BmcXZnMU50UGF2T1Fhb0RQeXdyM0dubTcwbDR1a3Q4b0ZPR0RndzRYNGp2U2RvUmdXQTBpUHVSck4wbnByTlpfQUlNSjlOUEdJMWdBSU84SXRNSWU5aU5nMUowaHJPVzFUTzRZNHV0dWhPbHVwcTdXQzBQRFplMUVSdGMxbmVKNTlPdTVLOWhrQXg3cUt1T3hGVEw2VXN4czVMVW5wTmtLcExGdXBYYlI2dHJYeHFFbjBETHFfWGFoY1lyZldJY3Z4SHdfd1lCTlpHY3h4aFlibUQxRVBBenR0Ymx0Y2tTLXFLQ29kRkI3Wnh0Rzd2cndyU3V4aUY4SEdoT2JtMWJNS09scUNWUzdTWlF2dlpBbXpOVUYxTVZaZVpVQ19EbEpFRnJwVkVKMXFrSzlMeE03STJsMXhOMXR5VVhSVzI5T0ttcmlpb0VWNFRiNGlsN3ROLVE0MzN3cFVHN20zaHBrRHNwWFJ0YXBBdWdjVERsQ2JDTU9sNV9VV1lFSklVT1ZfcjNvRHlaX3d2aGtqOGlEZ3hRRGNfMDIzZDVacFU1aWNyNmpsOE1qR3l3OUZxenNYS2RVXzBHZEdTdkctVm9OeXlWbmlJUTlrc0Zic2pXQl9aQ0dwSlRVdE1FNUNSTlhMazlKXzRMTVAyRVBJLkpCd2tadTJnZVUteERxVFlmMk1ueFE=
+      Access-Control-Allow-Headers: remaining-time, Bbva-User-Agent, Accept-Encoding,
+        Accept, Content-Type, tsec, consumerrequestid, authenticationchallenge, authenticationtype,
+        authenticationdata, authenticationstate, contactid, consumeruuid, consumerapplicationid,
+        perimetertsec, authorization, responsewarningcode, responsewarningdescription,
+        cuf, prefer, phoneNumber, Location, X-RHO-PARENTSPANID, X-RHO-TRACEID, preferredauthenticationtype,
+        X-HTTP-Method-Override, Access-Control-Allow-Methods, iv-remote-address, thirdparty-x-forwarded-for,
+        thirdparty-user-agent, thirdparty-geolocation, thirdparty-calculated-scoring,
+        thirdparty-deviceid, vnd.bbva.security-client-certificate, order-preferredaction,
+        authenticationresponse, Access-Control-Max-Age, BCS-Device-Id, BCS-Device-OS-Name,
+        BCS-Device-Model-Name, BCS-Device-Model-Manufacturer, BCS-Device-Screen-Size,
+        BCS-Device-OS-Version, BCS-Device-DPI, BCS-Device-App-Name, BCS-Device-App-Version,
+        Third-Party-Application-Id, ECS-Signature-Platform-Use-Case, BCS-Process-Code,
+        BCS-Operation-Tracer, BCS-Process-Tracer, vnd.bbva.user-id, order-preferredaction,
+        order-id, order-accepteddisclaimers, x-forwarded-for, Date, order-hmac, x-dmz-orgn,
+        onsite-accountTerm, onsite-logicalTerm, Akamai-BM-Telemetry, BCS-Third-Party-Session-Id,
+        Cache-Control, clave, Content-Encoding, ECS-Entry-Point-Zone, firma, Geolocation,
+        Third-Party-Collaborator-Id, user-agent, Via, order-signed, loginauthenticationtype,
+        x-cau
+      Date: Fri, 27 Dec 2024 18:04:55 GMT
+      Referrer-Policy: same-origin
+      X-Frame-Options: sameorigin
+      Strict-Transport-Security: max-age=31536000; includeSubDomains
+      Access-Control-Expose-Headers: remaining-time, Bbva-User-Agent, Accept-Encoding,
+        Accept, Content-Type, tsec, consumerrequestid, authenticationchallenge, authenticationtype,
+        authenticationdata, authenticationstate, contactid, consumeruuid, consumerapplicationid,
+        perimetertsec, authorization, responsewarningcode, responsewarningdescription,
+        cuf, prefer, phoneNumber, Location, X-RHO-PARENTSPANID, X-RHO-TRACEID, preferredauthenticationtype,
+        X-HTTP-Method-Override, Access-Control-Allow-Methods, iv-remote-address, thirdparty-x-forwarded-for,
+        thirdparty-user-agent, thirdparty-geolocation, thirdparty-calculated-scoring,
+        thirdparty-deviceid, vnd.bbva.security-client-certificate, order-preferredaction,
+        authenticationresponse, Access-Control-Max-Age, BCS-Device-Id, BCS-Device-OS-Name,
+        BCS-Device-Model-Name, BCS-Device-Model-Manufacturer, BCS-Device-Screen-Size,
+        BCS-Device-OS-Version, BCS-Device-DPI, BCS-Device-App-Name, BCS-Device-App-Version,
+        Third-Party-Application-Id, ECS-Signature-Platform-Use-Case, BCS-Process-Code,
+        BCS-Operation-Tracer, BCS-Process-Tracer, vnd.bbva.user-id, order-preferredaction,
+        order-id, order-accepteddisclaimers, x-forwarded-for, Date, order-hmac, x-dmz-orgn,
+        onsite-accountTerm, onsite-logicalTerm, Akamai-BM-Telemetry, BCS-Third-Party-Session-Id,
+        Cache-Control, clave, Content-Encoding, ECS-Entry-Point-Zone, firma, Geolocation,
+        Third-Party-Collaborator-Id, user-agent, Via, order-signed, loginauthenticationtype,
+        x-cau
+      Cache-Control: no-cache,no-store,must-revalidate
+      Content-Security-Policy: script-src 'self'
+      Vary: Accept-Encoding
+      Set-Cookie: vbank-session=570ea32c-0303-4aa8-87dd-314f16141319
+      Expires: '-1'
+      X-XSS-Protection: 1; mode=block
+      X-EdgeConnect-MidMile-RTT: '23'
+      consumerrequestid: d7a28416-0ffb-4480-b528-a6b9d2ccb018
+      Content-Type: application/json; charset=UTF-8
+    :status: 200 OK

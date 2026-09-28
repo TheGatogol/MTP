@@ -1,0 +1,129 @@
+when:
+  sequence: 1
+  path: /SRVS_A02/transfers/v0/own-transfers
+  method: POST
+  backend: glomo
+request:
+  headers:
+    sec-fetch-mode: cors
+    referer: http://localhost:8001/
+    content-length: '229'
+    sec-fetch-site: same-site
+    accept-language: es
+    origin: http://localhost:8001
+    tsec: 9ff90f41366cbdfa3ccb065551a180d40f42b83f
+    accept: application/json, text/html, */*; q=0.1
+    x-vbank-session: 7660df29-656f-4ce7-b0c5-d6f596b69a19
+    host: localhost:9000
+    content-type: application/json
+    connection: keep-alive
+    cache-control: no-cache, no-store, must-revalidate
+    accept-encoding: gzip, deflate, br
+    sec-fetch-dest: empty
+    user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 11_2_1) AppleWebKit/537.36
+      (KHTML, like Gecko) Chrome/89.0.4389.128 Safari/537.36
+  body:
+    receiver:
+      contract:
+        number: '4555457083071201'
+        numberType:
+          id: PAN
+    sender:
+      contract:
+        number: '050400010100120000'
+        numberType:
+          id: LIC
+        contractId: '1200'
+    sentMoney:
+    - amount: 50000
+      currency: MXN
+then:
+- return:
+    data:
+      date: '2021-04-16T07:11:00.392Z'
+      accountingDate: '2021-04-16T07:11:00.392Z'
+      fees:
+        totalFees:
+          amount: 1500
+          currency: MXN
+        itemizeFees:
+        - amount:
+            amount: 500
+            currency: MXN
+          percentage: 1
+          name: Specific transaction fee 1
+          feeType: SPECIFIC_TRANSACTION
+          whoPayFee:
+            name: Origin bank
+            id: ORIGIN_BANK
+        - amount:
+            amount: 1000
+            currency: MXN
+          percentage: 2
+          name: Specific transaction fee 2
+          feeType: SPECIFIC_TRANSACTION
+          whoPayFee:
+            name: Sender
+            id: SENDER
+      receiver:
+        contract:
+          number: '4555457083071201'
+          numberType:
+            name: PAN
+            id: PAN
+      references:
+      - name: Folio
+        id: INTERNAL_REFERENCE
+        value: '9850509184'
+      sender:
+        contract:
+          number: '050400010100120000'
+          numberType:
+            name: LIC
+            id: LIC
+          contractId: '1200'
+      operationNumber: '1618557060392'
+      ownTransferId: '1618557060392'
+      taxes:
+        totalTaxes:
+          amount: 750
+          currency: MXN
+        itemizeTaxes:
+        - amount:
+            amount: 750
+            currency: MXN
+          percentage: 1.5
+          name: Property tax
+          taxType: PROPERTY
+      chargeAmount:
+        amount: -50000
+        currency: MXN
+      sentMoney:
+      - amount: 50000
+        isMajor: true
+        currency: MXN
+      status:
+        name: Aprobada
+        id: SETTLED
+    :headers:
+      access-control-allow-origin: '*'
+      content-length: '2200'
+      Access-Control-Expose-Headers: tsec, vnd.bbva.access-token-type,vnd.bbva.access-token,
+        authenticationtype, authenticationdata, authenticationstate
+      Server: artichoke
+      Alt-Svc: clear
+      access-control-allow-headers: Content-Type, tsec, authenticationtype, authenticationdata,
+        authenticationstate, contactid, consumeruuid, consumerapplicationid, perimetertsec,
+        authorization, responsewarningcode, responsewarningdescription, cuf, field,
+        bcs-device-app-version, bcs-device-app-version
+      content-type: application/json;charset=UTF-8
+      Vary: Accept-Encoding
+      tsec: 9ff90f41366cbdfa3ccb065551a180d40f42b83f
+      X-Response-Time: 533ms
+      Date: Fri, 16 Apr 2021 07:11:00 GMT
+      Via: 1.1 google
+    :status: 201 Created
+    apiInfo:
+      name: transfers
+      category: payment-methods
+      version: 0.5.0

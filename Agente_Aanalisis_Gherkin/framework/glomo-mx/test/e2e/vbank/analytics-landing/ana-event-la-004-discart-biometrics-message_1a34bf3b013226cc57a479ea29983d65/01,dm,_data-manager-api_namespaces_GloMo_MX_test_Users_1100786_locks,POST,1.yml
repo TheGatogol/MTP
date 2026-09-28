@@ -1,0 +1,32 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users/1100786/locks
+  method: POST
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6U2tnYUQ0SmNvck9MTW5LN3NSZjg4MFFnanYwVDB2WTFncFVvaUM2MQ==
+    content-length: '29'
+    host: localhost:9999
+    connection: keep-alive
+    content-type: application/json
+    accept: application/json
+  body:
+    type: SHARED
+    timeout: 1
+then:
+- return:
+    :headers:
+      Strict-Transport-Security: max-age=15724800; includeSubDomains
+      Server: nginx
+      ECS-Entry-Point-Zone: ext
+      Connection: keep-alive
+      Content-Length: '101'
+      Date: Wed, 13 Apr 2022 12:20:59 GMT
+      Content-Type: application/json
+    expiration: '2022-04-13T12:21:59.600233Z'
+    :status: 200 OK
+    id: 11374903
+    type: SHARED
+    timeout: 1
+    burned: false

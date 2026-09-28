@@ -1,0 +1,47 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: 812ed99c-a578-483e-b83d-7571f9685a25
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: loan_with_transactions
+    lock: 'false'
+then:
+- return:
+    :body:
+    - data:
+        locale: es_mx
+        tags:
+        - loan_with_transactions
+        products:
+        - accounts:
+          - number: '00740004001530997584'
+            alias: CUENTA
+          - number: '00740010001535400880'
+            alias: CUENTA
+        authentication:
+          password: Glomo2301
+          user: '2215914566'
+          deviceId: D071FBB724285C554266933A5ED4CD0D
+      lockExpiration: null
+      lockType: null
+      id: 35708163
+    :headers:
+      content-length: '373'
+      Strict-Transport-Security: max-age=15768000
+      Server: nginx
+      ECS-Entry-Point-Zone: ext
+      Connection: keep-alive
+      host: datamanager.globaldevtools.bbva.com
+      Vary: Accept-Encoding
+      Date: Mon, 11 Dec 2023 22:57:27 GMT
+      Content-Type: application/json
+    :status: 200 OK

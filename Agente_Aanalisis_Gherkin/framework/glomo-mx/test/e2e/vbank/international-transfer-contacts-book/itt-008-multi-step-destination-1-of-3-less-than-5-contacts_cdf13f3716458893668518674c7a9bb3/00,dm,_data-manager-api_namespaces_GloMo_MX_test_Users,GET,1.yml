@@ -1,0 +1,107 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: 425f5cae-6db0-4d56-9a7d-6c1bc9d526cf
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: contact_book_international_transfers
+    lock: 'false'
+then:
+- return:
+    :body:
+    - data:
+        homeFutura: false
+        city: Los Angeles
+        economicActivity: Software Development
+        concept: Business payment
+        postalCode: '90001'
+        nameRecipient: Luis Alberto
+        tags:
+        - contact_book_international_transfers
+        originAmount: '100000'
+        codeBank: USBKUS44XXX
+        numberBank: '09876543210009'
+        province: California
+        nameContact1: Amigo 1
+        swipe: left
+        street: Main St
+        exteriorNumber: '123'
+        name: John Doe
+        searchBank: '098765432109987'
+        accounts:
+        - number: '00740010001503576820'
+          product:
+            name: Cuenta de Ahorro
+            id: AH
+          numberType:
+            id: CCC
+          alias: 0001AH6820
+          id: Uvn6wi1Rh6C5e162ZvhePzxnCDEYHDA6XHJSRdXNRkK6mdPZaBhhUA
+          detail:
+            level: '04'
+            specificAmounts:
+            - amounts:
+              - amount: 9999999855
+                currency: MXN
+              name: Saldo actual
+              id: CURRENT_BALANCE
+            - amounts:
+              - amount: 0
+                currency: MXN
+              name: Saldo buen cobro
+              id: PENDING_DEPOSIT_BALANCE
+            - amounts:
+              - amount: 0
+                currency: MXN
+              name: '1'
+              id: ACCOUNT_MOVEMENT_NUMBER
+            indicators:
+            - name: Indica si la cuenta es de nómina
+              id: IS_PAYROLL_ACCOUNT
+              isActive: false
+            - name: Indica si la cuenta es eje
+              id: IS_PRINCIPAL_ACCOUNT
+              isActive: true
+            - name: Indica si la cuenta tiene pockets
+              id: HAS_POCKETS
+              isActive: false
+            - name: Indica si la cuenta es digital
+              id: IS_DIGITAL
+              isActive: false
+          simpleCode: Uvn6wi1Rh6C5e162ZvheP8eNwiOWH5AY
+          productType: ACCOUNT
+          status:
+            name: Cuenta Activa
+            id: ACTIVE
+          subProductType:
+            name: TARJETA NOMINA BASIC
+            id: '0230'
+          signedAuthorization:
+            name: Cuenta Individual
+            id: SINGLE
+        aliasContact: Guicho
+        authentication:
+          password: Glomo2025
+          user: '5616555047'
+          deviceId: 15AA533109EA29662FFA6A2DDBDAC8DB
+      lockExpiration: null
+      lockType: null
+      id: 36209072
+    :headers:
+      content-length: '1416'
+      Cache-Control: max-age=0
+      Connection: keep-alive
+      host: datamanager.globaldevtools.bbva.com
+      Vary: Accept-Encoding
+      Expires: Fri, 19 Sep 2025 14:19:36 GMT
+      Date: Fri, 19 Sep 2025 14:19:36 GMT
+      Content-Type: application/json; charset=utf-8
+    :status: 200 OK

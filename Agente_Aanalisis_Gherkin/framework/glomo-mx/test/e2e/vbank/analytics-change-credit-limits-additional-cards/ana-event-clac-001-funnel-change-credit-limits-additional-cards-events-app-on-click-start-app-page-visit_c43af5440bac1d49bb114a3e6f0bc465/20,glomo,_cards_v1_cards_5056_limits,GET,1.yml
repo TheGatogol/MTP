@@ -1,0 +1,134 @@
+when:
+  sequence: 1
+  path: /SRVS_A02/cards/v1/cards/5056/limits
+  method: GET
+  backend: glomo
+request:
+  headers:
+    sec-fetch-mode: cors
+    content-length: '0'
+    referer: http://localhost:8001/
+    sec-fetch-site: same-site
+    accept-language: es
+    origin: http://localhost:8001
+    tsec: c983d7fd1ec9f00c2bd0c8e9d92c85d1ee16962e
+    accept: application/json, text/html, */*; q=0.1
+    sec-ch-ua: '" Not A;Brand";v="99", "Chromium";v="99", "Google Chrome";v="99"'
+    sec-ch-ua-mobile: ?0
+    x-vbank-session: 727e9283-b994-4c28-9aa7-6b4b8fe8cfe1
+    sec-ch-ua-platform: '"macOS"'
+    host: localhost:9000
+    content-type: application/json
+    connection: keep-alive
+    cache-control: no-cache, no-store, must-revalidate
+    accept-encoding: gzip, deflate, br
+    sec-fetch-dest: empty
+    user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36
+      (KHTML, like Gecko) Chrome/99.0.4844.51 Safari/537.36
+then:
+- return:
+    data:
+    - isEditable: true
+      name: Límite mensual de compras en un comercio
+      disposedLimitPercentage: '25'
+      id: POS_DAILY
+      amountLimits:
+      - amount: 5000
+        currency: MXP
+      allowedInterval:
+        maximumAmount:
+          amount: 20000
+          currency: MXP
+        minimumAmount:
+          amount: 50
+          currency: MXP
+      disposedLimits:
+      - amount: 5000
+        currency: MXP
+    - isEditable: true
+      name: Retiro de efectivo en cajero
+      disposedLimitPercentage: '15'
+      id: ATM_DAILY
+      amountLimits:
+      - amount: 15000
+        currency: MXN
+      allowedInterval:
+        maximumAmount:
+          amount: 20000
+          currency: USD
+        minimumAmount:
+          amount: 50
+          currency: USD
+      disposedLimits:
+      - amount: 1000
+        currency: MXN
+    - isEditable: true
+      name: Retiro de efectivo en oficina
+      disposedLimitPercentage: '15'
+      id: OFFICE_DAILY
+      amountLimits:
+      - amount: 12000
+        currency: MXN
+      allowedInterval:
+        maximumAmount:
+          amount: 20000
+          currency: USD
+        minimumAmount:
+          amount: 100
+          currency: USD
+      disposedLimits:
+      - amount: 2000
+        currency: MXN
+    - isEditable: true
+      name: Transaction
+      id: TRANSACTION_DAILY
+      amountLimits:
+      - amount: 2000
+        currency: MXN
+      allowedInterval:
+        maximumAmount:
+          amount: 5000
+          currency: USD
+        minimumAmount:
+          amount: 1000
+          currency: USD
+      disposedLimits:
+      - amount: 100
+        currency: MXN
+    - id: GRANTED_CREDIT
+      amountLimits:
+      - amount: 1000
+        currency: MXN
+      allowedInterval:
+        maximumAmount:
+          amount: 2460
+          currency: MXN
+        minimumAmount:
+          amount: 181
+          currency: MXN
+      disposedLimits:
+      - amount: 600
+        currency: MXN
+    :headers:
+      access-control-allow-origin: '*'
+      content-length: '2886'
+      Access-Control-Expose-Headers: tsec, vnd.bbva.access-token-type,vnd.bbva.access-token,
+        vnd.bbva.sso-pkcs7, authenticationtype, authenticationdata, authenticationstate,
+        authenticationchallenge
+      Server: artichoke
+      Alt-Svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      access-control-allow-headers: Content-Type, tsec, authenticationtype, authenticationdata,
+        authenticationstate, contactid, consumeruuid, consumerapplicationid, perimetertsec,
+        authorization, responsewarningcode, responsewarningdescription, cuf, field,
+        bcs-device-app-version, bcs-device-app-version, vnd.bbva.authorization
+      content-type: application/json;charset=UTF-8
+      Vary: Accept-Encoding
+      tsec: c983d7fd1ec9f00c2bd0c8e9d92c85d1ee16962e
+      X-Response-Time: 473ms
+      Date: Fri, 11 Mar 2022 13:14:48 GMT
+      Via: 1.1 google
+    :status: 200 OK
+    apiInfo:
+      name: cards
+      category: products
+      version: 0.19.0

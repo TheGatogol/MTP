@@ -1,0 +1,49 @@
+when:
+  sequence: 2
+  path: /SRVS_A02/cards/v0/cards/1201/transactions
+  method: GET
+  backend: glomo
+request:
+  headers:
+    sec-fetch-mode: cors
+    content-length: '0'
+    referer: http://localhost:8001/
+    sec-fetch-site: same-site
+    accept-language: es
+    origin: http://localhost:8001
+    tsec: 64cbce86d75a76e923ef9490c79e006b5fde7a59
+    accept: application/json, text/html, */*; q=0.1
+    sec-ch-ua: '" Not A;Brand";v="99", "Chromium";v="90", "Google Chrome";v="90"'
+    sec-ch-ua-mobile: ?0
+    x-vbank-session: 63e5e4b3-973e-4b1b-b1d1-95657fab9f21
+    host: localhost:9000
+    content-type: application/json
+    connection: keep-alive
+    cache-control: no-cache, no-store, must-revalidate
+    accept-encoding: gzip, deflate, br
+    sec-fetch-dest: empty
+    user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36
+      (KHTML, like Gecko) Chrome/90.0.4430.212 Safari/537.36
+  query:
+    toOperationDate: '2021-05-20'
+    fromOperationDate: '2021-02-20'
+then:
+- return:
+    :body: ''
+    :headers:
+      access-control-allow-origin: '*'
+      content-length: '0'
+      Access-Control-Expose-Headers: tsec, vnd.bbva.access-token-type,vnd.bbva.access-token,
+        authenticationtype, authenticationdata, authenticationstate
+      Server: artichoke
+      Alt-Svc: clear
+      access-control-allow-headers: Content-Type, tsec, authenticationtype, authenticationdata,
+        authenticationstate, contactid, consumeruuid, consumerapplicationid, perimetertsec,
+        authorization, responsewarningcode, responsewarningdescription, cuf, field,
+        bcs-device-app-version, bcs-device-app-version
+      Vary: Accept-Encoding
+      tsec: 64cbce86d75a76e923ef9490c79e006b5fde7a59
+      X-Response-Time: 460ms
+      Date: Thu, 20 May 2021 23:29:42 GMT
+      Via: 1.1 google
+    :status: 204 No Content

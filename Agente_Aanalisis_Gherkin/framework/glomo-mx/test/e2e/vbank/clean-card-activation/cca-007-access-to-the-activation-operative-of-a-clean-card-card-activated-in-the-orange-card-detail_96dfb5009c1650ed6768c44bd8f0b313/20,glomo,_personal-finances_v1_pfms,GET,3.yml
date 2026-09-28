@@ -1,0 +1,72 @@
+when:
+  sequence: 3
+  path: /SRVS_A02/personal-finances/v1/pfms
+  method: GET
+  backend: glomo
+request:
+  headers:
+    content-length: '0'
+    contactid: fb11e545-8c35-4f3a-9a61-5f5325dfd8c6
+    host: localhost:9000
+    connection: Keep-Alive
+    content-type: application/json
+    tsec: 16d9855ec2e65971a4bd2814534178d0b0438bfd
+    cache-control: no-cache
+    accept-encoding: gzip
+    user-agent: GLOMO_MX/99.99.99 (Android;12;Google sdk_gphone64_arm64)
+    accept: application/json, text/html, */*; q=0.1
+  query:
+    isDefault: 'true'
+    expand: groups
+then:
+- return:
+    data:
+    - period:
+        endDate: '2023-08-31'
+        startDate: '2023-08-01'
+      isDefault: true
+      relatedContracts:
+      - contractId: '050400010100120000'
+        productType:
+          id: ACCOUNTS
+      - contractId: '05040001010012130200'
+        productType:
+          id: ACCOUNTS
+      - contractId: '05040001010012000000'
+        productType:
+          id: ACCOUNTS
+      - contractId: '050400010100121301'
+        productType:
+          id: ACCOUNTS
+      name: pfm-1693298982077
+      groups: []
+      currency: PEN
+      id: '1693298982083'
+      frequency:
+        daysOfMonth:
+        - 1
+        id: MONTHLY
+    :headers:
+      content-length: '1044'
+      Server: artichoke
+      Alt-Svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      access-control-allow-headers: Content-Type, tsec, authenticationtype, authenticationdata,
+        authenticationstate, contactid, consumeruuid, consumerapplicationid, perimetertsec,
+        authorization, responsewarningcode, responsewarningdescription, cuf, field,
+        bcs-device-app-version, bcs-device-app-version, vnd.bbva.authorization, device-id
+      tsec: 16d9855ec2e65971a4bd2814534178d0b0438bfd
+      X-Response-Time: 467ms
+      Date: Tue, 29 Aug 2023 08:49:44 GMT
+      Via: 1.1 google
+      access-control-allow-origin: '*'
+      Access-Control-Expose-Headers: tsec, vnd.bbva.access-token-type,vnd.bbva.access-token,
+        vnd.bbva.sso-pkcs7, authenticationtype, authenticationdata, authenticationstate,
+        authenticationchallenge
+      Cache-Control: private, no-store
+      content-type: application/json;charset=UTF-8
+      Vary: Accept-Encoding
+    :status: 200 OK
+    apiInfo:
+      name: personal-finances
+      category: finances
+      version: 1.6.0

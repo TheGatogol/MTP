@@ -1,0 +1,58 @@
+when:
+  sequence: 1
+  path: /SRVS_A02/cards/v1/cards/1238/transactions
+  method: GET
+  backend: glomo
+request:
+  headers:
+    sec-fetch-mode: cors
+    content-length: '0'
+    referer: http://localhost:8001/
+    sec-fetch-site: same-site
+    accept-language: es-MX,es;q=0.9
+    origin: http://localhost:8001
+    tsec: 79ca62056c37714d153a3f367ed5be37866211b9
+    accept: application/json, text/html, */*; q=0.1
+    sec-ch-ua: '"Chromium";v="116", "Not)A;Brand";v="24", "Google Chrome";v="116"'
+    sec-ch-ua-mobile: ?0
+    x-vbank-session: 3246a3e3-e993-42ed-ae61-b98209c8588b
+    sec-ch-ua-platform: '"macOS"'
+    host: localhost:9000
+    content-type: application/json
+    connection: keep-alive
+    cache-control: no-cache, no-store, must-revalidate
+    accept-encoding: gzip, deflate, br
+    sec-fetch-dest: empty
+    user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36
+      (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36
+  query:
+    toOperationDate: '2023-09-08'
+    fromOperationDate: '2023-06-08'
+then:
+- return:
+    severity: FATAL
+    system-error-cause: Simulated error
+    error-message: Server error
+    consumer-request-id: 207a2723-e82b-4c47-a64c-ea8836f245cd
+    :headers:
+      access-control-allow-origin: '*'
+      Access-Control-Expose-Headers: tsec, vnd.bbva.access-token-type,vnd.bbva.access-token,
+        vnd.bbva.sso-pkcs7, authenticationtype, authenticationdata, authenticationstate,
+        authenticationchallenge
+      Server: artichoke
+      access-control-allow-headers: Content-Type, tsec, authenticationtype, authenticationdata,
+        authenticationstate, contactid, consumeruuid, consumerapplicationid, perimetertsec,
+        authorization, responsewarningcode, responsewarningdescription, cuf, field,
+        bcs-device-app-version, bcs-device-app-version, vnd.bbva.authorization, device-id
+      Connection: keep-alive
+      tsec: 79ca62056c37714d153a3f367ed5be37866211b9
+      Content-Length: '303'
+      X-Response-Time: 1ms
+      Date: Fri, 08 Sep 2023 17:03:16 GMT
+      Content-Type: application/json; charset=utf-8
+    system-error-code: serviceNotAvailable
+    :status: 500 Internal Server Error
+    http-status: 500
+    system-error-description: Service not available right now
+    error-code: '161'
+    version: 1

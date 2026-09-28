@@ -1,0 +1,107 @@
+when:
+  sequence: 1
+  path: /SRVS_A02/customers/v1/customers/digital-validation
+  method: POST
+  backend: glomo
+request:
+  headers:
+    sec-fetch-mode: cors
+    referer: http://localhost:8001/
+    content-length: '146'
+    sec-fetch-site: same-site
+    accept-language: es
+    origin: http://localhost:8001
+    tsec: ZXlKaFlYQWlPaUl4TURBd01EQTRPQ0lzSW10bGVWWmxjbk5wYjI0aU9qRXNJbUZ3Y0Vsa0lqb2lRVkJRTVNJc0ltdHBaQ0k2SWtGUVVERXViRzlqWVd3dU1TSXNJbVZ1WXlJNklrRXhPVEpIUTAwaUxDSnJaWGxVZVhCbElqb2liRzlqWVd3aUxDSmhiR2NpT2lKa2FYSWlMQ0owYzJWalNXUWlPaUpqWkdNeFlUTmpZaTAyT0dZNExUUmtZbUl0T0dZME9TMDRNV1l4TW1NeVl6Z3labVVpZlEuLnoxTjBMNXd6QjIzRUNCeVAuSlpiSkhQaFVLWDN5QlFrblN0ZTlTenFhNzBBbmpNY0kwbnZDUER4Y0JkSzVGekhOWWdWTkxWWEZrZEdGM3hOWi1TVmJ1ZzRuTVp4TkJmREJSNHg4WEt1ZkxFTHBKYlFxYm1OS0lRcnFuN2pRV0ZrSFl6NGRPZ1MzaTZaSVJsMHZwTkk5bXpQQjA5UjFwQXAteklHbnhsQXBxaUZnajJudEtMMjBXdi1VMjVVTEZvYXpLV0Zud1Izbmo0QXBZNnVlSm5YbDhjRmNtc2U2cno0WG96cFFyWHpRZXZ6VnU2d29pRHV4dDRFckJwTVhwZU1aVURaNVNVMHJlSXhiWGRmeE5WY2xFN01pX3huX3p4Y3pLVXRQY0pybVluLThBWER0VmY0akhpU3ZtLWg2YjJVTWs4bFFqRm85YURtWGNZcW1PWl9uUkE1Ym9WZHA5UFg2UjJ4RWxmUF9xOUJOYnBaUERVRkljZG5wT0xHc3JqWnlTN01QSldRaGFGNmZ2Y25aLWo0R0JPNGp5UFRHamZGYk1TRmpZMTBJN2VJNlpmY1VXUWtvM3pFVkhnSFZlSW1yTzB0SVFSeEVxS0VWemMwbS0wS2NLdTRXTDZEdlQzX0VMUERleHA3YkNsWmZDV3hYak9PeFVOXzhwM29XWmY1OFRKaTZ3NHFzcVo4dS1YWm1UUFhUcEpTTXliVU1GY1kwbnIxU2FqV0h1MXJLaC13V3B4X2NGQ1ZILW5ncHBYNjNaQ1ZxNzROWGl3V01ZU0VSUnkwNG5qUm5sNUZrV3lKbUU5MHl6ejMzcGtVdFJFR1ZMS1VkQnBYXzQ1ck04QmZGaHhYNUo2WEtYYnJQc3lDTmdjMlNqRlZld2xUU0VqVE5mZ1kyV05pUVpDbFNzRklvTGY1cFRncjRTRko3ZlZTQ2RKRDBoV1hDTXE0Y0kyWHVGX1MzeWpuYjRuU0VURGdiell5ZURsNFI1YTFwTE1ndEFvXy1vUGg1M2QzSmNFVERXSmYyYU10TFA3SzdlRWNXcXR0ZENQbG9UanFPcFpkZ0ZvNkZuQXYxUHNxZVN1cUNWMFB4clFCZjZCNC16bjM5enFZTl9pZlo5ZW5ZZG94ZG5JY296c0luQkJLMVZqUWVwWnR3a0c0OE12RmRhV3VYNmlrNXNvaG5OSG1wWDM4c2VWbzV6UE9CZ3owanBybmdVZWVhYzRPakZxY0JjdEZvUDFGemxFSV9GUGR5WWExbml1ZE9md1RvUU9PVmNYM2VLcE5INDVWeGdpZngyeXNGa1ZRMWdabVVubFVqTTR4a1h2TXFLNHVsQWFlc0dnWUVQVHd3Nm9wU1diQS42T2h1SllTV09zclJ5ZlY3LUpoVXZn
+    accept: application/json, text/html, */*; q=0.1
+    sec-ch-ua: '"Not.A/Brand";v="8", "Chromium";v="114", "Google Chrome";v="114"'
+    sec-ch-ua-mobile: ?0
+    x-vbank-session: 6ca7d8b2-5978-4fd0-b802-e03525d69184
+    sec-ch-ua-platform: '"macOS"'
+    host: localhost:9000
+    content-type: application/json
+    connection: keep-alive
+    cache-control: no-cache, no-store, must-revalidate
+    accept-encoding: gzip, deflate, br
+    sec-fetch-dest: empty
+    user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36
+      (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+  body:
+    contactDetail:
+      contact: '5517006942'
+      contactType:
+        id: MOBILE_NUMBER
+    contract:
+      number: '1111111111111111'
+      numberType:
+        id: PAN
+then:
+- return:
+    severity: ERROR
+    system-error-cause: 'KZE1789: TARJETA NO EXISTE'
+    error-message: La solicitud no se pudo completar debido a que la tarjeta no existe.
+    consumer-request-id: 098f477f-4acb-43d5-971a-cace634ad9ef
+    :headers:
+      Access-Control-Allow-Origin: '*'
+      ECS-Entry-Point-Zone: ext
+      Access-Control-Allow-Methods: GET, POST, DELETE, PUT, OPTIONS, PATCH
+      Referrer-Policy: same-origin
+      X-Frame-Options: sameorigin
+      ResponseWarningCode: KZE1789
+      Strict-Transport-Security: max-age=31536000; includeSubDomains
+      Access-Control-Expose-Headers: Accept-Encoding, Accept, Content-Type, tsec,
+        consumerrequestid, authenticationchallenge, authenticationtype, authenticationdata,
+        authenticationstate, contactid, consumeruuid, consumerapplicationid, perimetertsec,
+        authorization, responsewarningcode, responsewarningdescription, cuf, prefer,
+        phoneNumber, Location, X-RHO-PARENTSPANID, X-RHO-TRACEID, preferredauthenticationtype,
+        X-HTTP-Method-Override, Access-Control-Allow-Methods, iv-remote-address, thirdparty-x-forwarded-for,
+        thirdparty-user-agent, thirdparty-geolocation, thirdparty-calculated-scoring,
+        thirdparty-deviceid, vnd.bbva.security-client-certificate, order-preferredaction,
+        authenticationresponse, Access-Control-Max-Age, BCS-Device-Id, BCS-Device-OS-Name,
+        BCS-Device-Model-Name, BCS-Device-Model-Manufacturer, BCS-Device-Screen-Size,
+        BCS-Device-OS-Version, BCS-Device-DPI, BCS-Device-App-Name, BCS-Device-App-Version,
+        Third-Party-Application-Id, ECS-Signature-Platform-Use-Case, BCS-Process-Code,
+        BCS-Operation-Tracer, BCS-Process-Tracer, vnd.bbva.user-id, order-preferredaction,
+        order-id, order-accepteddisclaimers, x-forwarded-for, Date, x-dmz-orgn, onsite-accountTerm,
+        onsite-logicalTerm, Akamai-BM-Telemetry, order-hmac, order-signed, BCS-Third-Party-Session-Id,
+        Cache-Control, clave, Content-Encoding, ECS-Entry-Point-Zone, firma, Geolocation,
+        Third-Party-Collaborator-Id, user-agent, Via
+      Content-Security-Policy: script-src 'self'
+      Set-Cookie: vbank-session=6ca7d8b2-5978-4fd0-b802-e03525d69184
+      X-XSS-Protection: 1; mode=block
+      Content-Length: '409'
+      consumerrequestid: 098f477f-4acb-43d5-971a-cace634ad9ef
+      Content-Type: application/json; charset=UTF-8
+      X-EdgeConnect-Origin-MEX-Latency: '169'
+      X-Content-Type-Options: nosniff
+      old-catalog: 'true'
+      Connection: close
+      tsec: ZXlKaFlYQWlPaUl4TURBd01EQTRPQ0lzSW10bGVWWmxjbk5wYjI0aU9qRXNJbUZ3Y0Vsa0lqb2lRVkJRTVNJc0ltdHBaQ0k2SWtGUVVERXViRzlqWVd3dU1TSXNJbVZ1WXlJNklrRXhPVEpIUTAwaUxDSnJaWGxVZVhCbElqb2liRzlqWVd3aUxDSmhiR2NpT2lKa2FYSWlMQ0owYzJWalNXUWlPaUpqWkdNeFlUTmpZaTAyT0dZNExUUmtZbUl0T0dZME9TMDRNV1l4TW1NeVl6Z3labVVpZlEuLnoxTjBMNXd6QjIzRUNCeVAuSlpiSkhQaFVLWDN5QlFrblN0ZTlTenFhNzBBbmpNY0kwbnZDUER4Y0JkSzVGekhOWWdWTkxWWEZrZEdGM3hOWi1TVmJ1ZzRuTVp4TkJmREJSNHg4WEt1ZkxFTHBKYlFxYm1OS0lRcnFuN2pRV0ZrSFl6NGRPZ1MzaTZaSVJsMHZwTkk5bXpQQjA5UjFwQXAteklHbnhsQXBxaUZnajJudEtMMjBXdi1VMjVVTEZvYXpLV0Zud1Izbmo0QXBZNnVlSm5YbDhjRmNtc2U2cno0WG96cFFyWHpRZXZ6VnU2d29pRHV4dDRFckJwTVhwZU1aVURaNVNVMHJlSXhiWGRmeE5WY2xFN01pX3huX3p4Y3pLVXRQY0pybVluLThBWER0VmY0akhpU3ZtLWg2YjJVTWs4bFFqRm85YURtWGNZcW1PWl9uUkE1Ym9WZHA5UFg2UjJ4RWxmUF9xOUJOYnBaUERVRkljZG5wT0xHc3JqWnlTN01QSldRaGFGNmZ2Y25aLWo0R0JPNGp5UFRHamZGYk1TRmpZMTBJN2VJNlpmY1VXUWtvM3pFVkhnSFZlSW1yTzB0SVFSeEVxS0VWemMwbS0wS2NLdTRXTDZEdlQzX0VMUERleHA3YkNsWmZDV3hYak9PeFVOXzhwM29XWmY1OFRKaTZ3NHFzcVo4dS1YWm1UUFhUcEpTTXliVU1GY1kwbnIxU2FqV0h1MXJLaC13V3B4X2NGQ1ZILW5ncHBYNjNaQ1ZxNzROWGl3V01ZU0VSUnkwNG5qUm5sNUZrV3lKbUU5MHl6ejMzcGtVdFJFR1ZMS1VkQnBYXzQ1ck04QmZGaHhYNUo2WEtYYnJQc3lDTmdjMlNqRlZld2xUU0VqVE5mZ1kyV05pUVpDbFNzRklvTGY1cFRncjRTRko3ZlZTQ2RKRDBoV1hDTXE0Y0kyWHVGX1MzeWpuYjRuU0VURGdiell5ZURsNFI1YTFwTE1ndEFvXy1vUGg1M2QzSmNFVERXSmYyYU10TFA3SzdlRWNXcXR0ZENQbG9UanFPcFpkZ0ZvNkZuQXYxUHNxZVN1cUNWMFB4clFCZjZCNC16bjM5enFZTl9pZlo5ZW5ZZG94ZG5JY296c0luQkJLMVZqUWVwWnR3a0c0OE12RmRhV3VYNmlrNXNvaG5OSG1wWDM4c2VWbzV6UE9CZ3owanBybmdVZWVhYzRPakZxY0JjdEZvUDFGemxFSV9GUGR5WWExbml1ZE9md1RvUU9PVmNYM2VLcE5INDVWeGdpZngyeXNGa1ZRMWdabVVubFVqTTR4a1h2TXFLNHVsQWFlc0dnWUVQVHd3Nm9wU1diQS42T2h1SllTV09zclJ5ZlY3LUpoVXZn
+      Access-Control-Allow-Headers: Accept-Encoding, Accept, Content-Type, tsec, consumerrequestid,
+        authenticationchallenge, authenticationtype, authenticationdata, authenticationstate,
+        contactid, consumeruuid, consumerapplicationid, perimetertsec, authorization,
+        responsewarningcode, responsewarningdescription, cuf, prefer, phoneNumber,
+        Location, X-RHO-PARENTSPANID, X-RHO-TRACEID, preferredauthenticationtype,
+        X-HTTP-Method-Override, Access-Control-Allow-Methods, iv-remote-address, thirdparty-x-forwarded-for,
+        thirdparty-user-agent, thirdparty-geolocation, thirdparty-calculated-scoring,
+        thirdparty-deviceid, vnd.bbva.security-client-certificate, order-preferredaction,
+        authenticationresponse, Access-Control-Max-Age, BCS-Device-Id, BCS-Device-OS-Name,
+        BCS-Device-Model-Name, BCS-Device-Model-Manufacturer, BCS-Device-Screen-Size,
+        BCS-Device-OS-Version, BCS-Device-DPI, BCS-Device-App-Name, BCS-Device-App-Version,
+        Third-Party-Application-Id, ECS-Signature-Platform-Use-Case, BCS-Process-Code,
+        BCS-Operation-Tracer, BCS-Process-Tracer, vnd.bbva.user-id, order-preferredaction,
+        order-id, order-accepteddisclaimers, x-forwarded-for, Date, x-dmz-orgn, onsite-accountTerm,
+        onsite-logicalTerm, Akamai-BM-Telemetry, order-hmac, order-signed, BCS-Third-Party-Session-Id,
+        Cache-Control, clave, Content-Encoding, ECS-Entry-Point-Zone, firma, Geolocation,
+        Third-Party-Collaborator-Id, user-agent, Via
+      Date: Mon, 14 Aug 2023 21:38:02 GMT
+      Cache-Control: no-cache,no-store,must-revalidate
+      Expires: '-1'
+      ResponseWarningDescription: TARJETA NO EXISTE
+      X-EdgeConnect-MidMile-RTT: '26'
+    system-error-code: cardNotExist
+    :status: 400 Bad Request
+    http-status: 400
+    system-error-description: La solicitud no se pudo completar debido a que la tarjeta
+      no existe.
+    error-code: cardNotExist
+    version: 1

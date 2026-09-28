@@ -1,0 +1,67 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: 48925e05-596c-48a2-b7c0-9863948bb9cd
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: fall_in_option_enabled
+    lock: 'false'
+then:
+- return:
+    :body:
+    - data:
+        password:
+        - password: Glomo2025
+          invalidPass: glomO#
+        address:
+        - zipCode: '13300'
+          street: Prol. Girasoles Mz9 Lt32
+          invalidZP: '12345'
+          outsideNumber: '10'
+          colonies: '80162'
+          internalNumber: '04'
+          wrongZP: '00000'
+        data:
+        - numberIne: '250568305'
+          secondLastName: Hernandez
+          placeOfBirth: DF
+          firstLastName: Pichardo
+          gender: FEMALE
+          name: Maria de Lourdes
+        contact:
+        - number: '5545927323'
+          password: Glomo2025
+          invalidPhone: '123'
+          email: test@gmail.com
+          invalidEmail: a@jotmeil
+        locale: es_mx
+        people:
+          customer:
+            birthData:
+              birthDate: '1989-07-19'
+        tags:
+        - open_new_account
+        - fall_in_option_enabled
+        authentication:
+          user: '5583267461'
+          deviceId: CA4454A3D02655594C0071A0E57B5A39
+      id: 36339167
+    :headers:
+      content-length: '760'
+      Server: nginx
+      Cache-Control: max-age=0
+      Connection: keep-alive
+      host: datamanager.globaldevtools.bbva.com
+      Vary: Accept-Encoding
+      Expires: Mon, 19 Jan 2026 17:17:56 GMT
+      Date: Mon, 19 Jan 2026 17:17:56 GMT
+      Content-Type: application/json; charset=utf-8
+    :status: 200 OK

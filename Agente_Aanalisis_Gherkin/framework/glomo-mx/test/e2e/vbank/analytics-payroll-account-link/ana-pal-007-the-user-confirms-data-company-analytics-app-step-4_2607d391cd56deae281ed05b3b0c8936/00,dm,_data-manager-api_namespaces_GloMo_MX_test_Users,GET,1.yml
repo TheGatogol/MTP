@@ -1,0 +1,117 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: 2c1e92de-9a50-4ff3-8ebf-102f6cc6b612
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: payroll_account_link,curp_validated
+    lock: 'false'
+then:
+- return:
+    :body:
+    - data:
+        codes:
+        - companyCode: '1234567890'
+        - companyCode: '4202646560'
+        - companyCode: '4202710579'
+        - companyCode: '4203309231'
+        - companyCode: '4203842320'
+        - companyCode: '4200053198'
+        locale: es_mx
+        tags:
+        - '5520293565'
+        - payroll_account_link
+        - curp_validated
+        products:
+          accounts:
+          - number: '00740010001500281420'
+            product:
+              name: Cuenta de Ahorro
+              id: AH
+            numberType:
+              id: CCC
+            alias: 0001AH1420
+            id: Uvn6wi1Rh6DOR2e-3SWl_kNbNcZMiHtke04toG1VN9WQziapl18CIA
+            detail:
+              level: '04'
+              specificAmounts:
+              - amounts:
+                - amount: -145
+                  currency: MXN
+                name: Saldo actual
+                id: CURRENT_BALANCE
+              - amounts:
+                - amount: 0
+                  currency: MXN
+                name: Saldo buen cobro
+                id: PENDING_DEPOSIT_BALANCE
+              - amounts:
+                - amount: 0
+                  currency: MXN
+                name: '000000001'
+                id: ACCOUNT_MOVEMENT_NUMBER
+              indicators:
+              - name: Indica si la cuenta es de nómina
+                id: IS_PAYROLL_ACCOUNT
+                isActive: false
+              - name: Indica si la cuenta es eje
+                id: IS_PRINCIPAL_ACCOUNT
+                isActive: true
+              - name: Indica si la cuenta tiene pockets
+                id: HAS_POCKETS
+                isActive: false
+              - name: Indica si la cuenta es digital
+                id: IS_DIGITAL
+                isActive: false
+            productType: ACCOUNT
+            status:
+              name: Cuenta Activa
+              id: ACTIVE
+            subProductType:
+              name: TARJETA NOMINA BASIC
+              id: '0230'
+            signedAuthorization:
+              name: Cuenta Individual
+              id: SINGLE
+          family:
+          - balances:
+            - amountBalance:
+              - amount: -145
+                currency: MXN
+              name: Monto total actual
+              id: TOTAL_CURRENT_AMOUNT
+            name: Cuentas
+            id: ACCOUNTS
+          - balances:
+            - amountBalance:
+              - amount: 0
+              name: Monto total actual
+              id: TOTAL_CURRENT_AMOUNT
+            name: Fondos de inversión
+            id: INVESTMENT_FUNDS
+        authentication:
+          password: Glomo2023
+          user: '5520293565'
+          deviceId: 4EFDA0D4AA416056D52609C8248E2400
+      lockType: null
+      lockExpiration: null
+      id: 3551872
+    :headers:
+      content-length: '1990'
+      Strict-Transport-Security: max-age=15768000
+      Server: nginx
+      ECS-Entry-Point-Zone: ext
+      Connection: keep-alive
+      host: datamanager.globaldevtools.bbva.com
+      Vary: Accept-Encoding
+      Date: Thu, 06 Jul 2023 01:56:53 GMT
+      Content-Type: application/json
+    :status: 200 OK

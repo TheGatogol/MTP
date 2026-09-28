@@ -1,0 +1,150 @@
+when:
+  sequence: 1
+  path: /SRVS_A02/cards/v2/cards/1200
+  method: GET
+  backend: glomo
+request:
+  headers:
+    sec-fetch-mode: cors
+    content-length: '0'
+    referer: http://127.0.0.1:9090/
+    sec-fetch-site: cross-site
+    accept-language: es
+    origin: http://127.0.0.1:9090
+    x-forwarded-for: 10.23.100.191
+    tsec: 143a2f78be273295622f300959d6472be5db469b
+    via: 1.1 tunnel-54d1c339-272f-4b0b-b9ff-d5939a961314 (squid/3.5.27)
+    accept: application/json, text/html, */*; q=0.1
+    sec-ch-ua: '" Not;A Brand";v="99", "Google Chrome";v="91", "Chromium";v="91"'
+    sec-ch-ua-mobile: ?0
+    x-vbank-session: 6a3529d7-7eaf-41b9-8b84-78a1ca3af243
+    host: localhost:9000
+    content-type: application/json
+    cache-control: no-cache, no-store, must-revalidate
+    accept-encoding: gzip
+    sec-fetch-dest: empty
+    user-agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko)
+      Chrome/91.0.4472.77 Safari/537.36
+  query:
+    expand: blocks
+then:
+- return:
+    data:
+      product:
+        name: BBVA operative debit card
+        id: V0
+      holderName: Carlos Santana
+      images:
+      - description: Front face of the card
+        id: FRONT_CARD
+        url: https://cardcovers.caasbbva.com/mexico/477291-AC.png.imgcaas.w320.png
+      - description: Back face of the card
+        id: BACK_CARD
+        url: /imageBack.jpg
+      numberType:
+        description: Permanent Account Number
+        id: PAN
+      brandAssociation:
+        description: VISA
+        id: VISA
+      blocks: []
+      physicalSupport:
+        description: Plástico normal
+        id: NORMAL_PLASTIC
+      cardType:
+        description: Tarjeta de débito
+        id: DEBIT_CARD
+      disposedBalance:
+        currentBalances:
+        - amount: 5000
+          currency: MXN
+        pendingBalances:
+        - amount: -100
+          currency: MXN
+        postedBalances:
+        - amount: 5100
+          currency: MXN
+      indicators:
+      - name: Editar alias
+        id: EDITABLE_ALIAS
+        isActive: true
+      - name: Transferencia
+        id: ORIGIN_TRANSFER_TO_ACCOUNT
+        isActive: true
+      - name: Traspaso
+        id: ORIGIN_INTERNAL_TRANSFER_TO_ACCOUNT
+        isActive: true
+      - name: Transferencia
+        id: ORIGIN_INTERNATIONAL_TRANSFER_TO_ACCOUNT
+        isActive: true
+      - name: Pago de servicio
+        id: ORIGIN_SERVICE_PAYMENT
+        isActive: true
+      - name: Avance en línea
+        id: DESTINATION_TRANSFER_FROM_CARD
+        isActive: true
+      - name: Avance en línea
+        id: DESTINATION_INTERNATIONAL_TRANSFER_FROM_CARD
+        isActive: true
+      - name: Recarga celular
+        id: ORIGIN_MOBILE_PHONE_RECHARGES
+        isActive: true
+      - name: Aporte solidario
+        id: ORIGIN_SOLIDARY_CONTRIBUTION
+        isActive: true
+      - name: Pago PreviRed
+        id: ORIGIN_TAX_PAYMENT
+        isActive: true
+      availableBalance:
+        currentBalances:
+        - amount: 100000
+          currency: MXN
+        pendingBalances:
+        - amount: 150
+          currency: MXN
+        postedBalances:
+        - amount: 100150
+          currency: MXN
+      number: '4152307083071200'
+      grantedCredits:
+      - amount: 150000
+        currency: MXN
+      bank:
+        name: BBVA Mexico
+        id: '504'
+      cutOffDate: '2016-09-01T12:00:00Z'
+      alias: Tarjeta 1200 - Operative
+      id: '1200'
+      simpleCode: '1200'
+      activationDate: '2016-06-01T13:32:02Z'
+      issueDate: '2016-06-01T12:05:13Z'
+      openingDate: '2016-06-01T11:31:45Z'
+      expirationDate: '**/**'
+      currencies:
+      - isMajor: true
+        currency: MXN
+      status:
+        id: OPERATIVE
+    :headers:
+      access-control-allow-origin: '*'
+      content-length: '2274'
+      Access-Control-Expose-Headers: tsec, vnd.bbva.access-token-type,vnd.bbva.access-token,
+        vnd.bbva.sso-pkcs7, authenticationtype, authenticationdata, authenticationstate,
+        authenticationchallenge
+      Server: artichoke
+      Alt-Svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      access-control-allow-headers: Content-Type, tsec, authenticationtype, authenticationdata,
+        authenticationstate, contactid, consumeruuid, consumerapplicationid, perimetertsec,
+        authorization, responsewarningcode, responsewarningdescription, cuf, field,
+        bcs-device-app-version, bcs-device-app-version, vnd.bbva.authorization
+      content-type: application/json;charset=UTF-8
+      Vary: Accept-Encoding
+      tsec: 143a2f78be273295622f300959d6472be5db469b
+      X-Response-Time: 628ms
+      Date: Mon, 30 May 2022 06:55:57 GMT
+      Via: 1.1 google
+    :status: 200 OK
+    apiInfo:
+      name: cards
+      category: products
+      version: 0.19.0

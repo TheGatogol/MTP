@@ -1,0 +1,186 @@
+when:
+  sequence: 2
+  path: /SRVS_A02/cards/v1/cards/5029/installments-plans/simulations
+  method: POST
+  backend: glomo
+request:
+  headers:
+    sec-fetch-mode: cors
+    referer: http://localhost:8001/
+    content-length: '351'
+    sec-fetch-site: same-site
+    accept-language: es-MX,es;q=0.9
+    origin: http://localhost:8001
+    tsec: 2e7eee1767d2b6ac1aa3b3832b0345589e819afe
+    accept: application/json, text/html, */*; q=0.1
+    sec-ch-ua: '"Chromium";v="116", "Not)A;Brand";v="24", "Google Chrome";v="116"'
+    sec-ch-ua-mobile: ?0
+    x-vbank-session: 81442be2-e118-467a-8f04-bc4819d3f887
+    sec-ch-ua-platform: '"macOS"'
+    host: localhost:9000
+    content-type: application/json
+    connection: keep-alive
+    cache-control: no-cache, no-store, must-revalidate
+    accept-encoding: gzip, deflate, br
+    sec-fetch-dest: empty
+    user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36
+      (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36
+  body:
+    offer:
+      id: '9001'
+    capital:
+      amount: '1500.1'
+      currency: MXN
+    product:
+      id: MSI 3,6,9,12 y 24 meses
+    paymentDay: 1
+    financingCalculationFormat:
+      unit:
+        number: 3
+        id: TERM
+        frequency: MONTHLY
+      id: TOTAL_AMOUNT_PAYMENT
+    isMantainingPoints: true
+    transactions:
+    - id: MXN0001
+    financingType:
+      id: MONTHS_WITHOUT_INTERESTS
+then:
+- return:
+    data:
+      capital:
+        amount: 5000
+        currency: MXN
+      fees:
+        itemizeFees:
+        - description: Specific Transaction
+          feeType: SPECIFIC_TRANSACTION
+          itemizeFeeUnit:
+            unitType: PERCENTAGE
+            percentage: 0.2
+        - description: TIN
+          feeType: DIRECT_PERIODIC
+          itemizeFeeUnit:
+            unitType: PERCENTAGE
+            percentage: 5
+        - description: TAE
+          feeType: DIRECT_PERIODIC
+          itemizeFeeUnit:
+            unitType: PERCENTAGE
+            percentage: 3
+      firstInstallmentDate: '2017-06-24'
+      pointsBalances:
+      - pointsBalanceType:
+          name: Current points
+          id: POINTS_TO_DAY
+        points: 2000
+      - pointsBalanceType:
+          name: Eliminated points
+          id: POINTS_DELETED_BY_THE_PURCHASE
+        points: 800
+      - pointsBalanceType:
+          name: Remaining points
+          id: REMAINING_POINTS
+        points: 1200
+      financingCalculationFormat:
+        unit:
+          number: 3
+          id: TERM
+          frequency: MONTHLY
+        id: TOTAL_AMOUNT_PAYMENT
+      installments:
+      - number: 1
+        specificAmounts:
+        - amount:
+            amount: 300
+            currency: MXN
+          id: PAYMENT_AMOUNT
+        maturityDate: '2021-01-24'
+        id: 76654-5453
+      - number: 2
+        specificAmounts:
+        - amount:
+            amount: 300
+            currency: MXN
+          id: PAYMENT_AMOUNT
+        maturityDate: '2021-02-24'
+        id: 54-343
+      - number: 3
+        specificAmounts:
+        - amount:
+            amount: 300
+            currency: MXN
+          id: PAYMENT_AMOUNT
+        maturityDate: '2021-03-24'
+        id: 76654-5453
+      specificAmounts:
+      - amount:
+          amount: 1500.1
+          currency: MXN
+        id: TOTAL
+      - amount:
+          amount: 1500.1
+          currency: MXN
+        id: CAPITAL
+      - amount:
+          amount: 500.03
+          currency: MXN
+        id: PAYMENT_AMOUNT
+      - amount:
+          amount: 1500.1
+          currency: MXN
+        id: ORIGINAL_AMOUNT
+      lastInstallmentDate: '2017-06-24'
+      rates:
+        totalRates:
+          amount: 75
+          currency: MXN
+        itemizeRates:
+        - rateType: CAT
+          itemizeRatesUnit:
+            unitRateType: PERCENTAGE
+            percentage: 10
+          description: CAT
+          calculationDate: '2021-04-30'
+        - rateType: TASA
+          itemizeRatesUnit:
+            unitRateType: PERCENTAGE
+            percentage: 12
+          description: Tasa anual
+          calculationDate: '2021-04-30'
+      id: '123324234'
+      transactions:
+      - id: MXN0001
+      promotionPeriods:
+      - promotionPeriodType:
+          id: VALIDITY
+        endDate: '2019-05-31'
+        initialDate: '2019-05-19'
+      - promotionPeriodType:
+          id: PURCHASE_REGISTRY
+        endDate: '2019-06-06'
+        initialDate: '2019-05-25'
+    :headers:
+      access-control-allow-origin: '*'
+      content-length: '2327'
+      Access-Control-Expose-Headers: tsec, vnd.bbva.access-token-type,vnd.bbva.access-token,
+        vnd.bbva.sso-pkcs7, authenticationtype, authenticationdata, authenticationstate,
+        authenticationchallenge
+      Server: artichoke
+      Alt-Svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      access-control-allow-headers: Content-Type, tsec, authenticationtype, authenticationdata,
+        authenticationstate, contactid, consumeruuid, consumerapplicationid, perimetertsec,
+        authorization, responsewarningcode, responsewarningdescription, cuf, field,
+        bcs-device-app-version, bcs-device-app-version, vnd.bbva.authorization, device-id
+      Vary: Accept-Encoding
+      tsec: 2e7eee1767d2b6ac1aa3b3832b0345589e819afe
+      X-Response-Time: 461ms
+      Date: Fri, 08 Sep 2023 00:11:59 GMT
+      Content-Type: application/json; charset=utf-8
+      Via: 1.1 google
+    :status: 200 OK
+    responseStatus: 200
+    apiInfo:
+      name: cards
+      category: products
+      version: 0.19.0

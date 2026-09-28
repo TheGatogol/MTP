@@ -1,0 +1,43 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: ccae3d1a-2337-455b-b2f8-348fd6a874fc
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: npa_offer,npa_happy_path
+then:
+- return:
+    :body:
+    - data:
+        locale: es_mx
+        tags:
+        - '5522174490'
+        - nonPreApproved
+        - npa_offer
+        - npa_default_credit_amount
+        - npa_previous_authorization
+        - npa_happy_path
+        authentication:
+          password: Password00
+          user: '5522174490'
+          deviceId: C01EFF64B8A7517B338C44B690658459
+      id: 3478308
+      lockExpiration: null
+      lockType: null
+    :headers:
+      Strict-Transport-Security: max-age=15768000
+      Server: nginx
+      ECS-Entry-Point-Zone: ext
+      Connection: keep-alive
+      Content-Length: '329'
+      Date: Wed, 05 Oct 2022 22:02:24 GMT
+      Content-Type: application/json
+    :status: 200 OK

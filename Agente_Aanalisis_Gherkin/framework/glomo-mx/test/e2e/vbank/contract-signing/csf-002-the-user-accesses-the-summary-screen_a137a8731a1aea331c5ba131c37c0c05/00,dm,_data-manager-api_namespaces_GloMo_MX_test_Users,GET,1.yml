@@ -1,0 +1,47 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: d060d0d0-1ff6-481c-be25-55ffed1b2d1e
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: happy_path_deferred
+    lock: 'false'
+then:
+- return:
+    :body:
+    - data:
+        notifications:
+          expiredSignature: 684a4ba7e167e866649ff716
+          happyPath: 685ef5b7910f0c58d1b50c0d
+          success: 68531479218f570362c3cc92
+          deferredSignatureCoowners: 6851f7aa218f570362c384ed
+          retryError: 684a4ba7e167e866649ff714
+        tags:
+        - '5557329043'
+        - deferred_signature_coowners
+        - happy_path_deferred
+        authentication:
+          password: Glomo2025
+          user: '5557329043'
+          deviceId: C1B615856AEF7003B7E5AC09A52F0E7D
+      lockType: null
+      lockExpiration: null
+      id: 36141396
+    :headers:
+      content-length: '502'
+      Cache-Control: max-age=0
+      Connection: keep-alive
+      host: datamanager.globaldevtools.bbva.com
+      Vary: Accept-Encoding
+      Expires: Thu, 03 Jul 2025 17:18:01 GMT
+      Date: Thu, 03 Jul 2025 17:18:01 GMT
+      Content-Type: application/json; charset=utf-8
+    :status: 200 OK

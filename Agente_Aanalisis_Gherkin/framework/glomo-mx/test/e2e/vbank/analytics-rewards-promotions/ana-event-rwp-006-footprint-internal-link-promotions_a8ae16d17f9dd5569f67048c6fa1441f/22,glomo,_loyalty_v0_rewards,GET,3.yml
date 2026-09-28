@@ -1,0 +1,102 @@
+when:
+  sequence: 3
+  path: /SRVS_A02/loyalty/v0/rewards
+  method: GET
+  backend: glomo
+request:
+  headers:
+    sec-fetch-mode: cors
+    content-length: '0'
+    referer: http://localhost:8001/
+    sec-fetch-site: same-site
+    accept-language: es-MX,es;q=0.9
+    origin: http://localhost:8001
+    tsec: 4a0663339ffd3949d3dfc0eec0facaa0591272db
+    accept: application/json, text/html, */*; q=0.1
+    sec-ch-ua: '"Not.A/Brand";v="8", "Chromium";v="114", "Google Chrome";v="114"'
+    sec-ch-ua-mobile: ?0
+    x-vbank-session: cb276ef8-c2a3-4450-b063-b9b6ea5faa82
+    sec-ch-ua-platform: '"macOS"'
+    host: localhost:9000
+    content-type: application/json
+    connection: keep-alive
+    cache-control: no-cache, no-store, must-revalidate
+    accept-encoding: gzip, deflate, br
+    sec-fetch-dest: empty
+    user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36
+      (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+  query:
+    billingPeriod: LAST_PERIOD
+    contract.id: '0001'
+then:
+- return:
+    data:
+    - unitType:
+        name: Points
+        id: POINTS
+      isRedeemable: true
+      balances:
+      - itemizedBalances:
+        - id: CLOSE_TO_EXPIRE
+          nonMonetaryValue: 1200
+        endDate: '2037-12-15'
+        startDate: '2022-07-15'
+      - itemizedBalances:
+        - id: GENERATED
+          nonMonetaryValue: 1234
+        - id: APPLIED
+          nonMonetaryValue: 1234
+        - id: EXPIRED
+          nonMonetaryValue: 1234
+        - id: CURRENT
+          nonMonetaryValue: 1000
+        - id: PREVIOUS
+          nonMonetaryValue: 1234
+        - id: PARTIALLY_GENERATED
+          nonMonetaryValue: 1000
+        - id: PARTIALLY_APPLIED
+          nonMonetaryValue: 800
+        - id: SPENT_TODAY
+          nonMonetaryValue: 600
+        endDate: '2018-01-02'
+        startDate: '2018-01-01'
+      contract:
+        id: '0001'
+        productType:
+          id: CARD
+      name: Bancomer points
+      monetaryValue:
+        amount: 28.99
+        currency: MXN
+      monetaryPointEquivalence:
+        amount: 5
+        currency: MXN
+      id: BANCOMER_POINTS
+      nonMonetaryValue: 500
+      nonMonetaryRedemptionSavings:
+        amount: 5
+        currency: MXN
+    :headers:
+      access-control-allow-origin: '*'
+      content-length: '1013'
+      Access-Control-Expose-Headers: tsec, vnd.bbva.access-token-type,vnd.bbva.access-token,
+        vnd.bbva.sso-pkcs7, authenticationtype, authenticationdata, authenticationstate,
+        authenticationchallenge
+      Server: artichoke
+      Alt-Svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      access-control-allow-headers: Content-Type, tsec, authenticationtype, authenticationdata,
+        authenticationstate, contactid, consumeruuid, consumerapplicationid, perimetertsec,
+        authorization, responsewarningcode, responsewarningdescription, cuf, field,
+        bcs-device-app-version, bcs-device-app-version, vnd.bbva.authorization
+      Vary: Accept-Encoding
+      tsec: 4a0663339ffd3949d3dfc0eec0facaa0591272db
+      X-Response-Time: 499ms
+      Date: Thu, 06 Jul 2023 13:11:39 GMT
+      Content-Type: application/json; charset=utf-8
+      Via: 1.1 google
+    :status: 200 OK
+    responseStatus: 200
+    apiInfo:
+      name: catalogs
+      category: data
+      version: 0.2.0

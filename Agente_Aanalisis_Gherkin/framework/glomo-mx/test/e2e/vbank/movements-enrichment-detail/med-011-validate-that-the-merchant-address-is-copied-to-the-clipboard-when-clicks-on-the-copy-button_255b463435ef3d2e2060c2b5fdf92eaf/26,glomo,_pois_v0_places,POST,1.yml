@@ -1,0 +1,54 @@
+when:
+  sequence: 1
+  path: /pois/v0/places
+  method: POST
+  backend: glomo
+request:
+  headers:
+    sec-fetch-mode: cors
+    referer: http://localhost:8001/
+    content-length: '75'
+    sec-fetch-site: same-site
+    accept-language: es-MX
+    origin: http://localhost:8001
+    accept: application/json, text/html, */*; q=0.1
+    sec-ch-ua: '"Not=A?Brand";v="99", "Google Chrome";v="151", "Chromium";v="151"'
+    sec-ch-ua-mobile: ?0
+    x-vbank-session: 'null'
+    sec-ch-ua-platform: '"macOS"'
+    host: localhost:9000
+    content-type: application/json
+    connection: keep-alive
+    cache-control: no-cache, no-store, must-revalidate
+    accept-encoding: gzip, deflate, br, zstd
+    sec-fetch-dest: empty
+    user-agent: GLOMO_MX/99.99.99 (Android;14;Samsung)
+  body:
+    places:
+    - country: MX
+      address: Racine
+      name: Rest onomura roma
+then:
+- return:
+    data:
+    - formattedAddress: Durango 193, Roma Nte., Cuauhtémoc, 06700 Ciudad de México,
+        CDMX, México
+      placeId: ChIJbz0Nsqb_0YURZUB3VUb0gaM
+      link:
+        method: GET
+        rel: place
+        id: ChIJbz0Nsqb_0YURZUB3VUb0gaM
+        href: /pois/v0/places/ChIJbz0Nsqb_0YURZUB3VUb0gaM
+      geolocation:
+        latitude: 19.4200874
+        longitude: -99.16704349999999
+    :headers:
+      content-length: '344'
+      x-amz-apigw-id: CX81JF0YoAMF3jg=
+      x-amzn-RequestId: 233c35e8-3ef0-48aa-8b30-8e80afddf0cc
+      Connection: keep-alive
+      Vary: Accept-Encoding
+      X-Amzn-Trace-Id: Root=1-6a8641ba-a7c7bf9c3a902a3bc0eab84f;Parent=52f8b4dabc7831a3;Sampled=0;Lineage=1:9e0819be:0
+      Date: Wed, 19 Aug 2026 23:52:28 GMT
+      Content-Type: application/json; charset=UTF-8
+    :status: 200 OK

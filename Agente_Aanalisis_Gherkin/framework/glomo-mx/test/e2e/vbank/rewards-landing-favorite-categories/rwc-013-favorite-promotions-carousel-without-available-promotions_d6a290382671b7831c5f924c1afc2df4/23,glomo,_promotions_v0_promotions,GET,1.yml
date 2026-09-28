@@ -1,0 +1,128 @@
+when:
+  sequence: 1
+  path: /SRVS_A02/promotions/v0/promotions
+  method: GET
+  backend: glomo
+request:
+  headers:
+    sec-fetch-mode: cors
+    content-length: '0'
+    referer: http://localhost:8001/
+    sec-fetch-site: same-site
+    accept-language: es-MX,es;q=0.9
+    origin: http://localhost:8001
+    tsec: 3fce6b20e61c1a94e2b735dfe1af67a6f6fbe8e2
+    accept: application/json, text/html, */*; q=0.1
+    sec-ch-ua: '"Chromium";v="116", "Not)A;Brand";v="24", "Google Chrome";v="116"'
+    sec-ch-ua-mobile: ?0
+    x-vbank-session: bee1a262-fe30-41f0-82af-c24095acaa94
+    sec-ch-ua-platform: '"macOS"'
+    host: localhost:9000
+    content-type: application/json
+    connection: keep-alive
+    cache-control: no-cache, no-store, must-revalidate
+    accept-encoding: gzip, deflate, br
+    sec-fetch-dest: empty
+    user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36
+      (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36
+  query:
+    promotionType.id: in=(POST_PAYMENT)
+    title.id: in=(AV,VN)
+    pageSize: '10'
+then:
+- return:
+    data:
+    - trending:
+        name: Destacadas
+        id: HOT
+      promotionType:
+        name: A Meses
+        id: POST_PAYMENT
+      images:
+      - name: Logo
+        id: LIST
+        url: https://vidabbvamx-prod-commerce-images.s3-us-west-2.amazonaws.com/logos/home_depot.jpg
+      - name: Detalle
+        id: DETAIL
+        url: https://vidabbvamx-prod-commerce-images.s3-us-west-2.amazonaws.com/fotos/2224.jpg
+      endDate: '2028-09-20'
+      name: Reserva tus vacaciones y financia al 0% de interés
+      id: '29000073'
+      commerceInformation:
+        web: https://www.bbva.com/es/
+        name: B THE TRAVEL BRAND
+        description: Reserva tus vacaciones y financia al 0% de interés
+      categories:
+      - name: Cafeteria
+        id: FOOD_AND_GOURMET
+      usageTypes:
+      - name: Presencial
+        id: PHYSICAL
+      startDate: '2018-03-20'
+      benefit: -20%
+    - trending:
+        name: Hot
+        id: HOT
+      promotionType:
+        name: A Meses
+        id: POST_PAYMENT
+      images:
+      - name: DETAIL_CROSSFITMARUT
+        id: DETAIL
+        url: https://vidabbvamx-prod-commerce-images.s3-us-west-2.amazonaws.com/fotos/2224.jpg
+      - name: LIST_CROSSFITMARUT
+        id: LIST
+        url: https://vidabbvamx-prod-commerce-images.s3-us-west-2.amazonaws.com/logos/home_depot.jpg
+      - name: PUSH_CROSSFITMARUT
+        id: PUSH
+        url: http://imagenes.ubicanosbbvacontinental.com/promociones/2017-09-04/PUSH_ONFITNESS.png
+      endDate: '2028-03-03'
+      fixedDiscount:
+        currency: ''
+      usageTypes:
+      - name: Aplica para Crédito y Débito
+        id: PHYSICAL
+      rateDiscount: 30
+      benefit: -30%
+      name: 30% de descuento en todos los planes
+      id: WA_0001
+      commerceInformation:
+        web: http://www.onfitnesscenter.com/
+        name: ON Fitness
+        description: Gimnasio
+        logo:
+          name: LOGO_ONFitness
+          id: WA_0001_LOGO
+          url: http://imagenes.ubicanosbbvacontinental.com/promociones/2017-09-04/LIST_ONFITNESS.png
+      categories:
+      - name: Actividades
+        id: ACTIVITIES
+      - name: Hobbies
+        id: HOBBIES
+      - name: Cosmética y Perfumería
+        id: BEAUTY_AND_FRAGANCES
+      startDate: '2022-03-02'
+    :headers:
+      content-length: '3091'
+      Server: artichoke
+      Alt-Svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      access-control-allow-headers: Content-Type, tsec, authenticationtype, authenticationdata,
+        authenticationstate, contactid, consumeruuid, consumerapplicationid, perimetertsec,
+        authorization, responsewarningcode, responsewarningdescription, cuf, field,
+        bcs-device-app-version, bcs-device-app-version, vnd.bbva.authorization, device-id
+      tsec: 3fce6b20e61c1a94e2b735dfe1af67a6f6fbe8e2
+      X-Response-Time: 555ms
+      Date: Thu, 31 Aug 2023 10:41:01 GMT
+      Via: 1.1 google
+      access-control-allow-origin: '*'
+      Access-Control-Expose-Headers: tsec, vnd.bbva.access-token-type,vnd.bbva.access-token,
+        vnd.bbva.sso-pkcs7, authenticationtype, authenticationdata, authenticationstate,
+        authenticationchallenge
+      Cache-Control: private, no-store
+      content-type: application/json;charset=UTF-8
+      Vary: Accept-Encoding
+    :status: 200 OK
+    apiInfo:
+      name: promotions
+      category: enterprises
+      version: 0.1.0

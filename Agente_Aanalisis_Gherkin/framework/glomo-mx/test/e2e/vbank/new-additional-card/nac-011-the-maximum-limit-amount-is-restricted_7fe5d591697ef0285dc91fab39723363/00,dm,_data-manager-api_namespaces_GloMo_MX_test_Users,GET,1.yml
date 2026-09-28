@@ -1,0 +1,44 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: new_additional_card
+    lock: 'false'
+then:
+- return:
+    :body:
+    - data:
+        tags:
+        - '6531275576'
+        - new_additional_card
+        products:
+          cards:
+          - number: '4772130351407898'
+            cardId: Vb3n5nF5mc2MRHs8LCLPrlE_WiqL0Qxhp3Hl2QkO-d4
+            title:
+              name: ORO BBVA
+        authentication:
+          password: Glomo2025
+          user: '6531275576'
+          deviceId: D3C60652EF092A827615EE57F41A8FAB
+      id: 35704491
+    :headers:
+      content-length: '314'
+      Server: nginx
+      Cache-Control: max-age=0
+      Connection: keep-alive
+      host: datamanager.globaldevtools.bbva.com
+      Vary: Accept-Encoding
+      Expires: Tue, 16 Jun 2026 17:11:11 GMT
+      Date: Tue, 16 Jun 2026 17:11:11 GMT
+      Content-Type: application/json; charset=utf-8
+    :status: 200 OK

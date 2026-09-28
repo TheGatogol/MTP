@@ -1,0 +1,37 @@
+when:
+  sequence: 1
+  path: /getTunnelBypass
+  method: POST
+  backend: glomo
+request:
+  headers:
+    content-length: '200'
+    host: 127.0.0.1:9000
+    connection: Close
+    content-type: application/json
+    accept: '*/*'
+    user-agent: ZCC-client
+  body:
+    systemProxyPort: 0
+    protocol: 6
+    port: 443
+    resolvedIp: ''
+    host: ''
+    bypassRequest: false
+    systemProxyHost: ''
+    lite: false
+    url: https://gateway.zscalertwo.net/get_loc
+    ignoreSystemProxy: false
+then:
+- return:
+    :body: <html><body>No service was found<script type="text/javascript"  src="/kImr_br6_8VpM/oS/RZFxl2px547Y/YQbEV4t39bOSVh9L/QXsUMCIrCgc/dyU6MXg/-dhMB"></script></body></html>
+    :headers:
+      content-length: '167'
+      ECS-Entry-Point-Zone: ext
+      Connection: close
+      Vary: Accept-Encoding
+      Set-Cookie: s000001=496398090.29735.0000; path=/; Httponly; Secure
+      X-Akamai-Transformed: 0 - 0 -
+      Date: Wed, 08 Jul 2026 23:26:15 GMT
+      Content-Type: text/html; charset=UTF-8
+    :status: 404 Not Found

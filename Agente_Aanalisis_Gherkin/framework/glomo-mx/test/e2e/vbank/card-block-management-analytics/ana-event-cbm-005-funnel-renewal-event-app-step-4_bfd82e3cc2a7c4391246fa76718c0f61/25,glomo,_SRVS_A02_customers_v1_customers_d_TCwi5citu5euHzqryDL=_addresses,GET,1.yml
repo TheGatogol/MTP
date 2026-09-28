@@ -1,0 +1,101 @@
+when:
+  sequence: 1
+  path: /SRVS_A02/customers/v1/customers/d_TCwi5citu5euHzqryDL=/addresses
+  method: GET
+  backend: glomo
+request:
+  headers:
+    sec-fetch-mode: cors
+    content-length: '0'
+    referer: http://localhost:8001/
+    sec-fetch-site: same-site
+    accept-language: es-MX,es;q=0.9
+    origin: http://localhost:8001
+    tsec: 2d0091a69d3ad071e0596f89ac43f0d0c30f267c
+    accept: application/json, text/html, */*; q=0.1
+    sec-ch-ua: '"Not(A:Brand";v="8", "Chromium";v="144", "Google Chrome";v="144"'
+    sec-ch-ua-mobile: ?0
+    x-vbank-session: 44443f1a-35e9-42da-93b9-9dbcef49f319
+    sec-ch-ua-platform: '"macOS"'
+    host: localhost:9000
+    content-type: application/json
+    connection: keep-alive
+    cache-control: no-cache, no-store, must-revalidate
+    accept-encoding: gzip, deflate, br, zstd
+    sec-fetch-dest: empty
+    user-agent: GLOMO_MX/99.99.99 (Android;14;Samsung)
+  query:
+    unmasked: 'false'
+then:
+- return:
+    data:
+    - isPreferential: true
+      addressType:
+        name: Legal Home
+        id: HOME
+      location:
+        additionalInformation: FRENTE AL BBVA
+        formattedAddress: JR. ** DE JULIO ***, ETP LA MERCED, CARMEN DE LA LEGUA -
+          CALLAO - CALLAO. REF. FRENTE A LA COMISARI
+        addressComponents:
+        - code: 27 DE JULIO
+          componentTypes:
+          - JIRON
+          name: 27 DE JULIO
+        - code: ETP LA MERCED
+          componentTypes:
+          - STAGE
+          name: ETP LA MERCED
+        - code: '02'
+          componentTypes:
+          - DEPARTMENT
+          name: CALLAO
+        - code: '01'
+          componentTypes:
+          - PROVINCE
+          name: CALLAO
+        - code: '003'
+          componentTypes:
+          - DISTRICT
+          name: CARMEN DE LA LEGUA
+        - code: '163'
+          componentTypes:
+          - EXTERIOR_NUMBER
+          name: '163'
+        - code: '0201003'
+          componentTypes:
+          - POSTAL_CODE
+          name: '12345'
+        - code: '0201003'
+          componentTypes:
+          - UBIGEO
+          name: '0201003'
+        geolocation:
+          latitude: 40.4799292
+          longitude: -3.7039084
+      id: '00001'
+      isChecked: true
+      residenceStartDate: '2020-12-09T00:00:00+00:00'
+    :headers:
+      access-control-allow-origin: '*'
+      content-length: '1026'
+      Access-Control-Expose-Headers: tsec, vnd.bbva.access-token-type,vnd.bbva.access-token,
+        vnd.bbva.sso-pkcs7, authenticationtype, authenticationdata, authenticationstate,
+        authenticationchallenge
+      Server: artichoke
+      access-control-allow-headers: Content-Type, tsec, authenticationtype, authenticationdata,
+        authenticationstate, contactid, consumeruuid, consumerapplicationid, perimetertsec,
+        authorization, responsewarningcode, responsewarningdescription, cuf, field,
+        bcs-device-app-version, bcs-device-app-version, vnd.bbva.authorization, device-id,
+        Bcs-Device-Os-Name, bcs-device-app-name, bcs-device-dpi, BCS-Device-Id
+      Connection: keep-alive
+      content-type: application/json;charset=UTF-8
+      Vary: Accept-Encoding
+      tsec: 2d0091a69d3ad071e0596f89ac43f0d0c30f267c
+      X-Response-Time: 62ms
+      Date: Mon, 16 Feb 2026 17:22:09 GMT
+    :status: 200 OK
+    apiInfo:
+      name: customers
+      category: people
+      version: 1.82.0

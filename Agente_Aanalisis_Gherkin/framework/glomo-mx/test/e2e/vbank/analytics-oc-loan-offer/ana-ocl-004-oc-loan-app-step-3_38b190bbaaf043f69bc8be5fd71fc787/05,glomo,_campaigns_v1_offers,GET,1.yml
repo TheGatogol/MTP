@@ -1,0 +1,75 @@
+when:
+  sequence: 1
+  path: /SRVS_A02/campaigns/v1/offers
+  method: GET
+  backend: glomo
+request:
+  headers:
+    sec-fetch-mode: cors
+    content-length: '0'
+    referer: http://localhost:8001/
+    sec-fetch-site: same-site
+    accept-language: es
+    origin: http://localhost:8001
+    tsec: af29b0a0ec224a294a6a889faeee0d6949201628
+    accept: application/json, text/html, */*; q=0.1
+    sec-ch-ua: '"Chromium";v="94", "Google Chrome";v="94", ";Not A Brand";v="99"'
+    sec-ch-ua-mobile: ?0
+    x-vbank-session: 32d22e3a-3de4-4536-b953-441100a7d349
+    sec-ch-ua-platform: '"macOS"'
+    host: localhost:9000
+    content-type: application/json
+    connection: keep-alive
+    cache-control: no-cache, no-store, must-revalidate
+    accept-encoding: gzip, deflate, br
+    sec-fetch-dest: empty
+    user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36
+      (KHTML, like Gecko) Chrome/94.0.4606.81 Safari/537.36
+then:
+- return:
+    data:
+    - product:
+        subproductType:
+          id: GR
+        contractId: '1200'
+        id: ANOM
+        productType:
+          id: CARDS
+    - product:
+        subproductType:
+          id: GR
+        contractId: '1201'
+        id: 1ADS
+        productType:
+          id: CARDS
+    - product:
+        subproductType:
+          id: GR
+        contractId: '1202'
+        id: 2ADS
+        productType:
+          id: CARDS
+    - product:
+        subproductType:
+          id: GR
+        contractId: '1230'
+        id: '0744'
+        productType:
+          id: CARDS
+    :headers:
+      access-control-allow-origin: '*'
+      content-length: '426'
+      Access-Control-Expose-Headers: tsec, vnd.bbva.access-token-type,vnd.bbva.access-token,
+        authenticationtype, authenticationdata, authenticationstate
+      Server: artichoke
+      access-control-allow-headers: Content-Type, tsec, authenticationtype, authenticationdata,
+        authenticationstate, contactid, consumeruuid, consumerapplicationid, perimetertsec,
+        authorization, responsewarningcode, responsewarningdescription, cuf, field,
+        bcs-device-app-version, bcs-device-app-version
+      Connection: keep-alive
+      Vary: Accept-Encoding
+      tsec: af29b0a0ec224a294a6a889faeee0d6949201628
+      X-Response-Time: 40ms
+      Date: Wed, 13 Oct 2021 20:51:24 GMT
+      Content-Type: application/json; charset=utf-8
+    :status: 200 OK

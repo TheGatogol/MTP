@@ -1,0 +1,55 @@
+when:
+  sequence: 1
+  path: /SRVS_A02/accounts/v0/accounts/1301/transactions
+  method: GET
+  backend: glomo
+request:
+  headers:
+    sec-fetch-mode: cors
+    content-length: '0'
+    referer: http://localhost:8001/
+    sec-fetch-site: same-site
+    accept-language: es
+    origin: http://localhost:8001
+    tsec: 2b4a14696274f2e9cf91594b6b120878262ea9a5
+    accept: application/json, text/html, */*; q=0.1
+    x-vbank-session: c56524d4-b195-4964-aa41-f24163175142
+    host: localhost:9000
+    content-type: application/json
+    connection: keep-alive
+    accept-encoding: gzip, deflate, br
+    sec-fetch-dest: empty
+    user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36
+      (KHTML, like Gecko) Chrome/86.0.4240.80 Safari/537.36
+  query:
+    fromOperationDate: '2020-07-16'
+    toOperationDate: '2020-10-16'
+    pageSize: '10'
+then:
+- return:
+    severity: FATAL
+    system-error-cause: Simulated error
+    error-message: Internal Error
+    consumer-request-id: 207a2723-e82b-4c47-a64c-ea8836f245cd
+    :headers:
+      access-control-allow-origin: '*'
+      Access-Control-Expose-Headers: tsec, vnd.bbva.access-token-type,vnd.bbva.access-token,
+        authenticationtype, authenticationdata, authenticationstate
+      Server: artichoke
+      Alt-Svc: clear
+      access-control-allow-headers: Content-Type, tsec, authenticationtype, authenticationdata,
+        authenticationstate, contactid, consumeruuid, consumerapplicationid, perimetertsec,
+        authorization, responsewarningcode, responsewarningdescription, cuf, field,
+        bcs-device-app-version, bcs-device-app-version
+      tsec: 2b4a14696274f2e9cf91594b6b120878262ea9a5
+      Content-Length: '289'
+      X-Response-Time: 2ms
+      Date: Fri, 16 Oct 2020 10:07:50 GMT
+      Content-Type: application/json; charset=utf-8
+      Via: 1.1 google
+    system-error-code: '500'
+    :status: 500 Internal Server Error
+    http-status: 500
+    system-error-description: Service not available right now
+    error-code: '160'
+    version: 1

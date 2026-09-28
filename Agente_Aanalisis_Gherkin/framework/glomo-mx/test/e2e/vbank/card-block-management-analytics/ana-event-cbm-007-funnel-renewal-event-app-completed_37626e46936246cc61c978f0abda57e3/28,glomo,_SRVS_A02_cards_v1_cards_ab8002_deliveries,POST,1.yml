@@ -1,0 +1,147 @@
+when:
+  sequence: 1
+  path: /SRVS_A02/cards/v1/cards/ab8002/deliveries
+  method: POST
+  backend: glomo
+request:
+  headers:
+    sec-fetch-mode: cors
+    referer: http://localhost:8001/
+    content-length: '301'
+    sec-fetch-site: same-site
+    accept-language: es-MX,es;q=0.9
+    origin: http://localhost:8001
+    tsec: 54f314b43f4313479a41bce549148da86538645d
+    accept: application/json, text/html, */*; q=0.1
+    sec-ch-ua: '"Not(A:Brand";v="8", "Chromium";v="144", "Google Chrome";v="144"'
+    sec-ch-ua-mobile: ?0
+    x-vbank-session: 525e16f5-b8e7-48ea-9af9-38e5dad3dc9c
+    sec-ch-ua-platform: '"macOS"'
+    host: localhost:9000
+    content-type: application/json
+    connection: keep-alive
+    cache-control: no-cache, no-store, must-revalidate
+    accept-encoding: gzip, deflate, br, zstd
+    sec-fetch-dest: empty
+    user-agent: GLOMO_MX/99.99.99 (Android;14;Samsung)
+  body:
+    serviceType:
+      id: D
+    typeRequest:
+      id: REGISTRATION_RETAIL
+    method: SCHEDULED
+    typeAllotment:
+      id: JD
+    destination:
+      id: HOME
+    commission: 150
+    stamping: CHANGE_OF_CARD
+    deliverySchedules:
+    - date: '2026-02-13'
+      startTime: '2026-02-13T11:00:00'
+      endTime: '2026-02-13T12:00:00'
+then:
+- return:
+    data:
+      serviceType:
+        description: Work Place Office
+        id: workPlace
+      operationDate: '2023-06-23T10:00:00Z'
+      address:
+        addressType: SPECIFIC
+        location:
+          additionalInformation: COSTADO COLEGIO SAN AGUSTIN
+          formattedAddress: Avenida República de Ecuador 1234 Piso 2 Interior 205
+            Urbanización Corpac
+          locationTypes:
+          - HOME
+          meta:
+            stratum: High
+          addressComponents:
+          - code: PE
+            componentTypes:
+            - COUNTRY
+          - code: LI
+            componentTypes:
+            - ADMINISTRATIVE_AREA_LEVEL_2
+          - componentTypes:
+            - CITY
+            name: Lima
+          - code: '0101004'
+            componentTypes:
+            - UBIGEO
+          - componentTypes:
+            - URBANIZATION
+            name: Corpac
+          - componentTypes:
+            - AVENUE
+            name: República de Ecuador
+          - componentTypes:
+            - EXTERIOR_NUMBER
+            name: '1234'
+          - componentTypes:
+            - FLOOR
+            name: '2'
+          - componentTypes:
+            - INTERIOR_NUMBER
+            name: '205'
+          - componentTypes:
+            - DOOR
+            name: B
+          - code: '34566'
+            componentTypes:
+            - POSTAL_CODE
+          geolocation:
+            latitude: 40.814507
+            longitude: -74.07273
+      method: PRIORITY
+      receiver:
+        receiverType:
+          id: EMPLOYED
+        fullName: Joaquín Velázquez de León
+      contact:
+        contact:
+          number: '0525512345678'
+          contactDetailType: MOBILE
+          phoneCompany:
+            name: TELEKOM
+            id: TELCEL
+        contactType: SPECIFIC
+        id: 454fdf
+      destination:
+        id: HOME
+        branch:
+          id: MAD1234
+      id: '75646873'
+      deliverySchedules:
+      - date: '2023-06-23'
+        startTime: '10:00:00'
+        endTime: '12:00:00'
+        id: FRIDAY
+      packagingType:
+        name: Automated fulfillment for existing customers on standard card replacements
+        id: STANDARD
+    :headers:
+      access-control-allow-origin: '*'
+      content-length: '1643'
+      Access-Control-Expose-Headers: tsec, vnd.bbva.access-token-type,vnd.bbva.access-token,
+        vnd.bbva.sso-pkcs7, authenticationtype, authenticationdata, authenticationstate,
+        authenticationchallenge
+      Server: artichoke
+      access-control-allow-headers: Content-Type, tsec, authenticationtype, authenticationdata,
+        authenticationstate, contactid, consumeruuid, consumerapplicationid, perimetertsec,
+        authorization, responsewarningcode, responsewarningdescription, cuf, field,
+        bcs-device-app-version, bcs-device-app-version, vnd.bbva.authorization, device-id,
+        Bcs-Device-Os-Name, bcs-device-app-name, bcs-device-dpi, BCS-Device-Id
+      Connection: keep-alive
+      Vary: Accept-Encoding
+      tsec: 54f314b43f4313479a41bce549148da86538645d
+      X-Response-Time: 7ms
+      Date: Mon, 16 Feb 2026 17:30:16 GMT
+      Content-Type: application/json; charset=utf-8
+    :status: 201 Created
+    responseStatus: 200
+    apiInfo:
+      name: cards
+      category: products
+      version: 0.19.0

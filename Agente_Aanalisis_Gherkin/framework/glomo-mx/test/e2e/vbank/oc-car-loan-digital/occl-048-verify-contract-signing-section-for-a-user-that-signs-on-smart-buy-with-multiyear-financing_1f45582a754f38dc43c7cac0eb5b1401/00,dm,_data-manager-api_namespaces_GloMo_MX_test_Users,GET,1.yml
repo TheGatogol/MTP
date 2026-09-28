@@ -1,0 +1,44 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: 311d8a24-b5f4-4ee5-8f15-caaa31cf076f
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: digital_car_loan_offer_rejected
+    lock: 'false'
+then:
+- return:
+    :body:
+    - data:
+        accountNumbers:
+        - '00740010001501234302'
+        tags:
+        - one_account
+        - '6394653295'
+        - digital_car_loan_offer_rejected
+        authentication:
+          password: Glomo2023
+          user: '6394653295'
+          deviceId: 310CBD130F7573D045088381D2D366FE
+      lockExpiration: null
+      lockType: null
+      id: 35534293
+    :headers:
+      content-length: '296'
+      Strict-Transport-Security: max-age=15768000
+      Server: nginx
+      ECS-Entry-Point-Zone: ext
+      Connection: keep-alive
+      host: datamanager.globaldevtools.bbva.com
+      Vary: Accept-Encoding
+      Date: Wed, 08 May 2024 22:40:42 GMT
+      Content-Type: application/json
+    :status: 200 OK

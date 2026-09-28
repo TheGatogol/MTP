@@ -1,0 +1,48 @@
+when:
+  sequence: 1
+  path: /SRES_A02/customers/v0/customers/MEXICO92/behavioral-events
+  method: POST
+  backend: glomo
+request:
+  headers:
+    content-length: '45'
+    accept-language: es
+    contactid: 8d7c09cf-543b-44fe-bc05-5f7cd2afdb3e
+    vnd.bbva.device.app-name: GloMo
+    authenticationtype: '58'
+    tsec: a6f43bb20f24a2eec12afcf6ae5c6e6871b71cd0
+    vnd.bbva.device-os-name: ANDROID
+    accept: application/json, text/html, */*; q=0.1
+    authenticationdata: deviceId=11111111
+    vnd.bbva.device.app-version: 99.99.99
+    host: localhost:9000
+    connection: Keep-Alive
+    content-type: application/json
+    cache-control: no-cache
+    accept-encoding: gzip
+    user-agent: GLOMO_MX/99.99.99 (Android;11;Google sdk_gphone_x86)
+    vnd.bbva.device.dpi: xxhdpi
+  body:
+    behavioralType:
+      id: LOGOUT_MX_SUCCESS
+then:
+- return:
+    :body: ''
+    :headers:
+      access-control-allow-origin: '*'
+      content-length: '0'
+      Access-Control-Expose-Headers: tsec, vnd.bbva.access-token-type,vnd.bbva.access-token,
+        vnd.bbva.sso-pkcs7, authenticationtype, authenticationdata, authenticationstate,
+        authenticationchallenge
+      Server: artichoke
+      Alt-Svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      access-control-allow-headers: Content-Type, tsec, authenticationtype, authenticationdata,
+        authenticationstate, contactid, consumeruuid, consumerapplicationid, perimetertsec,
+        authorization, responsewarningcode, responsewarningdescription, cuf, field,
+        bcs-device-app-version, bcs-device-app-version, vnd.bbva.authorization, device-id
+      Vary: Accept-Encoding
+      tsec: a6f43bb20f24a2eec12afcf6ae5c6e6871b71cd0
+      X-Response-Time: 592ms
+      Date: Wed, 30 Aug 2023 11:55:35 GMT
+      Via: 1.1 google
+    :status: 204 No Content

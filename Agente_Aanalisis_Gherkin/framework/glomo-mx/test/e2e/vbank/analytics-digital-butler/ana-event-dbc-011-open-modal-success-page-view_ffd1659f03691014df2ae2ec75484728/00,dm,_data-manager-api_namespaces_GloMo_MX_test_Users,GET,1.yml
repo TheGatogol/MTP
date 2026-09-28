@@ -1,0 +1,120 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: 215f6dd3-7de5-43d0-a9ba-5af86b16bac4
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: user_with_movements,2382210959
+    lock: 'false'
+then:
+- return:
+    :body:
+    - data:
+        messagesGroupRequest:
+          unrecognizedMovement:
+          - message: Cargo no reconocido
+          - message: Si
+          - validateComponent: desambiguation card
+            message: 'No'
+          - message: '1677'
+          - actionComponent:
+              type: select movement
+              value: Smart retail
+          - actionComponent:
+              type: suggestion
+              value: confirm
+          - actionComponent:
+              type: suggestion
+              value: confirm
+        tags:
+        - '2382210959'
+        - user_with_movements
+        authentication:
+          password: Glomo2025
+          user: '2382210959'
+          deviceId: 8A0F8DAC624FBAD74A78EEA49B1A75BE
+      lockExpiration: '2025-12-08T22:38:50.493555Z'
+      lockType: SHARED
+      id: 36304253
+    - data:
+        messagesGroupRequest:
+          cardDetailCannotBePerformed:
+          - message: Quiero ver el nip de mi tarjeta
+          - message: terminacion 5139
+          onOffDataDebit:
+          - message: Quiero ver los datos de mi tarjeta de débito
+          onOffDataDigital:
+          - message: Quiero ver los datos de mi tarjeta digital
+          onOffDataCredit:
+          - message: Quiero ver los datos de mi tarjeta de crédito
+          - message: '2283'
+          unrecognizedMovement:
+          - message: Quiero reporta un movimiento que veo después que me robaron mi
+              tarjeta
+          - message: '5139'
+          - actionComponent:
+              type: select movement
+              value: Smart retail
+          - actionComponent:
+              type: suggestion
+              value: confirm
+          - actionComponent:
+              type: suggestion
+              value: confirm
+          - actionComponent:
+              type: suggestion
+              value: confirm
+          - actionComponent:
+              type: suggestion
+              value: confirm
+          viewNipQr:
+          - message: Quiero ver el nip de mi tarjeta
+          - message: La tarjeta con terminacion 4838
+          cardDetailAliasCancel:
+          - message: ¿cómo puedo modificar el alias de esta tarjeta?
+          - message: '4838'
+          - message: NOMINA
+          - actionComponent:
+              type: suggestion
+              value: confirm
+          - actionComponent:
+              type: suggestion
+              value: confirm
+          - actionComponent:
+              type: suggestion
+              value: confirm
+        tags:
+        - '2382210959'
+        - user_with_movements
+        - user_with_physical_credit_card
+        - user_with_physical_debit_card
+        - user_with_blocked_cards
+        - debit_card
+        - credit_card
+        - digital_card
+        authentication:
+          password: Glomo2025
+          user: '2382210959'
+          deviceId: 8A0F8DAC624FBAD74A78EEA49B1A75BE
+      lockExpiration: null
+      lockType: null
+      id: 36264738
+    :headers:
+      content-length: '1966'
+      Server: nginx
+      Cache-Control: max-age=0
+      Connection: keep-alive
+      host: datamanager.globaldevtools.bbva.com
+      Vary: Accept-Encoding
+      Expires: Mon, 08 Dec 2025 22:38:33 GMT
+      Date: Mon, 08 Dec 2025 22:38:33 GMT
+      Content-Type: application/json; charset=utf-8
+    :status: 200 OK

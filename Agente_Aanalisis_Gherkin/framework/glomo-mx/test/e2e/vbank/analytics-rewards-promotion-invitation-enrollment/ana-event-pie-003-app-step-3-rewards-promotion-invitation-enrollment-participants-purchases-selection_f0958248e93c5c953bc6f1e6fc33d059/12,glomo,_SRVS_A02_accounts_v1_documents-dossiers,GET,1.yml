@@ -1,0 +1,79 @@
+when:
+  sequence: 1
+  path: /SRVS_A02/accounts/v1/documents-dossiers
+  method: GET
+  backend: glomo
+request:
+  headers:
+    sec-fetch-mode: cors
+    content-length: '0'
+    referer: http://localhost:8001/
+    sec-fetch-site: same-site
+    accept-language: es-MX,es;q=0.9
+    origin: http://localhost:8001
+    tsec: 980618eaae7f2ddf7f0c88558e12575007ab2c94
+    accept: application/json, text/html, */*; q=0.1
+    sec-ch-ua: '"Chromium";v="134", "Not:A-Brand";v="24", "Google Chrome";v="134"'
+    sec-ch-ua-mobile: ?0
+    x-vbank-session: 8d3425d4-da1a-422e-b3fe-92d0c300d40a
+    sec-ch-ua-platform: '"macOS"'
+    host: localhost:9000
+    content-type: application/json
+    connection: keep-alive
+    cache-control: no-cache, no-store, must-revalidate
+    accept-encoding: gzip, deflate, br, zstd
+    sec-fetch-dest: empty
+    user-agent: GLOMO_MX/99.99.99 (Android;14;Samsung)
+  query:
+    indicators.id: IS_PAYROLL_ACCOUNT
+    indicators.isActive: 'TRUE'
+then:
+- return:
+    data:
+    - statusType: COMPLETE
+      id: tV7RRENSZc6
+      account:
+        number: '050400010100000000'
+        numberType:
+          name: Local Identification Code
+          id: LIC
+    - statusType: COMPLETE
+      id: 8qJVa2pPo9j
+      account:
+        number: '050400010100000001'
+        numberType:
+          name: Local Identification Code
+          id: LIC
+    - statusType: COMPLETE
+      id: x7ITc0FA8DY
+      account:
+        number: '050400010100000003'
+        numberType:
+          name: Local Identification Code
+          id: LIC
+    - statusType: COMPLETE
+      id: O5N3z5rPIsS
+      account:
+        number: '050400010100000000'
+        numberType:
+          name: Local Identification Code
+          id: LIC
+    :headers:
+      access-control-allow-origin: '*'
+      content-length: '602'
+      Access-Control-Expose-Headers: tsec, vnd.bbva.access-token-type,vnd.bbva.access-token,
+        vnd.bbva.sso-pkcs7, authenticationtype, authenticationdata, authenticationstate,
+        authenticationchallenge
+      Server: artichoke
+      access-control-allow-headers: Content-Type, tsec, authenticationtype, authenticationdata,
+        authenticationstate, contactid, consumeruuid, consumerapplicationid, perimetertsec,
+        authorization, responsewarningcode, responsewarningdescription, cuf, field,
+        bcs-device-app-version, bcs-device-app-version, vnd.bbva.authorization, device-id,
+        Bcs-Device-Os-Name, bcs-device-app-name, bcs-device-dpi, BCS-Device-Id
+      Connection: keep-alive
+      Vary: Accept-Encoding
+      tsec: 980618eaae7f2ddf7f0c88558e12575007ab2c94
+      X-Response-Time: 5ms
+      Date: Wed, 30 Apr 2025 10:14:40 GMT
+      Content-Type: application/json; charset=utf-8
+    :status: 200 OK

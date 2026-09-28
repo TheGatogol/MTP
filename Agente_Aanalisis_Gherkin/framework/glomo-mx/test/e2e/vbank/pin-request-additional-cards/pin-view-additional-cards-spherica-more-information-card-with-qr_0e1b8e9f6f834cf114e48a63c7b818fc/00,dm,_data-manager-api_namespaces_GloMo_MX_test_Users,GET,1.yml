@@ -1,0 +1,78 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: 196adf72-7de7-416e-890c-ca52476eec9d
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: pin_request_additional_cards
+    lock: 'false'
+then:
+- return:
+    :body:
+    - data:
+        tags:
+        - pin_request_additional_cards
+        products:
+          cards:
+          - number: '4772913032147342'
+            cardAgreement: '234599'
+            cardId: tarjeta principal
+            activations:
+            - name: Activation for global card usage
+              isActive: false
+              activationId: ON_OFF
+            indicators:
+            - indicatorId: ASSOCIABLE_TO_ADDITIONAL_CARDS
+              name: Indica si la tarjeta puede tener tarjetas asociadas
+              isActive: true
+            status:
+              name: Operative card
+              description: VIGENTE
+              id: OPERATIVE
+          - number: '4772910001696630'
+            cardAgreement: '234599'
+            cardId: FXFCI8YPeMhBj3MTedRr0-w6m6604M50xscpK1H1Pcg
+            activations:
+            - name: Activation for global card usage
+              isActive: true
+              activationId: ON_OFF
+            indicators:
+            - indicatorId: IS_ADDITIONAL
+              name: IS_ADDITIONAL
+              isActive: true
+            - description: Indica si la tarjeta es limpia
+              id: IS_CLEAN_CARD
+              isActive: true
+            cvvs:
+            - cvv: '135'
+            - cvv: ABC
+            - cvv: '12'
+            - cvv: '000'
+            status:
+              name: Operative card
+              description: VIGENTE
+              id: OPERATIVE
+        authentication:
+          password: Glomo2024
+          user: '4251078257'
+          deviceId: 207BCF58339FE5BF70ABFA2BBF1F3AFE
+      lockType: null
+      lockExpiration: null
+      id: 35873262
+    :headers:
+      content-length: '1238'
+      Server: nginx
+      Connection: keep-alive
+      host: datamanager.globaldevtools.bbva.com
+      Vary: Accept-Encoding
+      Date: Mon, 19 Aug 2024 16:15:01 GMT
+      Content-Type: application/json
+    :status: 200 OK

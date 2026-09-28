@@ -1,0 +1,49 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: ada02121-d682-4c80-81e8-2fd8dc92c940
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: credit_card_holder_outdated_rfc
+    lock: 'false'
+then:
+- return:
+    :body:
+    - data:
+        tags:
+        - '4741060457'
+        - credit_card_holder_outdated_rfc
+        authentication:
+          password: Glomo2026
+          user: '4741060457'
+          deviceId: 1DA40F0F75DA0E054A02D870F94E32FA
+        information:
+          rfcWithLess: BARB64
+          homoclaveWithLess: BA
+          rfc: BARB640809E50
+          homoclave: E50
+          confirmNewLine: 200000
+          maxAmount: 9999999
+          minAmount: 1
+      id: 36372167
+      lockType: SHARED
+      lockExpiration: '2026-02-17T05:47:37.591125Z'
+    :headers:
+      content-length: '257'
+      Server: nginx
+      Cache-Control: max-age=0
+      Connection: keep-alive
+      host: datamanager.globaldevtools.bbva.com
+      Vary: Accept-Encoding
+      Expires: Tue, 17 Feb 2026 05:47:09 GMT
+      Date: Tue, 17 Feb 2026 05:47:09 GMT
+      Content-Type: application/json; charset=utf-8
+    :status: 200 OK

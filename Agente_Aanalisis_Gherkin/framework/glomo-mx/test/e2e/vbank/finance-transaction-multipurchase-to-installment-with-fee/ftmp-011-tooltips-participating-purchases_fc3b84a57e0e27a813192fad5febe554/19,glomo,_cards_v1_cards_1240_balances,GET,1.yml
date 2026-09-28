@@ -1,0 +1,66 @@
+when:
+  sequence: 1
+  path: /SRVS_A02/cards/v1/cards/1240/balances
+  method: GET
+  backend: glomo
+request:
+  headers:
+    sec-fetch-mode: cors
+    content-length: '0'
+    referer: http://localhost:8001/
+    sec-fetch-site: same-site
+    accept-language: es-ES,es;q=0.9
+    origin: http://localhost:8001
+    tsec: b7449248626e51f44075a2689e78c0c941c95e89
+    accept: application/json, text/html, */*; q=0.1
+    sec-ch-ua: '"Not?A_Brand";v="8", "Chromium";v="108", "Google Chrome";v="108"'
+    sec-ch-ua-mobile: ?0
+    x-vbank-session: 1bef8168-1a4c-4d46-ad82-ba09bebad61d
+    sec-ch-ua-platform: '"macOS"'
+    host: localhost:9000
+    content-type: application/json
+    connection: keep-alive
+    cache-control: no-cache, no-store, must-revalidate
+    accept-encoding: gzip, deflate, br
+    sec-fetch-dest: empty
+    user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36
+      (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36
+then:
+- return:
+    data:
+      specificAmountsBalance:
+        specificAmounts:
+        - amount:
+            amount: 140000
+            currency: MXN
+          id: REVOLVING_BALANCE
+        rates:
+          itemizeRates:
+          - rateType: PERSONALIZED
+            itemizeRatesUnit:
+              unitRateType: PERCENTAGE
+              percentage: 49.99
+    :headers:
+      access-control-allow-origin: '*'
+      content-length: '340'
+      Access-Control-Expose-Headers: tsec, vnd.bbva.access-token-type,vnd.bbva.access-token,
+        vnd.bbva.sso-pkcs7, authenticationtype, authenticationdata, authenticationstate,
+        authenticationchallenge
+      Server: artichoke
+      Alt-Svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      access-control-allow-headers: Content-Type, tsec, authenticationtype, authenticationdata,
+        authenticationstate, contactid, consumeruuid, consumerapplicationid, perimetertsec,
+        authorization, responsewarningcode, responsewarningdescription, cuf, field,
+        bcs-device-app-version, bcs-device-app-version, vnd.bbva.authorization
+      Vary: Accept-Encoding
+      tsec: b7449248626e51f44075a2689e78c0c941c95e89
+      X-Response-Time: 501ms
+      Date: Fri, 16 Dec 2022 13:56:39 GMT
+      Content-Type: application/json; charset=utf-8
+      Via: 1.1 google
+    :status: 200 OK
+    responseStatus: 200
+    apiInfo:
+      name: cards
+      category: products
+      version: 0.19.0

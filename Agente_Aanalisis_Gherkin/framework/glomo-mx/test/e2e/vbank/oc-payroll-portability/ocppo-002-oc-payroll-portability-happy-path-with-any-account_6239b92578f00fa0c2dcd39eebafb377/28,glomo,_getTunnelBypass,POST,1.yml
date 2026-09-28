@@ -1,0 +1,39 @@
+when:
+  sequence: 1
+  path: /getTunnelBypass
+  method: POST
+  backend: glomo
+request:
+  headers:
+    content-length: '200'
+    host: 127.0.0.1:9000
+    connection: Close
+    content-type: application/json
+    accept: '*/*'
+    user-agent: ZCC-client
+  body:
+    systemProxyPort: 0
+    protocol: 6
+    port: 443
+    resolvedIp: ''
+    host: ''
+    bypassRequest: false
+    systemProxyHost: ''
+    lite: false
+    url: https://gateway.zscalertwo.net/get_loc
+    ignoreSystemProxy: false
+then:
+- return:
+    :body: <html><body>No service was found<script type="text/javascript"  src="/ZOFfIrvLLgOj6/uyfYRWukf65x/m8/aiQufmD7O5auwfYm/SUhwTQ/dj9KCyEp/SHsB"></script></body></html>
+    :headers:
+      content-length: '162'
+      ECS-Entry-Point-Zone: ext
+      Connection: close
+      Vary: Accept-Encoding
+      Set-Cookie: _abck=8EB1FC19EF903512AEFEA770401561E2~-1~YAAQi6PPF/eUqIefAQAAklMolhCl1MR4V+M48FnbRHyWMjQ43+1BRInTgyoByvtkC10hxGlD39rPwPRY6K5MHIXgmcwVZnbYHsLqg5+m4itmQbalaXQzEnEvXGYMyzfpHtphRlNcsx+unDbTLmeWf2ymx5hOZPxIsXu/vgqYFOeTqkl0SBuseNv8K7zqRMx5t9+yJ/eF0zg2mU8wEGFwd+U7/fzNK6E+q1blRTCGEdn/Im1+cu0x3ri9e5kkKW1bY4wtpew0F2P712zS/UlNW2e9apwhIGbvBQeqV9yMl+wVqLt2GkzQUSG0sTTTzDmQVAtRNfuKlTwzKEiRZCVGA33RiG2QRvHEAgo/47u5MdbVL34zYYyReL9EOWD9UXSuBaofgYf2xhhWcACscc/I1g+CCh2R19i7f60RS4PdVUFcqfnoMOpEfgrSHaGEN8/7vAv2FT+2dGWKtdDNfaHtJg==~-1~-1~-1~-1~-1;
+        Domain=.grupobbva.com; Path=/; Expires=Sat, 24 Jul 2027 22:04:13 GMT; Max-Age=31536000;
+        SameSite=None; Secure
+      X-Akamai-Transformed: 0 - 0 -
+      Date: Fri, 24 Jul 2026 22:04:13 GMT
+      Content-Type: text/html; charset=UTF-8
+    :status: 404 Not Found

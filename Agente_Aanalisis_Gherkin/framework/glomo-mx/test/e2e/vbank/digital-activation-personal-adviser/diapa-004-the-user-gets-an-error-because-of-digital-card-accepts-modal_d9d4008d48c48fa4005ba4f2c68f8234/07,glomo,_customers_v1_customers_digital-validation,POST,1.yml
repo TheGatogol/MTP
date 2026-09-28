@@ -1,0 +1,105 @@
+when:
+  sequence: 1
+  path: /SRVS_A02/customers/v1/customers/digital-validation
+  method: POST
+  backend: glomo
+request:
+  headers:
+    sec-fetch-mode: cors
+    referer: http://localhost:8001/
+    content-length: '146'
+    sec-fetch-site: same-site
+    accept-language: es
+    origin: http://localhost:8001
+    tsec: ZXlKaFlYQWlPaUl4TURBd01EQTRPQ0lzSW10bGVWWmxjbk5wYjI0aU9qRXNJbUZ3Y0Vsa0lqb2lRVkJRTVNJc0ltdHBaQ0k2SWtGUVVERXViRzlqWVd3dU1TSXNJbVZ1WXlJNklrRXhPVEpIUTAwaUxDSnJaWGxVZVhCbElqb2liRzlqWVd3aUxDSmhiR2NpT2lKa2FYSWlMQ0owYzJWalNXUWlPaUl3TlRjeFl6WTFNQzA1T0dWbExUUXlZall0T1dNNVpDMDRaamd5TWpGak5qazNPREFpZlEuLjAta3ctWktpc1BVTUxmWmQuc0p5VV9vaHhCX1hxcl9LZ2h4NnNtSm92STBtV29VNDVsS2VuUEc0VGdvVncyNVpoUUVpXzB6RUljQW1wVk9tN0d2WVRGTHhrU2NMcVNIRTNsMUhILW9TV2ZqWF9NVXFxek9maWgtenRERXo0NWFKRW9kRHVmdXpGVm9qR05YdFJMX3llaHJBc01OaE4xSi1aNHBfcDlvZGxGQWJXRHNyM2h4Z0NKb3ZtNFNQY19WWnRma3FNOVVEeWxxa3Jyc3dDX040bEtPV1BQampBS3dzUjNFazFuTW1ubXFPbHotbW1sb2VNVTVZV0x3Uk1TWGREQWpEOS02aHcwUU14SWoxcTFMNkR6NDExNi1nakVlemIzZkhoRlRtaVFta0RDdVItQ3Vna3ljTjlwU0sxN1RqTjdsWG5nR0wzWkpWUDZfMG9QWkF0X1psWG5QSkxMckV4ZzRacjg0dW55VHVJS0J2YzlwR1c4V3FvaU9BUlBRUWNIQnZpaTNqSzFpYTZKT3BFR2hjX2JubkRScG8yQmJPalVIZlNNTW5TakRMLWxGUFNSWEJ1ay1YbjBvelB5Z2pxRk5VSzB2emFBb0hYTEUxb1RMeXB0TDVhRl9EOWU1a2JZbVFYQVZSWGUtbnhrenN3b0YxejZSd1ptcEViTWpLbTB6UHlwV1JDV3BiXzZjeUY0a04xM1ZtS1VEOGY5Uk9DUzBXUDQwQjhJT0hiN1hEMl94WHNwYkpDUDd0WmVpZ2F4VTdGb0ZjZVB3Y0NiTjFBRVBJS0FYV2tOU0dtWDdxMDkwbDl1RWIzLXpEUnllUHF4LWd6bTFzQk8tZHpwakg1NzZXcVljd0FQVk9kRnRhQXNXMk8zX2RCSXVWV2pKMGh6U2hScGxiR0tycE1TQ0F4b1BnTUp2YjAtTzZvOHI3T1ptOEdPOUcteVI0b0J2My1ZM2lVY0xhbU9zRTc3ZmhGVjdMLVlZcFotUzRmUVJidDNueTU2ckdqbktidDJObnFHQ19ndnhza1phZHBjSXM1NHpvT3BTTHpKaXN5MWZxSTAzUFVQZUpXTGYteGNZeWluVnBfaUJGV2RydXA2UzkwZksxaE0zdlZ6Q3B1SFpsZDNmT1pqblMzcmxEU1ZWRlcxYzVrMUlEYnhKSTVMRV9NWUhiR1k5ckVtNmRQYUJXUkhMdWF0NEdLR2JfZ0d5RXoxZDZtRTlBTjR5WUExaE1UcjlKdld4clpPVWRpaW1UbmRROEpuRGZGQ19DbFJnNlhPRFhIbGhyakktTnlXNUc1cW1leV9NTXhXUW8tYjhBTTMxaU96UEduSG1jalVSdm85b0dLM0VTaS1obTNFU1gtLkhFanRqVFYzNGZsYkVicEh4NzdQV1E=
+    accept: application/json, text/html, */*; q=0.1
+    sec-ch-ua: '"Not.A/Brand";v="8", "Chromium";v="114", "Google Chrome";v="114"'
+    sec-ch-ua-mobile: ?0
+    x-vbank-session: ab3f8b0f-af18-4b93-811a-3219cc378b23
+    sec-ch-ua-platform: '"macOS"'
+    host: localhost:9000
+    content-type: application/json
+    connection: keep-alive
+    cache-control: no-cache, no-store, must-revalidate
+    accept-encoding: gzip, deflate, br
+    sec-fetch-dest: empty
+    user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36
+      (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+  body:
+    contactDetail:
+      contact: '5518465254'
+      contactType:
+        id: MOBILE_NUMBER
+    contract:
+      number: '4152313306630174'
+      numberType:
+        id: PAN
+then:
+- return:
+    severity: FATAL
+    system-error-cause: 'MPE2941: CLTE. MULTIPRODUCTO  FINAL VI'
+    error-message: Operación rechazada
+    consumer-request-id: 916d64ff-009f-4934-9a90-464c05e82962
+    :headers:
+      content-length: '335'
+      Access-Control-Allow-Origin: '*'
+      ECS-Entry-Point-Zone: ext
+      Access-Control-Allow-Methods: GET, POST, DELETE, PUT, OPTIONS, PATCH
+      X-Content-Type-Options: nosniff
+      old-catalog: 'true'
+      Connection: close
+      tsec: ZXlKaFlYQWlPaUl4TURBd01EQTRPQ0lzSW10bGVWWmxjbk5wYjI0aU9qRXNJbUZ3Y0Vsa0lqb2lRVkJRTVNJc0ltdHBaQ0k2SWtGUVVERXViRzlqWVd3dU1TSXNJbVZ1WXlJNklrRXhPVEpIUTAwaUxDSnJaWGxVZVhCbElqb2liRzlqWVd3aUxDSmhiR2NpT2lKa2FYSWlMQ0owYzJWalNXUWlPaUl3TlRjeFl6WTFNQzA1T0dWbExUUXlZall0T1dNNVpDMDRaamd5TWpGak5qazNPREFpZlEuLjAta3ctWktpc1BVTUxmWmQuc0p5VV9vaHhCX1hxcl9LZ2h4NnNtSm92STBtV29VNDVsS2VuUEc0VGdvVncyNVpoUUVpXzB6RUljQW1wVk9tN0d2WVRGTHhrU2NMcVNIRTNsMUhILW9TV2ZqWF9NVXFxek9maWgtenRERXo0NWFKRW9kRHVmdXpGVm9qR05YdFJMX3llaHJBc01OaE4xSi1aNHBfcDlvZGxGQWJXRHNyM2h4Z0NKb3ZtNFNQY19WWnRma3FNOVVEeWxxa3Jyc3dDX040bEtPV1BQampBS3dzUjNFazFuTW1ubXFPbHotbW1sb2VNVTVZV0x3Uk1TWGREQWpEOS02aHcwUU14SWoxcTFMNkR6NDExNi1nakVlemIzZkhoRlRtaVFta0RDdVItQ3Vna3ljTjlwU0sxN1RqTjdsWG5nR0wzWkpWUDZfMG9QWkF0X1psWG5QSkxMckV4ZzRacjg0dW55VHVJS0J2YzlwR1c4V3FvaU9BUlBRUWNIQnZpaTNqSzFpYTZKT3BFR2hjX2JubkRScG8yQmJPalVIZlNNTW5TakRMLWxGUFNSWEJ1ay1YbjBvelB5Z2pxRk5VSzB2emFBb0hYTEUxb1RMeXB0TDVhRl9EOWU1a2JZbVFYQVZSWGUtbnhrenN3b0YxejZSd1ptcEViTWpLbTB6UHlwV1JDV3BiXzZjeUY0a04xM1ZtS1VEOGY5Uk9DUzBXUDQwQjhJT0hiN1hEMl94WHNwYkpDUDd0WmVpZ2F4VTdGb0ZjZVB3Y0NiTjFBRVBJS0FYV2tOU0dtWDdxMDkwbDl1RWIzLXpEUnllUHF4LWd6bTFzQk8tZHpwakg1NzZXcVljd0FQVk9kRnRhQXNXMk8zX2RCSXVWV2pKMGh6U2hScGxiR0tycE1TQ0F4b1BnTUp2YjAtTzZvOHI3T1ptOEdPOUcteVI0b0J2My1ZM2lVY0xhbU9zRTc3ZmhGVjdMLVlZcFotUzRmUVJidDNueTU2ckdqbktidDJObnFHQ19ndnhza1phZHBjSXM1NHpvT3BTTHpKaXN5MWZxSTAzUFVQZUpXTGYteGNZeWluVnBfaUJGV2RydXA2UzkwZksxaE0zdlZ6Q3B1SFpsZDNmT1pqblMzcmxEU1ZWRlcxYzVrMUlEYnhKSTVMRV9NWUhiR1k5ckVtNmRQYUJXUkhMdWF0NEdLR2JfZ0d5RXoxZDZtRTlBTjR5WUExaE1UcjlKdld4clpPVWRpaW1UbmRROEpuRGZGQ19DbFJnNlhPRFhIbGhyakktTnlXNUc1cW1leV9NTXhXUW8tYjhBTTMxaU96UEduSG1jalVSdm85b0dLM0VTaS1obTNFU1gtLkhFanRqVFYzNGZsYkVicEh4NzdQV1E=
+      Access-Control-Allow-Headers: Accept-Encoding, Accept, Content-Type, tsec, consumerrequestid,
+        authenticationchallenge, authenticationtype, authenticationdata, authenticationstate,
+        contactid, consumeruuid, consumerapplicationid, perimetertsec, authorization,
+        responsewarningcode, responsewarningdescription, cuf, prefer, phoneNumber,
+        Location, X-RHO-PARENTSPANID, X-RHO-TRACEID, preferredauthenticationtype,
+        X-HTTP-Method-Override, Access-Control-Allow-Methods, iv-remote-address, thirdparty-x-forwarded-for,
+        thirdparty-user-agent, thirdparty-geolocation, thirdparty-calculated-scoring,
+        thirdparty-deviceid, vnd.bbva.security-client-certificate, order-preferredaction,
+        authenticationresponse, Access-Control-Max-Age, BCS-Device-Id, BCS-Device-OS-Name,
+        BCS-Device-Model-Name, BCS-Device-Model-Manufacturer, BCS-Device-Screen-Size,
+        BCS-Device-OS-Version, BCS-Device-DPI, BCS-Device-App-Name, BCS-Device-App-Version,
+        Third-Party-Application-Id, ECS-Signature-Platform-Use-Case, BCS-Process-Code,
+        BCS-Operation-Tracer, BCS-Process-Tracer, vnd.bbva.user-id, order-preferredaction,
+        order-id, order-accepteddisclaimers, x-forwarded-for, Date, x-dmz-orgn, onsite-accountTerm,
+        onsite-logicalTerm, Akamai-BM-Telemetry, order-hmac, order-signed, BCS-Third-Party-Session-Id,
+        Cache-Control, clave, Content-Encoding, ECS-Entry-Point-Zone, firma, Geolocation,
+        Third-Party-Collaborator-Id, user-agent, Via
+      Date: Mon, 05 Jun 2023 23:24:16 GMT
+      Referrer-Policy: same-origin
+      X-Frame-Options: sameorigin
+      ResponseWarningCode: MPE2941
+      Strict-Transport-Security: max-age=31536000; includeSubDomains
+      Access-Control-Expose-Headers: Accept-Encoding, Accept, Content-Type, tsec,
+        consumerrequestid, authenticationchallenge, authenticationtype, authenticationdata,
+        authenticationstate, contactid, consumeruuid, consumerapplicationid, perimetertsec,
+        authorization, responsewarningcode, responsewarningdescription, cuf, prefer,
+        phoneNumber, Location, X-RHO-PARENTSPANID, X-RHO-TRACEID, preferredauthenticationtype,
+        X-HTTP-Method-Override, Access-Control-Allow-Methods, iv-remote-address, thirdparty-x-forwarded-for,
+        thirdparty-user-agent, thirdparty-geolocation, thirdparty-calculated-scoring,
+        thirdparty-deviceid, vnd.bbva.security-client-certificate, order-preferredaction,
+        authenticationresponse, Access-Control-Max-Age, BCS-Device-Id, BCS-Device-OS-Name,
+        BCS-Device-Model-Name, BCS-Device-Model-Manufacturer, BCS-Device-Screen-Size,
+        BCS-Device-OS-Version, BCS-Device-DPI, BCS-Device-App-Name, BCS-Device-App-Version,
+        Third-Party-Application-Id, ECS-Signature-Platform-Use-Case, BCS-Process-Code,
+        BCS-Operation-Tracer, BCS-Process-Tracer, vnd.bbva.user-id, order-preferredaction,
+        order-id, order-accepteddisclaimers, x-forwarded-for, Date, x-dmz-orgn, onsite-accountTerm,
+        onsite-logicalTerm, Akamai-BM-Telemetry, order-hmac, order-signed, BCS-Third-Party-Session-Id,
+        Cache-Control, clave, Content-Encoding, ECS-Entry-Point-Zone, firma, Geolocation,
+        Third-Party-Collaborator-Id, user-agent, Via
+      Cache-Control: no-cache,no-store,must-revalidate
+      Akamai-Parent-IP: 104.124.0.213
+      Content-Security-Policy: script-src 'self'
+      Set-Cookie: vbank-session=ab3f8b0f-af18-4b93-811a-3219cc378b23
+      Expires: '-1'
+      X-XSS-Protection: 1; mode=block
+      ResponseWarningDescription: CLTE. MULTIPRODUCTO  FINAL VI
+      consumerrequestid: 916d64ff-009f-4934-9a90-464c05e82962
+      Content-Type: application/json; charset=UTF-8
+    system-error-code: operationRejected
+    :status: 400 Bad Request
+    http-status: 400
+    system-error-description: Operación rechazada
+    error-code: operationRejected
+    version: 1

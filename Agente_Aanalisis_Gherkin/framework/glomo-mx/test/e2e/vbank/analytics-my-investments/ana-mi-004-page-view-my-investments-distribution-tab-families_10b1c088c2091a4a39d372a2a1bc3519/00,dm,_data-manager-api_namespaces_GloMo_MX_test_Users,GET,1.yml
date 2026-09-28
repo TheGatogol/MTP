@@ -1,0 +1,48 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: 071b7f84-c60f-4367-a18a-1a443ce20600
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: my_investments_analytics
+    lock: 'false'
+then:
+- return:
+    :body:
+    - data:
+        homeFutura: false
+        tags:
+        - my_investments
+        - follow_up_has_investments_products
+        - my_investments_analytics
+        - '5500815766'
+        products:
+          investmentFunds:
+          - name: Si8302
+            id: LCNm6SJt-4kBOh6jiC_k_hkZOptrtH-7
+        authentication:
+          password: Glomo2023
+          user: '5500815766'
+          deviceId: E86F7F4905654AAFCA183FC02BC707C0
+      lockExpiration: null
+      lockType: null
+      id: 35691285
+    :headers:
+      content-length: '383'
+      Strict-Transport-Security: max-age=15768000
+      Server: nginx
+      ECS-Entry-Point-Zone: ext
+      Connection: keep-alive
+      host: datamanager.globaldevtools.bbva.com
+      Vary: Accept-Encoding
+      Date: Tue, 31 Oct 2023 06:46:00 GMT
+      Content-Type: application/json
+    :status: 200 OK

@@ -1,0 +1,35 @@
+when:
+  sequence: 1
+  path: /content/dam/caas/mexico/app/img/content-fragment/sustainability/thumbnail-video.png
+  method: GET
+  backend: aem
+request:
+  headers:
+    content-length: '0'
+    referer: http://localhost:9031/
+    origin: http://localhost:9031
+    authority: assets-stage.caasbbva.com
+    host: assets-stage.caasbbva.com
+    accept-encoding: deflate, gzip, br
+    accept: '*/*'
+    user-agent: curl/7.68.0
+then:
+- return:
+    :body: Resource Not Found
+    :headers:
+      X-EdgeConnect-Origin-MEX-Latency: '683'
+      Cache-Control: max-age=1800
+      Access-Control-Allow-Origin: $(${backend.aem.protocol}://${backend.aem.host}:${backend.aem.port})
+      Content-Security-Policy: $(frame-ancestors 'self' https://www.bbva.pt https://bbva.pt
+        https://online.bbva.com.ar https://s3-dev.movil.bbva.es https://movil.bbva.es
+        https://pre.web.bbva.es https://qa.web.grupobbva.com https://web.bbva.es https://*.es.igrupobbva
+        https://*.igrupobbva https://bbvanetcash.com https://www.bbvanetcash.com https://www.bbva.es
+        https://s3-dev.mobile.bbva.it http://localhost http://localhost:4200 https://int-bbva-cells-files.s3.amazonaws.com
+        https://pre.web.bbva.it)
+      Connection: keep-alive
+      Expires: Tue, 16 Aug 2022 10:30:29 GMT
+      Content-Length: '18'
+      X-EdgeConnect-MidMile-RTT: '0'
+      Date: Tue, 16 Aug 2022 10:00:29 GMT
+      Content-Type: text/html; charset=iso-8859-1
+    :status: 404 Not Found

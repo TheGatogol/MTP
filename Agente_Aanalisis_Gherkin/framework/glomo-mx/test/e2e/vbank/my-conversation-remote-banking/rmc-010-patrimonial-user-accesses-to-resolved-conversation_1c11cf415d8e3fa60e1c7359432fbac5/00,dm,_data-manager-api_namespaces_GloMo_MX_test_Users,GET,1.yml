@@ -1,0 +1,45 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: 39da9847-b12d-41b6-ad89-efb3d80d0891
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: resolved_conversation_remote
+    lock: 'false'
+then:
+- return:
+    :body:
+    - data:
+        data:
+          catalogs:
+            catalogs: []
+        searchSubject: prueba buscador
+        segment: remote
+        statusResolved: resolved
+        tags:
+        - resolved_conversation_remote
+        authentication:
+          password: Glomo2026
+          user: '8110391662'
+          deviceId: B0A91881D1041CC842D6A18D6518BC7F
+        titleConversation: titulo buscador
+      id: 36062570
+    :headers:
+      content-length: '329'
+      Server: nginx
+      Cache-Control: max-age=0
+      Connection: keep-alive
+      host: datamanager.globaldevtools.bbva.com
+      Vary: Accept-Encoding
+      Expires: Thu, 22 Jan 2026 14:55:27 GMT
+      Date: Thu, 22 Jan 2026 14:55:27 GMT
+      Content-Type: application/json; charset=utf-8
+    :status: 200 OK

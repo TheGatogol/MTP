@@ -1,0 +1,43 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: 1b40ec19-4df5-4440-b7a6-d349dd856079
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: operationals,accounts,without_tdc
+    lock: 'false'
+then:
+- return:
+    :body:
+    - data:
+        locale: es_mx
+        tags:
+        - '5528476894'
+        - operationals
+        - accounts
+        - without_tdc
+        authentication:
+          password: Glomo2022
+          user: '5528476894'
+          deviceId: 6EC0A0148C61007B0D8BFB29D7EE5F43
+      lockExpiration: null
+      lockType: null
+      id: 3504974
+    :headers:
+      Strict-Transport-Security: max-age=15768000
+      Server: nginx
+      ECS-Entry-Point-Zone: ext
+      Connection: keep-alive
+      Set-Cookie: vbank-session=1b40ec19-4df5-4440-b7a6-d349dd856079
+      Content-Length: '263'
+      Date: Mon, 12 Jun 2023 23:55:13 GMT
+      Content-Type: application/json
+    :status: 200 OK

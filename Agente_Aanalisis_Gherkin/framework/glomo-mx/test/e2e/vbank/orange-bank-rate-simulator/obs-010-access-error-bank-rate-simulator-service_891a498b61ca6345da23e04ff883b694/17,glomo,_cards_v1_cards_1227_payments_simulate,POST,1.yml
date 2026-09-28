@@ -1,0 +1,62 @@
+when:
+  sequence: 1
+  path: /SRVS_A02/cards/v1/cards/1227/payments/simulate
+  method: POST
+  backend: glomo
+request:
+  headers:
+    sec-fetch-mode: cors
+    referer: http://127.0.0.1:9090/
+    content-length: '55'
+    sec-fetch-site: cross-site
+    accept-language: es
+    origin: http://127.0.0.1:9090
+    x-forwarded-for: 10.23.97.77
+    tsec: cfcfed829d3c6145cd244bb5dd9a85a01add1961
+    via: 1.1 tunnel-54d1c339-272f-4b0b-b9ff-d5939a961314 (squid/3.5.27)
+    accept: application/json, text/html, */*; q=0.1
+    sec-ch-ua: '" Not;A Brand";v="99", "Google Chrome";v="91", "Chromium";v="91"'
+    sec-ch-ua-mobile: ?0
+    x-vbank-session: bb8c930d-6ff4-4f98-b264-60acafa9c49d
+    host: localhost:9000
+    content-type: application/json
+    cache-control: no-cache, no-store, must-revalidate
+    accept-encoding: gzip
+    sec-fetch-dest: empty
+    user-agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko)
+      Chrome/91.0.4472.77 Safari/537.36
+  body:
+    paymentAmounts:
+    - amount: '0.00'
+      currency: MXN
+then:
+- return:
+    severity: FATAL
+    system-error-cause: ''
+    error-message: Not Found
+    consumer-request-id: 207a2723-e82b-4c47-a64c-ea8836f245cd
+    :headers:
+      content-length: '303'
+      Server: artichoke
+      Alt-Svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      access-control-allow-headers: Content-Type, tsec, authenticationtype, authenticationdata,
+        authenticationstate, contactid, consumeruuid, consumerapplicationid, perimetertsec,
+        authorization, responsewarningcode, responsewarningdescription, cuf, field,
+        bcs-device-app-version, bcs-device-app-version, vnd.bbva.authorization
+      tsec: cfcfed829d3c6145cd244bb5dd9a85a01add1961
+      X-Response-Time: 490ms
+      Date: Mon, 30 May 2022 06:48:18 GMT
+      Allow: POST
+      Via: 1.1 google
+      access-control-allow-origin: '*'
+      Access-Control-Expose-Headers: tsec, vnd.bbva.access-token-type,vnd.bbva.access-token,
+        vnd.bbva.sso-pkcs7, authenticationtype, authenticationdata, authenticationstate,
+        authenticationchallenge
+      content-type: application/json;charset=UTF-8
+      Vary: Accept-Encoding
+    system-error-code: '404'
+    :status: 404 Not Found
+    http-status: 404
+    system-error-description: Can't find requested resorce
+    error-code: '160'
+    version: 1

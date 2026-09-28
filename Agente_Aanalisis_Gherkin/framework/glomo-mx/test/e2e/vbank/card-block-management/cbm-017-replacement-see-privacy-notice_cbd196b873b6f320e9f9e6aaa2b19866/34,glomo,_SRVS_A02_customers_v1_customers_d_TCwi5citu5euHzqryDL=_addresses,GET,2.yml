@@ -1,0 +1,60 @@
+when:
+  sequence: 1
+  path: /SRVS_A02/customers/v1/customers/LMLPVX2NxSXh2y2qJ1ycUg/addresses
+  method: GET
+  backend: glomo
+request:
+  headers:
+    sec-fetch-mode: cors
+    content-length: '0'
+    referer: http://localhost:8001/
+    sec-fetch-site: same-site
+    accept-language: es-MX,es;q=0.9
+    origin: http://localhost:8001
+    tsec: d199abe7b058d4b9659c31dd223bab38ce62976b
+    accept: application/json, text/html, */*; q=0.1
+    sec-ch-ua: '"Google Chrome";v="141", "Not?A_Brand";v="8", "Chromium";v="141"'
+    sec-ch-ua-mobile: ?0
+    x-vbank-session: b3a16a54-7aae-45bf-a5ed-96531719746a
+    sec-ch-ua-platform: '"macOS"'
+    host: localhost:9000
+    content-type: application/json
+    connection: keep-alive
+    cache-control: no-cache, no-store, must-revalidate
+    accept-encoding: gzip, deflate, br, zstd
+    sec-fetch-dest: empty
+    user-agent: GLOMO_MX/99.99.99 (Android;14;Samsung)
+  query:
+    unmasked: 'true'
+then:
+- return:
+    severity: FATAL
+    system-error-cause: The authentication type must be specified
+    error-message: The authentication type must be specified
+    consumer-request-id: 954cbbbf-5361-4ae3-a250-2999244729a0
+    :headers:
+      access-control-allow-origin: '*'
+      Access-Control-Expose-Headers: tsec, vnd.bbva.access-token-type,vnd.bbva.access-token,
+        vnd.bbva.sso-pkcs7, authenticationtype, authenticationdata, authenticationstate,
+        authenticationchallenge
+      authenticationdata: otp-sms
+      Server: artichoke
+      access-control-allow-headers: Content-Type, tsec, authenticationtype, authenticationdata,
+        authenticationstate, contactid, consumeruuid, consumerapplicationid, perimetertsec,
+        authorization, responsewarningcode, responsewarningdescription, cuf, field,
+        bcs-device-app-version, bcs-device-app-version, vnd.bbva.authorization, device-id,
+        Bcs-Device-Os-Name, bcs-device-app-name, bcs-device-dpi, BCS-Device-Id
+      Connection: keep-alive
+      authenticationtype: '05'
+      tsec: d199abe7b058d4b9659c31dd223bab38ce62976b
+      Content-Length: '374'
+      X-Response-Time: 9ms
+      Date: Wed, 26 Nov 2025 11:17:53 GMT
+      Content-Type: application/json; charset=utf-8
+    system-error-code: unauthorized
+    messages: []
+    :status: 401 Unauthorized
+    http-status: 401
+    system-error-description: The authentication type must be specified
+    error-code: '70'
+    version: 1

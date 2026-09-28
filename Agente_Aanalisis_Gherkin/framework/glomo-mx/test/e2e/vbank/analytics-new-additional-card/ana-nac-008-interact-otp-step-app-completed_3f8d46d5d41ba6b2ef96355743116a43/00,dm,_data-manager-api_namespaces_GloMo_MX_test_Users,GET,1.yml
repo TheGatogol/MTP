@@ -1,0 +1,47 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: 7f911601-7f3c-473d-970f-8a2cdfb858a9
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: additional_card_success_ana
+    lock: 'false'
+then:
+- return:
+    :body:
+    - data:
+        tags:
+        - '3521384764'
+        - additional_card_success_ana
+        products:
+          cards:
+          - number: '4772143004864282'
+            cardId: 0AeKFgbD0FWIrIWixS7PiIadn7DgfN5f3ATqdMFW_m0
+            title:
+              name: PLATINUM BBVA
+        authentication:
+          password: Glomo2023
+          user: '3521384764'
+          deviceId: FDA0C7EEE804A9D256FBD32173C4AAAC
+      id: 35751599
+      lockType: null
+      lockExpiration: null
+    :headers:
+      content-length: '383'
+      Strict-Transport-Security: max-age=15768000
+      Server: nginx
+      ECS-Entry-Point-Zone: ext
+      Connection: keep-alive
+      host: datamanager.globaldevtools.bbva.com
+      Vary: Accept-Encoding
+      Date: Tue, 23 Jan 2024 23:08:50 GMT
+      Content-Type: application/json
+    :status: 200 OK

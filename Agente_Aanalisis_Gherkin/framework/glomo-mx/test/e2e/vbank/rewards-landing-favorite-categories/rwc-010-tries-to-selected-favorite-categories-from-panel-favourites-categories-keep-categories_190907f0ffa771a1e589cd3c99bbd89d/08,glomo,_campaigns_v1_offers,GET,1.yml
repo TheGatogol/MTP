@@ -1,0 +1,50 @@
+when:
+  sequence: 1
+  path: /SRVS_A02/campaigns/v1/offers
+  method: GET
+  backend: glomo
+request:
+  headers:
+    sec-fetch-mode: cors
+    content-length: '0'
+    referer: http://localhost:8001/
+    sec-fetch-site: same-site
+    accept-language: es-MX,es;q=0.9
+    origin: http://localhost:8001
+    tsec: b817e81bf5376325d406c58530d3b1a9e1315de8
+    accept: application/json, text/html, */*; q=0.1
+    sec-ch-ua: '"Not/A)Brand";v="99", "Google Chrome";v="115", "Chromium";v="115"'
+    sec-ch-ua-mobile: ?0
+    x-vbank-session: 2cf0368f-43e2-460e-bca8-a160ad8ecaca
+    sec-ch-ua-platform: '"macOS"'
+    host: localhost:9000
+    content-type: application/json
+    connection: keep-alive
+    cache-control: no-cache, no-store, must-revalidate
+    accept-encoding: gzip, deflate, br
+    sec-fetch-dest: empty
+    user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36
+      (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36
+  query:
+    origin.id: OLG
+then:
+- return:
+    :body: Cannot read property '0' of undefined
+    :headers:
+      access-control-allow-origin: '*'
+      content-length: '37'
+      Access-Control-Expose-Headers: tsec, vnd.bbva.access-token-type,vnd.bbva.access-token,
+        vnd.bbva.sso-pkcs7, authenticationtype, authenticationdata, authenticationstate,
+        authenticationchallenge
+      Server: artichoke
+      Alt-Svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      access-control-allow-headers: Content-Type, tsec, authenticationtype, authenticationdata,
+        authenticationstate, contactid, consumeruuid, consumerapplicationid, perimetertsec,
+        authorization, responsewarningcode, responsewarningdescription, cuf, field,
+        bcs-device-app-version, bcs-device-app-version, vnd.bbva.authorization, device-id
+      content-type: text/plain;utf-8
+      tsec: b817e81bf5376325d406c58530d3b1a9e1315de8
+      X-Response-Time: 2ms
+      Date: Wed, 26 Jul 2023 08:26:51 GMT
+      Via: 1.1 google
+    :status: 500 Internal Server Error

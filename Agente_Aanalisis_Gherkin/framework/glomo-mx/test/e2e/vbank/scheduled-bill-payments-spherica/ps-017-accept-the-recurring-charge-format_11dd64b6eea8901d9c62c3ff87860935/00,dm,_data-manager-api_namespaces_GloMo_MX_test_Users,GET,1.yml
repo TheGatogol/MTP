@@ -1,0 +1,48 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: 4c7d582d-0188-405a-a256-ed6f56c51d7a
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: service_payments
+    lock: 'false'
+then:
+- return:
+    :body:
+    - data:
+        reference: '973140501067'
+        threeLetters: TEL
+        amount: '10'
+        saved: CFE
+        service: fundacion
+        name: Ernesto FDG
+        fourLetters: AXTE
+        locale: es_mx
+        tags:
+        - service_payments
+        wrong: SZ
+        authentication:
+          password: Glomo2024
+          user: '8187078858'
+          deviceId: 0CC0E9E78669FBA21CF7CA493E9811BE
+      id: 36031022
+      lockExpiration: null
+      lockType: null
+    :headers:
+      content-length: '396'
+      Cache-Control: max-age=0
+      Connection: keep-alive
+      host: datamanager.globaldevtools.bbva.com
+      Vary: Accept-Encoding
+      Expires: Tue, 21 Jan 2025 23:25:44 GMT
+      Date: Tue, 21 Jan 2025 23:25:44 GMT
+      Content-Type: application/json; charset=utf-8
+    :status: 200 OK

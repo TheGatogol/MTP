@@ -1,0 +1,105 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: b35fb900-7744-40db-94b6-415ec0ce546a
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: debit_card_pending_delivery,generation_process
+then:
+- return:
+    :body:
+    - data:
+        otp: '12345678'
+        tags:
+        - '5532520392'
+        - debit_card_pending_delivery
+        - generation_process
+        products:
+          cards:
+          - images:
+            - name: Front face of the card
+              id: FRONT_CARD
+              url: https://openapi.bbva.com/ccds/covers?pg=VD&bin=415231&default_image=true&v=4&country=mx&app_id=com.bbva.glomo_mx
+            product:
+              name: DEBITO BBVA
+              id: VD
+            holderName: MAX ZURITA ITW
+            numberType:
+              description: Número de Cuenta Principal
+              id: PAN
+            brandAssociation:
+              description: VISA
+              id: VISA
+            physicalSupport:
+              description: VIRTUAL
+              id: VIRTUAL
+              hasPendingDelivery: true
+            cardType:
+              description: DEBIT_CARD
+              id: DEBIT_CARD
+            disposedBalance:
+              pendingBalance:
+              - amount: 0
+                currency: MXN
+              currentBalances:
+              - amount: 0
+                currency: MXN
+              postedBalance:
+              - amount: 0
+                currency: MXN
+            availableBalance:
+              currentBalances:
+              - amount: 0
+                currency: MXN
+              pendingBalances:
+              - amount: 0
+                currency: MXN
+              postedBalances:
+              - amount: 0
+                currency: MXN
+            number: '4152313311554765'
+            grantedCredits:
+            - amount: 0
+              currency: MXN
+            bank:
+              name: '0074'
+              id: '0074'
+            isBusiness: false
+            alias: 0001AH0028
+            id: cXsxekW15zLIXqckoUXHPNSd3-_s4SiKyHKIc76nDXo
+            issueDate: 2021-05-17T00:00:00.000-0500
+            activationDate: 2021-05-17T00:00:00.000-0500
+            openingDate: 2021-05-17T00:00:00.000-0500
+            status:
+              description: La tarjeta se puede utilizar según la configuración que
+                el cliente haya configurado para las diferentes activaciones.
+              id: OPERATIVE
+            currencies:
+            - isMajor: true
+              currency: MXN
+            expirationDate: '2026-05-31'
+        authentication:
+          password: '147258369'
+          user: '5532520392'
+          deviceId: 11223344556677889900AABBCCDDEEFF
+      lockExpiration: null
+      lockType: null
+      id: 3489781
+    :headers:
+      content-length: '1847'
+      Strict-Transport-Security: max-age=15768000
+      Server: nginx
+      ECS-Entry-Point-Zone: ext
+      Connection: keep-alive
+      Vary: Accept-Encoding
+      Date: Wed, 19 Oct 2022 18:09:08 GMT
+      Content-Type: application/json
+    :status: 200 OK

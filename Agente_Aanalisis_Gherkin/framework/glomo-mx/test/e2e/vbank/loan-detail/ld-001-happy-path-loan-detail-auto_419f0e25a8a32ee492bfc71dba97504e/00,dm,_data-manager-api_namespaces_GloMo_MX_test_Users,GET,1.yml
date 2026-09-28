@@ -1,0 +1,48 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: aHd4eTFma3gwNTpLbVJleHhqenRZOWJ5RVF5MkpXZWsxcG8yRnhvQ1JHbzMzZXJ2dXB5
+    content-length: '0'
+    x-vbank-session: b2b7153c-49dc-43e2-bce4-a66835b1c7a2
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: loan
+then:
+- return:
+    :body:
+    - data:
+        locale: es_mx
+        tags:
+        - '5532503651'
+        - loan
+        - loan_detail
+        - loan_edit_alias
+        - auto_loan
+        - personal_loan
+        - mortage_loan
+        products:
+          account:
+            id: J-Kmw-x1fRVKWXFEmgWv-1xhZAdZvXyB
+        authentication:
+          password: password00
+          user: '5532503651'
+          deviceId: DD9FBDA5576BEBF5EC25D7990A25B9B3
+      lockExpiration: '2021-07-06T21:15:43.353572Z'
+      lockType: SHARED
+      id: 1432991
+    :headers:
+      Strict-Transport-Security: max-age=15724800; includeSubDomains
+      Server: nginx
+      ECS-Entry-Point-Zone: ext
+      Connection: keep-alive
+      Vary: Accept-Encoding
+      Content-Length: '338'
+      Date: Tue, 06 Jul 2021 21:15:16 GMT
+      Content-Type: application/json
+    :status: 200 OK

@@ -1,0 +1,426 @@
+when:
+  sequence: 4
+  path: /SRVS_A02/promotions/v0/promotions
+  method: GET
+  backend: glomo
+request:
+  headers:
+    sec-fetch-mode: cors
+    content-length: '0'
+    referer: http://localhost:8001/
+    sec-fetch-site: same-site
+    accept-language: es-MX,es;q=0.9
+    origin: http://localhost:8001
+    tsec: 7b82abf1bd1d2503e331942bedd233b5c80866cf
+    accept: application/json, text/html, */*; q=0.1
+    sec-ch-ua: '"Chromium";v="134", "Not:A-Brand";v="24", "Google Chrome";v="134"'
+    sec-ch-ua-mobile: ?0
+    x-vbank-session: c9724366-99f2-4af6-876d-0a580094e5c8
+    sec-ch-ua-platform: '"macOS"'
+    host: localhost:9000
+    content-type: application/json
+    connection: keep-alive
+    cache-control: no-cache, no-store, must-revalidate
+    accept-encoding: gzip, deflate, br, zstd
+    sec-fetch-dest: empty
+    user-agent: GLOMO_MX/99.99.99 (Android;14;Samsung)
+  query:
+    promotionType.id: in=(RATE,FIXED,GIFT,CASHBACK,OTHERS)
+    title.id: in=(AV)
+    pageSize: '10'
+then:
+- return:
+    pagination:
+      totalPages: 2
+      pageSize: 10
+      links:
+        next: $(${backend.glomo.protocol}://${backend.glomo.host}:${backend.glomo.port}/SRVS_A02/promotions/v0/promotions?promotionType.id=in%3D(RATE%2CFIXED%2CGIFT%2CCASHBACK%2COTHERS)&pageSize=10&title.id=in%3D(AV)&paginationKey=WA_0004)
+        last: $(${backend.glomo.protocol}://${backend.glomo.host}:${backend.glomo.port}/SRVS_A02/promotions/v0/promotions?promotionType.id=in%3D(RATE%2CFIXED%2CGIFT%2CCASHBACK%2COTHERS)&pageSize=10&title.id=in%3D(AV)&paginationKey=WA_0004)
+        first: $(${backend.glomo.protocol}://${backend.glomo.host}:${backend.glomo.port}/SRVS_A02/promotions/v0/promotions?promotionType.id=in%3D(RATE%2CFIXED%2CGIFT%2CCASHBACK%2COTHERS)&pageSize=10&title.id=in%3D(AV)&paginationKey=WA_0008)
+      page: 0
+      totalElements: 11
+    data:
+    - promotionType:
+        name: Descuento
+        id: FIXED
+      images:
+      - name: DETAIL_Rosen_12PSI
+        id: DETAIL
+        url: https://vidabbvamx-prod-commerce-images.s3-us-west-2.amazonaws.com/fotos/58.jpg
+      - name: LIST_Rosen_12PSI
+        id: LIST
+        url: https://vidabbvamx-prod-commerce-images.s3-us-west-2.amazonaws.com/logos/58.jpg
+      - name: PUSH_Rosen_12PSI
+        id: PUSH
+        url: http://imagenes.ubicanosbbvacontinental.com/promociones/2017-07-06/rosen.jpg
+      endDate: '2028-05-25'
+      fixedDiscount:
+        currency: ''
+      usageTypes:
+      - name: Physical
+        id: PHYSICAL
+      - name: Online
+        id: ONLINE
+      rateDiscount: 0
+      benefit: 0% interes hasta 12 meses
+      name: Todo Rosen hasta 12 pagos sin intereses
+      id: WA_0008
+      commerceInformation:
+        web: www.rosen.com.pe
+        name: Rosen
+        description: Empresa de fabricación y comercialización de artículos y accesorios
+          para el descanso.
+        logo:
+          name: LOGO_Rosen
+          id: WA_0008_LOGO
+          url: http://imagenes.ubicanosbbvacontinental.com/promociones/2017-05-12/LOGO_Rosen.png
+      categories:
+      - name: Auto
+        id: AUTO
+      - name: Otros
+        id: OTHER
+      legalConditions:
+        text: 'Promoción válida en todos los restaurantes. Aplica solo lunes, martes
+          y domingo. Consulta los restaurantes en www.astoria.mx Información y reservas
+          en: 52262663. Horarios: lunes y martes 13:15 a 16:00 y 19:30 a 22:30 y los
+          domingos 13:15 a 17:00. Participan todas las Tarjetas de Crédito Bancomer
+          que cuentan con el programa Vida Bancomer Puntos.'
+        url: ' https://www.bbva.mx/content/dam/public-web/mexico/documents/landing/TyC_BF_2022.pdf'
+      startDate: '2018-03-08'
+    - trending:
+        name: Suggested
+        id: SUGGESTED
+      promotionType:
+        name: Regalo
+        id: GIFT
+      images:
+      - name: DETAIL_Cassinelli_12PSI
+        id: DETAIL
+        url: https://vidabbvamx-prod-commerce-images.s3-us-west-2.amazonaws.com/fotos/2224.jpg
+      - name: LIST_Cassinelli_12PSI
+        id: LIST
+        url: https://vidabbvamx-prod-commerce-images.s3-us-west-2.amazonaws.com/logos/home_depot.jpg
+      - name: PUSH_Cassinelli_12PSI
+        id: PUSH
+        url: http://imagenes.ubicanosbbvacontinental.com/promociones/2017-07-06/Cassinelli.jpg
+      endDate: '2019-10-02'
+      fixedDiscount:
+        currency: ''
+      usageTypes:
+      - name: Sólo aplica en tiendas físicas
+        id: PHYSICAL
+      rateDiscount: 0
+      benefit: 0% interes hasta 12 meses
+      name: Todo Cassinelli hasta 12 pagos sin intereses
+      id: WA_0007
+      commerceInformation:
+        web: http://www.cassinelli.com/
+        name: Cassinelli
+        description: Tienda de acabados para la construcción.
+        logo:
+          name: LOGO_Cassinelli
+          id: WA_0007_LOGO
+          url: http://imagenes.ubicanosbbvacontinental.com/promociones/2017-05-12/LOGO_Cassinelli.png
+      categories:
+      - name: Auto
+        id: AUTO
+      - name: Compras
+        id: SHOPPING
+      startDate: '2017-05-15'
+    - trending:
+        name: Hot
+        id: HOT
+      promotionType:
+        name: Regalo
+        id: GIFT
+      images:
+      - name: DETAIL_UVK_Basadre
+        id: DETAIL
+        url: https://vidabbvamx-prod-commerce-images.s3-us-west-2.amazonaws.com/fotos/2224.jpg
+      - name: LIST_UVK_Basadre
+        id: LIST
+        url: https://vidabbvamx-prod-commerce-images.s3-us-west-2.amazonaws.com/logos/home_depot.jpg
+      - name: PUSH_UVK_Basadre
+        id: PUSH
+        url: http://imagenes.ubicanosbbvacontinental.com/promociones/2017-07-06/UVK.jpg
+      endDate: '2029-10-04'
+      fixedDiscount:
+        currency: CLP
+      usageTypes:
+      - name: Aplica para crédito y débito
+        id: PHYSICAL
+      rateDiscount: 0
+      benefit: Descuentos
+      name: Disfruta hoy de las mejores películas al mejor precio en UVK Basadre 1
+      id: WA_0011
+      commerceInformation:
+        web: http://www.uvkmulticines.com/multicines/cine/UVK-PLATiNO-BASADRE-
+        name: UVK Basadre
+        description: Cadena de Cines
+        logo:
+          name: LOGO_UVK_Basadre
+          id: WA_0011_LOGO
+          url: http://imagenes.ubicanosbbvacontinental.com/promociones/2017-05-29/LOGO_UVK_Basadre.png
+      categories:
+      - name: Hobbies
+        id: HOBBIES
+      startDate: '2017-04-01'
+    - promotionType:
+        name: Descuento
+        id: GIFT
+      images:
+      - name: Logo
+        id: LIST
+        url: https://vidabbvamx-prod-commerce-images.s3-us-west-2.amazonaws.com/logos/home_depot.jpg
+      endDate: '2029-11-01'
+      name: Disfruta de la magia del cine obtén 2x1 en Cinemex de lunes a domingo
+      id: '20000043'
+      commerceInformation:
+        web: https://www.cinemex.com.mx
+        name: Cinemex
+        description: Cinemex es una empresa mexicana dedicada al desarrollo y operación
+          de complejos múltiples de exhibición cinematográfica surgida en 1988.
+      categories:
+      - name: Entretenimiento
+        id: HOBBIES
+      - name: Online
+        id: ECOMMERCE
+      usageTypes:
+      - name: Presencial
+        id: PHYSICAL
+      - name: Online
+        id: ONLINE
+      startDate: '2019-01-16'
+      benefit: Entradas 2x1
+    - promotionType:
+        name: Entrada a S/ 8.00
+        id: CASHBACK
+      images:
+      - name: DETAIL_CINEPLANET
+        id: DETAIL
+        url: https://vidabbvamx-prod-commerce-images.s3-us-west-2.amazonaws.com/fotos/58.jpg
+      - name: LIST_CINEPLANET
+        id: LIST
+        url: https://vidabbvamx-prod-commerce-images.s3-us-west-2.amazonaws.com/logos/58.jpg
+      - name: PUSH_CINEPLANET
+        id: PUSH
+        url: http://imagenes.ubicanosbbvacontinental.com/promociones/2017-07-17/PUSH_Cinaplanet.png
+      endDate: '2028-08-01'
+      name: Con BBVA Wallet tu entrada a buen precio
+      fixedDiscount:
+        currency: ''
+      id: WA_0002
+      commerceInformation:
+        web: www.cineplanet.com.pe
+        name: Cineplanet
+        description: Entretenimiento
+        logo:
+          name: LOGO_CINEPLANET
+          id: WA_0002_LOGO
+          url: http://imagenes.ubicanosbbvacontinental.com/promociones/2017-07-17/LIST_CINEPLANET.png
+      categories:
+      - name: Sostenibilidad
+        id: SUSTAINABILITY
+      - name: Actividades
+        id: ACTIVITIES
+      usageTypes:
+      - name: Aplica para crédito y débito
+        id: PHYSICAL
+      rateDiscount: 0
+      startDate: '2021-07-20'
+      benefit: Descuento
+    - promotionType:
+        name: Descuento
+        id: GIFT
+      images:
+      - name: DETAIL_Entel_18PSI
+        id: DETAIL
+        url: https://vidabbvamx-prod-commerce-images.s3-us-west-2.amazonaws.com/fotos/2224.jpg
+      - name: LIST_Entel_18PSI
+        id: LIST
+        url: https://vidabbvamx-prod-commerce-images.s3-us-west-2.amazonaws.com/logos/home_depot.jpg
+      - name: PUSH_Entel_18PSI
+        id: PUSH
+        url: http://imagenes.ubicanosbbvacontinental.com/promociones/2017-08-09/PUSH_CABINAECONÓMICA.png
+      endDate: '2029-10-05'
+      name: Aprovecha las grandes ofertas que Avianca tiene para ti.
+      fixedDiscount:
+        currency: ''
+      id: WA_0009
+      commerceInformation:
+        web: http://www.avianca.com
+        name: Avianca
+        description: Aerolíneas
+        logo:
+          name: LOGO_Avianca
+          id: WA_0009_LOGO
+          url: http://imagenes.ubicanosbbvacontinental.com/promociones/2017-08-09/LIST_CABINAECONÓMICA.png
+      categories:
+      - name: Auto
+        id: AUTO
+      - name: Otros
+        id: OTHER
+      usageTypes:
+      - name: Aplica presencial para crédito y débito
+        id: PHYSICAL
+      rateDiscount: 0
+      startDate: '2017-08-09'
+      benefit: Ofertas
+    - trending:
+        name: Destacadas
+        id: HOT
+      promotionType:
+        name: Regalo
+        id: GIFT
+      images:
+      - name: Logo
+        id: LIST
+        url: https://vidabbvamx-prod-commerce-images.s3-us-west-2.amazonaws.com/logos/home_depot.jpg
+      - name: Detalle
+        id: DETAIL
+        url: https://vidabbvamx-prod-commerce-images.s3-us-west-2.amazonaws.com/fotos/2224.jpg
+      endDate: '2028-11-05'
+      name: Álbum Classic Vertical en impresión fotográfica antihuella
+      id: '29000081'
+      commerceInformation:
+        web: https://www.bbva.com/es/
+        name: PHOTMANN
+        description: Álbum Classic Vertical en impresión fotográfica antihuella
+      categories:
+      - name: Cafeteria
+        id: FOOD_AND_GOURMET
+      usageTypes:
+      - name: Presencial
+        id: PHYSICAL
+      startDate: '2018-03-20'
+      benefit: 19,90€
+    - promotionType:
+        name: Descuento
+        id: RATE
+      images:
+      - name: DETAIL_KOHESTORE
+        id: DETAIL
+        url: https://vidabbvamx-prod-commerce-images.s3-us-west-2.amazonaws.com/fotos/2224.jpg
+      - name: LIST_KOHESTORE
+        id: LIST
+        url: https://vidabbvamx-prod-commerce-images.s3-us-west-2.amazonaws.com/logos/home_depot.jpg
+      - name: PUSH_KOHESTORE
+        id: PUSH
+        url: http://imagenes.ubicanosbbvacontinental.com/promociones/2017-10-19/PUSH_NINEWEST.png
+      endDate: '2028-04-25'
+      name: 30% de descuento en zapatillas.
+      fixedDiscount:
+        currency: ''
+      id: WA_0005
+      commerceInformation:
+        web: http://www.ninewest.com/
+        name: Nine West
+        description: Tienda de zapatos
+        logo:
+          name: LOGO_NineWest
+          id: WA_0005_LOGO
+          url: http://imagenes.ubicanosbbvacontinental.com/promociones/2017-10-19/LIST_NINEWEST.png
+      categories:
+      - name: Activities
+        id: ACTIVITIES
+      - name: Compras
+        id: SHOPPING
+      usageTypes:
+      - name: Aplica para Crédito y Débito
+        id: ONLINE
+      rateDiscount: 30
+      startDate: '2017-03-02'
+      benefit: -30%
+    - promotionType:
+        name: Descuento
+        id: RATE
+      images:
+      - name: DETAIL_Entel_18PSI
+        id: DETAIL
+        url: https://vidabbvamx-prod-commerce-images.s3-us-west-2.amazonaws.com/fotos/2224.jpg
+      - name: LIST_Entel_18PSI
+        id: LIST
+        url: https://vidabbvamx-prod-commerce-images.s3-us-west-2.amazonaws.com/logos/home_depot.jpg
+      - name: PUSH_Entel_18PSI
+        id: PUSH
+        url: http://imagenes.ubicanosbbvacontinental.com/promociones/2017-08-23/PUSH_GOLDSGYM.png
+      endDate: '2028-08-04'
+      name: 30% de descuento en membresías VIP
+      fixedDiscount:
+        amount: 30
+        currency: ''
+      id: WA_0003
+      commerceInformation:
+        web: http://www.goldsgymperu.com/
+        name: Gold's Gym
+        description: Activities
+        logo:
+          name: LOGO_Gold's_Gym
+          id: WA_0003_LOGO
+          url: http://imagenes.ubicanosbbvacontinental.com/promociones/2017-08-23/LIST_GOLSDGYM.jpg
+      categories:
+      - name: Actividades
+        id: ACTIVITIES
+      - name: Otros
+        id: OTHER
+      - name: Cosmética y Perfumería
+        id: BEAUTY_AND_FRAGANCES
+      usageTypes:
+      - name: Aplica presencial para crédito y débito
+        id: PHYSICAL
+      rateDiscount: 3
+      startDate: '2020-08-17'
+      benefit: -30%
+    - trending:
+        name: Sugeridas
+        id: SUGGESTED
+      promotionType:
+        name: Descuento
+        id: RATE
+      images:
+      - name: Logo
+        id: LIST
+        url: https://vidabbvamx-prod-commerce-images.s3-us-west-2.amazonaws.com/logos/58.jpg
+      - name: Detalle
+        id: DETAIL
+        url: https://vidabbvamx-prod-commerce-images.s3-us-west-2.amazonaws.com/fotos/58.jpg
+      endDate: '2029-12-31'
+      name: 2x1 en pizzas medianas y grandes.
+      id: '20000070'
+      commerceInformation:
+        web: http://www.benedettis.com/
+        name: Benedettis Pizza
+        description: Benedetti's Pizza es la favorita de muchos por el delicioso sabor
+          de la pizza, la gran variedad de productos como entradas y postres y sobre
+          todo por sus atractivas promociones de cada día.
+      categories:
+      - name: Servicios
+        id: SERVICES
+      usageTypes:
+      - name: Presencial
+        id: PHYSICAL
+      startDate: '2019-01-01'
+      benefit: 2x1
+    :headers:
+      access-control-allow-origin: '*'
+      content-length: '16832'
+      Access-Control-Expose-Headers: tsec, vnd.bbva.access-token-type,vnd.bbva.access-token,
+        vnd.bbva.sso-pkcs7, authenticationtype, authenticationdata, authenticationstate,
+        authenticationchallenge
+      Server: artichoke
+      access-control-allow-headers: Content-Type, tsec, authenticationtype, authenticationdata,
+        authenticationstate, contactid, consumeruuid, consumerapplicationid, perimetertsec,
+        authorization, responsewarningcode, responsewarningdescription, cuf, field,
+        bcs-device-app-version, bcs-device-app-version, vnd.bbva.authorization, device-id,
+        Bcs-Device-Os-Name, bcs-device-app-name, bcs-device-dpi, BCS-Device-Id
+      Connection: keep-alive
+      content-type: application/json;charset=UTF-8
+      Vary: Accept-Encoding
+      tsec: 7b82abf1bd1d2503e331942bedd233b5c80866cf
+      X-Response-Time: 19ms
+      Date: Fri, 02 May 2025 09:17:29 GMT
+    :status: 200 OK
+    apiInfo:
+      name: promotions
+      category: enterprises
+      version: 0.1.0

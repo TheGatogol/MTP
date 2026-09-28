@@ -1,0 +1,96 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: 825be46b-b1ee-465f-b914-8280c5b80de4
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: oc_cash_mpos_purchase
+    lock: 'false'
+then:
+- return:
+    :body:
+    - data:
+        address:
+          externalNumber: '387'
+          street: Campos Elíseos
+          postalCode: '11540'
+          municipality: Polanco
+          state: Ciudad de México
+          neighborhood: Miguel Hidalgo
+        tags:
+        - oc_cash_mpos_purchase
+        products:
+        - accounts:
+          - number: '1503282614'
+        localstorage:
+          onboardingDone:
+            isOpenPayUser: true
+            isOnboardingDone: true
+            merchants:
+            - name: Bufandas Moralejo
+              id: ias2a45fskfji1
+              products:
+              - paymentMethods:
+                - name: Tarjeta Presente
+                  id: PRESENT_CARD
+                - name: Link de Cobro
+                  id: PAYMENT_LINK
+                name: Mobile POS
+                id: MPOS
+            - name: Quesadillas Moralejo
+              id: ias2a45fskfji2
+              products:
+              - paymentMethods:
+                - name: Tarjeta Presente
+                  id: PRESENT_CARD
+                - name: Link de Cobro
+                  id: PAYMENT_LINK
+                name: Mobile POS
+                id: MPOS
+          onboardingNotDone:
+            isOpenPayUser: true
+            merchants:
+            - name: Bufandas Moralejo
+              id: ias2a45fskfji1
+              products:
+              - paymentMethods:
+                - name: Tarjeta Presente
+                  id: PRESENT_CARD
+                - name: Link de Cobro
+                  id: PAYMENT_LINK
+                name: Mobile POS
+                id: MPOS
+            - name: Quesadillas Moralejo
+              id: ias2a45fskfji2
+              products:
+              - paymentMethods:
+                - name: Tarjeta Presente
+                  id: PRESENT_CARD
+                - name: Link de Cobro
+                  id: PAYMENT_LINK
+                name: Mobile POS
+                id: MPOS
+        authentication:
+          password: Glomo2022
+          user: '6391485686'
+          deviceId: 0B640F94353210E283206546DCC468A8
+      id: 36229041
+    :headers:
+      content-length: '1385'
+      Server: nginx
+      Cache-Control: max-age=0
+      Connection: keep-alive
+      host: datamanager.globaldevtools.bbva.com
+      Vary: Accept-Encoding
+      Expires: Fri, 09 Jan 2026 16:14:05 GMT
+      Date: Fri, 09 Jan 2026 16:14:05 GMT
+      Content-Type: application/json; charset=utf-8
+    :status: 200 OK

@@ -1,0 +1,154 @@
+when:
+  sequence: 1
+  path: /SRVS_A02/customers/v1/civil-registries/search
+  method: POST
+  backend: glomo
+request:
+  headers:
+    sec-fetch-mode: cors
+    referer: http://localhost:8001/
+    content-length: '234'
+    sec-fetch-site: same-site
+    accept-language: es-MX,es;q=0.9
+    origin: http://localhost:8001
+    tsec: ZXlKaFlYQWlPaUl4TURBd01ESTBNeUlzSW10bGVWWmxjbk5wYjI0aU9qRXNJbUZ3Y0Vsa0lqb2lRVkJRTVNJc0ltdHBaQ0k2SWtGUVVERXViRzlqWVd3dU1TSXNJbVZ1WXlJNklrRXhPVEpIUTAwaUxDSnJaWGxVZVhCbElqb2liRzlqWVd3aUxDSmhiR2NpT2lKa2FYSWlMQ0owYzJWalNXUWlPaUptWkROaVpUUm1aUzB5T0RjMkxUUTRNemd0T0RNeFpDMW1OekppTldFeU5ESmtZMklpZlEuLnVnbG80QTEtT21UTUVhRmUuWC1IQkJKREVaWkR6Zi1sTjB3X0lMX3hGa1cwUzdNZ0ZKaFcxblJqeXdBYjhrdEw2dDVhVlliNGVndnVENE1jVlRQdnJwelFoU0xtTXZfRXY2ZC1tWWJTcEJ0MlZiSHlJclZjM3F2S0hscE5KRVZDNW1IVUY0QVg4N3dEVENmS3ZNVFFfNXMtR0I4NWNQYUJJZHBBQ0JJRU9IbjRTaGwwMnA2R0RhMTJGQVk4QmZ1V0htYURMSXF4aFllNDdiOGlRTTRRcDZ4dVdaTzhOTUQyUmJ2WS1TVGRXMUFqSW5YdGM5YzhUeFZTYTdWNEtNNjlIam9iTTd6dTdFUy00OVpvczZmdmRvdlVFMFVNMVFuMjNKZWtFRXFHY3prb2NObmtSNWNCc2k0Q1R0T2U3bUx6UFRwVnltZDNJd0M1ekNkZ1p4Ni1OZ05XNEdEOWFTaUJiQzd6REtTNXRzQ2xsR1dMWUx5RThnQmZDUVoyR0JrVG92amtQVzNQNjB1YmRyaEhUNTZJWXFxZ09OVWs5cG8taFRld0lCSWJuV0QyR0d1TEJHOE1FOEp6MkY5WmtKSzVfRld5TFFYNnFFZ0w0RDdORjhJeWttLTQ3dnlXQlVna1B6R3JUb1R5LVZuU25HV2lKTDAtOGdyX0FuSXNZMFdDMnotbTJHcFdQUGJMbDVqb2ZlVFViUVIycFdESWtLYUFiYXQzMFRSbXlfWDI4OHpnRG5HTWxHOFF5ZXFKaWN3UEd0WjhLTVo5NEhpR0h4d0tFTWZNSFFRU1g4VHo5b1FZLXN4UVAtd2JBaDRValFsUnFGWFowZFZRYkZZRG9VWnYzSkljRVpDejVlV1RlY2ZUbE1oVlRkeGJ5TTdLY1JPYzJyU1FmWFJtaldoSUNpajh1ZG9VLW5fa2t4TEpCYmw3SUZYMkQ4T1dOSE1qWjZleDRWR2JmcXFaWWJsZ3M1VEZaQWdmdjFUNHA4c0hPd0gxT1RwWndfRkI2U2JCY19WbHhQd0NtMGstMVNLY1UyQUgyVmVsV2x4NTBGUmV2a0k3OU56QndZcFJoVXZfQlhGbGt5RjV4V0FvMGQ4Ym51Y0FrSFJoQ0k4My1oZHlWaVdJQ0c1enlNTWlrQ3VXQlR5a2RqcmxYM3pObWQ5Rk1EaU1vQzRZUFdyRFJ2bklBajc1SHotcVV3Z2lCeWgxTjZ0RC1KLWE0eVlPZVFVdTVZazJVU2ZWUWRzYUxuM1pSZnliSllQeEVvZy5lNjJJcllYdHVoSWJ3TFJySVVsN2p3
+    accept: application/json, text/html, */*; q=0.1
+    sec-ch-ua: '"Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"'
+    sec-ch-ua-mobile: ?0
+    x-vbank-session: 72da481c-37b9-4fa3-b81f-d8a73530918e
+    sec-ch-ua-platform: '"macOS"'
+    host: localhost:9000
+    content-type: application/json
+    connection: keep-alive
+    cache-control: no-cache, no-store, must-revalidate
+    accept-encoding: gzip, deflate, br, zstd
+    sec-fetch-dest: empty
+    user-agent: GLOMO_MX/99.99.99 (Android;14;Samsung)
+  body:
+    lastName: GARCIA
+    secondLastName: HERNANDEZ
+    birthPlace: DF
+    gender:
+      id: FEMALE
+      sel: 1
+    documentType:
+      documentNumber: '215455993'
+      id: INE
+    name: MIRIAN IVONNE
+    operationType:
+      id: G2
+    birthDate: '1987-06-01'
+then:
+- return:
+    data:
+    - lastName: GARCIA
+      secondLastName: HERNANDEZ
+      birthPlace: DF
+      gender:
+        id: FEMALE
+      birthCertificate:
+        inscription: '05020'
+      auditLog:
+        validationResults:
+        - result: APPROVED
+          validationResultType: OCR
+        - result: APPROVED
+          validationResultType: MOTHER_LAST_NAME
+        - result: APPROVED
+          validationResultType: LAST_NAME
+        - result: APPROVED
+          validationResultType: NAME
+        - result: APPROVED
+          validationResultType: PAW_PRINT_2
+        - result: APPROVED
+          validationResultType: CODE_PAW_PRINT_2
+        - result: APPROVED
+          validationResultType: PAW_PRINT_7
+        - result: APPROVED
+          validationResultType: CODE_PAW_PRINT_7
+        - result: APPROVED
+          validationResultType: TYPE_THEFT_OR_LOSS
+        - result: APPROVED
+          validationResultType: YEAR_REGISTRY
+        - result: APPROVED
+          validationResultType: NUMBER_EMISION
+        - result: APPROVED
+          validationResultType: ELECTORAL_ID
+        - result: APPROVED
+          validationResultType: CURP
+        - result: APPROVED
+          validationResultType: YEAR_RELEASE
+      name: MIRIAN IVONNE
+      id: GAHM870601MDFRRR09
+      identityDocuments:
+      - country:
+          id: MEX
+        documentNumber: GAHM870601MDFRRR09
+        status:
+          description: RCN
+          id: ACTIVE
+      birthDate: '1987-06-01'
+    :headers:
+      content-length: '1346'
+      Access-Control-Allow-Origin: '*'
+      ECS-Entry-Point-Zone: ext
+      Access-Control-Allow-Methods: GET, POST, DELETE, PUT, OPTIONS, PATCH
+      Referrer-Policy: same-origin
+      X-Frame-Options: sameorigin
+      ResponseWarningCode: '01519017'
+      Strict-Transport-Security: max-age=31536000; includeSubDomains
+      Access-Control-Expose-Headers: remaining-time, Bbva-User-Agent, Accept-Encoding,
+        Accept, Content-Type, tsec, consumerrequestid, authenticationchallenge, authenticationtype,
+        authenticationdata, authenticationstate, contactid, consumeruuid, consumerapplicationid,
+        perimetertsec, authorization, responsewarningcode, responsewarningdescription,
+        cuf, prefer, phoneNumber, Location, X-RHO-PARENTSPANID, X-RHO-TRACEID, preferredauthenticationtype,
+        X-HTTP-Method-Override, Access-Control-Allow-Methods, iv-remote-address, thirdparty-x-forwarded-for,
+        thirdparty-user-agent, thirdparty-geolocation, thirdparty-calculated-scoring,
+        thirdparty-deviceid, vnd.bbva.security-client-certificate, order-preferredaction,
+        authenticationresponse, Access-Control-Max-Age, BCS-Device-Id, BCS-Device-OS-Name,
+        BCS-Device-Model-Name, BCS-Device-Model-Manufacturer, BCS-Device-Screen-Size,
+        BCS-Device-OS-Version, BCS-Device-DPI, BCS-Device-App-Name, BCS-Device-App-Version,
+        Third-Party-Application-Id, ECS-Signature-Platform-Use-Case, BCS-Process-Code,
+        BCS-Operation-Tracer, BCS-Process-Tracer, vnd.bbva.user-id, order-id, order-accepteddisclaimers,
+        x-forwarded-for, Date, order-hmac, x-dmz-orgn, onsite-accountTerm, onsite-logicalTerm,
+        Akamai-BM-Telemetry, BCS-Third-Party-Session-Id, Cache-Control, clave, Content-Encoding,
+        ECS-Entry-Point-Zone, firma, Geolocation, Third-Party-Collaborator-Id, user-agent,
+        Via, order-signed, loginauthenticationtype, x-cau
+      Content-Security-Policy: script-src 'self'
+      Set-Cookie: vbank-session=72da481c-37b9-4fa3-b81f-d8a73530918e
+      X-XSS-Protection: 1; mode=block
+      consumerrequestid: eb31ccb5-df6e-4cea-8a17-9aa3c0ffe886
+      Content-Type: application/json; charset=UTF-8
+      X-EdgeConnect-Origin-MEX-Latency: '3148'
+      X-Content-Type-Options: nosniff
+      Connection: keep-alive
+      tsec: ZXlKaFlYQWlPaUl4TURBd01ESTBNeUlzSW10bGVWWmxjbk5wYjI0aU9qRXNJbUZ3Y0Vsa0lqb2lRVkJRTVNJc0ltdHBaQ0k2SWtGUVVERXViRzlqWVd3dU1TSXNJbVZ1WXlJNklrRXhPVEpIUTAwaUxDSnJaWGxVZVhCbElqb2liRzlqWVd3aUxDSmhiR2NpT2lKa2FYSWlMQ0owYzJWalNXUWlPaUptWkROaVpUUm1aUzB5T0RjMkxUUTRNemd0T0RNeFpDMW1OekppTldFeU5ESmtZMklpZlEuLnVnbG80QTEtT21UTUVhRmUuWC1IQkJKREVaWkR6Zi1sTjB3X0lMX3hGa1cwUzdNZ0ZKaFcxblJqeXdBYjhrdEw2dDVhVlliNGVndnVENE1jVlRQdnJwelFoU0xtTXZfRXY2ZC1tWWJTcEJ0MlZiSHlJclZjM3F2S0hscE5KRVZDNW1IVUY0QVg4N3dEVENmS3ZNVFFfNXMtR0I4NWNQYUJJZHBBQ0JJRU9IbjRTaGwwMnA2R0RhMTJGQVk4QmZ1V0htYURMSXF4aFllNDdiOGlRTTRRcDZ4dVdaTzhOTUQyUmJ2WS1TVGRXMUFqSW5YdGM5YzhUeFZTYTdWNEtNNjlIam9iTTd6dTdFUy00OVpvczZmdmRvdlVFMFVNMVFuMjNKZWtFRXFHY3prb2NObmtSNWNCc2k0Q1R0T2U3bUx6UFRwVnltZDNJd0M1ekNkZ1p4Ni1OZ05XNEdEOWFTaUJiQzd6REtTNXRzQ2xsR1dMWUx5RThnQmZDUVoyR0JrVG92amtQVzNQNjB1YmRyaEhUNTZJWXFxZ09OVWs5cG8taFRld0lCSWJuV0QyR0d1TEJHOE1FOEp6MkY5WmtKSzVfRld5TFFYNnFFZ0w0RDdORjhJeWttLTQ3dnlXQlVna1B6R3JUb1R5LVZuU25HV2lKTDAtOGdyX0FuSXNZMFdDMnotbTJHcFdQUGJMbDVqb2ZlVFViUVIycFdESWtLYUFiYXQzMFRSbXlfWDI4OHpnRG5HTWxHOFF5ZXFKaWN3UEd0WjhLTVo5NEhpR0h4d0tFTWZNSFFRU1g4VHo5b1FZLXN4UVAtd2JBaDRValFsUnFGWFowZFZRYkZZRG9VWnYzSkljRVpDejVlV1RlY2ZUbE1oVlRkeGJ5TTdLY1JPYzJyU1FmWFJtaldoSUNpajh1ZG9VLW5fa2t4TEpCYmw3SUZYMkQ4T1dOSE1qWjZleDRWR2JmcXFaWWJsZ3M1VEZaQWdmdjFUNHA4c0hPd0gxT1RwWndfRkI2U2JCY19WbHhQd0NtMGstMVNLY1UyQUgyVmVsV2x4NTBGUmV2a0k3OU56QndZcFJoVXZfQlhGbGt5RjV4V0FvMGQ4Ym51Y0FrSFJoQ0k4My1oZHlWaVdJQ0c1enlNTWlrQ3VXQlR5a2RqcmxYM3pObWQ5Rk1EaU1vQzRZUFdyRFJ2bklBajc1SHotcVV3Z2lCeWgxTjZ0RC1KLWE0eVlPZVFVdTVZazJVU2ZWUWRzYUxuM1pSZnliSllQeEVvZy5lNjJJcllYdHVoSWJ3TFJySVVsN2p3
+      Access-Control-Allow-Headers: remaining-time, Bbva-User-Agent, Accept-Encoding,
+        Accept, Content-Type, tsec, consumerrequestid, authenticationchallenge, authenticationtype,
+        authenticationdata, authenticationstate, contactid, consumeruuid, consumerapplicationid,
+        perimetertsec, authorization, responsewarningcode, responsewarningdescription,
+        cuf, prefer, phoneNumber, Location, X-RHO-PARENTSPANID, X-RHO-TRACEID, preferredauthenticationtype,
+        X-HTTP-Method-Override, Access-Control-Allow-Methods, iv-remote-address, thirdparty-x-forwarded-for,
+        thirdparty-user-agent, thirdparty-geolocation, thirdparty-calculated-scoring,
+        thirdparty-deviceid, vnd.bbva.security-client-certificate, order-preferredaction,
+        authenticationresponse, Access-Control-Max-Age, BCS-Device-Id, BCS-Device-OS-Name,
+        BCS-Device-Model-Name, BCS-Device-Model-Manufacturer, BCS-Device-Screen-Size,
+        BCS-Device-OS-Version, BCS-Device-DPI, BCS-Device-App-Name, BCS-Device-App-Version,
+        Third-Party-Application-Id, ECS-Signature-Platform-Use-Case, BCS-Process-Code,
+        BCS-Operation-Tracer, BCS-Process-Tracer, vnd.bbva.user-id, order-id, order-accepteddisclaimers,
+        x-forwarded-for, Date, order-hmac, x-dmz-orgn, onsite-accountTerm, onsite-logicalTerm,
+        Akamai-BM-Telemetry, BCS-Third-Party-Session-Id, Cache-Control, clave, Content-Encoding,
+        ECS-Entry-Point-Zone, firma, Geolocation, Third-Party-Collaborator-Id, user-agent,
+        Via, order-signed, loginauthenticationtype, x-cau
+      Date: Wed, 30 Apr 2025 18:38:24 GMT
+      Cache-Control: no-cache,no-store,must-revalidate
+      Vary: Accept-Encoding
+      Expires: '-1'
+      ResponseWarningDescription: La consulta de los datos de la persona ante el RENAPO
+        fue exitosa.
+      X-EdgeConnect-MidMile-RTT: '27'
+    messages:
+    - code: '01519017'
+      message: La consulta de los datos de la persona ante el RENAPO fue exitosa.
+      type: WARNING
+    :status: 200 OK

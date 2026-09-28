@@ -1,0 +1,42 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: 2730f710-e3be-4565-aa7f-992d6a0f28ea
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: emergency_crane_vehicle_reports
+    lock: 'false'
+then:
+- return:
+    :body:
+    - data:
+        locale: es_mx
+        tags:
+        - '5520799053'
+        - emergency_crane_vehicle_reports
+        authentication:
+          password: Glomo2023
+          user: '5520799053'
+          deviceId: CF05A3E754CEAAB6C3309CE87978BA13
+      id: 3513474
+      lockType: SHARED
+      lockExpiration: '2024-03-06T22:31:26.776131Z'
+    :headers:
+      content-length: '284'
+      Strict-Transport-Security: max-age=15768000
+      Server: nginx
+      ECS-Entry-Point-Zone: ext
+      Connection: keep-alive
+      host: datamanager.globaldevtools.bbva.com
+      Vary: Accept-Encoding
+      Date: Wed, 06 Mar 2024 22:31:12 GMT
+      Content-Type: application/json
+    :status: 200 OK

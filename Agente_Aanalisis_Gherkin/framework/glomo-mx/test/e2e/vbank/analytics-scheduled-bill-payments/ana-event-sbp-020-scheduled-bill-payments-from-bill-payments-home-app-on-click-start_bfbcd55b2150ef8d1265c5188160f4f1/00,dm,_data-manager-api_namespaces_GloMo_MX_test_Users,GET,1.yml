@@ -1,0 +1,39 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: 0187272c-35cd-488e-b51a-d5bdc51b69cc
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: basic_accounts
+    lock: 'false'
+then:
+- return:
+    :body:
+    - data:
+        homeFutura: false
+        locale: es_mx
+        tags:
+        - basic_accounts
+        authentication:
+          password: Glomo2024
+          user: '8338517291'
+          deviceId: 6509D0ACFB1376593DFF2284FE9E0597
+      lockType: SHARED
+      lockExpiration: '2024-10-22T21:30:46.660002Z'
+      id: 35864839
+    :headers:
+      Server: nginx
+      Connection: keep-alive
+      host: datamanager.globaldevtools.bbva.com
+      Content-Length: '254'
+      Date: Tue, 22 Oct 2024 21:30:21 GMT
+      Content-Type: application/json
+    :status: 200 OK

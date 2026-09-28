@@ -1,0 +1,84 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: d28f60fa-fc25-4bca-a83c-b25d1a074289
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: cards_with_nip
+    lock: 'false'
+then:
+- return:
+    :body:
+    - data:
+        locale: es_mx
+        tags:
+        - cards_with_nip
+        products:
+        - accounts:
+          - number: '4101803000014164'
+            cvv: '547'
+            alias: TC4164
+          - number: '4152313942651154'
+            cvv: '510'
+            alias: CUENTA
+          - number: '4555135342981078'
+            cvv: '107'
+            alias: TC1078
+          - number: '4772143007374057'
+            cvv: '479'
+            alias: PENDIENTE DE REMESA
+          - number: '4772913024649651'
+            cvv: '379'
+            alias: APAGADA
+          - number: '4772133010693080'
+            cvv: '729'
+            alias: PENDIENTE DE ENTREGA
+          - number: '5420150000015051'
+            cvv: '789'
+            alias: CON PUNTOS
+          - number: '5546293002866466'
+            cvv: '325'
+            alias: VENCIDA
+          - number: '4772103001993930'
+            cvv: '432'
+            alias: INOPERABLE
+          - number: '4772923000201443'
+            cvv: '035'
+            alias: EXTRAVIO
+          - number: '4555043000043506'
+            cvv: '863'
+            alias: ASOC VIRTUAL
+          - cvv: '111'
+            alias: incorrect cvv
+          - cvv: AWS
+            alias: alfanumeric cvv
+          - cvv: '12'
+            alias: less than three
+          - cvv: '256'
+            alias: TARJETA CREA
+        authentication:
+          password: Glomo2023
+          user: '6751046660'
+          deviceId: 91A257BDD7526F935CCE6BE4F7ED13AD
+      id: 35736720
+      lockType: null
+      lockExpiration: null
+    :headers:
+      content-length: '1185'
+      Strict-Transport-Security: max-age=15768000
+      Server: nginx
+      ECS-Entry-Point-Zone: ext
+      Connection: keep-alive
+      host: datamanager.globaldevtools.bbva.com
+      Vary: Accept-Encoding
+      Date: Wed, 24 Jan 2024 19:42:56 GMT
+      Content-Type: application/json
+    :status: 200 OK

@@ -1,0 +1,44 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: 0702312b-d636-4a83-ad41-802e3ff16e7c
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: equity_dashboards,various_currencies
+    lock: 'false'
+then:
+- return:
+    :body:
+    - data:
+        homeFutura: false
+        skeleton: skeleton3
+        locale: es_mx
+        tags:
+        - '5520224578'
+        - equity_dashboards
+        - various_currencies
+        authentication:
+          password: Glomo2023
+          user: '5520224578'
+          deviceId: A488F10E2C4D6A48C107E1BCFC7C6A6B
+      lockExpiration: null
+      lockType: null
+      id: 3553007
+    :headers:
+      Strict-Transport-Security: max-age=15768000
+      Server: nginx
+      ECS-Entry-Point-Zone: ext
+      Connection: keep-alive
+      Set-Cookie: vbank-session=0702312b-d636-4a83-ad41-802e3ff16e7c
+      Content-Length: '288'
+      Date: Mon, 05 Jun 2023 22:55:04 GMT
+      Content-Type: application/json
+    :status: 200 OK

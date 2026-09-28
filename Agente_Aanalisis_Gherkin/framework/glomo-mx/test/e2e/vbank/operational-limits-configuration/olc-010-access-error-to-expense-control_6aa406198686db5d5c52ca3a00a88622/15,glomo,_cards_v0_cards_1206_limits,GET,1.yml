@@ -1,0 +1,55 @@
+when:
+  sequence: 1
+  path: /SRVS_A02/cards/v0/cards/1206/limits
+  method: GET
+  backend: glomo
+request:
+  headers:
+    sec-fetch-mode: cors
+    content-length: '0'
+    referer: http://127.0.0.1:9090/
+    sec-fetch-site: cross-site
+    accept-language: es
+    origin: http://127.0.0.1:9090
+    x-forwarded-for: 10.23.124.100
+    tsec: 48f08737ae152eb40283d95aa5b0e17b0e681eb3
+    via: 1.1 tunnel-5b97b979-d4a5-4290-b81a-51520b1ebd4b (squid/3.5.27)
+    accept: application/json, text/html, */*; q=0.1
+    sec-ch-ua: '" Not;A Brand";v="99", "Google Chrome";v="91", "Chromium";v="91"'
+    sec-ch-ua-mobile: ?0
+    x-vbank-session: ae7b6cf3-4ea6-4d14-87b9-b3856eef54c3
+    host: localhost:9000
+    content-type: application/json
+    cache-control: no-cache, no-store, must-revalidate
+    accept-encoding: gzip
+    sec-fetch-dest: empty
+    user-agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko)
+      Chrome/91.0.4472.77 Safari/537.36
+then:
+- return:
+    severity: FATAL
+    error-message: Server error
+    consumer-request-id: 207a2723-e82b-4c47-a64c-ea8836f245cd
+    :headers:
+      access-control-allow-origin: '*'
+      Access-Control-Expose-Headers: tsec, vnd.bbva.access-token-type,vnd.bbva.access-token,
+        vnd.bbva.sso-pkcs7, authenticationtype, authenticationdata, authenticationstate,
+        authenticationchallenge
+      Server: artichoke
+      Alt-Svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      access-control-allow-headers: Content-Type, tsec, authenticationtype, authenticationdata,
+        authenticationstate, contactid, consumeruuid, consumerapplicationid, perimetertsec,
+        authorization, responsewarningcode, responsewarningdescription, cuf, field,
+        bcs-device-app-version, bcs-device-app-version, vnd.bbva.authorization
+      tsec: 48f08737ae152eb40283d95aa5b0e17b0e681eb3
+      Content-Length: '276'
+      X-Response-Time: 2ms
+      Date: Mon, 30 May 2022 06:55:18 GMT
+      Content-Type: application/json; charset=utf-8
+      Via: 1.1 google
+    system-error-code: serviceNotAvailable
+    :status: 500 Internal Server Error
+    http-status: 500
+    system-error-description: Service not available right now [Artichoke]
+    error-code: '131'
+    version: 1

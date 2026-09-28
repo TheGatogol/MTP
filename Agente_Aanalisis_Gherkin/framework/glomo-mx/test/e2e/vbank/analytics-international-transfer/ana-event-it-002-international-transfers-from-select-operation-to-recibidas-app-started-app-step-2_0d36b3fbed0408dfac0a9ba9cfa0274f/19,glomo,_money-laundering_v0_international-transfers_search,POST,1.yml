@@ -1,0 +1,507 @@
+when:
+  sequence: 1
+  path: /SRVS_A02/money-laundering/v0/international-transfers/search
+  method: POST
+  backend: glomo
+request:
+  headers:
+    sec-fetch-mode: cors
+    referer: http://localhost:8001/
+    content-length: '35'
+    sec-fetch-site: same-site
+    accept-language: es-MX,es;q=0.9
+    origin: http://localhost:8001
+    tsec: ZXlKaFlYQWlPaUl4TURBd01ERTROeUlzSW10bGVWWmxjbk5wYjI0aU9qRXNJbUZ3Y0Vsa0lqb2lRVkJRTVNJc0ltdHBaQ0k2SWtGUVVERXViRzlqWVd3dU1TSXNJbVZ1WXlJNklrRXhPVEpIUTAwaUxDSnJaWGxVZVhCbElqb2liRzlqWVd3aUxDSmhiR2NpT2lKa2FYSWlMQ0owYzJWalNXUWlPaUl3T0dFM1l6aGxaUzB5T1dNeUxUUmlZbUV0WWpkak9TMWtPREZrTnpJNVpURXlNek1pZlEuLmV5REFTLW1HMlJRMXNwN3YuNERTRzRFdGROT3BDdnZ4akJBQkI5QmJDaDRUbGtmWnpHNktNTjlRZDhjckhoaWZBbTFVUkoxUndSZ0FpMFdsV004SGd0ZzNsVlBLSG8wUUctV3V0cFQwcDAwbGpacURENjRMaTA4RTJiRERJaUZnQUYzMFR2WkZWT19GNDRieHNKbFh5LVFVMG43WU9maFBqX0ZVVDdKUUh3WDFPUEF2UzZDWE9iRUJ2Ny1lTXhWWWdLSFJ6cjNWcXp3UXZVLUJUT3BfLUFJY1Zya3lZSnRuUU53SFRUWHNWb210LUo5RUxvbFg4bDZ3X19OTk9ZZVpkUE1lOXNVZzNya1dvd2R4NXB3VGdVUTNqRjZMU0FvUEpwcWRsRVdOQUFaTHNRdlJ2QmVoWThfSzloQk5wWGwwR3ZSRGRkUUk4TF9TdXh6QUFndTUzTXpLTGNhYnNGbHZhMkVFaWpEWTVHZ0dNNWtVS3h6aktLbk5TN2dLaWdxZy10RjcxWFpBOTNvTU9WRFk3cnpFcWV3SHhNRlZRb0lxd0tPdUFhX1d3cDhERndfdV9EekpnX0xCTGFCS19kNUxrSHExUFFIVWZBTkhRTUFEaE9QNXZLbHl2czdDLUpab01qbE9UYWpzcDBWaE9zeDhSOF9zWTZEM0pZUzZFV1poUXJlUjgzaUFyZl9QNkhIT2oyVW1LVjktMVA5V3VFeXo2ektVRnlrbzY5MDdRdFRxR29zNmp0aWw5ZTFSVlhQcUk2Vk04dGFxVy1qT2tXMGJ1dHNCQUhpVXZGa1RRb0lZRFJpZFBFTVBtWGpRYVF1ZUNrajJrWDFZNC0xNHBWNWdBajdIM013OV9HWUZaOGtzdVFsZzF6WFE0Z25nekI0MzU1Uk96UUx3NzhkdE4zOElTUngxN0J1VExBM1J1cG82bDJDbms0bnlmcHB6S1Y0Y3BpS0JUVjdjbzFSREFkTnF0QjZ5ZnB2Y3REdjhoUWJYQ3pOQk44amNYS05MZkJXNDE3YjU0NmhlaTFjVDZPX29nbkJ6eF8tcHpUWjVvaXBSYzBlVzV3d3BPRWVHVHN2M0tHVGFSVGVTbEVDNUVGNFBDTDFIWmpOMnUxRTVWbU9TRnRRZTA3eEJ5anJ0eFNMbG10bEMwVFhmTHNweDBmUEUwVTgtZUUza1Zrd051akdUVjRnR0JRNGV6MWRYQWVna1hkeHIzQ1R2MXI1NjE4T2lmOWE2ZUYwZkh4WERDLUo3RXRYU0dOVXJLUFN5ajItQVMycGtzSGlLZVduY1hKUjRrRGYtZzUwaFVlR0c3ajJYeFlNX0hhQ214WFdQMTRwdzVDWXZEM05MOVl6ZmE5cTE5UXQ5cmNZUjBrajBaZXc4YzUxbU0xRFBmdmVMSWd1SXluN1ZCX3lxZkNiSTg4MThyaXQ2QlRUQURMMk1oZEVPRmNWQ2hNQksxSXdHV2ViY0tRenRsOFcwb1d2WlpjMkhpLVJWWGJmYlg1VS1ibksxNFBSZkx2LXQyQXZyQUNBN0k2QVBtamtRcWs5MFVsOWIxWm52TE9BOHhvSlR0QmpyNjVIQXZ2LWRBMXlZbm5BaVM1MFFOWFVpRGlPdXFralo3UWZxejhGS1RuYjYwT0laMlhrU3ZzWjFNUDBlWHlSS20wbThtU0I5RUNEVTJXWi03bDQ5RXh4T1dXRWNSRWtlYUJHQTJmWXVFbWJ5YVlZc3ByT2U0YmtKYWIyY3UwUFVsUERPWW1XTjNERnFaTWMtRkowRG1BT0gteXR3V0F2c1ZManVrYWZEM0RsMGRBVG9NUWN1NS1mcWd2aHpUQy1qT2dvcXVpOGhEZXNBZGVaQWJfLW9RXzVUbTBRektYUndVOVdVNUdSQzdtb1RMbzJNVzk3RUxRdURUV1RMekRYX1JJZHpGWVlPZ0Zwb2hKdXF1d0tsR0JxbDdBcW51ZWpRUWliMEpUMllFaXdjeWdPUzRWRzF4YXlBZFZwVGI3NkI5SDBZdmh1ZFdZeDQ2eU1jMnVXclo1d1N1YUM1M3Y1LTEweFZBRWJabzNacHI1WFBCYlBrcm1tVFRCcHNXcUxFaHpGeFd2SkNQdGlHQU9sUWEzNkVqTUZjWFpyTElyOTd5NEx2TDVRcHlnTS1nY0p5SDFRR2tqZlliZTUzQlRaUVdQeDMxNWxPaHVpWEtRQ3h4V3BONExpU0N1LVdlWVhidVZfM2VmNW01X3hkSld5NWRTOGJvTHY2bnA2RXhLb3RQMzhpUmhncVdqYjRYbjZBWkstMFEzcUlPVUNpV2NWTVd2a04zY0NWNFpJUS5PMDN4MW9FN1NCVThwemlHWVh1d0xR
+    accept: application/json, text/html, */*; q=0.1
+    sec-ch-ua: '"Not/A)Brand";v="99", "Google Chrome";v="115", "Chromium";v="115"'
+    sec-ch-ua-mobile: ?0
+    x-vbank-session: bb619f51-9173-4f57-931e-68901a819f27
+    sec-ch-ua-platform: '"macOS"'
+    host: localhost:9000
+    content-type: application/json
+    connection: keep-alive
+    cache-control: no-cache, no-store, must-revalidate
+    accept-encoding: gzip, deflate, br
+    sec-fetch-dest: empty
+    user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36
+      (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36
+  body:
+    operationType:
+      id: RECEIVED
+then:
+- return:
+    pagination:
+      links:
+        next: /money-laundering/v0/international-transfers/search?paginationKey=0024423&pageSize=
+        last: /money-laundering/v0/international-transfers/search?paginationKey=LAST
+        first: /money-laundering/v0/international-transfers/search
+    data:
+    - operationDate: 2023-07-20T10:36:00.000-0600
+      businessAgent:
+        id: CPBAST36
+      receiver:
+        contract:
+          number: '45011'
+          bank:
+            location:
+              country:
+                name: COLOMBIA
+                id: MX
+          id: Uvn6wi1Rh6CeMBQveSUA5bvDIaCbHmGs
+        holder:
+          holderName: MAYRA YESENIA        MALDONADO            OYARVIDE
+      ruledDate: 2023-07-20T00:00:00.000-0600
+      timeRemaining: 00:00
+      sentMoney:
+        amount: 88100.0
+        currency: USD
+      sender:
+        alert: NOT_ALERTED
+        contract:
+          number: '200720230001'
+          bank:
+            name: BBVA COLOMBIA
+            location:
+              country:
+                name: MEXICO
+        holder:
+          holderName: 1/MAYRA YESENIA MALDONADO OYARVIDE 1/BALTAZAR CORBEIL DICKS
+        id: zRvFbo3dAvJ0u_WbhY85wA
+      moneyLaundery:
+        zone: RED
+      operationType:
+        id: RECEIVED
+      reviewStatus:
+        id: ASSIGNED
+      id: CiRPLFvz6awOPloA1tbmMw
+      issueDate: 2023-07-20T00:00:00.000-0600
+      status:
+        id: IN_REVIEW
+    - operationDate: 2023-07-20T10:36:00.000-0600
+      businessAgent:
+        id: CPBAST36
+      receiver:
+        contract:
+          number: '45011'
+          bank:
+            location:
+              country:
+                name: COLOMBIA
+                id: MX
+          id: Uvn6wi1Rh6CeMBQveSUA5bvDIaCbHmGs
+        holder:
+          holderName: MAYRA YESENIA        MALDONADO            OYARVIDE
+      ruledDate: 2023-07-20T00:00:00.000-0600
+      timeRemaining: 00:00
+      sentMoney:
+        amount: 88100.0
+        currency: USD
+      sender:
+        alert: NOT_ALERTED
+        contract:
+          number: '200720230001'
+          bank:
+            name: BBVA COLOMBIA
+            location:
+              country:
+                name: MEXICO
+        holder:
+          holderName: 1/MAYRA YESENIA MALDONADO OYARVIDE 1/BALTAZAR CORBEIL DICKS
+        id: zRvFbo3dAvJ0u_WbhY85wA
+      moneyLaundery:
+        zone: RED
+      operationType:
+        id: RECEIVED
+      reviewStatus:
+        id: ASSIGNED
+      id: VcBPuWbQ0DzsF_qc_aVlEg
+      issueDate: 2023-07-20T00:00:00.000-0600
+      status:
+        id: IN_REVIEW
+    - operationDate: 2023-07-20T10:36:00.000-0600
+      businessAgent: {}
+      receiver:
+        contract:
+          number: '45011'
+          bank:
+            location:
+              country:
+                name: COLOMBIA
+                id: MX
+          id: Uvn6wi1Rh6CeMBQveSUA5bvDIaCbHmGs
+        holder:
+          holderName: MAYRA YESENIA        MALDONADO            OYARVIDE
+      ruledDate: 2023-07-20T00:00:00.000-0600
+      timeRemaining: 00:00
+      sentMoney:
+        amount: 88100.0
+        currency: USD
+      sender:
+        alert: NOT_ALERTED
+        contract:
+          number: '200720230001'
+          bank:
+            name: BBVA COLOMBIA
+            location:
+              country:
+                name: MEXICO
+        holder:
+          holderName: 1/MAYRA YESENIA MALDONADO OYARVIDE 1/BALTAZAR CORBEIL DICKS
+        id: zRvFbo3dAvJ0u_WbhY85wA
+      moneyLaundery:
+        zone: RED
+      operationType:
+        id: RECEIVED
+      reviewStatus:
+        id: BY_ASSIGNING
+      id: hpOEwkxSsNrcEJYL-BVCPA
+      issueDate: 2023-07-20T00:00:00.000-0600
+      status:
+        id: IN_REVIEW
+    - operationDate: 2023-07-20T10:36:00.000-0600
+      businessAgent: {}
+      receiver:
+        contract:
+          number: '45011'
+          bank:
+            location:
+              country:
+                name: COLOMBIA
+                id: MX
+          id: Uvn6wi1Rh6CeMBQveSUA5bvDIaCbHmGs
+        holder:
+          holderName: MAYRA YESENIA        MALDONADO            OYARVIDE
+      ruledDate: 2023-07-20T00:00:00.000-0600
+      timeRemaining: 00:00
+      sentMoney:
+        amount: 88100.0
+        currency: USD
+      sender:
+        alert: NOT_ALERTED
+        contract:
+          number: '200720230001'
+          bank:
+            name: BBVA COLOMBIA
+            location:
+              country:
+                name: MEXICO
+        holder:
+          holderName: 1/MAYRA YESENIA MALDONADO OYARVIDE 1/BALTAZAR CORBEIL DICKS
+        id: zRvFbo3dAvJ0u_WbhY85wA
+      moneyLaundery:
+        zone: RED
+      operationType:
+        id: RECEIVED
+      reviewStatus:
+        id: BY_ASSIGNING
+      id: TiA3VgBOdUKL7aYjUGnq7Q
+      issueDate: 2023-07-20T00:00:00.000-0600
+      status:
+        id: IN_REVIEW
+    - operationDate: 2023-07-19T16:45:00.000-0600
+      businessAgent:
+        id: CPBAST36
+      receiver:
+        contract:
+          number: '45011'
+          bank:
+            location:
+              country:
+                name: COLOMBIA
+                id: MX
+          id: Uvn6wi1Rh6CeMBQveSUA5bvDIaCbHmGs
+        holder:
+          holderName: MAYRA YESENIA        MALDONADO            OYARVIDE
+      ruledDate: 2023-07-19T00:00:00.000-0600
+      timeRemaining: 00:00
+      sentMoney:
+        amount: 88100.0
+        currency: USD
+      sender:
+        alert: NOT_ALERTED
+        contract:
+          number: '190720230001'
+          bank:
+            name: BBVA COLOMBIA
+            location:
+              country:
+                name: MEXICO
+        holder:
+          holderName: 1/MAYRA YESENIA MALDONADO OYARVIDE 1/BALTAZAR CORBEIL DICKS
+        id: zRvFbo3dAvJ0u_WbhY85wA
+      moneyLaundery:
+        zone: RED
+      operationType:
+        id: RECEIVED
+      reviewStatus:
+        id: ASSIGNED
+      id: 3rJCdA0XYZJM83wgIwByKQ
+      issueDate: 2023-07-19T00:00:00.000-0600
+      status:
+        id: IN_REVIEW
+    - operationDate: 2023-07-19T16:45:00.000-0600
+      businessAgent:
+        id: CPBAST36
+      receiver:
+        contract:
+          number: '45011'
+          bank:
+            location:
+              country:
+                name: COLOMBIA
+                id: MX
+          id: Uvn6wi1Rh6CeMBQveSUA5bvDIaCbHmGs
+        holder:
+          holderName: MAYRA YESENIA        MALDONADO            OYARVIDE
+      ruledDate: 2023-07-19T00:00:00.000-0600
+      timeRemaining: 00:00
+      sentMoney:
+        amount: 78100.0
+        currency: USD
+      sender:
+        alert: NOT_ALERTED
+        contract:
+          number: '190720230001'
+          bank:
+            name: BBVA COLOMBIA
+            location:
+              country:
+                name: MEXICO
+        holder:
+          holderName: 1/MAYRA YESENIA MALDONADO OYARVIDE 1/BALTAZAR CORBEIL DICKS
+        id: zRvFbo3dAvJ0u_WbhY85wA
+      moneyLaundery:
+        zone: RED
+      operationType:
+        id: RECEIVED
+      reviewStatus:
+        id: ASSIGNED
+      id: Sl4-k5WCA6XDHRD6kwYz-A
+      issueDate: 2023-07-19T00:00:00.000-0600
+      status:
+        id: IN_REVIEW
+    - operationDate: 2023-07-19T16:45:00.000-0600
+      businessAgent:
+        id: CPBAST36
+      receiver:
+        contract:
+          number: '45011'
+          bank:
+            location:
+              country:
+                name: COLOMBIA
+                id: MX
+          id: Uvn6wi1Rh6CeMBQveSUA5bvDIaCbHmGs
+        holder:
+          holderName: MAYRA YESENIA        MALDONADO            OYARVIDE
+      ruledDate: 2023-07-19T00:00:00.000-0600
+      timeRemaining: 00:00
+      sentMoney:
+        amount: 68100.0
+        currency: USD
+      sender:
+        alert: NOT_ALERTED
+        contract:
+          number: '190720230001'
+          bank:
+            name: BBVA COLOMBIA
+            location:
+              country:
+                name: MEXICO
+        holder:
+          holderName: 1/MAYRA YESENIA MALDONADO OYARVIDE 1/BALTAZAR CORBEIL DICKS
+        id: zRvFbo3dAvJ0u_WbhY85wA
+      moneyLaundery:
+        zone: RED
+      operationType:
+        id: RECEIVED
+      reviewStatus:
+        id: ASSIGNED
+      id: eYRHs8khUeiWCFZ1zii5JA
+      issueDate: 2023-07-19T00:00:00.000-0600
+      status:
+        id: IN_REVIEW
+    - operationDate: 2023-07-19T16:45:00.000-0600
+      businessAgent: {}
+      receiver:
+        contract:
+          number: '45011'
+          bank:
+            location:
+              country:
+                name: COLOMBIA
+                id: MX
+          id: Uvn6wi1Rh6CeMBQveSUA5bvDIaCbHmGs
+        holder:
+          holderName: MAYRA YESENIA        MALDONADO            OYARVIDE
+      ruledDate: 2023-07-19T00:00:00.000-0600
+      timeRemaining: 00:00
+      sentMoney:
+        amount: 58100.0
+        currency: USD
+      sender:
+        alert: NOT_ALERTED
+        contract:
+          number: '190720230001'
+          bank:
+            name: BBVA COLOMBIA
+            location:
+              country:
+                name: MEXICO
+        holder:
+          holderName: 1/MAYRA YESENIA MALDONADO OYARVIDE 1/BALTAZAR CORBEIL DICKS
+        id: zRvFbo3dAvJ0u_WbhY85wA
+      moneyLaundery:
+        zone: RED
+      operationType:
+        id: RECEIVED
+      reviewStatus:
+        id: BY_ASSIGNING
+      id: PtiLuMSFV6yFtF63TZeaBA
+      issueDate: 2023-07-19T00:00:00.000-0600
+      status:
+        id: IN_REVIEW
+    - operationDate: 2023-07-19T16:45:00.000-0600
+      businessAgent:
+        id: CPBAST36
+      receiver:
+        contract:
+          number: '45011'
+          bank:
+            location:
+              country:
+                name: COLOMBIA
+                id: MX
+          id: Uvn6wi1Rh6CeMBQveSUA5bvDIaCbHmGs
+        holder:
+          holderName: MAYRA YESENIA        MALDONADO            OYARVIDE
+      ruledDate: 2023-07-19T00:00:00.000-0600
+      timeRemaining: 00:00
+      sentMoney:
+        amount: 98000.0
+        currency: USD
+      sender:
+        alert: NOT_ALERTED
+        contract:
+          number: '190720230001'
+          bank:
+            name: BBVA COLOMBIA
+            location:
+              country:
+                name: MEXICO
+        holder:
+          holderName: 1/MAYRA YESENIA MALDONADO OYARVIDE 1/BALTAZAR CORBEIL DICKS
+        id: zRvFbo3dAvJ0u_WbhY85wA
+      moneyLaundery:
+        zone: RED
+      operationType:
+        id: RECEIVED
+      reviewStatus:
+        id: ASSIGNED
+      id: uihXggSCJ9sruXD-rb6tEg
+      issueDate: 2023-07-19T00:00:00.000-0600
+      status:
+        id: IN_REVIEW
+    - operationDate: 2023-07-19T16:45:00.000-0600
+      businessAgent: {}
+      receiver:
+        contract:
+          number: '45011'
+          bank:
+            location:
+              country:
+                name: COLOMBIA
+                id: MX
+          id: Uvn6wi1Rh6CeMBQveSUA5bvDIaCbHmGs
+        holder:
+          holderName: MAYRA YESENIA        MALDONADO            OYARVIDE
+      ruledDate: 2023-07-19T00:00:00.000-0600
+      timeRemaining: 00:00
+      sentMoney:
+        amount: 88000.0
+        currency: USD
+      sender:
+        alert: NOT_ALERTED
+        contract:
+          number: '190720230001'
+          bank:
+            name: BBVA COLOMBIA
+            location:
+              country:
+                name: MEXICO
+        holder:
+          holderName: 1/MAYRA YESENIA MALDONADO OYARVIDE 1/BALTAZAR CORBEIL DICKS
+        id: zRvFbo3dAvJ0u_WbhY85wA
+      moneyLaundery:
+        zone: RED
+      operationType:
+        id: RECEIVED
+      reviewStatus:
+        id: BY_ASSIGNING
+      id: C1BH4bEZ--h4CHmvd8xtRA
+      issueDate: 2023-07-19T00:00:00.000-0600
+      status:
+        id: IN_REVIEW
+    :headers:
+      content-length: '9091'
+      Access-Control-Allow-Origin: '*'
+      ECS-Entry-Point-Zone: ext
+      Access-Control-Allow-Methods: GET, POST, DELETE, PUT, OPTIONS, PATCH
+      Referrer-Policy: same-origin
+      X-Frame-Options: sameorigin
+      ResponseWarningCode: GPA0155
+      Strict-Transport-Security: max-age=31536000; includeSubDomains
+      Access-Control-Expose-Headers: Accept-Encoding, Accept, Content-Type, tsec,
+        consumerrequestid, authenticationchallenge, authenticationtype, authenticationdata,
+        authenticationstate, contactid, consumeruuid, consumerapplicationid, perimetertsec,
+        authorization, responsewarningcode, responsewarningdescription, cuf, prefer,
+        phoneNumber, Location, X-RHO-PARENTSPANID, X-RHO-TRACEID, preferredauthenticationtype,
+        X-HTTP-Method-Override, Access-Control-Allow-Methods, iv-remote-address, thirdparty-x-forwarded-for,
+        thirdparty-user-agent, thirdparty-geolocation, thirdparty-calculated-scoring,
+        thirdparty-deviceid, vnd.bbva.security-client-certificate, order-preferredaction,
+        authenticationresponse, Access-Control-Max-Age, BCS-Device-Id, BCS-Device-OS-Name,
+        BCS-Device-Model-Name, BCS-Device-Model-Manufacturer, BCS-Device-Screen-Size,
+        BCS-Device-OS-Version, BCS-Device-DPI, BCS-Device-App-Name, BCS-Device-App-Version,
+        Third-Party-Application-Id, ECS-Signature-Platform-Use-Case, BCS-Process-Code,
+        BCS-Operation-Tracer, BCS-Process-Tracer, vnd.bbva.user-id, order-preferredaction,
+        order-id, order-accepteddisclaimers, x-forwarded-for, Date, x-dmz-orgn, onsite-accountTerm,
+        onsite-logicalTerm, Akamai-BM-Telemetry, order-hmac, order-signed, BCS-Third-Party-Session-Id,
+        Cache-Control, clave, Content-Encoding, ECS-Entry-Point-Zone, firma, Geolocation,
+        Third-Party-Collaborator-Id, user-agent, Via
+      Content-Security-Policy: script-src 'self'
+      Set-Cookie: vbank-session=bb619f51-9173-4f57-931e-68901a819f27
+      X-XSS-Protection: 1; mode=block
+      consumerrequestid: f7dcd18a-5e5d-4d60-b489-2249787c2846
+      Content-Type: application/json; charset=UTF-8
+      X-EdgeConnect-Origin-MEX-Latency: '175'
+      X-Content-Type-Options: nosniff
+      Connection: keep-alive
+      tsec: ZXlKaFlYQWlPaUl4TURBd01ERTROeUlzSW10bGVWWmxjbk5wYjI0aU9qRXNJbUZ3Y0Vsa0lqb2lRVkJRTVNJc0ltdHBaQ0k2SWtGUVVERXViRzlqWVd3dU1TSXNJbVZ1WXlJNklrRXhPVEpIUTAwaUxDSnJaWGxVZVhCbElqb2liRzlqWVd3aUxDSmhiR2NpT2lKa2FYSWlMQ0owYzJWalNXUWlPaUl3T0dFM1l6aGxaUzB5T1dNeUxUUmlZbUV0WWpkak9TMWtPREZrTnpJNVpURXlNek1pZlEuLmV5REFTLW1HMlJRMXNwN3YuNERTRzRFdGROT3BDdnZ4akJBQkI5QmJDaDRUbGtmWnpHNktNTjlRZDhjckhoaWZBbTFVUkoxUndSZ0FpMFdsV004SGd0ZzNsVlBLSG8wUUctV3V0cFQwcDAwbGpacURENjRMaTA4RTJiRERJaUZnQUYzMFR2WkZWT19GNDRieHNKbFh5LVFVMG43WU9maFBqX0ZVVDdKUUh3WDFPUEF2UzZDWE9iRUJ2Ny1lTXhWWWdLSFJ6cjNWcXp3UXZVLUJUT3BfLUFJY1Zya3lZSnRuUU53SFRUWHNWb210LUo5RUxvbFg4bDZ3X19OTk9ZZVpkUE1lOXNVZzNya1dvd2R4NXB3VGdVUTNqRjZMU0FvUEpwcWRsRVdOQUFaTHNRdlJ2QmVoWThfSzloQk5wWGwwR3ZSRGRkUUk4TF9TdXh6QUFndTUzTXpLTGNhYnNGbHZhMkVFaWpEWTVHZ0dNNWtVS3h6aktLbk5TN2dLaWdxZy10RjcxWFpBOTNvTU9WRFk3cnpFcWV3SHhNRlZRb0lxd0tPdUFhX1d3cDhERndfdV9EekpnX0xCTGFCS19kNUxrSHExUFFIVWZBTkhRTUFEaE9QNXZLbHl2czdDLUpab01qbE9UYWpzcDBWaE9zeDhSOF9zWTZEM0pZUzZFV1poUXJlUjgzaUFyZl9QNkhIT2oyVW1LVjktMVA5V3VFeXo2ektVRnlrbzY5MDdRdFRxR29zNmp0aWw5ZTFSVlhQcUk2Vk04dGFxVy1qT2tXMGJ1dHNCQUhpVXZGa1RRb0lZRFJpZFBFTVBtWGpRYVF1ZUNrajJrWDFZNC0xNHBWNWdBajdIM013OV9HWUZaOGtzdVFsZzF6WFE0Z25nekI0MzU1Uk96UUx3NzhkdE4zOElTUngxN0J1VExBM1J1cG82bDJDbms0bnlmcHB6S1Y0Y3BpS0JUVjdjbzFSREFkTnF0QjZ5ZnB2Y3REdjhoUWJYQ3pOQk44amNYS05MZkJXNDE3YjU0NmhlaTFjVDZPX29nbkJ6eF8tcHpUWjVvaXBSYzBlVzV3d3BPRWVHVHN2M0tHVGFSVGVTbEVDNUVGNFBDTDFIWmpOMnUxRTVWbU9TRnRRZTA3eEJ5anJ0eFNMbG10bEMwVFhmTHNweDBmUEUwVTgtZUUza1Zrd051akdUVjRnR0JRNGV6MWRYQWVna1hkeHIzQ1R2MXI1NjE4T2lmOWE2ZUYwZkh4WERDLUo3RXRYU0dOVXJLUFN5ajItQVMycGtzSGlLZVduY1hKUjRrRGYtZzUwaFVlR0c3ajJYeFlNX0hhQ214WFdQMTRwdzVDWXZEM05MOVl6ZmE5cTE5UXQ5cmNZUjBrajBaZXc4YzUxbU0xRFBmdmVMSWd1SXluN1ZCX3lxZkNiSTg4MThyaXQ2QlRUQURMMk1oZEVPRmNWQ2hNQksxSXdHV2ViY0tRenRsOFcwb1d2WlpjMkhpLVJWWGJmYlg1VS1ibksxNFBSZkx2LXQyQXZyQUNBN0k2QVBtamtRcWs5MFVsOWIxWm52TE9BOHhvSlR0QmpyNjVIQXZ2LWRBMXlZbm5BaVM1MFFOWFVpRGlPdXFralo3UWZxejhGS1RuYjYwT0laMlhrU3ZzWjFNUDBlWHlSS20wbThtU0I5RUNEVTJXWi03bDQ5RXh4T1dXRWNSRWtlYUJHQTJmWXVFbWJ5YVlZc3ByT2U0YmtKYWIyY3UwUFVsUERPWW1XTjNERnFaTWMtRkowRG1BT0gteXR3V0F2c1ZManVrYWZEM0RsMGRBVG9NUWN1NS1mcWd2aHpUQy1qT2dvcXVpOGhEZXNBZGVaQWJfLW9RXzVUbTBRektYUndVOVdVNUdSQzdtb1RMbzJNVzk3RUxRdURUV1RMekRYX1JJZHpGWVlPZ0Zwb2hKdXF1d0tsR0JxbDdBcW51ZWpRUWliMEpUMllFaXdjeWdPUzRWRzF4YXlBZFZwVGI3NkI5SDBZdmh1ZFdZeDQ2eU1jMnVXclo1d1N1YUM1M3Y1LTEweFZBRWJabzNacHI1WFBCYlBrcm1tVFRCcHNXcUxFaHpGeFd2SkNQdGlHQU9sUWEzNkVqTUZjWFpyTElyOTd5NEx2TDVRcHlnTS1nY0p5SDFRR2tqZlliZTUzQlRaUVdQeDMxNWxPaHVpWEtRQ3h4V3BONExpU0N1LVdlWVhidVZfM2VmNW01X3hkSld5NWRTOGJvTHY2bnA2RXhLb3RQMzhpUmhncVdqYjRYbjZBWkstMFEzcUlPVUNpV2NWTVd2a04zY0NWNFpJUS5PMDN4MW9FN1NCVThwemlHWVh1d0xR
+      Access-Control-Allow-Headers: Accept-Encoding, Accept, Content-Type, tsec, consumerrequestid,
+        authenticationchallenge, authenticationtype, authenticationdata, authenticationstate,
+        contactid, consumeruuid, consumerapplicationid, perimetertsec, authorization,
+        responsewarningcode, responsewarningdescription, cuf, prefer, phoneNumber,
+        Location, X-RHO-PARENTSPANID, X-RHO-TRACEID, preferredauthenticationtype,
+        X-HTTP-Method-Override, Access-Control-Allow-Methods, iv-remote-address, thirdparty-x-forwarded-for,
+        thirdparty-user-agent, thirdparty-geolocation, thirdparty-calculated-scoring,
+        thirdparty-deviceid, vnd.bbva.security-client-certificate, order-preferredaction,
+        authenticationresponse, Access-Control-Max-Age, BCS-Device-Id, BCS-Device-OS-Name,
+        BCS-Device-Model-Name, BCS-Device-Model-Manufacturer, BCS-Device-Screen-Size,
+        BCS-Device-OS-Version, BCS-Device-DPI, BCS-Device-App-Name, BCS-Device-App-Version,
+        Third-Party-Application-Id, ECS-Signature-Platform-Use-Case, BCS-Process-Code,
+        BCS-Operation-Tracer, BCS-Process-Tracer, vnd.bbva.user-id, order-preferredaction,
+        order-id, order-accepteddisclaimers, x-forwarded-for, Date, x-dmz-orgn, onsite-accountTerm,
+        onsite-logicalTerm, Akamai-BM-Telemetry, order-hmac, order-signed, BCS-Third-Party-Session-Id,
+        Cache-Control, clave, Content-Encoding, ECS-Entry-Point-Zone, firma, Geolocation,
+        Third-Party-Collaborator-Id, user-agent, Via
+      Date: Wed, 26 Jul 2023 22:50:41 GMT
+      Cache-Control: no-cache,no-store,must-revalidate
+      Vary: Accept-Encoding
+      Expires: '-1'
+      ResponseWarningDescription: HAY MAS DATOS
+      X-EdgeConnect-MidMile-RTT: '30'
+    messages:
+    - code: GPA0155
+      message: HAY MAS DATOS
+      type: WARNING
+    :status: 200 OK

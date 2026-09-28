@@ -1,0 +1,78 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: 662f6cc8-d56e-4e9d-9ba9-231685d59324
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: user_with_cards
+    lock: 'false'
+then:
+- return:
+    :body:
+    - data:
+        messagesGroupRequest:
+          consultOfDetailCreditCard:
+          - message: Quiero ver todos los detalles de mi tarjeta de credito con terminación 2816
+          consultOfDetailDebitCard:
+          - message: Quiero ver todos los detalles de mi tarjeta de debito con terminación 8632
+          consultOfDetailDigitalCard:
+          - message: Quiero ver todos los detalles de mi tarjeta de debito con terminación 6385
+          detailsTerminationCards:
+            debitCard:
+            - Los detalles de la tarjeta con terminacion 8632
+            creditCard:
+            - Los detalles de la tarjeta con terminacion 2816
+            digitalCard:
+            - Los detalles de la tarjeta con terminacion 6385
+          selectTerminationCards:
+            debitCard:
+            - La tarjeta con terminacion 8632
+            creditCard:
+            - La tarjeta con terminacion 2816
+            digitalCard:
+            - La tarjeta con terminacion 6385
+          detailsTerminationBlockedCards:
+            debitCard:
+            - Quiero los detalles de la tarjeta con terminacion 9127
+            creditCard:
+            - Quiero los detalles de la tarjeta con terminacion 8865
+          terminationCards:
+            debitCard:
+            - '8632'
+            creditCard:
+            - '2816'
+            digitalCard:
+            - '6385'
+        tags:
+        - '6145280790'
+        - digital_butler_cards
+        - digital_butler_cards_details
+        - user_with_cards
+        - debit_card
+        - credit_card
+        - digital_card
+        authentication:
+          password: Glomo2025
+          user: '6145280790'
+          deviceId: C5DAFDB995384400B4FAFBFC4F22C40F
+      lockExpiration: '2025-05-07T23:41:59.478627Z'
+      lockType: SHARED
+      id: 36076736
+    :headers:
+      content-length: '1331'
+      Cache-Control: max-age=0
+      Connection: keep-alive
+      host: datamanager.globaldevtools.bbva.com
+      Vary: Accept-Encoding
+      Expires: Wed, 07 May 2025 23:41:29 GMT
+      Date: Wed, 07 May 2025 23:41:29 GMT
+      Content-Type: application/json; charset=utf-8
+    :status: 200 OK

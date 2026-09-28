@@ -1,0 +1,74 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: 12d6b7f4-6b30-4937-914d-558db522594a
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: user_suspected_transaction
+    lock: 'false'
+then:
+- return:
+    :body:
+    - data:
+        publicSettings:
+          shortcutConfiguration:
+          - minVersion:
+              android: 0
+              ios: 0.0.0.0
+            maxVersion:
+              android: 99999900
+              ios: 99.99.99.0
+            value:
+              destination: suspectedTransactionDirectDebits
+            key: A000001244
+          notificationFieldConfig:
+            operativesShortcuts:
+            - minVersion:
+                android: 0
+                ios: 00.00.00
+              iconCells: bbvaPhishing
+              icon: ic_phishing
+              maxVersion:
+                android: 999999900
+                ios: 99.99.99
+              id: A000001244
+              title: Confirmar o rechazar
+              routeType: private
+        deepLinks:
+          directDebitNoticeDeepLink:
+            filter:
+              destination: suspectedTransactionDirectDebits
+            icon: bbva:phishing
+            id: A000001244
+            page: suspectedTransactionDirectDebits
+            label: Confirmar o rechazar
+        notifications:
+          directDebit: 67af8e31f34f437a87355d97
+        tags:
+        - user_suspected_transaction
+        products: {}
+        authentication:
+          password: Glomo2024
+          user: '5531446068'
+          deviceId: 5791BA584BE6D4CD9796D1E5DDCA52A6
+      lockExpiration: null
+      lockType: null
+      id: 36015452
+    :headers:
+      content-length: '1056'
+      Cache-Control: max-age=0
+      Connection: keep-alive
+      host: datamanager.globaldevtools.bbva.com
+      Vary: Accept-Encoding
+      Expires: Fri, 14 Feb 2025 20:34:11 GMT
+      Date: Fri, 14 Feb 2025 20:34:11 GMT
+      Content-Type: application/json; charset=utf-8
+    :status: 200 OK

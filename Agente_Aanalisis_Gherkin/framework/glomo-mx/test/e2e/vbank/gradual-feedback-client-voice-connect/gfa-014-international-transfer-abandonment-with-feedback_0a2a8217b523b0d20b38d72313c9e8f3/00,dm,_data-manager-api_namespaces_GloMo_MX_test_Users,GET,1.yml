@@ -1,0 +1,97 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: 5b338e15-0a0a-4b17-a729-6b243c1175d4
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: gradual_international
+    lock: 'false'
+then:
+- return:
+    :body:
+    - data:
+        billPaymentProductDetail:
+          products:
+            accounts:
+            - number: '00740010001501934061'
+              product:
+                name: Cuenta de Ahorro
+                id: AH
+              alias: 0001AH4061
+              detail:
+                specificAmounts:
+                - amounts:
+                  - amount: 0
+                    currency: MXN
+                  id: CURRENT_BALANCE
+        fastAccessServices:
+        - amount: '389'
+          dataIndex: '2'
+          name: TELMEX
+          id: '000035241'
+          billNumber: '55361656317'
+        checkbox:
+        - Solo quería cotizar el producto
+        - Lo haré después
+        - Proceso no es claro o complicado
+        - Falta de información
+        - Tipo de cambio no adecuado
+        openResponse: Solo quería cotizar el producto
+        tags:
+        - gradual_international
+        products:
+        - newContact:
+          - tdc:
+            - number: '5470749814276780'
+              name: Ernesto
+              alias: Neto
+            tdd:
+            - number: '4152313969369482'
+              name: Alma
+              alias: Kari
+          accounts:
+          - number: '00740010001505860756'
+            product:
+              name: Cuenta de Ahorro
+              id: AH
+            alias: 0001AH0756
+            detail:
+              specificAmounts:
+              - amounts:
+                - amount: 0
+                  currency: MXN
+                id: CURRENT_BALANCE
+          savedContact:
+          - spei:
+            - number: '4198210132161695'
+              name: Ernesto
+              alias: Neto
+        accessFeedback: true
+        abandonProcess: true
+        authentication:
+          password: Glomo2025
+          accountSelectedId: Uvn6wi1Rh6AvQKbnyux1jGpm7uh05Fb2yK09zV9BuZsANEU3P-V8dQ
+          user: '7531687274'
+          deviceId: 561C89695F6848A2EDAB6F14B2049C27
+      lockExpiration: '2025-12-09T17:37:56.839949Z'
+      lockType: SHARED
+      id: 36307161
+    :headers:
+      content-length: '1241'
+      Server: nginx
+      Cache-Control: max-age=0
+      Connection: keep-alive
+      host: datamanager.globaldevtools.bbva.com
+      Vary: Accept-Encoding
+      Expires: Tue, 09 Dec 2025 17:37:42 GMT
+      Date: Tue, 09 Dec 2025 17:37:42 GMT
+      Content-Type: application/json; charset=utf-8
+    :status: 200 OK

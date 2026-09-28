@@ -1,0 +1,108 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: 491ac9c2-c08a-49ba-bfb2-362372c983cb
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: one_account,bill_payments,common_account
+    lock: 'false'
+then:
+- return:
+    :body:
+    - data:
+        search2:
+          search: amer
+          name: AMERICAN EXPRESS
+          alias: amex1
+          id: '000081306'
+          billNumber: '370700038834005'
+        search3:
+          search: CFE
+          name: CFE
+          alias: cfe
+          id: '000578869'
+          billNumber: '10010707025561100000'
+        search1:
+          search: sears
+          name: SEARS
+          alias: Tarjeta
+          id: '000653837'
+          billNumber: '123456789123'
+        tags:
+        - '5525520380'
+        - one_account
+        - bill_payments
+        - common_account
+        search5:
+          search: PAL
+          name: PALACIO
+          alias: PALACIO DE HIERRO
+          id: '000516221'
+          billNumber: '1234567890120102'
+        products:
+          accounts:
+          - number: '00740010001500845164'
+            product:
+              name: Cuenta de Ahorro
+              id: AH
+            numberType:
+              name: CCC
+              id: CCC
+            alias: 0001ah5164
+            id: Uvn6wi1Rh6AVjePl_QTi4oQs5D4hmpAyNwRnLPRSjrgypC_AHWgPEQ
+            detail:
+              level: '04'
+              specificAmounts:
+              - amounts:
+                - amount: 34386
+                  currency: MXN
+                name: Saldo actual
+                id: CURRENT_BALANCE
+              - amounts:
+                - amount: 0
+                  currency: MXN
+                name: Saldo buen cobro
+                id: PENDING_DEPOSIT_BALANCE
+              indicators:
+              - name: Indica si la cuenta es de nómina
+                id: IS_PAYROLL_ACCOUNT
+                isActive: true
+              - name: Indica si la cuenta es eje
+                id: IS_PRINCIPAL_ACCOUNT
+                isActive: true
+              - name: Indica si la cuenta tiene pockets
+                id: HAS_POCKETS
+                isActive: false
+            singnedAuthorization: {}
+            productType: ACCOUNT
+            status:
+              name: CUENTA ACTIVA
+              id: ACTIVE
+            subProductType:
+              name: TARJETA NOMINA BASIC
+              id: '0230'
+        authentication:
+          password: Glomo2023
+          user: '5525520380'
+          deviceId: 0C5AC55CF0B4BC199F0A2E8FC072C292
+      id: 35744358
+      lockExpiration: null
+      lockType: null
+    :headers:
+      content-length: '1714'
+      Cache-Control: max-age=0
+      Connection: keep-alive
+      host: datamanager.globaldevtools.bbva.com
+      Vary: Accept-Encoding
+      Expires: Mon, 13 Jan 2025 18:17:48 GMT
+      Date: Mon, 13 Jan 2025 18:17:48 GMT
+      Content-Type: application/json; charset=utf-8
+    :status: 200 OK

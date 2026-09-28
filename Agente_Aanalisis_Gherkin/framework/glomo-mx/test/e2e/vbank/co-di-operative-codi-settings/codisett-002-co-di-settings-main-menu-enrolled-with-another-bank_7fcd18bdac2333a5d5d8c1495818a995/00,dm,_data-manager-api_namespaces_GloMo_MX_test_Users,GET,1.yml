@@ -1,0 +1,39 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: ecada468-7d7e-4093-b607-8f924a7cc006
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: another_bank_codi
+    lock: 'false'
+then:
+- return:
+    :body:
+    - data:
+        locale: es_mx
+        tags:
+        - another_bank_codi
+        - '6161279879'
+        authentication:
+          password: Password00
+          user: '6161279879'
+          deviceId: A47602F44809B60F2E39E699815C9364
+      id: 36333202
+    :headers:
+      Server: nginx
+      Cache-Control: max-age=0
+      Connection: keep-alive
+      host: datamanager.globaldevtools.bbva.com
+      Expires: Thu, 08 Jan 2026 00:57:22 GMT
+      Content-Length: '194'
+      Date: Thu, 08 Jan 2026 00:57:22 GMT
+      Content-Type: application/json; charset=utf-8
+    :status: 200 OK

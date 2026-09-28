@@ -1,0 +1,56 @@
+when:
+  sequence: 1
+  path: /SRVS_A02/customers/v0/customers/b_TCwi5citu5euHzqryDL=/contact-details
+  method: GET
+  backend: glomo
+request:
+  headers:
+    sec-fetch-mode: cors
+    content-length: '0'
+    referer: http://localhost:8001/
+    sec-fetch-site: same-site
+    accept-language: es-MX,es;q=0.9
+    origin: http://localhost:8001
+    tsec: d573d267fbbb7f18f9fbf904b83371c64be07e66
+    accept: application/json, text/html, */*; q=0.1
+    sec-ch-ua: '"Not(A:Brand";v="8", "Chromium";v="144", "Google Chrome";v="144"'
+    sec-ch-ua-mobile: ?0
+    x-vbank-session: 3fd0f76c-313b-4b97-aafe-2548061776d0
+    sec-ch-ua-platform: '"macOS"'
+    host: localhost:9000
+    content-type: application/json
+    connection: keep-alive
+    cache-control: no-cache, no-store, must-revalidate
+    accept-encoding: gzip, deflate, br, zstd
+    sec-fetch-dest: empty
+    user-agent: GLOMO_MX/99.99.99 (Android;14;Samsung)
+then:
+- return:
+    severity: FATAL
+    system-error-cause: ''
+    error-message: Server error
+    consumer-request-id: 207a2723-e82b-4c47-a64c-ea8836f245cd
+    :headers:
+      access-control-allow-origin: '*'
+      Access-Control-Expose-Headers: tsec, vnd.bbva.access-token-type,vnd.bbva.access-token,
+        vnd.bbva.sso-pkcs7, authenticationtype, authenticationdata, authenticationstate,
+        authenticationchallenge
+      Server: artichoke
+      access-control-allow-headers: Content-Type, tsec, authenticationtype, authenticationdata,
+        authenticationstate, contactid, consumeruuid, consumerapplicationid, perimetertsec,
+        authorization, responsewarningcode, responsewarningdescription, cuf, field,
+        bcs-device-app-version, bcs-device-app-version, vnd.bbva.authorization, device-id,
+        Bcs-Device-Os-Name, bcs-device-app-name, bcs-device-dpi, BCS-Device-Id
+      Connection: keep-alive
+      tsec: d573d267fbbb7f18f9fbf904b83371c64be07e66
+      Content-Length: '305'
+      X-Response-Time: 6ms
+      Date: Mon, 16 Feb 2026 20:28:47 GMT
+      Content-Type: application/json; charset=utf-8
+    httpStatus: 500
+    system-error-code: serviceNotAvailable
+    :status: 500 Internal Server Error
+    http-status: 500
+    system-error-description: Service not available right now
+    error-code: '161'
+    version: 1

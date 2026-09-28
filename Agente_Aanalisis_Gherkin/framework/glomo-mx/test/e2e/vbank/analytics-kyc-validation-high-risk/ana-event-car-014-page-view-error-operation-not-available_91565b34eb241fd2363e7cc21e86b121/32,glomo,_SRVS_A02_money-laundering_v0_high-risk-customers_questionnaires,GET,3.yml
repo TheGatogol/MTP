@@ -1,0 +1,946 @@
+when:
+  sequence: 3
+  path: /SRVS_A02/money-laundering/v0/high-risk-customers/questionnaires
+  method: GET
+  backend: glomo
+request:
+  headers:
+    sec-fetch-mode: cors
+    content-length: '0'
+    referer: http://localhost:8001/
+    sec-fetch-site: same-site
+    accept-language: es-MX,es;q=0.9
+    origin: http://localhost:8001
+    tsec: ZXlKaFlYQWlPaUl4TURBd01ERTROeUlzSW10bGVWWmxjbk5wYjI0aU9qRXNJbUZ3Y0Vsa0lqb2lRVkJRTVNJc0ltdHBaQ0k2SWtGUVVERXViRzlqWVd3dU1TSXNJbVZ1WXlJNklrRXhPVEpIUTAwaUxDSnJaWGxVZVhCbElqb2liRzlqWVd3aUxDSmhiR2NpT2lKa2FYSWlMQ0owYzJWalNXUWlPaUprWlRnM01tUXlPQzAzWVRrd0xUUmxZamN0WVRKaU5DMWhPVGczTjJJd1lXTXlZbVFpZlEuLkFZNVhOUXNFTDI1TmJxN3QuMVRaT3pRak1SUGkxN3EyMlhoRTgwdkd5YmpPNGZ4R3REay00MkFYWlh3VnFOZkk4Zlo1QktQNHVfNEhxZGMxaDItQU1HX0RCMHlCaWk2VzNyem5LRzZnamEwa0VsbTV3UG1TNGh0UjlRMGJoQXNIWlYyNUVWc1loOGhUVjBUSFRDYWNCNGVLb2s4MTN3U3U1SjNhbGdkbkNFSURiUVBvS3JLaUZlbUk0Und5Y2UycnhwVFU3eDV3NW5oaUZXYThndExXX3pSdW5DTDg0T2tZdDZSUWhOLWJPOHN3SE1CSkU3blJBaWVxNk1Oc3pjbHFrNjI5dWFCZ3RnUF9sMWt0S3l2WmFBeGJ5R1lLaVgxb1EyaTNFT3ZaSFJlVlJKdUZXclhsYmZ1UjJ0OTdFOGFZU2RIN0duZ3NVLXBTSXE2cldiU3JqSG45QjY3UUUyc2cwRXJBV2RpeThfeUs3YjJfNDJ4MXduRkRaRjRhNmswYS1nUHBoSXRJZTY4TUtGWkM3RjRSWmREV0JOYlpKM1ZvZ2hUdGhSdDFqamdKZjcxcW0xZHBGb1B0Z2xmcFp0Tkw3ek9YNFRzNVNWRTN0Mm5KNWlvOGxNaGRscEliZTU1MC16NC1YMi02OFUtR3hSd3gtaEhjZWFfd2UxSXJLTzI0dlRkV0o0TFQ3SUtqejJ2VXlxSkJvMkNnWnR5VDF1YTdKbkg0MXh0NmVuWGVUYUk5a2VnZVh6RHlHaVVDb2tUNlZ4TjNyTlhJN1ByTTVTM1NOUHVTNENiRHFfRnBuR1gzQmhKZWdFSDhVUmNxYzV2c0lReEkzM0lldURIbkVtb2xkdllzYzJwV0lITjNQdWJFWlJ3Z1V5VHllTGt2Nks5SEg0dDE0UnB1RVFxWXlVRHI4NVAxNS1nRV92SWJJaXhvQURWXzRCb3U4TGZVWFltbjd3VFdwZnNod0dzR1R1V0liWW1LZVpUblhYZjZVYkdrMVlWYnM5MnZXZUNwa2dJR2tTdlhETkxHSzNwMGg1c1hxM3d6bE1lbkRWTThuUVA3ODA5N3hPNVNRWEVPY2o5cVM5VkkzYTRYS3FpQjA0Yjl2aWxZaHhWNzB2bE50NVYxTElOejZfdmhGX0dpem1CR2NGanY4eUtHSVJvRkdFNTFka3FRcVNKTkRnX0lGc2hMNzhQZ3lYTklPYjlmaE5LSVhvOHRQSnNkMHVoajBCZmp6dmM0VEdZMlVMbVdpVEdEZGRRdklpSEN1TlBVTWpqT1hJYW5rX0dnQ1RES1M1dDJZOUFETmExQ3BvUlFTSFVJM2pNeXMwRXVoVGRWSnhTN0JsMFFhQTFnU2VqbmNmQVlRMm1XYkVLcjh5dGZlbG9mbVZEYUdtWlhhUEdpUk8xaC04N09WaHpYak9fRThwMWlYNDFCQm1WdG5EaEY3ZmhQbExyc3YtNTFFX3VxNWQzdEdqNktQeFM2Y3UyeHo5NkZXM2F6ZEpuNThZb3F5Tm0teldpaU5PMUpVTzluY2thT2hfNEtkY0w3Z3lYbG92UE9DVnBUSWFVbnZzRDdlWTIyWWh3QTROdHVTTEdGNmtPU0w4UnlOYlhJX0tLVHJyWUhkb3Z3MGVfMEFzSENkaDY4ZDRvb2x4cTNDTENFZXFicm5YMUZ0RmtQYUVoN3ZmdlZMa2hEMV92bEhweXRBMHg0Y0hyYWwzRElBeGtoOWpUTE9FY0NudzNtNkVsVWxldXpidmU4Z2RVYVBYRjJmLXRMM0FFeWIwRF91ak9iblo1NUN6QUxhNkgxMERyRGNjREZaRjVfUFc4UlpoNTNNTU04UlRkVUVtRVN0MFpwQnhQakdtMzJtYlBHVWRiRDhPdlM1dXo4TmJqTXFVMDhZWlRXQ1lpVnZTU2Rka3RvSkM2UzFiczhxMXROS0hvZGdjbUk2WHppVmdyZWlvTmdPR0hTajdDYmVwZmNCRVl5Y1pHTWQ0RXNkY01CQUo1OHN1UUFnNnBwaXpiYVNKazE4QUVRLVp1RjNXZy5DdU5GU3FJQndDUDU3YXBTcS1BLTBn
+    accept: application/json, text/html, */*; q=0.1
+    sec-ch-ua: '"Chromium";v="142", "Google Chrome";v="142", "Not_A Brand";v="99"'
+    sec-ch-ua-mobile: ?0
+    x-vbank-session: 24f9467f-930b-4e84-9830-f7a1650912e9
+    sec-ch-ua-platform: '"macOS"'
+    host: localhost:9000
+    content-type: application/json
+    connection: keep-alive
+    cache-control: no-cache, no-store, must-revalidate
+    accept-encoding: gzip, deflate, br, zstd
+    sec-fetch-dest: empty
+    user-agent: GLOMO_MX/99.99.99 (Android;14;Samsung)
+  query:
+    customer.id: rGtpNVA1k20bPm8MY3DNnA
+then:
+- return:
+    data:
+    - process:
+        id: 20251028000613D118
+      questions:
+      - catalog:
+          name: Encabezado
+          id: NA
+        description: Compártenos algunos datos sobre el uso de tu cuenta
+        id: '131'
+        position: '1'
+      - catalog:
+          name: YES/NO
+          id: 132-prop
+        description: ¿Tu cuenta la abrió un apoderado legal?
+        id: '132'
+        position: '2'
+      - catalog:
+          name: YES/NO
+          id: 133-prop
+        description: ¿Acostumbras prestarle tu cuenta a familiares o amigos?
+        id: '133'
+        position: '3'
+      - catalog:
+          name: Encabezado
+          id: NA
+        description: ¿Cuál es la principal fuente de ingresos?
+        id: '39'
+        position: '4'
+      - catalog:
+          name: PICKER
+          id: 136-prop
+        description: Principal fuente de ingresos
+        id: '136'
+        position: '5'
+      section:
+        description: Preguntas Filtro
+        id: PF
+      id: '00006'
+      customer:
+        id: rGtpNVA1k20bPm8MY3DNnA
+      expirationDate: '2026-01-09'
+      status:
+        id: PENDIENTE
+    - process:
+        id: 20251028000613D118
+      questions:
+      - catalog:
+          name: Encabezado
+          id: NA
+        description: Compártenos algunos datos sobre ti.
+        id: '134'
+        position: '6'
+      - catalog:
+          name: Encabezado
+          id: NA
+        description: ¿Cuál es tu estado civil?
+        id: '213'
+        position: '7'
+      - catalog:
+          name: PICKER
+          id: 01160074E-corp
+        description: Estado civil
+        id: '1'
+        position: '8'
+      - catalog:
+          name: Encabezado
+          id: NA
+        description: 'Ingresa el nombre completo de tu cónyugue o pareja:'
+        id: '135'
+        position: '9'
+      - catalog:
+          name: ABIERTA
+          id: NA
+        description: Nombre(s)
+        id: '137'
+        position: '10'
+      - catalog:
+          name: ABIERTA
+          id: NA
+        description: Primer apellido
+        id: '139'
+        position: '11'
+      - catalog:
+          name: ABIERTA
+          id: NA
+        description: Segundo apellido
+        id: '138'
+        position: '12'
+      - catalog:
+          name: Encabezado
+          id: NA
+        description: ¿Cuántas personas dependen económicamente de ti?
+        id: '6'
+        position: '13'
+      - catalog:
+          name: PICKER
+          id: 140-prop
+        description: Dependientes económicos
+        id: '140'
+        position: '14'
+      - catalog:
+          name: Encabezado
+          id: NA
+        description: Dependiente 1
+        id: '97'
+        position: '15'
+      - catalog:
+          name: ABIERTA
+          id: NA
+        description: Nombre(s)
+        id: '137'
+        position: '16'
+      - catalog:
+          name: ABIERTA
+          id: NA
+        description: Primer apellido
+        id: '139'
+        position: '17'
+      - catalog:
+          name: ABIERTA
+          id: NA
+        description: Segundo apellido
+        id: '138'
+        position: '18'
+      - catalog:
+          name: PICKER
+          id: 141-prop
+        description: Parentesco o relación
+        id: '141'
+        position: '19'
+      - catalog:
+          name: Encabezado
+          id: NA
+        description: Dependiente 2
+        id: '109'
+        position: '20'
+      - catalog:
+          name: ABIERTA
+          id: NA
+        description: Nombre(s)
+        id: '137'
+        position: '21'
+      - catalog:
+          name: ABIERTA
+          id: NA
+        description: Primer apellido
+        id: '139'
+        position: '22'
+      - catalog:
+          name: ABIERTA
+          id: NA
+        description: Segundo apellido
+        id: '138'
+        position: '23'
+      - catalog:
+          name: PICKER
+          id: 141-prop
+        description: Parentesco o relación
+        id: '141'
+        position: '24'
+      - catalog:
+          name: Encabezado
+          id: NA
+        description: Dependiente 3
+        id: '110'
+        position: '25'
+      - catalog:
+          name: ABIERTA
+          id: NA
+        description: Nombre(s)
+        id: '137'
+        position: '26'
+      - catalog:
+          name: ABIERTA
+          id: NA
+        description: Primer apellido
+        id: '139'
+        position: '27'
+      - catalog:
+          name: ABIERTA
+          id: NA
+        description: Segundo apellido
+        id: '138'
+        position: '28'
+      - catalog:
+          name: PICKER
+          id: 141-prop
+        description: Parentesco o relación
+        id: '141'
+        position: '29'
+      section:
+        description: Información personal
+        id: IP
+      id: '00006'
+      customer:
+        id: rGtpNVA1k20bPm8MY3DNnA
+      expirationDate: '2026-01-09'
+      status:
+        id: PENDIENTE
+    - process:
+        id: 20251028000613D118
+      questions:
+      - catalog:
+          name: Encabezado
+          id: NA
+        description: Compártenos algunos datos sobre tu trabajo actual y el estado
+          de tus finanzas.
+        id: '168'
+        position: '30'
+      - catalog:
+          name: YES/NO
+          id: 142-prop
+        description: ¿Cambiaste de empleo en los últimos 12 meses?
+        id: '142'
+        position: '31'
+      - catalog:
+          name: Encabezado
+          id: NA
+        description: Ingresa los datos de tu trabajo nuevo
+        id: '143'
+        position: '32'
+      - catalog:
+          name: ABIERTA
+          id: NA
+        description: Cargo
+        id: '144'
+        position: '33'
+      - catalog:
+          name: PICKER
+          id: 145-prop
+        description: Principal forma de pago
+        id: '145'
+        position: '34'
+      - catalog:
+          name: YES/NO
+          id: 146-prop
+        description: ¿Manejas o dispones dinero de la empresa en el trabajo nuevo?
+        id: '146'
+        position: '35'
+      - catalog:
+          name: Encabezado
+          id: NA
+        description: Ingresa los datos de tu lugar de trabajo nuevo.
+        id: '147'
+        position: '36'
+      - catalog:
+          name: ABIERTA
+          id: NA
+        description: Nombre
+        id: '148'
+        position: '37'
+      - catalog:
+          name: PICKER
+          id: 06760074E-corp
+        description: Actividad de la empresa
+        id: '149'
+        position: '38'
+      - catalog:
+          name: PICKER
+          id: 150-prop
+        description: Tipo de organización
+        id: '150'
+        position: '39'
+      - catalog:
+          name: Encabezado
+          id: NA
+        description: Agregar dirección (opcional)
+        id: '49'
+        position: '40'
+      - catalog:
+          name: Encabezado
+          id: NA
+        description: Dirección de tu lugar de trabajo
+        id: '103'
+        position: '41'
+      - catalog:
+          name: PICKER
+          id: 01120074E-corp
+        description: País
+        id: '154'
+        position: '42'
+      - catalog:
+          name: ABIERTA
+          id: NA
+        description: Calle
+        id: '151'
+        position: '43'
+      - catalog:
+          name: ABIERTA
+          id: NA
+        description: Número exterior
+        id: '153'
+        position: '44'
+      - catalog:
+          name: ABIERTA
+          id: NA
+        description: Número interior (opcional)
+        id: '152'
+        position: '45'
+      - catalog:
+          name: ABIERTA
+          id: NA
+        description: Código postal
+        id: '155'
+        position: '46'
+      - catalog:
+          name: PICKER
+          id: NA
+        description: Colonia
+        id: '158'
+        position: '47'
+      - catalog:
+          name: PICKER
+          id: NA
+        description: Alcaldía o municipio
+        id: '156'
+        position: '48'
+      - catalog:
+          name: PICKER
+          id: 06320074E-corp
+        description: Estado
+        id: '157'
+        position: '49'
+      - catalog:
+          name: ABIERTA
+          id: NA
+        description: Teléfono del domicilio
+        id: '159'
+        position: '50'
+      - catalog:
+          name: Encabezado
+          id: NA
+        description: Eliminar dirección
+        id: '214'
+        position: '51'
+      - catalog:
+          name: Encabezado
+          id: NA
+        description: ¿Cuál es tu ingreso mensual en pesos mexicanos?
+        id: '38'
+        position: '52'
+      - catalog:
+          name: PICKER
+          id: 160-prop
+        description: Ingreso mensual
+        id: '160'
+        position: '53'
+      - catalog:
+          name: Encabezado
+          id: NA
+        description: Si tiene más de un negocio, ingresa los datos del que te genera
+          más ingresos.
+        id: '169'
+        position: '54'
+      - catalog:
+          name: ABIERTA
+          id: NA
+        description: Denominación social
+        id: '170'
+        position: '55'
+      - catalog:
+          name: ABIERTA
+          id: NA
+        description: RFC con homoclave
+        id: '171'
+        position: '56'
+      - catalog:
+          name: PICKER
+          id: 06760074E-corp
+        description: Actividad de la empresa
+        id: '172'
+        position: '57'
+      - catalog:
+          name: PICKER
+          id: 173-prop
+        description: Antigüedad del negocio
+        id: '173'
+        position: '58'
+      - catalog:
+          name: PICKER
+          id: 174-prop
+        description: Número de colaboradores
+        id: '174'
+        position: '59'
+      - catalog:
+          name: ABIERTA
+          id: NA
+        description: Cargo que desempeñas
+        id: '175'
+        position: '60'
+      - catalog:
+          name: PICKER
+          id: 176-prop
+        description: En dónde está tu negocio
+        id: '176'
+        position: '61'
+      - catalog:
+          name: PICKER
+          id: 01120074E-corp
+        description: País de la sede principal
+        id: '177'
+        position: '62'
+      - catalog:
+          name: PICKER
+          id: 06320074E-corp
+        description: Estado de la sede principal
+        id: '178'
+        position: '63'
+      - catalog:
+          name: Encabezado
+          id: NA
+        description: Agregar dirección (opcional)
+        id: '49'
+        position: '64'
+      - catalog:
+          name: Encabezado
+          id: NA
+        description: Dirección de tu lugar de trabajo
+        id: '103'
+        position: '65'
+      - catalog:
+          name: PICKER
+          id: 01120074E-corp
+        description: País
+        id: '154'
+        position: '66'
+      - catalog:
+          name: ABIERTA
+          id: NA
+        description: Calle
+        id: '151'
+        position: '67'
+      - catalog:
+          name: ABIERTA
+          id: NA
+        description: Número exterior
+        id: '153'
+        position: '68'
+      - catalog:
+          name: ABIERTA
+          id: NA
+        description: Número interior (opcional)
+        id: '152'
+        position: '69'
+      - catalog:
+          name: ABIERTA
+          id: NA
+        description: Código postal
+        id: '155'
+        position: '70'
+      - catalog:
+          name: PICKER
+          id: NA
+        description: Colonia
+        id: '158'
+        position: '71'
+      - catalog:
+          name: PICKER
+          id: NA
+        description: Alcaldía o municipio
+        id: '156'
+        position: '72'
+      - catalog:
+          name: PICKER
+          id: 06320074E-corp
+        description: Estado
+        id: '157'
+        position: '73'
+      - catalog:
+          name: ABIERTA
+          id: NA
+        description: Teléfono del domicilio
+        id: '159'
+        position: '74'
+      - catalog:
+          name: Encabezado
+          id: NA
+        description: Eliminar dirección
+        id: '214'
+        position: '75'
+      - catalog:
+          name: Encabezado
+          id: NA
+        description: ¿Cuál es el origen de tus ingresos?
+        id: '179'
+        position: '76'
+      - catalog:
+          name: PICKER
+          id: 180-prop
+        description: Origen de tus ingresos
+        id: '180'
+        position: '77'
+      - catalog:
+          name: YES/NO
+          id: 181-prop
+        description: ¿Tienes alguna relacion comercial con alguna entidad gubernamental?
+        id: '181'
+        position: '78'
+      - catalog:
+          name: Encabezado
+          id: NA
+        description: Ingresa los datos de tu relación comercial con alguna entidad
+          gubernamental
+        id: '182'
+        position: '79'
+      - catalog:
+          name: PICKER
+          id: 183-prop
+        description: Tipo de relación
+        id: '183'
+        position: '80'
+      - catalog:
+          name: ABIERTA
+          id: NA
+        description: Entidad gubernamental
+        id: '184'
+        position: '81'
+      - catalog:
+          name: PICKER
+          id: 185-prop
+        description: Frecuencia de las operaciones
+        id: '185'
+        position: '82'
+      - catalog:
+          name: Encabezado
+          id: NA
+        description: ¿Cuál es el destino de los recursos de tu cuenta?
+        id: '51'
+        position: '83'
+      - catalog:
+          name: PICKER
+          id: 161-prop
+        description: Destino de los recursos
+        id: '161'
+        position: '84'
+      - catalog:
+          name: YES/NO
+          id: 162-prop
+        description: ¿Vives o tienes algún negocio en el extranjero?
+        id: '162'
+        position: '85'
+      - catalog:
+          name: Encabezado
+          id: NA
+        description: ¿Para qué abriste tu cuenta en México? Elige el motivo principal.
+        id: '36'
+        position: '86'
+      - catalog:
+          name: PICKER
+          id: 163-prop
+        description: Motivo de apertura
+        id: '163'
+        position: '87'
+      - catalog:
+          name: Encabezado
+          id: NA
+        description: ¿Por qué abriste una cuenta en México?
+        id: '37'
+        position: '88'
+      - catalog:
+          name: TEXT
+          id: NA
+        description: 'Cuéntanos:'
+        id: '164'
+        position: '89'
+      - catalog:
+          name: Encabezado
+          id: NA
+        description: Elige un documento para comprobar el origen y monto de tus ingresos.
+        id: '165'
+        position: '90'
+      - catalog:
+          name: PICKER
+          id: 166-prop
+        description: Comprobante de ingresos
+        id: '166'
+        position: '91'
+      - catalog:
+          name: DATE
+          id: NA
+        description: Fecha de expedición
+        id: '167'
+        position: '92'
+      section:
+        description: Trabajo e Ingresos
+        id: TI
+      id: '00006'
+      customer:
+        id: rGtpNVA1k20bPm8MY3DNnA
+      expirationDate: '2026-01-09'
+      status:
+        id: PENDIENTE
+    - process:
+        id: 20251028000613D118
+      questions:
+      - catalog:
+          name: Encabezado
+          id: NA
+        description: Compártenos algunos datos sobre tus actividades y las de tu familia
+          en los últimos 12 meses.
+        id: '186'
+        position: '93'
+      - catalog:
+          name: YES/NO
+          id: 187-prop
+        description: ¿Has tenido un cargo público o político relevante?
+        id: '187'
+        position: '94'
+      - catalog:
+          name: Encabezado
+          id: NA
+        description: ¿El nombramiento es nacional o extranjero?
+        id: '81'
+        position: '95'
+      - catalog:
+          name: PICKER
+          id: 188-prop
+        description: Tipo de nombramiento
+        id: '188'
+        position: '96'
+      - catalog:
+          name: Encabezado
+          id: NA
+        description: Selecciona el tipo de cargo y puesto
+        id: '189'
+        position: '97'
+      - catalog:
+          name: PICKER
+          id: 190-prop
+        description: Tipo de cargo
+        id: '190'
+        position: '98'
+      - catalog:
+          name: PICKER
+          id: 191-prop
+        description: Cargo o puesto
+        id: '191'
+        position: '99'
+      - catalog:
+          name: PICKER
+          id: 192-prop
+        description: Cargo o puesto
+        id: '192'
+        position: '100'
+      - catalog:
+          name: PICKER
+          id: 193-prop
+        description: Cargo o puesto
+        id: '193'
+        position: '101'
+      - catalog:
+          name: Encabezado
+          id: NA
+        description: Selecciona el cargo o puesto
+        id: '194'
+        position: '102'
+      - catalog:
+          name: PICKER
+          id: 195-prop
+        description: Cargo o puesto
+        id: '195'
+        position: '103'
+      - catalog:
+          name: Encabezado
+          id: NA
+        description: ¿Para que abriste tu cuenta en México? Elige el motivo principal.
+        id: '196'
+        position: '104'
+      - catalog:
+          name: PICKER
+          id: 197-prop
+        description: Motivo de apertura
+        id: '197'
+        position: '105'
+      - catalog:
+          name: Encabezado
+          id: NA
+        description: ¿Por qué abriste una cuenta en México?
+        id: '37'
+        position: '106'
+      - catalog:
+          name: TEXT
+          id: NA
+        description: 'Cuéntanos:'
+        id: '164'
+        position: '107'
+      - catalog:
+          name: YES/NO
+          id: 198-prop
+        description: ¿Has tenido alguna fuente de ingresos adicional a tu cargo público
+          o político?
+        id: '198'
+        position: '108'
+      - catalog:
+          name: Encabezado
+          id: NA
+        description: Selecciona la fuente de ingresos adicional
+        id: '199'
+        position: '109'
+      - catalog:
+          name: PICKER
+          id: 200-prop
+        description: Fuente de ingreso adicional
+        id: '200'
+        position: '110'
+      - catalog:
+          name: Encabezado
+          id: NA
+        description: Elige el rango de tus ingresos mensuales por cada actividad en
+          pesos mexicanos
+        id: '201'
+        position: '111'
+      - catalog:
+          name: PICKER
+          id: 202-prop
+        description: Ingresos por cargo público
+        id: '202'
+        position: '112'
+      - catalog:
+          name: PICKER
+          id: 203-prop
+        description: Ingresos adicionales
+        id: '203'
+        position: '113'
+      - catalog:
+          name: YES/NO
+          id: 204-prop
+        description: ¿Tus familiares directos han tenido un cargo público o político
+          relevante?
+        id: '204'
+        position: '114'
+      - catalog:
+          name: Encabezado
+          id: NA
+        description: Ingresa los datos de tu familiar
+        id: '205'
+        position: '115'
+      - catalog:
+          name: ABIERTA
+          id: NA
+        description: Nombre(s)
+        id: '137'
+        position: '116'
+      - catalog:
+          name: ABIERTA
+          id: NA
+        description: Primer apellido
+        id: '139'
+        position: '117'
+      - catalog:
+          name: ABIERTA
+          id: NA
+        description: Segundo apellido
+        id: '138'
+        position: '118'
+      - catalog:
+          name: PICKER
+          id: 141-prop
+        description: Parentesco o relación
+        id: '141'
+        position: '119'
+      - catalog:
+          name: DATE
+          id: NA
+        description: Fecha de nacimiento
+        id: '206'
+        position: '120'
+      - catalog:
+          name: PICKER
+          id: 01120074E-corp
+        description: Nacionalidad
+        id: '207'
+        position: '121'
+      - catalog:
+          name: Encabezado
+          id: NA
+        description: ¿El nombramiento es nacional o extranjero?
+        id: '81'
+        position: '122'
+      - catalog:
+          name: PICKER
+          id: 188-prop
+        description: Tipo de nombramiento
+        id: '188'
+        position: '123'
+      - catalog:
+          name: Encabezado
+          id: NA
+        description: Selecciona el tipo de cargo y puesto
+        id: '189'
+        position: '124'
+      - catalog:
+          name: PICKER
+          id: 190-prop
+        description: Tipo de cargo
+        id: '190'
+        position: '125'
+      - catalog:
+          name: PICKER
+          id: 191-prop
+        description: Cargo o puesto
+        id: '191'
+        position: '126'
+      - catalog:
+          name: PICKER
+          id: 192-prop
+        description: Cargo o puesto
+        id: '192'
+        position: '127'
+      - catalog:
+          name: PICKER
+          id: 193-prop
+        description: Cargo o puesto
+        id: '193'
+        position: '128'
+      - catalog:
+          name: Encabezado
+          id: NA
+        description: Selecciona el cargo o puesto
+        id: '194'
+        position: '129'
+      - catalog:
+          name: PICKER
+          id: 195-prop
+        description: Cargo o puesto
+        id: '195'
+        position: '130'
+      - catalog:
+          name: YES/NO
+          id: 208-prop
+        description: ¿Tu familiar tiene algún vínculo patrimonial con una empresa
+          privada?
+        id: '208'
+        position: '131'
+      - catalog:
+          name: Encabezado
+          id: NA
+        description: Ingresa los datos de la empresa
+        id: '209'
+        position: '132'
+      - catalog:
+          name: ABIERTA
+          id: NA
+        description: Nombre de la empresa
+        id: '210'
+        position: '133'
+      - catalog:
+          name: ABIERTA
+          id: NA
+        description: Porcentaje de participación
+        id: '211'
+        position: '134'
+      section:
+        description: Actividad Pública
+        id: AP
+      id: '00006'
+      customer:
+        id: rGtpNVA1k20bPm8MY3DNnA
+      expirationDate: '2026-01-09'
+      status:
+        id: PENDIENTE
+    :headers:
+      content-length: '16486'
+      Access-Control-Allow-Origin: '*'
+      ECS-Entry-Point-Zone: ext
+      Access-Control-Allow-Methods: GET, POST, DELETE, PUT, OPTIONS, PATCH
+      X-Content-Type-Options: nosniff
+      Connection: keep-alive
+      tsec: ZXlKaFlYQWlPaUl4TURBd01ERTROeUlzSW10bGVWWmxjbk5wYjI0aU9qRXNJbUZ3Y0Vsa0lqb2lRVkJRTVNJc0ltdHBaQ0k2SWtGUVVERXViRzlqWVd3dU1TSXNJbVZ1WXlJNklrRXhPVEpIUTAwaUxDSnJaWGxVZVhCbElqb2liRzlqWVd3aUxDSmhiR2NpT2lKa2FYSWlMQ0owYzJWalNXUWlPaUprWlRnM01tUXlPQzAzWVRrd0xUUmxZamN0WVRKaU5DMWhPVGczTjJJd1lXTXlZbVFpZlEuLkFZNVhOUXNFTDI1TmJxN3QuMVRaT3pRak1SUGkxN3EyMlhoRTgwdkd5YmpPNGZ4R3REay00MkFYWlh3VnFOZkk4Zlo1QktQNHVfNEhxZGMxaDItQU1HX0RCMHlCaWk2VzNyem5LRzZnamEwa0VsbTV3UG1TNGh0UjlRMGJoQXNIWlYyNUVWc1loOGhUVjBUSFRDYWNCNGVLb2s4MTN3U3U1SjNhbGdkbkNFSURiUVBvS3JLaUZlbUk0Und5Y2UycnhwVFU3eDV3NW5oaUZXYThndExXX3pSdW5DTDg0T2tZdDZSUWhOLWJPOHN3SE1CSkU3blJBaWVxNk1Oc3pjbHFrNjI5dWFCZ3RnUF9sMWt0S3l2WmFBeGJ5R1lLaVgxb1EyaTNFT3ZaSFJlVlJKdUZXclhsYmZ1UjJ0OTdFOGFZU2RIN0duZ3NVLXBTSXE2cldiU3JqSG45QjY3UUUyc2cwRXJBV2RpeThfeUs3YjJfNDJ4MXduRkRaRjRhNmswYS1nUHBoSXRJZTY4TUtGWkM3RjRSWmREV0JOYlpKM1ZvZ2hUdGhSdDFqamdKZjcxcW0xZHBGb1B0Z2xmcFp0Tkw3ek9YNFRzNVNWRTN0Mm5KNWlvOGxNaGRscEliZTU1MC16NC1YMi02OFUtR3hSd3gtaEhjZWFfd2UxSXJLTzI0dlRkV0o0TFQ3SUtqejJ2VXlxSkJvMkNnWnR5VDF1YTdKbkg0MXh0NmVuWGVUYUk5a2VnZVh6RHlHaVVDb2tUNlZ4TjNyTlhJN1ByTTVTM1NOUHVTNENiRHFfRnBuR1gzQmhKZWdFSDhVUmNxYzV2c0lReEkzM0lldURIbkVtb2xkdllzYzJwV0lITjNQdWJFWlJ3Z1V5VHllTGt2Nks5SEg0dDE0UnB1RVFxWXlVRHI4NVAxNS1nRV92SWJJaXhvQURWXzRCb3U4TGZVWFltbjd3VFdwZnNod0dzR1R1V0liWW1LZVpUblhYZjZVYkdrMVlWYnM5MnZXZUNwa2dJR2tTdlhETkxHSzNwMGg1c1hxM3d6bE1lbkRWTThuUVA3ODA5N3hPNVNRWEVPY2o5cVM5VkkzYTRYS3FpQjA0Yjl2aWxZaHhWNzB2bE50NVYxTElOejZfdmhGX0dpem1CR2NGanY4eUtHSVJvRkdFNTFka3FRcVNKTkRnX0lGc2hMNzhQZ3lYTklPYjlmaE5LSVhvOHRQSnNkMHVoajBCZmp6dmM0VEdZMlVMbVdpVEdEZGRRdklpSEN1TlBVTWpqT1hJYW5rX0dnQ1RES1M1dDJZOUFETmExQ3BvUlFTSFVJM2pNeXMwRXVoVGRWSnhTN0JsMFFhQTFnU2VqbmNmQVlRMm1XYkVLcjh5dGZlbG9mbVZEYUdtWlhhUEdpUk8xaC04N09WaHpYak9fRThwMWlYNDFCQm1WdG5EaEY3ZmhQbExyc3YtNTFFX3VxNWQzdEdqNktQeFM2Y3UyeHo5NkZXM2F6ZEpuNThZb3F5Tm0teldpaU5PMUpVTzluY2thT2hfNEtkY0w3Z3lYbG92UE9DVnBUSWFVbnZzRDdlWTIyWWh3QTROdHVTTEdGNmtPU0w4UnlOYlhJX0tLVHJyWUhkb3Z3MGVfMEFzSENkaDY4ZDRvb2x4cTNDTENFZXFicm5YMUZ0RmtQYUVoN3ZmdlZMa2hEMV92bEhweXRBMHg0Y0hyYWwzRElBeGtoOWpUTE9FY0NudzNtNkVsVWxldXpidmU4Z2RVYVBYRjJmLXRMM0FFeWIwRF91ak9iblo1NUN6QUxhNkgxMERyRGNjREZaRjVfUFc4UlpoNTNNTU04UlRkVUVtRVN0MFpwQnhQakdtMzJtYlBHVWRiRDhPdlM1dXo4TmJqTXFVMDhZWlRXQ1lpVnZTU2Rka3RvSkM2UzFiczhxMXROS0hvZGdjbUk2WHppVmdyZWlvTmdPR0hTajdDYmVwZmNCRVl5Y1pHTWQ0RXNkY01CQUo1OHN1UUFnNnBwaXpiYVNKazE4QUVRLVp1RjNXZy5DdU5GU3FJQndDUDU3YXBTcS1BLTBn
+      Access-Control-Allow-Headers: remaining-time, Bbva-User-Agent, Accept-Encoding,
+        Accept, Content-Type, tsec, consumerrequestid, authenticationchallenge, authenticationtype,
+        authenticationdata, authenticationstate, contactid, consumeruuid, consumerapplicationid,
+        perimetertsec, authorization, responsewarningcode, responsewarningdescription,
+        cuf, prefer, phoneNumber, Location, X-RHO-PARENTSPANID, X-RHO-TRACEID, preferredauthenticationtype,
+        X-HTTP-Method-Override, Access-Control-Allow-Methods, iv-remote-address, thirdparty-x-forwarded-for,
+        thirdparty-user-agent, thirdparty-geolocation, thirdparty-calculated-scoring,
+        thirdparty-deviceid, vnd.bbva.security-client-certificate, order-preferredaction,
+        authenticationresponse, Access-Control-Max-Age, BCS-Device-Id, BCS-Device-OS-Name,
+        BCS-Device-Model-Name, BCS-Device-Model-Manufacturer, BCS-Device-Screen-Size,
+        BCS-Device-OS-Version, BCS-Device-DPI, BCS-Device-App-Name, BCS-Device-App-Version,
+        Third-Party-Application-Id, ECS-Signature-Platform-Use-Case, BCS-Process-Code,
+        BCS-Operation-Tracer, BCS-Process-Tracer, vnd.bbva.user-id, order-id, order-accepteddisclaimers,
+        x-forwarded-for, Date, order-hmac, x-dmz-orgn, onsite-accountTerm, onsite-logicalTerm,
+        Akamai-BM-Telemetry, BCS-Third-Party-Session-Id, Cache-Control, clave, Content-Encoding,
+        ECS-Entry-Point-Zone, firma, Geolocation, Third-Party-Collaborator-Id, user-agent,
+        Via, order-signed, loginauthenticationtype, x-cau
+      Date: Fri, 21 Nov 2025 16:57:29 GMT
+      Referrer-Policy: same-origin
+      X-Frame-Options: sameorigin
+      Strict-Transport-Security: max-age=31536000; includeSubDomains
+      Access-Control-Expose-Headers: remaining-time, Bbva-User-Agent, Accept-Encoding,
+        Accept, Content-Type, tsec, consumerrequestid, authenticationchallenge, authenticationtype,
+        authenticationdata, authenticationstate, contactid, consumeruuid, consumerapplicationid,
+        perimetertsec, authorization, responsewarningcode, responsewarningdescription,
+        cuf, prefer, phoneNumber, Location, X-RHO-PARENTSPANID, X-RHO-TRACEID, preferredauthenticationtype,
+        X-HTTP-Method-Override, Access-Control-Allow-Methods, iv-remote-address, thirdparty-x-forwarded-for,
+        thirdparty-user-agent, thirdparty-geolocation, thirdparty-calculated-scoring,
+        thirdparty-deviceid, vnd.bbva.security-client-certificate, order-preferredaction,
+        authenticationresponse, Access-Control-Max-Age, BCS-Device-Id, BCS-Device-OS-Name,
+        BCS-Device-Model-Name, BCS-Device-Model-Manufacturer, BCS-Device-Screen-Size,
+        BCS-Device-OS-Version, BCS-Device-DPI, BCS-Device-App-Name, BCS-Device-App-Version,
+        Third-Party-Application-Id, ECS-Signature-Platform-Use-Case, BCS-Process-Code,
+        BCS-Operation-Tracer, BCS-Process-Tracer, vnd.bbva.user-id, order-id, order-accepteddisclaimers,
+        x-forwarded-for, Date, order-hmac, x-dmz-orgn, onsite-accountTerm, onsite-logicalTerm,
+        Akamai-BM-Telemetry, BCS-Third-Party-Session-Id, Cache-Control, clave, Content-Encoding,
+        ECS-Entry-Point-Zone, firma, Geolocation, Third-Party-Collaborator-Id, user-agent,
+        Via, order-signed, loginauthenticationtype, x-cau
+      Cache-Control: no-cache,no-store,must-revalidate
+      Content-Security-Policy: script-src 'self'
+      Vary: Accept-Encoding
+      Set-Cookie: vbank-session=24f9467f-930b-4e84-9830-f7a1650912e9
+      Expires: '-1'
+      X-XSS-Protection: 1; mode=block
+      consumerrequestid: c89664ae-daac-425a-be3d-6391ee25c7ea
+      Content-Type: application/json; charset=UTF-8
+    :status: 500 Server Internal Error

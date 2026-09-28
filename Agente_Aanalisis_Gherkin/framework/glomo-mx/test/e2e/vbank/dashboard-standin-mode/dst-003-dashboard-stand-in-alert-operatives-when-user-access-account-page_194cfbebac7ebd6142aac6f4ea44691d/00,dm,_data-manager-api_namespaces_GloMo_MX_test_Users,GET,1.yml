@@ -1,0 +1,39 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: ed167bdb-1115-45a3-b270-91ff2fd4d6be
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: dashboard_standin_two
+    lock: 'false'
+then:
+- return:
+    :body:
+    - data:
+        tags:
+        - '5592230935'
+        - dashboard_standin_two
+        authentication:
+          password: password00
+          user: '5592230935'
+          deviceId: 10D4DD3859B824B939FA4AC5A5A5AC43
+      lockType: null
+      lockExpiration: null
+      id: 3522284
+    :headers:
+      Strict-Transport-Security: max-age=15768000
+      Server: nginx
+      ECS-Entry-Point-Zone: ext
+      Connection: keep-alive
+      Content-Length: '227'
+      Date: Wed, 12 Apr 2023 06:30:49 GMT
+      Content-Type: application/json
+    :status: 200 OK

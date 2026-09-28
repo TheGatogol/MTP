@@ -1,0 +1,87 @@
+when:
+  sequence: 1
+  path: /SRVS_A02/customer-logins/v1/logins
+  method: GET
+  backend: glomo
+request:
+  headers:
+    sec-fetch-mode: cors
+    content-length: "0"
+    referer: http://localhost:8001/
+    sec-fetch-site: same-site
+    accept-language: es-MX,es;q=0.9
+    origin: http://localhost:8001
+    authenticationtype: "58"
+    tsec: 8b03a7409355d1c0af88e47d0ed7fa2a526dadb7
+    accept: application/json, text/html, */*; q=0.1
+    authenticationdata: deviceid=11111111
+    sec-ch-ua: '"Google Chrome";v="113", "Chromium";v="113", "Not-A.Brand";v="24"'
+    sec-ch-ua-mobile: ?0
+    x-vbank-session: 5f79cb64-4826-47f8-aeaa-68bd544c4e47
+    sec-ch-ua-platform: '"macOS"'
+    host: localhost:9000
+    content-type: application/json
+    connection: keep-alive
+    cache-control: no-cache, no-store, must-revalidate
+    accept-encoding: gzip, deflate, br
+    sec-fetch-dest: empty
+    user-agent: GLOMO_MX/99.99.99;Mozilla/5.0 (Linux; U; Android 4.0.2; en-us;
+      Galaxy Nexus Build/ICL53F) AppleWebKit/534.30 (KHTML, like Gecko)
+      Version/4.0 Mobile Safari/534.30
+  query: {}
+then:
+- return:
+    data:
+      classifications:
+        - id: ECONOMIC_SECTOR
+          sector:
+            id: F
+            subSector:
+              id: "32"
+          segments: []
+      bank:
+        id: "0074"
+        branch:
+          id: "0010"
+      identityDocument:
+        documentType:
+          id: I
+        documentNumber: 52341234A
+      personType:
+        firstName: HUGO
+        lastName: SÁNCHEZ
+        secondLastName: MTP
+        gender:
+          id: M
+        birthData:
+          birthDate: "1984-05-13T00:00:00.000Z"
+        id: NATURAL
+      segments: []
+    :headers:
+      access-control-allow-origin: "*"
+      content-length: "2030"
+      Access-Control-Expose-Headers: tsec,
+        vnd.bbva.access-token-type,vnd.bbva.access-token, vnd.bbva.sso-pkcs7,
+        authenticationtype, authenticationdata, authenticationstate,
+        authenticationchallenge
+      Server: artichoke
+      access-control-allow-headers: Content-Type, tsec, authenticationtype,
+        authenticationdata, authenticationstate, contactid, consumeruuid,
+        consumerapplicationid, perimetertsec, authorization,
+        responsewarningcode, responsewarningdescription, cuf, field,
+        bcs-device-app-version, bcs-device-app-version, vnd.bbva.authorization
+      Connection: keep-alive
+      content-type: application/json;charset=UTF-8
+      Vary: Accept-Encoding
+      tsec: 8b03a7409355d1c0af88e47d0ed7fa2a526dadb7
+      X-Response-Time: 4ms
+      Date: Wed, 10 May 2023 19:06:40 GMT
+    :status: 200 OK
+    apiInfo:
+      name: customers
+      category: people
+      version: 0.24.0
+    messages:
+      - code: KNA1008
+        message: CONSULTA REALIZADA
+        type: WARNING

@@ -1,0 +1,174 @@
+when:
+  sequence: 13
+  path: /SRVS_A02/loyalty/v0/rewards
+  method: GET
+  backend: glomo
+request:
+  headers:
+    sec-fetch-mode: cors
+    content-length: '0'
+    referer: http://localhost:8001/
+    sec-fetch-site: same-site
+    accept-language: es-MX,es;q=0.9
+    origin: http://localhost:8001
+    tsec: 9939b4d184cede83549c9ac5d195b928f763d57d
+    accept: application/json, text/html, */*; q=0.1
+    sec-ch-ua: '"Chromium";v="112", "Google Chrome";v="112", "Not:A-Brand";v="99"'
+    sec-ch-ua-mobile: ?0
+    x-vbank-session: 8e0fc4a1-395a-44a4-aac5-03e4c373dc6b
+    sec-ch-ua-platform: '"macOS"'
+    host: localhost:9000
+    content-type: application/json
+    connection: keep-alive
+    cache-control: no-cache, no-store, must-revalidate
+    accept-encoding: gzip, deflate, br
+    sec-fetch-dest: empty
+    user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36
+      (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36
+  query:
+    billingPeriod: OPEN_PERIOD
+    contract.id: '0060'
+then:
+- return:
+    data:
+    - unitType:
+        name: Points
+        id: POINTS
+      isRedeemable: true
+      balances:
+      - itemizedBalances:
+        - breakdown:
+          - name: Bonificaciones
+            id: BONUS
+            nonMonetaryValue: 600
+          - name: Sorteo BBVA
+            id: RAFFLE
+            nonMonetaryValue: 600
+          id: CLOSE_TO_EXPIRE
+          nonMonetaryValue: 1200
+        endDate: '2022-12-15'
+        startDate: '2022-12-15'
+      - itemizedBalances:
+        - breakdown:
+          - name: Bonificaciones
+            id: BONUS
+            nonMonetaryValue: 600
+          - name: Sorteo BBVA
+            id: RAFFLE
+            nonMonetaryValue: 600
+          id: CLOSE_TO_EXPIRE
+          nonMonetaryValue: 200
+        endDate: '2023-01-15'
+        startDate: '2023-01-15'
+      - itemizedBalances:
+        - breakdown:
+          - name: Bonificaciones
+            id: BONUS
+            nonMonetaryValue: 600
+          - name: Sorteo BBVA
+            id: RAFFLE
+            nonMonetaryValue: 600
+          id: CLOSE_TO_EXPIRE
+          nonMonetaryValue: 2000
+        endDate: '2023-02-15'
+        startDate: '2023-02-15'
+      - itemizedBalances:
+        - breakdown:
+          - name: Pago con puntos
+            id: PAYMENT_POINTS
+            nonMonetaryValue: 1234
+          id: GENERATED
+          nonMonetaryValue: 1234
+        - breakdown:
+          - name: Pago con tarjeta
+            id: CARD_PAYMENT
+            nonMonetaryValue: 1234
+          id: APPLIED
+          nonMonetaryValue: 1234
+        - breakdown:
+          - name: Vencidos
+            id: REMOVED
+            nonMonetaryValue: 1234
+          id: EXPIRED
+          nonMonetaryValue: 1234
+        - breakdown:
+          - name: Bonificaciones
+            id: BONUS
+            nonMonetaryValue: 500
+          - name: Sorteo BBVA
+            id: RAFFLE
+            nonMonetaryValue: 500
+          id: CURRENT
+          nonMonetaryValue: 1000
+        - breakdown:
+          - name: Perdidos
+            id: DISCOUNTED
+            nonMonetaryValue: 1234
+          id: PREVIOUS
+          nonMonetaryValue: 1234
+        - breakdown:
+          - name: Bonificaciones
+            id: BONUS
+            nonMonetaryValue: 500
+          - name: Sorteo BBVA
+            id: RAFFLE
+            nonMonetaryValue: 500
+          id: PARTIALLY_GENERATED
+          nonMonetaryValue: 1000
+        - breakdown:
+          - name: Bonificaciones
+            id: BONUS
+            nonMonetaryValue: 400
+          - name: Sorteo BBVA
+            id: RAFFLE
+            nonMonetaryValue: 400
+          id: PARTIALLY_APPLIED
+          nonMonetaryValue: 800
+        - breakdown:
+          - name: Bonificaciones
+            id: BONUS
+            nonMonetaryValue: 600
+          id: SPENT_TODAY
+          nonMonetaryValue: 600
+        endDate: '2023-01-01'
+        startDate: '2022-12-07'
+      contract:
+        id: '0060'
+        productType:
+          id: CARD
+      name: Bancomer points
+      monetaryValue:
+        amount: 28.99
+        currency: MXN
+      monetaryPointEquivalence:
+        amount: 5
+        currency: MXN
+      id: BANCOMER_POINTS
+      nonMonetaryValue: 500
+      nonMonetaryRedemptionSavings:
+        amount: 5
+        currency: MXN
+    :headers:
+      access-control-allow-origin: '*'
+      content-length: '2466'
+      Access-Control-Expose-Headers: tsec, vnd.bbva.access-token-type,vnd.bbva.access-token,
+        vnd.bbva.sso-pkcs7, authenticationtype, authenticationdata, authenticationstate,
+        authenticationchallenge
+      Server: artichoke
+      Alt-Svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      access-control-allow-headers: Content-Type, tsec, authenticationtype, authenticationdata,
+        authenticationstate, contactid, consumeruuid, consumerapplicationid, perimetertsec,
+        authorization, responsewarningcode, responsewarningdescription, cuf, field,
+        bcs-device-app-version, bcs-device-app-version, vnd.bbva.authorization
+      Vary: Accept-Encoding
+      tsec: 9939b4d184cede83549c9ac5d195b928f763d57d
+      X-Response-Time: 478ms
+      Date: Tue, 16 May 2023 13:39:28 GMT
+      Content-Type: application/json; charset=utf-8
+      Via: 1.1 google
+    :status: 200 OK
+    responseStatus: 200
+    apiInfo:
+      name: catalogs
+      category: data
+      version: 0.2.0

@@ -1,0 +1,48 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: 547d6232-e560-42c0-8276-c73eefe84c35
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: loan_payment,payment_personal,pending_receipts
+    lock: 'false'
+then:
+- return:
+    :body:
+    - data:
+        locale: es_mx
+        tags:
+        - '5569632156'
+        - loan_payment
+        - payment_personal
+        - only_account
+        - pending_receipts
+        products:
+          account:
+            id: yEAHmSLzjOYAhsH2enykos8DHzjpXjoi
+        authentication:
+          password: Glomo2023
+          user: '5569632156'
+          deviceId: DE784AA1990C8EC23B33A2189ECD06FF
+      lockExpiration: null
+      lockType: null
+      id: 35798429
+    :headers:
+      content-length: '293'
+      Strict-Transport-Security: max-age=15768000
+      Server: nginx
+      ECS-Entry-Point-Zone: ext
+      Connection: keep-alive
+      host: datamanager.globaldevtools.bbva.com
+      Vary: Accept-Encoding
+      Date: Thu, 14 Mar 2024 16:04:18 GMT
+      Content-Type: application/json
+    :status: 200 OK

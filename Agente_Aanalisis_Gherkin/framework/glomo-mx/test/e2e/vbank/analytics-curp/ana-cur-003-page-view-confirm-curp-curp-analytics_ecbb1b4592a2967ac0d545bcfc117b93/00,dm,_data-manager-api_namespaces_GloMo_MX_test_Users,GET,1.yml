@@ -1,0 +1,42 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: 1aef7d16-382d-4e05-bb39-b4d4eadf063d
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: curp_confirmation,curp_confirm_national
+then:
+- return:
+    :body:
+    - data:
+        homeFutura: true
+        locale: es_mx
+        tags:
+        - '5518214570'
+        - curp_confirmation
+        - curp
+        - curp_confirm_national
+        authentication:
+          password: '147258369'
+          user: '5518214570'
+          deviceId: D8A427A97D09B1C580CECCF047277D4B
+      lockType: null
+      lockExpiration: null
+      id: 2702428
+    :headers:
+      Strict-Transport-Security: max-age=15768000
+      Server: nginx
+      ECS-Entry-Point-Zone: ext
+      Connection: keep-alive
+      Content-Length: '274'
+      Date: Thu, 25 Aug 2022 18:25:56 GMT
+      Content-Type: application/json
+    :status: 200 OK

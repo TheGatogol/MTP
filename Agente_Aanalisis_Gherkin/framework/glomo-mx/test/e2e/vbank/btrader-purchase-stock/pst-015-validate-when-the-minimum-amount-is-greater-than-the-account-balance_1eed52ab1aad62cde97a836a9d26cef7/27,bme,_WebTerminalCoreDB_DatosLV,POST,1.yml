@@ -1,0 +1,66 @@
+when:
+  sequence: 1
+  path: /WebTerminalCoreDB/DatosLV
+  method: POST
+  backend: bme
+request:
+  headers:
+    sec-fetch-mode: cors
+    referer: http://localhost:8001/
+    content-length: '140'
+    sec-fetch-site: same-site
+    accept-language: es-MX,es;q=0.9
+    origin: http://localhost:8001
+    accept: application/json, text/plain, */*; q=0.01
+    sec-ch-ua: '"Google Chrome";v="137", "Chromium";v="137", "Not/A)Brand";v="24"'
+    sec-ch-ua-mobile: ?0
+    x-vbank-session: 53d9a61d-9786-415f-a612-619fb766b9a3
+    sec-ch-ua-platform: '"macOS"'
+    x-requested-with: XMLHttpRequest
+    host: localhost:9003
+    content-type: application/json
+    connection: keep-alive
+    cache-control: no-cache, no-store, must-revalidate
+    accept-encoding: gzip, deflate, br, zstd
+    sec-fetch-dest: empty
+    user-agent: GLOMO_MX/99.99.99 (Android;14;Samsung)
+  body:
+    Sesion: 885F0D93BC794F9396A72BFA0C1A0B86
+    TipoPeticion: '12'
+    Instrumentos: AAPL *,NAFTRAC ISHRS,WALMEX *
+    Descriptores: 40,420,642
+then:
+- return:
+    datos:
+      LV:
+        V:
+        - D80001: AAPL
+          D40: US0378331005
+          D420: '3905'
+          D80002: '*'
+          MV: M2AAPL1
+          D642: '2'
+        - D80001: NAFTRAC
+          D40: MX1BNA060014
+          D420: '57.1'
+          D80002: ISHRS
+          MV: M3NAF02
+          D642: '2'
+        - D80001: WALMEX
+          D40: MX01WA000038
+          D420: '58.76'
+          D80002: '*'
+          MV: MXWAL04
+          D642: '2'
+    :headers:
+      content-length: '320'
+      Server: Microsoft-IIS/10.0
+      Access-Control-Allow-Origin: http://localhost:8001
+      Access-Control-Allow-Credentials: 'true'
+      Vary: Origin
+      X-Response-Time-ms: '19'
+      Date: Wed, 09 Jul 2025 01:34:07 GMT
+      Content-Type: application/json; charset=utf-8
+      X-Powered-By: ASP.NET
+    :status: 200 OK
+    error: 0

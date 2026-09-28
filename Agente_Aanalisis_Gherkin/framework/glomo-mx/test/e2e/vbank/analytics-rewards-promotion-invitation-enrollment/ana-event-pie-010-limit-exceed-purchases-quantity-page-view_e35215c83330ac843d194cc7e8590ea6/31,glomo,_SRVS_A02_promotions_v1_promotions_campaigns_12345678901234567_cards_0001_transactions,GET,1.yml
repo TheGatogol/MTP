@@ -1,0 +1,111 @@
+when:
+  sequence: 1
+  path: /SRVS_A02/promotions/v1/promotions/campaigns/12345678901234567/cards/0001/transactions
+  method: GET
+  backend: glomo
+request:
+  headers:
+    sec-fetch-mode: cors
+    content-length: '0'
+    referer: http://localhost:8001/
+    sec-fetch-site: same-site
+    accept-language: es-MX,es;q=0.9
+    origin: http://localhost:8001
+    tsec: 32d3138e6ba9816ddf49e2e8dfe1e87605bdf1d6
+    accept: application/json, text/html, */*; q=0.1
+    sec-ch-ua: '"Chromium";v="134", "Not:A-Brand";v="24", "Google Chrome";v="134"'
+    sec-ch-ua-mobile: ?0
+    x-vbank-session: c0c9e6f3-e25d-4849-9df5-56b194f245ca
+    sec-ch-ua-platform: '"macOS"'
+    host: localhost:9000
+    content-type: application/json
+    connection: keep-alive
+    cache-control: no-cache, no-store, must-revalidate
+    accept-encoding: gzip, deflate, br, zstd
+    sec-fetch-dest: empty
+    user-agent: GLOMO_MX/99.99.99 (Android;14;Samsung)
+  query:
+    pageSize: '5'
+    category.id: HOT_SALE_AFTER
+then:
+- return:
+    pagination:
+      pageElements: 5
+      totalPages: 6
+      pageSize: 5
+      links:
+        next: $(${backend.glomo.protocol}://${backend.glomo.host}:${backend.glomo.port}/SRVS_A02/promotions/v1/promotions/campaigns/12345678901234567/cards/0001/transactions?category.id=HOT_SALE_AFTER&pageSize=5&paginationKey=000A0007)
+        last: $(${backend.glomo.protocol}://${backend.glomo.host}:${backend.glomo.port}/SRVS_A02/promotions/v1/promotions/campaigns/12345678901234567/cards/0001/transactions?category.id=HOT_SALE_AFTER&pageSize=5&paginationKey=001A0012)
+        first: $(${backend.glomo.protocol}://${backend.glomo.host}:${backend.glomo.port}/SRVS_A02/promotions/v1/promotions/campaigns/12345678901234567/cards/0001/transactions?category.id=HOT_SALE_AFTER&pageSize=5&paginationKey=000A0001)
+      page: 0
+      totalElements: 11
+    data:
+    - date: '2024-06-30T11:05:03.000+01:00'
+      isAdditionalCardTransaction: true
+      amount:
+        amount: 1
+        currency: MXN
+      concept: Zara Buenavista
+      id: 000A0001
+      category:
+        id: HOT_SALE_AFTER
+    - date: '2024-06-30T11:05:03.000+01:00'
+      isAdditionalCardTransaction: false
+      amount:
+        amount: 8
+        currency: MXN
+      concept: Costco Arboledas
+      id: 001A0002
+      category:
+        id: HOT_SALE_AFTER
+    - date: '2024-06-29T11:05:03.000+01:00'
+      isAdditionalCardTransaction: false
+      amount:
+        amount: 5
+        currency: MXN
+      concept: Liverpool
+      id: 001A0003
+      category:
+        id: HOT_SALE_AFTER
+    - date: '2024-06-28T11:05:03.000+01:00'
+      isAdditionalCardTransaction: false
+      amount:
+        amount: 1
+        currency: MXN
+      concept: Home depot
+      id: 001A0004
+      category:
+        id: HOT_SALE_AFTER
+    - date: '2024-06-27T11:05:03.000+01:00'
+      isAdditionalCardTransaction: false
+      amount:
+        amount: 7
+        currency: MXN
+      concept: Amazon
+      id: 001A0005
+      category:
+        id: HOT_SALE_AFTER
+    :headers:
+      access-control-allow-origin: '*'
+      content-length: '1866'
+      Access-Control-Expose-Headers: tsec, vnd.bbva.access-token-type,vnd.bbva.access-token,
+        vnd.bbva.sso-pkcs7, authenticationtype, authenticationdata, authenticationstate,
+        authenticationchallenge
+      Server: artichoke
+      access-control-allow-headers: Content-Type, tsec, authenticationtype, authenticationdata,
+        authenticationstate, contactid, consumeruuid, consumerapplicationid, perimetertsec,
+        authorization, responsewarningcode, responsewarningdescription, cuf, field,
+        bcs-device-app-version, bcs-device-app-version, vnd.bbva.authorization, device-id,
+        Bcs-Device-Os-Name, bcs-device-app-name, bcs-device-dpi, BCS-Device-Id
+      Connection: keep-alive
+      Vary: Accept-Encoding
+      tsec: 32d3138e6ba9816ddf49e2e8dfe1e87605bdf1d6
+      X-Response-Time: 15ms
+      Date: Thu, 12 Jun 2025 05:21:04 GMT
+      Content-Type: application/json; charset=utf-8
+    :status: 206 Partial Content
+    responseStatus: 206
+    apiInfo:
+      name: promotions
+      category: enterprises
+      version: 1.16.0

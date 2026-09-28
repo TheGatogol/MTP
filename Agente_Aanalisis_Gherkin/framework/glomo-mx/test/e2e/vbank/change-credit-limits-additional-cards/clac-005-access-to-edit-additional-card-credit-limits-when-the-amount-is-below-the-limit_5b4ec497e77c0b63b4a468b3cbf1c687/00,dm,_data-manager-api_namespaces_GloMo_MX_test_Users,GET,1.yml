@@ -1,0 +1,116 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: 18736e2f-f004-4b44-8559-c39dc29672bb
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: additional_cards,operative_additional
+    lock: 'false'
+then:
+- return:
+    :body:
+    - data:
+        tags:
+        - additional_cards
+        - operative_additional
+        products:
+          cards:
+          - number: '4772913024497069'
+            cardAgreement: '234599'
+            cardId: Azul Tres
+            activations:
+            - name: Activation for global card usage
+              isActive: true
+              activationId: ON_OFF
+            indicators:
+            - indicatorId: ASSOCIABLE_TO_NFC
+              name: The card can be associable to nfc.
+              isActive: true
+            - indicatorId: ASSOCIABLE_TO_STICKER_CARDS
+              name: Indica si la tarjeta cuenta con sticker asociado
+              isActive: false
+            - indicatorId: ASSOCIABLE_TO_VIRTUAL_CARDS
+              name: The card can be related to virtual cards
+              isActive: true
+            - indicatorId: BLOCKABLE
+              name: Bloquear tarjeta
+              isActive: false
+            - indicatorId: BLOCKABLE_NIP
+              name: Indica si la tarjeta puede modificar el nip de forma online por
+                una aplicación
+              isActive: false
+            - indicatorId: SECURITY_DATA_READ
+              name: Indica si los datos de seguridad de la tarjeta pueden ser leídos.
+              isActive: true
+            - indicatorId: DINAMIC_CVV
+              name: Indica si el CVV2 es dinámico
+              isActive: false
+            - indicatorId: ASSOCIABLE_TO_ADDITIONAL_CARDS
+              name: Indica si la tarjeta puede tener tarjetas asociadas
+              isActive: true
+            status:
+              name: Operative card
+              description: VIGENTE
+              id: OPERATIVE
+          - number: '4772910001992625'
+            cardAgreement: '234599'
+            cardId: '2625'
+            activations:
+            - name: Activation for global card usage
+              isActive: true
+              activationId: ON_OFF
+            indicators:
+            - indicatorId: ASSOCIABLE_TO_NFC
+              name: The card can be associable to nfc.
+              isActive: true
+            - indicatorId: ASSOCIABLE_TO_STICKER_CARDS
+              name: Indica si la tarjeta cuenta con sticker asociado
+              isActive: false
+            - indicatorId: ASSOCIABLE_TO_VIRTUAL_CARDS
+              name: The card can be related to virtual cards
+              isActive: true
+            - indicatorId: BLOCKABLE
+              name: Bloquear tarjeta
+              isActive: false
+            - indicatorId: BLOCKABLE_NIP
+              name: Indica si la tarjeta puede modificar el nip de forma online por
+                una aplicación
+              isActive: false
+            - indicatorId: SECURITY_DATA_READ
+              name: Indica si los datos de seguridad de la tarjeta pueden ser leídos.
+              isActive: true
+            - indicatorId: DINAMIC_CVV
+              name: Indica si el CVV2 es dinámico
+              isActive: false
+            - indicatorId: IS_ADDITIONAL
+              name: IS_ADDITIONAL
+              isActive: true
+            status:
+              name: Operative card
+              description: VIGENTE
+              id: OPERATIVE
+        authentication:
+          password: Glomo2024
+          user: '8186548670'
+          deviceId: 6E55BD585EF1BC9415E319604D95E581
+      lockExpiration: null
+      lockType: null
+      id: 36050146
+    :headers:
+      content-length: '2668'
+      Cache-Control: max-age=0
+      Connection: keep-alive
+      host: datamanager.globaldevtools.bbva.com
+      Vary: Accept-Encoding
+      Expires: Mon, 17 Feb 2025 23:13:35 GMT
+      Date: Mon, 17 Feb 2025 23:13:35 GMT
+      Content-Type: application/json; charset=utf-8
+    :status: 200 OK

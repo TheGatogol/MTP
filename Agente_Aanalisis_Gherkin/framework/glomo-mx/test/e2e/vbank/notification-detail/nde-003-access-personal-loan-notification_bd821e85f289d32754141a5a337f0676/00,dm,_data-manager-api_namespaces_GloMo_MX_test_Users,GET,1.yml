@@ -1,0 +1,46 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: d59b1fc0-10e2-4168-b729-756c0a53fe93
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: notifications,personal_loan
+    lock: 'false'
+then:
+- return:
+    :body:
+    - data:
+        cards:
+          dateError: 66bd42321aeda302a9d27e2b
+        notifications:
+          personalLoan: 67e5d568e1626036b57e0f09
+          vissual: 67d0cb9344b0337ce9fc5f7e
+        tags:
+        - '6624305968'
+        - notifications
+        - personal_loan
+        authentication:
+          password: Glomo2024
+          user: '6624305968'
+          deviceId: E3D5A3B976F28A0D61390CF2FAE8004A
+      lockExpiration: null
+      lockType: null
+      id: 36077576
+    :headers:
+      content-length: '390'
+      Cache-Control: max-age=0
+      Connection: keep-alive
+      host: datamanager.globaldevtools.bbva.com
+      Vary: Accept-Encoding
+      Expires: Fri, 28 Mar 2025 19:36:13 GMT
+      Date: Fri, 28 Mar 2025 19:36:13 GMT
+      Content-Type: application/json; charset=utf-8
+    :status: 200 OK

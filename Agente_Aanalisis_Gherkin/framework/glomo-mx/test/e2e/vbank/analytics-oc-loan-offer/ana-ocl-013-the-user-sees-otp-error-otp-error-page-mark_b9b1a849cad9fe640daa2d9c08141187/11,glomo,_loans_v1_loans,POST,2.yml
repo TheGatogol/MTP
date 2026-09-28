@@ -1,0 +1,98 @@
+when:
+  sequence: 2
+  path: /SRVS_A02/loans/v1/loans
+  method: POST
+  backend: glomo
+request:
+  headers:
+    sec-fetch-mode: cors
+    referer: http://localhost:8001/
+    content-length: '225'
+    sec-fetch-site: same-site
+    accept-language: es
+    origin: http://localhost:8001
+    authenticationtype: '33'
+    tsec: 74189cf8967ffeb19754f7552327659dd1cca12c
+    accept: application/json, text/html, */*; q=0.1
+    authenticationdata: otp-token=12345678
+    sec-ch-ua: '"Google Chrome";v="93", " Not;A Brand";v="99", "Chromium";v="93"'
+    sec-ch-ua-mobile: ?0
+    x-vbank-session: 9ed7d97e-44e3-49b1-9d78-ec40826fd039
+    sec-ch-ua-platform: '"macOS"'
+    host: localhost:9000
+    content-type: application/json
+    connection: keep-alive
+    cache-control: no-cache, no-store, must-revalidate
+    accept-encoding: gzip, deflate, br
+    sec-fetch-dest: empty
+    user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36
+      (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36
+  body:
+    initialAmounts:
+    - amount: 228700
+      currency: MXN
+    contractingDate: '2021-09-23'
+    terms:
+      number: 60
+      frequency: MONTHLY
+    purposeGroup:
+      id: '00156'
+    offerId: XFRAB1QNN13NDPDKGEEREAS1JZM6AP7XZ4QCWHY9ZWR24KDJXEY0
+then:
+- return:
+    severity: FATAL
+    system-error-cause:
+    - field: data.loanType
+      schemaPath: []
+      message: is required
+      type: object
+      value:
+        initialAmounts:
+        - amount: 228700
+          currency: MXN
+        contractingDate: '2021-09-23'
+        terms:
+          number: 60
+          frequency: MONTHLY
+        purposeGroup:
+          id: '00156'
+        offerId: XFRAB1QNN13NDPDKGEEREAS1JZM6AP7XZ4QCWHY9ZWR24KDJXEY0
+    - field: data.deliveries
+      schemaPath: []
+      message: is required
+      type: object
+      value:
+        initialAmounts:
+        - amount: 228700
+          currency: MXN
+        contractingDate: '2021-09-23'
+        terms:
+          number: 60
+          frequency: MONTHLY
+        purposeGroup:
+          id: '00156'
+        offerId: XFRAB1QNN13NDPDKGEEREAS1JZM6AP7XZ4QCWHY9ZWR24KDJXEY0
+    error-message: Bad Request
+    consumer-request-id: 207a2723-e82b-4c47-a64c-ea8836f245cd
+    :headers:
+      access-control-allow-origin: '*'
+      content-length: '1364'
+      Access-Control-Expose-Headers: tsec, vnd.bbva.access-token-type,vnd.bbva.access-token,
+        authenticationtype, authenticationdata, authenticationstate
+      Server: artichoke
+      access-control-allow-headers: Content-Type, tsec, authenticationtype, authenticationdata,
+        authenticationstate, contactid, consumeruuid, consumerapplicationid, perimetertsec,
+        authorization, responsewarningcode, responsewarningdescription, cuf, field,
+        bcs-device-app-version, bcs-device-app-version
+      Connection: keep-alive
+      content-type: application/json;charset=UTF-8
+      Vary: Accept-Encoding
+      tsec: 74189cf8967ffeb19754f7552327659dd1cca12c
+      X-Response-Time: 17ms
+      Date: Thu, 23 Sep 2021 19:25:12 GMT
+    system-error-code: '400'
+    :status: 400 Bad Request
+    http-status: 400
+    system-error-description: Bad Request
+    error-code: '400'
+    version: 1

@@ -1,0 +1,43 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: f2e18cee-6834-4c0b-a6d8-5b28dbf218cb
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: sustainability_product_bill_payments
+    lock: 'false'
+then:
+- return:
+    :body:
+    - data:
+        locale: es_mx
+        tags:
+        - sustainability
+        - sustainability_normal_user
+        - sustainability_product_bill_payments
+        authentication:
+          password: Glomo2024
+          user: '2821602489'
+          deviceId: 14596056054D2872B6A64F45560D4473
+      lockType: null
+      lockExpiration: null
+      id: 35733098
+    :headers:
+      content-length: '295'
+      Strict-Transport-Security: max-age=15768000
+      Server: nginx
+      ECS-Entry-Point-Zone: ext
+      Connection: keep-alive
+      host: datamanager.globaldevtools.bbva.com
+      Vary: Accept-Encoding
+      Date: Thu, 23 May 2024 21:12:59 GMT
+      Content-Type: application/json
+    :status: 200 OK

@@ -1,0 +1,47 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: 32625dc4-4d20-4495-b63a-fdf407821eec
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: request_money
+    lock: 'false'
+then:
+- return:
+    :body:
+    - data:
+        data:
+          catalogs:
+            catalogs: []
+        locale: es_mx
+        tags:
+        - request_money
+        products:
+          accounts:
+          - 0001AH8784
+        authentication:
+          password: Glomo2024
+          user: '5518516878'
+          deviceId: 5E615611C56A389B5225B9190BBD8E93
+      lockType: SHARED
+      lockExpiration: '2024-06-05T15:41:31.704136Z'
+      id: 35807986
+    :headers:
+      content-length: '335'
+      Strict-Transport-Security: max-age=15768000
+      Server: nginx
+      ECS-Entry-Point-Zone: ext
+      Connection: keep-alive
+      host: datamanager.globaldevtools.bbva.com
+      Vary: Accept-Encoding
+      Date: Wed, 05 Jun 2024 15:41:28 GMT
+      Content-Type: application/json
+    :status: 200 OK

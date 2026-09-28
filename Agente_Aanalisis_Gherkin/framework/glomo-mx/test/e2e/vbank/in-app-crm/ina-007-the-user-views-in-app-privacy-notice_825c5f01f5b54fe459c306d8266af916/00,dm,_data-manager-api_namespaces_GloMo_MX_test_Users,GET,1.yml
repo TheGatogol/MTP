@@ -1,0 +1,37 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: inap_advanced_crm
+    lock: 'false'
+then:
+- return:
+    :body:
+    - data:
+        locale: es_mx
+        tags:
+        - inap_advanced_crm
+        authentication:
+          password: Glomo2023
+          user: '2381289862'
+          deviceId: CC38C4860BE5B67A81044FF31A134160
+      lockType: null
+      lockExpiration: null
+      id: 35826146
+    :headers:
+      Server: nginx
+      Connection: keep-alive
+      host: datamanager.globaldevtools.bbva.com
+      Content-Length: '228'
+      Date: Thu, 29 Aug 2024 18:58:30 GMT
+      Content-Type: application/json
+    :status: 200 OK

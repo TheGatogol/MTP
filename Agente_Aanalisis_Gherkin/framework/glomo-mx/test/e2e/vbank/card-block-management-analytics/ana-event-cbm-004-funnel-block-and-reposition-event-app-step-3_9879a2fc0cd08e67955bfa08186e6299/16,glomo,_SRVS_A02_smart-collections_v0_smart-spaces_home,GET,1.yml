@@ -1,0 +1,47 @@
+when:
+  sequence: 1
+  path: /SRVS_A02/smart-collections/v0/smart-spaces/home
+  method: GET
+  backend: glomo
+request:
+  headers:
+    sec-fetch-mode: cors
+    content-length: '0'
+    referer: http://localhost:8001/
+    sec-fetch-site: same-site
+    accept-language: es-MX
+    origin: http://localhost:8001
+    tsec: 04f4fe623dbdf12a03cfdef3b9032120df2165bf
+    accept: application/json, text/html, */*; q=0.1
+    sec-ch-ua: '"Not(A:Brand";v="8", "Chromium";v="144", "Google Chrome";v="144"'
+    sec-ch-ua-mobile: ?0
+    x-vbank-session: 954a40f2-8a78-4855-89a1-5f1440edd537
+    sec-ch-ua-platform: '"macOS"'
+    host: localhost:9000
+    content-type: application/json
+    connection: keep-alive
+    cache-control: no-cache, no-store, must-revalidate
+    accept-encoding: gzip, deflate, br, zstd
+    sec-fetch-dest: empty
+    user-agent: GLOMO_MX/99.99.99 (Android;14;Samsung)
+then:
+- return:
+    :body: Cannot read properties of undefined (reading 'data')
+    :headers:
+      access-control-allow-origin: '*'
+      content-length: '52'
+      Access-Control-Expose-Headers: tsec, vnd.bbva.access-token-type,vnd.bbva.access-token,
+        vnd.bbva.sso-pkcs7, authenticationtype, authenticationdata, authenticationstate,
+        authenticationchallenge
+      Server: artichoke
+      access-control-allow-headers: Content-Type, tsec, authenticationtype, authenticationdata,
+        authenticationstate, contactid, consumeruuid, consumerapplicationid, perimetertsec,
+        authorization, responsewarningcode, responsewarningdescription, cuf, field,
+        bcs-device-app-version, bcs-device-app-version, vnd.bbva.authorization, device-id,
+        Bcs-Device-Os-Name, bcs-device-app-name, bcs-device-dpi, BCS-Device-Id
+      Connection: keep-alive
+      content-type: text/plain;utf-8
+      tsec: 04f4fe623dbdf12a03cfdef3b9032120df2165bf
+      X-Response-Time: 19ms
+      Date: Mon, 16 Feb 2026 15:02:08 GMT
+    :status: 500 Internal Server Error

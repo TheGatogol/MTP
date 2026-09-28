@@ -1,0 +1,59 @@
+when:
+  sequence: 1
+  path: /SRVS_A02/cards/v1/cards/0005/activate
+  method: POST
+  backend: glomo
+request:
+  headers:
+    sec-fetch-mode: cors
+    referer: http://localhost:8001/
+    content-length: '142'
+    sec-fetch-site: same-site
+    accept-language: es-MX,es;q=0.9
+    origin: http://localhost:8001
+    tsec: 3f7f8ed38640ea63a5a64ceed3b6ae1f62a458ac
+    accept: application/json, text/html, */*; q=0.1
+    sec-ch-ua: '"Chromium";v="122", "Not(A:Brand";v="24", "Google Chrome";v="122"'
+    sec-ch-ua-mobile: ?0
+    x-vbank-session: c7e77b49-245a-450e-81f7-8d79afbc7eb2
+    sec-ch-ua-platform: '"macOS"'
+    host: localhost:9000
+    content-type: application/json
+    connection: keep-alive
+    cache-control: no-cache, no-store, must-revalidate
+    accept-encoding: gzip, deflate, br
+    sec-fetch-dest: empty
+    user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36
+      (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36
+  body:
+    validationKey:
+      id: CVV2
+      value: 0201B810EFD9EBAACA938D0948B1C774A0BEA00EF13C26122DF973A13BBCD0ACA873F8018B767CDB809CED66FD63E841D604
+then:
+- return:
+    :headers:
+      access-control-allow-origin: '*'
+      content-length: '255'
+      Access-Control-Expose-Headers: tsec, vnd.bbva.access-token-type,vnd.bbva.access-token,
+        vnd.bbva.sso-pkcs7, authenticationtype, authenticationdata, authenticationstate,
+        authenticationchallenge
+      Server: artichoke
+      Alt-Svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      access-control-allow-headers: Content-Type, tsec, authenticationtype, authenticationdata,
+        authenticationstate, contactid, consumeruuid, consumerapplicationid, perimetertsec,
+        authorization, responsewarningcode, responsewarningdescription, cuf, field,
+        bcs-device-app-version, bcs-device-app-version, vnd.bbva.authorization, device-id
+      Vary: Accept-Encoding
+      tsec: 3f7f8ed38640ea63a5a64ceed3b6ae1f62a458ac
+      X-Response-Time: 456ms
+      Date: Fri, 01 Mar 2024 02:35:40 GMT
+      Content-Type: application/json; charset=utf-8
+      Via: 1.1 google
+    messages:
+    - code: functionalError
+      message: MPE3232#NUM. INTENTOS ACTIVACION 05 SUPERADO, ACTIVAR EN CAJERO AUTOMATICO
+      type: FATAL
+      parameters:
+      - name: MPE3232
+      - name: NUM. INTENTOS ACTIVACION 05 SUPERADO, ACTIVAR EN CAJERO AUTOMATICO
+    :status: 400 Bad Request

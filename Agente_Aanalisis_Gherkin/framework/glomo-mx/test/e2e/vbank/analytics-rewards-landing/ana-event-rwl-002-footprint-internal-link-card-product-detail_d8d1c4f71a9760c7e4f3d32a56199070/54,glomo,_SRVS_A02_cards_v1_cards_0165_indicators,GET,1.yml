@@ -1,0 +1,67 @@
+when:
+  sequence: 1
+  path: /SRVS_A02/cards/v1/cards/0165/indicators
+  method: GET
+  backend: glomo
+request:
+  headers:
+    sec-fetch-mode: cors
+    content-length: '0'
+    referer: http://localhost:8001/
+    sec-fetch-site: same-site
+    accept-language: es-MX,es;q=0.9
+    origin: http://localhost:8001
+    tsec: bd0d6306e514640686df6229afd680d259892296
+    accept: application/json, text/html, */*; q=0.1
+    sec-ch-ua: '"Not:A-Brand";v="99", "Google Chrome";v="145", "Chromium";v="145"'
+    sec-ch-ua-mobile: ?0
+    x-vbank-session: 0596cd9d-15c8-4590-9a5d-efe525cbb780
+    sec-ch-ua-platform: '"macOS"'
+    host: localhost:9000
+    content-type: application/json
+    connection: keep-alive
+    cache-control: no-cache, no-store, must-revalidate
+    accept-encoding: gzip, deflate, br, zstd
+    sec-fetch-dest: empty
+    user-agent: GLOMO_MX/99.99.99 (Android;14;Samsung)
+then:
+- return:
+    data:
+    - description: Ver CVV
+      id: SECURITY_DATA_READ
+      isActive: true
+    - description: Avance en línea
+      id: ORIGIN_TRANSFER_TO_ACCOUNT
+      isActive: true
+    - description: Editar alias
+      id: EDITABLE_ALIAS
+      isActive: true
+    - description: Pagar tarjeta
+      id: DESTINATION_TRANSFER_FROM_ACCOUNT
+      isActive: true
+    - description: Bloquear tarjeta
+      id: BLOCKABLE
+      isActive: true
+    :headers:
+      access-control-allow-origin: '*'
+      content-length: '660'
+      Access-Control-Expose-Headers: tsec, vnd.bbva.access-token-type,vnd.bbva.access-token,
+        vnd.bbva.sso-pkcs7, authenticationtype, authenticationdata, authenticationstate,
+        authenticationchallenge
+      Server: artichoke
+      access-control-allow-headers: Content-Type, tsec, authenticationtype, authenticationdata,
+        authenticationstate, contactid, consumeruuid, consumerapplicationid, perimetertsec,
+        authorization, responsewarningcode, responsewarningdescription, cuf, field,
+        bcs-device-app-version, bcs-device-app-version, vnd.bbva.authorization, device-id,
+        Bcs-Device-Os-Name, bcs-device-app-name, bcs-device-dpi, BCS-Device-Id
+      Connection: keep-alive
+      content-type: application/json;charset=UTF-8
+      Vary: Accept-Encoding
+      tsec: bd0d6306e514640686df6229afd680d259892296
+      X-Response-Time: 52ms
+      Date: Wed, 15 Apr 2026 09:04:19 GMT
+    :status: 200 OK
+    apiInfo:
+      name: cards
+      category: products
+      version: 0.19.0

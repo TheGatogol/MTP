@@ -1,0 +1,46 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: 4f11ca1a-53d8-4302-b8ae-ce6e528e6fb5
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: credit_card_holder_crea
+    lock: 'false'
+then:
+- return:
+    :body:
+    - data:
+        tags:
+        - '3316073082'
+        - credit_card_holder_crea
+        authentication:
+          password: Glomo2026
+          user: '3316073082'
+          deviceId: 7EA293CCF6AED499EC597A26D619537B
+        information:
+          rfcWithLess: BARB64
+          homoclaveWithLess: BA
+          rfc: BARB640809E50
+          homoclave: E50
+          confirmNewLine: 200000
+          maxAmount: 9999999
+          minAmount: 1
+      id: 36372168
+    :headers:
+      Server: nginx
+      Cache-Control: max-age=0
+      Connection: keep-alive
+      host: datamanager.globaldevtools.bbva.com
+      Expires: Sat, 14 Feb 2026 01:55:58 GMT
+      Content-Length: '182'
+      Date: Sat, 14 Feb 2026 01:55:58 GMT
+      Content-Type: application/json; charset=utf-8
+    :status: 200 OK

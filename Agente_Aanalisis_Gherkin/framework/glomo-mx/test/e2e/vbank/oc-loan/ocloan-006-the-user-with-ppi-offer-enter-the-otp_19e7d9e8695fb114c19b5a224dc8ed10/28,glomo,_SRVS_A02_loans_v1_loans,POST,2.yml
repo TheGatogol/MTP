@@ -1,0 +1,192 @@
+when:
+  sequence: 2
+  path: /SRVS_A02/loans/v1/loans
+  method: POST
+  backend: glomo
+request:
+  headers:
+    sec-fetch-mode: cors
+    referer: http://localhost:8001/
+    content-length: '225'
+    sec-fetch-site: same-site
+    accept-language: es
+    origin: http://localhost:8001
+    authenticationtype: '33'
+    tsec: 87cbc575ce22c7826e784367b2d19b94f168ded4
+    accept: application/json, text/html, */*; q=0.1
+    authenticationdata: otp-token=12345678
+    sec-ch-ua: '"Google Chrome";v="93", " Not;A Brand";v="99", "Chromium";v="93"'
+    sec-ch-ua-mobile: ?0
+    x-vbank-session: 01936a57-59ca-4ca6-8327-2ea9b9095f53
+    sec-ch-ua-platform: '"macOS"'
+    host: localhost:9000
+    content-type: application/json
+    connection: keep-alive
+    cache-control: no-cache, no-store, must-revalidate
+    accept-encoding: gzip, deflate, br
+    sec-fetch-dest: empty
+    user-agent: GLOMO_MX/99.99.99 (Android;10;Google Android SDK built for arm64)
+  body:
+    initialAmounts:
+    - amount: 20000
+      currency: MXN
+    product:
+      id: ''
+    contractingDate: '2025-07-10T23:47:27.967Z'
+    terms:
+      number: 60
+      frequency: MONTHLY
+    purpose:
+      purposeGroup:
+        id: '00156'
+      id: '00156'
+    isContractedBySustainable: true
+    offerId: yT1YhBv0lo4n0gTC2dmLaF2AJJiz3CFPpFFgZM3Iw4g
+    isContractedByCoupon: false
+then:
+- return:
+    data:
+      number: 00740960529801465884
+      loanType:
+        id: CONSUME_PERSONAL
+        name: Personal loan
+      status:
+        id: VALID
+        name: El préstamo está en un estado válido
+        reason:
+          id: ACCEPTED
+          name: ACCEPTED
+      alias: PERSONAL QUINCENAL
+      product:
+        name: PERSONAL QUINCENAL
+      contractingDate: '2025-05-05'
+      currentInstallment:
+        maturityDate: '2030-05-01'
+        number: 1
+        principals:
+          - currency: MXN
+            amount: 3000
+      currencies:
+        - currency: MXN
+          isMajor: true
+      terms:
+        number: 60
+        frequency: MONTHLY
+      internalCode:
+        id: PBCCMPPI04
+        name: PBCCMPPI04
+      relatedContracts:
+        - contractId: Uvn6wi1Rh6A5qE0xyMXMZGOW1A4L29P6
+          number: 00740010001505257870
+          numberType:
+            id: LIC
+            name: Código interno local
+          product:
+            id: ACCOUNTS
+            name: Cuenta
+            productType:
+              id: MXN
+              name: ''
+          relationType:
+            id: LINKED_WITH
+            name: Ligado con
+      operationNumber: 0030559139
+      additionalProducts:
+        - numberType:
+            name: Código interno local
+            id: LIC
+          productType:
+            name: INSURANCES
+            id: INSURANCES
+          amount:
+            currency: MXN
+            amount: 0
+          managementCompany:
+            name: No aplica
+            id: No aplica
+      paymentMethod:
+        id: PAC
+        name: Pago Automático Sobre la Cuenta
+      rates:
+        - rateType:
+            id: TASA ANUAL
+            name: tasa anual
+          calculationDate: '2025-03-31'
+          mode:
+            id: PERCENTAGE
+            name: percentage
+          unit:
+            percentage: 45.75
+        - rateType:
+            id: TASA ORDINARIA
+            name: tasa ordinaria
+          calculationDate: '2025-03-31'
+          mode:
+            id: PERCENTAGE
+            name: percentage
+          unit:
+            percentage: 45.75
+        - rateType:
+            id: TASA MORATORIA
+            name: tasa moratoria
+          calculationDate: '2025-03-31'
+          mode:
+            id: PERCENTAGE
+            name: percentage
+          unit:
+            percentage: 91.5
+        - rateType:
+            id: Tasa mensual
+            name: Tasa mensual
+          calculationDate: '2025-03-31'
+          mode:
+            id: PERCENTAGE
+            name: percentage
+          unit:
+            percentage: 3.8125
+        - rateType:
+            id: COMISION APERTURA
+            name: comision apertura
+          calculationDate: '2025-03-31'
+          mode:
+            id: AMOUNT
+            name: amount
+          unit:
+            amount: 2900
+            currency: MXN
+      loanBreakDown:
+        - id: INSTALLMENT
+          name: Monto de la couta
+          amount: 3000
+          currency: MXN
+        - id: TOTAL_COST
+          name: Costo Total
+          amount: 298032
+          currency: MXN
+        - id: NET_AMOUNT
+          name: 'Importe neto de crédito, cantidad solicitada por el cliente.'
+          currency: MXN
+      contractingTime: '13:15'
+      initialAmount:
+        currency: MXN
+        amount: 100000
+      isContractedByCoupon: false
+      isContractedBySustainable: true
+    :headers:
+      access-control-allow-origin: '*'
+      content-length: '2128'
+      Access-Control-Expose-Headers: tsec, vnd.bbva.access-token-type,vnd.bbva.access-token,
+        authenticationtype, authenticationdata, authenticationstate
+      Server: artichoke
+      access-control-allow-headers: Content-Type, tsec, authenticationtype, authenticationdata,
+        authenticationstate, contactid, consumeruuid, consumerapplicationid, perimetertsec,
+        authorization, responsewarningcode, responsewarningdescription, cuf, field,
+        bcs-device-app-version, bcs-device-app-version
+      Connection: keep-alive
+      content-type: application/json;charset=UTF-8
+      Vary: Accept-Encoding
+      tsec: 87cbc575ce22c7826e784367b2d19b94f168ded4
+      X-Response-Time: 13ms
+      Date: Thu, 23 Sep 2021 19:20:28 GMT
+    :status: 201 Created
+    locale: es_mx

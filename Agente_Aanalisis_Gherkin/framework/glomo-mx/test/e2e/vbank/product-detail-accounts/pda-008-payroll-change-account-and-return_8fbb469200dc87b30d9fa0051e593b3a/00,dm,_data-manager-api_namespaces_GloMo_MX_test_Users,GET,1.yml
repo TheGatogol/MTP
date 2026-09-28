@@ -1,0 +1,86 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: 05f4c5c2-7433-494a-9793-42db0d46e354
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: account_payroll_change
+    lock: 'false'
+then:
+- return:
+    :body:
+    - data:
+        locale: es_mx
+        tags:
+        - '3111174583'
+        - accounts
+        - account_payroll_change
+        products:
+          accounts:
+          - number: '00740010001501974551'
+            product:
+              name: Cuenta de Ahorro
+              id: AH
+            numberType:
+              id: CCC
+            alias: 0001ah4551
+            id: 0001ah4551 - 00740010001501974551
+            detail:
+              specificAmounts:
+              - amounts:
+                - amount: 99855
+                  currency: MXN
+                name: Saldo actual
+                id: CURRENT_BALANCE
+              - amounts:
+                - amount: 0
+                  currency: MXN
+                name: Saldo buen cobro
+                id: PENDING_DEPOSIT_BALANCE
+              indicators:
+              - name: Indica si la cuenta es de nómina
+                id: IS_PAYROLL_ACCOUNT
+                isActive: false
+              - name: Indica si la cuenta es eje
+                id: IS_PRINCIPAL_ACCOUNT
+                isActive: false
+              - name: Indica si la cuenta tiene pockets
+                id: HAS_POCKETS
+                isActive: false
+              - name: Indica si la cuenta es digital
+                id: IS_DIGITAL
+                isActive: false
+            productType: ACCOUNT
+            status:
+              name: Cuenta Activa
+              id: ACTIVE
+            subProductType:
+              name: TARJETA NOMINA BASIC
+              id: '0230'
+            signedAuthorization: {}
+        authentication:
+          password: Glomo2023
+          user: '3111174583'
+          deviceId: F199594FE7DF9BF0102E992AF9282181
+      lockType: null
+      lockExpiration: null
+      id: 35835002
+    :headers:
+      content-length: '1257'
+      Strict-Transport-Security: max-age=15768000
+      Server: nginx
+      ECS-Entry-Point-Zone: ext
+      Connection: keep-alive
+      host: datamanager.globaldevtools.bbva.com
+      Vary: Accept-Encoding
+      Date: Wed, 12 Jun 2024 17:28:36 GMT
+      Content-Type: application/json
+    :status: 200 OK

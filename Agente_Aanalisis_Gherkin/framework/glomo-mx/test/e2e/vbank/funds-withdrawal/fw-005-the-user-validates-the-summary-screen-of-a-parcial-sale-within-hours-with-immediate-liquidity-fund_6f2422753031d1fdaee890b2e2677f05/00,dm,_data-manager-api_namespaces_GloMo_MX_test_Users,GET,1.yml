@@ -1,0 +1,51 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: 090f14b2-1712-4d9f-ade3-4a3f2624be8e
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: investment_funds,multiple_funds,funds_withdrawal,immediate_liquidity_fund
+    lock: 'false'
+then:
+- return:
+    :body:
+    - data:
+        homeFutura: false
+        locale: es_mx
+        tags:
+        - multiple_funds
+        - investment_funds
+        - funds_withdrawal
+        - immediate_liquidity_fund
+        products:
+          investmentFunds:
+          - name: si1 - 00740680002050733431
+            funds:
+            - fundId: 7N14Bg-Ql65wM2ccLIo0IdA9Z2xz3k5S3zzgmPPZx506AjIOLTLJNw
+            id: Td-tykaA8AouOSt92p39TBkBjBcvc5NA
+        authentication:
+          password: Glomo2023
+          user: '5520797659'
+          deviceId: 3012FB7B4FC98F648834035236623E06
+      lockExpiration: null
+      lockType: null
+      id: 35778488
+    :headers:
+      content-length: '491'
+      Strict-Transport-Security: max-age=15768000
+      Server: nginx
+      ECS-Entry-Point-Zone: ext
+      Connection: keep-alive
+      host: datamanager.globaldevtools.bbva.com
+      Vary: Accept-Encoding
+      Date: Fri, 09 Feb 2024 22:26:24 GMT
+      Content-Type: application/json
+    :status: 200 OK

@@ -1,0 +1,42 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: aHd4eTFma3gwNTpLbVJleHhqenRZOWJ5RVF5MkpXZWsxcG8yRnhvQ1JHbzMzZXJ2dXB5
+    content-length: '0'
+    x-vbank-session: 4a8155fc-28d6-4829-af13-8a63d34d3978
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: dashboard_funds
+then:
+- return:
+    :body:
+    - data:
+        homeFutura: false
+        skeleton: skeleton9
+        locale: es_mx
+        tags:
+        - '5569630988'
+        - dashboard_funds
+        authentication:
+          password: glomo2020
+          user: '5569630988'
+          deviceId: F77D0181CBEAF3259FDE6951AFB03226
+      lockExpiration: null
+      lockType: null
+      id: 1570055
+    :headers:
+      Strict-Transport-Security: max-age=15724800; includeSubDomains
+      Server: nginx
+      ECS-Entry-Point-Zone: ext
+      Connection: keep-alive
+      Vary: Accept-Encoding
+      Content-Length: '264'
+      Date: Mon, 20 Sep 2021 10:41:00 GMT
+      Content-Type: application/json
+    :status: 200 OK

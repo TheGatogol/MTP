@@ -1,0 +1,93 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: 6e704b83-7bb6-4033-b407-fb88a20846c5
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: pesos_account_with_checks_management_active,has_accepted_the_management_service_terms
+then:
+- return:
+    :body:
+    - data:
+        data:
+          operationDate: 2021-03-25T00:00:00.000-0600
+          indicatorId: CHECK_PROTECTION
+          operationNumber: '000035321'
+          name: Indicates the check protection status of the account.
+          isActive: true
+        locale: es_mx
+        tags:
+        - multiple_accounts
+        - pesos_account_with_checks_management_active
+        - has_accepted_the_management_service_terms
+        products:
+          cards: []
+          loans: []
+          accounts:
+          - number: '00740600000473208206'
+            product:
+              name: Cuenta de Cheques
+              id: CH
+            numberType:
+              id: CCC
+            alias: 0013ch8206
+            id: ISh-_uXuVt_zbtwVgEhzVP39zIQH3h5AIkrt6GhmzZplIb5xA3EdMw
+            detail:
+              level: '04'
+              specificAmounts:
+              - amounts:
+                - amount: 999999855
+                  currency: MXN
+                name: Saldo actual
+                id: CURRENT_BALANCE
+              - amounts:
+                - amount: 0
+                  currency: MXN
+                name: Saldo buen cobro
+                id: PENDING_DEPOSIT_BALANCE
+              indicators:
+              - name: Indica si la cuenta es de nómina
+                id: IS_PAYROLL_ACCOUNT
+                isActive: false
+              - name: Indica si la cuenta es eje
+                id: IS_PRINCIPAL_ACCOUNT
+                isActive: false
+              - name: Indica si la cuenta tiene pockets
+                id: HAS_POCKETS
+                isActive: false
+              - name: Indica si la cuenta es digital
+                id: IS_DIGITAL
+                isActive: false
+            productType: ACCOUNT
+            status:
+              name: Cuenta Activa
+              id: ACTIVE
+            subProductType:
+              name: LIBRETON PREMIUM
+              id: '0501'
+            signedAuthorization: {}
+        authentication:
+          password: glomo2022
+          user: '5520793392'
+          deviceId: F0C0E0D649B986E7A2B6266574EA581A
+      lockExpiration: null
+      lockType: null
+      id: 1338784
+    :headers:
+      content-length: '1589'
+      Strict-Transport-Security: max-age=15768000
+      Server: nginx
+      ECS-Entry-Point-Zone: ext
+      Connection: keep-alive
+      Vary: Accept-Encoding
+      Date: Wed, 19 Oct 2022 22:08:51 GMT
+      Content-Type: application/json
+    :status: 200 OK

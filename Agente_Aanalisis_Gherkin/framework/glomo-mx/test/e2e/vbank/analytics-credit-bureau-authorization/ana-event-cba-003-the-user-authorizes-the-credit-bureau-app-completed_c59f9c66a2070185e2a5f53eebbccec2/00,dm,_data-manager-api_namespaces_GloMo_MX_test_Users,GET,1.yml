@@ -1,0 +1,44 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: 108a8ff2-66e5-40f0-898e-c2715d82f849
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: credit_bureau_user_analytics
+    lock: 'false'
+then:
+- return:
+    :body:
+    - data:
+        locale: es_mx
+        tags:
+        - credit_bureau_user
+        - credit_bureau_user_analytics
+        - historyCredit
+        - '5520210046'
+        authentication:
+          password: Glomo2023
+          user: '5520210046'
+          deviceId: FF3758DD5A9E0434B194479DCB84D5E9
+      id: 35702207
+      lockType: null
+      lockExpiration: null
+    :headers:
+      content-length: '292'
+      Strict-Transport-Security: max-age=15768000
+      Server: nginx
+      ECS-Entry-Point-Zone: ext
+      Connection: keep-alive
+      host: datamanager.globaldevtools.bbva.com
+      Vary: Accept-Encoding
+      Date: Tue, 28 Nov 2023 18:28:19 GMT
+      Content-Type: application/json
+    :status: 200 OK

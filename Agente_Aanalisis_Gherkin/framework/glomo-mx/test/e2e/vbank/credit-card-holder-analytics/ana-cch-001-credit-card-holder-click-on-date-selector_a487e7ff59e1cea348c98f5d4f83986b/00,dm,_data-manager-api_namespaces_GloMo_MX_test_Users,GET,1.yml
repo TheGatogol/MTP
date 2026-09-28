@@ -1,0 +1,42 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: 8a3ac955-a50d-457a-8162-c014dba9aef6
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: cch_otp
+    lock: 'false'
+then:
+- return:
+    :body:
+    - data:
+        locale: es_mx
+        tags:
+        - cch_otp
+        - credit_card_holder_cut_off_day
+        - '4445747897'
+        authentication:
+          password: Glomo2024
+          user: '4445747897'
+          deviceId: 5E615611C56A389B5225B9190BBD8E93
+      lockExpiration: null
+      lockType: null
+      id: 35746297
+    :headers:
+      Strict-Transport-Security: max-age=15768000
+      Server: nginx
+      ECS-Entry-Point-Zone: ext
+      Connection: keep-alive
+      host: datamanager.globaldevtools.bbva.com
+      Content-Length: '255'
+      Date: Tue, 30 Apr 2024 04:02:07 GMT
+      Content-Type: application/json
+    :status: 200 OK

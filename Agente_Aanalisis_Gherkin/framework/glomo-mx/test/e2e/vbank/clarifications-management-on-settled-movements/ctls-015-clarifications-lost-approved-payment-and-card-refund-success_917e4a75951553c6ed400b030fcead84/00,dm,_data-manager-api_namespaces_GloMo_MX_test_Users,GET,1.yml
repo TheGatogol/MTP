@@ -1,0 +1,126 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: 8d4aa095-0bd7-4885-beef-15f9d32e2a66
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: loss_block_card_payment
+    lock: 'false'
+then:
+- return:
+    :body:
+    - data:
+        homeFutura: false
+        tags:
+        - loss_block_card_payment
+        - '6672010880'
+        products:
+          cards:
+          - number: '4772135128931310'
+            product:
+              name: ORO BBVA
+              id: AV
+            numberType:
+              id: PAN
+            relatedContracts:
+            - canOperate: N
+              contractId: '007407037428783008'
+              id: rIN8cTPDc3Le4GJgwuTTDqa816R2bQEvWBR9oyI7HSc
+            cardId: Tt01kPMA7M0OvzjssJqudeQ8-bAOXPW_slvcI-aIlUk
+            cardType:
+              name: TARJETA DE CREDITO
+              id: CREDIT_CARD
+            alias: 0002TC5667
+            detail:
+              images:
+              - name: Front face of the card
+                id: FRONT_CARD
+                url: https://cardcovers.caasbbva.com/mexico/477213-AV.png.imgcaas.w320.png
+              specificAmounts:
+              - amounts:
+                - amount: -20348.79
+                  currency: MXN
+                name: Saldo actual
+                id: CURRENT_BALANCE
+              - amounts:
+                - amount: 0
+                  currency: MXN
+                name: Saldo en tránsito
+                id: PENDING_CHARGE_BALANCE
+              - amounts:
+                - amount: 87248.89
+                  currency: MXN
+                name: Saldo disponible
+                id: AVAILABLE_BALANCE
+              physicalSupport:
+                name: CONVENCIONAL
+                id: NORMAL_PLASTIC
+              activations:
+              - name: Indica si la tarjeta esta encendida o apagada
+                id: ON_OFF
+                isActive: true
+              indicators:
+              - name: Indica si la tarjeta cuenta con NFC
+                id: ASSOCIABLE_TO_NFC
+                isActive: true
+              - name: Indica si la tarjeta cuenta con sticker asociado
+                id: ASSOCIABLE_TO_STICKER_CARDS
+                isActive: false
+              - name: Indica si la tarjeta cuenta con una tarjeta virtual asociada
+                id: ASSOCIABLE_TO_VIRTUAL_CARDS
+                isActive: false
+              - name: Indica si la tarjeta puede ser bloqueada
+                id: BLOCKABLE
+                isActive: true
+              - name: Indica si la tarjeta puede modificar el nip de forma online
+                  por una aplicación
+                id: BLOCKABLE_NIP
+                isActive: false
+              - name: Indica si los datos de seguridad de la tarjeta pueden ser leídos
+                id: SECURITY_DATA_READ
+                isActive: false
+              - name: Indica si el CVV2 es dinámico
+                id: DINAMIC_CVV
+                isActive: true
+              - name: Indica si la tarjeta es adicional
+                id: IS_ADDITIONAL
+                isActive: false
+              rewards:
+              - name: Puntos Bancomer
+                id: BANCOMER_POINTS
+                nonMonetaryValue: 4069
+              expirationDate: '2027-09-30'
+              agreementContract: '007407037428783008'
+            simpleCode: 9YK9GXzCWZ-t-fDmlsQVShSthGAb0APl
+            userAccessControl:
+            - canOperate: false
+            productType: CARD
+            status:
+              name: VIGENTE
+              id: OPERATIVE
+        authentication:
+          password: Glomo2023
+          user: '6672010880'
+          deviceId: 14CFEAF3E42BB83E9E20EFC5CB2C360A
+      lockType: null
+      lockExpiration: null
+      id: 35845317
+    :headers:
+      content-length: '2544'
+      Strict-Transport-Security: max-age=15768000
+      Server: nginx
+      ECS-Entry-Point-Zone: ext
+      Connection: keep-alive
+      host: datamanager.globaldevtools.bbva.com
+      Vary: Accept-Encoding
+      Date: Mon, 20 May 2024 22:25:07 GMT
+      Content-Type: application/json
+    :status: 200 OK

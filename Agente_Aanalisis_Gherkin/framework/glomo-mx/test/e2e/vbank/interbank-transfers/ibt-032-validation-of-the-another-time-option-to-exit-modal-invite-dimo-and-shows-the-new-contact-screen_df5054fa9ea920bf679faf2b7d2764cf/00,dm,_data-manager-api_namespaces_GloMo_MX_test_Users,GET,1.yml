@@ -1,0 +1,48 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: dc471005-5e31-4d31-8f81-03f99c64fa41
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: dimo_transfer,accounts
+    lock: 'false'
+then:
+- return:
+    :body:
+    - data:
+        locale: es_mx
+        params:
+          phoneNumberNotFund: '6381166686'
+        tags:
+        - dimo_transfer
+        - accounts
+        - '7811031469'
+        products:
+        - accounts:
+          - number: '00740010001504572917'
+            alias: 0001AH2917
+        authentication:
+          password: Glomo2024
+          user: '7811031469'
+          deviceId: 91362994E37846C53F9A6396FC7986F3
+      lockType: SHARED
+      lockExpiration: '2025-04-29T12:44:34.403864Z'
+      id: 36086819
+    :headers:
+      content-length: '416'
+      Cache-Control: max-age=0
+      Connection: keep-alive
+      host: datamanager.globaldevtools.bbva.com
+      Vary: Accept-Encoding
+      Expires: Tue, 29 Apr 2025 12:44:16 GMT
+      Date: Tue, 29 Apr 2025 12:44:16 GMT
+      Content-Type: application/json; charset=utf-8
+    :status: 200 OK

@@ -1,0 +1,64 @@
+when:
+  sequence: 1
+  path: /QSRV_A02/TechArchitecture/mx/grantingTicket/V02
+  method: POST
+  backend: glomo
+request:
+  headers:
+    content-length: '362'
+    accept-language: es
+    contactid: 8d7c09cf-543b-44fe-bc05-5f7cd2afdb3e
+    host: 127.0.0.1:9000
+    connection: Keep-Alive
+    content-type: application/json
+    cache-control: no-cache
+    accept-encoding: gzip
+    user-agent: GLOMO_MX/99.99.99 (Android;11;Google sdk_gphone_x86)
+    accept: application/json
+  body:
+    backendUserRequest:
+      accessCode: '9988776655'
+      additionalProperties: {}
+      dialogId: ''
+      userId: ''
+    additionalProperties: {}
+    authentication:
+      authenticationData:
+      - authenticationData:
+        - '112233'
+        idAuthenticationData: password
+        additionalProperties: {}
+      consumerID: '10000187'
+      additionalProperties: {}
+      authenticationType: '02'
+      userID: '9988776655'
+then:
+- return:
+    backendUserResponse:
+      clientId: MEXICO92
+      accountingTerminal: Q7P
+      clientStatus: A1
+      userType: S
+    authenticationResponse:
+      authenticationData: []
+      authenticationState: OK
+    :headers:
+      content-length: '238'
+      Server: artichoke
+      Alt-Svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      access-control-allow-headers: Content-Type, tsec, authenticationtype, authenticationdata,
+        authenticationstate, contactid, consumeruuid, consumerapplicationid, perimetertsec,
+        authorization, responsewarningcode, responsewarningdescription, cuf, field,
+        bcs-device-app-version, bcs-device-app-version, vnd.bbva.authorization, device-id
+      tsec: a6f43bb20f24a2eec12afcf6ae5c6e6871b71cd0
+      X-Response-Time: 520ms
+      Date: Wed, 30 Aug 2023 11:55:04 GMT
+      Allow: DELETE
+      Via: 1.1 google
+      access-control-allow-origin: '*'
+      Access-Control-Expose-Headers: tsec, vnd.bbva.access-token-type,vnd.bbva.access-token,
+        vnd.bbva.sso-pkcs7, authenticationtype, authenticationdata, authenticationstate,
+        authenticationchallenge
+      content-type: application/json;charset=UTF-8
+      Vary: Accept-Encoding
+    :status: 200 OK

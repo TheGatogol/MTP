@@ -1,0 +1,41 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: 6cbd9abf-5696-40d6-a8d1-ac0ba1e235a2
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: dashboard_cards,error_service
+then:
+- return:
+    :body:
+    - data:
+        skeleton: skeleton2
+        locale: es_mx
+        tags:
+        - '5523375479'
+        - dashboard_cards
+        - error_service
+        authentication:
+          password: Glomo2023
+          user: '5523375479'
+          deviceId: 9786C03B631221C80192402F49467788
+      lockExpiration: null
+      lockType: null
+      id: 3534284
+    :headers:
+      Strict-Transport-Security: max-age=15768000
+      Server: nginx
+      ECS-Entry-Point-Zone: ext
+      Connection: keep-alive
+      Content-Length: '281'
+      Date: Fri, 21 Apr 2023 20:52:44 GMT
+      Content-Type: application/json
+    :status: 200 OK

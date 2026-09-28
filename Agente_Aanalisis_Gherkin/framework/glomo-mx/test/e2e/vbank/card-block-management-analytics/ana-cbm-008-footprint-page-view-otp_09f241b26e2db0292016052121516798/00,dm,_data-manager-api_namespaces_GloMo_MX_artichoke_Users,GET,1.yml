@@ -1,0 +1,1140 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_artichoke_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: adf38fcf-f910-4680-87ec-f3f9f4d84c39
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: credit_card_operative,card_block_and_replacement,card_reissue_conditions
+    lock: 'false'
+then:
+- return:
+    :body:
+    - data:
+        branchAddress: Av Vallarta 6503 Granja Zapopan
+        wrongAddressFields:
+          maximumCharactersNumber: '01234567'
+          maximumCharactersAdditionalReference: aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+          wrongZipCode: '000000'
+          invalidCharacters: '*&%$·'
+          maximumCharactersStreet: aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+          invalidZipCode: '1'
+        addressCorrect:
+          zipCode: '01234'
+          addressStreet: veracruz
+          externalNumber: '123'
+          additionalReference: planta1
+          internalNumber: '1'
+        tags:
+        - '3330006078'
+        - card_block_and_replacement
+        - card_reissue_conditions
+        - credit_card_blocked_by_lost
+        - credit_card_blocked_by_stolen
+        - credit_card_operative
+        - debit_card_operative
+        - debit_card_blocked_by_lost
+        - debit_card_blocked_by_stolen
+        - debit_card_blocked_by_renewal
+        - gold_credit_card_operative
+        - gold_credit_card_blocked_by_lost
+        - gold_credit_card_blocked_by_stolen
+        - infinite_credit_card_operative
+        - infinite_credit_card_blocked_by_lost
+        - infinite_credit_card_blocked_by_stolen
+        - infinite_metallic_credit_card_operative
+        - infinite_metallic_credit_card_blocked_by_lost
+        - infinite_metallic_credit_card_blocked_by_stolen
+        - infinite_V0_credit_card_operative
+        - infinite_V0_credit_card_blocked_by_lost
+        - infinite_V0_credit_card_blocked_by_stolen
+        - ipn_credit_card_operative
+        - ipn_credit_card_blocked_by_lost
+        - ipn_credit_card_blocked_by_stolen
+        - gold_credit_card_operative
+        - gold_credit_card_blocked_by_lost
+        - gold_credit_card_blocked_by_stolen
+        products:
+          cards:
+          - number: '7555457083007997'
+            product:
+              name: GOLD BBVA
+              id: AV
+            blocks:
+            - reference: VG_VIGENTE
+              reason:
+                description: VIGENTE
+                id: VIGENTE
+              additionalInformation: Indica que la tarjeta está bloqueada debido a
+                VIGENTE
+              isActive: false
+            cardId: ab7997
+            physicalSupport:
+              name: Plástico normal
+              id: NORMAL_PLASTIC
+            cardType:
+              name: Tarjeta de crédito
+              id: CREDIT_CARD
+            alias: ab7997
+            configCard:
+              productId: AV
+              additional: 'no'
+              physicalSupport: normal plastic
+              type: credit
+              status: operative
+            conditions:
+            - isDefault: true
+              isNegotiable: false
+              dueDate: '2020-07-12'
+              format:
+                amount:
+                  amount: 10
+                  currency: EUR
+                formatType: AMOUNT
+              id: REISSUE
+            indicators:
+            - name: the card is not an additional card
+              id: IS_ADDITIONAL
+              isActive: false
+            status:
+              description: Operative card
+              id: OPERATIVE
+          - number: '7555457083007998'
+            product:
+              name: GOLD BBVA
+              id: AV
+            blocks:
+            - blockId: LOST
+              reference: A23456
+              dynamicDate: -3
+              reason:
+                name: Card is blocked
+                id: LOST
+              additionalInformation: Card blocked internally due customer has a debt
+                that is not collectible. Reported by Bill White
+              blockDate: '2016-12-01T16:05:14Z'
+              isReissued: false
+              name: Card blocked due internally process
+              isActive: true
+            - blockId: STOLEN
+              reference: A23456
+              dynamicDate: -3
+              reason:
+                name: Card is blocked
+                id: STOLEN
+              additionalInformation: Card blocked internally due customer has a debt
+                that is not collectible. Reported by Bill White
+              blockDate: '2016-12-01T16:05:14Z'
+              isReissued: false
+              name: Card blocked due internally process
+              isActive: true
+            cardId: ab7998
+            physicalSupport:
+              name: Plástico normal
+              id: NORMAL_PLASTIC
+            cardType:
+              name: Tarjeta de crédito
+              id: CREDIT_CARD
+            alias: ab7998
+            configCard:
+              reason: lost
+              productId: AV
+              additional: 'no'
+              physicalSupport: normal plastic
+              type: credit
+              status: blocked
+            conditions:
+            - isDefault: true
+              isNegotiable: false
+              dueDate: '2020-07-12'
+              format:
+                amount:
+                  amount: 10
+                  currency: EUR
+                formatType: AMOUNT
+              id: REISSUE
+            indicators:
+            - name: the card is not an additional card
+              id: IS_ADDITIONAL
+              isActive: false
+            status:
+              reason:
+                id: LOST
+              name: TJ. PERDIDA
+              id: BLOCKED
+          - number: '7555457083007998'
+            product:
+              name: GOLD BBVA
+              id: AV
+            blocks:
+            - blockId: LOST
+              reference: A23456
+              dynamicDate: -3
+              reason:
+                name: Card is blocked
+                id: LOST
+              additionalInformation: Card blocked internally due customer has a debt
+                that is not collectible. Reported by Bill White
+              blockDate: '2016-12-01T16:05:14Z'
+              isReissued: false
+              name: Card blocked due internally process
+              isActive: true
+            - blockId: STOLEN
+              reference: A23456
+              dynamicDate: -3
+              reason:
+                name: Card is blocked
+                id: STOLEN
+              additionalInformation: Card blocked internally due customer has a debt
+                that is not collectible. Reported by Bill White
+              blockDate: '2016-12-01T16:05:14Z'
+              isReissued: false
+              name: Card blocked due internally process
+              isActive: true
+            cardId: ab7999
+            physicalSupport:
+              name: Plástico normal
+              id: NORMAL_PLASTIC
+            cardType:
+              name: Tarjeta de crédito
+              id: CREDIT_CARD
+            alias: ab7999
+            configCard:
+              reason: stolen
+              productId: AV
+              additional: 'no'
+              physicalSupport: normal plastic
+              type: credit
+              status: blocked
+            conditions:
+            - isDefault: true
+              isNegotiable: false
+              dueDate: '2020-07-12'
+              format:
+                amount:
+                  amount: 10
+                  currency: EUR
+                formatType: AMOUNT
+              id: REISSUE
+            indicators:
+            - name: the card is not an additional card
+              id: IS_ADDITIONAL
+              isActive: false
+            status:
+              reason:
+                id: STOLEN
+              name: TJ. ROBADA
+              id: BLOCKED
+          - number: '7555457083007991'
+            product:
+              name: INFINITE BBVA
+              id: V4
+            blocks:
+            - reference: VG_VIGENTE
+              reason:
+                description: VIGENTE
+                id: VIGENTE
+              additionalInformation: Indica que la tarjeta está bloqueada debido a
+                VIGENTE
+              isActive: false
+            cardId: ab7991
+            physicalSupport:
+              name: Plástico normal
+              id: NORMAL_PLASTIC
+            cardType:
+              name: Tarjeta de crédito
+              id: CREDIT_CARD
+            alias: ab7991
+            configCard:
+              productId: V4
+              additional: 'no'
+              physicalSupport: normal plastic
+              type: credit
+              status: operative
+            conditions:
+            - isDefault: true
+              isNegotiable: false
+              dueDate: '2020-07-12'
+              format:
+                amount:
+                  amount: 10
+                  currency: EUR
+                formatType: AMOUNT
+              id: REISSUE
+            indicators:
+            - name: the card is not an additional card
+              id: IS_ADDITIONAL
+              isActive: false
+            status:
+              description: Operative card
+              id: OPERATIVE
+          - number: '7555457083007992'
+            product:
+              name: INFINITE BBVA
+              id: V4
+            blocks:
+            - blockId: LOST
+              reference: A23456
+              dynamicDate: -3
+              reason:
+                name: Card is blocked
+                id: LOST
+              additionalInformation: Card blocked internally due customer has a debt
+                that is not collectible. Reported by Bill White
+              blockDate: '2016-12-01T16:05:14Z'
+              isReissued: false
+              name: Card blocked due internally process
+              isActive: true
+            - blockId: STOLEN
+              reference: A23456
+              dynamicDate: -3
+              reason:
+                name: Card is blocked
+                id: STOLEN
+              additionalInformation: Card blocked internally due customer has a debt
+                that is not collectible. Reported by Bill White
+              blockDate: '2016-12-01T16:05:14Z'
+              isReissued: false
+              name: Card blocked due internally process
+              isActive: true
+            cardId: ab7992
+            physicalSupport:
+              name: Plástico normal
+              id: NORMAL_PLASTIC
+            cardType:
+              name: Tarjeta de crédito
+              id: CREDIT_CARD
+            alias: ab7992
+            configCard:
+              reason: lost
+              productId: V4
+              additional: 'no'
+              physicalSupport: normal plastic
+              type: credit
+              status: blocked
+            conditions:
+            - isDefault: true
+              isNegotiable: false
+              dueDate: '2020-07-12'
+              format:
+                amount:
+                  amount: 10
+                  currency: EUR
+                formatType: AMOUNT
+              id: REISSUE
+            indicators:
+            - name: the card is not an additional card
+              id: IS_ADDITIONAL
+              isActive: false
+            status:
+              reason:
+                id: LOST
+              name: TJ. PERDIDA
+              id: BLOCKED
+          - number: '7555457083007993'
+            product:
+              name: INFINITE BBVA
+              id: V4
+            blocks:
+            - blockId: LOST
+              reference: A23456
+              dynamicDate: -3
+              reason:
+                name: Card is blocked
+                id: LOST
+              additionalInformation: Card blocked internally due customer has a debt
+                that is not collectible. Reported by Bill White
+              blockDate: '2016-12-01T16:05:14Z'
+              isReissued: false
+              name: Card blocked due internally process
+              isActive: true
+            - blockId: STOLEN
+              reference: A23456
+              dynamicDate: -3
+              reason:
+                name: Card is blocked
+                id: STOLEN
+              additionalInformation: Card blocked internally due customer has a debt
+                that is not collectible. Reported by Bill White
+              blockDate: '2016-12-01T16:05:14Z'
+              isReissued: false
+              name: Card blocked due internally process
+              isActive: true
+            cardId: ab7993
+            physicalSupport:
+              name: Plástico normal
+              id: NORMAL_PLASTIC
+            cardType:
+              name: Tarjeta de crédito
+              id: CREDIT_CARD
+            alias: ab7993
+            configCard:
+              reason: stolen
+              productId: V4
+              additional: 'no'
+              physicalSupport: normal plastic
+              type: credit
+              status: blocked
+            conditions:
+            - isDefault: true
+              isNegotiable: false
+              dueDate: '2020-07-12'
+              format:
+                amount:
+                  amount: 10
+                  currency: EUR
+                formatType: AMOUNT
+              id: REISSUE
+            indicators:
+            - name: the card is not an additional card
+              id: IS_ADDITIONAL
+              isActive: false
+            status:
+              reason:
+                id: STOLEN
+              name: TJ. ROBADA
+              id: BLOCKED
+          - number: '7555457083007994'
+            product:
+              name: IPN BBVA
+              id: PN
+            blocks:
+            - reference: VG_VIGENTE
+              reason:
+                description: VIGENTE
+                id: VIGENTE
+              additionalInformation: Indica que la tarjeta está bloqueada debido a
+                VIGENTE
+              isActive: false
+            cardId: ab7994
+            physicalSupport:
+              name: Plástico normal
+              id: NORMAL_PLASTIC
+            cardType:
+              name: Tarjeta de crédito
+              id: CREDIT_CARD
+            alias: ab7994
+            configCard:
+              productId: PN
+              additional: 'no'
+              physicalSupport: normal plastic
+              type: credit
+              status: operative
+            conditions:
+            - isDefault: true
+              isNegotiable: false
+              dueDate: '2020-07-12'
+              format:
+                amount:
+                  amount: 10
+                  currency: EUR
+                formatType: AMOUNT
+              id: REISSUE
+            indicators:
+            - name: the card is not an additional card
+              id: IS_ADDITIONAL
+              isActive: false
+            status:
+              description: Operative card
+              id: OPERATIVE
+          - number: '7555457083007995'
+            product:
+              name: IPN BBVA
+              id: PN
+            blocks:
+            - blockId: LOST
+              reference: A23456
+              dynamicDate: -3
+              reason:
+                name: Card is blocked
+                id: LOST
+              additionalInformation: Card blocked internally due customer has a debt
+                that is not collectible. Reported by Bill White
+              blockDate: '2016-12-01T16:05:14Z'
+              isReissued: false
+              name: Card blocked due internally process
+              isActive: true
+            - blockId: STOLEN
+              reference: A23456
+              dynamicDate: -3
+              reason:
+                name: Card is blocked
+                id: STOLEN
+              additionalInformation: Card blocked internally due customer has a debt
+                that is not collectible. Reported by Bill White
+              blockDate: '2016-12-01T16:05:14Z'
+              isReissued: false
+              name: Card blocked due internally process
+              isActive: true
+            cardId: ab7995
+            physicalSupport:
+              name: Plástico normal
+              id: NORMAL_PLASTIC
+            cardType:
+              name: Tarjeta de crédito
+              id: CREDIT_CARD
+            alias: ab7995
+            configCard:
+              reason: lost
+              productId: PN
+              additional: 'no'
+              physicalSupport: normal plastic
+              type: credit
+              status: blocked
+            conditions:
+            - isDefault: true
+              isNegotiable: false
+              dueDate: '2020-07-12'
+              format:
+                amount:
+                  amount: 10
+                  currency: EUR
+                formatType: AMOUNT
+              id: REISSUE
+            indicators:
+            - name: the card is not an additional card
+              id: IS_ADDITIONAL
+              isActive: false
+            status:
+              reason:
+                id: LOST
+              name: TJ. PERDIDA
+              id: BLOCKED
+          - number: '7555457083007996'
+            product:
+              name: IPN BBVA
+              id: PN
+            blocks:
+            - blockId: LOST
+              reference: A23456
+              dynamicDate: -3
+              reason:
+                name: Card is blocked
+                id: LOST
+              additionalInformation: Card blocked internally due customer has a debt
+                that is not collectible. Reported by Bill White
+              blockDate: '2016-12-01T16:05:14Z'
+              isReissued: false
+              name: Card blocked due internally process
+              isActive: true
+            - blockId: STOLEN
+              reference: A23456
+              dynamicDate: -3
+              reason:
+                name: Card is blocked
+                id: STOLEN
+              additionalInformation: Card blocked internally due customer has a debt
+                that is not collectible. Reported by Bill White
+              blockDate: '2016-12-01T16:05:14Z'
+              isReissued: false
+              name: Card blocked due internally process
+              isActive: true
+            cardId: ab7996
+            physicalSupport:
+              name: Plástico normal
+              id: NORMAL_PLASTIC
+            cardType:
+              name: Tarjeta de crédito
+              id: CREDIT_CARD
+            alias: ab7996
+            configCard:
+              reason: stolen
+              productId: PN
+              additional: 'no'
+              physicalSupport: normal plastic
+              type: credit
+              status: blocked
+            conditions:
+            - isDefault: true
+              isNegotiable: false
+              dueDate: '2020-07-12'
+              format:
+                amount:
+                  amount: 10
+                  currency: EUR
+                formatType: AMOUNT
+              id: REISSUE
+            indicators:
+            - name: the card is not an additional card
+              id: IS_ADDITIONAL
+              isActive: false
+            status:
+              reason:
+                id: STOLEN
+              name: TJ. ROBADA
+              id: BLOCKED
+          - number: '7555457083007990'
+            product:
+              name: DEBITO BBVA
+              id: VD
+            blocks:
+            - reference: VG_VIGENTE
+              reason:
+                description: VIGENTE
+                id: VIGENTE
+              additionalInformation: Indica que la tarjeta está bloqueada debido a
+                VIGENTE
+              isActive: false
+            cardId: ab7990
+            physicalSupport:
+              name: Plástico normal
+              id: NORMAL_PLASTIC
+            cardType:
+              name: Tarjeta de Débito
+              id: DEBIT_CARD
+            alias: ab7990
+            configCard:
+              productId: VD
+              additional: 'no'
+              physicalSupport: normal plastic
+              type: debit
+              status: operative
+            conditions:
+            - isDefault: true
+              isNegotiable: false
+              dueDate: '2020-07-12'
+              format:
+                amount:
+                  amount: 10
+                  currency: EUR
+                formatType: AMOUNT
+              id: REISSUE
+            indicators:
+            - name: the card is not an additional card
+              id: IS_ADDITIONAL
+              isActive: false
+            status:
+              description: Operative card
+              id: OPERATIVE
+          - number: '7555457083008000'
+            product:
+              name: DEBITO BBVA
+              id: VD
+            blocks:
+            - blockId: LOST
+              reference: A23456
+              dynamicDate: -3
+              reason:
+                name: Card is blocked
+                id: LOST
+              additionalInformation: Card blocked internally due customer has a debt
+                that is not collectible. Reported by Bill White
+              blockDate: '2016-12-01T16:05:14Z'
+              isReissued: false
+              name: Card blocked due internally process
+              isActive: true
+            - blockId: STOLEN
+              reference: A23456
+              dynamicDate: -3
+              reason:
+                name: Card is blocked
+                id: STOLEN
+              additionalInformation: Card blocked internally due customer has a debt
+                that is not collectible. Reported by Bill White
+              blockDate: '2016-12-01T16:05:14Z'
+              isReissued: false
+              name: Card blocked due internally process
+              isActive: true
+            cardId: ab8000
+            physicalSupport:
+              name: Plástico normal
+              id: NORMAL_PLASTIC
+            cardType:
+              name: Tarjeta de Débito
+              id: DEBIT_CARD
+            alias: ab8000
+            configCard:
+              reason: lost
+              productId: VD
+              additional: 'no'
+              physicalSupport: normal plastic
+              type: debit
+              status: blocked
+            conditions:
+            - isDefault: true
+              isNegotiable: false
+              dueDate: '2020-07-12'
+              format:
+                amount:
+                  amount: 10
+                  currency: EUR
+                formatType: AMOUNT
+              id: REISSUE
+            indicators:
+            - name: the card is not an additional card
+              id: IS_ADDITIONAL
+              isActive: false
+            status:
+              reason:
+                id: LOST
+              description: TJ. PERDIDA
+              id: BLOCKED
+          - number: '7555457083008001'
+            product:
+              name: DEBITO BBVA
+              id: VD
+            blocks:
+            - blockId: LOST
+              reference: A23456
+              dynamicDate: -3
+              reason:
+                name: Card is blocked
+                id: LOST
+              additionalInformation: Card blocked internally due customer has a debt
+                that is not collectible. Reported by Bill White
+              blockDate: '2016-12-01T16:05:14Z'
+              isReissued: false
+              name: Card blocked due internally process
+              isActive: true
+            - blockId: STOLEN
+              reference: A23456
+              dynamicDate: -3
+              reason:
+                name: Card is blocked
+                id: STOLEN
+              additionalInformation: Card blocked internally due customer has a debt
+                that is not collectible. Reported by Bill White
+              blockDate: '2016-12-01T16:05:14Z'
+              isReissued: false
+              name: Card blocked due internally process
+              isActive: true
+            cardId: ab8001
+            physicalSupport:
+              name: Plástico normal
+              id: NORMAL_PLASTIC
+            cardType:
+              name: Tarjeta de Débito
+              id: DEBIT_CARD
+            alias: ab8001
+            configCard:
+              reason: stolen
+              productId: VD
+              additional: 'no'
+              physicalSupport: normal plastic
+              type: debit
+              status: blocked
+            conditions:
+            - isDefault: true
+              isNegotiable: false
+              dueDate: '2020-07-12'
+              format:
+                amount:
+                  amount: 10
+                  currency: EUR
+                formatType: AMOUNT
+              id: REISSUE
+            indicators:
+            - name: the card is not an additional card
+              id: IS_ADDITIONAL
+              isActive: false
+            status:
+              reason:
+                id: STOLEN
+              description: TJ. ROBADA
+              id: BLOCKED
+          - number: '7555457083008002'
+            product:
+              name: DEBITO BBVA
+              id: VD
+            blocks:
+            - blockId: OTHER
+              reason:
+                name: Vencida
+                id: EXPIRED
+              blockDate: 2025-10-12T23:23:24.000-06:36:36
+              name: OTHER
+            cardId: ab8002
+            physicalSupport:
+              name: Plástico normal
+              id: NORMAL_PLASTIC
+            cardType:
+              name: Tarjeta de Débito
+              id: DEBIT_CARD
+            alias: ab8002
+            configCard:
+              reason: expired
+              productId: VD
+              additional: 'no'
+              physicalSupport: normal plastic
+              type: debit
+              status: blocked
+            conditions:
+            - isDefault: true
+              isNegotiable: false
+              dueDate: '2020-07-12'
+              format:
+                amount:
+                  amount: 10
+                  currency: EUR
+                formatType: AMOUNT
+              id: REISSUE
+            indicators:
+            - name: the card is not an additional card
+              id: IS_ADDITIONAL
+              isActive: false
+            status:
+              reason:
+                id: EXPIRED
+              description: TJ. EXPIRED
+              id: BLOCKED
+          - number: '7555457083008005'
+            product:
+              name: INFINITE BBVA
+              id: AM
+            blocks:
+            - reference: VG_VIGENTE
+              reason:
+                description: VIGENTE
+                id: VIGENTE
+              additionalInformation: Indica que la tarjeta está bloqueada debido a
+                VIGENTE
+              isActive: false
+            cardId: ab8005
+            physicalSupport:
+              name: Plástico normal
+              id: NORMAL_PLASTIC
+            cardType:
+              name: Tarjeta de crédito
+              id: CREDIT_CARD
+            alias: ab8005
+            configCard:
+              productId: AM
+              additional: 'no'
+              physicalSupport: normal plastic
+              type: credit
+              status: operative
+            conditions:
+            - isDefault: true
+              isNegotiable: false
+              dueDate: '2020-07-12'
+              format:
+                amount:
+                  amount: 10
+                  currency: EUR
+                formatType: AMOUNT
+              id: REISSUE
+            indicators:
+            - name: the card is not an additional card
+              id: IS_ADDITIONAL
+              isActive: false
+            status:
+              description: Operative card
+              id: OPERATIVE
+          - number: '7555457083008003'
+            product:
+              name: INFINITE BBVA
+              id: AM
+            blocks:
+            - blockId: LOST
+              reference: A23456
+              dynamicDate: -3
+              reason:
+                name: Card is blocked
+                id: LOST
+              additionalInformation: Card blocked internally due customer has a debt
+                that is not collectible. Reported by Bill White
+              blockDate: '2016-12-01T16:05:14Z'
+              isReissued: false
+              name: Card blocked due internally process
+              isActive: true
+            - blockId: STOLEN
+              reference: A23456
+              dynamicDate: -3
+              reason:
+                name: Card is blocked
+                id: STOLEN
+              additionalInformation: Card blocked internally due customer has a debt
+                that is not collectible. Reported by Bill White
+              blockDate: '2016-12-01T16:05:14Z'
+              isReissued: false
+              name: Card blocked due internally process
+              isActive: true
+            cardId: ab8003
+            physicalSupport:
+              name: Plástico normal
+              id: NORMAL_PLASTIC
+            cardType:
+              name: Tarjeta de crédito
+              id: CREDIT_CARD
+            alias: ab8003
+            configCard:
+              reason: lost
+              productId: AM
+              additional: 'no'
+              physicalSupport: normal plastic
+              type: credit
+              status: blocked
+            conditions:
+            - isDefault: true
+              isNegotiable: false
+              dueDate: '2020-07-12'
+              format:
+                amount:
+                  amount: 10
+                  currency: EUR
+                formatType: AMOUNT
+              id: REISSUE
+            indicators:
+            - name: the card is not an additional card
+              id: IS_ADDITIONAL
+              isActive: false
+            status:
+              reason:
+                id: LOST
+              name: TJ. PERDIDA
+              id: BLOCKED
+          - number: '7555457083008004'
+            product:
+              name: INFINITE BBVA
+              id: AM
+            blocks:
+            - blockId: LOST
+              reference: A23456
+              dynamicDate: -3
+              reason:
+                name: Card is blocked
+                id: LOST
+              additionalInformation: Card blocked internally due customer has a debt
+                that is not collectible. Reported by Bill White
+              blockDate: '2016-12-01T16:05:14Z'
+              isReissued: false
+              name: Card blocked due internally process
+              isActive: true
+            - blockId: STOLEN
+              reference: A23456
+              dynamicDate: -3
+              reason:
+                name: Card is blocked
+                id: STOLEN
+              additionalInformation: Card blocked internally due customer has a debt
+                that is not collectible. Reported by Bill White
+              blockDate: '2016-12-01T16:05:14Z'
+              isReissued: false
+              name: Card blocked due internally process
+              isActive: true
+            cardId: ab8004
+            physicalSupport:
+              name: Plástico normal
+              id: NORMAL_PLASTIC
+            cardType:
+              name: Tarjeta de crédito
+              id: CREDIT_CARD
+            alias: ab8004
+            configCard:
+              reason: stolen
+              productId: AM
+              additional: 'no'
+              physicalSupport: normal plastic
+              type: credit
+              status: blocked
+            conditions:
+            - isDefault: true
+              isNegotiable: false
+              dueDate: '2020-07-12'
+              format:
+                amount:
+                  amount: 10
+                  currency: EUR
+                formatType: AMOUNT
+              id: REISSUE
+            indicators:
+            - name: the card is not an additional card
+              id: IS_ADDITIONAL
+              isActive: false
+            status:
+              reason:
+                id: STOLEN
+              name: TJ. ROBADA
+              id: BLOCKED
+          - number: '7555457083008006'
+            product:
+              name: INFINITE BBVA
+              id: V0
+            blocks:
+            - reference: VG_VIGENTE
+              reason:
+                description: VIGENTE
+                id: VIGENTE
+              additionalInformation: Indica que la tarjeta está bloqueada debido a
+                VIGENTE
+              isActive: false
+            cardId: ab8006
+            physicalSupport:
+              name: Plástico normal
+              id: NORMAL_PLASTIC
+            cardType:
+              name: Tarjeta de crédito
+              id: CREDIT_CARD
+            alias: ab8006
+            configCard:
+              productId: V0
+              additional: 'no'
+              physicalSupport: normal plastic
+              type: credit
+              status: operative
+            conditions:
+            - isDefault: true
+              isNegotiable: false
+              dueDate: '2020-07-12'
+              format:
+                amount:
+                  amount: 10
+                  currency: EUR
+                formatType: AMOUNT
+              id: REISSUE
+            indicators:
+            - name: the card is not an additional card
+              id: IS_ADDITIONAL
+              isActive: false
+            status:
+              description: Operative card
+              id: OPERATIVE
+          - number: '7555457083008008'
+            product:
+              name: INFINITE BBVA
+              id: V0
+            blocks:
+            - blockId: LOST
+              reference: A23456
+              dynamicDate: -3
+              reason:
+                name: Card is blocked
+                id: LOST
+              additionalInformation: Card blocked internally due customer has a debt
+                that is not collectible. Reported by Bill White
+              blockDate: '2016-12-01T16:05:14Z'
+              isReissued: false
+              name: Card blocked due internally process
+              isActive: true
+            - blockId: STOLEN
+              reference: A23456
+              dynamicDate: -3
+              reason:
+                name: Card is blocked
+                id: STOLEN
+              additionalInformation: Card blocked internally due customer has a debt
+                that is not collectible. Reported by Bill White
+              blockDate: '2016-12-01T16:05:14Z'
+              isReissued: false
+              name: Card blocked due internally process
+              isActive: true
+            cardId: ab8008
+            physicalSupport:
+              name: Plástico normal
+              id: NORMAL_PLASTIC
+            cardType:
+              name: Tarjeta de crédito
+              id: CREDIT_CARD
+            alias: ab8008
+            configCard:
+              reason: lost
+              productId: V0
+              additional: 'no'
+              physicalSupport: normal plastic
+              type: credit
+              status: blocked
+            conditions:
+            - isDefault: true
+              isNegotiable: false
+              dueDate: '2020-07-12'
+              format:
+                amount:
+                  amount: 10
+                  currency: EUR
+                formatType: AMOUNT
+              id: REISSUE
+            indicators:
+            - name: the card is not an additional card
+              id: IS_ADDITIONAL
+              isActive: false
+            status:
+              reason:
+                id: LOST
+              name: TJ. PERDIDA
+              id: BLOCKED
+          - number: '7555457083008007'
+            product:
+              name: INFINITE BBVA
+              id: V0
+            blocks:
+            - blockId: LOST
+              reference: A23456
+              dynamicDate: -3
+              reason:
+                name: Card is blocked
+                id: LOST
+              additionalInformation: Card blocked internally due customer has a debt
+                that is not collectible. Reported by Bill White
+              blockDate: '2016-12-01T16:05:14Z'
+              isReissued: false
+              name: Card blocked due internally process
+              isActive: true
+            - blockId: STOLEN
+              reference: A23456
+              dynamicDate: -3
+              reason:
+                name: Card is blocked
+                id: STOLEN
+              additionalInformation: Card blocked internally due customer has a debt
+                that is not collectible. Reported by Bill White
+              blockDate: '2016-12-01T16:05:14Z'
+              isReissued: false
+              name: Card blocked due internally process
+              isActive: true
+            cardId: ab8007
+            physicalSupport:
+              name: Plástico normal
+              id: NORMAL_PLASTIC
+            cardType:
+              name: Tarjeta de crédito
+              id: CREDIT_CARD
+            alias: ab8007
+            configCard:
+              reason: stolen
+              productId: V0
+              additional: 'no'
+              physicalSupport: normal plastic
+              type: credit
+              status: blocked
+            conditions:
+            - isDefault: true
+              isNegotiable: false
+              dueDate: '2020-07-12'
+              format:
+                amount:
+                  amount: 10
+                  currency: EUR
+                formatType: AMOUNT
+              id: REISSUE
+            indicators:
+            - name: the card is not an additional card
+              id: IS_ADDITIONAL
+              isActive: false
+            status:
+              reason:
+                id: STOLEN
+              name: TJ. ROBADA
+              id: BLOCKED
+        authentication:
+          password: '123456'
+          user: '3330006078'
+          deviceId: 57DAE31DA3BE4B2B8C6C3B0C556D2ADE
+      id: 36276514
+    :headers:
+      content-length: '24796'
+      Server: nginx
+      Cache-Control: max-age=0
+      Connection: keep-alive
+      host: datamanager.globaldevtools.bbva.com
+      Vary: Accept-Encoding
+      Expires: Mon, 16 Feb 2026 16:11:18 GMT
+      Date: Mon, 16 Feb 2026 16:11:18 GMT
+      Content-Type: application/json; charset=utf-8
+    :status: 200 OK

@@ -1,0 +1,37 @@
+when:
+  sequence: 2
+  path: /app-settings/mx/feature-flags.json
+  method: GET
+  backend: settings
+request:
+  headers:
+    content-length: '0'
+    if-none-match: W/"6f9b71a1fe53a75c19078b8e824385cc"
+    accept-language: es;q=1, es-US;q=0.9
+    host: localhost:9001
+    connection: keep-alive
+    cache-control: no-cache
+    accept-encoding: gzip, deflate, br
+    user-agent: GLOMO_MX/99.99.99 (iPhone; iOS 16.2)
+    accept: '*/*'
+then:
+- return:
+    :body: ''
+    :headers:
+      X-Cache: Miss from cloudfront
+      content-length: '0'
+      Server: AmazonS3
+      Access-Control-Allow-Origin: '*'
+      Access-Control-Allow-Methods: GET, HEAD
+      X-Amz-Cf-Pop: MAD53-P1
+      Connection: keep-alive
+      Last-Modified: Fri, 08 Sep 2023 19:25:27 GMT
+      Date: Mon, 11 Sep 2023 07:59:38 GMT
+      Access-Control-Allow-Headers: content-type
+      Via: 1.1 d7ce10131df3183f928b50a7e6c2d1c0.cloudfront.net (CloudFront)
+      Access-Control-Expose-Headers: Access-Control-Allow-Origin
+      X-OpenWeb-Version: '2'
+      ETag: '"6f9b71a1fe53a75c19078b8e824385cc"'
+      X-Amz-Cf-Id: ye6GZRPBgHa4HRo1ZTzctn0jpUYA3cCTIVbtQwIS_tGny36J2xDmNQ==
+      Vary: Accept-Encoding
+    :status: 304 Not Modified

@@ -1,0 +1,52 @@
+when:
+  sequence: 2
+  path: /SRVS_A02/accounts/v0/documentation-dossiers
+  method: GET
+  backend: glomo
+request:
+  headers:
+    sec-fetch-mode: cors
+    content-length: '0'
+    referer: http://localhost:8001/
+    sec-fetch-site: same-site
+    accept-language: es
+    origin: http://localhost:8001
+    tsec: ab6fccf0c41f16a94d896e43fc84247fee31d563
+    accept: application/json, text/html, */*; q=0.1
+    sec-ch-ua: '" Not A;Brand";v="99", "Chromium";v="99", "Google Chrome";v="99"'
+    sec-ch-ua-mobile: ?0
+    x-vbank-session: aa349d2a-cba4-4ede-ba1e-74b0b53935d0
+    sec-ch-ua-platform: '"macOS"'
+    host: localhost:9000
+    content-type: application/json
+    connection: keep-alive
+    cache-control: no-cache, no-store, must-revalidate
+    accept-encoding: gzip, deflate, br
+    sec-fetch-dest: empty
+    user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36
+      (KHTML, like Gecko) Chrome/99.0.4844.51 Safari/537.36
+  query:
+    indicators.isActive: 'TRUE'
+    indicators.id: IS_PAYROLL_ACCOUNT
+then:
+- return:
+    :body: Not Found
+    :headers:
+      access-control-allow-origin: '*'
+      Access-Control-Expose-Headers: tsec, vnd.bbva.access-token-type,vnd.bbva.access-token,
+        vnd.bbva.sso-pkcs7, authenticationtype, authenticationdata, authenticationstate,
+        authenticationchallenge
+      Server: artichoke
+      Alt-Svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      access-control-allow-headers: Content-Type, tsec, authenticationtype, authenticationdata,
+        authenticationstate, contactid, consumeruuid, consumerapplicationid, perimetertsec,
+        authorization, responsewarningcode, responsewarningdescription, cuf, field,
+        bcs-device-app-version, bcs-device-app-version, vnd.bbva.authorization
+      Vary: Accept-Encoding
+      tsec: ab6fccf0c41f16a94d896e43fc84247fee31d563
+      Content-Length: '9'
+      X-Response-Time: 478ms
+      Date: Fri, 11 Mar 2022 13:17:16 GMT
+      Content-Type: text/plain; charset=utf-8
+      Via: 1.1 google
+    :status: 404 Not Found

@@ -1,0 +1,49 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: b9f28184-691b-45a3-8d63-708ef46918b4
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: ambassador_customer
+    lock: 'false'
+then:
+- return:
+    :body:
+    - data:
+        birthday: '1996-05-01'
+        wrongEmail: abiel.gp@bbva.com
+        secondLastName: Palacios
+        externalNumber: '67'
+        postalCode: '06870'
+        internalNumber: 8-7
+        postalCodeError: '00000'
+        tags:
+        - ambassador_customer
+        firstLastName: Gonzalez
+        street: Ramon Isaac Aldana
+        name: Abiel
+        email: abiel.gp@bbva.com
+        authentication:
+          password: Glomo2023
+          user: '5598979753'
+          deviceId: 353BDC29F366C3FE1E5E9E86C37AE981
+      lockType: null
+      lockExpiration: null
+      id: 35929381
+    :headers:
+      content-length: '510'
+      Server: nginx
+      Connection: keep-alive
+      host: datamanager.globaldevtools.bbva.com
+      Vary: Accept-Encoding
+      Date: Wed, 23 Oct 2024 08:48:17 GMT
+      Content-Type: application/json
+    :status: 200 OK

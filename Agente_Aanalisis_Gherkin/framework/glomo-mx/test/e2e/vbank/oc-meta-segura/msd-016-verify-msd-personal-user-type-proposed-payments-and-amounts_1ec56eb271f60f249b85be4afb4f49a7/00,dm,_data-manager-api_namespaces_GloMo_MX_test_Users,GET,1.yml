@@ -1,0 +1,41 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: 7940edef-ecd5-4ab4-a27c-7334a4ba59b4
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: msd_personal,older_than_40
+then:
+- return:
+    :body:
+    - data:
+        locale: es_mx
+        tags:
+        - '5550537058'
+        - level_n4_account
+        - msd_personal
+        - older_than_40
+        authentication:
+          password: Glomo2022
+          user: '5550537058'
+          deviceId: 21FFA30F58B325B2BADFDE1BA28937E5
+      lockExpiration: null
+      lockType: null
+      id: 3506103
+    :headers:
+      Strict-Transport-Security: max-age=15768000
+      Server: nginx
+      ECS-Entry-Point-Zone: ext
+      Connection: keep-alive
+      Content-Length: '273'
+      Date: Wed, 11 Jan 2023 15:53:54 GMT
+      Content-Type: application/json
+    :status: 200 OK

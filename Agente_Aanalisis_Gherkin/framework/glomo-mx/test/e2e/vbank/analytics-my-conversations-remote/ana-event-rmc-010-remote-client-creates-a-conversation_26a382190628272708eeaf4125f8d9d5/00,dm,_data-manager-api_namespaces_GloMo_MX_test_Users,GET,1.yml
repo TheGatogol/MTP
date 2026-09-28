@@ -1,0 +1,44 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: 37da1173-c4ee-4e24-ade6-957fc709d482
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: remote_account_futura
+    lock: 'false'
+then:
+- return:
+    :body:
+    - data:
+        owner: Adolfo Ruiz
+        searchSubject: Prueba
+        segment: remote
+        locale: es_mx
+        tags:
+        - remote_account_futura
+        authentication:
+          password: Glomo2024
+          user: '3141330166'
+          deviceId: EC151DB014EE40E1CC86C5367860A33E
+        titleConversation: titulo de prueba
+      lockExpiration: null
+      lockType: null
+      id: 36040911
+    :headers:
+      content-length: '345'
+      Cache-Control: max-age=0
+      Connection: keep-alive
+      host: datamanager.globaldevtools.bbva.com
+      Vary: Accept-Encoding
+      Expires: Wed, 05 Mar 2025 09:17:10 GMT
+      Date: Wed, 05 Mar 2025 09:17:10 GMT
+      Content-Type: application/json; charset=utf-8
+    :status: 200 OK

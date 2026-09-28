@@ -1,0 +1,77 @@
+when:
+  sequence: 1
+  path: /SRVS_A02/cards/v1/cards/1109/indicators
+  method: GET
+  backend: glomo
+request:
+  headers:
+    sec-fetch-mode: cors
+    content-length: '0'
+    referer: http://localhost:8001/
+    sec-fetch-site: same-site
+    accept-language: es-ES,es-MX;q=0.9,es;q=0.8
+    origin: http://localhost:8001
+    tsec: fd615b15bf23e24ed3f2bfd372926c1843390d57
+    accept: application/json, text/html, */*; q=0.1
+    sec-ch-ua: '"Chromium";v="110", "Not A(Brand";v="24", "Google Chrome";v="110"'
+    sec-ch-ua-mobile: ?0
+    x-vbank-session: b2b851e3-6c45-4bf2-a647-0c8b8b745229
+    sec-ch-ua-platform: '"macOS"'
+    host: localhost:9000
+    content-type: application/json
+    connection: keep-alive
+    cache-control: no-cache, no-store, must-revalidate
+    accept-encoding: gzip, deflate, br
+    sec-fetch-dest: empty
+    user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36
+      (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36
+then:
+- return:
+    data:
+    - description: Ver CVV
+      id: SECURITY_DATA_READ
+      isActive: true
+    - description: Traspaso a mis cuentas
+      id: ORIGIN_TRANSFER_TO_ACCOUNT
+      isActive: true
+    - description: Pago de servicios
+      id: ORIGIN_SERVICE_PAYMENT
+      isActive: true
+    - description: Compra tiempo aire
+      id: ORIGIN_MOBILE_PHONE_RECHARGES
+      isActive: true
+    - description: Editar alias
+      id: EDITABLE_ALIAS
+      isActive: true
+    - description: Pagar tarjeta
+      id: DESTINATION_TRANSFER_FROM_ACCOUNT
+      isActive: true
+    - description: Cancelar tarjeta
+      id: CANCELABLE
+      isActive: true
+    - description: Bloquear tarjeta
+      id: BLOCKABLE
+      isActive: true
+    :headers:
+      access-control-allow-origin: '*'
+      content-length: '1009'
+      Access-Control-Expose-Headers: tsec, vnd.bbva.access-token-type,vnd.bbva.access-token,
+        vnd.bbva.sso-pkcs7, authenticationtype, authenticationdata, authenticationstate,
+        authenticationchallenge
+      Server: artichoke
+      Alt-Svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      access-control-allow-headers: Content-Type, tsec, authenticationtype, authenticationdata,
+        authenticationstate, contactid, consumeruuid, consumerapplicationid, perimetertsec,
+        authorization, responsewarningcode, responsewarningdescription, cuf, field,
+        bcs-device-app-version, bcs-device-app-version, vnd.bbva.authorization
+      content-type: application/json;charset=UTF-8
+      Vary: Accept-Encoding
+      tsec: fd615b15bf23e24ed3f2bfd372926c1843390d57
+      X-Response-Time: 490ms
+      Date: Tue, 09 May 2023 13:17:19 GMT
+      Via: 1.1 google
+    :status: 200 OK
+    apiInfo:
+      name: cards
+      category: products
+      version: 0.19.0

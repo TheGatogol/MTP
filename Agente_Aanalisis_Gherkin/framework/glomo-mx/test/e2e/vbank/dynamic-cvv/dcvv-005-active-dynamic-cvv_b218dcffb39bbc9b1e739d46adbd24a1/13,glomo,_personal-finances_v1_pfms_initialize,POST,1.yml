@@ -1,0 +1,62 @@
+when:
+  sequence: 1
+  path: /SRVS_A02/personal-finances/v1/pfms/initialize
+  method: POST
+  backend: glomo
+request:
+  headers:
+    sec-fetch-mode: cors
+    referer: http://localhost:8001/
+    content-length: '23'
+    sec-fetch-site: same-site
+    origin: http://localhost:8001
+    tsec: 1dbcc48718e946cf5e9b4c8fd905c766dab90bad
+    accept: application/json, text/html, */*; q=0.1
+    sec-ch-ua: '"HeadlessChrome";v="117", "Not;A=Brand";v="8", "Chromium";v="117"'
+    sec-ch-ua-mobile: ?0
+    x-vbank-session: 78f093b1-684b-4727-9f59-3b91516a232a
+    sec-ch-ua-platform: '"macOS"'
+    host: localhost:9000
+    content-type: application/json
+    connection: keep-alive
+    cache-control: no-cache, no-store, must-revalidate
+    accept-encoding: gzip, deflate, br
+    sec-fetch-dest: empty
+    user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36
+      (KHTML, like Gecko) HeadlessChrome/117.0.5938.88 Safari/537.36
+  body:
+    relatedContracts: []
+then:
+- return:
+    severity: FATAL
+    system-error-cause: Selected contracts couldn't be found for logged user.
+    consumer-request-id: 207a2723-e82b-4c47-a64c-ea8836f245cd
+    :headers:
+      access-control-allow-origin: '*'
+      content-length: '481'
+      Access-Control-Expose-Headers: tsec, vnd.bbva.access-token-type,vnd.bbva.access-token,
+        vnd.bbva.sso-pkcs7, authenticationtype, authenticationdata, authenticationstate,
+        authenticationchallenge
+      Server: artichoke
+      access-control-allow-headers: Content-Type, tsec, authenticationtype, authenticationdata,
+        authenticationstate, contactid, consumeruuid, consumerapplicationid, perimetertsec,
+        authorization, responsewarningcode, responsewarningdescription, cuf, field,
+        bcs-device-app-version, bcs-device-app-version, vnd.bbva.authorization, device-id
+      Connection: keep-alive
+      content-type: application/json;charset=UTF-8
+      Vary: Accept-Encoding
+      tsec: 1dbcc48718e946cf5e9b4c8fd905c766dab90bad
+      X-Response-Time: 6ms
+      Date: Tue, 19 Sep 2023 20:13:06 GMT
+    system-error-code: '400'
+    http-status: 400
+    system-error-description: Bad Request
+    error-code: '400'
+    version: 1
+    error-message: Bad Request
+    httpStatus: 400
+    messages:
+    - message: Error 400 genérico
+      type: FATAL
+      parameters: []
+    :status: 400 Bad Request

@@ -1,0 +1,5500 @@
+when:
+  sequence: 1
+  path: /SRVS_A02/flexible-financings/v0/microloans
+  method: GET
+  backend: glomo
+request:
+  headers:
+    sec-fetch-mode: cors
+    content-length: '0'
+    referer: http://localhost:8001/
+    sec-fetch-site: same-site
+    accept-language: es-MX,es;q=0.9
+    origin: http://localhost:8001
+    tsec: 05c323b6acbc74bcb13fa1e707b4e4b05ead71ba
+    accept: application/json, text/html, */*; q=0.1
+    sec-ch-ua: '"Google Chrome";v="141", "Not?A_Brand";v="8", "Chromium";v="141"'
+    sec-ch-ua-mobile: ?0
+    x-vbank-session: c16c2ced-149d-4574-939f-e2fcf4d07c7f
+    sec-ch-ua-platform: '"macOS"'
+    host: localhost:9000
+    content-type: application/json
+    connection: keep-alive
+    cache-control: no-cache, no-store, must-revalidate
+    accept-encoding: gzip, deflate, br, zstd
+    sec-fetch-dest: empty
+    user-agent: GLOMO_MX/99.99.99 (Android;14;Samsung)
+  query:
+    expand: transactions
+    financingLine.id: ASDAS2342345
+then:
+- return:
+    pagination:
+      pageElements:
+      - fees:
+          itemizeFees:
+          - itemizeFeeUnits:
+            - unitType: PERCENTAGE
+              percentage: 0.08
+            - unitType: AMOUNT
+              amount: 0.09
+              currency: MXN
+            calculationDate: '2023-11-07'
+            feeType: MICROLOAN_WITHDRAWAL_FEE
+          - itemizeFeeUnits:
+            - unitType: PERCENTAGE
+              percentage: 0.08
+            - unitType: AMOUNT
+              amount: 0.08
+              currency: MXN
+            calculationDate: '2023-11-07'
+            feeType: MICROLOAN_WITHDRAWAL_FEE_WITHOUT_VAT
+          - itemizeFeeUnits:
+            - unitType: AMOUNT
+              amount: 0
+              currency: MXN
+            calculationDate: '2023-11-07'
+            feeType: PAID_FEES_WITHOUT_VAT
+          - itemizeFeeUnits:
+            - unitType: AMOUNT
+              amount: 0.02
+              currency: MXN
+            calculationDate: '2023-11-07'
+            feeType: INSTALLMENT_MONTHLY_AMOUNT_FEE
+          - itemizeFeeUnits:
+            - unitType: AMOUNT
+              amount: 0
+              currency: MXN
+            calculationDate: '2023-11-07'
+            feeType: TOTAL_INSTALLMENT_OVERDUE_FEE_WITHOUT_VAT
+        numberType:
+          name: Local Internal Code
+          id: LIC
+        rates:
+          itemizeRates:
+          - rateType: CAT
+            itemizeRateUnits:
+            - unitType: PERCENTAGE
+              percentage: 0
+            calculationDate: '2023-11-07'
+        taxes:
+          itemizeTaxes:
+          - itemizeTaxUnits:
+            - unitType: PERCENTAGE
+              percentage: 0.16
+            - unitType: AMOUNT
+              amount: 0.01
+              currency: MXN
+            calculationDate: '2023-11-07'
+            taxType: MICROLOAN_WITHDRAWAL_FEE_VAT
+          - itemizeTaxUnits:
+            - unitType: AMOUNT
+              amount: 0
+              currency: MXN
+            calculationDate: '2023-11-07'
+            taxType: INSTALLMENT_MONTHLY_AMOUNT_VAT
+          - itemizeTaxUnits:
+            - unitType: AMOUNT
+              amount: 0
+              currency: MXN
+            calculationDate: '2023-11-07'
+            taxType: PAID_FEES_VAT
+          - itemizeTaxUnits:
+            - unitType: AMOUNT
+              amount: 0
+              currency: MXN
+            calculationDate: '2023-11-07'
+            taxType: TOTAL_INSTALLMENT_OVERDUE_VAT
+        creationDate: 2023-11-07T16:24:00.000-0600
+        operationTracking:
+          operationDate: 2023-11-07T10:40:52.063-0600
+          operationNumber: 9396852062D0432336
+        nextInstallmentDate: '2023-12-01'
+        number: fQcdFj9wch7Ym1z53BiLqU6PjIFa2D71
+        financingLine:
+          number: MX007400219200000101
+          balances:
+          - amounts:
+            - amount: 6906.78
+              currency: MXN
+            id: AVAILABLE_BALANCE
+          - amounts:
+            - amount: 18093.22
+              currency: MXN
+            id: DISPOSED_BALANCE
+          - amounts:
+            - amount: 0
+              currency: MXN
+            id: OVERDUE_BALANCE
+          - amounts:
+            - amount: 25402.71
+              currency: MXN
+            id: TOTAL_DEBT
+          - amounts:
+            - amount: 0
+              currency: MXN
+            id: OVERDUE_BALANCE_WITHOUT_FEE
+          id: MX007400219200000101
+        specificAmounts:
+        - amounts:
+          - amount: 1200
+            currency: MXN
+          id: MICROLOAN_AMOUNT
+        - amounts:
+          - amount: 400
+            currency: MXN
+          id: INSTALLMENT_MONTHLY_AMOUNT
+        - amounts:
+          - amount: 0.33
+            currency: MXN
+          id: INSTALLMENT_MONTHLY_AMOUNT_WITHOUT_FEES
+        - amounts:
+          - amount: 0.39
+            currency: MXN
+          id: LAST_INSTALLMENT
+        - amounts:
+          - amount: 0
+            currency: MXN
+          id: TOTAL_INSTALLMENT_OVERDUE_AMOUNT_WITHOUT_FEES
+        - amounts:
+          - amount: 0
+            currency: MXN
+          id: TOTAL_INSTALLMENT_OVERDUE_AMOUNT
+        - amounts:
+          - amount: 0
+            currency: MXN
+          id: PAID_AMOUNT_WITHOUT_FEES
+        - amounts:
+          - amount: 0.39
+            currency: MXN
+          id: MONTH_ADVANCED_1
+        terms:
+          number: 3
+          frequency: MONTHLY
+        maturityDate: '2024-02-01'
+        customBalances:
+        - balanceType: INSTALLMENTS_DETAIL
+          paidInstallments: 2
+          pendingInstallments: 3
+        - balanceType: PAYMENTS_DETAIL
+          paidAmount:
+            amount: 800
+            currency: MXN
+          pendingAmount:
+            amount: 400
+            currency: MXN
+        id: fQcdFj9wch7Ym1z53BiLqU6PjIFa2D71
+        status:
+          id: ACTIVE
+          subStatus:
+            description: The microloan is available to be operated
+            id: AVAILABLE
+      - fees:
+          itemizeFees:
+          - itemizeFeeUnits:
+            - unitType: PERCENTAGE
+              percentage: 0.08
+            - unitType: AMOUNT
+              amount: 224.12
+              currency: MXN
+            calculationDate: '2023-11-07'
+            feeType: MICROLOAN_WITHDRAWAL_FEE
+          - itemizeFeeUnits:
+            - unitType: PERCENTAGE
+              percentage: 0.08
+            - unitType: AMOUNT
+              amount: 193.21
+              currency: MXN
+            calculationDate: '2023-11-07'
+            feeType: MICROLOAN_WITHDRAWAL_FEE_WITHOUT_VAT
+          - itemizeFeeUnits:
+            - unitType: AMOUNT
+              amount: 0
+              currency: MXN
+            calculationDate: '2023-11-07'
+            feeType: PAID_FEES_WITHOUT_VAT
+          - itemizeFeeUnits:
+            - unitType: AMOUNT
+              amount: 74.7
+              currency: MXN
+            calculationDate: '2023-11-07'
+            feeType: INSTALLMENT_MONTHLY_AMOUNT_FEE
+          - itemizeFeeUnits:
+            - unitType: AMOUNT
+              amount: 0
+              currency: MXN
+            calculationDate: '2023-11-07'
+            feeType: TOTAL_INSTALLMENT_OVERDUE_FEE_WITHOUT_VAT
+        numberType:
+          name: Local Internal Code
+          id: LIC
+        rates:
+          itemizeRates:
+          - rateType: CAT
+            itemizeRateUnits:
+            - unitType: PERCENTAGE
+              percentage: 70.99
+            calculationDate: '2023-11-07'
+        taxes:
+          itemizeTaxes:
+          - itemizeTaxUnits:
+            - unitType: PERCENTAGE
+              percentage: 0.16
+            - unitType: AMOUNT
+              amount: 30.91
+              currency: MXN
+            calculationDate: '2023-11-07'
+            taxType: MICROLOAN_WITHDRAWAL_FEE_VAT
+          - itemizeTaxUnits:
+            - unitType: AMOUNT
+              amount: 10.3
+              currency: MXN
+            calculationDate: '2023-11-07'
+            taxType: INSTALLMENT_MONTHLY_AMOUNT_VAT
+          - itemizeTaxUnits:
+            - unitType: AMOUNT
+              amount: 0
+              currency: MXN
+            calculationDate: '2023-11-07'
+            taxType: PAID_FEES_VAT
+          - itemizeTaxUnits:
+            - unitType: AMOUNT
+              amount: 0
+              currency: MXN
+            calculationDate: '2023-11-07'
+            taxType: TOTAL_INSTALLMENT_OVERDUE_VAT
+        creationDate: 2023-11-07T10:02:00.000-0600
+        operationTracking:
+          operationDate: 2023-11-07T11:54:33.152-0600
+          operationNumber: 9401273149D0432336
+        nextInstallmentDate: '2023-12-01'
+        number: fQcdFj9wch7Ym1z53BiLqU6PjIFa2D2
+        financingLine:
+          number: MX007400219200000101
+          balances:
+          - amounts:
+            - amount: 6906.78
+              currency: MXN
+            id: AVAILABLE_BALANCE
+          - amounts:
+            - amount: 18093.22
+              currency: MXN
+            id: DISPOSED_BALANCE
+          - amounts:
+            - amount: 0
+              currency: MXN
+            id: OVERDUE_BALANCE
+          - amounts:
+            - amount: 25402.71
+              currency: MXN
+            id: TOTAL_DEBT
+          - amounts:
+            - amount: 0
+              currency: MXN
+            id: OVERDUE_BALANCE_WITHOUT_FEE
+          id: MX007400219200000101
+        specificAmounts:
+        - amounts:
+          - amount: 1200
+            currency: MXN
+          id: MICROLOAN_AMOUNT
+        - amounts:
+          - amount: 400
+            currency: MXN
+          id: INSTALLMENT_MONTHLY_AMOUNT
+        - amounts:
+          - amount: 805.03
+            currency: MXN
+          id: INSTALLMENT_MONTHLY_AMOUNT_WITHOUT_FEES
+        - amounts:
+          - amount: 879.74
+            currency: MXN
+          id: LAST_INSTALLMENT
+        - amounts:
+          - amount: 0
+            currency: MXN
+          id: TOTAL_INSTALLMENT_OVERDUE_AMOUNT_WITHOUT_FEES
+        - amounts:
+          - amount: 0
+            currency: MXN
+          id: TOTAL_INSTALLMENT_OVERDUE_AMOUNT
+        - amounts:
+          - amount: 0
+            currency: MXN
+          id: PAID_AMOUNT_WITHOUT_FEES
+        - amounts:
+          - amount: 879.74
+            currency: MXN
+          id: MONTH_ADVANCED_1
+        terms:
+          number: 3
+          frequency: MONTHLY
+        maturityDate: '2024-02-01'
+        customBalances:
+        - balanceType: INSTALLMENTS_DETAIL
+          paidInstallments: 3
+          pendingInstallments: 3
+        - balanceType: PAYMENTS_DETAIL
+          paidAmount:
+            amount: 1200
+            currency: MXN
+          pendingAmount:
+            amount: 0
+            currency: MXN
+        id: fQcdFj9wch7Ym1z53BiLqU6PjIFa2D2
+        status:
+          id: SETTLED
+          subStatus:
+            description: The microloan is available to be operated
+            id: AVAILABLE
+      - fees:
+          itemizeFees:
+          - itemizeFeeUnits:
+            - unitType: PERCENTAGE
+              percentage: 0.08
+            - unitType: AMOUNT
+              amount: 0.09
+              currency: MXN
+            calculationDate: '2023-11-07'
+            feeType: MICROLOAN_WITHDRAWAL_FEE
+          - itemizeFeeUnits:
+            - unitType: PERCENTAGE
+              percentage: 0.08
+            - unitType: AMOUNT
+              amount: 0.08
+              currency: MXN
+            calculationDate: '2023-11-07'
+            feeType: MICROLOAN_WITHDRAWAL_FEE_WITHOUT_VAT
+          - itemizeFeeUnits:
+            - unitType: AMOUNT
+              amount: 0
+              currency: MXN
+            calculationDate: '2023-11-07'
+            feeType: PAID_FEES_WITHOUT_VAT
+          - itemizeFeeUnits:
+            - unitType: AMOUNT
+              amount: 0.02
+              currency: MXN
+            calculationDate: '2023-11-07'
+            feeType: INSTALLMENT_MONTHLY_AMOUNT_FEE
+          - itemizeFeeUnits:
+            - unitType: AMOUNT
+              amount: 0
+              currency: MXN
+            calculationDate: '2023-11-07'
+            feeType: TOTAL_INSTALLMENT_OVERDUE_FEE_WITHOUT_VAT
+        numberType:
+          name: Local Internal Code
+          id: LIC
+        rates:
+          itemizeRates:
+          - rateType: CAT
+            itemizeRateUnits:
+            - unitType: PERCENTAGE
+              percentage: 0
+            calculationDate: '2023-11-07'
+        taxes:
+          itemizeTaxes:
+          - itemizeTaxUnits:
+            - unitType: PERCENTAGE
+              percentage: 0.16
+            - unitType: AMOUNT
+              amount: 0.01
+              currency: MXN
+            calculationDate: '2023-11-07'
+            taxType: MICROLOAN_WITHDRAWAL_FEE_VAT
+          - itemizeTaxUnits:
+            - unitType: AMOUNT
+              amount: 0
+              currency: MXN
+            calculationDate: '2023-11-07'
+            taxType: INSTALLMENT_MONTHLY_AMOUNT_VAT
+          - itemizeTaxUnits:
+            - unitType: AMOUNT
+              amount: 0
+              currency: MXN
+            calculationDate: '2023-11-07'
+            taxType: PAID_FEES_VAT
+          - itemizeTaxUnits:
+            - unitType: AMOUNT
+              amount: 0
+              currency: MXN
+            calculationDate: '2023-11-07'
+            taxType: TOTAL_INSTALLMENT_OVERDUE_VAT
+        creationDate: 2023-11-07T16:24:00.000-0600
+        transactions:
+        - transactionType:
+            id: PURCHASE
+          operationDate: 2023-10-21T01:00:00.000-0500
+          specificAmounts:
+          - amounts:
+            - amount: 1560
+              currency: MXN
+            id: TOTAL_AMOUNT
+          concept: BBVA_BANCOMER
+          contract:
+            number: '00740680000473454899'
+            id: '00740680000473454800'
+            productType:
+              id: ACCOUNT
+          id: MX0074040074001015012046321489920230615230217357429
+          financingType:
+            id: FINANCED_SINGLE_PURCHASE
+        operationTracking:
+          operationDate: 2023-11-07T10:40:52.063-0600
+          operationNumber: 9396852062D0432336
+        nextInstallmentDate: '2023-12-01'
+        number: o-fQcdFj9wch7Ym1z53BiLqU6PjIFa2D3
+        financingLine:
+          number: MX007400219200000101
+          balances:
+          - amounts:
+            - amount: 6906.78
+              currency: MXN
+            id: AVAILABLE_BALANCE
+          - amounts:
+            - amount: 18093.22
+              currency: MXN
+            id: DISPOSED_BALANCE
+          - amounts:
+            - amount: 0
+              currency: MXN
+            id: OVERDUE_BALANCE
+          - amounts:
+            - amount: 25402.71
+              currency: MXN
+            id: TOTAL_DEBT
+          - amounts:
+            - amount: 0
+              currency: MXN
+            id: OVERDUE_BALANCE_WITHOUT_FEE
+          id: MX007400219200000101
+        specificAmounts:
+        - amounts:
+          - amount: 1200
+            currency: MXN
+          id: MICROLOAN_AMOUNT
+        - amounts:
+          - amount: 400
+            currency: MXN
+          id: INSTALLMENT_MONTHLY_AMOUNT
+        - amounts:
+          - amount: 0.33
+            currency: MXN
+          id: INSTALLMENT_MONTHLY_AMOUNT_WITHOUT_FEES
+        - amounts:
+          - amount: 0.39
+            currency: MXN
+          id: LAST_INSTALLMENT
+        - amounts:
+          - amount: 0
+            currency: MXN
+          id: TOTAL_INSTALLMENT_OVERDUE_AMOUNT_WITHOUT_FEES
+        - amounts:
+          - amount: 0
+            currency: MXN
+          id: TOTAL_INSTALLMENT_OVERDUE_AMOUNT
+        - amounts:
+          - amount: 0
+            currency: MXN
+          id: PAID_AMOUNT_WITHOUT_FEES
+        - amounts:
+          - amount: 0.39
+            currency: MXN
+          id: MONTH_ADVANCED_1
+        terms:
+          number: 3
+          frequency: MONTHLY
+        maturityDate: '2024-02-01'
+        customBalances:
+        - balanceType: INSTALLMENTS_DETAIL
+          paidInstallments: 2
+          pendingInstallments: 3
+        - balanceType: PAYMENTS_DETAIL
+          paidAmount:
+            amount: 800
+            currency: MXN
+          pendingAmount:
+            amount: 400
+            currency: MXN
+        id: o-fQcdFj9wch7Ym1z53BiLqU6PjIFa2D3
+        status:
+          id: ACTIVE
+          subStatus:
+            description: The microloan is available to be operated
+            id: AVAILABLE
+      - fees:
+          itemizeFees:
+          - itemizeFeeUnits:
+            - unitType: PERCENTAGE
+              percentage: 0.08
+            - unitType: AMOUNT
+              amount: 224.12
+              currency: MXN
+            calculationDate: '2023-11-07'
+            feeType: MICROLOAN_WITHDRAWAL_FEE
+          - itemizeFeeUnits:
+            - unitType: PERCENTAGE
+              percentage: 0.08
+            - unitType: AMOUNT
+              amount: 193.21
+              currency: MXN
+            calculationDate: '2023-11-07'
+            feeType: MICROLOAN_WITHDRAWAL_FEE_WITHOUT_VAT
+          - itemizeFeeUnits:
+            - unitType: AMOUNT
+              amount: 0
+              currency: MXN
+            calculationDate: '2023-11-07'
+            feeType: PAID_FEES_WITHOUT_VAT
+          - itemizeFeeUnits:
+            - unitType: AMOUNT
+              amount: 74.7
+              currency: MXN
+            calculationDate: '2023-11-07'
+            feeType: INSTALLMENT_MONTHLY_AMOUNT_FEE
+          - itemizeFeeUnits:
+            - unitType: AMOUNT
+              amount: 0
+              currency: MXN
+            calculationDate: '2023-11-07'
+            feeType: TOTAL_INSTALLMENT_OVERDUE_FEE_WITHOUT_VAT
+        numberType:
+          name: Local Internal Code
+          id: LIC
+        rates:
+          itemizeRates:
+          - rateType: CAT
+            itemizeRateUnits:
+            - unitType: PERCENTAGE
+              percentage: 70.99
+            calculationDate: '2023-11-07'
+        taxes:
+          itemizeTaxes:
+          - itemizeTaxUnits:
+            - unitType: PERCENTAGE
+              percentage: 0.16
+            - unitType: AMOUNT
+              amount: 30.91
+              currency: MXN
+            calculationDate: '2023-11-07'
+            taxType: MICROLOAN_WITHDRAWAL_FEE_VAT
+          - itemizeTaxUnits:
+            - unitType: AMOUNT
+              amount: 10.3
+              currency: MXN
+            calculationDate: '2023-11-07'
+            taxType: INSTALLMENT_MONTHLY_AMOUNT_VAT
+          - itemizeTaxUnits:
+            - unitType: AMOUNT
+              amount: 0
+              currency: MXN
+            calculationDate: '2023-11-07'
+            taxType: PAID_FEES_VAT
+          - itemizeTaxUnits:
+            - unitType: AMOUNT
+              amount: 0
+              currency: MXN
+            calculationDate: '2023-11-07'
+            taxType: TOTAL_INSTALLMENT_OVERDUE_VAT
+        creationDate: 2023-11-07T10:02:00.000-0600
+        transactions:
+        - transactionType:
+            id: PURCHASE
+          operationDate: 2023-06-15T01:00:00.000-0500
+          specificAmounts:
+          - amounts:
+            - amount: 1560
+              currency: MXN
+            id: TOTAL_AMOUNT
+          concept: BBVA_BANCOMER
+          contract:
+            number: '00740680000473454801'
+            id: '00740680000473454800'
+            productType:
+              id: ACCOUNT
+          id: MX0074040074001015012059051489920230615230217357429
+          financingType:
+            id: FINANCED_MULTI_PURCHASE
+        - transactionType:
+            id: PURCHASE
+          operationDate: 2023-06-15T01:00:00.000-0500
+          specificAmounts:
+          - amounts:
+            - amount: 650
+              currency: MXN
+            id: TOTAL_AMOUNT
+          concept: BBVA_BANCOMER
+          contract:
+            id: '00740680000473454800'
+            productType:
+              id: ACCOUNT
+          id: MX0074040074001015012059051490020230615163148485879
+          financingType:
+            id: FINANCED_MULTI_PURCHASE
+        operationTracking:
+          operationDate: 2023-11-07T11:54:33.152-0600
+          operationNumber: 9401273149D0432336
+        nextInstallmentDate: '2023-12-01'
+        number: fQcdFj9wch7Ym1z53BiLqU6PjIFa2D4
+        financingLine:
+          number: MX007400219200000101
+          balances:
+          - amounts:
+            - amount: 6906.78
+              currency: MXN
+            id: AVAILABLE_BALANCE
+          - amounts:
+            - amount: 18093.22
+              currency: MXN
+            id: DISPOSED_BALANCE
+          - amounts:
+            - amount: 0
+              currency: MXN
+            id: OVERDUE_BALANCE
+          - amounts:
+            - amount: 25402.71
+              currency: MXN
+            id: TOTAL_DEBT
+          - amounts:
+            - amount: 0
+              currency: MXN
+            id: OVERDUE_BALANCE_WITHOUT_FEE
+          id: MX007400219200000101
+        specificAmounts:
+        - amounts:
+          - amount: 1200
+            currency: MXN
+          id: MICROLOAN_AMOUNT
+        - amounts:
+          - amount: 400
+            currency: MXN
+          id: INSTALLMENT_MONTHLY_AMOUNT
+        - amounts:
+          - amount: 805.03
+            currency: MXN
+          id: INSTALLMENT_MONTHLY_AMOUNT_WITHOUT_FEES
+        - amounts:
+          - amount: 879.74
+            currency: MXN
+          id: LAST_INSTALLMENT
+        - amounts:
+          - amount: 0
+            currency: MXN
+          id: TOTAL_INSTALLMENT_OVERDUE_AMOUNT_WITHOUT_FEES
+        - amounts:
+          - amount: 0
+            currency: MXN
+          id: TOTAL_INSTALLMENT_OVERDUE_AMOUNT
+        - amounts:
+          - amount: 0
+            currency: MXN
+          id: PAID_AMOUNT_WITHOUT_FEES
+        - amounts:
+          - amount: 879.74
+            currency: MXN
+          id: MONTH_ADVANCED_1
+        terms:
+          number: 3
+          frequency: MONTHLY
+        maturityDate: '2024-02-01'
+        customBalances:
+        - balanceType: INSTALLMENTS_DETAIL
+          paidInstallments: 3
+          pendingInstallments: 0
+        - balanceType: PAYMENTS_DETAIL
+          paidAmount:
+            amount: 1200
+            currency: MXN
+          pendingAmount:
+            amount: 0
+            currency: MXN
+        id: fQcdFj9wch7Ym1z53BiLqU6PjIFa2D4
+        status:
+          id: SETTLED
+          subStatus:
+            description: The microloan is available to be operated
+            id: AVAILABLE
+      - fees:
+          itemizeFees:
+          - itemizeFeeUnits:
+            - unitType: PERCENTAGE
+              percentage: 0.08
+            - unitType: AMOUNT
+              amount: 0.09
+              currency: MXN
+            calculationDate: '2023-11-07'
+            feeType: MICROLOAN_WITHDRAWAL_FEE
+          - itemizeFeeUnits:
+            - unitType: PERCENTAGE
+              percentage: 0.08
+            - unitType: AMOUNT
+              amount: 0.08
+              currency: MXN
+            calculationDate: '2023-11-07'
+            feeType: MICROLOAN_WITHDRAWAL_FEE_WITHOUT_VAT
+          - itemizeFeeUnits:
+            - unitType: AMOUNT
+              amount: 0
+              currency: MXN
+            calculationDate: '2023-11-07'
+            feeType: PAID_FEES_WITHOUT_VAT
+          - itemizeFeeUnits:
+            - unitType: AMOUNT
+              amount: 0.02
+              currency: MXN
+            calculationDate: '2023-11-07'
+            feeType: INSTALLMENT_MONTHLY_AMOUNT_FEE
+          - itemizeFeeUnits:
+            - unitType: AMOUNT
+              amount: 0
+              currency: MXN
+            calculationDate: '2023-11-07'
+            feeType: TOTAL_INSTALLMENT_OVERDUE_FEE_WITHOUT_VAT
+        numberType:
+          name: Local Internal Code
+          id: LIC
+        rates:
+          itemizeRates:
+          - rateType: CAT
+            itemizeRateUnits:
+            - unitType: PERCENTAGE
+              percentage: 0
+            calculationDate: '2023-11-07'
+        taxes:
+          itemizeTaxes:
+          - itemizeTaxUnits:
+            - unitType: PERCENTAGE
+              percentage: 0.16
+            - unitType: AMOUNT
+              amount: 0.01
+              currency: MXN
+            calculationDate: '2023-11-07'
+            taxType: MICROLOAN_WITHDRAWAL_FEE_VAT
+          - itemizeTaxUnits:
+            - unitType: AMOUNT
+              amount: 0
+              currency: MXN
+            calculationDate: '2023-11-07'
+            taxType: INSTALLMENT_MONTHLY_AMOUNT_VAT
+          - itemizeTaxUnits:
+            - unitType: AMOUNT
+              amount: 0
+              currency: MXN
+            calculationDate: '2023-11-07'
+            taxType: PAID_FEES_VAT
+          - itemizeTaxUnits:
+            - unitType: AMOUNT
+              amount: 0
+              currency: MXN
+            calculationDate: '2023-11-07'
+            taxType: TOTAL_INSTALLMENT_OVERDUE_VAT
+        creationDate: 2023-11-07T16:24:00.000-0600
+        transactions:
+        - transactionType:
+            id: PURCHASE
+          operationDate: 2023-10-21T01:00:00.000-0500
+          specificAmounts:
+          - amounts:
+            - amount: 1560
+              currency: MXN
+            id: TOTAL_AMOUNT
+          concept: BBVA_BANCOMER
+          contract:
+            number: '00740680000473454802'
+            id: '00740680000473454800'
+            productType:
+              id: ACCOUNT
+          id: MX0074040074001015012046321489920230615230217357429
+          financingType:
+            id: FINANCED_SINGLE_PURCHASE
+        operationTracking:
+          operationDate: 2023-11-07T10:40:52.063-0600
+          operationNumber: 9396852062D0432336
+        nextInstallmentDate: '2023-12-01'
+        number: o-fQcdFj9wch7Ym1z53BiLqU6PjIFa2D5
+        financingLine:
+          number: MX007400219200000101
+          balances:
+          - amounts:
+            - amount: 6906.78
+              currency: MXN
+            id: AVAILABLE_BALANCE
+          - amounts:
+            - amount: 18093.22
+              currency: MXN
+            id: DISPOSED_BALANCE
+          - amounts:
+            - amount: 0
+              currency: MXN
+            id: OVERDUE_BALANCE
+          - amounts:
+            - amount: 25402.71
+              currency: MXN
+            id: TOTAL_DEBT
+          - amounts:
+            - amount: 0
+              currency: MXN
+            id: OVERDUE_BALANCE_WITHOUT_FEE
+          id: MX007400219200000101
+        specificAmounts:
+        - amounts:
+          - amount: 1200
+            currency: MXN
+          id: MICROLOAN_AMOUNT
+        - amounts:
+          - amount: 400
+            currency: MXN
+          id: INSTALLMENT_MONTHLY_AMOUNT
+        - amounts:
+          - amount: 0.33
+            currency: MXN
+          id: INSTALLMENT_MONTHLY_AMOUNT_WITHOUT_FEES
+        - amounts:
+          - amount: 0.39
+            currency: MXN
+          id: LAST_INSTALLMENT
+        - amounts:
+          - amount: 0
+            currency: MXN
+          id: TOTAL_INSTALLMENT_OVERDUE_AMOUNT_WITHOUT_FEES
+        - amounts:
+          - amount: 0
+            currency: MXN
+          id: TOTAL_INSTALLMENT_OVERDUE_AMOUNT
+        - amounts:
+          - amount: 0
+            currency: MXN
+          id: PAID_AMOUNT_WITHOUT_FEES
+        - amounts:
+          - amount: 0.39
+            currency: MXN
+          id: MONTH_ADVANCED_1
+        terms:
+          number: 3
+          frequency: MONTHLY
+        maturityDate: '2024-02-01'
+        customBalances:
+        - balanceType: INSTALLMENTS_DETAIL
+          paidInstallments: 2
+          pendingInstallments: 1
+        - balanceType: PAYMENTS_DETAIL
+          paidAmount:
+            amount: 800
+            currency: MXN
+          pendingAmount:
+            amount: 400
+            currency: MXN
+        id: o-fQcdFj9wch7Ym1z53BiLqU6PjIFa2D5
+        status:
+          id: ACTIVE
+          subStatus:
+            description: The microloan is available to be operated
+            id: AVAILABLE
+      - fees:
+          itemizeFees:
+          - itemizeFeeUnits:
+            - unitType: PERCENTAGE
+              percentage: 0.08
+            - unitType: AMOUNT
+              amount: 224.12
+              currency: MXN
+            calculationDate: '2023-11-07'
+            feeType: MICROLOAN_WITHDRAWAL_FEE
+          - itemizeFeeUnits:
+            - unitType: PERCENTAGE
+              percentage: 0.08
+            - unitType: AMOUNT
+              amount: 193.21
+              currency: MXN
+            calculationDate: '2023-11-07'
+            feeType: MICROLOAN_WITHDRAWAL_FEE_WITHOUT_VAT
+          - itemizeFeeUnits:
+            - unitType: AMOUNT
+              amount: 0
+              currency: MXN
+            calculationDate: '2023-11-07'
+            feeType: PAID_FEES_WITHOUT_VAT
+          - itemizeFeeUnits:
+            - unitType: AMOUNT
+              amount: 74.7
+              currency: MXN
+            calculationDate: '2023-11-07'
+            feeType: INSTALLMENT_MONTHLY_AMOUNT_FEE
+          - itemizeFeeUnits:
+            - unitType: AMOUNT
+              amount: 0
+              currency: MXN
+            calculationDate: '2023-11-07'
+            feeType: TOTAL_INSTALLMENT_OVERDUE_FEE_WITHOUT_VAT
+        numberType:
+          name: Local Internal Code
+          id: LIC
+        rates:
+          itemizeRates:
+          - rateType: CAT
+            itemizeRateUnits:
+            - unitType: PERCENTAGE
+              percentage: 70.99
+            calculationDate: '2023-11-07'
+        taxes:
+          itemizeTaxes:
+          - itemizeTaxUnits:
+            - unitType: PERCENTAGE
+              percentage: 0.16
+            - unitType: AMOUNT
+              amount: 30.91
+              currency: MXN
+            calculationDate: '2023-11-07'
+            taxType: MICROLOAN_WITHDRAWAL_FEE_VAT
+          - itemizeTaxUnits:
+            - unitType: AMOUNT
+              amount: 10.3
+              currency: MXN
+            calculationDate: '2023-11-07'
+            taxType: INSTALLMENT_MONTHLY_AMOUNT_VAT
+          - itemizeTaxUnits:
+            - unitType: AMOUNT
+              amount: 0
+              currency: MXN
+            calculationDate: '2023-11-07'
+            taxType: PAID_FEES_VAT
+          - itemizeTaxUnits:
+            - unitType: AMOUNT
+              amount: 0
+              currency: MXN
+            calculationDate: '2023-11-07'
+            taxType: TOTAL_INSTALLMENT_OVERDUE_VAT
+        creationDate: 2023-11-07T10:02:00.000-0600
+        transactions:
+        - transactionType:
+            id: PURCHASE
+          operationDate: 2023-06-15T01:00:00.000-0500
+          specificAmounts:
+          - amounts:
+            - amount: 1560
+              currency: MXN
+            id: TOTAL_AMOUNT
+          concept: BBVA_BANCOMER
+          contract:
+            number: '00740680000473454803'
+            id: '00740680000473454800'
+            productType:
+              id: ACCOUNT
+          id: MX0074040074001015012059051489920230615230217357429
+          financingType:
+            id: FINANCED_MULTI_PURCHASE
+        - transactionType:
+            id: PURCHASE
+          operationDate: 2023-06-15T01:00:00.000-0500
+          specificAmounts:
+          - amounts:
+            - amount: 650
+              currency: MXN
+            id: TOTAL_AMOUNT
+          concept: BBVA_BANCOMER
+          contract:
+            id: '00740680000473454800'
+            productType:
+              id: ACCOUNT
+          id: MX0074040074001015012059051490020230615163148485879
+          financingType:
+            id: FINANCED_MULTI_PURCHASE
+        operationTracking:
+          operationDate: 2023-11-07T11:54:33.152-0600
+          operationNumber: 9401273149D0432336
+        nextInstallmentDate: '2023-12-01'
+        number: _xQGqc6apkAtZcMrYtgntu6SJNhtCs_Q
+        financingLine:
+          number: MX007400219200000101
+          balances:
+          - amounts:
+            - amount: 6906.78
+              currency: MXN
+            id: AVAILABLE_BALANCE
+          - amounts:
+            - amount: 18093.22
+              currency: MXN
+            id: DISPOSED_BALANCE
+          - amounts:
+            - amount: 0
+              currency: MXN
+            id: OVERDUE_BALANCE
+          - amounts:
+            - amount: 25402.71
+              currency: MXN
+            id: TOTAL_DEBT
+          - amounts:
+            - amount: 0
+              currency: MXN
+            id: OVERDUE_BALANCE_WITHOUT_FEE
+          id: MX007400219200000101
+        specificAmounts:
+        - amounts:
+          - amount: 2639.2
+            currency: MXN
+          id: MICROLOAN_AMOUNT
+        - amounts:
+          - amount: 879.73
+            currency: MXN
+          id: INSTALLMENT_MONTHLY_AMOUNT
+        - amounts:
+          - amount: 805.03
+            currency: MXN
+          id: INSTALLMENT_MONTHLY_AMOUNT_WITHOUT_FEES
+        - amounts:
+          - amount: 879.74
+            currency: MXN
+          id: LAST_INSTALLMENT
+        - amounts:
+          - amount: 0
+            currency: MXN
+          id: TOTAL_INSTALLMENT_OVERDUE_AMOUNT_WITHOUT_FEES
+        - amounts:
+          - amount: 0
+            currency: MXN
+          id: TOTAL_INSTALLMENT_OVERDUE_AMOUNT
+        - amounts:
+          - amount: 0
+            currency: MXN
+          id: PAID_AMOUNT_WITHOUT_FEES
+        - amounts:
+          - amount: 879.74
+            currency: MXN
+          id: MONTH_ADVANCED_1
+        terms:
+          number: 3
+          frequency: MONTHLY
+        maturityDate: '2024-02-01'
+        customBalances:
+        - balanceType: INSTALLMENTS_DETAIL
+          paidInstallments: 0
+          pendingInstallments: 3
+        - balanceType: PAYMENTS_DETAIL
+          paidAmount:
+            amount: 0
+            currency: MXN
+          pendingAmount:
+            amount: 2639.2
+            currency: MXN
+        id: fQcdFj9wch7Ym1z53BiLqU6PjIFa2D7
+        status:
+          id: ACTIVE
+          subStatus:
+            description: The microloan is available to be operated
+            id: AVAILABLE
+      - fees:
+          itemizeFees:
+          - itemizeFeeUnits:
+            - unitType: PERCENTAGE
+              percentage: 0.08
+            - unitType: AMOUNT
+              amount: 64.96
+              currency: MXN
+            calculationDate: '2023-11-06'
+            feeType: MICROLOAN_WITHDRAWAL_FEE
+          - itemizeFeeUnits:
+            - unitType: PERCENTAGE
+              percentage: 0.08
+            - unitType: AMOUNT
+              amount: 56
+              currency: MXN
+            calculationDate: '2023-11-06'
+            feeType: MICROLOAN_WITHDRAWAL_FEE_WITHOUT_VAT
+          - itemizeFeeUnits:
+            - unitType: AMOUNT
+              amount: 56
+              currency: MXN
+            calculationDate: '2023-11-06'
+            feeType: PAID_FEES_WITHOUT_VAT
+          - itemizeFeeUnits:
+            - unitType: AMOUNT
+              amount: 21.64
+              currency: MXN
+            calculationDate: '2023-11-06'
+            feeType: INSTALLMENT_MONTHLY_AMOUNT_FEE
+          - itemizeFeeUnits:
+            - unitType: AMOUNT
+              amount: 0
+              currency: MXN
+            calculationDate: '2023-11-06'
+            feeType: TOTAL_INSTALLMENT_OVERDUE_FEE_WITHOUT_VAT
+        numberType:
+          name: Local Internal Code
+          id: LIC
+        rates:
+          itemizeRates:
+          - rateType: CAT
+            itemizeRateUnits:
+            - unitType: PERCENTAGE
+              percentage: 0
+            calculationDate: '2023-11-06'
+        taxes:
+          itemizeTaxes:
+          - itemizeTaxUnits:
+            - unitType: PERCENTAGE
+              percentage: 0.16
+            - unitType: AMOUNT
+              amount: 8.96
+              currency: MXN
+            calculationDate: '2023-11-06'
+            taxType: MICROLOAN_WITHDRAWAL_FEE_VAT
+          - itemizeTaxUnits:
+            - unitType: AMOUNT
+              amount: 2.98
+              currency: MXN
+            calculationDate: '2023-11-06'
+            taxType: INSTALLMENT_MONTHLY_AMOUNT_VAT
+          - itemizeTaxUnits:
+            - unitType: AMOUNT
+              amount: 8.96
+              currency: MXN
+            calculationDate: '2023-11-06'
+            taxType: PAID_FEES_VAT
+          - itemizeTaxUnits:
+            - unitType: AMOUNT
+              amount: 0
+              currency: MXN
+            calculationDate: '2023-11-06'
+            taxType: TOTAL_INSTALLMENT_OVERDUE_VAT
+        creationDate: 2023-11-06T03:30:00.000-0600
+        transactions:
+        - transactionType:
+            id: PURCHASE
+          operationDate: 2023-06-15T01:00:00.000-0500
+          specificAmounts:
+          - amounts:
+            - amount: 890
+              currency: MXN
+            id: TOTAL_AMOUNT
+          concept: BBVA_BANCOMER
+          contract:
+            number: '00740680000473454804'
+            id: '00740680000473454800'
+            productType:
+              id: ACCOUNT
+          id: MX007404007400101501205826704222023061514413327523
+          financingType:
+            id: FINANCED_SINGLE_PURCHASE
+        operationTracking:
+          operationDate: 2023-11-06T04:11:12.215-0600
+          operationNumber: 9287072197D0432336
+        nextInstallmentDate: '0001-01-01'
+        number: lmH-EjowYMTg8yc-hyiplH649UIlb8u3
+        financingLine:
+          number: MX007400219200000101
+          balances:
+          - amounts:
+            - amount: 6906.78
+              currency: MXN
+            id: AVAILABLE_BALANCE
+          - amounts:
+            - amount: 18093.22
+              currency: MXN
+            id: DISPOSED_BALANCE
+          - amounts:
+            - amount: 0
+              currency: MXN
+            id: OVERDUE_BALANCE
+          - amounts:
+            - amount: 25402.71
+              currency: MXN
+            id: TOTAL_DEBT
+          - amounts:
+            - amount: 0
+              currency: MXN
+            id: OVERDUE_BALANCE_WITHOUT_FEE
+          id: MX007400219200000101
+        specificAmounts:
+        - amounts:
+          - amount: 764.96
+            currency: MXN
+          id: MICROLOAN_AMOUNT
+        - amounts:
+          - amount: 254.97
+            currency: MXN
+          id: INSTALLMENT_MONTHLY_AMOUNT
+        - amounts:
+          - amount: 233.33
+            currency: MXN
+          id: INSTALLMENT_MONTHLY_AMOUNT_WITHOUT_FEES
+        - amounts:
+          - amount: 255.02
+            currency: MXN
+          id: LAST_INSTALLMENT
+        - amounts:
+          - amount: 0
+            currency: MXN
+          id: TOTAL_INSTALLMENT_OVERDUE_AMOUNT_WITHOUT_FEES
+        - amounts:
+          - amount: 0
+            currency: MXN
+          id: TOTAL_INSTALLMENT_OVERDUE_AMOUNT
+        - amounts:
+          - amount: 700
+            currency: MXN
+          id: PAID_AMOUNT_WITHOUT_FEES
+        terms:
+          number: 3
+          frequency: MONTHLY
+        maturityDate: '2024-02-01'
+        customBalances:
+        - balanceType: INSTALLMENTS_DETAIL
+          paidInstallments: 3
+          pendingInstallments: 0
+        - balanceType: PAYMENTS_DETAIL
+          paidAmount:
+            amount: 764.96
+            currency: MXN
+          pendingAmount:
+            amount: 0
+            currency: MXN
+        id: fQcdFj9wch7Ym1z53BiLqU6PjIFa2D7
+        status:
+          description: The total debt of the microloan is fully paid and there is
+            no debt.
+          id: SETTLED
+      - fees:
+          itemizeFees:
+          - itemizeFeeUnits:
+            - unitType: PERCENTAGE
+              percentage: 0.08
+            - unitType: AMOUNT
+              amount: 224.12
+              currency: MXN
+            calculationDate: '2023-11-06'
+            feeType: MICROLOAN_WITHDRAWAL_FEE
+          - itemizeFeeUnits:
+            - unitType: PERCENTAGE
+              percentage: 0.08
+            - unitType: AMOUNT
+              amount: 193.21
+              currency: MXN
+            calculationDate: '2023-11-06'
+            feeType: MICROLOAN_WITHDRAWAL_FEE_WITHOUT_VAT
+          - itemizeFeeUnits:
+            - unitType: AMOUNT
+              amount: 193.2
+              currency: MXN
+            calculationDate: '2023-11-06'
+            feeType: PAID_FEES_WITHOUT_VAT
+          - itemizeFeeUnits:
+            - unitType: AMOUNT
+              amount: 74.7
+              currency: MXN
+            calculationDate: '2023-11-06'
+            feeType: INSTALLMENT_MONTHLY_AMOUNT_FEE
+          - itemizeFeeUnits:
+            - unitType: AMOUNT
+              amount: 0
+              currency: MXN
+            calculationDate: '2023-11-06'
+            feeType: TOTAL_INSTALLMENT_OVERDUE_FEE_WITHOUT_VAT
+        numberType:
+          name: Local Internal Code
+          id: LIC
+        rates:
+          itemizeRates:
+          - rateType: CAT
+            itemizeRateUnits:
+            - unitType: PERCENTAGE
+              percentage: 70.99
+            calculationDate: '2023-11-06'
+        taxes:
+          itemizeTaxes:
+          - itemizeTaxUnits:
+            - unitType: PERCENTAGE
+              percentage: 0.16
+            - unitType: AMOUNT
+              amount: 30.91
+              currency: MXN
+            calculationDate: '2023-11-06'
+            taxType: MICROLOAN_WITHDRAWAL_FEE_VAT
+          - itemizeTaxUnits:
+            - unitType: AMOUNT
+              amount: 10.3
+              currency: MXN
+            calculationDate: '2023-11-06'
+            taxType: INSTALLMENT_MONTHLY_AMOUNT_VAT
+          - itemizeTaxUnits:
+            - unitType: AMOUNT
+              amount: 30.91
+              currency: MXN
+            calculationDate: '2023-11-06'
+            taxType: PAID_FEES_VAT
+          - itemizeTaxUnits:
+            - unitType: AMOUNT
+              amount: 0
+              currency: MXN
+            calculationDate: '2023-11-06'
+            taxType: TOTAL_INSTALLMENT_OVERDUE_VAT
+        creationDate: 2023-11-06T22:00:00.000-0600
+        transactions:
+        - transactionType:
+            id: PURCHASE
+          operationDate: 2023-06-15T01:00:00.000-0500
+          specificAmounts:
+          - amounts:
+            - amount: 1560
+              currency: MXN
+            id: TOTAL_AMOUNT
+          concept: BBVA_BANCOMER
+          contract:
+            number: '00740680000473454806'
+            id: '00740680000473454800'
+            productType:
+              id: ACCOUNT
+          id: MX0074040074001015012059051489920230615230217357429
+          financingType:
+            id: FINANCED_MULTI_PURCHASE
+        - transactionType:
+            id: PURCHASE
+          operationDate: 2023-06-15T01:00:00.000-0500
+          specificAmounts:
+          - amounts:
+            - amount: 650
+              currency: MXN
+            id: TOTAL_AMOUNT
+          concept: BBVA_BANCOMER
+          contract:
+            id: '00740680000473454800'
+            productType:
+              id: ACCOUNT
+          id: MX0074040074001015012059051490020230615163148485879
+          financingType:
+            id: FINANCED_MULTI_PURCHASE
+        operationTracking:
+          operationDate: 2023-11-06T11:36:18.830-0600
+          operationNumber: 9313778828D0432336
+        nextInstallmentDate: '2023-12-01'
+        number: o8UkfYIa5Nm25hRr4ffiIERmsTh4wsYU
+        financingLine:
+          number: MX007400219200000101
+          balances:
+          - amounts:
+            - amount: 6906.78
+              currency: MXN
+            id: AVAILABLE_BALANCE
+          - amounts:
+            - amount: 18093.22
+              currency: MXN
+            id: DISPOSED_BALANCE
+          - amounts:
+            - amount: 0
+              currency: MXN
+            id: OVERDUE_BALANCE
+          - amounts:
+            - amount: 25402.71
+              currency: MXN
+            id: TOTAL_DEBT
+          - amounts:
+            - amount: 0
+              currency: MXN
+            id: OVERDUE_BALANCE_WITHOUT_FEE
+          id: MX007400219200000101
+        specificAmounts:
+        - amounts:
+          - amount: 2639.2
+            currency: MXN
+          id: MICROLOAN_AMOUNT
+        - amounts:
+          - amount: 879.73
+            currency: MXN
+          id: INSTALLMENT_MONTHLY_AMOUNT
+        - amounts:
+          - amount: 805.03
+            currency: MXN
+          id: INSTALLMENT_MONTHLY_AMOUNT_WITHOUT_FEES
+        - amounts:
+          - amount: 879.74
+            currency: MXN
+          id: LAST_INSTALLMENT
+        - amounts:
+          - amount: 0
+            currency: MXN
+          id: TOTAL_INSTALLMENT_OVERDUE_AMOUNT_WITHOUT_FEES
+        - amounts:
+          - amount: 0
+            currency: MXN
+          id: TOTAL_INSTALLMENT_OVERDUE_AMOUNT
+        - amounts:
+          - amount: 607.18
+            currency: MXN
+          id: PAID_AMOUNT_WITHOUT_FEES
+        - amounts:
+          - amount: 381.55
+            currency: MXN
+          id: MONTH_ADVANCED_1
+        terms:
+          number: 3
+          frequency: MONTHLY
+        maturityDate: '2024-02-01'
+        customBalances:
+        - balanceType: INSTALLMENTS_DETAIL
+          paidInstallments: 0
+          pendingInstallments: 3
+        - balanceType: PAYMENTS_DETAIL
+          paidAmount:
+            amount: 831.29
+            currency: MXN
+          pendingAmount:
+            amount: 1807.91
+            currency: MXN
+        id: wpfQcdFj9wch7Ym1z53BiLqU6PjIFa2D8
+        status:
+          id: ACTIVE
+          subStatus:
+            description: The microloan is available to be operated
+            id: AVAILABLE
+      - fees:
+          itemizeFees:
+          - itemizeFeeUnits:
+            - unitType: PERCENTAGE
+              percentage: 0.08
+            - unitType: AMOUNT
+              amount: 213.44
+              currency: MXN
+            calculationDate: '2023-11-06'
+            feeType: MICROLOAN_WITHDRAWAL_FEE
+          - itemizeFeeUnits:
+            - unitType: PERCENTAGE
+              percentage: 0.08
+            - unitType: AMOUNT
+              amount: 184
+              currency: MXN
+            calculationDate: '2023-11-06'
+            feeType: MICROLOAN_WITHDRAWAL_FEE_WITHOUT_VAT
+          - itemizeFeeUnits:
+            - unitType: AMOUNT
+              amount: 184
+              currency: MXN
+            calculationDate: '2023-11-06'
+            feeType: PAID_FEES_WITHOUT_VAT
+          - itemizeFeeUnits:
+            - unitType: AMOUNT
+              amount: 71.14
+              currency: MXN
+            calculationDate: '2023-11-06'
+            feeType: INSTALLMENT_MONTHLY_AMOUNT_FEE
+          - itemizeFeeUnits:
+            - unitType: AMOUNT
+              amount: 0
+              currency: MXN
+            calculationDate: '2023-11-06'
+            feeType: TOTAL_INSTALLMENT_OVERDUE_FEE_WITHOUT_VAT
+        numberType:
+          name: Local Internal Code
+          id: LIC
+        rates:
+          itemizeRates:
+          - rateType: CAT
+            itemizeRateUnits:
+            - unitType: PERCENTAGE
+              percentage: 2.7
+            calculationDate: '2023-11-06'
+        taxes:
+          itemizeTaxes:
+          - itemizeTaxUnits:
+            - unitType: PERCENTAGE
+              percentage: 0.16
+            - unitType: AMOUNT
+              amount: 29.44
+              currency: MXN
+            calculationDate: '2023-11-06'
+            taxType: MICROLOAN_WITHDRAWAL_FEE_VAT
+          - itemizeTaxUnits:
+            - unitType: AMOUNT
+              amount: 9.81
+              currency: MXN
+            calculationDate: '2023-11-06'
+            taxType: INSTALLMENT_MONTHLY_AMOUNT_VAT
+          - itemizeTaxUnits:
+            - unitType: AMOUNT
+              amount: 29.44
+              currency: MXN
+            calculationDate: '2023-11-06'
+            taxType: PAID_FEES_VAT
+          - itemizeTaxUnits:
+            - unitType: AMOUNT
+              amount: 0
+              currency: MXN
+            calculationDate: '2023-11-06'
+            taxType: TOTAL_INSTALLMENT_OVERDUE_VAT
+        creationDate: 2023-11-06T21:12:00.000-0600
+        transactions:
+        - transactionType:
+            id: PURCHASE
+          operationDate: 2023-06-15T01:00:00.000-0500
+          specificAmounts:
+          - amounts:
+            - amount: 2300
+              currency: MXN
+            id: TOTAL_AMOUNT
+          concept: BBVA_BANCOMER
+          contract:
+            number: '00740680000473454811'
+            id: '00740680000473454800'
+            productType:
+              id: ACCOUNT
+          id: MX0074040074001015012059053658620230615230026363546
+          financingType:
+            id: FINANCED_SINGLE_PURCHASE
+        operationTracking:
+          operationDate: 2023-11-06T06:08:42.038-0600
+          operationNumber: 9294122034D0432336
+        nextInstallmentDate: '0001-01-01'
+        number: dhgWdFLsAJ9Mvgvjyuhb7ao4PLGHuTAH
+        financingLine:
+          number: MX007400219200000101
+          balances:
+          - amounts:
+            - amount: 6906.78
+              currency: MXN
+            id: AVAILABLE_BALANCE
+          - amounts:
+            - amount: 18093.22
+              currency: MXN
+            id: DISPOSED_BALANCE
+          - amounts:
+            - amount: 0
+              currency: MXN
+            id: OVERDUE_BALANCE
+          - amounts:
+            - amount: 25402.71
+              currency: MXN
+            id: TOTAL_DEBT
+          - amounts:
+            - amount: 0
+              currency: MXN
+            id: OVERDUE_BALANCE_WITHOUT_FEE
+          id: MX007400219200000101
+        specificAmounts:
+        - amounts:
+          - amount: 2513.44
+            currency: MXN
+          id: MICROLOAN_AMOUNT
+        - amounts:
+          - amount: 837.8
+            currency: MXN
+          id: INSTALLMENT_MONTHLY_AMOUNT
+        - amounts:
+          - amount: 766.66
+            currency: MXN
+          id: INSTALLMENT_MONTHLY_AMOUNT_WITHOUT_FEES
+        - amounts:
+          - amount: 837.84
+            currency: MXN
+          id: LAST_INSTALLMENT
+        - amounts:
+          - amount: 0
+            currency: MXN
+          id: TOTAL_INSTALLMENT_OVERDUE_AMOUNT_WITHOUT_FEES
+        - amounts:
+          - amount: 0
+            currency: MXN
+          id: TOTAL_INSTALLMENT_OVERDUE_AMOUNT
+        - amounts:
+          - amount: 2300
+            currency: MXN
+          id: PAID_AMOUNT_WITHOUT_FEES
+        terms:
+          number: 3
+          frequency: MONTHLY
+        maturityDate: '2024-02-01'
+        customBalances:
+        - balanceType: INSTALLMENTS_DETAIL
+          paidInstallments: 3
+          pendingInstallments: 0
+        - balanceType: PAYMENTS_DETAIL
+          paidAmount:
+            amount: 2513.44
+            currency: MXN
+          pendingAmount:
+            amount: 0
+            currency: MXN
+        id: wpfQcdFj9wch7Ym1z53BiLqU6PjIFa2D9
+        status:
+          description: The total debt of the microloan is fully paid and there is
+            no debt.
+          id: SETTLED
+      - fees:
+          itemizeFees:
+          - itemizeFeeUnits:
+            - unitType: PERCENTAGE
+              percentage: 0.08
+            - unitType: AMOUNT
+              amount: 0.09
+              currency: MXN
+            calculationDate: '2023-11-03'
+            feeType: MICROLOAN_WITHDRAWAL_FEE
+          - itemizeFeeUnits:
+            - unitType: PERCENTAGE
+              percentage: 0.08
+            - unitType: AMOUNT
+              amount: 0.08
+              currency: MXN
+            calculationDate: '2023-11-03'
+            feeType: MICROLOAN_WITHDRAWAL_FEE_WITHOUT_VAT
+          - itemizeFeeUnits:
+            - unitType: AMOUNT
+              amount: 0.08
+              currency: MXN
+            calculationDate: '2023-11-03'
+            feeType: PAID_FEES_WITHOUT_VAT
+          - itemizeFeeUnits:
+            - unitType: AMOUNT
+              amount: 0.02
+              currency: MXN
+            calculationDate: '2023-11-03'
+            feeType: INSTALLMENT_MONTHLY_AMOUNT_FEE
+          - itemizeFeeUnits:
+            - unitType: AMOUNT
+              amount: 0
+              currency: MXN
+            calculationDate: '2023-11-03'
+            feeType: TOTAL_INSTALLMENT_OVERDUE_FEE_WITHOUT_VAT
+        numberType:
+          name: Local Internal Code
+          id: LIC
+        rates:
+          itemizeRates:
+          - rateType: CAT
+            itemizeRateUnits:
+            - unitType: PERCENTAGE
+              percentage: 0
+            calculationDate: '2023-11-03'
+        taxes:
+          itemizeTaxes:
+          - itemizeTaxUnits:
+            - unitType: PERCENTAGE
+              percentage: 0.16
+            - unitType: AMOUNT
+              amount: 0.01
+              currency: MXN
+            calculationDate: '2023-11-03'
+            taxType: MICROLOAN_WITHDRAWAL_FEE_VAT
+          - itemizeTaxUnits:
+            - unitType: AMOUNT
+              amount: 0
+              currency: MXN
+            calculationDate: '2023-11-03'
+            taxType: INSTALLMENT_MONTHLY_AMOUNT_VAT
+          - itemizeTaxUnits:
+            - unitType: AMOUNT
+              amount: 0.01
+              currency: MXN
+            calculationDate: '2023-11-03'
+            taxType: PAID_FEES_VAT
+          - itemizeTaxUnits:
+            - unitType: AMOUNT
+              amount: 0
+              currency: MXN
+            calculationDate: '2023-11-03'
+            taxType: TOTAL_INSTALLMENT_OVERDUE_VAT
+        creationDate: 2023-11-03T10:00:00.000-0600
+        transactions:
+        - transactionType:
+            id: PURCHASE
+          operationDate: 2023-10-15T01:00:00.000-0500
+          specificAmounts:
+          - amounts:
+            - amount: 650
+              currency: MXN
+            id: TOTAL_AMOUNT
+          concept: BBVA_BANCOMER
+          contract:
+            number: '00740680000473454812'
+            id: '00740680000473454800'
+            productType:
+              id: ACCOUNT
+          id: MX0074040074001015012047471490020230615163148485879
+          financingType:
+            id: FINANCED_SINGLE_PURCHASE
+        operationTracking:
+          operationDate: 2023-11-03T13:45:15.509-0600
+          operationNumber: 9062315475D0432336
+        nextInstallmentDate: '0001-01-01'
+        number: nTXsoei6nPV0Pc_5H32eWAAO81oQtDPU
+        financingLine:
+          number: MX007400219200000101
+          balances:
+          - amounts:
+            - amount: 6906.78
+              currency: MXN
+            id: AVAILABLE_BALANCE
+          - amounts:
+            - amount: 18093.22
+              currency: MXN
+            id: DISPOSED_BALANCE
+          - amounts:
+            - amount: 0
+              currency: MXN
+            id: OVERDUE_BALANCE
+          - amounts:
+            - amount: 25402.71
+              currency: MXN
+            id: TOTAL_DEBT
+          - amounts:
+            - amount: 0
+              currency: MXN
+            id: OVERDUE_BALANCE_WITHOUT_FEE
+          id: MX007400219200000101
+        specificAmounts:
+        - amounts:
+          - amount: 1.09
+            currency: MXN
+          id: MICROLOAN_AMOUNT
+        - amounts:
+          - amount: 0.35
+            currency: MXN
+          id: INSTALLMENT_MONTHLY_AMOUNT
+        - amounts:
+          - amount: 0.33
+            currency: MXN
+          id: INSTALLMENT_MONTHLY_AMOUNT_WITHOUT_FEES
+        - amounts:
+          - amount: 0.39
+            currency: MXN
+          id: LAST_INSTALLMENT
+        - amounts:
+          - amount: 0
+            currency: MXN
+          id: TOTAL_INSTALLMENT_OVERDUE_AMOUNT_WITHOUT_FEES
+        - amounts:
+          - amount: 0
+            currency: MXN
+          id: TOTAL_INSTALLMENT_OVERDUE_AMOUNT
+        - amounts:
+          - amount: 1
+            currency: MXN
+          id: PAID_AMOUNT_WITHOUT_FEES
+        terms:
+          number: 3
+          frequency: MONTHLY
+        maturityDate: '2024-02-01'
+        customBalances:
+        - balanceType: INSTALLMENTS_DETAIL
+          paidInstallments: 3
+          pendingInstallments: 0
+        - balanceType: PAYMENTS_DETAIL
+          paidAmount:
+            amount: 1.09
+            currency: MXN
+          pendingAmount:
+            amount: 0
+            currency: MXN
+        id: wpfQcdFj9wch7Ym1z53BiLqU6PjIFa2D10
+        status:
+          description: The total debt of the microloan is fully paid and there is
+            no debt.
+          id: SETTLED
+      - fees:
+          itemizeFees:
+          - itemizeFeeUnits:
+            - unitType: PERCENTAGE
+              percentage: 0.15
+            - unitType: AMOUNT
+              amount: 121.8
+              currency: MXN
+            calculationDate: '2022-10-28'
+            feeType: MICROLOAN_WITHDRAWAL_FEE
+          - itemizeFeeUnits:
+            - unitType: PERCENTAGE
+              percentage: 0.15
+            - unitType: AMOUNT
+              amount: 105
+              currency: MXN
+            calculationDate: '2022-10-28'
+            feeType: MICROLOAN_WITHDRAWAL_FEE_WITHOUT_VAT
+          - itemizeFeeUnits:
+            - unitType: AMOUNT
+              amount: 26.25
+              currency: MXN
+            calculationDate: '2022-10-28'
+            feeType: PAID_FEES_WITHOUT_VAT
+          - itemizeFeeUnits:
+            - unitType: AMOUNT
+              amount: 10.15
+              currency: MXN
+            calculationDate: '2022-10-28'
+            feeType: INSTALLMENT_MONTHLY_AMOUNT_FEE
+          - itemizeFeeUnits:
+            - unitType: AMOUNT
+              amount: 0
+              currency: MXN
+            calculationDate: '2022-10-28'
+            feeType: TOTAL_INSTALLMENT_OVERDUE_FEE_WITHOUT_VAT
+        numberType:
+          name: Local Internal Code
+          id: LIC
+        rates:
+          itemizeRates:
+          - rateType: CAT
+            itemizeRateUnits:
+            - unitType: PERCENTAGE
+              percentage: 30.12
+            calculationDate: '2022-10-28'
+        taxes:
+          itemizeTaxes:
+          - itemizeTaxUnits:
+            - unitType: PERCENTAGE
+              percentage: 0.16
+            - unitType: AMOUNT
+              amount: 16.8
+              currency: MXN
+            calculationDate: '2022-10-28'
+            taxType: MICROLOAN_WITHDRAWAL_FEE_VAT
+          - itemizeTaxUnits:
+            - unitType: AMOUNT
+              amount: 1.4
+              currency: MXN
+            calculationDate: '2022-10-28'
+            taxType: INSTALLMENT_MONTHLY_AMOUNT_VAT
+          - itemizeTaxUnits:
+            - unitType: AMOUNT
+              amount: 4.2
+              currency: MXN
+            calculationDate: '2022-10-28'
+            taxType: PAID_FEES_VAT
+          - itemizeTaxUnits:
+            - unitType: AMOUNT
+              amount: 0
+              currency: MXN
+            calculationDate: '2022-10-28'
+            taxType: TOTAL_INSTALLMENT_OVERDUE_VAT
+        creationDate: 2022-10-28T12:30:00.000-0500
+        transactions:
+        - transactionType:
+            id: PURCHASE
+          operationDate: 2023-10-20T01:00:00.000-0500
+          specificAmounts:
+          - amounts:
+            - amount: 750
+              currency: MXN
+            id: TOTAL_AMOUNT
+          concept: BBVA_BANCOMER
+          contract:
+            number: '00740680000473454813'
+            id: '00740680000473454800'
+            productType:
+              id: ACCOUNT
+          id: MX0074040074001015012046321490020230615163148485879
+          financingType:
+            id: FINANCED_MULTI_PURCHASE
+        - transactionType:
+            id: PURCHASE
+          operationDate: 2023-10-23T01:00:00.000-0500
+          specificAmounts:
+          - amounts:
+            - amount: 2300
+              currency: MXN
+            id: TOTAL_AMOUNT
+          concept: BBVA_BANCOMER
+          contract:
+            id: '00740680000473454800'
+            productType:
+              id: ACCOUNT
+          id: MX0074040074001015012046323658620230615230026363546
+          financingType:
+            id: FINANCED_MULTI_PURCHASE
+        operationTracking:
+          operationDate: 2024-01-03T04:14:53.661-0600
+          operationNumber: SPOSIC4298493651D043240420240103101453
+        nextInstallmentDate: '2024-03-01'
+        number: wpfQcdFj9wch7Ym1z53BiLqU6PjIFa2D
+        financingLine:
+          number: MX007400219200000101
+          balances:
+          - amounts:
+            - amount: 6906.78
+              currency: MXN
+            id: AVAILABLE_BALANCE
+          - amounts:
+            - amount: 18093.22
+              currency: MXN
+            id: DISPOSED_BALANCE
+          - amounts:
+            - amount: 0
+              currency: MXN
+            id: OVERDUE_BALANCE
+          - amounts:
+            - amount: 25402.71
+              currency: MXN
+            id: TOTAL_DEBT
+          - amounts:
+            - amount: 0
+              currency: MXN
+            id: OVERDUE_BALANCE_WITHOUT_FEE
+          id: MX007400219200000101
+        specificAmounts:
+        - amounts:
+          - amount: 821.8
+            currency: MXN
+          id: MICROLOAN_AMOUNT
+        - amounts:
+          - amount: 68.48
+            currency: MXN
+          id: INSTALLMENT_MONTHLY_AMOUNT
+        - amounts:
+          - amount: 58.33
+            currency: MXN
+          id: INSTALLMENT_MONTHLY_AMOUNT_WITHOUT_FEES
+        - amounts:
+          - amount: 68.52
+            currency: MXN
+          id: LAST_INSTALLMENT
+        - amounts:
+          - amount: 0
+            currency: MXN
+          id: TOTAL_INSTALLMENT_OVERDUE_AMOUNT_WITHOUT_FEES
+        - amounts:
+          - amount: 0
+            currency: MXN
+          id: TOTAL_INSTALLMENT_OVERDUE_AMOUNT
+        - amounts:
+          - amount: 119.13
+            currency: MXN
+          id: PAID_AMOUNT_WITHOUT_FEES
+        - amounts:
+          - amount: 17.82
+            currency: MXN
+          id: MONTH_ADVANCED_1
+        terms:
+          number: 12
+          frequency: MONTHLY
+        maturityDate: '2025-01-01'
+        customBalances:
+        - balanceType: INSTALLMENTS_DETAIL
+          paidInstallments: 1
+          pendingInstallments: 11
+        - balanceType: PAYMENTS_DETAIL
+          paidAmount:
+            amount: 149.58
+            currency: MXN
+          pendingAmount:
+            amount: 672.22
+            currency: MXN
+        id: wpfQcdFj9wch7Ym1z53BiLqU6PjIFa2D11
+        status:
+          id: ACTIVE
+          subStatus:
+            description: The microloan is available to be operated
+            id: AVAILABLE
+      - fees:
+          itemizeFees:
+          - itemizeFeeUnits:
+            - unitType: PERCENTAGE
+              percentage: 0.15
+            - unitType: AMOUNT
+              amount: 121.8
+              currency: MXN
+            calculationDate: '2022-10-28'
+            feeType: MICROLOAN_WITHDRAWAL_FEE
+          - itemizeFeeUnits:
+            - unitType: PERCENTAGE
+              percentage: 0.15
+            - unitType: AMOUNT
+              amount: 105
+              currency: MXN
+            calculationDate: '2022-10-28'
+            feeType: MICROLOAN_WITHDRAWAL_FEE_WITHOUT_VAT
+          - itemizeFeeUnits:
+            - unitType: AMOUNT
+              amount: 26.25
+              currency: MXN
+            calculationDate: '2022-10-28'
+            feeType: PAID_FEES_WITHOUT_VAT
+          - itemizeFeeUnits:
+            - unitType: AMOUNT
+              amount: 10.15
+              currency: MXN
+            calculationDate: '2022-10-28'
+            feeType: INSTALLMENT_MONTHLY_AMOUNT_FEE
+          - itemizeFeeUnits:
+            - unitType: AMOUNT
+              amount: 0
+              currency: MXN
+            calculationDate: '2022-10-28'
+            feeType: TOTAL_INSTALLMENT_OVERDUE_FEE_WITHOUT_VAT
+        numberType:
+          name: Local Internal Code
+          id: LIC
+        rates:
+          itemizeRates:
+          - rateType: CAT
+            itemizeRateUnits:
+            - unitType: PERCENTAGE
+              percentage: 30.12
+            calculationDate: '2022-10-28'
+        taxes:
+          itemizeTaxes:
+          - itemizeTaxUnits:
+            - unitType: PERCENTAGE
+              percentage: 0.16
+            - unitType: AMOUNT
+              amount: 16.8
+              currency: MXN
+            calculationDate: '2022-10-28'
+            taxType: MICROLOAN_WITHDRAWAL_FEE_VAT
+          - itemizeTaxUnits:
+            - unitType: AMOUNT
+              amount: 1.4
+              currency: MXN
+            calculationDate: '2022-10-28'
+            taxType: INSTALLMENT_MONTHLY_AMOUNT_VAT
+          - itemizeTaxUnits:
+            - unitType: AMOUNT
+              amount: 4.2
+              currency: MXN
+            calculationDate: '2022-10-28'
+            taxType: PAID_FEES_VAT
+          - itemizeTaxUnits:
+            - unitType: AMOUNT
+              amount: 0
+              currency: MXN
+            calculationDate: '2022-10-28'
+            taxType: TOTAL_INSTALLMENT_OVERDUE_VAT
+        creationDate: 2022-10-28T12:30:00.000-0500
+        transactions:
+        - transactionType:
+            id: PURCHASE
+          operationDate: 2023-10-20T01:00:00.000-0500
+          specificAmounts:
+          - amounts:
+            - amount: 750
+              currency: MXN
+            id: TOTAL_AMOUNT
+          concept: BBVA_BANCOMER
+          contract:
+            number: '00740680000473454813'
+            id: '00740680000473454800'
+            productType:
+              id: ACCOUNT
+          id: MX0074040074001015012046321490020230615163148485879
+          financingType:
+            id: FINANCED_MULTI_PURCHASE
+        - transactionType:
+            id: PURCHASE
+          operationDate: 2023-10-23T01:00:00.000-0500
+          specificAmounts:
+          - amounts:
+            - amount: 2300
+              currency: MXN
+            id: TOTAL_AMOUNT
+          concept: BBVA_BANCOMER
+          contract:
+            id: '00740680000473454800'
+            productType:
+              id: ACCOUNT
+          id: MX0074040074001015012046323658620230615230026363546
+          financingType:
+            id: FINANCED_MULTI_PURCHASE
+        operationTracking:
+          operationDate: 2024-01-03T04:14:53.661-0600
+          operationNumber: SPOSIC4298493651D043240420240103101453
+        nextInstallmentDate: '2024-03-01'
+        number: wpfQcdFj9wch7Ym1z53BiLqU6PjIFa2D
+        financingLine:
+          number: MX007400219200000101
+          balances:
+          - amounts:
+            - amount: 6906.78
+              currency: MXN
+            id: AVAILABLE_BALANCE
+          - amounts:
+            - amount: 18093.22
+              currency: MXN
+            id: DISPOSED_BALANCE
+          - amounts:
+            - amount: 0
+              currency: MXN
+            id: OVERDUE_BALANCE
+          - amounts:
+            - amount: 25402.71
+              currency: MXN
+            id: TOTAL_DEBT
+          - amounts:
+            - amount: 0
+              currency: MXN
+            id: OVERDUE_BALANCE_WITHOUT_FEE
+          id: MX007400219200000101
+        specificAmounts:
+        - amounts:
+          - amount: 821.8
+            currency: MXN
+          id: MICROLOAN_AMOUNT
+        - amounts:
+          - amount: 68.48
+            currency: MXN
+          id: INSTALLMENT_MONTHLY_AMOUNT
+        - amounts:
+          - amount: 58.33
+            currency: MXN
+          id: INSTALLMENT_MONTHLY_AMOUNT_WITHOUT_FEES
+        - amounts:
+          - amount: 68.52
+            currency: MXN
+          id: LAST_INSTALLMENT
+        - amounts:
+          - amount: 0
+            currency: MXN
+          id: TOTAL_INSTALLMENT_OVERDUE_AMOUNT_WITHOUT_FEES
+        - amounts:
+          - amount: 0
+            currency: MXN
+          id: TOTAL_INSTALLMENT_OVERDUE_AMOUNT
+        - amounts:
+          - amount: 119.13
+            currency: MXN
+          id: PAID_AMOUNT_WITHOUT_FEES
+        - amounts:
+          - amount: 17.82
+            currency: MXN
+          id: MONTH_ADVANCED_1
+        terms:
+          number: 12
+          frequency: MONTHLY
+        maturityDate: '2025-01-01'
+        customBalances:
+        - balanceType: INSTALLMENTS_DETAIL
+          paidInstallments: 1
+          pendingInstallments: 11
+        - balanceType: PAYMENTS_DETAIL
+          paidAmount:
+            amount: 149.58
+            currency: MXN
+          pendingAmount:
+            amount: 672.22
+            currency: MXN
+        id: wpfQcdFj9wch7Ym1z53BiLqU6PjIFa2D12
+        status:
+          id: ACTIVE
+          subStatus:
+            description: The microloan is available to be operated
+            id: AVAILABLE
+      - fees:
+          itemizeFees:
+          - itemizeFeeUnits:
+            - unitType: PERCENTAGE
+              percentage: 0.15
+            - unitType: AMOUNT
+              amount: 121.8
+              currency: MXN
+            calculationDate: '2022-10-28'
+            feeType: MICROLOAN_WITHDRAWAL_FEE
+          - itemizeFeeUnits:
+            - unitType: PERCENTAGE
+              percentage: 0.15
+            - unitType: AMOUNT
+              amount: 105
+              currency: MXN
+            calculationDate: '2022-10-28'
+            feeType: MICROLOAN_WITHDRAWAL_FEE_WITHOUT_VAT
+          - itemizeFeeUnits:
+            - unitType: AMOUNT
+              amount: 26.25
+              currency: MXN
+            calculationDate: '2022-10-28'
+            feeType: PAID_FEES_WITHOUT_VAT
+          - itemizeFeeUnits:
+            - unitType: AMOUNT
+              amount: 10.15
+              currency: MXN
+            calculationDate: '2022-10-28'
+            feeType: INSTALLMENT_MONTHLY_AMOUNT_FEE
+          - itemizeFeeUnits:
+            - unitType: AMOUNT
+              amount: 0
+              currency: MXN
+            calculationDate: '2022-10-28'
+            feeType: TOTAL_INSTALLMENT_OVERDUE_FEE_WITHOUT_VAT
+        numberType:
+          name: Local Internal Code
+          id: LIC
+        rates:
+          itemizeRates:
+          - rateType: CAT
+            itemizeRateUnits:
+            - unitType: PERCENTAGE
+              percentage: 30.12
+            calculationDate: '2022-10-28'
+        taxes:
+          itemizeTaxes:
+          - itemizeTaxUnits:
+            - unitType: PERCENTAGE
+              percentage: 0.16
+            - unitType: AMOUNT
+              amount: 16.8
+              currency: MXN
+            calculationDate: '2022-10-28'
+            taxType: MICROLOAN_WITHDRAWAL_FEE_VAT
+          - itemizeTaxUnits:
+            - unitType: AMOUNT
+              amount: 1.4
+              currency: MXN
+            calculationDate: '2022-10-28'
+            taxType: INSTALLMENT_MONTHLY_AMOUNT_VAT
+          - itemizeTaxUnits:
+            - unitType: AMOUNT
+              amount: 4.2
+              currency: MXN
+            calculationDate: '2022-10-28'
+            taxType: PAID_FEES_VAT
+          - itemizeTaxUnits:
+            - unitType: AMOUNT
+              amount: 0
+              currency: MXN
+            calculationDate: '2022-10-28'
+            taxType: TOTAL_INSTALLMENT_OVERDUE_VAT
+        creationDate: 2022-10-28T12:30:00.000-0500
+        transactions:
+        - transactionType:
+            id: PURCHASE
+          operationDate: 2023-10-20T01:00:00.000-0500
+          specificAmounts:
+          - amounts:
+            - amount: 750
+              currency: MXN
+            id: TOTAL_AMOUNT
+          concept: BBVA_BANCOMER
+          contract:
+            number: '00740680000473454813'
+            id: '00740680000473454800'
+            productType:
+              id: ACCOUNT
+          id: MX0074040074001015012046321490020230615163148485879
+          financingType:
+            id: FINANCED_MULTI_PURCHASE
+        - transactionType:
+            id: PURCHASE
+          operationDate: 2023-10-23T01:00:00.000-0500
+          specificAmounts:
+          - amounts:
+            - amount: 2300
+              currency: MXN
+            id: TOTAL_AMOUNT
+          concept: BBVA_BANCOMER
+          contract:
+            id: '00740680000473454800'
+            productType:
+              id: ACCOUNT
+          id: MX0074040074001015012046323658620230615230026363546
+          financingType:
+            id: FINANCED_MULTI_PURCHASE
+        operationTracking:
+          operationDate: 2024-01-03T04:14:53.661-0600
+          operationNumber: SPOSIC4298493651D043240420240103101453
+        nextInstallmentDate: '2024-03-01'
+        number: wpfQcdFj9wch7Ym1z53BiLqU6PjIFa2D
+        financingLine:
+          number: MX007400219200000101
+          balances:
+          - amounts:
+            - amount: 6906.78
+              currency: MXN
+            id: AVAILABLE_BALANCE
+          - amounts:
+            - amount: 18093.22
+              currency: MXN
+            id: DISPOSED_BALANCE
+          - amounts:
+            - amount: 0
+              currency: MXN
+            id: OVERDUE_BALANCE
+          - amounts:
+            - amount: 25402.71
+              currency: MXN
+            id: TOTAL_DEBT
+          - amounts:
+            - amount: 0
+              currency: MXN
+            id: OVERDUE_BALANCE_WITHOUT_FEE
+          id: MX007400219200000101
+        specificAmounts:
+        - amounts:
+          - amount: 821.8
+            currency: MXN
+          id: MICROLOAN_AMOUNT
+        - amounts:
+          - amount: 68.48
+            currency: MXN
+          id: INSTALLMENT_MONTHLY_AMOUNT
+        - amounts:
+          - amount: 58.33
+            currency: MXN
+          id: INSTALLMENT_MONTHLY_AMOUNT_WITHOUT_FEES
+        - amounts:
+          - amount: 68.52
+            currency: MXN
+          id: LAST_INSTALLMENT
+        - amounts:
+          - amount: 0
+            currency: MXN
+          id: TOTAL_INSTALLMENT_OVERDUE_AMOUNT_WITHOUT_FEES
+        - amounts:
+          - amount: 0
+            currency: MXN
+          id: TOTAL_INSTALLMENT_OVERDUE_AMOUNT
+        - amounts:
+          - amount: 119.13
+            currency: MXN
+          id: PAID_AMOUNT_WITHOUT_FEES
+        - amounts:
+          - amount: 17.82
+            currency: MXN
+          id: MONTH_ADVANCED_1
+        terms:
+          number: 12
+          frequency: MONTHLY
+        maturityDate: '2025-01-01'
+        customBalances:
+        - balanceType: INSTALLMENTS_DETAIL
+          paidInstallments: 1
+          pendingInstallments: 11
+        - balanceType: PAYMENTS_DETAIL
+          paidAmount:
+            amount: 149.58
+            currency: MXN
+          pendingAmount:
+            amount: 672.22
+            currency: MXN
+        id: wpfQcdFj9wch7Ym1z53BiLqU6PjIFa2D13
+        status:
+          id: ACTIVE
+          subStatus:
+            description: The microloan is available to be operated
+            id: AVAILABLE
+      - fees:
+          itemizeFees:
+          - itemizeFeeUnits:
+            - unitType: PERCENTAGE
+              percentage: 0.15
+            - unitType: AMOUNT
+              amount: 121.8
+              currency: MXN
+            calculationDate: '2022-10-28'
+            feeType: MICROLOAN_WITHDRAWAL_FEE
+          - itemizeFeeUnits:
+            - unitType: PERCENTAGE
+              percentage: 0.15
+            - unitType: AMOUNT
+              amount: 105
+              currency: MXN
+            calculationDate: '2022-10-28'
+            feeType: MICROLOAN_WITHDRAWAL_FEE_WITHOUT_VAT
+          - itemizeFeeUnits:
+            - unitType: AMOUNT
+              amount: 26.25
+              currency: MXN
+            calculationDate: '2022-10-28'
+            feeType: PAID_FEES_WITHOUT_VAT
+          - itemizeFeeUnits:
+            - unitType: AMOUNT
+              amount: 10.15
+              currency: MXN
+            calculationDate: '2022-10-28'
+            feeType: INSTALLMENT_MONTHLY_AMOUNT_FEE
+          - itemizeFeeUnits:
+            - unitType: AMOUNT
+              amount: 0
+              currency: MXN
+            calculationDate: '2022-10-28'
+            feeType: TOTAL_INSTALLMENT_OVERDUE_FEE_WITHOUT_VAT
+        numberType:
+          name: Local Internal Code
+          id: LIC
+        rates:
+          itemizeRates:
+          - rateType: CAT
+            itemizeRateUnits:
+            - unitType: PERCENTAGE
+              percentage: 30.12
+            calculationDate: '2022-10-28'
+        taxes:
+          itemizeTaxes:
+          - itemizeTaxUnits:
+            - unitType: PERCENTAGE
+              percentage: 0.16
+            - unitType: AMOUNT
+              amount: 16.8
+              currency: MXN
+            calculationDate: '2022-10-28'
+            taxType: MICROLOAN_WITHDRAWAL_FEE_VAT
+          - itemizeTaxUnits:
+            - unitType: AMOUNT
+              amount: 1.4
+              currency: MXN
+            calculationDate: '2022-10-28'
+            taxType: INSTALLMENT_MONTHLY_AMOUNT_VAT
+          - itemizeTaxUnits:
+            - unitType: AMOUNT
+              amount: 4.2
+              currency: MXN
+            calculationDate: '2022-10-28'
+            taxType: PAID_FEES_VAT
+          - itemizeTaxUnits:
+            - unitType: AMOUNT
+              amount: 0
+              currency: MXN
+            calculationDate: '2022-10-28'
+            taxType: TOTAL_INSTALLMENT_OVERDUE_VAT
+        creationDate: 2022-10-28T12:30:00.000-0500
+        transactions:
+        - transactionType:
+            id: PURCHASE
+          operationDate: 2023-10-20T01:00:00.000-0500
+          specificAmounts:
+          - amounts:
+            - amount: 750
+              currency: MXN
+            id: TOTAL_AMOUNT
+          concept: BBVA_BANCOMER
+          contract:
+            number: '00740680000473454813'
+            id: '00740680000473454800'
+            productType:
+              id: ACCOUNT
+          id: MX0074040074001015012046321490020230615163148485879
+          financingType:
+            id: FINANCED_MULTI_PURCHASE
+        - transactionType:
+            id: PURCHASE
+          operationDate: 2023-10-23T01:00:00.000-0500
+          specificAmounts:
+          - amounts:
+            - amount: 2300
+              currency: MXN
+            id: TOTAL_AMOUNT
+          concept: BBVA_BANCOMER
+          contract:
+            id: '00740680000473454800'
+            productType:
+              id: ACCOUNT
+          id: MX0074040074001015012046323658620230615230026363546
+          financingType:
+            id: FINANCED_MULTI_PURCHASE
+        operationTracking:
+          operationDate: 2024-01-03T04:14:53.661-0600
+          operationNumber: SPOSIC4298493651D043240420240103101453
+        nextInstallmentDate: '2024-03-01'
+        number: wpfQcdFj9wch7Ym1z53BiLqU6PjIFa2DX
+        financingLine:
+          number: MX007400219200000101
+          balances:
+          - amounts:
+            - amount: 6906.78
+              currency: MXN
+            id: AVAILABLE_BALANCE
+          - amounts:
+            - amount: 18093.22
+              currency: MXN
+            id: DISPOSED_BALANCE
+          - amounts:
+            - amount: 0
+              currency: MXN
+            id: OVERDUE_BALANCE
+          - amounts:
+            - amount: 25402.71
+              currency: MXN
+            id: TOTAL_DEBT
+          - amounts:
+            - amount: 0
+              currency: MXN
+            id: OVERDUE_BALANCE_WITHOUT_FEE
+          id: MX007400219200000101
+        specificAmounts:
+        - amounts:
+          - amount: 8.8
+            currency: MXN
+          id: MICROLOAN_AMOUNT
+        - amounts:
+          - amount: 8.48
+            currency: MXN
+          id: INSTALLMENT_MONTHLY_AMOUNT
+        - amounts:
+          - amount: 5.33
+            currency: MXN
+          id: INSTALLMENT_MONTHLY_AMOUNT_WITHOUT_FEES
+        - amounts:
+          - amount: 6.52
+            currency: MXN
+          id: LAST_INSTALLMENT
+        - amounts:
+          - amount: 0
+            currency: MXN
+          id: TOTAL_INSTALLMENT_OVERDUE_AMOUNT_WITHOUT_FEES
+        - amounts:
+          - amount: 0
+            currency: MXN
+          id: TOTAL_INSTALLMENT_OVERDUE_AMOUNT
+        - amounts:
+          - amount: 19.13
+            currency: MXN
+          id: PAID_AMOUNT_WITHOUT_FEES
+        - amounts:
+          - amount: 17.82
+            currency: MXN
+          id: MONTH_ADVANCED_1
+        terms:
+          number: 12
+          frequency: MONTHLY
+        maturityDate: '2025-01-01'
+        customBalances:
+        - balanceType: INSTALLMENTS_DETAIL
+          paidInstallments: 1
+          pendingInstallments: 11
+        - balanceType: PAYMENTS_DETAIL
+          paidAmount:
+            amount: 149.58
+            currency: MXN
+          pendingAmount:
+            amount: 672.22
+            currency: MXN
+        id: wpfQcdFj9wch7Ym1z53BiLqU6PjIFa2DX14
+        status:
+          id: ACTIVE
+          subStatus:
+            description: The microloan is available to be operated
+            id: AVAILABLE
+      - fees:
+          itemizeFees:
+          - itemizeFeeUnits:
+            - unitType: PERCENTAGE
+              percentage: 0.15
+            - unitType: AMOUNT
+              amount: 121.8
+              currency: MXN
+            calculationDate: '2022-10-28'
+            feeType: MICROLOAN_WITHDRAWAL_FEE
+          - itemizeFeeUnits:
+            - unitType: PERCENTAGE
+              percentage: 0.15
+            - unitType: AMOUNT
+              amount: 105
+              currency: MXN
+            calculationDate: '2022-10-28'
+            feeType: MICROLOAN_WITHDRAWAL_FEE_WITHOUT_VAT
+          - itemizeFeeUnits:
+            - unitType: AMOUNT
+              amount: 26.25
+              currency: MXN
+            calculationDate: '2022-10-28'
+            feeType: PAID_FEES_WITHOUT_VAT
+          - itemizeFeeUnits:
+            - unitType: AMOUNT
+              amount: 10.15
+              currency: MXN
+            calculationDate: '2022-10-28'
+            feeType: INSTALLMENT_MONTHLY_AMOUNT_FEE
+          - itemizeFeeUnits:
+            - unitType: AMOUNT
+              amount: 0
+              currency: MXN
+            calculationDate: '2022-10-28'
+            feeType: TOTAL_INSTALLMENT_OVERDUE_FEE_WITHOUT_VAT
+        numberType:
+          name: Local Internal Code
+          id: LIC
+        rates:
+          itemizeRates:
+          - rateType: CAT
+            itemizeRateUnits:
+            - unitType: PERCENTAGE
+              percentage: 30.12
+            calculationDate: '2022-10-28'
+        taxes:
+          itemizeTaxes:
+          - itemizeTaxUnits:
+            - unitType: PERCENTAGE
+              percentage: 0.16
+            - unitType: AMOUNT
+              amount: 16.8
+              currency: MXN
+            calculationDate: '2022-10-28'
+            taxType: MICROLOAN_WITHDRAWAL_FEE_VAT
+          - itemizeTaxUnits:
+            - unitType: AMOUNT
+              amount: 1.4
+              currency: MXN
+            calculationDate: '2022-10-28'
+            taxType: INSTALLMENT_MONTHLY_AMOUNT_VAT
+          - itemizeTaxUnits:
+            - unitType: AMOUNT
+              amount: 4.2
+              currency: MXN
+            calculationDate: '2022-10-28'
+            taxType: PAID_FEES_VAT
+          - itemizeTaxUnits:
+            - unitType: AMOUNT
+              amount: 0
+              currency: MXN
+            calculationDate: '2022-10-28'
+            taxType: TOTAL_INSTALLMENT_OVERDUE_VAT
+        creationDate: 2022-10-28T12:30:00.000-0500
+        transactions:
+        - transactionType:
+            id: PURCHASE
+          operationDate: 2023-10-20T01:00:00.000-0500
+          specificAmounts:
+          - amounts:
+            - amount: 750
+              currency: MXN
+            id: TOTAL_AMOUNT
+          concept: BBVA_BANCOMER
+          contract:
+            number: '00740680000473454813'
+            id: '00740680000473454800'
+            productType:
+              id: ACCOUNT
+          id: MX0074040074001015012046321490020230615163148485879
+          financingType:
+            id: FINANCED_MULTI_PURCHASE
+        - transactionType:
+            id: PURCHASE
+          operationDate: 2023-10-23T01:00:00.000-0500
+          specificAmounts:
+          - amounts:
+            - amount: 2300
+              currency: MXN
+            id: TOTAL_AMOUNT
+          concept: BBVA_BANCOMER
+          contract:
+            id: '00740680000473454800'
+            productType:
+              id: ACCOUNT
+          id: MX0074040074001015012046323658620230615230026363546
+          financingType:
+            id: FINANCED_MULTI_PURCHASE
+        operationTracking:
+          operationDate: 2024-01-03T04:14:53.661-0600
+          operationNumber: SPOSIC4298493651D043240420240103101453
+        nextInstallmentDate: '2024-03-01'
+        number: wpfQcdFj9wch7Ym1z53BiLqU6PjIFa2DX
+        financingLine:
+          number: MX007400219200000101
+          balances:
+          - amounts:
+            - amount: 6906.78
+              currency: MXN
+            id: AVAILABLE_BALANCE
+          - amounts:
+            - amount: 18093.22
+              currency: MXN
+            id: DISPOSED_BALANCE
+          - amounts:
+            - amount: 0
+              currency: MXN
+            id: OVERDUE_BALANCE
+          - amounts:
+            - amount: 25402.71
+              currency: MXN
+            id: TOTAL_DEBT
+          - amounts:
+            - amount: 0
+              currency: MXN
+            id: OVERDUE_BALANCE_WITHOUT_FEE
+          id: MX007400219200000101
+        specificAmounts:
+        - amounts:
+          - amount: 8.8
+            currency: MXN
+          id: MICROLOAN_AMOUNT
+        - amounts:
+          - amount: 8.48
+            currency: MXN
+          id: INSTALLMENT_MONTHLY_AMOUNT
+        - amounts:
+          - amount: 5.33
+            currency: MXN
+          id: INSTALLMENT_MONTHLY_AMOUNT_WITHOUT_FEES
+        - amounts:
+          - amount: 6.52
+            currency: MXN
+          id: LAST_INSTALLMENT
+        - amounts:
+          - amount: 0
+            currency: MXN
+          id: TOTAL_INSTALLMENT_OVERDUE_AMOUNT_WITHOUT_FEES
+        - amounts:
+          - amount: 0
+            currency: MXN
+          id: TOTAL_INSTALLMENT_OVERDUE_AMOUNT
+        - amounts:
+          - amount: 19.13
+            currency: MXN
+          id: PAID_AMOUNT_WITHOUT_FEES
+        - amounts:
+          - amount: 17.82
+            currency: MXN
+          id: MONTH_ADVANCED_1
+        terms:
+          number: 12
+          frequency: MONTHLY
+        maturityDate: '2025-01-01'
+        customBalances:
+        - balanceType: INSTALLMENTS_DETAIL
+          paidInstallments: 1
+          pendingInstallments: 11
+        - balanceType: PAYMENTS_DETAIL
+          paidAmount:
+            amount: 149.58
+            currency: MXN
+          pendingAmount:
+            amount: 672.22
+            currency: MXN
+        id: wpfQcdFj9wch7Ym1z53BiLqU6PjIFa2DX15
+        status:
+          id: ACTIVE
+          subStatus:
+            description: The microloan is available to be operated
+            id: AVAILABLE
+      totalPages: 2
+      pageSize: 15
+      links:
+        next: $(${backend.glomo.protocol}://${backend.glomo.host}:${backend.glomo.port}/SRVS_A02/flexible-financings/v0/microloans?financingLine.id=ASDAS2342345&expand=transactions&paginationKey=wpfQcdFj9wch7Ym1z53BiLqU6PjIFa2DX16)
+        last: $(${backend.glomo.protocol}://${backend.glomo.host}:${backend.glomo.port}/SRVS_A02/flexible-financings/v0/microloans?financingLine.id=ASDAS2342345&expand=transactions&paginationKey=wpfQcdFj9wch7Ym1z53BiLqU6PjIFa2DX16)
+        first: $(${backend.glomo.protocol}://${backend.glomo.host}:${backend.glomo.port}/SRVS_A02/flexible-financings/v0/microloans?financingLine.id=ASDAS2342345&expand=transactions&paginationKey=fQcdFj9wch7Ym1z53BiLqU6PjIFa2D71)
+      page: 0
+      totalElements: 16
+    data:
+    - fees:
+        itemizeFees:
+        - itemizeFeeUnits:
+          - unitType: PERCENTAGE
+            percentage: 0.08
+          - unitType: AMOUNT
+            amount: 0.09
+            currency: MXN
+          calculationDate: '2023-11-07'
+          feeType: MICROLOAN_WITHDRAWAL_FEE
+        - itemizeFeeUnits:
+          - unitType: PERCENTAGE
+            percentage: 0.08
+          - unitType: AMOUNT
+            amount: 0.08
+            currency: MXN
+          calculationDate: '2023-11-07'
+          feeType: MICROLOAN_WITHDRAWAL_FEE_WITHOUT_VAT
+        - itemizeFeeUnits:
+          - unitType: AMOUNT
+            amount: 0
+            currency: MXN
+          calculationDate: '2023-11-07'
+          feeType: PAID_FEES_WITHOUT_VAT
+        - itemizeFeeUnits:
+          - unitType: AMOUNT
+            amount: 0.02
+            currency: MXN
+          calculationDate: '2023-11-07'
+          feeType: INSTALLMENT_MONTHLY_AMOUNT_FEE
+        - itemizeFeeUnits:
+          - unitType: AMOUNT
+            amount: 0
+            currency: MXN
+          calculationDate: '2023-11-07'
+          feeType: TOTAL_INSTALLMENT_OVERDUE_FEE_WITHOUT_VAT
+      numberType:
+        name: Local Internal Code
+        id: LIC
+      rates:
+        itemizeRates:
+        - rateType: CAT
+          itemizeRateUnits:
+          - unitType: PERCENTAGE
+            percentage: 0
+          calculationDate: '2023-11-07'
+      taxes:
+        itemizeTaxes:
+        - itemizeTaxUnits:
+          - unitType: PERCENTAGE
+            percentage: 0.16
+          - unitType: AMOUNT
+            amount: 0.01
+            currency: MXN
+          calculationDate: '2023-11-07'
+          taxType: MICROLOAN_WITHDRAWAL_FEE_VAT
+        - itemizeTaxUnits:
+          - unitType: AMOUNT
+            amount: 0
+            currency: MXN
+          calculationDate: '2023-11-07'
+          taxType: INSTALLMENT_MONTHLY_AMOUNT_VAT
+        - itemizeTaxUnits:
+          - unitType: AMOUNT
+            amount: 0
+            currency: MXN
+          calculationDate: '2023-11-07'
+          taxType: PAID_FEES_VAT
+        - itemizeTaxUnits:
+          - unitType: AMOUNT
+            amount: 0
+            currency: MXN
+          calculationDate: '2023-11-07'
+          taxType: TOTAL_INSTALLMENT_OVERDUE_VAT
+      creationDate: 2023-11-07T16:24:00.000-0600
+      operationTracking:
+        operationDate: 2023-11-07T10:40:52.063-0600
+        operationNumber: 9396852062D0432336
+      nextInstallmentDate: '2023-12-01'
+      number: fQcdFj9wch7Ym1z53BiLqU6PjIFa2D71
+      financingLine:
+        number: MX007400219200000101
+        balances:
+        - amounts:
+          - amount: 6906.78
+            currency: MXN
+          id: AVAILABLE_BALANCE
+        - amounts:
+          - amount: 18093.22
+            currency: MXN
+          id: DISPOSED_BALANCE
+        - amounts:
+          - amount: 0
+            currency: MXN
+          id: OVERDUE_BALANCE
+        - amounts:
+          - amount: 25402.71
+            currency: MXN
+          id: TOTAL_DEBT
+        - amounts:
+          - amount: 0
+            currency: MXN
+          id: OVERDUE_BALANCE_WITHOUT_FEE
+        id: MX007400219200000101
+      specificAmounts:
+      - amounts:
+        - amount: 1200
+          currency: MXN
+        id: MICROLOAN_AMOUNT
+      - amounts:
+        - amount: 400
+          currency: MXN
+        id: INSTALLMENT_MONTHLY_AMOUNT
+      - amounts:
+        - amount: 0.33
+          currency: MXN
+        id: INSTALLMENT_MONTHLY_AMOUNT_WITHOUT_FEES
+      - amounts:
+        - amount: 0.39
+          currency: MXN
+        id: LAST_INSTALLMENT
+      - amounts:
+        - amount: 0
+          currency: MXN
+        id: TOTAL_INSTALLMENT_OVERDUE_AMOUNT_WITHOUT_FEES
+      - amounts:
+        - amount: 0
+          currency: MXN
+        id: TOTAL_INSTALLMENT_OVERDUE_AMOUNT
+      - amounts:
+        - amount: 0
+          currency: MXN
+        id: PAID_AMOUNT_WITHOUT_FEES
+      - amounts:
+        - amount: 0.39
+          currency: MXN
+        id: MONTH_ADVANCED_1
+      terms:
+        number: 3
+        frequency: MONTHLY
+      maturityDate: '2024-02-01'
+      customBalances:
+      - balanceType: INSTALLMENTS_DETAIL
+        paidInstallments: 2
+        pendingInstallments: 3
+      - balanceType: PAYMENTS_DETAIL
+        paidAmount:
+          amount: 800
+          currency: MXN
+        pendingAmount:
+          amount: 400
+          currency: MXN
+      id: fQcdFj9wch7Ym1z53BiLqU6PjIFa2D71
+      status:
+        id: ACTIVE
+        subStatus:
+          description: The microloan is available to be operated
+          id: AVAILABLE
+    - fees:
+        itemizeFees:
+        - itemizeFeeUnits:
+          - unitType: PERCENTAGE
+            percentage: 0.08
+          - unitType: AMOUNT
+            amount: 224.12
+            currency: MXN
+          calculationDate: '2023-11-07'
+          feeType: MICROLOAN_WITHDRAWAL_FEE
+        - itemizeFeeUnits:
+          - unitType: PERCENTAGE
+            percentage: 0.08
+          - unitType: AMOUNT
+            amount: 193.21
+            currency: MXN
+          calculationDate: '2023-11-07'
+          feeType: MICROLOAN_WITHDRAWAL_FEE_WITHOUT_VAT
+        - itemizeFeeUnits:
+          - unitType: AMOUNT
+            amount: 0
+            currency: MXN
+          calculationDate: '2023-11-07'
+          feeType: PAID_FEES_WITHOUT_VAT
+        - itemizeFeeUnits:
+          - unitType: AMOUNT
+            amount: 74.7
+            currency: MXN
+          calculationDate: '2023-11-07'
+          feeType: INSTALLMENT_MONTHLY_AMOUNT_FEE
+        - itemizeFeeUnits:
+          - unitType: AMOUNT
+            amount: 0
+            currency: MXN
+          calculationDate: '2023-11-07'
+          feeType: TOTAL_INSTALLMENT_OVERDUE_FEE_WITHOUT_VAT
+      numberType:
+        name: Local Internal Code
+        id: LIC
+      rates:
+        itemizeRates:
+        - rateType: CAT
+          itemizeRateUnits:
+          - unitType: PERCENTAGE
+            percentage: 70.99
+          calculationDate: '2023-11-07'
+      taxes:
+        itemizeTaxes:
+        - itemizeTaxUnits:
+          - unitType: PERCENTAGE
+            percentage: 0.16
+          - unitType: AMOUNT
+            amount: 30.91
+            currency: MXN
+          calculationDate: '2023-11-07'
+          taxType: MICROLOAN_WITHDRAWAL_FEE_VAT
+        - itemizeTaxUnits:
+          - unitType: AMOUNT
+            amount: 10.3
+            currency: MXN
+          calculationDate: '2023-11-07'
+          taxType: INSTALLMENT_MONTHLY_AMOUNT_VAT
+        - itemizeTaxUnits:
+          - unitType: AMOUNT
+            amount: 0
+            currency: MXN
+          calculationDate: '2023-11-07'
+          taxType: PAID_FEES_VAT
+        - itemizeTaxUnits:
+          - unitType: AMOUNT
+            amount: 0
+            currency: MXN
+          calculationDate: '2023-11-07'
+          taxType: TOTAL_INSTALLMENT_OVERDUE_VAT
+      creationDate: 2023-11-07T10:02:00.000-0600
+      operationTracking:
+        operationDate: 2023-11-07T11:54:33.152-0600
+        operationNumber: 9401273149D0432336
+      nextInstallmentDate: '2023-12-01'
+      number: fQcdFj9wch7Ym1z53BiLqU6PjIFa2D2
+      financingLine:
+        number: MX007400219200000101
+        balances:
+        - amounts:
+          - amount: 6906.78
+            currency: MXN
+          id: AVAILABLE_BALANCE
+        - amounts:
+          - amount: 18093.22
+            currency: MXN
+          id: DISPOSED_BALANCE
+        - amounts:
+          - amount: 0
+            currency: MXN
+          id: OVERDUE_BALANCE
+        - amounts:
+          - amount: 25402.71
+            currency: MXN
+          id: TOTAL_DEBT
+        - amounts:
+          - amount: 0
+            currency: MXN
+          id: OVERDUE_BALANCE_WITHOUT_FEE
+        id: MX007400219200000101
+      specificAmounts:
+      - amounts:
+        - amount: 1200
+          currency: MXN
+        id: MICROLOAN_AMOUNT
+      - amounts:
+        - amount: 400
+          currency: MXN
+        id: INSTALLMENT_MONTHLY_AMOUNT
+      - amounts:
+        - amount: 805.03
+          currency: MXN
+        id: INSTALLMENT_MONTHLY_AMOUNT_WITHOUT_FEES
+      - amounts:
+        - amount: 879.74
+          currency: MXN
+        id: LAST_INSTALLMENT
+      - amounts:
+        - amount: 0
+          currency: MXN
+        id: TOTAL_INSTALLMENT_OVERDUE_AMOUNT_WITHOUT_FEES
+      - amounts:
+        - amount: 0
+          currency: MXN
+        id: TOTAL_INSTALLMENT_OVERDUE_AMOUNT
+      - amounts:
+        - amount: 0
+          currency: MXN
+        id: PAID_AMOUNT_WITHOUT_FEES
+      - amounts:
+        - amount: 879.74
+          currency: MXN
+        id: MONTH_ADVANCED_1
+      terms:
+        number: 3
+        frequency: MONTHLY
+      maturityDate: '2024-02-01'
+      customBalances:
+      - balanceType: INSTALLMENTS_DETAIL
+        paidInstallments: 3
+        pendingInstallments: 3
+      - balanceType: PAYMENTS_DETAIL
+        paidAmount:
+          amount: 1200
+          currency: MXN
+        pendingAmount:
+          amount: 0
+          currency: MXN
+      id: fQcdFj9wch7Ym1z53BiLqU6PjIFa2D2
+      status:
+        id: SETTLED
+        subStatus:
+          description: The microloan is available to be operated
+          id: AVAILABLE
+    - fees:
+        itemizeFees:
+        - itemizeFeeUnits:
+          - unitType: PERCENTAGE
+            percentage: 0.08
+          - unitType: AMOUNT
+            amount: 0.09
+            currency: MXN
+          calculationDate: '2023-11-07'
+          feeType: MICROLOAN_WITHDRAWAL_FEE
+        - itemizeFeeUnits:
+          - unitType: PERCENTAGE
+            percentage: 0.08
+          - unitType: AMOUNT
+            amount: 0.08
+            currency: MXN
+          calculationDate: '2023-11-07'
+          feeType: MICROLOAN_WITHDRAWAL_FEE_WITHOUT_VAT
+        - itemizeFeeUnits:
+          - unitType: AMOUNT
+            amount: 0
+            currency: MXN
+          calculationDate: '2023-11-07'
+          feeType: PAID_FEES_WITHOUT_VAT
+        - itemizeFeeUnits:
+          - unitType: AMOUNT
+            amount: 0.02
+            currency: MXN
+          calculationDate: '2023-11-07'
+          feeType: INSTALLMENT_MONTHLY_AMOUNT_FEE
+        - itemizeFeeUnits:
+          - unitType: AMOUNT
+            amount: 0
+            currency: MXN
+          calculationDate: '2023-11-07'
+          feeType: TOTAL_INSTALLMENT_OVERDUE_FEE_WITHOUT_VAT
+      numberType:
+        name: Local Internal Code
+        id: LIC
+      rates:
+        itemizeRates:
+        - rateType: CAT
+          itemizeRateUnits:
+          - unitType: PERCENTAGE
+            percentage: 0
+          calculationDate: '2023-11-07'
+      taxes:
+        itemizeTaxes:
+        - itemizeTaxUnits:
+          - unitType: PERCENTAGE
+            percentage: 0.16
+          - unitType: AMOUNT
+            amount: 0.01
+            currency: MXN
+          calculationDate: '2023-11-07'
+          taxType: MICROLOAN_WITHDRAWAL_FEE_VAT
+        - itemizeTaxUnits:
+          - unitType: AMOUNT
+            amount: 0
+            currency: MXN
+          calculationDate: '2023-11-07'
+          taxType: INSTALLMENT_MONTHLY_AMOUNT_VAT
+        - itemizeTaxUnits:
+          - unitType: AMOUNT
+            amount: 0
+            currency: MXN
+          calculationDate: '2023-11-07'
+          taxType: PAID_FEES_VAT
+        - itemizeTaxUnits:
+          - unitType: AMOUNT
+            amount: 0
+            currency: MXN
+          calculationDate: '2023-11-07'
+          taxType: TOTAL_INSTALLMENT_OVERDUE_VAT
+      creationDate: 2023-11-07T16:24:00.000-0600
+      transactions:
+      - transactionType:
+          id: PURCHASE
+        operationDate: 2023-10-21T01:00:00.000-0500
+        specificAmounts:
+        - amounts:
+          - amount: 1560
+            currency: MXN
+          id: TOTAL_AMOUNT
+        concept: BBVA_BANCOMER
+        contract:
+          number: '00740680000473454899'
+          id: '00740680000473454800'
+          productType:
+            id: ACCOUNT
+        id: MX0074040074001015012046321489920230615230217357429
+        financingType:
+          id: FINANCED_SINGLE_PURCHASE
+      operationTracking:
+        operationDate: 2023-11-07T10:40:52.063-0600
+        operationNumber: 9396852062D0432336
+      nextInstallmentDate: '2023-12-01'
+      number: o-fQcdFj9wch7Ym1z53BiLqU6PjIFa2D3
+      financingLine:
+        number: MX007400219200000101
+        balances:
+        - amounts:
+          - amount: 6906.78
+            currency: MXN
+          id: AVAILABLE_BALANCE
+        - amounts:
+          - amount: 18093.22
+            currency: MXN
+          id: DISPOSED_BALANCE
+        - amounts:
+          - amount: 0
+            currency: MXN
+          id: OVERDUE_BALANCE
+        - amounts:
+          - amount: 25402.71
+            currency: MXN
+          id: TOTAL_DEBT
+        - amounts:
+          - amount: 0
+            currency: MXN
+          id: OVERDUE_BALANCE_WITHOUT_FEE
+        id: MX007400219200000101
+      specificAmounts:
+      - amounts:
+        - amount: 1200
+          currency: MXN
+        id: MICROLOAN_AMOUNT
+      - amounts:
+        - amount: 400
+          currency: MXN
+        id: INSTALLMENT_MONTHLY_AMOUNT
+      - amounts:
+        - amount: 0.33
+          currency: MXN
+        id: INSTALLMENT_MONTHLY_AMOUNT_WITHOUT_FEES
+      - amounts:
+        - amount: 0.39
+          currency: MXN
+        id: LAST_INSTALLMENT
+      - amounts:
+        - amount: 0
+          currency: MXN
+        id: TOTAL_INSTALLMENT_OVERDUE_AMOUNT_WITHOUT_FEES
+      - amounts:
+        - amount: 0
+          currency: MXN
+        id: TOTAL_INSTALLMENT_OVERDUE_AMOUNT
+      - amounts:
+        - amount: 0
+          currency: MXN
+        id: PAID_AMOUNT_WITHOUT_FEES
+      - amounts:
+        - amount: 0.39
+          currency: MXN
+        id: MONTH_ADVANCED_1
+      terms:
+        number: 3
+        frequency: MONTHLY
+      maturityDate: '2024-02-01'
+      customBalances:
+      - balanceType: INSTALLMENTS_DETAIL
+        paidInstallments: 2
+        pendingInstallments: 3
+      - balanceType: PAYMENTS_DETAIL
+        paidAmount:
+          amount: 800
+          currency: MXN
+        pendingAmount:
+          amount: 400
+          currency: MXN
+      id: o-fQcdFj9wch7Ym1z53BiLqU6PjIFa2D3
+      status:
+        id: ACTIVE
+        subStatus:
+          description: The microloan is available to be operated
+          id: AVAILABLE
+    - fees:
+        itemizeFees:
+        - itemizeFeeUnits:
+          - unitType: PERCENTAGE
+            percentage: 0.08
+          - unitType: AMOUNT
+            amount: 224.12
+            currency: MXN
+          calculationDate: '2023-11-07'
+          feeType: MICROLOAN_WITHDRAWAL_FEE
+        - itemizeFeeUnits:
+          - unitType: PERCENTAGE
+            percentage: 0.08
+          - unitType: AMOUNT
+            amount: 193.21
+            currency: MXN
+          calculationDate: '2023-11-07'
+          feeType: MICROLOAN_WITHDRAWAL_FEE_WITHOUT_VAT
+        - itemizeFeeUnits:
+          - unitType: AMOUNT
+            amount: 0
+            currency: MXN
+          calculationDate: '2023-11-07'
+          feeType: PAID_FEES_WITHOUT_VAT
+        - itemizeFeeUnits:
+          - unitType: AMOUNT
+            amount: 74.7
+            currency: MXN
+          calculationDate: '2023-11-07'
+          feeType: INSTALLMENT_MONTHLY_AMOUNT_FEE
+        - itemizeFeeUnits:
+          - unitType: AMOUNT
+            amount: 0
+            currency: MXN
+          calculationDate: '2023-11-07'
+          feeType: TOTAL_INSTALLMENT_OVERDUE_FEE_WITHOUT_VAT
+      numberType:
+        name: Local Internal Code
+        id: LIC
+      rates:
+        itemizeRates:
+        - rateType: CAT
+          itemizeRateUnits:
+          - unitType: PERCENTAGE
+            percentage: 70.99
+          calculationDate: '2023-11-07'
+      taxes:
+        itemizeTaxes:
+        - itemizeTaxUnits:
+          - unitType: PERCENTAGE
+            percentage: 0.16
+          - unitType: AMOUNT
+            amount: 30.91
+            currency: MXN
+          calculationDate: '2023-11-07'
+          taxType: MICROLOAN_WITHDRAWAL_FEE_VAT
+        - itemizeTaxUnits:
+          - unitType: AMOUNT
+            amount: 10.3
+            currency: MXN
+          calculationDate: '2023-11-07'
+          taxType: INSTALLMENT_MONTHLY_AMOUNT_VAT
+        - itemizeTaxUnits:
+          - unitType: AMOUNT
+            amount: 0
+            currency: MXN
+          calculationDate: '2023-11-07'
+          taxType: PAID_FEES_VAT
+        - itemizeTaxUnits:
+          - unitType: AMOUNT
+            amount: 0
+            currency: MXN
+          calculationDate: '2023-11-07'
+          taxType: TOTAL_INSTALLMENT_OVERDUE_VAT
+      creationDate: 2023-11-07T10:02:00.000-0600
+      transactions:
+      - transactionType:
+          id: PURCHASE
+        operationDate: 2023-06-15T01:00:00.000-0500
+        specificAmounts:
+        - amounts:
+          - amount: 1560
+            currency: MXN
+          id: TOTAL_AMOUNT
+        concept: BBVA_BANCOMER
+        contract:
+          number: '00740680000473454801'
+          id: '00740680000473454800'
+          productType:
+            id: ACCOUNT
+        id: MX0074040074001015012059051489920230615230217357429
+        financingType:
+          id: FINANCED_MULTI_PURCHASE
+      - transactionType:
+          id: PURCHASE
+        operationDate: 2023-06-15T01:00:00.000-0500
+        specificAmounts:
+        - amounts:
+          - amount: 650
+            currency: MXN
+          id: TOTAL_AMOUNT
+        concept: BBVA_BANCOMER
+        contract:
+          id: '00740680000473454800'
+          productType:
+            id: ACCOUNT
+        id: MX0074040074001015012059051490020230615163148485879
+        financingType:
+          id: FINANCED_MULTI_PURCHASE
+      operationTracking:
+        operationDate: 2023-11-07T11:54:33.152-0600
+        operationNumber: 9401273149D0432336
+      nextInstallmentDate: '2023-12-01'
+      number: fQcdFj9wch7Ym1z53BiLqU6PjIFa2D4
+      financingLine:
+        number: MX007400219200000101
+        balances:
+        - amounts:
+          - amount: 6906.78
+            currency: MXN
+          id: AVAILABLE_BALANCE
+        - amounts:
+          - amount: 18093.22
+            currency: MXN
+          id: DISPOSED_BALANCE
+        - amounts:
+          - amount: 0
+            currency: MXN
+          id: OVERDUE_BALANCE
+        - amounts:
+          - amount: 25402.71
+            currency: MXN
+          id: TOTAL_DEBT
+        - amounts:
+          - amount: 0
+            currency: MXN
+          id: OVERDUE_BALANCE_WITHOUT_FEE
+        id: MX007400219200000101
+      specificAmounts:
+      - amounts:
+        - amount: 1200
+          currency: MXN
+        id: MICROLOAN_AMOUNT
+      - amounts:
+        - amount: 400
+          currency: MXN
+        id: INSTALLMENT_MONTHLY_AMOUNT
+      - amounts:
+        - amount: 805.03
+          currency: MXN
+        id: INSTALLMENT_MONTHLY_AMOUNT_WITHOUT_FEES
+      - amounts:
+        - amount: 879.74
+          currency: MXN
+        id: LAST_INSTALLMENT
+      - amounts:
+        - amount: 0
+          currency: MXN
+        id: TOTAL_INSTALLMENT_OVERDUE_AMOUNT_WITHOUT_FEES
+      - amounts:
+        - amount: 0
+          currency: MXN
+        id: TOTAL_INSTALLMENT_OVERDUE_AMOUNT
+      - amounts:
+        - amount: 0
+          currency: MXN
+        id: PAID_AMOUNT_WITHOUT_FEES
+      - amounts:
+        - amount: 879.74
+          currency: MXN
+        id: MONTH_ADVANCED_1
+      terms:
+        number: 3
+        frequency: MONTHLY
+      maturityDate: '2024-02-01'
+      customBalances:
+      - balanceType: INSTALLMENTS_DETAIL
+        paidInstallments: 3
+        pendingInstallments: 0
+      - balanceType: PAYMENTS_DETAIL
+        paidAmount:
+          amount: 1200
+          currency: MXN
+        pendingAmount:
+          amount: 0
+          currency: MXN
+      id: fQcdFj9wch7Ym1z53BiLqU6PjIFa2D4
+      status:
+        id: SETTLED
+        subStatus:
+          description: The microloan is available to be operated
+          id: AVAILABLE
+    - fees:
+        itemizeFees:
+        - itemizeFeeUnits:
+          - unitType: PERCENTAGE
+            percentage: 0.08
+          - unitType: AMOUNT
+            amount: 0.09
+            currency: MXN
+          calculationDate: '2023-11-07'
+          feeType: MICROLOAN_WITHDRAWAL_FEE
+        - itemizeFeeUnits:
+          - unitType: PERCENTAGE
+            percentage: 0.08
+          - unitType: AMOUNT
+            amount: 0.08
+            currency: MXN
+          calculationDate: '2023-11-07'
+          feeType: MICROLOAN_WITHDRAWAL_FEE_WITHOUT_VAT
+        - itemizeFeeUnits:
+          - unitType: AMOUNT
+            amount: 0
+            currency: MXN
+          calculationDate: '2023-11-07'
+          feeType: PAID_FEES_WITHOUT_VAT
+        - itemizeFeeUnits:
+          - unitType: AMOUNT
+            amount: 0.02
+            currency: MXN
+          calculationDate: '2023-11-07'
+          feeType: INSTALLMENT_MONTHLY_AMOUNT_FEE
+        - itemizeFeeUnits:
+          - unitType: AMOUNT
+            amount: 0
+            currency: MXN
+          calculationDate: '2023-11-07'
+          feeType: TOTAL_INSTALLMENT_OVERDUE_FEE_WITHOUT_VAT
+      numberType:
+        name: Local Internal Code
+        id: LIC
+      rates:
+        itemizeRates:
+        - rateType: CAT
+          itemizeRateUnits:
+          - unitType: PERCENTAGE
+            percentage: 0
+          calculationDate: '2023-11-07'
+      taxes:
+        itemizeTaxes:
+        - itemizeTaxUnits:
+          - unitType: PERCENTAGE
+            percentage: 0.16
+          - unitType: AMOUNT
+            amount: 0.01
+            currency: MXN
+          calculationDate: '2023-11-07'
+          taxType: MICROLOAN_WITHDRAWAL_FEE_VAT
+        - itemizeTaxUnits:
+          - unitType: AMOUNT
+            amount: 0
+            currency: MXN
+          calculationDate: '2023-11-07'
+          taxType: INSTALLMENT_MONTHLY_AMOUNT_VAT
+        - itemizeTaxUnits:
+          - unitType: AMOUNT
+            amount: 0
+            currency: MXN
+          calculationDate: '2023-11-07'
+          taxType: PAID_FEES_VAT
+        - itemizeTaxUnits:
+          - unitType: AMOUNT
+            amount: 0
+            currency: MXN
+          calculationDate: '2023-11-07'
+          taxType: TOTAL_INSTALLMENT_OVERDUE_VAT
+      creationDate: 2023-11-07T16:24:00.000-0600
+      transactions:
+      - transactionType:
+          id: PURCHASE
+        operationDate: 2023-10-21T01:00:00.000-0500
+        specificAmounts:
+        - amounts:
+          - amount: 1560
+            currency: MXN
+          id: TOTAL_AMOUNT
+        concept: BBVA_BANCOMER
+        contract:
+          number: '00740680000473454802'
+          id: '00740680000473454800'
+          productType:
+            id: ACCOUNT
+        id: MX0074040074001015012046321489920230615230217357429
+        financingType:
+          id: FINANCED_SINGLE_PURCHASE
+      operationTracking:
+        operationDate: 2023-11-07T10:40:52.063-0600
+        operationNumber: 9396852062D0432336
+      nextInstallmentDate: '2023-12-01'
+      number: o-fQcdFj9wch7Ym1z53BiLqU6PjIFa2D5
+      financingLine:
+        number: MX007400219200000101
+        balances:
+        - amounts:
+          - amount: 6906.78
+            currency: MXN
+          id: AVAILABLE_BALANCE
+        - amounts:
+          - amount: 18093.22
+            currency: MXN
+          id: DISPOSED_BALANCE
+        - amounts:
+          - amount: 0
+            currency: MXN
+          id: OVERDUE_BALANCE
+        - amounts:
+          - amount: 25402.71
+            currency: MXN
+          id: TOTAL_DEBT
+        - amounts:
+          - amount: 0
+            currency: MXN
+          id: OVERDUE_BALANCE_WITHOUT_FEE
+        id: MX007400219200000101
+      specificAmounts:
+      - amounts:
+        - amount: 1200
+          currency: MXN
+        id: MICROLOAN_AMOUNT
+      - amounts:
+        - amount: 400
+          currency: MXN
+        id: INSTALLMENT_MONTHLY_AMOUNT
+      - amounts:
+        - amount: 0.33
+          currency: MXN
+        id: INSTALLMENT_MONTHLY_AMOUNT_WITHOUT_FEES
+      - amounts:
+        - amount: 0.39
+          currency: MXN
+        id: LAST_INSTALLMENT
+      - amounts:
+        - amount: 0
+          currency: MXN
+        id: TOTAL_INSTALLMENT_OVERDUE_AMOUNT_WITHOUT_FEES
+      - amounts:
+        - amount: 0
+          currency: MXN
+        id: TOTAL_INSTALLMENT_OVERDUE_AMOUNT
+      - amounts:
+        - amount: 0
+          currency: MXN
+        id: PAID_AMOUNT_WITHOUT_FEES
+      - amounts:
+        - amount: 0.39
+          currency: MXN
+        id: MONTH_ADVANCED_1
+      terms:
+        number: 3
+        frequency: MONTHLY
+      maturityDate: '2024-02-01'
+      customBalances:
+      - balanceType: INSTALLMENTS_DETAIL
+        paidInstallments: 2
+        pendingInstallments: 1
+      - balanceType: PAYMENTS_DETAIL
+        paidAmount:
+          amount: 800
+          currency: MXN
+        pendingAmount:
+          amount: 400
+          currency: MXN
+      id: o-fQcdFj9wch7Ym1z53BiLqU6PjIFa2D5
+      status:
+        id: ACTIVE
+        subStatus:
+          description: The microloan is available to be operated
+          id: AVAILABLE
+    - fees:
+        itemizeFees:
+        - itemizeFeeUnits:
+          - unitType: PERCENTAGE
+            percentage: 0.08
+          - unitType: AMOUNT
+            amount: 224.12
+            currency: MXN
+          calculationDate: '2023-11-07'
+          feeType: MICROLOAN_WITHDRAWAL_FEE
+        - itemizeFeeUnits:
+          - unitType: PERCENTAGE
+            percentage: 0.08
+          - unitType: AMOUNT
+            amount: 193.21
+            currency: MXN
+          calculationDate: '2023-11-07'
+          feeType: MICROLOAN_WITHDRAWAL_FEE_WITHOUT_VAT
+        - itemizeFeeUnits:
+          - unitType: AMOUNT
+            amount: 0
+            currency: MXN
+          calculationDate: '2023-11-07'
+          feeType: PAID_FEES_WITHOUT_VAT
+        - itemizeFeeUnits:
+          - unitType: AMOUNT
+            amount: 74.7
+            currency: MXN
+          calculationDate: '2023-11-07'
+          feeType: INSTALLMENT_MONTHLY_AMOUNT_FEE
+        - itemizeFeeUnits:
+          - unitType: AMOUNT
+            amount: 0
+            currency: MXN
+          calculationDate: '2023-11-07'
+          feeType: TOTAL_INSTALLMENT_OVERDUE_FEE_WITHOUT_VAT
+      numberType:
+        name: Local Internal Code
+        id: LIC
+      rates:
+        itemizeRates:
+        - rateType: CAT
+          itemizeRateUnits:
+          - unitType: PERCENTAGE
+            percentage: 70.99
+          calculationDate: '2023-11-07'
+      taxes:
+        itemizeTaxes:
+        - itemizeTaxUnits:
+          - unitType: PERCENTAGE
+            percentage: 0.16
+          - unitType: AMOUNT
+            amount: 30.91
+            currency: MXN
+          calculationDate: '2023-11-07'
+          taxType: MICROLOAN_WITHDRAWAL_FEE_VAT
+        - itemizeTaxUnits:
+          - unitType: AMOUNT
+            amount: 10.3
+            currency: MXN
+          calculationDate: '2023-11-07'
+          taxType: INSTALLMENT_MONTHLY_AMOUNT_VAT
+        - itemizeTaxUnits:
+          - unitType: AMOUNT
+            amount: 0
+            currency: MXN
+          calculationDate: '2023-11-07'
+          taxType: PAID_FEES_VAT
+        - itemizeTaxUnits:
+          - unitType: AMOUNT
+            amount: 0
+            currency: MXN
+          calculationDate: '2023-11-07'
+          taxType: TOTAL_INSTALLMENT_OVERDUE_VAT
+      creationDate: 2023-11-07T10:02:00.000-0600
+      transactions:
+      - transactionType:
+          id: PURCHASE
+        operationDate: 2023-06-15T01:00:00.000-0500
+        specificAmounts:
+        - amounts:
+          - amount: 1560
+            currency: MXN
+          id: TOTAL_AMOUNT
+        concept: BBVA_BANCOMER
+        contract:
+          number: '00740680000473454803'
+          id: '00740680000473454800'
+          productType:
+            id: ACCOUNT
+        id: MX0074040074001015012059051489920230615230217357429
+        financingType:
+          id: FINANCED_MULTI_PURCHASE
+      - transactionType:
+          id: PURCHASE
+        operationDate: 2023-06-15T01:00:00.000-0500
+        specificAmounts:
+        - amounts:
+          - amount: 650
+            currency: MXN
+          id: TOTAL_AMOUNT
+        concept: BBVA_BANCOMER
+        contract:
+          id: '00740680000473454800'
+          productType:
+            id: ACCOUNT
+        id: MX0074040074001015012059051490020230615163148485879
+        financingType:
+          id: FINANCED_MULTI_PURCHASE
+      operationTracking:
+        operationDate: 2023-11-07T11:54:33.152-0600
+        operationNumber: 9401273149D0432336
+      nextInstallmentDate: '2023-12-01'
+      number: _xQGqc6apkAtZcMrYtgntu6SJNhtCs_Q
+      financingLine:
+        number: MX007400219200000101
+        balances:
+        - amounts:
+          - amount: 6906.78
+            currency: MXN
+          id: AVAILABLE_BALANCE
+        - amounts:
+          - amount: 18093.22
+            currency: MXN
+          id: DISPOSED_BALANCE
+        - amounts:
+          - amount: 0
+            currency: MXN
+          id: OVERDUE_BALANCE
+        - amounts:
+          - amount: 25402.71
+            currency: MXN
+          id: TOTAL_DEBT
+        - amounts:
+          - amount: 0
+            currency: MXN
+          id: OVERDUE_BALANCE_WITHOUT_FEE
+        id: MX007400219200000101
+      specificAmounts:
+      - amounts:
+        - amount: 2639.2
+          currency: MXN
+        id: MICROLOAN_AMOUNT
+      - amounts:
+        - amount: 879.73
+          currency: MXN
+        id: INSTALLMENT_MONTHLY_AMOUNT
+      - amounts:
+        - amount: 805.03
+          currency: MXN
+        id: INSTALLMENT_MONTHLY_AMOUNT_WITHOUT_FEES
+      - amounts:
+        - amount: 879.74
+          currency: MXN
+        id: LAST_INSTALLMENT
+      - amounts:
+        - amount: 0
+          currency: MXN
+        id: TOTAL_INSTALLMENT_OVERDUE_AMOUNT_WITHOUT_FEES
+      - amounts:
+        - amount: 0
+          currency: MXN
+        id: TOTAL_INSTALLMENT_OVERDUE_AMOUNT
+      - amounts:
+        - amount: 0
+          currency: MXN
+        id: PAID_AMOUNT_WITHOUT_FEES
+      - amounts:
+        - amount: 879.74
+          currency: MXN
+        id: MONTH_ADVANCED_1
+      terms:
+        number: 3
+        frequency: MONTHLY
+      maturityDate: '2024-02-01'
+      customBalances:
+      - balanceType: INSTALLMENTS_DETAIL
+        paidInstallments: 0
+        pendingInstallments: 3
+      - balanceType: PAYMENTS_DETAIL
+        paidAmount:
+          amount: 0
+          currency: MXN
+        pendingAmount:
+          amount: 2639.2
+          currency: MXN
+      id: fQcdFj9wch7Ym1z53BiLqU6PjIFa2D7
+      status:
+        id: ACTIVE
+        subStatus:
+          description: The microloan is available to be operated
+          id: AVAILABLE
+    - fees:
+        itemizeFees:
+        - itemizeFeeUnits:
+          - unitType: PERCENTAGE
+            percentage: 0.08
+          - unitType: AMOUNT
+            amount: 64.96
+            currency: MXN
+          calculationDate: '2023-11-06'
+          feeType: MICROLOAN_WITHDRAWAL_FEE
+        - itemizeFeeUnits:
+          - unitType: PERCENTAGE
+            percentage: 0.08
+          - unitType: AMOUNT
+            amount: 56
+            currency: MXN
+          calculationDate: '2023-11-06'
+          feeType: MICROLOAN_WITHDRAWAL_FEE_WITHOUT_VAT
+        - itemizeFeeUnits:
+          - unitType: AMOUNT
+            amount: 56
+            currency: MXN
+          calculationDate: '2023-11-06'
+          feeType: PAID_FEES_WITHOUT_VAT
+        - itemizeFeeUnits:
+          - unitType: AMOUNT
+            amount: 21.64
+            currency: MXN
+          calculationDate: '2023-11-06'
+          feeType: INSTALLMENT_MONTHLY_AMOUNT_FEE
+        - itemizeFeeUnits:
+          - unitType: AMOUNT
+            amount: 0
+            currency: MXN
+          calculationDate: '2023-11-06'
+          feeType: TOTAL_INSTALLMENT_OVERDUE_FEE_WITHOUT_VAT
+      numberType:
+        name: Local Internal Code
+        id: LIC
+      rates:
+        itemizeRates:
+        - rateType: CAT
+          itemizeRateUnits:
+          - unitType: PERCENTAGE
+            percentage: 0
+          calculationDate: '2023-11-06'
+      taxes:
+        itemizeTaxes:
+        - itemizeTaxUnits:
+          - unitType: PERCENTAGE
+            percentage: 0.16
+          - unitType: AMOUNT
+            amount: 8.96
+            currency: MXN
+          calculationDate: '2023-11-06'
+          taxType: MICROLOAN_WITHDRAWAL_FEE_VAT
+        - itemizeTaxUnits:
+          - unitType: AMOUNT
+            amount: 2.98
+            currency: MXN
+          calculationDate: '2023-11-06'
+          taxType: INSTALLMENT_MONTHLY_AMOUNT_VAT
+        - itemizeTaxUnits:
+          - unitType: AMOUNT
+            amount: 8.96
+            currency: MXN
+          calculationDate: '2023-11-06'
+          taxType: PAID_FEES_VAT
+        - itemizeTaxUnits:
+          - unitType: AMOUNT
+            amount: 0
+            currency: MXN
+          calculationDate: '2023-11-06'
+          taxType: TOTAL_INSTALLMENT_OVERDUE_VAT
+      creationDate: 2023-11-06T03:30:00.000-0600
+      transactions:
+      - transactionType:
+          id: PURCHASE
+        operationDate: 2023-06-15T01:00:00.000-0500
+        specificAmounts:
+        - amounts:
+          - amount: 890
+            currency: MXN
+          id: TOTAL_AMOUNT
+        concept: BBVA_BANCOMER
+        contract:
+          number: '00740680000473454804'
+          id: '00740680000473454800'
+          productType:
+            id: ACCOUNT
+        id: MX007404007400101501205826704222023061514413327523
+        financingType:
+          id: FINANCED_SINGLE_PURCHASE
+      operationTracking:
+        operationDate: 2023-11-06T04:11:12.215-0600
+        operationNumber: 9287072197D0432336
+      nextInstallmentDate: '0001-01-01'
+      number: lmH-EjowYMTg8yc-hyiplH649UIlb8u3
+      financingLine:
+        number: MX007400219200000101
+        balances:
+        - amounts:
+          - amount: 6906.78
+            currency: MXN
+          id: AVAILABLE_BALANCE
+        - amounts:
+          - amount: 18093.22
+            currency: MXN
+          id: DISPOSED_BALANCE
+        - amounts:
+          - amount: 0
+            currency: MXN
+          id: OVERDUE_BALANCE
+        - amounts:
+          - amount: 25402.71
+            currency: MXN
+          id: TOTAL_DEBT
+        - amounts:
+          - amount: 0
+            currency: MXN
+          id: OVERDUE_BALANCE_WITHOUT_FEE
+        id: MX007400219200000101
+      specificAmounts:
+      - amounts:
+        - amount: 764.96
+          currency: MXN
+        id: MICROLOAN_AMOUNT
+      - amounts:
+        - amount: 254.97
+          currency: MXN
+        id: INSTALLMENT_MONTHLY_AMOUNT
+      - amounts:
+        - amount: 233.33
+          currency: MXN
+        id: INSTALLMENT_MONTHLY_AMOUNT_WITHOUT_FEES
+      - amounts:
+        - amount: 255.02
+          currency: MXN
+        id: LAST_INSTALLMENT
+      - amounts:
+        - amount: 0
+          currency: MXN
+        id: TOTAL_INSTALLMENT_OVERDUE_AMOUNT_WITHOUT_FEES
+      - amounts:
+        - amount: 0
+          currency: MXN
+        id: TOTAL_INSTALLMENT_OVERDUE_AMOUNT
+      - amounts:
+        - amount: 700
+          currency: MXN
+        id: PAID_AMOUNT_WITHOUT_FEES
+      terms:
+        number: 3
+        frequency: MONTHLY
+      maturityDate: '2024-02-01'
+      customBalances:
+      - balanceType: INSTALLMENTS_DETAIL
+        paidInstallments: 3
+        pendingInstallments: 0
+      - balanceType: PAYMENTS_DETAIL
+        paidAmount:
+          amount: 764.96
+          currency: MXN
+        pendingAmount:
+          amount: 0
+          currency: MXN
+      id: fQcdFj9wch7Ym1z53BiLqU6PjIFa2D7
+      status:
+        description: The total debt of the microloan is fully paid and there is no
+          debt.
+        id: SETTLED
+    - fees:
+        itemizeFees:
+        - itemizeFeeUnits:
+          - unitType: PERCENTAGE
+            percentage: 0.08
+          - unitType: AMOUNT
+            amount: 224.12
+            currency: MXN
+          calculationDate: '2023-11-06'
+          feeType: MICROLOAN_WITHDRAWAL_FEE
+        - itemizeFeeUnits:
+          - unitType: PERCENTAGE
+            percentage: 0.08
+          - unitType: AMOUNT
+            amount: 193.21
+            currency: MXN
+          calculationDate: '2023-11-06'
+          feeType: MICROLOAN_WITHDRAWAL_FEE_WITHOUT_VAT
+        - itemizeFeeUnits:
+          - unitType: AMOUNT
+            amount: 193.2
+            currency: MXN
+          calculationDate: '2023-11-06'
+          feeType: PAID_FEES_WITHOUT_VAT
+        - itemizeFeeUnits:
+          - unitType: AMOUNT
+            amount: 74.7
+            currency: MXN
+          calculationDate: '2023-11-06'
+          feeType: INSTALLMENT_MONTHLY_AMOUNT_FEE
+        - itemizeFeeUnits:
+          - unitType: AMOUNT
+            amount: 0
+            currency: MXN
+          calculationDate: '2023-11-06'
+          feeType: TOTAL_INSTALLMENT_OVERDUE_FEE_WITHOUT_VAT
+      numberType:
+        name: Local Internal Code
+        id: LIC
+      rates:
+        itemizeRates:
+        - rateType: CAT
+          itemizeRateUnits:
+          - unitType: PERCENTAGE
+            percentage: 70.99
+          calculationDate: '2023-11-06'
+      taxes:
+        itemizeTaxes:
+        - itemizeTaxUnits:
+          - unitType: PERCENTAGE
+            percentage: 0.16
+          - unitType: AMOUNT
+            amount: 30.91
+            currency: MXN
+          calculationDate: '2023-11-06'
+          taxType: MICROLOAN_WITHDRAWAL_FEE_VAT
+        - itemizeTaxUnits:
+          - unitType: AMOUNT
+            amount: 10.3
+            currency: MXN
+          calculationDate: '2023-11-06'
+          taxType: INSTALLMENT_MONTHLY_AMOUNT_VAT
+        - itemizeTaxUnits:
+          - unitType: AMOUNT
+            amount: 30.91
+            currency: MXN
+          calculationDate: '2023-11-06'
+          taxType: PAID_FEES_VAT
+        - itemizeTaxUnits:
+          - unitType: AMOUNT
+            amount: 0
+            currency: MXN
+          calculationDate: '2023-11-06'
+          taxType: TOTAL_INSTALLMENT_OVERDUE_VAT
+      creationDate: 2023-11-06T22:00:00.000-0600
+      transactions:
+      - transactionType:
+          id: PURCHASE
+        operationDate: 2023-06-15T01:00:00.000-0500
+        specificAmounts:
+        - amounts:
+          - amount: 1560
+            currency: MXN
+          id: TOTAL_AMOUNT
+        concept: BBVA_BANCOMER
+        contract:
+          number: '00740680000473454806'
+          id: '00740680000473454800'
+          productType:
+            id: ACCOUNT
+        id: MX0074040074001015012059051489920230615230217357429
+        financingType:
+          id: FINANCED_MULTI_PURCHASE
+      - transactionType:
+          id: PURCHASE
+        operationDate: 2023-06-15T01:00:00.000-0500
+        specificAmounts:
+        - amounts:
+          - amount: 650
+            currency: MXN
+          id: TOTAL_AMOUNT
+        concept: BBVA_BANCOMER
+        contract:
+          id: '00740680000473454800'
+          productType:
+            id: ACCOUNT
+        id: MX0074040074001015012059051490020230615163148485879
+        financingType:
+          id: FINANCED_MULTI_PURCHASE
+      operationTracking:
+        operationDate: 2023-11-06T11:36:18.830-0600
+        operationNumber: 9313778828D0432336
+      nextInstallmentDate: '2023-12-01'
+      number: o8UkfYIa5Nm25hRr4ffiIERmsTh4wsYU
+      financingLine:
+        number: MX007400219200000101
+        balances:
+        - amounts:
+          - amount: 6906.78
+            currency: MXN
+          id: AVAILABLE_BALANCE
+        - amounts:
+          - amount: 18093.22
+            currency: MXN
+          id: DISPOSED_BALANCE
+        - amounts:
+          - amount: 0
+            currency: MXN
+          id: OVERDUE_BALANCE
+        - amounts:
+          - amount: 25402.71
+            currency: MXN
+          id: TOTAL_DEBT
+        - amounts:
+          - amount: 0
+            currency: MXN
+          id: OVERDUE_BALANCE_WITHOUT_FEE
+        id: MX007400219200000101
+      specificAmounts:
+      - amounts:
+        - amount: 2639.2
+          currency: MXN
+        id: MICROLOAN_AMOUNT
+      - amounts:
+        - amount: 879.73
+          currency: MXN
+        id: INSTALLMENT_MONTHLY_AMOUNT
+      - amounts:
+        - amount: 805.03
+          currency: MXN
+        id: INSTALLMENT_MONTHLY_AMOUNT_WITHOUT_FEES
+      - amounts:
+        - amount: 879.74
+          currency: MXN
+        id: LAST_INSTALLMENT
+      - amounts:
+        - amount: 0
+          currency: MXN
+        id: TOTAL_INSTALLMENT_OVERDUE_AMOUNT_WITHOUT_FEES
+      - amounts:
+        - amount: 0
+          currency: MXN
+        id: TOTAL_INSTALLMENT_OVERDUE_AMOUNT
+      - amounts:
+        - amount: 607.18
+          currency: MXN
+        id: PAID_AMOUNT_WITHOUT_FEES
+      - amounts:
+        - amount: 381.55
+          currency: MXN
+        id: MONTH_ADVANCED_1
+      terms:
+        number: 3
+        frequency: MONTHLY
+      maturityDate: '2024-02-01'
+      customBalances:
+      - balanceType: INSTALLMENTS_DETAIL
+        paidInstallments: 0
+        pendingInstallments: 3
+      - balanceType: PAYMENTS_DETAIL
+        paidAmount:
+          amount: 831.29
+          currency: MXN
+        pendingAmount:
+          amount: 1807.91
+          currency: MXN
+      id: wpfQcdFj9wch7Ym1z53BiLqU6PjIFa2D8
+      status:
+        id: ACTIVE
+        subStatus:
+          description: The microloan is available to be operated
+          id: AVAILABLE
+    - fees:
+        itemizeFees:
+        - itemizeFeeUnits:
+          - unitType: PERCENTAGE
+            percentage: 0.08
+          - unitType: AMOUNT
+            amount: 213.44
+            currency: MXN
+          calculationDate: '2023-11-06'
+          feeType: MICROLOAN_WITHDRAWAL_FEE
+        - itemizeFeeUnits:
+          - unitType: PERCENTAGE
+            percentage: 0.08
+          - unitType: AMOUNT
+            amount: 184
+            currency: MXN
+          calculationDate: '2023-11-06'
+          feeType: MICROLOAN_WITHDRAWAL_FEE_WITHOUT_VAT
+        - itemizeFeeUnits:
+          - unitType: AMOUNT
+            amount: 184
+            currency: MXN
+          calculationDate: '2023-11-06'
+          feeType: PAID_FEES_WITHOUT_VAT
+        - itemizeFeeUnits:
+          - unitType: AMOUNT
+            amount: 71.14
+            currency: MXN
+          calculationDate: '2023-11-06'
+          feeType: INSTALLMENT_MONTHLY_AMOUNT_FEE
+        - itemizeFeeUnits:
+          - unitType: AMOUNT
+            amount: 0
+            currency: MXN
+          calculationDate: '2023-11-06'
+          feeType: TOTAL_INSTALLMENT_OVERDUE_FEE_WITHOUT_VAT
+      numberType:
+        name: Local Internal Code
+        id: LIC
+      rates:
+        itemizeRates:
+        - rateType: CAT
+          itemizeRateUnits:
+          - unitType: PERCENTAGE
+            percentage: 2.7
+          calculationDate: '2023-11-06'
+      taxes:
+        itemizeTaxes:
+        - itemizeTaxUnits:
+          - unitType: PERCENTAGE
+            percentage: 0.16
+          - unitType: AMOUNT
+            amount: 29.44
+            currency: MXN
+          calculationDate: '2023-11-06'
+          taxType: MICROLOAN_WITHDRAWAL_FEE_VAT
+        - itemizeTaxUnits:
+          - unitType: AMOUNT
+            amount: 9.81
+            currency: MXN
+          calculationDate: '2023-11-06'
+          taxType: INSTALLMENT_MONTHLY_AMOUNT_VAT
+        - itemizeTaxUnits:
+          - unitType: AMOUNT
+            amount: 29.44
+            currency: MXN
+          calculationDate: '2023-11-06'
+          taxType: PAID_FEES_VAT
+        - itemizeTaxUnits:
+          - unitType: AMOUNT
+            amount: 0
+            currency: MXN
+          calculationDate: '2023-11-06'
+          taxType: TOTAL_INSTALLMENT_OVERDUE_VAT
+      creationDate: 2023-11-06T21:12:00.000-0600
+      transactions:
+      - transactionType:
+          id: PURCHASE
+        operationDate: 2023-06-15T01:00:00.000-0500
+        specificAmounts:
+        - amounts:
+          - amount: 2300
+            currency: MXN
+          id: TOTAL_AMOUNT
+        concept: BBVA_BANCOMER
+        contract:
+          number: '00740680000473454811'
+          id: '00740680000473454800'
+          productType:
+            id: ACCOUNT
+        id: MX0074040074001015012059053658620230615230026363546
+        financingType:
+          id: FINANCED_SINGLE_PURCHASE
+      operationTracking:
+        operationDate: 2023-11-06T06:08:42.038-0600
+        operationNumber: 9294122034D0432336
+      nextInstallmentDate: '0001-01-01'
+      number: dhgWdFLsAJ9Mvgvjyuhb7ao4PLGHuTAH
+      financingLine:
+        number: MX007400219200000101
+        balances:
+        - amounts:
+          - amount: 6906.78
+            currency: MXN
+          id: AVAILABLE_BALANCE
+        - amounts:
+          - amount: 18093.22
+            currency: MXN
+          id: DISPOSED_BALANCE
+        - amounts:
+          - amount: 0
+            currency: MXN
+          id: OVERDUE_BALANCE
+        - amounts:
+          - amount: 25402.71
+            currency: MXN
+          id: TOTAL_DEBT
+        - amounts:
+          - amount: 0
+            currency: MXN
+          id: OVERDUE_BALANCE_WITHOUT_FEE
+        id: MX007400219200000101
+      specificAmounts:
+      - amounts:
+        - amount: 2513.44
+          currency: MXN
+        id: MICROLOAN_AMOUNT
+      - amounts:
+        - amount: 837.8
+          currency: MXN
+        id: INSTALLMENT_MONTHLY_AMOUNT
+      - amounts:
+        - amount: 766.66
+          currency: MXN
+        id: INSTALLMENT_MONTHLY_AMOUNT_WITHOUT_FEES
+      - amounts:
+        - amount: 837.84
+          currency: MXN
+        id: LAST_INSTALLMENT
+      - amounts:
+        - amount: 0
+          currency: MXN
+        id: TOTAL_INSTALLMENT_OVERDUE_AMOUNT_WITHOUT_FEES
+      - amounts:
+        - amount: 0
+          currency: MXN
+        id: TOTAL_INSTALLMENT_OVERDUE_AMOUNT
+      - amounts:
+        - amount: 2300
+          currency: MXN
+        id: PAID_AMOUNT_WITHOUT_FEES
+      terms:
+        number: 3
+        frequency: MONTHLY
+      maturityDate: '2024-02-01'
+      customBalances:
+      - balanceType: INSTALLMENTS_DETAIL
+        paidInstallments: 3
+        pendingInstallments: 0
+      - balanceType: PAYMENTS_DETAIL
+        paidAmount:
+          amount: 2513.44
+          currency: MXN
+        pendingAmount:
+          amount: 0
+          currency: MXN
+      id: wpfQcdFj9wch7Ym1z53BiLqU6PjIFa2D9
+      status:
+        description: The total debt of the microloan is fully paid and there is no
+          debt.
+        id: SETTLED
+    - fees:
+        itemizeFees:
+        - itemizeFeeUnits:
+          - unitType: PERCENTAGE
+            percentage: 0.08
+          - unitType: AMOUNT
+            amount: 0.09
+            currency: MXN
+          calculationDate: '2023-11-03'
+          feeType: MICROLOAN_WITHDRAWAL_FEE
+        - itemizeFeeUnits:
+          - unitType: PERCENTAGE
+            percentage: 0.08
+          - unitType: AMOUNT
+            amount: 0.08
+            currency: MXN
+          calculationDate: '2023-11-03'
+          feeType: MICROLOAN_WITHDRAWAL_FEE_WITHOUT_VAT
+        - itemizeFeeUnits:
+          - unitType: AMOUNT
+            amount: 0.08
+            currency: MXN
+          calculationDate: '2023-11-03'
+          feeType: PAID_FEES_WITHOUT_VAT
+        - itemizeFeeUnits:
+          - unitType: AMOUNT
+            amount: 0.02
+            currency: MXN
+          calculationDate: '2023-11-03'
+          feeType: INSTALLMENT_MONTHLY_AMOUNT_FEE
+        - itemizeFeeUnits:
+          - unitType: AMOUNT
+            amount: 0
+            currency: MXN
+          calculationDate: '2023-11-03'
+          feeType: TOTAL_INSTALLMENT_OVERDUE_FEE_WITHOUT_VAT
+      numberType:
+        name: Local Internal Code
+        id: LIC
+      rates:
+        itemizeRates:
+        - rateType: CAT
+          itemizeRateUnits:
+          - unitType: PERCENTAGE
+            percentage: 0
+          calculationDate: '2023-11-03'
+      taxes:
+        itemizeTaxes:
+        - itemizeTaxUnits:
+          - unitType: PERCENTAGE
+            percentage: 0.16
+          - unitType: AMOUNT
+            amount: 0.01
+            currency: MXN
+          calculationDate: '2023-11-03'
+          taxType: MICROLOAN_WITHDRAWAL_FEE_VAT
+        - itemizeTaxUnits:
+          - unitType: AMOUNT
+            amount: 0
+            currency: MXN
+          calculationDate: '2023-11-03'
+          taxType: INSTALLMENT_MONTHLY_AMOUNT_VAT
+        - itemizeTaxUnits:
+          - unitType: AMOUNT
+            amount: 0.01
+            currency: MXN
+          calculationDate: '2023-11-03'
+          taxType: PAID_FEES_VAT
+        - itemizeTaxUnits:
+          - unitType: AMOUNT
+            amount: 0
+            currency: MXN
+          calculationDate: '2023-11-03'
+          taxType: TOTAL_INSTALLMENT_OVERDUE_VAT
+      creationDate: 2023-11-03T10:00:00.000-0600
+      transactions:
+      - transactionType:
+          id: PURCHASE
+        operationDate: 2023-10-15T01:00:00.000-0500
+        specificAmounts:
+        - amounts:
+          - amount: 650
+            currency: MXN
+          id: TOTAL_AMOUNT
+        concept: BBVA_BANCOMER
+        contract:
+          number: '00740680000473454812'
+          id: '00740680000473454800'
+          productType:
+            id: ACCOUNT
+        id: MX0074040074001015012047471490020230615163148485879
+        financingType:
+          id: FINANCED_SINGLE_PURCHASE
+      operationTracking:
+        operationDate: 2023-11-03T13:45:15.509-0600
+        operationNumber: 9062315475D0432336
+      nextInstallmentDate: '0001-01-01'
+      number: nTXsoei6nPV0Pc_5H32eWAAO81oQtDPU
+      financingLine:
+        number: MX007400219200000101
+        balances:
+        - amounts:
+          - amount: 6906.78
+            currency: MXN
+          id: AVAILABLE_BALANCE
+        - amounts:
+          - amount: 18093.22
+            currency: MXN
+          id: DISPOSED_BALANCE
+        - amounts:
+          - amount: 0
+            currency: MXN
+          id: OVERDUE_BALANCE
+        - amounts:
+          - amount: 25402.71
+            currency: MXN
+          id: TOTAL_DEBT
+        - amounts:
+          - amount: 0
+            currency: MXN
+          id: OVERDUE_BALANCE_WITHOUT_FEE
+        id: MX007400219200000101
+      specificAmounts:
+      - amounts:
+        - amount: 1.09
+          currency: MXN
+        id: MICROLOAN_AMOUNT
+      - amounts:
+        - amount: 0.35
+          currency: MXN
+        id: INSTALLMENT_MONTHLY_AMOUNT
+      - amounts:
+        - amount: 0.33
+          currency: MXN
+        id: INSTALLMENT_MONTHLY_AMOUNT_WITHOUT_FEES
+      - amounts:
+        - amount: 0.39
+          currency: MXN
+        id: LAST_INSTALLMENT
+      - amounts:
+        - amount: 0
+          currency: MXN
+        id: TOTAL_INSTALLMENT_OVERDUE_AMOUNT_WITHOUT_FEES
+      - amounts:
+        - amount: 0
+          currency: MXN
+        id: TOTAL_INSTALLMENT_OVERDUE_AMOUNT
+      - amounts:
+        - amount: 1
+          currency: MXN
+        id: PAID_AMOUNT_WITHOUT_FEES
+      terms:
+        number: 3
+        frequency: MONTHLY
+      maturityDate: '2024-02-01'
+      customBalances:
+      - balanceType: INSTALLMENTS_DETAIL
+        paidInstallments: 3
+        pendingInstallments: 0
+      - balanceType: PAYMENTS_DETAIL
+        paidAmount:
+          amount: 1.09
+          currency: MXN
+        pendingAmount:
+          amount: 0
+          currency: MXN
+      id: wpfQcdFj9wch7Ym1z53BiLqU6PjIFa2D10
+      status:
+        description: The total debt of the microloan is fully paid and there is no
+          debt.
+        id: SETTLED
+    - fees:
+        itemizeFees:
+        - itemizeFeeUnits:
+          - unitType: PERCENTAGE
+            percentage: 0.15
+          - unitType: AMOUNT
+            amount: 121.8
+            currency: MXN
+          calculationDate: '2022-10-28'
+          feeType: MICROLOAN_WITHDRAWAL_FEE
+        - itemizeFeeUnits:
+          - unitType: PERCENTAGE
+            percentage: 0.15
+          - unitType: AMOUNT
+            amount: 105
+            currency: MXN
+          calculationDate: '2022-10-28'
+          feeType: MICROLOAN_WITHDRAWAL_FEE_WITHOUT_VAT
+        - itemizeFeeUnits:
+          - unitType: AMOUNT
+            amount: 26.25
+            currency: MXN
+          calculationDate: '2022-10-28'
+          feeType: PAID_FEES_WITHOUT_VAT
+        - itemizeFeeUnits:
+          - unitType: AMOUNT
+            amount: 10.15
+            currency: MXN
+          calculationDate: '2022-10-28'
+          feeType: INSTALLMENT_MONTHLY_AMOUNT_FEE
+        - itemizeFeeUnits:
+          - unitType: AMOUNT
+            amount: 0
+            currency: MXN
+          calculationDate: '2022-10-28'
+          feeType: TOTAL_INSTALLMENT_OVERDUE_FEE_WITHOUT_VAT
+      numberType:
+        name: Local Internal Code
+        id: LIC
+      rates:
+        itemizeRates:
+        - rateType: CAT
+          itemizeRateUnits:
+          - unitType: PERCENTAGE
+            percentage: 30.12
+          calculationDate: '2022-10-28'
+      taxes:
+        itemizeTaxes:
+        - itemizeTaxUnits:
+          - unitType: PERCENTAGE
+            percentage: 0.16
+          - unitType: AMOUNT
+            amount: 16.8
+            currency: MXN
+          calculationDate: '2022-10-28'
+          taxType: MICROLOAN_WITHDRAWAL_FEE_VAT
+        - itemizeTaxUnits:
+          - unitType: AMOUNT
+            amount: 1.4
+            currency: MXN
+          calculationDate: '2022-10-28'
+          taxType: INSTALLMENT_MONTHLY_AMOUNT_VAT
+        - itemizeTaxUnits:
+          - unitType: AMOUNT
+            amount: 4.2
+            currency: MXN
+          calculationDate: '2022-10-28'
+          taxType: PAID_FEES_VAT
+        - itemizeTaxUnits:
+          - unitType: AMOUNT
+            amount: 0
+            currency: MXN
+          calculationDate: '2022-10-28'
+          taxType: TOTAL_INSTALLMENT_OVERDUE_VAT
+      creationDate: 2022-10-28T12:30:00.000-0500
+      transactions:
+      - transactionType:
+          id: PURCHASE
+        operationDate: 2023-10-20T01:00:00.000-0500
+        specificAmounts:
+        - amounts:
+          - amount: 750
+            currency: MXN
+          id: TOTAL_AMOUNT
+        concept: BBVA_BANCOMER
+        contract:
+          number: '00740680000473454813'
+          id: '00740680000473454800'
+          productType:
+            id: ACCOUNT
+        id: MX0074040074001015012046321490020230615163148485879
+        financingType:
+          id: FINANCED_MULTI_PURCHASE
+      - transactionType:
+          id: PURCHASE
+        operationDate: 2023-10-23T01:00:00.000-0500
+        specificAmounts:
+        - amounts:
+          - amount: 2300
+            currency: MXN
+          id: TOTAL_AMOUNT
+        concept: BBVA_BANCOMER
+        contract:
+          id: '00740680000473454800'
+          productType:
+            id: ACCOUNT
+        id: MX0074040074001015012046323658620230615230026363546
+        financingType:
+          id: FINANCED_MULTI_PURCHASE
+      operationTracking:
+        operationDate: 2024-01-03T04:14:53.661-0600
+        operationNumber: SPOSIC4298493651D043240420240103101453
+      nextInstallmentDate: '2024-03-01'
+      number: wpfQcdFj9wch7Ym1z53BiLqU6PjIFa2D
+      financingLine:
+        number: MX007400219200000101
+        balances:
+        - amounts:
+          - amount: 6906.78
+            currency: MXN
+          id: AVAILABLE_BALANCE
+        - amounts:
+          - amount: 18093.22
+            currency: MXN
+          id: DISPOSED_BALANCE
+        - amounts:
+          - amount: 0
+            currency: MXN
+          id: OVERDUE_BALANCE
+        - amounts:
+          - amount: 25402.71
+            currency: MXN
+          id: TOTAL_DEBT
+        - amounts:
+          - amount: 0
+            currency: MXN
+          id: OVERDUE_BALANCE_WITHOUT_FEE
+        id: MX007400219200000101
+      specificAmounts:
+      - amounts:
+        - amount: 821.8
+          currency: MXN
+        id: MICROLOAN_AMOUNT
+      - amounts:
+        - amount: 68.48
+          currency: MXN
+        id: INSTALLMENT_MONTHLY_AMOUNT
+      - amounts:
+        - amount: 58.33
+          currency: MXN
+        id: INSTALLMENT_MONTHLY_AMOUNT_WITHOUT_FEES
+      - amounts:
+        - amount: 68.52
+          currency: MXN
+        id: LAST_INSTALLMENT
+      - amounts:
+        - amount: 0
+          currency: MXN
+        id: TOTAL_INSTALLMENT_OVERDUE_AMOUNT_WITHOUT_FEES
+      - amounts:
+        - amount: 0
+          currency: MXN
+        id: TOTAL_INSTALLMENT_OVERDUE_AMOUNT
+      - amounts:
+        - amount: 119.13
+          currency: MXN
+        id: PAID_AMOUNT_WITHOUT_FEES
+      - amounts:
+        - amount: 17.82
+          currency: MXN
+        id: MONTH_ADVANCED_1
+      terms:
+        number: 12
+        frequency: MONTHLY
+      maturityDate: '2025-01-01'
+      customBalances:
+      - balanceType: INSTALLMENTS_DETAIL
+        paidInstallments: 1
+        pendingInstallments: 11
+      - balanceType: PAYMENTS_DETAIL
+        paidAmount:
+          amount: 149.58
+          currency: MXN
+        pendingAmount:
+          amount: 672.22
+          currency: MXN
+      id: wpfQcdFj9wch7Ym1z53BiLqU6PjIFa2D11
+      status:
+        id: ACTIVE
+        subStatus:
+          description: The microloan is available to be operated
+          id: AVAILABLE
+    - fees:
+        itemizeFees:
+        - itemizeFeeUnits:
+          - unitType: PERCENTAGE
+            percentage: 0.15
+          - unitType: AMOUNT
+            amount: 121.8
+            currency: MXN
+          calculationDate: '2022-10-28'
+          feeType: MICROLOAN_WITHDRAWAL_FEE
+        - itemizeFeeUnits:
+          - unitType: PERCENTAGE
+            percentage: 0.15
+          - unitType: AMOUNT
+            amount: 105
+            currency: MXN
+          calculationDate: '2022-10-28'
+          feeType: MICROLOAN_WITHDRAWAL_FEE_WITHOUT_VAT
+        - itemizeFeeUnits:
+          - unitType: AMOUNT
+            amount: 26.25
+            currency: MXN
+          calculationDate: '2022-10-28'
+          feeType: PAID_FEES_WITHOUT_VAT
+        - itemizeFeeUnits:
+          - unitType: AMOUNT
+            amount: 10.15
+            currency: MXN
+          calculationDate: '2022-10-28'
+          feeType: INSTALLMENT_MONTHLY_AMOUNT_FEE
+        - itemizeFeeUnits:
+          - unitType: AMOUNT
+            amount: 0
+            currency: MXN
+          calculationDate: '2022-10-28'
+          feeType: TOTAL_INSTALLMENT_OVERDUE_FEE_WITHOUT_VAT
+      numberType:
+        name: Local Internal Code
+        id: LIC
+      rates:
+        itemizeRates:
+        - rateType: CAT
+          itemizeRateUnits:
+          - unitType: PERCENTAGE
+            percentage: 30.12
+          calculationDate: '2022-10-28'
+      taxes:
+        itemizeTaxes:
+        - itemizeTaxUnits:
+          - unitType: PERCENTAGE
+            percentage: 0.16
+          - unitType: AMOUNT
+            amount: 16.8
+            currency: MXN
+          calculationDate: '2022-10-28'
+          taxType: MICROLOAN_WITHDRAWAL_FEE_VAT
+        - itemizeTaxUnits:
+          - unitType: AMOUNT
+            amount: 1.4
+            currency: MXN
+          calculationDate: '2022-10-28'
+          taxType: INSTALLMENT_MONTHLY_AMOUNT_VAT
+        - itemizeTaxUnits:
+          - unitType: AMOUNT
+            amount: 4.2
+            currency: MXN
+          calculationDate: '2022-10-28'
+          taxType: PAID_FEES_VAT
+        - itemizeTaxUnits:
+          - unitType: AMOUNT
+            amount: 0
+            currency: MXN
+          calculationDate: '2022-10-28'
+          taxType: TOTAL_INSTALLMENT_OVERDUE_VAT
+      creationDate: 2022-10-28T12:30:00.000-0500
+      transactions:
+      - transactionType:
+          id: PURCHASE
+        operationDate: 2023-10-20T01:00:00.000-0500
+        specificAmounts:
+        - amounts:
+          - amount: 750
+            currency: MXN
+          id: TOTAL_AMOUNT
+        concept: BBVA_BANCOMER
+        contract:
+          number: '00740680000473454813'
+          id: '00740680000473454800'
+          productType:
+            id: ACCOUNT
+        id: MX0074040074001015012046321490020230615163148485879
+        financingType:
+          id: FINANCED_MULTI_PURCHASE
+      - transactionType:
+          id: PURCHASE
+        operationDate: 2023-10-23T01:00:00.000-0500
+        specificAmounts:
+        - amounts:
+          - amount: 2300
+            currency: MXN
+          id: TOTAL_AMOUNT
+        concept: BBVA_BANCOMER
+        contract:
+          id: '00740680000473454800'
+          productType:
+            id: ACCOUNT
+        id: MX0074040074001015012046323658620230615230026363546
+        financingType:
+          id: FINANCED_MULTI_PURCHASE
+      operationTracking:
+        operationDate: 2024-01-03T04:14:53.661-0600
+        operationNumber: SPOSIC4298493651D043240420240103101453
+      nextInstallmentDate: '2024-03-01'
+      number: wpfQcdFj9wch7Ym1z53BiLqU6PjIFa2D
+      financingLine:
+        number: MX007400219200000101
+        balances:
+        - amounts:
+          - amount: 6906.78
+            currency: MXN
+          id: AVAILABLE_BALANCE
+        - amounts:
+          - amount: 18093.22
+            currency: MXN
+          id: DISPOSED_BALANCE
+        - amounts:
+          - amount: 0
+            currency: MXN
+          id: OVERDUE_BALANCE
+        - amounts:
+          - amount: 25402.71
+            currency: MXN
+          id: TOTAL_DEBT
+        - amounts:
+          - amount: 0
+            currency: MXN
+          id: OVERDUE_BALANCE_WITHOUT_FEE
+        id: MX007400219200000101
+      specificAmounts:
+      - amounts:
+        - amount: 821.8
+          currency: MXN
+        id: MICROLOAN_AMOUNT
+      - amounts:
+        - amount: 68.48
+          currency: MXN
+        id: INSTALLMENT_MONTHLY_AMOUNT
+      - amounts:
+        - amount: 58.33
+          currency: MXN
+        id: INSTALLMENT_MONTHLY_AMOUNT_WITHOUT_FEES
+      - amounts:
+        - amount: 68.52
+          currency: MXN
+        id: LAST_INSTALLMENT
+      - amounts:
+        - amount: 0
+          currency: MXN
+        id: TOTAL_INSTALLMENT_OVERDUE_AMOUNT_WITHOUT_FEES
+      - amounts:
+        - amount: 0
+          currency: MXN
+        id: TOTAL_INSTALLMENT_OVERDUE_AMOUNT
+      - amounts:
+        - amount: 119.13
+          currency: MXN
+        id: PAID_AMOUNT_WITHOUT_FEES
+      - amounts:
+        - amount: 17.82
+          currency: MXN
+        id: MONTH_ADVANCED_1
+      terms:
+        number: 12
+        frequency: MONTHLY
+      maturityDate: '2025-01-01'
+      customBalances:
+      - balanceType: INSTALLMENTS_DETAIL
+        paidInstallments: 1
+        pendingInstallments: 11
+      - balanceType: PAYMENTS_DETAIL
+        paidAmount:
+          amount: 149.58
+          currency: MXN
+        pendingAmount:
+          amount: 672.22
+          currency: MXN
+      id: wpfQcdFj9wch7Ym1z53BiLqU6PjIFa2D12
+      status:
+        id: ACTIVE
+        subStatus:
+          description: The microloan is available to be operated
+          id: AVAILABLE
+    - fees:
+        itemizeFees:
+        - itemizeFeeUnits:
+          - unitType: PERCENTAGE
+            percentage: 0.15
+          - unitType: AMOUNT
+            amount: 121.8
+            currency: MXN
+          calculationDate: '2022-10-28'
+          feeType: MICROLOAN_WITHDRAWAL_FEE
+        - itemizeFeeUnits:
+          - unitType: PERCENTAGE
+            percentage: 0.15
+          - unitType: AMOUNT
+            amount: 105
+            currency: MXN
+          calculationDate: '2022-10-28'
+          feeType: MICROLOAN_WITHDRAWAL_FEE_WITHOUT_VAT
+        - itemizeFeeUnits:
+          - unitType: AMOUNT
+            amount: 26.25
+            currency: MXN
+          calculationDate: '2022-10-28'
+          feeType: PAID_FEES_WITHOUT_VAT
+        - itemizeFeeUnits:
+          - unitType: AMOUNT
+            amount: 10.15
+            currency: MXN
+          calculationDate: '2022-10-28'
+          feeType: INSTALLMENT_MONTHLY_AMOUNT_FEE
+        - itemizeFeeUnits:
+          - unitType: AMOUNT
+            amount: 0
+            currency: MXN
+          calculationDate: '2022-10-28'
+          feeType: TOTAL_INSTALLMENT_OVERDUE_FEE_WITHOUT_VAT
+      numberType:
+        name: Local Internal Code
+        id: LIC
+      rates:
+        itemizeRates:
+        - rateType: CAT
+          itemizeRateUnits:
+          - unitType: PERCENTAGE
+            percentage: 30.12
+          calculationDate: '2022-10-28'
+      taxes:
+        itemizeTaxes:
+        - itemizeTaxUnits:
+          - unitType: PERCENTAGE
+            percentage: 0.16
+          - unitType: AMOUNT
+            amount: 16.8
+            currency: MXN
+          calculationDate: '2022-10-28'
+          taxType: MICROLOAN_WITHDRAWAL_FEE_VAT
+        - itemizeTaxUnits:
+          - unitType: AMOUNT
+            amount: 1.4
+            currency: MXN
+          calculationDate: '2022-10-28'
+          taxType: INSTALLMENT_MONTHLY_AMOUNT_VAT
+        - itemizeTaxUnits:
+          - unitType: AMOUNT
+            amount: 4.2
+            currency: MXN
+          calculationDate: '2022-10-28'
+          taxType: PAID_FEES_VAT
+        - itemizeTaxUnits:
+          - unitType: AMOUNT
+            amount: 0
+            currency: MXN
+          calculationDate: '2022-10-28'
+          taxType: TOTAL_INSTALLMENT_OVERDUE_VAT
+      creationDate: 2022-10-28T12:30:00.000-0500
+      transactions:
+      - transactionType:
+          id: PURCHASE
+        operationDate: 2023-10-20T01:00:00.000-0500
+        specificAmounts:
+        - amounts:
+          - amount: 750
+            currency: MXN
+          id: TOTAL_AMOUNT
+        concept: BBVA_BANCOMER
+        contract:
+          number: '00740680000473454813'
+          id: '00740680000473454800'
+          productType:
+            id: ACCOUNT
+        id: MX0074040074001015012046321490020230615163148485879
+        financingType:
+          id: FINANCED_MULTI_PURCHASE
+      - transactionType:
+          id: PURCHASE
+        operationDate: 2023-10-23T01:00:00.000-0500
+        specificAmounts:
+        - amounts:
+          - amount: 2300
+            currency: MXN
+          id: TOTAL_AMOUNT
+        concept: BBVA_BANCOMER
+        contract:
+          id: '00740680000473454800'
+          productType:
+            id: ACCOUNT
+        id: MX0074040074001015012046323658620230615230026363546
+        financingType:
+          id: FINANCED_MULTI_PURCHASE
+      operationTracking:
+        operationDate: 2024-01-03T04:14:53.661-0600
+        operationNumber: SPOSIC4298493651D043240420240103101453
+      nextInstallmentDate: '2024-03-01'
+      number: wpfQcdFj9wch7Ym1z53BiLqU6PjIFa2D
+      financingLine:
+        number: MX007400219200000101
+        balances:
+        - amounts:
+          - amount: 6906.78
+            currency: MXN
+          id: AVAILABLE_BALANCE
+        - amounts:
+          - amount: 18093.22
+            currency: MXN
+          id: DISPOSED_BALANCE
+        - amounts:
+          - amount: 0
+            currency: MXN
+          id: OVERDUE_BALANCE
+        - amounts:
+          - amount: 25402.71
+            currency: MXN
+          id: TOTAL_DEBT
+        - amounts:
+          - amount: 0
+            currency: MXN
+          id: OVERDUE_BALANCE_WITHOUT_FEE
+        id: MX007400219200000101
+      specificAmounts:
+      - amounts:
+        - amount: 821.8
+          currency: MXN
+        id: MICROLOAN_AMOUNT
+      - amounts:
+        - amount: 68.48
+          currency: MXN
+        id: INSTALLMENT_MONTHLY_AMOUNT
+      - amounts:
+        - amount: 58.33
+          currency: MXN
+        id: INSTALLMENT_MONTHLY_AMOUNT_WITHOUT_FEES
+      - amounts:
+        - amount: 68.52
+          currency: MXN
+        id: LAST_INSTALLMENT
+      - amounts:
+        - amount: 0
+          currency: MXN
+        id: TOTAL_INSTALLMENT_OVERDUE_AMOUNT_WITHOUT_FEES
+      - amounts:
+        - amount: 0
+          currency: MXN
+        id: TOTAL_INSTALLMENT_OVERDUE_AMOUNT
+      - amounts:
+        - amount: 119.13
+          currency: MXN
+        id: PAID_AMOUNT_WITHOUT_FEES
+      - amounts:
+        - amount: 17.82
+          currency: MXN
+        id: MONTH_ADVANCED_1
+      terms:
+        number: 12
+        frequency: MONTHLY
+      maturityDate: '2025-01-01'
+      customBalances:
+      - balanceType: INSTALLMENTS_DETAIL
+        paidInstallments: 1
+        pendingInstallments: 11
+      - balanceType: PAYMENTS_DETAIL
+        paidAmount:
+          amount: 149.58
+          currency: MXN
+        pendingAmount:
+          amount: 672.22
+          currency: MXN
+      id: wpfQcdFj9wch7Ym1z53BiLqU6PjIFa2D13
+      status:
+        id: ACTIVE
+        subStatus:
+          description: The microloan is available to be operated
+          id: AVAILABLE
+    - fees:
+        itemizeFees:
+        - itemizeFeeUnits:
+          - unitType: PERCENTAGE
+            percentage: 0.15
+          - unitType: AMOUNT
+            amount: 121.8
+            currency: MXN
+          calculationDate: '2022-10-28'
+          feeType: MICROLOAN_WITHDRAWAL_FEE
+        - itemizeFeeUnits:
+          - unitType: PERCENTAGE
+            percentage: 0.15
+          - unitType: AMOUNT
+            amount: 105
+            currency: MXN
+          calculationDate: '2022-10-28'
+          feeType: MICROLOAN_WITHDRAWAL_FEE_WITHOUT_VAT
+        - itemizeFeeUnits:
+          - unitType: AMOUNT
+            amount: 26.25
+            currency: MXN
+          calculationDate: '2022-10-28'
+          feeType: PAID_FEES_WITHOUT_VAT
+        - itemizeFeeUnits:
+          - unitType: AMOUNT
+            amount: 10.15
+            currency: MXN
+          calculationDate: '2022-10-28'
+          feeType: INSTALLMENT_MONTHLY_AMOUNT_FEE
+        - itemizeFeeUnits:
+          - unitType: AMOUNT
+            amount: 0
+            currency: MXN
+          calculationDate: '2022-10-28'
+          feeType: TOTAL_INSTALLMENT_OVERDUE_FEE_WITHOUT_VAT
+      numberType:
+        name: Local Internal Code
+        id: LIC
+      rates:
+        itemizeRates:
+        - rateType: CAT
+          itemizeRateUnits:
+          - unitType: PERCENTAGE
+            percentage: 30.12
+          calculationDate: '2022-10-28'
+      taxes:
+        itemizeTaxes:
+        - itemizeTaxUnits:
+          - unitType: PERCENTAGE
+            percentage: 0.16
+          - unitType: AMOUNT
+            amount: 16.8
+            currency: MXN
+          calculationDate: '2022-10-28'
+          taxType: MICROLOAN_WITHDRAWAL_FEE_VAT
+        - itemizeTaxUnits:
+          - unitType: AMOUNT
+            amount: 1.4
+            currency: MXN
+          calculationDate: '2022-10-28'
+          taxType: INSTALLMENT_MONTHLY_AMOUNT_VAT
+        - itemizeTaxUnits:
+          - unitType: AMOUNT
+            amount: 4.2
+            currency: MXN
+          calculationDate: '2022-10-28'
+          taxType: PAID_FEES_VAT
+        - itemizeTaxUnits:
+          - unitType: AMOUNT
+            amount: 0
+            currency: MXN
+          calculationDate: '2022-10-28'
+          taxType: TOTAL_INSTALLMENT_OVERDUE_VAT
+      creationDate: 2022-10-28T12:30:00.000-0500
+      transactions:
+      - transactionType:
+          id: PURCHASE
+        operationDate: 2023-10-20T01:00:00.000-0500
+        specificAmounts:
+        - amounts:
+          - amount: 750
+            currency: MXN
+          id: TOTAL_AMOUNT
+        concept: BBVA_BANCOMER
+        contract:
+          number: '00740680000473454813'
+          id: '00740680000473454800'
+          productType:
+            id: ACCOUNT
+        id: MX0074040074001015012046321490020230615163148485879
+        financingType:
+          id: FINANCED_MULTI_PURCHASE
+      - transactionType:
+          id: PURCHASE
+        operationDate: 2023-10-23T01:00:00.000-0500
+        specificAmounts:
+        - amounts:
+          - amount: 2300
+            currency: MXN
+          id: TOTAL_AMOUNT
+        concept: BBVA_BANCOMER
+        contract:
+          id: '00740680000473454800'
+          productType:
+            id: ACCOUNT
+        id: MX0074040074001015012046323658620230615230026363546
+        financingType:
+          id: FINANCED_MULTI_PURCHASE
+      operationTracking:
+        operationDate: 2024-01-03T04:14:53.661-0600
+        operationNumber: SPOSIC4298493651D043240420240103101453
+      nextInstallmentDate: '2024-03-01'
+      number: wpfQcdFj9wch7Ym1z53BiLqU6PjIFa2DX
+      financingLine:
+        number: MX007400219200000101
+        balances:
+        - amounts:
+          - amount: 6906.78
+            currency: MXN
+          id: AVAILABLE_BALANCE
+        - amounts:
+          - amount: 18093.22
+            currency: MXN
+          id: DISPOSED_BALANCE
+        - amounts:
+          - amount: 0
+            currency: MXN
+          id: OVERDUE_BALANCE
+        - amounts:
+          - amount: 25402.71
+            currency: MXN
+          id: TOTAL_DEBT
+        - amounts:
+          - amount: 0
+            currency: MXN
+          id: OVERDUE_BALANCE_WITHOUT_FEE
+        id: MX007400219200000101
+      specificAmounts:
+      - amounts:
+        - amount: 8.8
+          currency: MXN
+        id: MICROLOAN_AMOUNT
+      - amounts:
+        - amount: 8.48
+          currency: MXN
+        id: INSTALLMENT_MONTHLY_AMOUNT
+      - amounts:
+        - amount: 5.33
+          currency: MXN
+        id: INSTALLMENT_MONTHLY_AMOUNT_WITHOUT_FEES
+      - amounts:
+        - amount: 6.52
+          currency: MXN
+        id: LAST_INSTALLMENT
+      - amounts:
+        - amount: 0
+          currency: MXN
+        id: TOTAL_INSTALLMENT_OVERDUE_AMOUNT_WITHOUT_FEES
+      - amounts:
+        - amount: 0
+          currency: MXN
+        id: TOTAL_INSTALLMENT_OVERDUE_AMOUNT
+      - amounts:
+        - amount: 19.13
+          currency: MXN
+        id: PAID_AMOUNT_WITHOUT_FEES
+      - amounts:
+        - amount: 17.82
+          currency: MXN
+        id: MONTH_ADVANCED_1
+      terms:
+        number: 12
+        frequency: MONTHLY
+      maturityDate: '2025-01-01'
+      customBalances:
+      - balanceType: INSTALLMENTS_DETAIL
+        paidInstallments: 1
+        pendingInstallments: 11
+      - balanceType: PAYMENTS_DETAIL
+        paidAmount:
+          amount: 149.58
+          currency: MXN
+        pendingAmount:
+          amount: 672.22
+          currency: MXN
+      id: wpfQcdFj9wch7Ym1z53BiLqU6PjIFa2DX14
+      status:
+        id: ACTIVE
+        subStatus:
+          description: The microloan is available to be operated
+          id: AVAILABLE
+    - fees:
+        itemizeFees:
+        - itemizeFeeUnits:
+          - unitType: PERCENTAGE
+            percentage: 0.15
+          - unitType: AMOUNT
+            amount: 121.8
+            currency: MXN
+          calculationDate: '2022-10-28'
+          feeType: MICROLOAN_WITHDRAWAL_FEE
+        - itemizeFeeUnits:
+          - unitType: PERCENTAGE
+            percentage: 0.15
+          - unitType: AMOUNT
+            amount: 105
+            currency: MXN
+          calculationDate: '2022-10-28'
+          feeType: MICROLOAN_WITHDRAWAL_FEE_WITHOUT_VAT
+        - itemizeFeeUnits:
+          - unitType: AMOUNT
+            amount: 26.25
+            currency: MXN
+          calculationDate: '2022-10-28'
+          feeType: PAID_FEES_WITHOUT_VAT
+        - itemizeFeeUnits:
+          - unitType: AMOUNT
+            amount: 10.15
+            currency: MXN
+          calculationDate: '2022-10-28'
+          feeType: INSTALLMENT_MONTHLY_AMOUNT_FEE
+        - itemizeFeeUnits:
+          - unitType: AMOUNT
+            amount: 0
+            currency: MXN
+          calculationDate: '2022-10-28'
+          feeType: TOTAL_INSTALLMENT_OVERDUE_FEE_WITHOUT_VAT
+      numberType:
+        name: Local Internal Code
+        id: LIC
+      rates:
+        itemizeRates:
+        - rateType: CAT
+          itemizeRateUnits:
+          - unitType: PERCENTAGE
+            percentage: 30.12
+          calculationDate: '2022-10-28'
+      taxes:
+        itemizeTaxes:
+        - itemizeTaxUnits:
+          - unitType: PERCENTAGE
+            percentage: 0.16
+          - unitType: AMOUNT
+            amount: 16.8
+            currency: MXN
+          calculationDate: '2022-10-28'
+          taxType: MICROLOAN_WITHDRAWAL_FEE_VAT
+        - itemizeTaxUnits:
+          - unitType: AMOUNT
+            amount: 1.4
+            currency: MXN
+          calculationDate: '2022-10-28'
+          taxType: INSTALLMENT_MONTHLY_AMOUNT_VAT
+        - itemizeTaxUnits:
+          - unitType: AMOUNT
+            amount: 4.2
+            currency: MXN
+          calculationDate: '2022-10-28'
+          taxType: PAID_FEES_VAT
+        - itemizeTaxUnits:
+          - unitType: AMOUNT
+            amount: 0
+            currency: MXN
+          calculationDate: '2022-10-28'
+          taxType: TOTAL_INSTALLMENT_OVERDUE_VAT
+      creationDate: 2022-10-28T12:30:00.000-0500
+      transactions:
+      - transactionType:
+          id: PURCHASE
+        operationDate: 2023-10-20T01:00:00.000-0500
+        specificAmounts:
+        - amounts:
+          - amount: 750
+            currency: MXN
+          id: TOTAL_AMOUNT
+        concept: BBVA_BANCOMER
+        contract:
+          number: '00740680000473454813'
+          id: '00740680000473454800'
+          productType:
+            id: ACCOUNT
+        id: MX0074040074001015012046321490020230615163148485879
+        financingType:
+          id: FINANCED_MULTI_PURCHASE
+      - transactionType:
+          id: PURCHASE
+        operationDate: 2023-10-23T01:00:00.000-0500
+        specificAmounts:
+        - amounts:
+          - amount: 2300
+            currency: MXN
+          id: TOTAL_AMOUNT
+        concept: BBVA_BANCOMER
+        contract:
+          id: '00740680000473454800'
+          productType:
+            id: ACCOUNT
+        id: MX0074040074001015012046323658620230615230026363546
+        financingType:
+          id: FINANCED_MULTI_PURCHASE
+      operationTracking:
+        operationDate: 2024-01-03T04:14:53.661-0600
+        operationNumber: SPOSIC4298493651D043240420240103101453
+      nextInstallmentDate: '2024-03-01'
+      number: wpfQcdFj9wch7Ym1z53BiLqU6PjIFa2DX
+      financingLine:
+        number: MX007400219200000101
+        balances:
+        - amounts:
+          - amount: 6906.78
+            currency: MXN
+          id: AVAILABLE_BALANCE
+        - amounts:
+          - amount: 18093.22
+            currency: MXN
+          id: DISPOSED_BALANCE
+        - amounts:
+          - amount: 0
+            currency: MXN
+          id: OVERDUE_BALANCE
+        - amounts:
+          - amount: 25402.71
+            currency: MXN
+          id: TOTAL_DEBT
+        - amounts:
+          - amount: 0
+            currency: MXN
+          id: OVERDUE_BALANCE_WITHOUT_FEE
+        id: MX007400219200000101
+      specificAmounts:
+      - amounts:
+        - amount: 8.8
+          currency: MXN
+        id: MICROLOAN_AMOUNT
+      - amounts:
+        - amount: 8.48
+          currency: MXN
+        id: INSTALLMENT_MONTHLY_AMOUNT
+      - amounts:
+        - amount: 5.33
+          currency: MXN
+        id: INSTALLMENT_MONTHLY_AMOUNT_WITHOUT_FEES
+      - amounts:
+        - amount: 6.52
+          currency: MXN
+        id: LAST_INSTALLMENT
+      - amounts:
+        - amount: 0
+          currency: MXN
+        id: TOTAL_INSTALLMENT_OVERDUE_AMOUNT_WITHOUT_FEES
+      - amounts:
+        - amount: 0
+          currency: MXN
+        id: TOTAL_INSTALLMENT_OVERDUE_AMOUNT
+      - amounts:
+        - amount: 19.13
+          currency: MXN
+        id: PAID_AMOUNT_WITHOUT_FEES
+      - amounts:
+        - amount: 17.82
+          currency: MXN
+        id: MONTH_ADVANCED_1
+      terms:
+        number: 12
+        frequency: MONTHLY
+      maturityDate: '2025-01-01'
+      customBalances:
+      - balanceType: INSTALLMENTS_DETAIL
+        paidInstallments: 1
+        pendingInstallments: 11
+      - balanceType: PAYMENTS_DETAIL
+        paidAmount:
+          amount: 149.58
+          currency: MXN
+        pendingAmount:
+          amount: 672.22
+          currency: MXN
+      id: wpfQcdFj9wch7Ym1z53BiLqU6PjIFa2DX15
+      status:
+        id: ACTIVE
+        subStatus:
+          description: The microloan is available to be operated
+          id: AVAILABLE
+    :headers:
+      access-control-allow-origin: '*'
+      content-length: '123277'
+      Access-Control-Expose-Headers: tsec, vnd.bbva.access-token-type,vnd.bbva.access-token,
+        vnd.bbva.sso-pkcs7, authenticationtype, authenticationdata, authenticationstate,
+        authenticationchallenge
+      Server: artichoke
+      access-control-allow-headers: Content-Type, tsec, authenticationtype, authenticationdata,
+        authenticationstate, contactid, consumeruuid, consumerapplicationid, perimetertsec,
+        authorization, responsewarningcode, responsewarningdescription, cuf, field,
+        bcs-device-app-version, bcs-device-app-version, vnd.bbva.authorization, device-id,
+        Bcs-Device-Os-Name, bcs-device-app-name, bcs-device-dpi, BCS-Device-Id
+      Connection: keep-alive
+      Vary: Accept-Encoding
+      tsec: 05c323b6acbc74bcb13fa1e707b4e4b05ead71ba
+      X-Response-Time: 81ms
+      Date: Tue, 13 Jan 2026 18:07:50 GMT
+      Content-Type: application/json; charset=utf-8
+    :status: 200 OK
+    responseStatus: 206
+    apiInfo:
+      name: flexibleFinancings
+      category: flexibleFinancings
+      version: 0.1.0

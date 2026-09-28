@@ -1,0 +1,119 @@
+{
+    "extends": [
+        "eslint:recommended",
+        "plugin:promise/recommended",
+        "plugin:import/recommended"
+    ],
+    "root": true,
+    "rules": {
+        "new-cap": [
+            "warn",
+            {
+                "capIsNewExceptions": [
+                    "After",
+                    "AfterAll",
+                    "Before",
+                    "BeforeAll",
+                    "Given",
+                    "When",
+                    "Then",
+                    "HappyPathActions"
+                ],
+                "capIsNewExceptionPattern": "^ERROR_.*|.*_ERR(OR)?$|.*_ERR$|.*_INVALID_.*|^INVALID_.*"
+            }
+        ],
+        "quotes": ["warn", "single"],
+        "block-scoped-var": "warn",
+        "default-case": "error",
+        "eqeqeq": ["error", "always",{"null":  "ignore"}],
+        "no-alert": "error",
+        "no-else-return": "warn",
+        "no-empty-function": "error",
+        "no-eval": "warn",
+        "no-extra-label": "warn",
+        "no-restricted-imports": ["error", {
+            "paths": [{
+                "name": "lodash",
+                "message": "The package 'lodash' is registered globally, just use it with `_`."
+            }, {
+                "name": "chai",
+                "message": "The main methods from package 'chai' are registered globally, just use it with `expect`, `assert` or `should`."
+            }, {
+                "name": "assert",
+                "message": "The method `assert` (from chai) is registered globally, not needed to import 'assert' package."
+            }, {
+                "name": "@csqe/radish",
+                "importNames": ["config"],
+                "message": "The 'config' property is registered globally, not needed to import it."
+            }],
+            "patterns": [{
+                "group": ["@csqe/radish/*"],
+                "message": "Import private files from '@csqe/radish' is not allowed, use the default import instead."
+            }]
+        }],
+        "no-var": "error",
+        "callback-return": "error",
+        "array-bracket-spacing": ["warn","never"],
+        "block-spacing": ["warn", "always"],
+        "camelcase": ["error",  {"properties": "always", "allow": ["go_impl", "document_type"]}],
+        "comma-spacing": ["warn", { "before": false, "after": true }],
+        "eol-last": ["error", "always"],
+        "func-style": ["warn", "declaration", {"allowArrowFunctions":  true}],
+        "indent": ["error", 4, {
+            "SwitchCase": 1
+        }],
+        "no-multiple-empty-lines": ["error", {"max": 1}],
+        "comma-dangle": ["error", "only-multiline"],
+        "strict": ["error", "never"],
+        "promise/prefer-await-to-then": "error",
+        "promise/prefer-await-to-callbacks": "error",
+        "no-case-declarations": "warn",
+        "prefer-const": "error",
+        "prefer-destructuring": ["warn", {"object": true, "array": false}],
+        "prefer-template": "warn",
+        "semi": "warn",
+        "max-len": [
+            "warn",
+            {
+                "code": 160,
+                "ignoreComments": true,
+                "ignoreStrings": true,
+                "ignoreTemplateLiterals": true,
+                "ignoreRegExpLiterals": true
+            }
+        ],
+        "complexity": "off",
+        "import/no-unresolved": [2, { "ignore": ["^cucumber$", "^glomo-modules/.+","moment"] }]
+    },
+    "parser": "@babel/eslint-parser",
+    "env": {
+        "browser": true,
+        "node": true,
+        "es6": true
+    },
+    "plugins": [
+        "promise"
+    ],
+    "ignorePatterns": ["lib/templates/**"],
+    "globals": {
+        "_": "readonly",
+        "assert": "readonly",
+        "expect": "readonly",
+        "should": "readonly",
+        "START_PAGE": "readonly",
+        "browser": "readonly",
+        "config": "readonly",
+        "logger": "readonly",
+        "user": "readonly",
+        "secondUser": "readonly",
+        "users": "readonly",
+        "currentPage": "readonly",
+        "storage": "readonly",
+        "glomoDevice": "readonly",
+        "interceptedRequest": "readonly"
+    },
+    "parserOptions": {
+        "ecmaVersion": 2021,
+        "sourceType": "module"
+    }
+}

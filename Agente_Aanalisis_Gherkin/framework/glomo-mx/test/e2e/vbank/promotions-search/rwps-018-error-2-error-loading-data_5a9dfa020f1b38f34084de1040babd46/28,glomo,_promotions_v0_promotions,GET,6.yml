@@ -1,0 +1,107 @@
+when:
+  sequence: 6
+  path: /SRVS_A02/promotions/v0/promotions
+  method: GET
+  backend: glomo
+request:
+  headers:
+    sec-fetch-mode: cors
+    content-length: '0'
+    referer: http://localhost:8001/
+    sec-fetch-site: same-site
+    accept-language: es-MX,es;q=0.9
+    origin: http://localhost:8001
+    tsec: 4c5d978e11195eac1db757b4ba864b268e593c68
+    accept: application/json, text/html, */*; q=0.1
+    sec-ch-ua: '"Not.A/Brand";v="8", "Chromium";v="114", "Google Chrome";v="114"'
+    sec-ch-ua-mobile: ?0
+    x-vbank-session: df187b62-326e-4c33-bd1e-ab6b37df6246
+    sec-ch-ua-platform: '"macOS"'
+    host: localhost:9000
+    content-type: application/json
+    connection: keep-alive
+    cache-control: no-cache, no-store, must-revalidate
+    accept-encoding: gzip, deflate, br
+    sec-fetch-dest: empty
+    user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36
+      (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+  query:
+    categories.id: in=(FOOD_AND_GOURMET)
+    title.id: in=(AV,VN,CREDIT_MX)
+    usageTypes.id: in=(PHYSICAL)
+then:
+- return:
+    data:
+    - promotionType:
+        name: Descuento
+        id: CASHBACK
+      images:
+      - name: DETAIL_SWATCH
+        id: DETAIL
+        url: https://vidabbvamx-prod-commerce-images.s3-us-west-2.amazonaws.com/fotos/58.jpg
+      - name: LIST_WATCH
+        id: LIST
+        url: https://vidabbvamx-prod-commerce-images.s3-us-west-2.amazonaws.com/logos/58.jpg
+      - name: PUSH_WATCH
+        id: PUSH
+        url: http://imagenes.ubicanosbbvacontinental.com/promociones/2017-10-12/PUSH_SWATCH.png
+      endDate: '2028-08-05'
+      name: 15% dscto. en toda la tienda
+      fixedDiscount:
+        currency: ''
+      id: WA_0004
+      commerceInformation:
+        web: https://www.swatch.com/en_us/
+        name: Swatch
+        description: Relojería
+        logo:
+          name: LOGO_Swatch
+          id: WA_0004_LOGO
+          url: http://imagenes.ubicanosbbvacontinental.com/promociones/2017-10-12/LIST_SWATCH.png
+      categories:
+      - name: Activities
+        id: ACTIVITIES
+      - name: Compras
+        id: SHOPPING
+      - name: Alimentación y Gourmet
+        id: FOOD_AND_GOURMET
+      - name: Hogar
+        id: HOME
+      - name: Formación
+        id: LEARNING
+      - name: Espectáculos
+        id: SHOWS
+      - name: Viajes
+        id: TRAVEL
+      - name: Alquiler
+        id: RENT
+      usageTypes:
+      - name: 'Aplica para Tarjetas del BBVA Continental. '
+        id: PHYSICAL
+      rateDiscount: 15
+      startDate: '2020-10-15'
+      benefit: -15%
+    :headers:
+      content-length: '2179'
+      Server: artichoke
+      Alt-Svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      access-control-allow-headers: Content-Type, tsec, authenticationtype, authenticationdata,
+        authenticationstate, contactid, consumeruuid, consumerapplicationid, perimetertsec,
+        authorization, responsewarningcode, responsewarningdescription, cuf, field,
+        bcs-device-app-version, bcs-device-app-version, vnd.bbva.authorization, device-id
+      tsec: 4c5d978e11195eac1db757b4ba864b268e593c68
+      X-Response-Time: 474ms
+      Date: Tue, 25 Jul 2023 06:56:19 GMT
+      Via: 1.1 google
+      access-control-allow-origin: '*'
+      Access-Control-Expose-Headers: tsec, vnd.bbva.access-token-type,vnd.bbva.access-token,
+        vnd.bbva.sso-pkcs7, authenticationtype, authenticationdata, authenticationstate,
+        authenticationchallenge
+      Cache-Control: private, no-store
+      content-type: application/json;charset=UTF-8
+      Vary: Accept-Encoding
+    :status: 200 OK
+    apiInfo:
+      name: promotions
+      category: enterprises
+      version: 0.1.0

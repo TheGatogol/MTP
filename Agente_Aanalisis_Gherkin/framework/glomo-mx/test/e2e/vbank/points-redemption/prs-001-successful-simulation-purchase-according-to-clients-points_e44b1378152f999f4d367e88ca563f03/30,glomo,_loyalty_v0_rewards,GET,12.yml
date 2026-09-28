@@ -1,0 +1,92 @@
+when:
+  sequence: 12
+  path: /SRVS_A02/loyalty/v0/rewards
+  method: GET
+  backend: glomo
+request:
+  headers:
+    sec-fetch-mode: cors
+    content-length: '0'
+    referer: http://localhost:8001/
+    sec-fetch-site: same-site
+    accept-language: es-MX,es;q=0.9
+    origin: http://localhost:8001
+    tsec: 086732568853b5e5603fe15cf8c9864308377b54
+    accept: application/json, text/html, */*; q=0.1
+    sec-ch-ua: '"Google Chrome";v="113", "Chromium";v="113", "Not-A.Brand";v="24"'
+    sec-ch-ua-mobile: ?0
+    x-vbank-session: b14d85e7-0f1d-47e7-8d3f-c7ff16685035
+    sec-ch-ua-platform: '"macOS"'
+    host: localhost:9000
+    content-type: application/json
+    connection: keep-alive
+    cache-control: no-cache, no-store, must-revalidate
+    accept-encoding: gzip, deflate, br
+    sec-fetch-dest: empty
+    user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36
+      (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36
+  query:
+    billingPeriod: OPEN_PERIOD
+    contract.id: '0199'
+then:
+- return:
+    data:
+    - unitType:
+        name: Points
+        id: POINTS
+      isRedeemable: true
+      balances:
+      - itemizedBalances:
+        - id: CLOSE_TO_EXPIRE
+          nonMonetaryValue: 0
+        endDate: '2020-07-15'
+        startDate: '2020-07-01'
+      - itemizedBalances:
+        - id: CLOSE_TO_EXPIRE
+          nonMonetaryValue: 0
+        endDate: '2020-08-15'
+        startDate: '2020-08-01'
+      - itemizedBalances:
+        - id: CLOSE_TO_EXPIRE
+          nonMonetaryValue: 100
+        endDate: '2020-02-01'
+        startDate: '2019-02-15'
+      contract:
+        id: '0199'
+        productType:
+          id: CARD
+      name: Bancomer points
+      monetaryValue:
+        amount: 28.99
+        currency: MXN
+      monetaryPointEquivalence:
+        amount: 5
+        currency: MXN
+      id: BANCOMER_POINTS
+      nonMonetaryValue: 500
+      nonMonetaryRedemptionSavings:
+        amount: 5
+        currency: MXN
+    :headers:
+      access-control-allow-origin: '*'
+      content-length: '820'
+      Access-Control-Expose-Headers: tsec, vnd.bbva.access-token-type,vnd.bbva.access-token,
+        vnd.bbva.sso-pkcs7, authenticationtype, authenticationdata, authenticationstate,
+        authenticationchallenge
+      Server: artichoke
+      access-control-allow-headers: Content-Type, tsec, authenticationtype, authenticationdata,
+        authenticationstate, contactid, consumeruuid, consumerapplicationid, perimetertsec,
+        authorization, responsewarningcode, responsewarningdescription, cuf, field,
+        bcs-device-app-version, bcs-device-app-version, vnd.bbva.authorization
+      Connection: keep-alive
+      Vary: Accept-Encoding
+      tsec: 086732568853b5e5603fe15cf8c9864308377b54
+      X-Response-Time: 6ms
+      Date: Mon, 22 May 2023 22:05:01 GMT
+      Content-Type: application/json; charset=utf-8
+    :status: 200 OK
+    responseStatus: 200
+    apiInfo:
+      name: catalogs
+      category: data
+      version: 0.2.0

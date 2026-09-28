@@ -1,0 +1,42 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: aHd4eTFma3gwNTpLbVJleHhqenRZOWJ5RVF5MkpXZWsxcG8yRnhvQ1JHbzMzZXJ2dXB5
+    content-length: '0'
+    x-vbank-session: 29815509-48ea-4ffd-9dd8-4194331777fa
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: active_feedback
+then:
+- return:
+    :body:
+    - data:
+        locale: es_mx
+        tags:
+        - '5549634175'
+        - credit_card
+        - debit_card
+        - active_feedback
+        authentication:
+          password: glomo2021
+          user: '5549634175'
+          deviceId: C94C0F5550D8C532A00D8429FEA2CEC9
+      id: 1051419
+      lockType: null
+      lockExpiration: null
+    :headers:
+      Strict-Transport-Security: max-age=15724800; includeSubDomains
+      Server: nginx
+      ECS-Entry-Point-Zone: ext
+      Connection: keep-alive
+      Vary: Accept-Encoding
+      Content-Length: '268'
+      Date: Sat, 19 Jun 2021 05:11:14 GMT
+      Content-Type: application/json
+    :status: 200 OK

@@ -1,0 +1,188 @@
+GUÍA DE CAMBIOS
+===============
+
+Notas:
+- Los números de línea son los del archivo ORIGINAL (antes de cualquier cambio).
+- Aplica los cambios de ABAJO hacia ARRIBA (del número más alto al más bajo) para que los
+  números de línea no se muevan mientras editas.
+- Solo se cambia lo indicado. No se toca la indentación ni nada más de la línea.
+
+
+=====================================================================
+ARCHIVO: invitationEnrollmentPromotions 1.js   (page)
+=====================================================================
+
+---------------------------------------------------------------------
+CAMBIO 1 - Línea 507: ELIMINAR la línea completa
+---------------------------------------------------------------------
+Eliminar:
+                await this.modalSelectPurchases.saveButton.scrollIntoView({ block: 'end' });
+
+Motivo: regla SCV-003 (no hacer scroll dentro de _screenValidation).
+
+
+---------------------------------------------------------------------
+CAMBIO 2 - Líneas 502 y 503: ELIMINAR las dos líneas completas
+---------------------------------------------------------------------
+Eliminar:
+                await this.modalSelectPurchases.message.waitForExist({ timeout: config.wait.M });
+                await this.modalSelectPurchases.message.scrollIntoView({ block: 'center' });
+
+(La línea 504, con waitForDisplayed, se queda igual.)
+Motivo: regla SCV-003 (no hacer scroll dentro de _screenValidation).
+
+
+---------------------------------------------------------------------
+CAMBIO 3 - Línea 407: ELIMINAR la línea completa
+---------------------------------------------------------------------
+Eliminar:
+                    .scrollIntoView({ block: 'start' }))
+
+Motivo: falla de PIE004 + regla SCV-003.
+
+
+---------------------------------------------------------------------
+CAMBIO 4 - Línea 406: cambiar solo el inicio y el final de la línea
+---------------------------------------------------------------------
+Línea original:
+                await (await (await this.modalActivatePromotion.header.waitForAnimation({ timeout: config.wait.L }))
+
+a) Quitar el texto "(await (await " que está después del primer "await ":
+   ANTES:  await (await (await this.modalActivatePromotion.header
+   DESPUÉS: await this.modalActivatePromotion.header
+
+b) Quitar el texto ".waitForAnimation({ timeout: config.wait.L }))" del final de la línea.
+
+Línea resultante:
+                await this.modalActivatePromotion.header
+
+(La línea 408, ".waitForDisplayed({ timeout: config.wait.M });", se queda igual.)
+Motivo: falla de PIE004 (el header se validaba con animación y scroll antes de verlo).
+
+
+---------------------------------------------------------------------
+CAMBIO 5 - Líneas 257 y 258: cambiar solo "element" al inicio de cada instrucción
+---------------------------------------------------------------------
+Línea 257, ANTES:
+            await element.scrollIntoView({block: 'start'});
+Línea 257, DESPUÉS:
+            await (await this.modalSelectPurchases.checks.elements()).value[i].scrollIntoView({block: 'start'});
+
+   -> Solo se cambia la palabra "element" por:
+      (await this.modalSelectPurchases.checks.elements()).value[i]
+
+Línea 258, ANTES:
+            await element.waitForAnimation({timeout: config.wait.M});
+Línea 258, DESPUÉS:
+            await (await this.modalSelectPurchases.checks.elements()).value[i].waitForAnimation({timeout: config.wait.M});
+
+   -> Solo se cambia la palabra "element" por:
+      (await this.modalSelectPurchases.checks.elements()).value[i]
+
+Motivo: falla de PIE011 (stale element: la lista se vuelve a pintar al hacer scroll y la
+referencia guardada en "element" ya no sirve; se obtiene de nuevo justo antes de usarla).
+
+
+---------------------------------------------------------------------
+CAMBIO 6 - Línea 253: cambiar solo la condición del for
+---------------------------------------------------------------------
+ANTES:
+        for (let i = 1; i < allowed; i++) {
+DESPUÉS:
+        for (let i = 1; i < Math.min(allowed, (await this.modalSelectPurchases.checks.elements()).value.length); i++) {
+
+   -> Solo se cambia "allowed" (el que está después de "i < ") por:
+      Math.min(allowed, (await this.modalSelectPurchases.checks.elements()).value.length)
+
+Motivo: falla de PIE012 (el ciclo pedía más casillas de las que hay en pantalla y
+value[i] era undefined).
+
+
+---------------------------------------------------------------------
+CAMBIO 7 - Línea 235: ELIMINAR la línea completa
+---------------------------------------------------------------------
+Eliminar:
+        await element.waitForAnimation({ timeout: config.wait.M });
+
+(Es la PRIMERA de las dos líneas "await element.waitForAnimation" de selectPurchases;
+la de la línea 237 se queda.)
+Motivo: regla COD-009 (espera repetida).
+
+
+---------------------------------------------------------------------
+CAMBIO 8 - Entre la línea 233 y la 234: AGREGAR una línea nueva
+---------------------------------------------------------------------
+Después de la línea 233 (el cierre "});" de waitUntilSpinnerVeil) y antes de la línea 234
+("const element = ..."), agregar:
+        await this.waitForElementsExist(this.modalSelectPurchases.checks);
+
+Motivo: falla de PIE007 (se tomaba la casilla antes de que la lista existiera y
+value[0] era undefined).
+
+
+---------------------------------------------------------------------
+CAMBIO 9 - Línea 52: cambiar solo el selector
+---------------------------------------------------------------------
+ANTES:
+                    header: '#helpModalHeader',
+DESPUÉS:
+                    header: ':not([class="transition-container scrollable"]) [data-tag-name="bbva-header-main"]',
+
+   -> Solo se cambia el texto entre comillas:
+      '#helpModalHeader'
+      por:
+      ':not([class="transition-container scrollable"]) [data-tag-name="bbva-header-main"]'
+
+Motivo: falla de PIE004 (#helpModalHeader existe pero no es visible; se usa el mismo header
+visible que ya usa closeButton).
+
+
+=====================================================================
+ARCHIVO: invitationEnrollmentPromotions 2.js   (step definitions)
+=====================================================================
+
+---------------------------------------------------------------------
+CAMBIO 1 - Línea 35: quitar el primer carácter ";"
+---------------------------------------------------------------------
+ANTES:
+;When('the user removes participants purchases', async function () {
+DESPUÉS:
+When('the user removes participants purchases', async function () {
+
+   -> Solo se borra el ";" del inicio.
+
+
+---------------------------------------------------------------------
+CAMBIO 2 - Línea 33: agregar ";" al final
+---------------------------------------------------------------------
+ANTES:
+})
+DESPUÉS:
+});
+
+   -> Solo se agrega ";" al final.
+
+Motivo: el ";" estaba al inicio de la línea 35 en lugar de al final de la línea 33.
+
+
+=====================================================================
+ARCHIVO: rewardsLanding.js   (page)
+=====================================================================
+
+---------------------------------------------------------------------
+CAMBIO 1 - Entre la línea 1723 y la 1724: AGREGAR una línea nueva
+---------------------------------------------------------------------
+Dentro de accessOnboarding, después de la línea 1723 (la del click) y antes de la
+línea 1724 (el cierre "}"), agregar:
+        await this.onboardingModal.waitForDisplayed({ timeout: config.wait.L, reverse: true });
+
+Motivo: falla de PIE016, RWPS020, RWPS021 y RWPD004 (el onboarding todavía se estaba
+cerrando e interceptaba el click en la pestaña de promociones).
+
+
+=====================================================================
+RESUMEN
+=====================================================================
+invitationEnrollmentPromotions 1.js : 9 cambios (líneas 52, 233-234, 235, 253, 257, 258, 406, 407, 502, 503, 507)
+invitationEnrollmentPromotions 2.js : 2 cambios (líneas 33 y 35)
+rewardsLanding.js                   : 1 cambio  (línea nueva después de la 1723)

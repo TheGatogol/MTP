@@ -1,0 +1,81 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: 3b4282b0-3019-48a4-9356-fc8e3c667ad1
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: dashboard_accounts,account_balance
+then:
+- return:
+    :body:
+    - data:
+        homeFutura: false
+        skeleton: skeleton1
+        locale: es_mx
+        tags:
+        - '5533535656'
+        - dashboard_accounts
+        - account_balance
+        products:
+          accounts:
+          - number: 150 097 5813
+            accountId: '0230'
+            accountType:
+              name: Cuenta de Ahorro
+              id: AH
+            alias: 0005AH5813
+            currency: MXN
+            status:
+              name: Cuenta Activa
+              id: ACTIVE
+            availableBalance:
+              currentBalance: '0.06'
+          - number: 150 097 5847
+            accountId: '0230'
+            accountType:
+              name: Cuenta de Ahorro
+              id: AH
+            alias: 0006AH5847
+            currency: MXN
+            status:
+              name: Cuenta Activa
+              id: ACTIVE
+            availableBalance:
+              currentBalance: '1000000.00'
+          - number: 150 097 5806
+            accountId: '0230'
+            accountType:
+              name: Cuenta de Ahorro
+              id: AH
+            alias: 0004AH5806
+            currency: MXN
+            status:
+              name: Cuenta Activa
+              id: ACTIVE
+            availableBalance:
+              currentBalance: '0.00'
+        authentication:
+          password: Glomo2022
+          user: '5533535656'
+          deviceId: 87E5F375A8A8B2EC9EF33D34014D3978
+      lockExpiration: null
+      lockType: null
+      id: 3498272
+    :headers:
+      content-length: '1067'
+      Strict-Transport-Security: max-age=15768000
+      Server: nginx
+      ECS-Entry-Point-Zone: ext
+      Connection: keep-alive
+      Vary: Accept-Encoding
+      Date: Thu, 02 Mar 2023 19:49:21 GMT
+      Content-Type: application/json
+    :status: 200 OK

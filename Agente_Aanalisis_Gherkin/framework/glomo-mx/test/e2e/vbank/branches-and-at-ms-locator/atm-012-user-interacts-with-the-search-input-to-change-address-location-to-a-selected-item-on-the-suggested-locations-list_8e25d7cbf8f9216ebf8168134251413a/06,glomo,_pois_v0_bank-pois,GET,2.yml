@@ -1,0 +1,946 @@
+when:
+  sequence: 2
+  path: /SRVS_A02/pois/v0/bank-pois
+  method: GET
+  backend: glomo
+request:
+  headers:
+    sec-fetch-mode: cors
+    content-length: '0'
+    referer: http://localhost:8001/
+    sec-fetch-site: same-site
+    accept-language: es
+    origin: http://localhost:8001
+    tsec: ZXlKaFlYQWlPaUl4TURBd01EQTRPQ0lzSW10bGVWWmxjbk5wYjI0aU9qRXNJbUZ3Y0Vsa0lqb2lRVkJRTVNJc0ltdHBaQ0k2SWtGUVVERXViRzlqWVd3dU1TSXNJbVZ1WXlJNklrRXhPVEpIUTAwaUxDSnJaWGxVZVhCbElqb2liRzlqWVd3aUxDSmhiR2NpT2lKa2FYSWlMQ0owYzJWalNXUWlPaUl3TkRVM1pqTTNZaTAxWWpSbExUUmpZbUl0T1RsbE5TMDVNalZsTkdKbE9UQTJOV01pZlEuLms3Y1M4cTUxWEZYeFlVX2YuYy1xR0dMT0J1YXNIcnpMLUNDSjhKUUV5SV83TUhTM0V5a0hWVXF5R3g1NEdfVzk1bFFscGZnWFRvaVpVUzdPRVJUNHVGV2JRUnpacGl1S0k0VkZoYXIwX29ZZTBvYmI5WHZGLXNCcFBubGY0TWJRV3ZuSGxOSVAyZlNvMDdFTFVWTVllMHk5bzNzcVpvaVZkcEUtQ2xRQVNFYmlFRDdjY2l5d2hfQ3NpWXBiZnhZNVhwbzZYUFFraVk1LUxXWUkxdEI3MlJNN3ZMcHVrcUgxRmpVWGZoYUQtc3liMGs4SGJZVVJjU25tcXNVekU4TFU0ekw0OHNQQzZKNFBWZFhrUE5LTktJSUdiaHZKZ21NT24wekxJMlBEUC0wVnVjRGlHUUxrRV8zOEItOUlkZU1zTGYxZEFOdVRwNHlaSGRBNURweGd2TThSakdLeklKLW92X1VLVjdMZTJoZEtINVNUWlR6eC1JUFlnN25tSDd1aUhsUjV3UW9qQVp1TU1WY0dBeHMySGRRd21TTlh3eU5LNFJiYy1aa2JJM295UWN5TUJxeVRCU3NpYmU0ZGJHa0g0ZmpXejEzOGF3b2QyOUg5SmlPTm5idXVYZXFzbm5LWnhIX1A0ZFV6Ti1wNWxwV1I4bFpKcGExMm5EUmdxRk1OWlF6R3FROThEQXZYRFhNYi0zMHNtUDhzOTc2XzJfcTkyNGRaVkp3ekRhdVc2SXpyLVlMMWw2NU9PSFJlZi0tYzAyS1lKeEhCRmk2em8tYkxkT1doYjdoUjdKOTB0UG5IWVBnTER2M2Y2eEFBMEc0ZURsWEkwNkdESGd6VmxxcUh4VXdIOWR1M0FHMFhidWYyTDc2MmJPa1I3NE5vTUhzamhVNnozSG03Wm5PYVprSUs5OVZlTmt5UzljeElGME5iLXRGZGh6Vk5FY0haalY2UzFlcmRiTGpWLU5lYWVZOU5vWTFLWWoyZnd2aVlDcDVhU2xIZVZ6MFl3NUJvNk5Ea0FKTlF0bnRwSWxEbHlEYlJhLU04SWdSNkJzcjhlaE9IQlk2ejV5MXBOODBhbHA0U2NSdFdLUjBZUHkweDQxenp0Q01TRmxsRnpXOXF5dFdTUUYyQnFqdFJwUW9xT0VXSjZBcjhSank4VlFwbU5kSnkzVHFjc2VGUDVBU0ROTUQ3ZFlVVVJQY1NUN1BLYmgteTQ4VzU0R2tWMlFsejFWMk9BVk1WdWtyeEVYWHRaeTlSYnQzUG52S0NxM1hfTE9BdWFsMHQwQlZKTV94U1Mzd0I5QXdYSXpEZ0w5dFpJaURGREtsRjFSdE5YaUgwVTlTa0JVZUdXVUI0Tmtyby5WM1E3RmhGT2xyOWRCYnJxRlYzYjJ3
+    accept: application/json, text/html, */*; q=0.1
+    sec-ch-ua: '" Not A;Brand";v="99", "Chromium";v="102", "Google Chrome";v="102"'
+    sec-ch-ua-mobile: ?0
+    x-vbank-session: 04e379ee-4bc5-4957-8447-b35955e7004d
+    sec-ch-ua-platform: '"macOS"'
+    host: localhost:9000
+    content-type: application/json
+    connection: keep-alive
+    cache-control: no-cache, no-store, must-revalidate
+    accept-encoding: gzip, deflate, br
+    sec-fetch-dest: empty
+    user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36
+      (KHTML, like Gecko) Chrome/102.0.5005.61 Safari/537.36
+  query:
+    branchType.id: INDIVIDUALS
+    latitude: '19.4340199'
+    pageSize: '25'
+    radius: '2500'
+    longitude: '-99.19560120000001'
+then:
+- return:
+    pagination:
+      totalPages: 9
+      pageSize: 25
+      links:
+        next: /pois/v0/bank-pois?branchType.id=INDIVIDUALS&latitude=19.4340199&longitude=-99.19560120000001&pageSize=25&paginationKey=1&radius=2500
+        last: /pois/v0/bank-pois?branchType.id=INDIVIDUALS&latitude=19.4340199&longitude=-99.19560120000001&pageSize=25&paginationKey=8&radius=2500
+        first: /pois/v0/bank-pois?branchType.id=INDIVIDUALS&latitude=19.4340199&longitude=-99.19560120000001&pageSize=25&paginationKey=0&radius=2500
+      page: 0
+      totalElements: 207
+    data:
+    - atmType:
+        name: Practicajas
+        id: PC
+      address:
+        zipCode: '11560'
+        country:
+          name: MÉXICO
+          id: MX
+        city: MIGUEL HIDALGO
+        geographicGroups:
+        - geographicGroupType:
+            name: COLONY
+            id: COLONY
+          name: POLANCO V SECCIÓN
+        addressName: AV PRESIDENTE MASARYK 382
+        state:
+          name: DISTRITO FEDERAL
+        geolocation:
+          latitude: 19.43169521
+          longitude: -99.1973433
+      distance: 316
+      scope: PUBLIC
+      description: MIGUEL HIDALGO
+      links:
+      - method: GET
+        rel: ATM
+        id: MX5782
+        href: /pois/v0/atms/MX5782
+      - method: GET
+        rel: BRANCH
+        id: MX3465
+        href: /pois/v0/branches/MX3465
+      id: 3J28BH0VPTN4M1MJ7VC3XFR9MR
+      type: ATM
+    - atmType:
+        name: Practicajas
+        id: PC
+      address:
+        zipCode: '11560'
+        country:
+          name: MÉXICO
+          id: MX
+        city: MIGUEL HIDALGO
+        geographicGroups:
+        - geographicGroupType:
+            name: COLONY
+            id: COLONY
+          name: POLANCO V SECCIÓN
+        addressName: AV PRESIDENTE MASARYK 382
+        state:
+          name: DISTRITO FEDERAL
+        geolocation:
+          latitude: 19.43169521
+          longitude: -99.1973433
+      distance: 316
+      scope: PUBLIC
+      description: MIGUEL HIDALGO
+      links:
+      - method: GET
+        rel: ATM
+        id: MX5818
+        href: /pois/v0/atms/MX5818
+      - method: GET
+        rel: BRANCH
+        id: MX3465
+        href: /pois/v0/branches/MX3465
+      id: NE9T5C9DZTHAKGVAYT4X63DQ38
+      type: ATM
+    - address:
+        zipCode: '11510'
+        country:
+          name: MÉXICO
+          id: MX
+        city: MIGUEL HIDALGO
+        geographicGroups:
+        - geographicGroupType:
+            name: COLONY
+            id: COLONY
+          name: POLANCO
+        addressName: AV PRESIDENTE MAZARYK 382
+        state:
+          name: DISTRITO FEDERAL
+        geolocation:
+          latitude: 19.431673
+          longitude: -99.197324
+      isOpen: true
+      distance: 317
+      availableServices:
+      - id: ONLINE_APPOINTMENT
+      description: POLANCO
+      links:
+      - method: GET
+        rel: BRANCH
+        id: MX3465
+        href: /pois/v0/branches/MX3465
+      id: B49S7VQENQXTKXW01W8JHGJNE4
+      type: BRANCH
+    - atmType:
+        name: Dispensadores
+        id: DP
+      address:
+        zipCode: '11560'
+        country:
+          name: MÉXICO
+          id: MX
+        city: MIGUEL HIDALGO
+        geographicGroups:
+        - geographicGroupType:
+            name: COLONY
+            id: COLONY
+          name: POLANCO V SECCIÓN
+        addressName: AV PRESIDENTE MAZARYK 382
+        state:
+          name: DISTRITO FEDERAL
+        geolocation:
+          latitude: 19.4316
+          longitude: -99.1973
+      distance: 322
+      scope: PUBLIC
+      description: MIGUEL HIDALGO
+      links:
+      - method: GET
+        rel: ATM
+        id: MX4210
+        href: /pois/v0/atms/MX4210
+      - method: GET
+        rel: BRANCH
+        id: MX3465
+        href: /pois/v0/branches/MX3465
+      id: HM15DRE9171WJ16YHGPQA5N8E4
+      type: ATM
+    - atmType:
+        name: Dispensadores
+        id: DP
+      address:
+        zipCode: '11560'
+        country:
+          name: MÉXICO
+          id: MX
+        city: MIGUEL HIDALGO
+        geographicGroups:
+        - geographicGroupType:
+            name: COLONY
+            id: COLONY
+          name: POLANCO V SECCIÓN
+        addressName: AV PRESIDENTE MAZARYK 382
+        state:
+          name: DISTRITO FEDERAL
+        geolocation:
+          latitude: 19.4316
+          longitude: -99.1973
+      distance: 322
+      scope: PUBLIC
+      description: MIGUEL HIDALGO
+      links:
+      - method: GET
+        rel: ATM
+        id: MX4211
+        href: /pois/v0/atms/MX4211
+      - method: GET
+        rel: BRANCH
+        id: MX3465
+        href: /pois/v0/branches/MX3465
+      id: ASRA8G5ER7QM22EGY6R9EX1WY4
+      type: ATM
+    - atmType:
+        name: Dispensadores
+        id: DP
+      address:
+        zipCode: '11550'
+        country:
+          name: MÉXICO
+          id: MX
+        city: MIGUEL HIDALGO
+        geographicGroups:
+        - geographicGroupType:
+            name: COLONY
+            id: COLONY
+          name: POLANCO IV SECCION
+        addressName: ARISTOTELES 124
+        state:
+          name: DISTRITO FEDERAL
+        geolocation:
+          latitude: 19.431608
+          longitude: -99.193796
+      distance: 328
+      scope: PUBLIC
+      description: MIGUEL HIDALGO
+      links:
+      - method: GET
+        rel: ATM
+        id: MX1670
+        href: /pois/v0/atms/MX1670
+      - method: GET
+        rel: BRANCH
+        id: MX4724
+        href: /pois/v0/branches/MX4724
+      id: 9ZHVZY2TMBWHP31DW2HZQ1VEP4
+      type: ATM
+    - atmType:
+        name: Dispensadores
+        id: DP
+      address:
+        zipCode: '11550'
+        country:
+          name: MÉXICO
+          id: MX
+        city: MIGUEL HIDALGO
+        geographicGroups:
+        - geographicGroupType:
+            name: COLONY
+            id: COLONY
+          name: POLANCO IV SECCION
+        addressName: ARISTOTELES 124
+        state:
+          name: DISTRITO FEDERAL
+        geolocation:
+          latitude: 19.431608
+          longitude: -99.193796
+      distance: 328
+      scope: PUBLIC
+      description: MIGUEL HIDALGO
+      links:
+      - method: GET
+        rel: ATM
+        id: MX1785
+        href: /pois/v0/atms/MX1785
+      - method: GET
+        rel: BRANCH
+        id: MX4724
+        href: /pois/v0/branches/MX4724
+      id: QR8249ZDA3TNS1D2VKX245B1MW
+      type: ATM
+    - atmType:
+        name: Practicajas
+        id: PC
+      address:
+        zipCode: '11550'
+        country:
+          name: MÉXICO
+          id: MX
+        city: MIGUEL HIDALGO
+        geographicGroups:
+        - geographicGroupType:
+            name: COLONY
+            id: COLONY
+          name: POLANCO IV SECCION
+        addressName: ARISTOTELES 124
+        state:
+          name: DISTRITO FEDERAL
+        geolocation:
+          latitude: 19.431608
+          longitude: -99.193796
+      distance: 328
+      scope: PUBLIC
+      description: MIGUEL HIDALGO
+      links:
+      - method: GET
+        rel: ATM
+        id: MX1884
+        href: /pois/v0/atms/MX1884
+      - method: GET
+        rel: BRANCH
+        id: MX4724
+        href: /pois/v0/branches/MX4724
+      id: MPW3WCBAJ0PXAEJTN47T0ADKZW
+      type: ATM
+    - address:
+        zipCode: '11550'
+        country:
+          name: MÉXICO
+          id: MX
+        city: MIGUEL HIDALGO
+        geographicGroups:
+        - geographicGroupType:
+            name: COLONY
+            id: COLONY
+          name: POLANCO
+        addressName: AV PRESIDENTE MAZARIK 124
+        state:
+          name: DISTRITO FEDERAL
+        geolocation:
+          latitude: 19.431608
+          longitude: -99.193796
+      isOpen: true
+      distance: 328
+      description: ARISTOTELES
+      links:
+      - method: GET
+        rel: BRANCH
+        id: MX4724
+        href: /pois/v0/branches/MX4724
+      id: BR8J2KT17YAMJRREV7CXC21WHC
+      atmsInBranch:
+      - number: 1
+        id: PC
+      - number: 2
+        id: DP
+      type: BRANCH
+    - atmType:
+        name: Dispensadores
+        id: DP
+      address:
+        zipCode: '11560'
+        country:
+          name: MÉXICO
+          id: MX
+        city: MIGUEL HIDALGO
+        geographicGroups:
+        - geographicGroupType:
+            name: COLONY
+            id: COLONY
+          name: POLANCO V SECCIÓN
+        addressName: EMILIO CASTELAR 111
+        state:
+          name: DISTRITO FEDERAL
+        geolocation:
+          latitude: 19.430136
+          longitude: -99.197276
+      distance: 466
+      scope: PUBLIC
+      description: MIGUEL HIDALGO
+      links:
+      - method: GET
+        rel: ATM
+        id: MX3850
+        href: /pois/v0/atms/MX3850
+      - method: GET
+        rel: BRANCH
+        id: MX0006
+        href: /pois/v0/branches/MX0006
+      id: 433DYEGXXY3H0YF9JEBQRGJ100
+      type: ATM
+    - atmType:
+        name: Practicajas
+        id: PC
+      address:
+        zipCode: '11540'
+        country:
+          name: MÉXICO
+          id: MX
+        city: MIGUEL HIDALGO
+        geographicGroups:
+        - geographicGroupType:
+            name: COLONY
+            id: COLONY
+          name: POLANCO III SECCIÓN
+        addressName: EMILIO CASTELAR 111
+        state:
+          name: DISTRITO FEDERAL
+        geolocation:
+          latitude: 19.429998
+          longitude: -99.197146
+      distance: 475
+      scope: PUBLIC
+      description: MIGUEL HIDALGO
+      links:
+      - method: GET
+        rel: ATM
+        id: MX3923
+        href: /pois/v0/atms/MX3923
+      - method: GET
+        rel: BRANCH
+        id: MX0006
+        href: /pois/v0/branches/MX0006
+      id: MQF748N8VJDY587PVYKN818AH0
+      type: ATM
+    - atmType:
+        name: Dispensadores
+        id: DP
+      address:
+        zipCode: '11520'
+        country:
+          name: MÉXICO
+          id: MX
+        city: MIGUEL HIDALGO
+        geographicGroups:
+        - geographicGroupType:
+            name: COLONY
+            id: COLONY
+          name: GRANADA
+        addressName: EJÉRCITO NACIONAL MEXICANO 579
+        state:
+          name: DISTRITO FEDERAL
+        geolocation:
+          latitude: 19.4383
+          longitude: -99.1934
+      distance: 528
+      scope: PUBLIC
+      description: MIGUEL HIDALGO
+      links:
+      - method: GET
+        rel: ATM
+        id: MXC774
+        href: /pois/v0/atms/MXC774
+      - method: GET
+        rel: BRANCH
+        id: MX6062
+        href: /pois/v0/branches/MX6062
+      id: 5VSMN83EBG8T86XP7CHDVJT8B0
+      type: ATM
+    - atmType:
+        name: Dispensadores
+        id: DP
+      address:
+        zipCode: '11560'
+        country:
+          name: MÉXICO
+          id: MX
+        city: MIGUEL HIDALGO
+        geographicGroups:
+        - geographicGroupType:
+            name: COLONY
+            id: COLONY
+          name: POLANCO V SECCIÓN
+        addressName: HESIODO 540
+        state:
+          name: DISTRITO FEDERAL
+        geolocation:
+          latitude: 19.4342
+          longitude: -99.1904
+      distance: 545
+      scope: PUBLIC
+      description: MIGUEL HIDALGO
+      links:
+      - method: GET
+        rel: ATM
+        id: MX4243
+        href: /pois/v0/atms/MX4243
+      - method: GET
+        rel: BRANCH
+        id: MX6062
+        href: /pois/v0/branches/MX6062
+      id: S5EH1G76BJPCYX41R1BKPFKCHW
+      type: ATM
+    - atmType:
+        name: Dispensadores
+        id: DP
+      address:
+        zipCode: '11000'
+        country:
+          name: MÉXICO
+          id: MX
+        city: MIGUEL HIDALGO
+        geographicGroups:
+        - geographicGroupType:
+            name: COLONY
+            id: COLONY
+          name: LOMAS DE CHAPULTEPEC VI SECCIÓ
+        addressName: HORACIO 603
+        state:
+          name: DISTRITO FEDERAL
+        geolocation:
+          latitude: 19.433721
+          longitude: -99.190136
+      distance: 574
+      scope: PUBLIC
+      description: MIGUEL HIDALGO
+      links:
+      - method: GET
+        rel: ATM
+        id: MX5802
+        href: /pois/v0/atms/MX5802
+      - method: GET
+        rel: BRANCH
+        id: MX6062
+        href: /pois/v0/branches/MX6062
+      id: TGQNDDM3J4MYEY1C8NC9HP4NBW
+      type: ATM
+    - atmType:
+        name: Dispensadores
+        id: DP
+      address:
+        zipCode: '11560'
+        country:
+          name: MÉXICO
+          id: MX
+        city: MIGUEL HIDALGO
+        geographicGroups:
+        - geographicGroupType:
+            name: COLONY
+            id: COLONY
+          name: CHAPULTEPEC MORALES
+        addressName: PRESIDENTE MASARYK 219
+        state:
+          name: DISTRITO FEDERAL
+        geolocation:
+          latitude: 19.4316
+          longitude: -99.1904
+      distance: 608
+      scope: PUBLIC
+      description: MIGUEL HIDALGO
+      links:
+      - method: GET
+        rel: ATM
+        id: MX9401
+        href: /pois/v0/atms/MX9401
+      - method: GET
+        rel: BRANCH
+        id: MX6062
+        href: /pois/v0/branches/MX6062
+      id: TKH5YYANSGGZ3XTYC4ADHJXQA4
+      type: ATM
+    - atmType:
+        name: Dispensadores
+        id: DP
+      address:
+        zipCode: '11510'
+        country:
+          name: MÉXICO
+          id: MX
+        city: MIGUEL HIDALGO
+        geographicGroups:
+        - geographicGroupType:
+            name: COLONY
+            id: COLONY
+          name: POLANCO I SECCIÓN
+        addressName: MOLIERE 222
+        state:
+          name: DISTRITO FEDERAL
+        geolocation:
+          latitude: 19.435302
+          longitude: -99.201545
+      distance: 639
+      scope: PUBLIC
+      description: MIGUEL HIDALGO
+      links:
+      - method: GET
+        rel: ATM
+        id: MX8814
+        href: /pois/v0/atms/MX8814
+      - method: GET
+        rel: BRANCH
+        id: MX6062
+        href: /pois/v0/branches/MX6062
+      id: G4DXZXS711PDXPCJD76480NJMR
+      type: ATM
+    - atmType:
+        name: Dispensadores
+        id: DP
+      address:
+        zipCode: '11520'
+        country:
+          name: MÉXICO
+          id: MX
+        city: MIGUEL HIDALGO
+        geographicGroups:
+        - geographicGroupType:
+            name: COLONY
+            id: COLONY
+          name: GRANADA
+        addressName: MOLIERE 222
+        state:
+          name: DISTRITO FEDERAL
+        geolocation:
+          latitude: 19.435302
+          longitude: -99.201545
+      distance: 639
+      scope: PUBLIC
+      description: MIGUEL HIDALGO
+      links:
+      - method: GET
+        rel: ATM
+        id: MX9542
+        href: /pois/v0/atms/MX9542
+      - method: GET
+        rel: BRANCH
+        id: MX6062
+        href: /pois/v0/branches/MX6062
+      id: ZZGXK595A1CGFCKGQ1WBXMJ1GM
+      type: ATM
+    - atmType:
+        name: Dispensadores
+        id: DP
+      address:
+        zipCode: '11520'
+        country:
+          name: MÉXICO
+          id: MX
+        city: MIGUEL HIDALGO
+        geographicGroups:
+        - geographicGroupType:
+            name: COLONY
+            id: COLONY
+          name: GRANADA
+        addressName: EJERCITO NACIONAL 519
+        state:
+          name: DISTRITO FEDERAL
+        geolocation:
+          latitude: 19.438078
+          longitude: -99.191143
+      distance: 649
+      scope: PUBLIC
+      description: MIGUEL HIDALGO
+      links:
+      - method: GET
+        rel: ATM
+        id: MX9277
+        href: /pois/v0/atms/MX9277
+      - method: GET
+        rel: BRANCH
+        id: MX6062
+        href: /pois/v0/branches/MX6062
+      id: BTR6HZXZG0GRYZQJ9NCCB43JZW
+      type: ATM
+    - atmType:
+        name: Dispensadores
+        id: DP
+      address:
+        zipCode: '11520'
+        country:
+          name: MÉXICO
+          id: MX
+        city: MIGUEL HIDALGO
+        geographicGroups:
+        - geographicGroupType:
+            name: COLONY
+            id: COLONY
+          name: GRANADA
+        addressName: AV EJERCITO NACIONAL 769 769
+        state:
+          name: DISTRITO FEDERAL
+        geolocation:
+          latitude: 19.438443
+          longitude: -99.199669
+      distance: 651
+      scope: PUBLIC
+      description: MIGUEL HIDALGO
+      links:
+      - method: GET
+        rel: ATM
+        id: MXB186
+        href: /pois/v0/atms/MXB186
+      - method: GET
+        rel: BRANCH
+        id: MX6062
+        href: /pois/v0/branches/MX6062
+      id: 3P1SW8Y4GJVAT772ACPNJ6R1T0
+      type: ATM
+    - address:
+        zipCode: '11550'
+        country:
+          name: MÉXICO
+          id: MX
+        city: MIGUEL HIDALGO
+        geographicGroups:
+        - geographicGroupType:
+            name: COLONY
+            id: COLONY
+          name: POLANCO IV SECCIÓN
+        addressName: CAMPOS ELISEOS 223
+        state:
+          name: DISTRITO FEDERAL
+        geolocation:
+          latitude: 19.427813
+          longitude: -99.194188
+      isOpen: true
+      distance: 705
+      availableServices:
+      - id: ONLINE_APPOINTMENT
+      description: CAMPOS ELISEOS
+      links:
+      - method: GET
+        rel: BRANCH
+        id: MX0700
+        href: /pois/v0/branches/MX0700
+      id: M932QKW03SKG2A8FFE4FR2N5B4
+      atmsInBranch:
+      - number: 2
+        id: DP
+      - number: 1
+        id: PC
+      type: BRANCH
+    - atmType:
+        name: Dispensadores
+        id: DP
+      address:
+        zipCode: '11550'
+        country:
+          name: MÉXICO
+          id: MX
+        city: MIGUEL HIDALGO
+        geographicGroups:
+        - geographicGroupType:
+            name: COLONY
+            id: COLONY
+          name: POLANCO IV SECCIÓN
+        addressName: CAMPOS ELISEOS 223
+        state:
+          name: DISTRITO FEDERAL
+        geolocation:
+          latitude: 19.427813
+          longitude: -99.194188
+      distance: 705
+      scope: PUBLIC
+      description: MIGUEL HIDALGO
+      links:
+      - method: GET
+        rel: ATM
+        id: MX3851
+        href: /pois/v0/atms/MX3851
+      - method: GET
+        rel: BRANCH
+        id: MX0700
+        href: /pois/v0/branches/MX0700
+      id: J1XAHBQ3JQ384XB5TZ5GD9P64M
+      type: ATM
+    - atmType:
+        name: Dispensadores
+        id: DP
+      address:
+        zipCode: '11550'
+        country:
+          name: MÉXICO
+          id: MX
+        city: MIGUEL HIDALGO
+        geographicGroups:
+        - geographicGroupType:
+            name: COLONY
+            id: COLONY
+          name: POLANCO IV SECCIÓN
+        addressName: CAMPOS ELISEOS 223
+        state:
+          name: DISTRITO FEDERAL
+        geolocation:
+          latitude: 19.427813
+          longitude: -99.194188
+      distance: 705
+      scope: PUBLIC
+      description: MIGUEL HIDALGO
+      links:
+      - method: GET
+        rel: ATM
+        id: MX3852
+        href: /pois/v0/atms/MX3852
+      - method: GET
+        rel: BRANCH
+        id: MX0700
+        href: /pois/v0/branches/MX0700
+      id: PS43GJ61A4DRNRJA94YDCBC05M
+      type: ATM
+    - atmType:
+        name: Practicajas
+        id: PC
+      address:
+        zipCode: '11550'
+        country:
+          name: MÉXICO
+          id: MX
+        city: MIGUEL HIDALGO
+        geographicGroups:
+        - geographicGroupType:
+            name: COLONY
+            id: COLONY
+          name: POLANCO IV SECCIÓN
+        addressName: CAMPOS ELISEOS 223
+        state:
+          name: DISTRITO FEDERAL
+        geolocation:
+          latitude: 19.427813
+          longitude: -99.194188
+      distance: 705
+      scope: PUBLIC
+      description: MIGUEL HIDALGO
+      links:
+      - method: GET
+        rel: ATM
+        id: MX3924
+        href: /pois/v0/atms/MX3924
+      - method: GET
+        rel: BRANCH
+        id: MX0700
+        href: /pois/v0/branches/MX0700
+      id: PDHR44FAXC0WHKNSMCDRJQE3G8
+      type: ATM
+    - atmType:
+        name: Dispensadores
+        id: DP
+      address:
+        zipCode: '11560'
+        country:
+          name: MÉXICO
+          id: MX
+        city: MIGUEL HIDALGO
+        geographicGroups:
+        - geographicGroupType:
+            name: COLONY
+            id: COLONY
+          name: POLANCO V SECCIÓN
+        addressName: MOLIERE 342
+        state:
+          name: DISTRITO FEDERAL
+        geolocation:
+          latitude: 19.437691
+          longitude: -99.201105
+      distance: 706
+      scope: PUBLIC
+      description: MIGUEL HIDALGO
+      links:
+      - method: GET
+        rel: ATM
+        id: MX1692
+        href: /pois/v0/atms/MX1692
+      - method: GET
+        rel: BRANCH
+        id: MX3600
+        href: /pois/v0/branches/MX3600
+      id: HWZ7ECAY1X12WE5RZC32T1MQXM
+      type: ATM
+    - atmType:
+        name: Practicajas
+        id: PC
+      address:
+        zipCode: '11560'
+        country:
+          name: MÉXICO
+          id: MX
+        city: MIGUEL HIDALGO
+        geographicGroups:
+        - geographicGroupType:
+            name: COLONY
+            id: COLONY
+          name: POLANCO V SECCIÓN
+        addressName: MOLIERE 342
+        state:
+          name: DISTRITO FEDERAL
+        geolocation:
+          latitude: 19.437691
+          longitude: -99.201105
+      distance: 706
+      scope: PUBLIC
+      description: MIGUEL HIDALGO
+      links:
+      - method: GET
+        rel: ATM
+        id: MX2077
+        href: /pois/v0/atms/MX2077
+      - method: GET
+        rel: BRANCH
+        id: MX3600
+        href: /pois/v0/branches/MX3600
+      id: G477WBNG4PFXQ95D49YCHQHBH8
+      type: ATM
+    :headers:
+      content-length: '16561'
+      X-EdgeConnect-Origin-MEX-Latency: '576'
+      Access-Control-Allow-Origin: '*'
+      ECS-Entry-Point-Zone: ext
+      Access-Control-Allow-Methods: GET, POST, DELETE, PUT, OPTIONS, PATCH
+      X-Content-Type-Options: nosniff
+      old-catalog: 'true'
+      Connection: keep-alive
+      tsec: ZXlKaFlYQWlPaUl4TURBd01EQTRPQ0lzSW10bGVWWmxjbk5wYjI0aU9qRXNJbUZ3Y0Vsa0lqb2lRVkJRTVNJc0ltdHBaQ0k2SWtGUVVERXViRzlqWVd3dU1TSXNJbVZ1WXlJNklrRXhPVEpIUTAwaUxDSnJaWGxVZVhCbElqb2liRzlqWVd3aUxDSmhiR2NpT2lKa2FYSWlMQ0owYzJWalNXUWlPaUl3TkRVM1pqTTNZaTAxWWpSbExUUmpZbUl0T1RsbE5TMDVNalZsTkdKbE9UQTJOV01pZlEuLms3Y1M4cTUxWEZYeFlVX2YuYy1xR0dMT0J1YXNIcnpMLUNDSjhKUUV5SV83TUhTM0V5a0hWVXF5R3g1NEdfVzk1bFFscGZnWFRvaVpVUzdPRVJUNHVGV2JRUnpacGl1S0k0VkZoYXIwX29ZZTBvYmI5WHZGLXNCcFBubGY0TWJRV3ZuSGxOSVAyZlNvMDdFTFVWTVllMHk5bzNzcVpvaVZkcEUtQ2xRQVNFYmlFRDdjY2l5d2hfQ3NpWXBiZnhZNVhwbzZYUFFraVk1LUxXWUkxdEI3MlJNN3ZMcHVrcUgxRmpVWGZoYUQtc3liMGs4SGJZVVJjU25tcXNVekU4TFU0ekw0OHNQQzZKNFBWZFhrUE5LTktJSUdiaHZKZ21NT24wekxJMlBEUC0wVnVjRGlHUUxrRV8zOEItOUlkZU1zTGYxZEFOdVRwNHlaSGRBNURweGd2TThSakdLeklKLW92X1VLVjdMZTJoZEtINVNUWlR6eC1JUFlnN25tSDd1aUhsUjV3UW9qQVp1TU1WY0dBeHMySGRRd21TTlh3eU5LNFJiYy1aa2JJM295UWN5TUJxeVRCU3NpYmU0ZGJHa0g0ZmpXejEzOGF3b2QyOUg5SmlPTm5idXVYZXFzbm5LWnhIX1A0ZFV6Ti1wNWxwV1I4bFpKcGExMm5EUmdxRk1OWlF6R3FROThEQXZYRFhNYi0zMHNtUDhzOTc2XzJfcTkyNGRaVkp3ekRhdVc2SXpyLVlMMWw2NU9PSFJlZi0tYzAyS1lKeEhCRmk2em8tYkxkT1doYjdoUjdKOTB0UG5IWVBnTER2M2Y2eEFBMEc0ZURsWEkwNkdESGd6VmxxcUh4VXdIOWR1M0FHMFhidWYyTDc2MmJPa1I3NE5vTUhzamhVNnozSG03Wm5PYVprSUs5OVZlTmt5UzljeElGME5iLXRGZGh6Vk5FY0haalY2UzFlcmRiTGpWLU5lYWVZOU5vWTFLWWoyZnd2aVlDcDVhU2xIZVZ6MFl3NUJvNk5Ea0FKTlF0bnRwSWxEbHlEYlJhLU04SWdSNkJzcjhlaE9IQlk2ejV5MXBOODBhbHA0U2NSdFdLUjBZUHkweDQxenp0Q01TRmxsRnpXOXF5dFdTUUYyQnFqdFJwUW9xT0VXSjZBcjhSank4VlFwbU5kSnkzVHFjc2VGUDVBU0ROTUQ3ZFlVVVJQY1NUN1BLYmgteTQ4VzU0R2tWMlFsejFWMk9BVk1WdWtyeEVYWHRaeTlSYnQzUG52S0NxM1hfTE9BdWFsMHQwQlZKTV94U1Mzd0I5QXdYSXpEZ0w5dFpJaURGREtsRjFSdE5YaUgwVTlTa0JVZUdXVUI0Tmtyby5WM1E3RmhGT2xyOWRCYnJxRlYzYjJ3
+      Access-Control-Allow-Headers: Accept-Encoding, Accept, Content-Type, tsec, consumerrequestid,
+        authenticationchallenge, authenticationtype, authenticationdata, authenticationstate,
+        contactid, consumeruuid, consumerapplicationid, perimetertsec, authorization,
+        responsewarningcode, responsewarningdescription, cuf, prefer, phoneNumber,
+        Location, X-RHO-PARENTSPANID, X-RHO-TRACEID, preferredauthenticationtype,
+        X-HTTP-Method-Override, Access-Control-Allow-Methods, iv-remote-address, thirdparty-x-forwarded-for,
+        thirdparty-user-agent, thirdparty-geolocation, thirdparty-calculated-scoring,
+        thirdparty-deviceid, vnd.bbva.security-client-certificate, order-preferredaction,
+        authenticationresponse, Access-Control-Max-Age, BCS-Device-Id, BCS-Device-OS-Name,
+        BCS-Device-Model-Name, BCS-Device-Model-Manufacturer, BCS-Device-Screen-Size,
+        BCS-Device-OS-Version, BCS-Device-DPI, BCS-Device-App-Name, BCS-Device-App-Version,
+        Third-Party-Application-Id, ECS-Signature-Platform-Use-Case, BCS-Process-Code,
+        BCS-Operation-Tracer, BCS-Process-Tracer, vnd.bbva.user-id, order-preferredaction,
+        order-id, order-accepteddisclaimers, x-forwarded-for, Date, x-dmz-orgn, onsite-accountTerm,
+        onsite-logicalTerm, Akamai-BM-Telemetry, order-hmac, order-signed, BCS-Third-Party-Session-Id,
+        Cache-Control, clave, Content-Encoding, ECS-Entry-Point-Zone, firma, Geolocation,
+        Third-Party-Collaborator-Id, user-agent, Via
+      Date: Tue, 07 Jun 2022 17:39:23 GMT
+      Referrer-Policy: same-origin
+      X-Frame-Options: sameorigin
+      Strict-Transport-Security: max-age=31536000; includeSubDomains
+      Access-Control-Expose-Headers: Accept-Encoding, Accept, Content-Type, tsec,
+        consumerrequestid, authenticationchallenge, authenticationtype, authenticationdata,
+        authenticationstate, contactid, consumeruuid, consumerapplicationid, perimetertsec,
+        authorization, responsewarningcode, responsewarningdescription, cuf, prefer,
+        phoneNumber, Location, X-RHO-PARENTSPANID, X-RHO-TRACEID, preferredauthenticationtype,
+        X-HTTP-Method-Override, Access-Control-Allow-Methods, iv-remote-address, thirdparty-x-forwarded-for,
+        thirdparty-user-agent, thirdparty-geolocation, thirdparty-calculated-scoring,
+        thirdparty-deviceid, vnd.bbva.security-client-certificate, order-preferredaction,
+        authenticationresponse, Access-Control-Max-Age, BCS-Device-Id, BCS-Device-OS-Name,
+        BCS-Device-Model-Name, BCS-Device-Model-Manufacturer, BCS-Device-Screen-Size,
+        BCS-Device-OS-Version, BCS-Device-DPI, BCS-Device-App-Name, BCS-Device-App-Version,
+        Third-Party-Application-Id, ECS-Signature-Platform-Use-Case, BCS-Process-Code,
+        BCS-Operation-Tracer, BCS-Process-Tracer, vnd.bbva.user-id, order-preferredaction,
+        order-id, order-accepteddisclaimers, x-forwarded-for, Date, x-dmz-orgn, onsite-accountTerm,
+        onsite-logicalTerm, Akamai-BM-Telemetry, order-hmac, order-signed, BCS-Third-Party-Session-Id,
+        Cache-Control, clave, Content-Encoding, ECS-Entry-Point-Zone, firma, Geolocation,
+        Third-Party-Collaborator-Id, user-agent, Via
+      Cache-Control: no-cache,no-store,must-revalidate
+      Content-Security-Policy: script-src 'self'
+      Vary: Accept-Encoding
+      Set-Cookie: vbank-session=04e379ee-4bc5-4957-8447-b35955e7004d
+      Expires: '-1'
+      X-XSS-Protection: 1; mode=block
+      X-EdgeConnect-MidMile-RTT: '25'
+      consumerrequestid: 5b7459fb-a793-4371-bbe9-16b966c59382
+      Content-Type: application/json; charset=UTF-8
+    :status: 200 OK

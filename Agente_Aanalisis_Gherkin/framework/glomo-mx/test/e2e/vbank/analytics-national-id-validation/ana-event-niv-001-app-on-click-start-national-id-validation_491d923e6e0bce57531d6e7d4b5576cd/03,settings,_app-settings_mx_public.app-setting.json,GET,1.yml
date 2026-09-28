@@ -1,0 +1,4730 @@
+when:
+  sequence: 1
+  path: /app-settings/mx/public.app-setting.json
+  method: GET
+  backend: settings
+request:
+  headers:
+    sec-fetch-mode: cors
+    content-length: '0'
+    referer: http://localhost:8001/
+    sec-fetch-site: same-site
+    accept-language: es-MX,es;q=0.9
+    origin: http://localhost:8001
+    accept: application/json, text/plain, */*; q=0.01
+    sec-ch-ua: '"Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"'
+    sec-ch-ua-mobile: '?0'
+    x-vbank-session: a729f2e5-0cc4-4506-875c-691bc7347589
+    sec-ch-ua-platform: '"macOS"'
+    host: localhost:9001
+    content-type: application/json
+    connection: keep-alive
+    cache-control: no-cache, no-store, must-revalidate
+    accept-encoding: gzip, deflate, br, zstd
+    sec-fetch-dest: empty
+    user-agent: GLOMO_MX/99.99.99 (Android;14;Samsung)
+then:
+  - return:
+      appVersion:
+        iOS:
+          appStoreUrl: https://apps.apple.com/es/app/bbva-m%C3%A9xico-bancomer-m%C3%B3/id374824226
+          minVersion: 0.0.0
+          bundleId: com.bancomer.bbva.bancomermovil
+          minSDKVersion: 0.0.0
+          adviceVersion: 0.0.0
+        Android:
+          appStoreUrl: https://play.google.com/store/apps/details?id=com.bancomer.mbanking&hl=es_419
+          minVersion: 11140
+          inAppUpdates:
+            immediate:
+              available: true
+            flexible:
+              period: 1
+              available: true
+              limit: 2
+          packageId: com.bancomer.mbanking
+          bySDK:
+            - minVersion: 0
+              sdk: 23
+          adviceVersion: 11170
+      travelInsuranceConfig:
+        travelers:
+          min: 1
+          max: 5
+      customerLogin:
+        globalPrefix: MX00740
+      feedbackClientVoiceConnect:
+        pushForms:
+          - feedbackStep: LOGIN
+            feedbackOrigin: NPS
+            validators:
+              - value: true
+                key: isAvailable
+              - value:
+                  - hourEnd: 6
+                    hourStart: 0
+                    percent: 100
+                  - hourEnd: 8
+                    hourStart: 6
+                    percent: 100
+                  - hourEnd: 20
+                    hourStart: 8
+                    percent: 100
+                  - hourEnd: 0
+                    hourStart: 20
+                    percent: 100
+                key: userPercent
+              - value: 3
+                key: numberSesions
+              - value: 0
+                key: numberDaysToShow
+              - value: 0
+                key: numberDaysToAnswered
+            event: feedback-client-voice-connect-login
+          - feedbackStep: LOGOUT
+            feedbackOrigin: GRADUAL
+            validators:
+              - value: true
+                key: isAvailable
+              - value:
+                  - hourEnd: 6
+                    hourStart: 0
+                    percent: 100
+                  - hourEnd: 8
+                    hourStart: 6
+                    percent: 100
+                  - hourEnd: 20
+                    hourStart: 8
+                    percent: 100
+                  - hourEnd: 0
+                    hourStart: 20
+                    percent: 100
+                key: userPercent
+              - value: 0
+                key: numberSesions
+              - value: 0
+                key: numberDaysToShow
+              - value: 0
+                key: numberDaysToAnswered
+            event: feedback-client-voice-connect-logout
+      disabilityVideocall:
+        disabilityVideocallHearingTacticalSchedule:
+          Hi: 10
+          dFR: 1
+          dWE: 0
+          dSA: 0
+          dTU: 0
+          dMO: 1
+          dSU: 0
+          dTH: 0
+          Hc: 18
+        disabilityVideocallHearingStrategicConfiguration:
+          lastWorkingDay: 5
+          openingHour: '10:00:00'
+          firstWorkingDay: 1
+          meetingRoomUrl: https://bbva-dev-mexico.webex.com/bbva-dev-mexico/j.php?MTID=
+          maxTimeInSession: 1200000
+          closingHour: '18:00:00'
+          listOfTimers:
+            - minutesLeft: '3'
+              time: 180000
+              message: ¡Prepárate! Quedan 3 minutos. Notifica al cliente que la videollamada está por terminar y comienza a cerrar el tema. Recuérdale que si necesita más tiempo para resolver sus dudas, puede volver a comunicarse y tú o algún otro asesor le brindará la atención. ¡Asegúrate de generar una despedida amable y empática!
+            - minutesLeft: '5'
+              time: 300000
+              message: ¡Atención! Queda poco tiempo. Es momento de avisar al cliente que la videollamada termina en 5 minutos y que podrá comunicarse nuevamente si tiene más dudas por resolver.
+            - minutesLeft: '10'
+              time: 600000
+              message: ¡Importante! La videollamada termina en 10 minutos. Cuando queden 5 minutos, hazle saber al cliente que si necesita más tiempo para resolver sus dudas, puede volver a comunicarse.
+          aapTarget: '10000228'
+      maximumPaymentAmountCodi:
+        value: 11976.28
+      ocMortgageDeadlines:
+        - purpose:
+            id: '01'
+          deadlines:
+            - '5'
+            - '10'
+            - '15'
+            - '20'
+        - purpose:
+            id: '02'
+          deadlines:
+            - '5'
+            - '6'
+            - '7'
+            - '8'
+            - '9'
+            - '10'
+            - '11'
+            - '12'
+            - '13'
+            - '14'
+            - '15'
+            - '16'
+            - '17'
+            - '18'
+            - '19'
+            - '20'
+        - purpose:
+            id: '03'
+          deadlines:
+            - '5'
+            - '10'
+            - '15'
+            - '20'
+        - purpose:
+            id: '05'
+          deadlines:
+            - '5'
+            - '10'
+            - '15'
+            - '20'
+        - purpose:
+            id: '06'
+          deadlines:
+            - '5'
+            - '10'
+      futura:
+        appSettingsValidation:
+          '0725':
+            flag: glomo.dashboard.orangeRewards
+            lda: '0725'
+        assets:
+          - lda: '0130'
+            url: https://assets.bbvaexperience.com/spherica/visual/microillustrations/increase-credit-line-glass.png
+          - lda: '0557'
+            url: https://assets.bbvaexperience.com/spherica/visual/microillustrations/portability-glass.png
+          - lda: '0640'
+            url: https://assets.bbvaexperience.com/spherica/visual/microillustrations/withdrawal-money-glass.png
+          - lda: '0693'
+            url: https://assets.bbvaexperience.com/spherica/visual/microillustrations/request-glass.png
+          - lda: '0732'
+            url: https://assets.bbvaexperience.com/spherica/visual/microillustrations/loan-glass.png
+          - lda: '0733'
+            url: https://assets.bbvaexperience.com/spherica/visual/microillustrations/calendar-account-glass.png
+          - lda: '0739'
+            url: https://assets.bbvaexperience.com/spherica/visual/microillustrations/loan-glass.png
+          - lda: '0740'
+            url: https://assets.bbvaexperience.com/spherica/visual/microillustrations/loan-glass.png
+          - lda: '0758'
+            url: https://assets.bbvaexperience.com/spherica/visual/microillustrations/goal-insurance-glass.png
+          - lda: '0759'
+            url: https://assets.bbvaexperience.com/spherica/visual/microillustrations/goal-insurance-glass.png
+          - lda: '0766'
+            url: https://assets.bbvaexperience.com/spherica/visual/microillustrations/add-credit-card-glass.png
+          - lda: '0769'
+            url: https://assets.bbvaexperience.com/spherica/visual/microillustrations/calendar-account-glass.png
+          - lda: '0777'
+            url: https://assets.bbvaexperience.com/spherica/visual/microillustrations/digital-cashing-glass.png
+          - lda: '0779'
+            url: https://assets.bbvaexperience.com/spherica/visual/microillustrations/loan-glass.png
+          - lda: '0785'
+            url: https://assets.bbvaexperience.com/spherica/visual/microillustrations/saving-glass.png
+          - lda: '0786'
+            url: https://assets.bbvaexperience.com/spherica/visual/microillustrations/deposit-glass.png
+          - lda: '0787'
+            url: https://assets.bbvaexperience.com/spherica/visual/microillustrations/funds-glass.png
+          - lda: '0788'
+            url: https://assets.bbvaexperience.com/spherica/visual/microillustrations/onboarding-card-glass.png
+          - lda: '0790'
+            url: https://assets.bbvaexperience.com/spherica/visual/microillustrations/young-account-glass.png
+          - lda: '0791'
+            url: https://assets.bbvaexperience.com/spherica/visual/microillustrations/task-list-glass.png
+          - lda: '0793'
+            url: https://assets.bbvaexperience.com/spherica/visual/microillustrations/promotions-glass.png
+          - lda: '0806'
+            url: https://assets.bbvaexperience.com/spherica/visual/microillustrations/promotions-glass.png
+          - lda: '0814'
+            url: https://assets.bbvaexperience.com/spherica/visual/microillustrations/home-search-glass.png
+          - lda: '0821'
+            url: https://assets.bbvaexperience.com/spherica/visual/microillustrations/newsletter-glass.png
+          - lda: '0823'
+            url: https://assets.bbvaexperience.com/spherica/visual/microillustrations/digital-cashing-glass.png
+          - lda: '3005'
+            url: https://assets.bbvaexperience.com/spherica/visual/microillustrations/mobile-insurance-glass.png
+          - lda: '4025'
+            url: https://assets.bbvaexperience.com/spherica/visual/microillustrations/goal-insurance-glass.png
+          - lda: '4035'
+            url: https://assets.bbvaexperience.com/spherica/visual/microillustrations/travel-insurance-glass.png
+          - lda: 0ASC
+            url: https://assets.bbvaexperience.com/spherica/visual/microillustrations/increase-credit-line-glass.png
+          - lda: 0HIP
+            url: https://assets.bbvaexperience.com/spherica/visual/microillustrations/home-search-glass.png
+          - lda: 0NOM
+            url: https://assets.bbvaexperience.com/spherica/visual/microillustrations/loan-glass.png
+          - lda: 0PPI
+            url: https://assets.bbvaexperience.com/spherica/visual/microillustrations/loan-glass.png
+          - lda: 0REC
+            url: https://assets.bbvaexperience.com/spherica/visual/microillustrations/relocation-loan-glass.png
+          - lda: 0SKY
+            url: https://assets.bbvaexperience.com/spherica/visual/microillustrations/card-glass.png
+          - lda: 0TDC
+            url: https://assets.bbvaexperience.com/spherica/visual/microillustrations/card-glass.png
+          - lda: 00CB
+            url: https://assets.bbvaexperience.com/spherica/visual/microillustrations/loan-glass.png
+          - lda: ANOM
+            url: https://assets.bbvaexperience.com/spherica/visual/microillustrations/salary-advance-glass.png
+          - lda: AUTO
+            url: https://assets.bbvaexperience.com/spherica/visual/microillustrations/car-glass.png
+          - lda: COMB
+            url: https://assets.bbvaexperience.com/spherica/visual/microillustrations/personal-loan-and-card-glass.png
+          - lda: '0576'
+            url: https://assets.bbvaexperience.com/spherica/visual/microillustrations/donation-glass.png
+          - lda: NILC
+            url: https://assets.bbvaexperience.com/spherica/visual/microillustrations/increase-credit-line-glass.png
+        usersettings_config:
+          cache:
+            update_interval: 7
+        collections_max_multiple_request: 4
+        collections_config:
+          - id: home
+            cache:
+              update_interval: 7
+              force_date: '2023-12-01'
+              show_updated: false
+              disabled: false
+            filterBy: none
+          - id: home_nba
+            feedback_id: ASDFG
+            items_number:
+              ADVANCED: 5
+              STANDARD: 5
+              BASIC: 1
+            cache:
+              update_interval: 7
+              force_date: ''
+              show_updated: true
+              disabled: false
+            filterBy: none
+          - id: home_maincard
+            feedback_id: QWERT
+            products:
+              accounts:
+                show_movements: true
+                show_link_movements: true
+              cards:
+                show_movements: true
+                show_link_movements: true
+            items_number:
+              ADVANCED: 6
+              STANDARD: 6
+              BASIC: 6
+            cache:
+              update_interval: 1
+              force_date: '2023-12-01'
+              show_updated: false
+              disabled: false
+            filterBy: none
+            config_component:
+              config_data_properties:
+                animationMainCardConfig:
+                  totalCount: 3
+                  timeout: 700
+                  viewPercentage: 0.8
+                  resetAnimationDate: ''
+          - id: home_frequent_actions
+            feedback_id: POIUY
+            items_number:
+              ADVANCED: 10
+              STANDARD: 10
+              BASIC: 5
+            show_more: true
+            show_more_customized: true
+            customized_items_number: 20
+            cache:
+              update_interval: 7
+              force_date: ''
+              show_updated: false
+              disabled: false
+            filterBy: internalId
+          - id: home_popular_actions
+            feedback_id: ÑLKJH
+            items_number:
+              ADVANCED: 10
+              STANDARD: 10
+              BASIC: 5
+            cache:
+              update_interval: 7
+              force_date: ''
+              show_updated: false
+              disabled: false
+            filterBy: internalId
+          - id: home_smart_servicing
+            feedback_id: MNBVC
+            burnable: true
+            own_internal_ids:
+              - transfers.own
+            ccp_internal_ids:
+              - creditCardPayment
+            bp_service_high_ids:
+              - billPaymentSS.serviceHighProbability
+            bp_service_low_ids:
+              - billPaymentSS.serviceLowProbability
+            bp_arcus_high_ids:
+              - billPaymentSS.arcusHighProbability
+            bp_arcus_low_ids:
+              - billPaymentSS.arcusLowProbability
+            ccp_specific_amount_id: MINIMUM_PAYMENT_BALANCE
+            items_number:
+              ADVANCED: 7
+              STANDARD: 5
+              BASIC: 3
+            cache:
+              update_interval: 0
+              force_date: ''
+              show_updated: true
+              disabled: false
+              saveToLocalStorage: true
+            filterBy: filterContractId
+          - id: home_financial_health
+            feedback_id: RTYUI
+            items_number:
+              ADVANCED: 7
+              STANDARD: 5
+              BASIC: 3
+            cache:
+              update_interval: 7
+              force_date: ''
+              show_updated: true
+              disabled: false
+            filterBy: none
+          - id: home_nbo
+            feedback_id: FGHJK
+            items_number:
+              ADVANCED: 7
+              STANDARD: 5
+              BASIC: 3
+            cache:
+              update_interval: 7
+              force_date: ''
+              show_updated: true
+              disabled: false
+            filterBy: none
+          - id: home_svp_index
+            feedback_id: VBNMM
+            burnable: true
+            items_number:
+              ADVANCED: 7
+              STANDARD: 5
+              BASIC: 3
+            cache:
+              update_interval: 7
+              force_date: ''
+              show_updated: true
+              disabled: false
+            filterBy: internalId
+          - id: home_experiences
+            feedback_id: UYTRE
+            burnable: true
+            min_items_close: 6
+            items_number:
+              ADVANCED: 3
+              STANDARD: 3
+              BASIC: 1
+            cache:
+              update_interval: 7
+              force_date: ''
+              show_updated: false
+              disabled: false
+            filterBy: none
+        features:
+          - idOperation: transferOwn
+            internalId: transfers.own
+            route: transfers
+            icon: sphericaTransfer
+            title: transfers-title
+            hashDisabled: false
+            params:
+              smartServicingId: id
+              contractId: value.contract.id
+              contactNumber: value.transaction.receiver.contract.number
+              currency: value.transaction.sentMoney.currency
+              amount: value.transaction.sentMoney.amount
+              concept: value.transaction.concept
+            hash_format:
+              - receiver.contract.number
+              - sentMoney.currency
+          - idOperation: transferInternal
+            internalId: transfers.internal
+            route: transfers
+            icon: sphericaTransfer
+            title: transfers-title
+            hashDisabled: false
+            params:
+              smartServicingId: id
+              contractId: value.contract.id
+              receiverNumber: value.transaction.receiver.contract.number
+              receiverFullName: value.transaction.receiver.fullName
+              currency: value.transaction.sentMoney.currency
+              amount: value.transaction.sentMoney.amount
+              concept: value.transaction.concept
+            hash_format:
+              - receiver.contract.number
+              - sentMoney.currency
+          - idOperation: transferInterbank
+            internalId: transfers.interbank
+            route: transfers
+            icon: sphericaTransfer
+            title: transfers-title
+            hashDisabled: false
+            params:
+              smartServicingId: id
+              contractId: value.contract.id
+              receiverNumber: value.transaction.receiver.contract.number
+              receiverContractType: value.transaction.receiver.contract.product.id
+              receiverBankId: value.transaction.receiver.bank.id
+              receiverBankName: value.transaction.receiver.bank.name
+              receiverFullName: value.transaction.receiver.fullName
+              currency: value.transaction.sentMoney.currency
+              amount: value.transaction.sentMoney.amount
+              concept: value.transaction.concept
+              reference: value.transaction.reference
+            hash_format:
+              - receiver.contract.number
+              - sentMoney.currency
+          - idOperation: creditCardPayment
+            internalId: creditCardPayment
+            route: cardCreditCardPayment
+            icon: sphericaCard
+            title: credit-card-payment-title
+            concept: app-info-structure-home-smart-servicing-credit-card-payment-concept
+            hashDisabled: false
+            isEnableMinimumPayment: true
+            params:
+              smartServicingId: id
+              receiverNumber: value.transaction.receiver.contract.number
+            hash_format:
+              - receiver.contract
+          - internalId: billPaymentSS.arcusHighProbability
+            route: billPaymentsDashboard
+            icon: sphericaReporting
+            title: bill-payments-title
+            concept: app-info-structure-home-smart-servicing-bill-payment-arcus-high-concept
+            params:
+              smartServicingId: id
+              name: value.transaction.receiver.fullName
+              contractId: value.contract.id
+              amount: value.transaction.sentMoney.amount
+              concept: value.transaction.concept
+              convenio: value.transaction.receiver.contract.number
+              reference: value.transaction.reference
+              type: internalId
+            hash_format:
+              - receiver.contract.number
+              - sentMoney.currency
+          - internalId: billPaymentSS.arcusLowProbability
+            route: billPaymentsDashboard
+            icon: sphericaReporting
+            title: bill-payments-title
+            concept: app-info-structure-home-smart-servicing-bill-payment-arcus-high-concept
+            params:
+              smartServicingId: id
+              name: value.transaction.receiver.fullName
+              contractId: value.contract.id
+              amount: value.transaction.sentMoney.amount
+              concept: value.transaction.concept
+              convenio: value.transaction.receiver.contract.number
+              type: internalId
+            hash_format:
+              - receiver.contract.number
+              - sentMoney.currency
+          - internalId: billPaymentSS.serviceHighProbability
+            route: billPaymentsDashboard
+            icon: sphericaReporting
+            title: bill-payments-title
+            concept: app-info-structure-home-smart-servicing-bill-payment-arcus-high-concept
+            params:
+              smartServicingId: id
+              name: value.transaction.receiver.fullName
+              contractId: value.contract.id
+              amount: value.transaction.sentMoney.amount
+              concept: value.transaction.concept
+              convenio: value.transaction.receiver.contract.number
+              reference: value.transaction.reference
+              type: internalId
+            hash_format:
+              - receiver.contract.number
+              - sentMoney.currency
+          - internalId: billPaymentSS.serviceLowProbability
+            route: billPaymentsDashboard
+            icon: sphericaReporting
+            title: bill-payments-title
+            concept: app-info-structure-home-smart-servicing-bill-payment-arcus-high-concept
+            params:
+              smartServicingId: id
+              name: value.transaction.receiver.fullName
+              contractId: value.contract.id
+              concept: value.transaction.concept
+              convenio: value.transaction.receiver.contract.number
+              reference: value.transaction.reference
+              type: internalId
+            hash_format:
+              - receiver.contract.number
+              - sentMoney.currency
+          - internalId: reward
+            route: reward
+            locations:
+              experienceCarousel:
+                isActive: true
+              experienceList:
+                isActive: true
+            enable:
+              - OPERATIVE
+            productType:
+              - CARD
+            currency:
+              - MXN
+            productIdentifierType:
+              - 'N/A '
+            subProductType:
+              - MXN
+          - internalId: sustainability
+            route: sustainabilitySection
+            locations:
+              experienceCarousel:
+                isActive: true
+              experienceList:
+                isActive: true
+          - internalId: goals
+            route: goals
+            locations:
+              experienceCarousel:
+                isActive: true
+              experienceList:
+                isActive: true
+          - internalId: expensesGroup
+            route: expensesGroup
+            locations:
+              experienceCarousel:
+                isActive: true
+              experienceList:
+                isActive: true
+          - internalId: investmentsFollowUp
+            route: investmentsFollowUp
+            locations:
+              experienceCarousel:
+                isActive: true
+              experienceList:
+                isActive: true
+          - internalId: LOAN
+            route: loan
+            params:
+              productId: contractId
+          - internalId: ACCOUNTGOALS
+            route: goals
+            params:
+              productId: contractId
+          - internalId: ACCOUNTML
+            route: accountTransactions
+            params:
+              productId: contractId
+          - internalId: CARD_credito_Mov
+            route: cardTransactions
+            params:
+              productId: contractId
+          - internalId: CARD_debito_Mov
+            route: accountTransactions
+            params:
+              productId: contractId
+          - internalId: Trader
+            route: bbvaTraderProductDetail
+            params:
+              productId: contractId
+          - internalId: INVE
+            route: investAdvisoryProductDetail
+            params:
+              productId: contractId
+          - internalId: CARDADDITIONAL
+            route: additionalCardDetail
+            params:
+              productId: contractId
+          - internalId: INVESTMENT_FUND
+            route: fund
+            params:
+              productId: contractId
+          - internalId: INSURANCE
+            route: insurance
+            params:
+              productId: contractId
+          - internalId: DEPOSIT
+            route: deposit
+            params:
+              productId: contractId
+            defaultParams:
+              depositWithdrawalsEnabled: 'true'
+          - internalId: EQUITY
+            route: equity
+            params:
+              productId: contractId
+          - internalId: MLB
+            route: unitLinked
+            params:
+              productId: contractId
+          - internalId: internationalTransfers
+            icon: sphericaTransfer
+            description: Transferencias Internacionales
+            route: internationalTransfersPanel
+            enable:
+              - ACTIVE
+            productType:
+              - ACCOUNT
+            currency:
+              - MXN
+              - USD
+              - EUR
+            subProductType:
+              - N/A
+              - '0201'
+            productIdentifierType:
+              - N/A
+              - CE
+          - internalId: cardlessWithdrawal
+            icon: sphericaMobileCashDollar
+            description: Retiro sin tarjeta
+            route: cardlessWithdrawal
+            enable:
+              - ACTIVE
+            productType:
+              - ACCOUNT
+            currency:
+              - MXN
+              - EUR
+              - USD
+            subProductType:
+              - N/A
+              - '0201'
+            productIdentifierType:
+              - N/A
+              - CE
+          - internalId: cardCreditCardPayment
+            icon: sphericaCard
+            description: Pagar tarjeta
+            route: accountCreditCardPayment
+            enable:
+              - OPERATIVE
+            productType:
+              - CARD
+            currency:
+              - MXN
+            subProductType:
+              - N/A
+            productIdentifierType:
+              - N/A
+              - CE
+          - internalId: transfers
+            icon: sphericaTransfer
+            description: Transferir y Dimo®
+            route: transfers
+            defaultParams:
+              continue: dashboard
+            enable:
+              - ACTIVE
+              - N/A
+            productType:
+              - ACCOUNT
+            currency:
+              - MXN
+            subProductType:
+              - MXN
+            productIdentifierType:
+              - N/A
+              - CE
+              - LP
+              - ME
+          - internalId: billPayments
+            icon: sphericaReporting
+            description: Pago de impuestos y servicios
+            route: billPaymentsHome
+            enable:
+              - ACTIVE
+            productType:
+              - ACCOUNT
+            currency:
+              - MXN
+            subProductType:
+              - N/A
+            productIdentifierType:
+              - N/A
+              - CE
+          - internalId: cardlessWithdrawalHistoric
+            icon: sphericaHistory
+            description: Consulta retiro sin tarjeta
+            route: cardlessWithdrawalHistoric
+            enable:
+              - ACTIVE
+            productType:
+              - ACCOUNT
+            currency:
+              - MXN
+              - USD
+              - EUR
+          - internalId: rechargeTag
+            icon: sphericaChargeCard
+            description: Recargar Tag
+            route: tagCardList
+            enable:
+              - ACTIVE
+            productType:
+              - ACCOUNT
+            currency:
+              - MXN
+            subProductType:
+              - N/A
+            productIdentifierType:
+              - N/A
+              - CE
+          - internalId: blackhawkPurchase
+            icon: sphericaRewards
+            description: Comprar tarjeta de regalo digital
+            route: blackhawkPurchase
+            enable:
+              - ACTIVE
+            productType:
+              - ACCOUNT
+            currency:
+              - MXN
+            subProductType:
+              - N/A
+            productIdentifierType:
+              - N/A
+              - CE
+          - internalId: mobileTopUp
+            icon: sphericaChargeMobile
+            description: Recargas y paquetes
+            route: mobileTopUp
+            enable:
+              - ACTIVE
+            productType:
+              - ACCOUNT
+            currency:
+              - MXN
+            subProductType:
+              - N/A
+            productIdentifierType:
+              - N/A
+              - CE
+          - internalId: atmLocator
+            icon: sphericaBranch
+            description: Sucursales y cajeros
+            route: atmLocator
+            enable:
+              - OPERATIVE
+              - ACTIVE
+              - BLOCKED
+              - INOPERATIVE
+              - FORMALIZED
+              - PENDING_DELIVERY
+              - PENDING_EMBOSSING
+              - N/A
+            productType:
+              - ACCOUNT
+              - CARD
+              - LOAN
+              - INVESTMENT_FUND
+              - DEPOSIT
+              - INSURANCE
+            currency:
+              - MXN
+              - USD
+              - EUR
+            subProductType:
+              - N/A
+            productIdentifierType:
+              - N/A
+          - internalId: codicelPeerToPeerSend
+            icon: sphericaTransfer
+            description: Enviar dinero Dimo®
+            route: transfers
+            defaultParams:
+              continue: dashboard
+            enable:
+              - ACTIVE
+              - N/A
+            productType:
+              - ACCOUNT
+            currency:
+              - MXN
+            subProductType:
+              - MXN
+            productIdentifierType:
+              - N/A
+              - CE
+              - LP
+              - ME
+          - internalId: moreActions
+            route: operationals
+          - internalId: codicelPeerToPeerSend
+            route: codicelPeerToPeerSend
+          - internalId: operationalLimits
+            route: operationalLimits
+            enable:
+              - OPERATIVE
+            productType:
+              - CARD
+            currency:
+              - MXN
+            subProductType:
+              - '0000'
+              - '0201'
+            productIdentifierType:
+              - N/A
+          - internalId: accountMonthlyStatement
+            route: accountTransactions
+            params:
+              productId: contractId
+          - internalId: cardMonthlyStatement
+            route: cardTransactions
+            params:
+              productId: contractId
+          - internalId: stEnrollment
+            route: fido
+            enable:
+              - OPERATIVE
+              - ACTIVE
+              - BLOCKED
+              - INOPERATIVE
+              - FORMALIZED
+              - N/A
+              - PENDING_DELIVERY
+              - PENDING_EMBOSSING
+            productType:
+              - ACCOUNT
+              - CARD
+              - LOAN
+              - INVESTMENT_FUND
+              - DEPOSIT
+              - INSURANCE
+            currency:
+              - MXN
+              - USD
+              - EUR
+            subProductType:
+              - '0000'
+              - '0201'
+            productIdentifierType:
+              - CE
+          - internalId: emergencyReports
+            route: emergencyReports
+            enable:
+              - OPERATIVE
+              - ACTIVE
+              - BLOCKED
+              - INOPERATIVE
+              - FORMALIZED
+              - N/A
+              - PENDING_DELIVERY
+              - PENDING_EMBOSSING
+            productType:
+              - ACCOUNT
+              - CARD
+              - LOAN
+              - INVESTMENT_FUND
+              - DEPOSIT
+              - INSURANCE
+            currency:
+              - MXN
+              - USD
+              - EUR
+            subProductType:
+              - '0000'
+              - '0201'
+            productIdentifierType:
+              - CE
+          - internalId: FUPGFH
+            route: pfmDashboardDetail
+          - internalId: FUPGFH_dashboard
+            route: pfmDashboardDetail
+          - internalId: FUPGEXP
+            route: pfmCategorization
+          - internalId: FUPGNET
+            route: pfmCategorization
+          - internalId: FUPGINV
+            route: investmentsFollowUp
+          - internalId: FUPGINC
+            route: pfmCategorization
+          - internalId: FUPGNOINV
+            route: fundsHiring
+          - internalId: ACCOUNT
+            route: account
+            params:
+              productId: contractId
+          - internalId: CARD
+            route: cardDetail
+            params:
+              productId: contractId
+          - internalId: ocLoanOfferPage
+            route: relevantFactsDetail
+            params:
+              relevantFactId: internalCode
+          - internalId: fundsHiring
+            route: relevantFactsDetail
+            params:
+              relevantFactId: internalCode
+          - internalId: pocketsNoticePage
+            route: relevantFactsDetail
+            params:
+              relevantFactId: internalCode
+          - internalId: dashboard
+            route: relevantFactsDetail
+            params:
+              relevantFactId: internalCode
+          - internalId: SUSTAINABILITY_SECTION
+            route: sustainabilitySection
+          - internalId: sales.0TDC
+            route: creditCardHolder
+            params:
+              offerId: id
+            defaultParams:
+              continue: dashboard
+              productId: 0TDC
+          - internalId: sales.0640
+            route: instantCash
+            params:
+              offerId: id
+              productId: products.0.contractId
+          - internalId: sales.0130
+            route: increment
+            params:
+              offerId: id
+              productId: products.0.contractId
+          - internalId: sales.NILC
+            route: nCreditLineIncrease
+            params:
+              offerId: id
+              productId: products.0.contractId
+          - internalId: sales.0557
+            route: ocPayrollPortability
+            params:
+              offerId: id
+          - internalId: sales.0758
+            route: dynamicLifeInsuranceMainPage
+            params:
+              offerId: id
+          - internalId: sales.0759
+            route: dynamicLifeInsuranceMainPage
+            params:
+              offerId: id
+          - internalId: sales.0NOM
+            route: ocLoanOfferPage
+            params:
+              offerId: id
+          - internalId: sales.0PPI
+            route: ocLoanOfferPage
+            params:
+              offerId: id
+          - internalId: sales.0HIP
+            route: mortgage
+            params:
+              offerId: id
+          - internalId: sales.AUTO
+            route: carLoan
+            params:
+              offerId: id
+          - internalId: sales.ANOM
+            route: ocPayrollAdvancePage
+            params:
+              offerId: id
+          - internalId: sales.0990
+            route: reward
+            params:
+              id: products.0.id
+          - internalId: sales.0991
+            route: reward
+            params:
+              id: products.0.id
+          - internalId: sales.4035
+            route: travelInsurance
+          - internalId: sales.4025
+            route: ocMetaseguraOffer
+            params:
+              offerId: id
+          - internalId: sales.0SKY
+            route: nonPreApprovedConsumerLoanBureau
+            params:
+              offerId: id
+              productId: products.0.contractId
+          - internalId: sales.COMB
+            route: mixCreditCardAndLoan
+            params:
+              offerId: id
+          - internalId: sales.0785
+            route: goals
+          - internalId: sales.0788
+            route: ocAccount
+            params:
+              offerId: id
+          - internalId: sales.0693
+            route: creditBureau
+            params:
+              offerId: id
+              productId: products.0.contractId
+          - internalId: sales.0766
+            route: requestDebitCard
+            params:
+              offerId: id
+          - internalId: sales.0733
+            route: ocPaymentPlanFixedPage
+            params:
+              offerId: id
+              productId: products.0.contractId
+          - internalId: sales.L|0732
+            route: ocLoanPaymentPlanRestructurePage
+            params:
+              offerId: id
+              productId: products.0.contractId
+          - internalId: sales.0732
+            route: ocPaymentPlanRestructurePage
+            params:
+              offerId: id
+              productId: products.0.contractId
+          - internalId: sales.0740
+            route: ocPaymentPlanDecreaseLoan
+            params:
+              offerId: id
+              productId: products.0.contractId
+          - internalId: sales.0739
+            route: ocPaymentPlanDecreaseAuto
+            params:
+              offerId: id
+              productId: products.0.contractId
+          - internalId: sales.0769
+            route: ocSupportFixedPaymentsPage
+            params:
+              offerId: id
+              productId: products.0.contractId
+          - internalId: sales.00CB
+            route: nonPreApprovedConsumerLoanBureau
+            params:
+              offerId: id
+              productId: products.0.contractId
+          - internalId: sales.0779
+            route: ocLoanPaymentPlanLoanConsolidation
+            params:
+              offerId: id
+              productId: products.0.contractId
+          - internalId: sales.0790
+            route: ocAccountYoung
+            params:
+              offerId: id
+          - internalId: sales.0793
+            route: investAdvisoryPortfolio
+            params:
+              offerId: id
+          - internalId: sales.0806
+            route: ocMortgageNonPreapproved
+          - internalId: sales.0777
+            route: ocCashZone
+            params:
+              offerId: id
+          - internalId: sales.0813
+            route: fundOriginationOcFund
+          - internalId: sales.0814
+            route: mortgageMainTracking
+          - internalId: sales.0823
+            route: ocCashZone
+            params:
+              offerId: id
+          - internalId: sales.0ASC
+            route: ocTopCreditCard
+            params:
+              offerId: id
+          - internalId: sales.3005
+            route: deviceInsurance
+          - internalId: sales.0REC
+            route: ocLoanRelocation
+            params:
+              offerId: id
+              productId: products.0.contractId
+          - internalId: sales.0787
+            route: fundsHiring
+          - internalId: sales.0786
+            route: depositHiring
+          - internalId: sales.0PYP
+            route: financeTransactionMultipurchaseDebit
+            params:
+              offerId: id
+          - internalId: blue
+            route: digitalButler
+          - internalId: contract
+            route: contractProductSection
+          - internalId: empty
+            route: contractProductSection
+          - internalId: help
+            route: helpSection
+          - internalId: sales.0791
+          - internalId: FUPGFC
+            route: adviceFinancialCoach
+          - internalId: PGO1
+            route: adviceFinancialCoach
+          - internalId: PGO2
+            route: adviceFinancialCoach
+          - internalId: PGO3
+            route: investmentsFollowUp
+          - internalId: PGO4
+            route: investmentsFollowUp
+          - internalId: PGO5
+            route: adviceFinancialCoach
+          - internalId: PGO6
+            route: adviceFinancialCoach
+          - internalId: PGO7
+            route: adviceFinancialCoach
+          - internalId: PGO8
+            route: adviceFinancialCoach
+          - internalId: PGO9
+            route: adviceFinancialCoach
+          - internalId: PGO10
+            route: adviceFinancialCoach
+          - internalId: PGO11
+            route: adviceFinancialCoach
+          - internalId: PGO12
+            route: adviceFinancialCoach
+          - internalId: PGO13
+            route: adviceFinancialCoach
+          - internalId: PGO14
+            route: adviceFinancialCoach
+          - internalId: PGO15
+            route: adviceFinancialCoach
+          - internalId: PGO16
+            route: adviceFinancialCoach
+          - internalId: PGO17
+            route: adviceFinancialCoach
+          - internalId: PGO18
+            route: adviceFinancialCoach
+          - internalId: OPG1
+            route: adviceFinancialCoach
+          - internalId: OPG2
+            route: adviceFinancialCoach
+          - internalId: OPG3
+            route: adviceFinancialCoach
+          - internalId: OPG4
+            route: adviceFinancialCoach
+          - internalId: OPG5
+            route: adviceFinancialCoach
+          - internalId: PGO20
+            route: adviceFinancialCoach
+          - internalId: sales.0821
+            route: contractProductsSectionDataAuthorization
+          - internalId: level-up-account
+            route: account
+            params:
+              productId: contractId
+          - internalId: always-on-mode-message
+            route: limitedOperativesInfo
+          - internalId: requestMoney
+            icon: sphericaDollar
+            description: Pedir mi dinero
+            route: requestMoney
+            enable:
+              - ACTIVE
+            productType:
+              - ACCOUNT
+            currency:
+              - MXN
+            subProductType:
+              - '0000'
+            productIdentifierType:
+              - CE
+          - internalId: sales.0576
+            route: cardTransactionServicingScheduledDonations
+          - internalId: creditScore
+            route: creditScore
+            locations:
+              experienceCarousel:
+                isActive: true
+              experienceList:
+                isActive: true
+          - internalId: userInfoTipsFinanceProfiling
+            route: tipsFinanceProfiling
+        promotionsIdsLibrary:
+          '0990': '40000016'
+          '0991': '40000006'
+        library:
+          - id: transfers
+          - id: internationalTransfers
+          - id: cardlessWithdrawal
+          - id: cardCreditCardPayment
+          - id: billPayments
+          - id: cardlessWithdrawalHistoric
+          - id: rechargeTag
+          - id: blackhawkPurchase
+          - id: pointsTransfer
+          - id: mobileTopUp
+          - id: atmLocator
+          - id: reward
+          - id: emergencyReports
+          - id: stEnrollment
+          - id: operationalLimits
+          - id: requestMoney
+        familyBy:
+          ACCOUNT: true
+          CARD: false
+          LOAN: false
+          INVESTMENT_FUND: true
+          DEPOSIT: false
+          INSURANCE: false
+        hiddenFirstLevelProductIds:
+          - DY
+          - DX
+          - XB
+          - DW
+          - AE
+          - CA
+          - DS
+          - DZ
+          - DI
+          - DG
+          - DR
+          - DU
+        imagesItems:
+          home_experiences:
+            expensesGroup: https://assets.bbvaexperience.com/spherica/visual/illustrations/expenses-glass.png
+        redirectPagesFutura:
+          - flag: glomo.operations.mobileTopUpPackages
+            routeId: mobileTopUp
+            redirectTo: mobileTopUpPackages
+          - flag: glomo.operations.ocLoanOfferPageSpherica
+            routeId: sales.0PPI
+            redirectTo: ocLoanOfferPageSpherica
+          - flag: glomo.operations.ocLoanOfferPageSpherica
+            routeId: sales.0NOM
+            redirectTo: ocLoanOfferPageSpherica
+          - flag: glomo.operations.ocLoanOfferPageSpherica
+            routeId: 0NOM
+            redirectTo: ocLoanOfferPageSpherica
+            navigateTo: ocLoanOfferPage
+          - flag: glomo.operations.ocLoanOfferPageSpherica
+            routeId: 0PPI
+            redirectTo: ocLoanOfferPageSpherica
+            navigateTo: ocLoanOfferPage
+          - flag: glomo.operations.ocLoanOfferPageSpherica
+            routeId: loan
+            redirectTo: ocLoanOfferPageSpherica
+            navigateTo: ocLoanOfferPage
+        excludedNavigationsOperativesStandIn:
+          - transfers
+          - always-on-mode-message
+          - moreActions
+          - ACCOUNT
+          - ACCOUNTGOALS
+          - CARD
+          - INVESTMENT_FUND
+          - DEPOSIT
+          - EQUITY
+          - MLB
+          - INSURANCE
+          - INVE
+          - Trader
+          - LOAN
+          - atmLocator
+        configAccountsProduct:
+          hideLastMovementsLink: false
+        configCardsProduct:
+          hideLastMovementsLink: false
+        analytics:
+          generics:
+            - productType: INSURANCE
+              param: NEW_CONTRACT
+            - productType: ACCOUNT
+              productId: PT
+              param: NEW_CONTRACT
+          blacklist: []
+        baseItems:
+          ACCOUNT:
+            - productIds:
+                AH: ACCOUNT
+                CH: ACCOUNT
+                LI: ACCOUNT
+                PT: EQUITY
+                LP: MLB
+                ME: ACCOUNTGOALS
+                BR: Trader
+              events:
+                - key: MAIN_CARD_DETAIL
+                - key: DASHBOARD_PRODUCT_CLICK
+                - key: MAIN_CARD_EXPENSES
+                  overrides:
+                    internalId: FUPGFH_dashboard
+            - productIds:
+                AH: ACCOUNT
+                CH: ACCOUNT
+                LI: ACCOUNT
+                BR: Trader
+              events:
+                - key: MAIN_CARD_LAST_MOVS
+                  overrides:
+                    internalId: accountMonthlyStatement
+                - key: DASHBOARD_LEVEL_UP
+          CARD:
+            - productIds:
+                CARD: CARD
+              events:
+                - key: MAIN_CARD_DETAIL
+                - key: DASHBOARD_PRODUCT_CLICK
+            - productIds:
+                FUPGFH_dashboard: FUPGFH_dashboard
+              events:
+                - key: MAIN_CARD_EXPENSES
+                - key: DASHBOARD_EXPENSES
+                  overrides:
+                    productId: ''
+            - productIds:
+                CARD_credito_Mov: CARD_credito_Mov
+              events:
+                - key: DASHBOARD_EXPENSES
+                  overrides:
+                    productId: ''
+                - key: MAIN_CARD_LAST_MOVS
+                  overrides:
+                    subProductType: CREDIT_CARD
+                    productId: ''
+            - productIds:
+                CARD_debito_Mov: CARD_debito_Mov
+              events:
+                - key: MAIN_CARD_LAST_MOVS
+                  overrides:
+                    subProductType: DEBIT_CARD
+                    productId: ''
+          INVESTMENT_FUND:
+            - productIds:
+                INVE: INVE
+              events:
+                - key: MAIN_CARD_DETAIL
+                  overrides:
+                    subProductType: INVE
+                    productId: SI
+                - key: DASHBOARD_PRODUCT_CLICK
+                  overrides:
+                    subProductType: INVE
+                    productId: SI
+            - productIds:
+                INVESTMENT_FUND: INVESTMENT_FUND
+              events:
+                - key: MAIN_CARD_DETAIL
+                  overrides:
+                    subProductType: N/A
+                    productId: SI
+                - key: DASHBOARD_PRODUCT_CLICK
+                  overrides:
+                    subProductType: N/A
+                    productId: SI
+          DEPOSIT:
+            - productIds:
+                DEPOSIT: DEPOSIT
+              events:
+                - key: MAIN_CARD_DETAIL
+                  overrides:
+                    subProductType: N/A
+                    productId: IN
+                - key: DASHBOARD_PRODUCT_CLICK
+                  overrides:
+                    subProductType: N/A
+                    productId: IN
+          INSURANCE:
+            - productIds:
+                INSURANCE: INSURANCE
+              events:
+                - key: MAIN_CARD_DETAIL
+                  overrides:
+                    subProductType: N/A
+                    productId: N/A
+                - key: DASHBOARD_PRODUCT_CLICK
+                  overrides:
+                    subProductType: N/A
+                    productId: N/A
+          LOAN:
+            - productIds:
+                LOAN: LOAN
+              events:
+                - key: MAIN_CARD_DETAIL
+                  overrides:
+                    subProductType: N/A
+                    productId: N/A
+                - key: DASHBOARD_PRODUCT_CLICK
+                  overrides:
+                    subProductType: N/A
+                    productId: N/A
+          EventConfigs:
+            - events:
+                - key: LAST_CARD_EMPTY_PRODUCTS
+                  overrides:
+                    internalId: empty
+                - key: LAST_CARD_CONTRACT_PRODUCTS
+                  overrides:
+                    internalId: empty
+                - key: SEE_ALL_MOVEMENTS
+                  overrides:
+                    internalId: empty
+                - key: DASHBOARD_CHECK_EVOLUTION
+                  overrides:
+                    internalId: FUPGINV
+        eventNames:
+          MAIN_CARD_DETAIL: app-info-structure-home-main-card-product-detail-click
+          MAIN_CARD_LAST_MOVS: app-info-structure-home-main-card-see-last-movements-click
+          DASHBOARD_PRODUCT_CLICK: app-info-structure-home-dashboard-product-click
+          DASHBOARD_LEVEL_UP: app-info-structure-home-dashboard-level-up-account-click
+          MAIN_CARD_EXPENSES: app-info-structure-home-main-card-see-expenses-analysis-click
+          DASHBOARD_EXPENSES: app-info-structure-home-dashboard-see-expenses-analysis-click
+          LAST_CARD_EMPTY_PRODUCTS: app-info-structure-home-main-card-last-card-empty-products-click
+          LAST_CARD_CONTRACT_PRODUCTS: app-info-structure-home-main-card-last-card-contract-products-click
+          SEE_ALL_MOVEMENTS: app-info-structure-main-card-see-all-movements
+      billPaymentsHomeServicesV1:
+        services:
+          - '1336177'
+          - '1336118'
+          - '1336126'
+          - '1336142'
+          - '1336150'
+      nonPreApprovedCarLoan:
+        endServiceHours: 23
+        initServiceHours: 8
+      cashZone:
+        mpos:
+          thirdPartyProducts:
+            - id: MPOS
+            - id: TAP_ON_PHONE
+          viewBusinessIntelligence: false
+          openPayPhoneHelp: (55) 3300 1170
+          showHelpFaqs: true
+          userSettingsEnabled: false
+          validPeriodTypes:
+            - '1'
+            - '7'
+            - '15'
+          viewDigitalSales: false
+          commission: '2.99'
+          taxTypes:
+            - NA
+            - INCLUDED
+            - EXENT
+            - '16'
+          filterTypeStatusLink:
+            - PROCESSED
+            - AVAILABLE
+            - CANCELLED
+            - EXPIRED
+        digitalSales:
+          template:
+            templateTypeId: PDF
+            name: tyc_zona_cobro
+            description: Términos y condiciones de Openpay S.A. de C.V. (Openpay by BBVA).
+            id: GMDTCZC002
+          withoutMpos:
+            template:
+              templateTypeId: PDF
+              name: tyc_zona_cobro
+              description: Términos y condiciones de Openpay S.A. de C.V. (Openpay by BBVA).
+              id: GMDTCZC002
+            consentTypes:
+              - shortDesc: T&C de Openpay by BBVA
+                id: '11'
+              - shortDesc: Transferir datos personales a Openpay
+                id: '12'
+              - shortDesc: Transferir datos transaccionales a BBVA
+                id: '13'
+          pagoCie:
+            convenio:
+              name: Convenio CIE Openpay
+              id: '002138190'
+          consentTypes:
+            - shortDesc: T&C de Openpay by BBVA
+              id: '11'
+            - shortDesc: Transferir datos personales a Openpay
+              id: '12'
+            - shortDesc: Transferir datos transaccionales a BBVA
+              id: '13'
+            - shortDesc: Pago CIE Openpay Mini
+              id: '14'
+      cardBlockManagement:
+        operative:
+          mode: FULL_MODE
+          configuration:
+            default:
+              operations:
+                - service:
+                    reasonId: AL
+                  repositions:
+                    - service:
+                        allowsReplacement: false
+                      type: SNAPSHOT
+                      deliveries:
+                        - scheduled:
+                            mandatory: false
+                          service:
+                            type: ''
+                            destinationId: BRANCH
+                          type: ANY_BRANCH
+                    - service:
+                        allowsReplacement: true
+                      type: PERSONALIZED
+                      deliveries:
+                        - scheduled:
+                            mandatory: false
+                          service:
+                            type: PHYSICAL
+                            destinationId: HOME
+                          type: CUSTOMER_ADDRESS
+                        - scheduled:
+                            mandatory: false
+                          service:
+                            type: PHYSICAL
+                            destinationId: BRANCH
+                          type: SEARCH_BRANCH
+                  type: LOST
+                - service:
+                    reasonId: AS
+                  reposition:
+                    - service:
+                        allowsReplacement: false
+                      type: SNAPSHOT
+                      deliveries:
+                        - scheduled:
+                            mandatory: false
+                          service:
+                            type: ''
+                            destinationId: BRANCH
+                          type: ANY_BRANCH
+                    - service:
+                        allowsReplacement: true
+                      type: PERSONALIZED
+                      deliveries:
+                        - scheduled:
+                            mandatory: false
+                          service:
+                            type: PHYSICAL
+                            destinationId: HOME
+                          type: CUSTOMER_ADDRESS
+                        - scheduled:
+                            mandatory: false
+                          service:
+                            type: PHYSICAL
+                            destinationId: BRANCH
+                          type: SEARCH_BRANCH
+                  type: STOLEN
+            custom:
+              - operations:
+                  - service:
+                      reasonId: AL
+                    reposition:
+                      - service:
+                          allowsReplacement: true
+                        type: PERSONALIZED
+                        deliveries:
+                          - scheduled:
+                              mandatory: false
+                            service:
+                              type: PHYSICAL
+                              destinationId: BRANCH
+                            type: OPENING_BRANCH
+                    type: LOST
+                  - service:
+                      reasonId: AS
+                    reposition:
+                      - service:
+                          allowsReplacement: true
+                        type: PERSONALIZED
+                        deliveries:
+                          - scheduled:
+                              mandatory: false
+                            service:
+                              type: PHYSICAL
+                              destinationId: BRANCH
+                            type: OPENING_BRANCH
+                    type: STOLEN
+                availablePhysicalSupportIds:
+                  - NORMAL_PLASTIC
+                'availableCardTypeIds:':
+                  - CREDIT_CARD
+                availableProductIds:
+                  - V4
+      feedback:
+        feedbackResetIndex: 4
+        feedbackUrl:
+          cardlessWithdrawal: https://www.opinator.com/opi/GM_MX_CARDLESS_WITHDRAWAL_SUCCESS_NPS/
+          transactionList: https://www.opinator.com/opi/GM_MX_TRANSACTION_LIST_SUCCESS_NPS/
+          billPayments: https://www.opinator.com/opi/GM_MX_SERVICE_PAYMENT_SUCCESS_NPS/
+          mobileTopUp: https://www.opinator.com/opi/GM_MX_MOBILE_TOP_UP_SUCCESS_NPS/
+        processURL: https://www.opinator.com/opi/glomo-exito/
+        tddURL: http://ec2-34-207-128-239.compute-1.amazonaws.com/glomo/data.php
+        useStaticUrl: true
+        appURL: https://www.opinator.com/opi/glomo-exito/
+        enabled: false
+      smartAssistant: '0099'
+      externalOffers:
+        reviewOffersAmount: 3
+      contact:
+        preventFraudNumber: 5552262685,#000411
+        euca: '18003969665'
+        other: '3039671098'
+        equityPhone: '018001121113'
+        phoneNumberBbvaLine: '5552262663'
+        ivrNumber: 5556241126,445028
+        phoneNumberAssistantCallCenter: 55 9156 8484, 55 8852 2255
+        androidRejetedCardNumber: 5552262685,990301
+        phoneNumberSAC: '5511020000'
+        iosRejectedCardNumber: 5552262685,990301
+        ivrWelcome: '8002262663'
+        phone: '5552262663'
+        phoneNumberBbvaLineClarifications: 5552262685,0403
+        phoneNumberClientPaymentsSolutions: 55 1054 8020
+      shortcutConfiguration:
+        - minVersion:
+            android: 0
+            ios: 00.000.00
+          maxVersion:
+            android: 99999900
+            ios: 99.99.99
+          value:
+            product: offer
+            destination: ocLoanOfferPage
+            params: 00CB
+          key: NPACONS
+        - minVersion:
+            android: 0
+            ios: 00.000.00
+          maxVersion:
+            android: 99999900
+            ios: 99.99.99
+          value:
+            product: offer
+            destination: creditCardHolder
+            params: 0SKY
+          key: NPATDC
+        - minVersion:
+            android: 8270000
+            ios: 8.27.0
+          maxVersion:
+            android: 999999900
+            ios: 99.99.99
+          value:
+            product: offer
+            queryParams:
+              origin.id: OLG
+            destination: mortgage
+            params: 0HIP
+          key: blings0HIP
+        - minVersion:
+            android: 0
+            ios: 0.0.0.0
+          maxVersion:
+            android: 999999900
+            ios: 99.99.99.0
+          value:
+            destination: cardDynamicCvv
+          key: A000001282
+        - minVersion:
+            android: 0
+            ios: 0.0.0.0
+          maxVersion:
+            android: 999999900
+            ios: 99.99.99.0
+          value:
+            destination: cardDynamicCvv
+            notificationAsParam: true
+          key: expirationDateError
+        - minVersion:
+            android: 8220000
+            ios: 8.22.0
+          maxVersion:
+            android: 99999900
+            ios: 99.99.99
+          value:
+            destination: dashboard
+            notificationAsParam: true
+          key: PdS01
+        - minVersion:
+            android: 0
+            ios: 0.0.0
+          maxVersion:
+            android: 999999900
+            ios: 99.99.99
+          value:
+            destination: account
+            notificationAsParam: true
+            products:
+              - account
+          key: pocketsRTG
+        - minVersion:
+            android: 0
+            ios: 00.000.00
+          maxVersion:
+            android: 99999900
+            ios: 99.99.99
+          value:
+            product: offer
+            queryParams:
+              label.id: no preaprobados
+            destination: nonPreApprovedCreditCardBureau
+            params: 0SKY
+          key: 0SKY
+        - minVersion:
+            android: 0
+            ios: 0.0.0
+          maxVersion:
+            android: 99999900
+            ios: 99.99.99
+          value:
+            destination: goals
+          key: CRM
+        - minVersion:
+            android: 0
+            ios: 0.0.0
+          maxVersion:
+            android: 999999900
+            ios: 99.99.99
+          value:
+            destination: mobileTopUp
+            notificationAsParam: true
+          key: mobileTopUpRTG
+        - minVersion:
+            android: 24508
+            ios: 24.50.8
+          maxVersion:
+            android: 999999900
+            ios: 99.99.99
+          value:
+            product: offer
+            destination: ocAccount
+            params: '0788'
+          key: '0788'
+        - minVersion:
+            android: 8220000
+            ios: 8.22.0
+          maxVersion:
+            android: 99999900
+            ios: 99.99.99
+          value:
+            destination: dashboard
+            notificationAsParam: true
+          key: MgMDeepLink
+        - minVersion:
+            android: 0
+            ios: 0.0.0
+          maxVersion:
+            android: 99999900
+            ios: 99.99.99
+          value:
+            destination: cardDynamicCvv
+          key: turnOffCard
+        - minVersion:
+            android: 0
+            ios: 0.0.0
+          maxVersion:
+            android: 99999900
+            ios: 99.99.99
+          value:
+            destination: cardDynamicCvv
+          key: viewDigitalCard
+        - minVersion:
+            android: 0
+            ios: 0.0.0
+          maxVersion:
+            android: 99999900
+            ios: 99.99.99
+          value:
+            destination: listCreditCardLimits
+          key: HTDCLIM
+        - minVersion:
+            android: 0
+            ios: 0.0.0
+          maxVersion:
+            android: 99999900
+            ios: 99.99.99
+          value:
+            destination: cardCreditCardPayment
+          key: HTDCPAY
+        - minVersion:
+            android: 0
+            ios: 0.0.0
+          maxVersion:
+            android: 99999900
+            ios: 99.99.99
+          value:
+            destination: cardDetail
+          key: HTDCOFF
+        - minVersion:
+            android: 0
+            ios: 0.0.0
+          maxVersion:
+            android: 99999900
+            ios: 99.99.99
+          value:
+            destination: account
+          key: HTDDISF
+        - minVersion:
+            android: 8220000
+            ios: 8.22.0
+          maxVersion:
+            android: 99999900
+            ios: 99.99.99
+          value:
+            destination: dynamicsAndRewards
+            notificationAsParam: true
+          key: mgmReferral
+        - minVersion:
+            android: 0
+            ios: 0.0.0
+          public: true
+          maxVersion:
+            android: 99999900
+            ios: 99.99.99
+          value:
+            destination: suspectedTransactionDirectDebits
+          key: A000001244
+        - minVersion:
+            android: 8220000
+            ios: 8.22.0
+          maxVersion:
+            android: 99999900
+            ios: 99.99.99
+          value:
+            product: offer
+            destination: financeTransactionMultipurchaseDebit
+            params: 0PYP
+          key: 0PYP
+        - minVersion:
+            android: 8220000
+            ios: 8.22.0
+          maxVersion:
+            android: 99999900
+            ios: 99.99.99
+          value:
+            destination: dynamicsAndRewards
+            notificationAsParam: true
+          key: mgmRewardAmbassador
+        - minVersion:
+            android: 8220000
+            ios: 8.22.0
+          maxVersion:
+            android: 99999900
+            ios: 99.99.99
+          value:
+            destination: dynamicsAndRewards
+            notificationAsParam: true
+          key: mgmRewardInvited
+        - minVersion:
+            android: 8220000
+            ios: 8.22.0
+          maxVersion:
+            android: 999999900
+            ios: 99.99.99
+          value:
+            product: offer
+            destination: creditCardHolder
+            params: 0TDC
+          key: 0TDC
+        - minVersion:
+            android: 8220000
+            ios: 8.22.0
+          maxVersion:
+            android: 99999900
+            ios: 99.99.99
+          value:
+            destination: financialHealthPushAdvice
+            notificationAsParam: true
+          key: financialHealthAdvice
+        - minVersion:
+            android: 8220000
+            ios: 8.22.0
+          maxVersion:
+            android: 999999900
+            ios: 99.99.99
+          value:
+            product: offer
+            destination: carLoan
+            params: AUTO
+          key: AUTO
+        - minVersion:
+            android: 8220000
+            ios: 8.22.0
+          maxVersion:
+            android: 999999900
+            ios: 99.99.99
+          value:
+            product: offer
+            destination: mixCreditCardAndLoan
+            params: COMB
+          key: COMB
+        - minVersion:
+            android: 8220000
+            ios: 8.22.0
+          maxVersion:
+            android: 99999900
+            ios: 99.99.99
+          value:
+            destination: relevantFactsDetail
+            notificationAsParam: true
+          key: relevantFactsDetail
+        - minVersion:
+            android: 8220000
+            ios: 8.22.0
+          maxVersion:
+            android: 999999900
+            ios: 99.99.99
+          value:
+            product: offer
+            destination: ocLoanOfferPage
+            params: 0NOM
+          key: 0NOM
+        - minVersion:
+            android: 8220000
+            ios: 8.22.0
+          maxVersion:
+            android: 99999900
+            ios: 99.99.99
+          value:
+            product: offer
+            destination: ocPayrollAdvancePage
+            params: ANOM
+          key: ANOM
+        - minVersion:
+            android: 8220000
+            ios: 8.22.0
+          maxVersion:
+            android: 99999900
+            ios: 99.99.99
+          value:
+            destination: pfmDashboard
+            notificationAsParam: true
+          key: pfmDashboard
+        - minVersion:
+            android: 8220000
+            ios: 8.22.0
+          maxVersion:
+            android: 99999900
+            ios: 99.99.99
+          value:
+            product: offer
+            destination: depositHiring
+            params: 0PGR
+          key: 0PGR
+        - minVersion:
+            android: 8250000
+            ios: 8.25.0
+          maxVersion:
+            android: 99999900
+            ios: 99.99.99
+          value:
+            product: offer
+            destination: contractProductSection
+          key: contractProductSection
+        - minVersion:
+            android: 0
+            ios: 0.0.0
+          value:
+            destination: transfers
+          key: transfer_force_touch
+        - minVersion:
+            android: 0
+            ios: 0.0.0
+          value:
+            product: account
+            destination: transfers
+          key: transfer
+        - minVersion:
+            android: 0
+            ios: 0.0.0
+          value:
+            destination: cardlessWithdrawal
+          key: cardless_with_drawal
+        - minVersion:
+            android: 0
+            ios: 0.0.0
+          value:
+            destination: billPaymentsDashboard
+          key: service_payment
+        - minVersion:
+            android: 0
+            ios: 0.0.0
+          value:
+            destination: topUp
+          key: top_up
+        - minVersion:
+            android: 0
+            ios: 0.0.0
+          maxVersion:
+            android: 999999900
+            ios: 99.99.99
+          value:
+            destination: atmLocator
+          key: turn-box
+        - minVersion:
+            android: 0
+            ios: 0.0.0
+          maxVersion:
+            android: 99999900
+            ios: 99.99.99
+          value:
+            destination: comingSoon
+          key: comingSoon
+        - minVersion:
+            android: 0
+            ios: 0.0.0
+          maxVersion:
+            android: 999999900
+            ios: 99.99.99
+          value:
+            destination: emergencyReports
+          key: emergencyReports
+        - minVersion:
+            android: 8220000
+            ios: 8.22.0
+          maxVersion:
+            android: 99999900
+            ios: 99.99.99
+          value:
+            destination: dashboard
+            notificationAsParam: true
+          key: createMoneyTransfer
+        - minVersion:
+            android: 8220000
+            ios: 8.22.0
+          maxVersion:
+            android: 99999900
+            ios: 99.99.99
+          value:
+            destination: dashboard
+            notificationAsParam: true
+          key: payInvoice
+        - minVersion:
+            android: 8220000
+            ios: 8.22.0
+          maxVersion:
+            android: 999999900
+            ios: 99.99.99
+          value:
+            destination: cardCreditCardPaymentPromise
+            notificationAsParam: true
+          key: creditTDC
+        - minVersion:
+            android: 0
+            ios: 0.0.0
+          maxVersion:
+            android: 99999900
+            ios: 99.99.99
+          value:
+            destination: requestBranchAppointment
+            notificationAsParam: true
+          key: requestBranchAppointment
+        - minVersion:
+            android: 8220000
+            ios: 8.22.0
+          maxVersion:
+            android: 999999900
+            ios: 99.99.99
+          value:
+            destination: loanPayment
+            notificationAsParam: true
+          key: creditConsumo
+        - minVersion:
+            android: 8220000
+            ios: 8.22.0
+          maxVersion:
+            android: 999999900
+            ios: 99.99.99
+          value:
+            destination: loansPaymentPromise
+            notificationAsParam: true
+          key: promiseConsumo
+        - minVersion:
+            android: 0
+            ios: 0.0.0
+          maxVersion:
+            android: 999999900
+            ios: 99.99.99
+          value:
+            destination: notificationsCenter
+          key: callSecure
+        - minVersion:
+            android: 0
+            ios: 0.0.0
+          maxVersion:
+            android: 99999900
+            ios: 99.99.99
+          value:
+            destination: suspectedTransactionsPage
+          key: A000000406
+        - minVersion:
+            android: 0
+            ios: 0.0.0
+          maxVersion:
+            android: 99999900
+            ios: 99.99.99
+          value:
+            destination: suspectedTransactionsPage
+          key: A000000749
+        - minVersion:
+            android: 0
+            ios: 0.0.0
+          maxVersion:
+            android: 99999900
+            ios: 99.99.99
+          value:
+            destination: suspectedTransactionsPage
+          key: A000000838
+        - minVersion:
+            android: 0
+            ios: 0.0.0
+          maxVersion:
+            android: 99999900
+            ios: 99.99.99
+          value:
+            destination: suspectedTransactionsPage
+          key: A000000861
+        - minVersion:
+            android: 0
+            ios: 0.0.0
+          maxVersion:
+            android: 99999900
+            ios: 99.99.99
+          value:
+            destination: suspectedTransactionsPage
+          key: A000000862
+        - minVersion:
+            android: 0
+            ios: 0.0.0
+          maxVersion:
+            android: 99999900
+            ios: 99.99.99
+          value:
+            destination: domiciliationNoticeDetail
+          key: A000000945
+        - minVersion:
+            android: 0
+            ios: 0.0.0
+          maxVersion:
+            android: 9999999900
+            ios: 99.999.99.0
+          value:
+            destination: specialSalesPage
+          key: Promocion
+        - minVersion:
+            android: 0
+            ios: 0.0.0
+          maxVersion:
+            android: 99999900
+            ios: 99.99.99
+          value:
+            destination: comingSoon
+          key: Claims
+        - minVersion:
+            android: 0
+            ios: 0.0.0
+          maxVersion:
+            android: 99999900
+            ios: 99.99.99
+          value:
+            destination: comingSoon
+          key: callBBVA
+        - minVersion:
+            android: 8270000
+            ios: 8.27.0
+          maxVersion:
+            android: 999999900
+            ios: 99.99.99
+          value:
+            product: offer
+            destination: fundsHiring
+            params: 0FUND
+          key: CONTR_FONDO_INV
+        - minVersion:
+            android: 8220000
+            ios: 8.22.0
+          maxVersion:
+            android: 99999900
+            ios: 99.99.99
+          value:
+            product: offer
+            destination: depositHiring
+            params: CONTR_PAGARE
+          key: CONTR_PAGARE
+        - minVersion:
+            android: 8220000
+            ios: 8.22.0
+          maxVersion:
+            android: 999999900
+            ios: 99.99.99
+          value:
+            product: offer
+            destination: increment
+            params: '0130'
+          key: '0130'
+        - minVersion:
+            android: 8270000
+            ios: 8.27.0
+          maxVersion:
+            android: 999999900
+            ios: 99.99.99
+          value:
+            product: offer
+            destination: increment
+            params: 0ILC
+          key: 0ILC
+        - minVersion:
+            android: 8220000
+            ios: 8.22.0
+          maxVersion:
+            android: 999999900
+            ios: 99.99.99
+          value:
+            product: offer
+            destination: requestDebitCard
+            params: '0766'
+          key: '0766'
+        - minVersion:
+            android: 8220000
+            ios: 8.22.0
+          maxVersion:
+            android: 999999900
+            ios: 99.99.99
+          value:
+            product: offer
+            destination: ocMetaseguraOffer
+            params: '4025'
+          key: '4025'
+        - minVersion:
+            android: 8220000
+            ios: 8.22.0
+          maxVersion:
+            android: 999999900
+            ios: 99.99.99
+          value:
+            product: offer
+            destination: ocLoanOfferPage
+            params: '0060'
+          key: '0060'
+        - minVersion:
+            android: 8220000
+            ios: 8.22.0
+          maxVersion:
+            android: 999999900
+            ios: 99.99.99
+          value:
+            product: offer
+            destination: ocLoanOfferPage
+            params: 0PPI
+          key: 0PPI
+        - minVersion:
+            android: 8220000
+            ios: 8.22.0
+          maxVersion:
+            android: 999999900
+            ios: 99.99.99
+          value:
+            product: offer
+            destination: travelInsurance
+            params: '4035'
+          key: '4035'
+        - minVersion:
+            android: 8220000
+            ios: 8.22.0
+          maxVersion:
+            android: 999999900
+            ios: 99.99.99
+          value:
+            product: offer
+            destination: deviceInsurance
+            params: '3005'
+          key: '3005'
+        - minVersion:
+            android: 8220000
+            ios: 8.22.0
+          maxVersion:
+            android: 999999900
+            ios: 99.99.99
+          value:
+            product: offer
+            destination: dynamicLifeInsuranceMainPage
+            params: '0759'
+          key: '0759'
+        - minVersion:
+            android: 8270000
+            ios: 8.27.0
+          maxVersion:
+            android: 999999900
+            ios: 99.99.99
+          value:
+            product: offer
+            destination: dynamicLifeInsuranceMainPage
+            params: '0758'
+          key: '0758'
+        - minVersion:
+            android: 8270000
+            ios: 8.27.0
+          maxVersion:
+            android: 999999900
+            ios: 99.99.99
+          value:
+            product: offer
+            destination: creditBureau
+            params: '0693'
+          key: '0693'
+        - minVersion:
+            android: 0
+            ios: 00.000.00
+          maxVersion:
+            android: 999999900
+            ios: 99.999.99
+          value:
+            destination: specialSalesPage
+          key: A000000208
+        - minVersion:
+            android: 0
+            ios: 00.000.00
+          maxVersion:
+            android: 999999900
+            ios: 99.999.99
+          value:
+            destination: comingSoon
+          key: A000000207
+        - minVersion:
+            android: 0
+            ios: 00.000.00
+          maxVersion:
+            android: 999999900
+            ios: 99.999.99
+          value:
+            destination: comingSoon
+          key: A000000481
+        - minVersion:
+            android: 0
+            ios: 00.000.00
+          maxVersion:
+            android: 999999900
+            ios: 99.999.99
+          value:
+            destination: comingSoon
+          key: A000000482
+        - minVersion:
+            android: 0
+            ios: 00.000.00
+          maxVersion:
+            android: 999999900
+            ios: 99.999.99
+          value:
+            destination: comingSoon
+          key: A000000484
+        - minVersion:
+            android: 0
+            ios: 0.0.0
+          maxVersion:
+            android: 999999900
+            ios: 99.99.99
+          value:
+            destination: codiQrScanner
+          key: codiQrScanner
+        - minVersion:
+            android: 0
+            ios: 0.0.0
+          maxVersion:
+            android: 999999900
+            ios: 99.99.99
+          value:
+            product: account
+            destination: codiPaymentInformation
+          key: payCodi
+        - minVersion:
+            android: 0
+            ios: 0.0.0
+          maxVersion:
+            android: 999999900
+            ios: 99.99.99
+          value:
+            destination: codiPaymentPostponed
+          key: postponeCodiPayment
+        - minVersion:
+            android: 0
+            ios: 0.0.0
+          maxVersion:
+            android: 999999900
+            ios: 99.99.99
+          value:
+            destination: codiPaymentRejected
+          key: rejectCodiPayment
+        - minVersion:
+            android: 8270000
+            ios: 8.27.0
+          maxVersion:
+            android: 999999900
+            ios: 99.999.99
+          value:
+            destination: mobilePayment
+          key: mobile_payment
+        - minVersion:
+            android: 0
+            ios: 0.0.0
+          maxVersion:
+            android: 99999900
+            ios: 99.99.99
+          value:
+            destination: transfers
+          key: GiveMoney
+        - minVersion:
+            android: 0
+            ios: 0.0.0
+          public: true
+          maxVersion:
+            android: 999999900
+            ios: 99.99.99
+          value:
+            destination: menuVisualPage
+          key: A000000576
+        - minVersion:
+            android: 0
+            ios: 0.0.0
+          maxVersion:
+            android: 99999900
+            ios: 99.99.99
+          value:
+            destination: myConversationMessagePage
+          key: Conversation
+        - minVersion:
+            android: 0
+            ios: 0.0.0
+          maxVersion:
+            android: 99999900
+            ios: 99.99.99
+          value:
+            destination: fidoOOB
+          key: fidoOOB
+        - minVersion:
+            android: 0
+            ios: 0.0.0
+          maxVersion:
+            android: 99999900
+            ios: 99.99.99
+          value:
+            destination: insuranceRemoteBanker
+          key: A000000743
+        - minVersion:
+            android: 8270000
+            ios: 8.27.0
+          maxVersion:
+            android: 999999900
+            ios: 99.999.99
+          value:
+            destination: paymentsThirdPartyWalletVerification
+          key: paymentsThirdPartyWalletVerification
+        - minVersion:
+            android: 0
+            ios: 0.0.0
+          maxVersion:
+            android: 999999900
+            ios: 99.99.99
+          value:
+            destination: goals
+          key: CONTR_PLAN
+        - minVersion:
+            android: 8270000
+            ios: 8.27.0
+          maxVersion:
+            android: 999999900
+            ios: 99.99.99
+          value:
+            destination: updateEmailPage
+          key: UPEM
+        - minVersion:
+            android: 8270000
+            ios: 8.22.0
+          maxVersion:
+            android: 999999900
+            ios: 99.99.99
+          value:
+            destination: cardlessWithdrawal
+          key: CLWD
+        - minVersion:
+            android: 8270000
+            ios: 8.27.0
+          maxVersion:
+            android: 999999900
+            ios: 99.99.99
+          value:
+            destination: myConversationMessagePage
+          key: 0ACBR
+        - minVersion:
+            android: 0
+            ios: 0.0.0
+          deeplink: mortgageTracking
+          maxVersion:
+            android: 999999900
+            ios: 99.99.99
+          value:
+            destination: contractProductSection
+          key: mortgageTracking
+        - minVersion:
+            android: 0
+            ios: 0.0.0
+          maxVersion:
+            android: 99999900
+            ios: 99.99.99
+          value:
+            destination: deferredSignaturePurchaseInstruction
+          key: A000000937
+        - minVersion:
+            android: 0
+            ios: 0.0.0
+          maxVersion:
+            android: 99999900
+            ios: 99.99.99
+          value:
+            destination: deferredSignatureEquityContract
+          key: A000000617
+        - minVersion:
+            android: 0
+            ios: 0.0.0
+          maxVersion:
+            android: 99999900
+            ios: 99.99.99
+          value:
+            destination: deferredSignatureStructuredProducts
+          key: A000000618
+        - minVersion:
+            android: 0
+            ios: 0.0.0
+          maxVersion:
+            android: 99999900
+            ios: 99.99.99
+          value:
+            destination: dynamicsAndRewards
+            notificationAsParam: true
+          key: '0795'
+        - minVersion:
+            android: 0
+            ios: 0.0.0
+          maxVersion:
+            android: 99999900
+            ios: 99.99.99
+          value:
+            destination: dynamicsAndRewards
+            notificationAsParam: true
+          key: mgmtdc
+        - minVersion:
+            android: 0
+            ios: 0.0.0
+          maxVersion:
+            android: 999999900
+            ios: 99.99.99
+          value:
+            destination: notificationsCenter
+          key: supportCenterChat
+        - minVersion:
+            android: 8270000
+            ios: 8.27.0
+          maxVersion:
+            android: 999999900
+            ios: 99.99.99
+          value:
+            destination: supportCenterChat
+            notificationAsParam: true
+          key: ChS01
+        - minVersion:
+            android: 8270000
+            ios: 8.27.0
+          maxVersion:
+            android: 999999900
+            ios: 99.99.99
+          value:
+            destination: assistanceManager
+            notificationAsParam: true
+            params: 0CBR
+          key: 0CBR
+        - minVersion:
+            android: 8270000
+            ios: 8.27.0
+          maxVersion:
+            android: 999999900
+            ios: 99.99.99
+          value:
+            product: MSI
+            destination: dashboard
+          key: FTMP
+        - minVersion:
+            android: 0
+            ios: 0.0.0
+          maxVersion:
+            android: 99999900
+            ios: 99.99.99
+          value:
+            destination: profile
+          key: updateAddressOpenMarket
+        - minVersion:
+            android: 8220000
+            ios: 8.22.0
+          maxVersion:
+            android: 999999900
+            ios: 99.99.99
+          value:
+            destination: mortgagePayment
+            notificationAsParam: true
+          key: creditMortgage
+        - minVersion:
+            android: 0
+            ios: 0.0.0
+          maxVersion:
+            android: 99999900
+            ios: 99.99.99
+          value:
+            destination: pfmDashboard
+            notificationAsParam: false
+          key: CONTR_PFM
+        - minVersion:
+            android: 8220000
+            ios: 8.22.0
+          maxVersion:
+            android: 99999900
+            ios: 99.99.99
+          value:
+            destination: dashboard
+            notificationAsParam: true
+          key: '0791'
+        - minVersion:
+            android: 8220000
+            ios: 8.22.0
+          maxVersion:
+            android: 99999900
+            ios: 99.99.99
+          value:
+            destination: payByBank
+            notificationAsParam: true
+            products:
+              - account
+          key: 0PBB
+        - minVersion:
+            android: 0
+            ios: 0.0.0
+          maxVersion:
+            android: 99999900
+            ios: 99.99.99
+          value:
+            destination: dashboard
+            notificationAsParam: true
+          key: A000001097
+        - minVersion:
+            android: 0
+            ios: 00.000.00
+          maxVersion:
+            android: 99999900
+            ios: 99.99.99
+          value:
+            product: offer
+            destination: ocPayrollPortability
+            params: '0557'
+          key: '0557'
+        - minVersion:
+            android: 0
+            ios: 00.000.00
+          maxVersion:
+            android: 99999900
+            ios: 99.99.99
+          value:
+            destination: payrollPortability
+          key: payrollPortability
+        - minVersion:
+            android: 8270000
+            ios: 8.27.0
+          maxVersion:
+            android: 999999900
+            ios: 99.99.99
+          value:
+            product: offer
+            queryParams:
+              origin.id: OLG
+            destination: mortgage
+            params: 0HIP
+          key: 0HIP
+        - minVersion:
+            android: 8270000
+            ios: 8.27.0
+          maxVersion:
+            android: 999999900
+            ios: 99.99.99
+          value:
+            product: offer
+            queryParams:
+              origin.id: OLG
+            destination: instantCash
+            params: '0640'
+          key: '0640'
+        - minVersion:
+            android: 0
+            ios: 00.000.00
+          maxVersion:
+            android: 99999900
+            ios: 99.99.99
+          value:
+            product: offer
+            queryParams:
+              label.id: no preaprobados
+            destination: nonPreApprovedConsumerLoanBureau
+            params: 00CB
+          key: 00CB
+        - minVersion:
+            android: 0
+            ios: 00.000.00
+          maxVersion:
+            android: 99999900
+            ios: 99.99.99
+          value:
+            destination: nonPreApprovedCarCertificate
+          key: nonPreApprovedCarCertificate
+        - minVersion:
+            android: 0
+            ios: 00.000.00
+          maxVersion:
+            android: 99999900
+            ios: 99.99.99
+          value:
+            destination: carLoan
+          key: carLoan
+        - minVersion:
+            android: 8220000
+            ios: 8.22.0
+          maxVersion:
+            android: 999999900
+            ios: 99.99.99
+          value:
+            product: offer
+            destination: ocTopCreditCard
+            params: 0ASC
+          key: 0ASC
+        - minVersion:
+            android: 8270000
+            ios: 8.27.0
+          maxVersion:
+            android: 999999900
+            ios: 99.99.99
+          value:
+            destination: pocketsWelcome
+            notificationAsParam: true
+          key: POCKETS
+        - minVersion:
+            android: 0
+            ios: 0.0.0
+          maxVersion:
+            android: 99999900
+            ios: 99.99.99
+          value:
+            destination: fundraising
+            notificationAsParam: true
+          key: '0576'
+        - minVersion:
+            android: 8270000
+            ios: 8.27.0
+          maxVersion:
+            android: 999999900
+            ios: 99.99.99
+          value:
+            destination: recipientsInit
+          key: BENEFICIARY
+        - minVersion:
+            android: 0
+            ios: 0.0.0
+          maxVersion:
+            android: 99999900
+            ios: 99.99.99
+          value:
+            destination: insuranceDelayedPayment
+          key: A000001056
+        - minVersion:
+            android: 0
+            ios: 0.0.0
+          maxVersion:
+            android: 999999900
+            ios: 99.99.99
+          value:
+            destination: upgradeN2N4
+          key: payrollPortabilityN2
+        - minVersion:
+            android: 0
+            ios: 0.0.0
+          maxVersion:
+            android: 99999900
+            ios: 99.99.99
+          value:
+            destination: updateAddressStepInputPage
+          key: updateAddress
+        - minVersion:
+            android: 0
+            ios: 0.0.0
+          maxVersion:
+            android: 999999900
+            ios: 99.99.99
+          value:
+            destination: billPaymentsDashboard
+            notificationAsParam: true
+          key: billPaymentsRTG
+        - minVersion:
+            android: 0
+            ios: 0.0.0
+          maxVersion:
+            android: 999999900
+            ios: 99.99.99
+          value:
+            destination: cardCreditCardPayment
+            notificationAsParam: true
+          key: creditCardPaymentRTG
+        - minVersion:
+            android: 0
+            ios: 0.0.0
+          maxVersion:
+            android: 99999900
+            ios: 99.99.99
+          value:
+            destination: dynamicsAndRewards
+            notificationAsParam: true
+          key: '0798'
+        - minVersion:
+            android: 0
+            ios: 0.0.0
+          maxVersion:
+            android: 99999900
+            ios: 99.99.99
+          value:
+            destination: dynamicsAndRewards
+            notificationAsParam: true
+          key: MGMPP
+        - minVersion:
+            android: 0
+            ios: 0.0.0.0
+          maxVersion:
+            android: 99999900
+            ios: 99.99.99.0
+          value:
+            destination: buyNowPayLater
+            notificationAsParam: true
+          key: BNPL
+        - minVersion:
+            android: 0
+            ios: 0.0.0
+          maxVersion:
+            android: 99999900
+            ios: 99.99.99
+          value:
+            destination: deferredSignatureCoowners
+          key: bpMultifirmantes
+        - minVersion:
+            android: 8220000
+            ios: 8.22.0.0
+          maxVersion:
+            android: 99999900
+            ios: 99.99.99.0
+          value:
+            destination: contractProductSection
+          key: solicitudes_ci
+        - minVersion:
+            android: 0
+            ios: 0.0.0
+          maxVersion:
+            android: 9999990
+            ios: 99.99.99
+          value:
+            destination: userTransactionAmountDetailNotification
+          key: A000001344
+        - minVersion:
+            android: 256000
+            ios: 25.60.00
+          maxVersion:
+            android: 99999900
+            ios: 99.99.99
+          value:
+            product: offer
+            destination: ocLoan
+            params: 0PPI
+          key: LWGPPI
+        - minVersion:
+            android: 256000
+            ios: 25.60.00
+          maxVersion:
+            android: 99999900
+            ios: 99.99.99
+          value:
+            product: offer
+            destination: ocLoan
+            params: 0NOM
+          key: LWGNOM
+        - minVersion:
+            android: 256000
+            ios: 25.60.00
+          maxVersion:
+            android: 99999900
+            ios: 99.99.99
+          value:
+            product: offer
+            destination: ocLoan
+            params: 0PPI
+          key: LWGPPIOL
+        - minVersion:
+            android: 256000
+            ios: 25.60.00
+          maxVersion:
+            android: 99999900
+            ios: 99.99.99
+          value:
+            product: offer
+            destination: ocLoan
+            params: 0NOM
+          key: LWGNOMOL
+      servicesTimeoutInSeconds: 60
+      landingPageManagerInitialPages:
+        fido:
+          validateMethod: _fidoPageReady
+        whatsNew:
+          validateMethod: _whatsNewPageReady
+        inApp:
+          validateMethod: _inAppCRMPageReady
+        discreetMode:
+          validateMethod: _discreetModePageReady
+        welcome:
+          validateMethod: _welcomeExperiencePageReady
+        stEnrollment:
+          validateMethod: _stEnrollmentPageReady
+        facialRecognition:
+          validateMethod: _facialRecognitionPageReady
+      expensesGroup:
+        data:
+          - value:
+              data:
+                invitationExpirationDays: 15
+                aemConfig:
+                  host: $(${backend.aem.protocol}://${backend.aem.host}:${backend.aem.port})
+                  termsAndConditions: content/caas/mexico/glomo/expenses-group/terms.model.json
+            key: expenses-group
+      notificationFieldConfig:
+        eventCodes:
+          secureCall:
+            - A000000766
+            - A000000767
+            - A000000765
+            - A000000768
+            - A000000817
+            - A000000850
+            - A000000967
+            - A000000968
+            - A000001146
+            - A000001181
+            - A000001182
+            - A000001183
+            - A000001184
+            - A000001185
+            - A000001186
+            - A000001233
+            - A000001234
+            - A000001235
+            - A000001236
+            - A000001339
+            - A000001340
+            - A000001341
+            - A000001342
+        functionalBlocks:
+          - value: Tipo de Notificación
+            key: detailNotificationType
+          - value: Seguro
+            key: variables_descProduct
+          - value: Cuenta
+            key: variables_account
+          - value: Tipo de Movimiento
+            key: movementType
+          - value: Cuenta vinculada
+            key: linkedAccount
+          - value: Descripción
+            key: description
+          - value: Establecimiento
+            key: concept
+          - value: Motivo
+            key: reason
+          - value: Alias de producto
+            key: alias
+          - value: Número de Producto
+            key: contractNumber
+          - value: Producto
+            key: product
+          - value: Tipo de Producto
+            key: productType
+          - value: Categoría
+            key: category
+          - value: Mensaje
+            key: messageBody
+          - value: Destinatario
+            key: receiver
+          - value: CLABE
+            key: clabe
+          - value: Número celular
+            key: phoneNumber
+          - value: Folio de operación CoDi®
+            key: folioCodi
+          - value: Referencia
+            key: reference
+          - value: Concepto de la operación
+            key: operationConcept
+          - value: Instrucción de pago
+            key: variables_paymentInstruction
+          - value: Fecha
+            key: date
+          - value: Hora
+            key: hour
+          - value: Fecha de vencimiento
+            key: expirationDate
+          - value: Hora de vencimiento
+            key: expirationHour
+          - value: Fecha limite para firmar
+            key: variables_limitDateFormatted
+        operativesShortcuts:
+          - minVersion:
+              android: 0
+              ios: 00.00.00
+            iconCells: bbvaTasks
+            icon: ic_tasks
+            maxVersion:
+              android: 999999900
+              ios: 99.99.99
+            id: 0PPI
+            title: Continuar proceso
+            routeType: private
+          - minVersion:
+              android: 0
+              ios: 00.00.00
+            iconCells: bbvaTasks
+            icon: ic_tasks
+            maxVersion:
+              android: 999999900
+              ios: 99.99.99
+            id: 0NOM
+            title: Continuar proceso
+            routeType: private
+          - minVersion:
+              android: 0
+              ios: 00.00.00
+            iconCells: bbvaTasks
+            icon: ic_tasks
+            maxVersion:
+              android: 999999900
+              ios: 99.99.99
+            id: 0TDC
+            title: Continuar proceso
+            routeType: private
+          - webManager: false
+            minVersion:
+              android: 0
+              ios: 00.00.00
+            iconCells: bbvaTelephone
+            icon: ic_call
+            maxVersion:
+              android: 999999900
+              ios: 99.99.99
+            id: GenInfLB
+            title: Línea BBVA
+            params:
+              action: call
+              config:
+                phone: '8002262663'
+            routeType: private
+          - webManager: false
+            minVersion:
+              android: 0
+              ios: 00.00.00
+            iconCells: bbvaTelephone
+            icon: ic_call
+            maxVersion:
+              android: 999999900
+              ios: 99.99.99
+            id: callBBVA
+            title: Llamar a BBVA
+            params:
+              action: call
+              config:
+                phone: '8002262663'
+            routeType: private
+          - minVersion:
+              android: 0
+              ios: 00.00.00
+            iconCells: bbvaPhishing
+            icon: ic_phishing
+            maxVersion:
+              android: 999999900
+              ios: 99.99.99
+            id: A000000406
+            title: Confirmar o rechazar
+            routeType: private
+          - minVersion:
+              android: 0
+              ios: 00.00.00
+            iconCells: ui-on-off
+            icon: ic_on
+            maxVersion:
+              android: 999999900
+              ios: 99.99.99
+            id: turnOffCard
+            title: Apagar Tarjeta
+            routeType: private
+          - minVersion:
+              android: 0
+              ios: 00.00.00
+            iconCells: ui-see-cvv
+            icon: ic_cvv
+            maxVersion:
+              android: 999999900
+              ios: 99.99.99
+            id: viewDigitalCard
+            title: Ver tarjeta digital
+            routeType: private
+          - minVersion:
+              android: 0
+              ios: 00.00.00
+            iconCells: bbvaPhishing
+            icon: ic_phishing
+            maxVersion:
+              android: 999999900
+              ios: 99.99.99
+            id: A000000749
+            title: Confirmar o rechazar
+            routeType: private
+          - minVersion:
+              android: 0
+              ios: 00.00.00
+            iconCells: bbvaPhishing
+            icon: ic_phishing
+            maxVersion:
+              android: 999999900
+              ios: 99.99.99
+            id: A000000838
+            title: Confirmar o rechazar
+            routeType: private
+          - minVersion:
+              android: 0
+              ios: 00.00.00
+            iconCells: bbvaPhishing
+            icon: ic_phishing
+            maxVersion:
+              android: 999999900
+              ios: 99.99.99
+            id: A000000861
+            title: Confirmar o rechazar
+            routeType: private
+          - minVersion:
+              android: 0
+              ios: 00.00.00
+            iconCells: bbvaPhishing
+            icon: ic_phishing
+            maxVersion:
+              android: 999999900
+              ios: 99.99.99
+            id: A000000862
+            title: Confirmar o rechazar
+            routeType: private
+          - minVersion:
+              android: 0
+              ios: 00.00.00
+            iconCells: bbvaPhishing
+            icon: ic_phishing
+            maxVersion:
+              android: 999999900
+              ios: 99.99.99
+            id: A000000945
+            title: Confirmar o rechazar
+            routeType: private
+          - minVersion:
+              android: 0
+              ios: 00.000.00
+            iconCells: bbvaPromotion
+            icon: ic_promotion_blue
+            maxVersion:
+              android: 9999999900
+              ios: 99.999.99
+            id: Promocion
+            title: Me interesa
+            routeType: private
+          - minVersion:
+              android: 0
+              ios: 00.00.00
+            iconCells: bbvaTicket
+            icon: ic_receipt_blue
+            maxVersion:
+              android: 999999900
+              ios: 99.99.99
+            id: Claims
+            title: Revisar aclaración
+            routeType: private
+          - minVersion:
+              android: 0
+              ios: 00.000.00
+            iconCells: bbvaPromotion
+            maxVersion:
+              android: 9999999900
+              ios: 99.999.99
+            id: A000000208
+            title: Promoción
+          - minVersion:
+              android: 0
+              ios: 00.00.00
+            iconCells: bbvaChat
+            maxVersion:
+              android: 999999900
+              ios: 99.99.99
+            id: A000000207
+            title: Mis conversaciones
+          - minVersion:
+              android: 0
+              ios: 00.00.00
+            iconCells: bbvaTicket
+            maxVersion:
+              android: 999999900
+              ios: 99.99.99
+            id: A000000481
+            title: Revisar aclaración
+          - minVersion:
+              android: 0
+              ios: 00.00.00
+            iconCells: bbvaDigitalsignature
+            icon: ic_digital_signature
+            maxVersion:
+              android: 999999900
+              ios: 99.99.99
+            id: A000000617
+            title: Revisar y firmar
+            routeType: private
+          - minVersion:
+              android: 0
+              ios: 00.00.00
+            iconCells: bbvaDigitalsignature
+            icon: ic_digital_signature
+            maxVersion:
+              android: 999999900
+              ios: 99.99.99
+            id: A000000618
+            title: Revisar y firmar
+            routeType: private
+          - minVersion:
+              android: 0
+              ios: 00.00.00
+            iconCells: bbvaTicket
+            maxVersion:
+              android: 999999900
+              ios: 99.99.99
+            id: A000000482
+            title: Revisar aclaración
+          - minVersion:
+              android: 0
+              ios: 00.00.00
+            iconCells: bbvaTicket
+            maxVersion:
+              android: 999999900
+              ios: 99.99.99
+            id: A000000484
+            title: Revisar aclaración
+          - call_bbva: call-bbva
+            minVersion:
+              android: 0
+              ios: 00.00.00
+            iconCells: bbvaTelephone
+            maxVersion:
+              android: 999999900
+              ios: 99.99.99
+            id: expense
+            title: Línea BBVA
+          - minVersion:
+              android: 0
+              ios: 00.00.00
+            icon: ic_mobile_cash_dollar
+            maxVersion:
+              android: 999999900
+              ios: 99.99.99
+            id: codiQrScanner
+            title: Ir a CoDi®
+            routeType: private
+          - minVersion:
+              android: 0
+              ios: 00.00.00
+            icon: ic_dollar
+            maxVersion:
+              android: 999999900
+              ios: 99.99.99
+            id: payCodi
+            title: Pagar dinero
+            routeType: private
+          - minVersion:
+              android: 0
+              ios: 00.00.00
+            icon: ic_historical_transfer
+            maxVersion:
+              android: 999999900
+              ios: 99.99.99
+            id: postponeCodiPayment
+            title: Posponer
+            routeType: private
+          - minVersion:
+              android: 0
+              ios: 00.00.00
+            icon: ic_wrong
+            maxVersion:
+              android: 999999900
+              ios: 99.99.99
+            id: rejectCodiPayment
+            title: Rechazar
+            routeType: private
+          - minVersion:
+              android: 0
+              ios: 00.00.00
+            icon: ic_review
+            maxVersion:
+              android: 999999900
+              ios: 99.99.99
+            id: GiveMoney
+            title: Dar dinero
+            routeType: private
+          - minVersion:
+              android: 0
+              ios: 00.00.00
+            iconCells: bbvaInsurance
+            icon: ic_insurance
+            maxVersion:
+              android: 999999900
+              ios: 99.99.99
+            id: A000000743
+            title: Pago del seguro
+            routeType: private
+          - minVersion:
+              android: 0
+              ios: 00.00.00
+            iconCells: bbvaDigitalsignature
+            icon: ic_digital_signature
+            maxVersion:
+              android: 999999900
+              ios: 99.99.99
+            id: A000000937
+            title: Revisar y firmar
+            routeType: private
+          - minVersion:
+              android: 0
+              ios: 00.00.00
+            iconCells: bbvaSendmoneydollar
+            maxVersion:
+              android: 999999900
+              ios: 99.99.99
+            id: A000001097
+            title: Pagar
+            routeType: private
+          - minVersion:
+              android: 0
+              ios: 00.00.00
+            iconCells: bbvaLoandollar
+            icon: bbvaLoandollar
+            maxVersion:
+              android: 999999900
+              ios: 99.99.99
+            id: nonPreApprovedCarCertificate
+            title: Completar cotización
+            routeType: private
+          - minVersion:
+              android: 0
+              ios: 00.00.00
+            iconCells: bbvaLoandollar
+            icon: bbvaLoandollar
+            maxVersion:
+              android: 999999900
+              ios: 99.99.99
+            id: carLoan
+            title: Completar cotización
+            routeType: private
+          - minVersion:
+              android: 0
+              ios: 00.00.00
+            iconCells: bbvaAccount
+            icon: ic_products
+            maxVersion:
+              android: 999999900
+              ios: 99.99.99
+            id: A000001056
+            title: Pagar seguro
+            routeType: private
+          - minVersion:
+              android: 0
+              ios: 00.00.00
+            iconCells: Turn-box
+            icon: turn-box
+            maxVersion:
+              android: 999999900
+              ios: 99.99.99
+            id: turn-box
+            title: Pedir turno
+            routeType: private
+          - minVersion:
+              android: 0
+              ios: 00.00.00
+            iconCells: ic_rewards
+            icon: ic_rewards
+            maxVersion:
+              android: 999999900
+              ios: 99.99.99
+            id: mgmtdc
+            title: Ver premios
+            routeType: private
+          - minVersion:
+              android: 0
+              ios: 00.00.00
+            iconCells: ic_rewards
+            icon: ic_rewards
+            maxVersion:
+              android: 999999900
+              ios: 99.99.99
+            id: MGMPP
+            title: Ver mi premio
+            routeType: private
+          - minVersion:
+              android: 0
+              ios: 00.00.00
+            iconCells: ui-see-cvv
+            icon: ic_cvv
+            maxVersion:
+              android: 999999900
+              ios: 99.99.99
+            id: expirationDateError
+            title: Ver tarjeta digital
+            routeType: private
+          - minVersion:
+              android: 0
+              ios: 00.00.00
+            iconCells: bbvaPhishing
+            icon: ic_phishing
+            maxVersion:
+              android: 99999900
+              ios: 99.99.99
+            id: A000001244
+            title: Confirmar o rechazar
+            routeType: private
+          - minVersion:
+              android: 0
+              ios: 00.00.00
+            iconCells: bbvaDigitalsignature
+            icon: ic_digital_signature
+            maxVersion:
+              android: 999999900
+              ios: 99.99.99
+            id: bpMultifirmantes
+            title: Revisar y firmar
+            routeType: private
+          - minVersion:
+              android: 0
+              ios: 00.00.00
+            iconCells: bbvacontinueright
+            icon: ic_arrow_next
+            maxVersion:
+              android: 999999900
+              ios: 99.99.99
+            id: solicitudes_ci
+            title: Ir a ‘Información de operaciones’
+            routeType: private
+          - minVersion:
+              android: 0
+              ios: 00.00.00
+            iconCells: bbvaSeecvv
+            icon: ic_cvv
+            maxVersion:
+              android: 999999900
+              ios: 99.99.99
+            id: A000001282
+            title: Ver tarjeta digital
+            routeType: private
+          - minVersion:
+              androd: 0
+              ios: 00.00.00
+            iconCells: bbvaPhising
+            icon: ic_phishing
+            maxVersion:
+              androd: 99999900
+              ios: 99.99.99
+            id: A000001344
+            title: Confirmar o rechazar
+            routeType: private
+        functionalBlocksCells:
+          - value: Fecha límite para firmar
+            key: sLIMITDIAFORMAT
+          - value: Seguros
+            key: sDESPRODUCTO
+          - value: Descripción
+            key: messageBody
+          - value: Instrucción de Pago
+            key: sINSTRUCCIONPAGO
+          - value: Alias de producto
+            key: alias
+          - value: Número de Producto
+            key: contractNumber
+          - value: Tipo de Producto
+            key: productType
+          - value: Categoría
+            key: notificationType
+          - value: Fecha límite de pago
+            key: sFECHAPAGO
+          - value: Tarjeta de crédito a pagar
+            key: sTERMINACION
+          - value: Tipo de notificación
+            key: title
+          - date: Fecha
+            hour: Hora
+            key: creationDate
+          - value: Fecha limite para firmar
+            key: variables_limitDateFormatted
+          - value: Establecimiento
+            key: commercialName
+      dashboard:
+        data:
+          dashboardOperatives:
+            - isAccountOperative: true
+              visibility: true
+              enable: true
+              isDepositOperative: false
+              rank: 1
+              isMerchantOperative: false
+              id: TRANSFER
+              isCreditCardOperative: true
+              isFavorite: true
+            - isAccountOperative: false
+              visibility: true
+              enable: true
+              isDepositOperative: false
+              rank: 2
+              isMerchantOperative: false
+              id: OPPORTUNITIES
+              isCreditCardOperative: false
+              isFavorite: true
+            - isAccountOperative: true
+              visibility: true
+              enable: true
+              isDepositOperative: false
+              rank: 3
+              isMerchantOperative: false
+              id: MOBILE_TRANSFER
+              isCreditCardOperative: false
+              isFavorite: true
+            - isAccountOperative: true
+              visibility: true
+              enable: true
+              isDepositOperative: false
+              rank: 4
+              isMerchantOperative: false
+              id: CREDIT_CARD_DEBT_PAYMENT
+              isCreditCardOperative: true
+              isFavorite: false
+            - isAccountOperative: true
+              visibility: true
+              enable: true
+              isDepositOperative: false
+              rank: 5
+              isMerchantOperative: false
+              id: SERVICE_PAYMENT
+              isCreditCardOperative: false
+              isFavorite: false
+            - isAccountOperative: true
+              visibility: true
+              enable: true
+              isDepositOperative: false
+              rank: 6
+              isMerchantOperative: false
+              id: MOBILE_TOP_UP
+              isCreditCardOperative: false
+              isFavorite: false
+            - isAccountOperative: true
+              visibility: true
+              enable: true
+              isDepositOperative: false
+              rank: 7
+              isMerchantOperative: false
+              id: ACCOUNT_STATUS
+              isCreditCardOperative: true
+              isFavorite: false
+            - isAccountOperative: true
+              visibility: true
+              enable: true
+              isDepositOperative: false
+              rank: 8
+              isMerchantOperative: false
+              id: INTERNATIONAL_TRANSFERS
+              isCreditCardOperative: false
+              isFavorite: false
+            - isAccountOperative: true
+              visibility: true
+              enable: true
+              rank: 9
+              isMerchantOperative: false
+              id: QR_PAYMENT
+              isCreditCardOperative: false
+              isFavorite: false
+            - isAccountOperative: false
+              visibility: true
+              enable: true
+              isDepositOperative: true
+              rank: 10
+              isMerchantOperative: false
+              id: DEPOSITS_PURCHASE
+              isCreditCardOperative: false
+              isFavorite: false
+            - isAccountOperative: false
+              visibility: true
+              enable: true
+              isDepositOperative: false
+              rank: 11
+              isMerchantOperative: true
+              id: CASH_ZONE
+              isCreditCardOperative: false
+              isFavorite: false
+          dashboardNotifications:
+            - enable: true
+              id: frequentOperation
+              order: 1
+            - enable: true
+              id: multipleFrequentOperations
+              order: 2
+            - availableDaysFromEnrollment: 28
+              enable: true
+              id: creditBureau
+              order: 3
+            - enable: true
+              flagFirstTimeAssistanceManager: false
+              id: assistanceManager
+              isAssistanceManagerFirstTime: false
+              isAssistanceManagerSeen: false
+              order: 4
+            - isNotificationsSettingsSessionsEnd: false
+              sessionCount: 0
+              enable: true
+              id: notificationsSettings
+              declineDate: ''
+              notificationReminderShownAfterDays: 6
+              isNotificationsSettingsSeen: false
+              order: 5
+              notificationReminderShowForSessions: 3
+      offers:
+        '3005':
+          id: device-insurance
+        '4025':
+          id: oc-metasegura
+        '4035':
+          id: travel-insurance
+        '4046':
+          id: life-insurance
+        '0130':
+          id: limit-increase
+        '0296':
+          id: credit-card-holder
+        0PPI:
+          id: consumer-loan
+        '0766':
+          id: debit-card-request
+        '0640':
+          id: instant-cash
+        '0762':
+          id: ppf
+        '0806':
+          id: oc-mortgage-non-preapproved
+        '0769':
+          id: product-solutions-payment-tdc-apf
+        COMB:
+          id: combo-tdc-loan
+        '0724':
+          id: ppf
+        0PYP:
+          id: flexible-financing-debit
+        0HIP:
+          id: mortgage-loan
+        '0060':
+          id: consumer-loan
+        '0578':
+          id: recolocation
+        '0732':
+          id: product-solutions-payment-tdc-restructure
+        AUTO:
+          id: car-loan
+        '0733':
+          id: product-solutions-payment-tdc-ppf
+        '0777':
+          id: mpos-openpay
+        '0576':
+          id: fundraising-onboarding
+        0TDC:
+          id: credit-card-holder
+        '0693':
+          id: credit-bureau
+        0ASC:
+          id: top-credit-card
+        '0739':
+          id: product-solutions-payment-car-loan-ppf
+        '0779':
+          id: payments-consolidations-loans
+        0ILC:
+          id: limit-increase
+        0SKY:
+          id: non-preapproved-credit-card
+        '0790':
+          id: oc-account-young
+        00CB:
+          id: non-preapproved-consumer-loan
+        '0791':
+          id: zero-party-data
+        L|0732:
+          id: product-solutions-payment-loan-restructure
+        '0787':
+          id: oc-fund
+        '0788':
+          id: oc-account
+        '0785':
+          id: metas-saving-goals
+        '0786':
+          id: deposit-hiring
+        ANOM:
+          id: payroll-advance
+        '0740':
+          id: product-solutions-payment-consumer-loan-ppf
+        0REC:
+          id: recolocation
+        HIPO:
+          id: mortgage-loan
+        0NOM:
+          id: consumer-loan
+        '0557':
+          id: payroll-portability
+        '0595':
+          id: credit-card-update
+        '0793':
+          id: invest-advisory-onboarding
+        '0758':
+          id: dynamic-life-insurance
+        '0715':
+          id: consumer-loan
+        '0759':
+          id: dynamic-life-insurance
+      securitySettings:
+        content:
+          - id: emergency
+          - id: securityProfile
+            items:
+              - highlightingAction:
+                  subtitle: Activa tu biometría para acceder y firmar de forma segura y ágil.
+                  title: Activar Biometría
+                navigation: page_biometria
+                subtitle: Entra a tu aplicación de forma ágil y segura.
+                icon: bbvaBiometric
+                weight: 2
+                active: true
+                main: true
+                id: biometry
+                priority: 1
+                title: Acceso ágil y seguro
+              - navigation: push_notifications
+                subtitle: Recibe información al momento en tu celular.
+                icon: bbvaAlarm
+                completedTitle: Activaste las notificaciones
+                weight: 2
+                active: true
+                main: true
+                id: push_notifications
+                priority: 2
+                title: Activa las notificaciones
+              - navigation: identity_document
+                subtitle: Mantén tu INE o IFE vigente para verificar tus datos.
+                icon: bbvaIdcard
+                weight: 1
+                active: true
+                main: true
+                id: identity_document
+                priority: 3
+                title: Actualizar tu identificación
+              - navigation: securityTipsPage
+                subtitle: Navega en internet de forma segura.
+                icon: bbvaScam
+                completedTitle: Revisaste los consejos de seguridad
+                weight: 1
+                active: true
+                main: false
+                id: security_tips
+                priority: 4
+                title: Revisa los consejos de seguridad
+              - navigation: screen_lock
+                subtitle: Oculta tus datos después de un periodo de inactividad.
+                icon: bbvaMobileoff
+                completedTitle: Activaste el bloqueo de pantalla
+                weight: 1
+                active: true
+                main: false
+                id: screen_lock
+                priority: 5
+                title: Activa el bloqueo de pantalla
+              - highlightingAction:
+                  subtitle: Registra tu correo electrónico para recibir verificaciones de seguridad.
+                  title: Registrar correo
+                navigation: email_management
+                subtitle: Recibe información relevante de todos tus productos.
+                icon: bbvaEmail
+                completedTitle: Validaste tu correo electrónico
+                weight: 0.5
+                active: true
+                main: false
+                id: registered_mail
+                priority: 6
+                title: Valida tu correo electrónico
+              - navigation: discreet_mode_settings
+                subtitle: Mantén tus saldos ocultos de miradas curiosas.
+                icon: bbvaHide
+                completedTitle: Activaste el modo discreto
+                weight: 0.5
+                active: true
+                main: false
+                id: discreet_mode
+                priority: 7
+                title: Activar modo discreto
+              - navigation: app_update
+                subtitle: Optimiza el mantenimiento de tu aplicación.
+                icon: bbvaMobile
+                completedTitle: Actualizaste tu app BBVA
+                weight: 0.5
+                active: true
+                main: false
+                id: app_update
+                priority: 8
+                title: Actualiza tu app BBVA
+          - id: access
+          - id: privacity
+          - id: securityTips
+          - id: learnMore
+            items:
+              - image: videogames
+                oneTip: ''
+                deeplink:
+                  args: []
+                  action: ''
+                  localArgs: {}
+                  key: ''
+                id: '1'
+                type: allTips
+                title: La ruleta de la ciberseguridad
+                url: ''
+              - image: machinelearning
+                oneTip: '1'
+                deeplink:
+                  args: []
+                  action: ''
+                  localArgs: {}
+                  key: ''
+                id: '2'
+                type: oneTip
+                title: Hackend, se acabó el juego
+                url: ''
+              - image: travel
+                oneTip: ''
+                deeplink:
+                  args: []
+                  action: ''
+                  localArgs: {}
+                  key: ''
+                id: '3'
+                type: url
+                title: Enlace a url externa
+                url: https://www.booking.com
+              - image: travel
+                oneTip: ''
+                deeplink:
+                  args: []
+                  action: ''
+                  localArgs: {}
+                  key: MgMDeepLink
+                id: '4'
+                type: deeplink
+                title: Esto es un deepLink
+                url: ''
+          - id: lastMinute
+            items:
+              - oneTip: ''
+                subtitle: Es uno de los troyanos bancarios utilizados por los ciberdelincuentes.
+                deeplink:
+                  args: []
+                  action: ''
+                  localArgs: {}
+                  key: ''
+                id: '1'
+                type: allTips
+                title: Grandoreiro no es el último hit musical
+                url: ''
+                urlImage: https://assets.caasbbva.com/content/dam/public-web/global/images/micro-illustrations/fire.svg
+              - oneTip: '1'
+                subtitle: Es uno de los troyanos bancarios utilizados por los ciberdelincuentes.
+                deeplink:
+                  args: []
+                  action: ''
+                  localArgs: {}
+                  key: ''
+                id: '2'
+                type: oneTip
+                title: Grandoreiro no es el último hit musical
+                url: ''
+                urlImage: https://assets.caasbbva.com/content/dam/public-web/global/images/micro-illustrations/fire.svg
+              - oneTip: ''
+                subtitle: Es uno de los troyanos bancarios utilizados por los ciberdelincuentes.
+                deeplink:
+                  args: []
+                  action: ''
+                  localArgs: {}
+                  key: ''
+                id: '3'
+                type: url
+                title: Grandoreiro no es el último hit musical
+                url: https://www.booking.com
+                urlImage: https://assets.caasbbva.com/content/dam/public-web/global/images/micro-illustrations/fire.svg
+              - oneTip: ''
+                subtitle: Es uno de los troyanos bancarios utilizados por los ciberdelincuentes.
+                deeplink:
+                  args: []
+                  action: ''
+                  localArgs: {}
+                  key: MgMDeepLink
+                id: '4'
+                type: deeplink
+                title: Grandoreiro no es el último hit musical
+                url: ''
+                urlImage: https://assets.caasbbva.com/content/dam/public-web/global/images/micro-illustrations/fire.svg
+      sustainabilityCarbonFootprintOffset:
+        rewardsConversionFactor: 0.1
+      ocFundDiciDocuments:
+        - documents:
+            - id: '00007833'
+          fundName: B+EDUCA
+        - documents:
+            - id: '00012299'
+          fundName: B+EST6
+        - documents:
+            - id: '00007442'
+          fundName: B+RVUS2
+        - documents:
+            - id: '00019983'
+          fundName: BBVAA
+        - documents:
+            - id: '00020001'
+          fundName: BBVAAD
+        - documents:
+            - id: '00007438'
+          fundName: BBVAAP
+        - documents:
+            - id: '00019989'
+          fundName: BBVAC
+        - documents:
+            - id: '00022880'
+          fundName: BBVAC+
+        - documents:
+            - id: '00017553'
+          fundName: BBVACAP
+        - documents:
+            - id: '00020007'
+          fundName: BBVACD
+        - documents:
+            - id: '00022881'
+          fundName: BBVACD+
+        - documents:
+            - id: '00007835'
+          fundName: BBVACOR
+        - documents:
+            - id: '00009652'
+          fundName: BBVACR
+        - documents:
+            - id: '00017962'
+          fundName: BBVACRD
+        - documents:
+            - id: '00007379'
+          fundName: BBVACRE
+        - documents:
+            - id: '00029860'
+          fundName: BBVADCB
+        - documents:
+            - id: '00029882'
+          fundName: BBVADD
+        - documents:
+            - id: '00012311'
+          fundName: BBVADIG
+        - documents:
+            - id: '00007203'
+          fundName: BBVADLP
+        - documents:
+            - id: '00007039'
+          fundName: BBVADOL
+        - documents:
+            - id: '00007436'
+          fundName: BBVAE50
+        - documents:
+            - id: '00009281'
+          fundName: BBVAEMG
+        - documents:
+            - id: '00027569'
+          fundName: BBVAESG
+        - documents:
+            - id: '00007018'
+          fundName: BBVAEUR
+        - documents:
+            - id: '00006867'
+          fundName: BBVAGB2
+        - documents:
+            - id: '00031054'
+          fundName: BBVAGB3
+        - documents:
+            - id: '00011504'
+          fundName: BBVAGBP
+        - documents:
+            - id: '00009651'
+          fundName: BBVAGF
+        - documents:
+            - id: '00017957'
+          fundName: BBVAGFD
+        - documents:
+            - id: '00020043'
+          fundName: BBVAGL3
+        - documents:
+            - id: '00009659'
+          fundName: BBVAGL4
+        - documents:
+            - id: '00020049'
+          fundName: BBVAGL5
+        - documents:
+            - id: '00008245'
+          fundName: BBVAGLP
+        - documents:
+            - id: '00006868'
+          fundName: BBVAGOB
+        - documents:
+            - id: '00007836'
+          fundName: BBVAGUB
+        - documents:
+            - id: '00007832'
+          fundName: BBVALIQ
+        - documents:
+            - id: '00009653'
+          fundName: BBVALQ
+        - documents:
+            - id: '00019995'
+          fundName: BBVAM
+        - documents:
+            - id: '00020013'
+          fundName: BBVAMD
+        - documents:
+            - id: '00020025'
+          fundName: BBVAMA2
+        - documents:
+            - id: '00020031'
+          fundName: BBVAMA3
+        - documents:
+            - id: '00008873'
+          fundName: BBVAMLT
+        - documents:
+            - id: '00009661'
+          fundName: BBVAMRF
+        - documents:
+            - id: '00007361'
+          fundName: BBVAMT
+        - documents:
+            - id: '00007838'
+          fundName: BBVANDQ
+        - documents:
+            - id: '00009650'
+          fundName: BBVAPC
+        - documents:
+            - id: '00017952'
+          fundName: BBVAPCD
+        - documents:
+            - id: '00006869'
+          fundName: BBVAPYM
+        - documents:
+            - id: '00007204'
+          fundName: BBVAPZO
+        - documents:
+            - id: '00009662'
+          fundName: BBVARF
+        - documents:
+            - id: '00007440'
+          fundName: BBVARFG
+        - documents:
+            - id: '00009654'
+          fundName: BBVARV
+        - documents:
+            - id: '00007436'
+          fundName: BBVARVE
+        - documents:
+            - id: '00007360'
+          fundName: BBVASIC
+        - documents:
+            - id: '00006870'
+          fundName: BBVATES
+        - documents:
+            - id: '00007710'
+          fundName: BBVAUDI
+        - documents:
+            - id: '00008246'
+          fundName: BBVAUMS
+        - documents:
+            - id: '00007437'
+          fundName: BBVAUS
+        - documents:
+            - id: '00007020'
+          fundName: BMERLIQ
+        - documents:
+            - id: '00020019'
+          fundName: SB+PC
+        - documents:
+            - id: '00020037'
+          fundName: SB+PCDL
+      checksDeposit:
+        maxValue: '25000'
+      carouselExperiencesCards:
+        cardsMinorAccount:
+          - expensesGroup
+          - financialEducation
+        cardsNormalAccount:
+          - expensesGroup
+          - goals
+      parkingCity:
+        phoneNumberPartner: '5577020280'
+        rechargeAmountOptions:
+          - amount: '100'
+            checked: false
+            value: item1
+          - amount: '200'
+            checked: false
+            value: item2
+          - amount: '300'
+            checked: false
+            value: item3
+          - amount: '400'
+            checked: false
+            value: item4
+          - amount: '500'
+            checked: false
+            value: item5
+        commission: '12'
+        agreementNumber: '002336561'
+        maxAmount: 2,000
+      appStatus:
+        android:
+          available: true
+          bySDK:
+            - available: true
+              sdk: 30
+          scheduledShutdown:
+            start: '2024-08-24T02:09:00-06:00'
+            end: '2024-08-24T03:09:25-06:00'
+            message:
+              icon: /content/dam/public-web/global/images/micro-illustrations/authorization_error.png
+              description: Mientras descansas, el próximo domingo 20 de Octubre de 2024 de 01:00 a.m. a 06:00 a.m. estaremos haciéndole mantenimiento a tu App BBVA, BBVA Net y Red de Oficinas. ¡Recuerda hacer tus operaciones después de este horario!
+              title: Tu App BBVA estará en mantenimiento
+        ios:
+          available: true
+          bySDK:
+            - available: true
+              sdk: 16.6.1
+          scheduledShutdown:
+            start: '2024-10-24T02:09:00-06:00'
+            end: '2024-10-24T03:10:59-06:00'
+            message:
+              icon: /content/dam/public-web/global/images/micro-illustrations/authorization_error.png
+              description: Mientras descansas, el próximo domingo 20 de Octubre de 2024 de 01:00 a.m. a 06:00 a.m. estaremos haciéndole mantenimiento a tu App BBVA, BBVA Net y Red de Oficinas. ¡Recuerda hacer tus operaciones después de este horario!
+              title: Tu App BBVA estará en mantenimiento
+      pfmAvailableVersion:
+        iOS:
+          - 99.99.99.0
+        Android:
+          - 99999900
+      widgetcallmeback:
+        mortgage:
+          withRemoteBanking:
+            keyFlag: mortgageRB
+            productName: cmb_remotebanker_hipoteca_work_v01
+        dynamicLifeInsuranceMainPage:
+          withoutRemoteBanking:
+            keyFlag: dynamicLifeInsurance
+            productName: cmb_seguroVida_work_V0
+          withRemoteBanking:
+            keyFlag: dynamicLifeInsuranceRB
+            productName: cmb_remotebanker_vidasegura_work_v01
+        nonPreApprovedCarCertificate:
+          withoutRemoteBanking:
+            keyFlag: ocCarLoanNPA
+            productName: CMB_Outbound_NPAuto_Work_v01
+        ocLoanRelocation:
+          withoutRemoteBanking:
+            keyFlag: ocLoanRelocation
+          withRemoteBanking:
+            keyFlag: ocLoanRelocationCTC
+        dynamicLifeInsuranceOfferPage:
+          withoutRemoteBanking:
+            keyFlag: dynamicLifeInsurance
+            productName: cmb_seguroVida_work_V0
+          withRemoteBanking:
+            keyFlag: dynamicLifeInsuranceRB
+            productName: cmb_remotebanker_vidasegura_work_v01
+        travelInsurance:
+          withoutRemoteBanking:
+            keyFlag: travelInsurance
+            productName: cmb_travel_work_V0
+        fundsHiring:
+          withRemoteBanking:
+            keyFlag: fundsHiringRB
+            productName: cmb_remotebanker_inversiones_work_v01
+        depositHiring:
+          withoutRemoteBanking:
+            keyFlag: deposit
+            productName: Pagare
+          withRemoteBanking:
+            keyFlag: depositCTC
+        ocMetaseguraOffer:
+          withoutRemoteBanking:
+            keyFlag: ocMetasegura
+            productName: cmb_metasegura_work_v0
+      idTermsConditionsDocCodi:
+        value: GMDECOS002
+      isRestrictiveModeON: false
+      depositHiringConfig:
+        maxAvailableBalance: 9999999999999
+      SIM: '0049'
+      mgmData:
+        data:
+          offers:
+            - documentOfferId: GMDMGMT001
+              id: '0798'
+              documentSize: 115kb
+            - documentOfferId: GMDTCMG001
+              id: '0795'
+              documentSize: 44kb
+          products:
+            - documentProductId: GMDMGMT001
+              documentProductSize: 115kb
+              id: '0798'
+              productType: PAYROLL_PORTABILITY
+            - documentProductId: GMDTCMG001
+              documentProductSize: 44kb
+              id: '0795'
+              productType: CREDIT_CARD
+      amountLimitRequestCodi:
+        value: 10000
+      isFullOnboarding: true
+      clarifications:
+        speiUrl: https://portal.bbva.mx/aclaraciones/aclaraciones-transferencias-SPEI.jsp
+      secretKeys:
+        qr: 746F6F206D616E792073656372657473
+      checksProtection:
+        days: '90'
+      rewards:
+        shouldShowOnboarding: true
+        redemptionOptions:
+          - image: transfer
+            comingSoon: false
+            description: Transfiere tus puntos entre tus tarjetas.
+            title: Transferencia de puntos
+            type: pointsTransfer
+          - image: trophy
+            comingSoon: false
+            description: Tú puedes ser el próximo ganador. Consigue tus participaciones.
+            title: Sorteos BBVA
+            type: raffle
+          - image: branch
+            comingSoon: false
+            description: Busca los comercios en los que puedes usar tus Puntos BBVA.
+            title: Paga con tus puntos
+            type: storesMap
+      dependenciesVersion:
+        android:
+          webview:
+            - minVersion: 88.0.4324.181
+              packageIds:
+                com.google.android.webview.dev: https://play.google.com/store/apps/details?id=com.google.android.webview.dev
+                com.google.android.webview.canary: https://play.google.com/store/apps/details?id=com.google.android.webview.canary
+                com.google.android.webview: https://play.google.com/store/apps/details?id=com.google.android.webview
+                com.google.android.webview.beta: https://play.google.com/store/apps/details?id=com.google.android.webview.beta
+            - minVersion: 88.0.4324.93
+              packageIds:
+                com.chrome.canary: https://play.google.com/store/apps/details?id=com.chrome.canary
+                com.chrome.beta: https://play.google.com/store/apps/details?id=com.chrome.beta
+                com.chrome.dev: https://play.google.com/store/apps/details?id=com.chrome.dev
+                com.android.chrome: https://play.google.com/store/apps/details?id=com.android.chrome
+            - minVersion: 11.1.5.322
+              packageIds:
+                com.huawei.webview: https://appgallery.huawei.com/app/C100869695
+      rateApp:
+        minStars: 4
+        value: 4
+      thirdPartyWallets:
+        nonceSignature: '00000000000000000000000000000000000000000000000000'
+        publicCertificateId: '00000000000000000000000000000000000000000000000000'
+        nonce: '0000'
+      minDate: '1900-01-01'
+      deeplinkConfigurationOffers:
+        alternative:
+          - 0ILC
+          - ILC
+          - '0296'
+          - '4035'
+          - '3005'
+          - '0758'
+          - '0759'
+          - 0PGR
+          - 0PYP
+          - 0NOM
+          - 0HIP
+          - '0557'
+          - 0TDC
+          - '0640'
+          - '0130'
+          - ANOM
+          - '0788'
+          - CRM
+        fixed:
+          - 0FUND
+          - CONTR_PAGARE
+          - 0PGR
+        nonPreapproved:
+          - 00CB
+          - 0SKY
+      smartAssistantEncryptedKey:
+        android: 12E0479C087DDFB28F3D14C2923F5D1394E6CEFB162EAFE33F32A725461D9038B34A252E52D411D0010E87FD23E3C6907D9B7916F7550CB8540D3E297188833FD4536E6787C18E1A4A49D6CB1913B1CE766694F3851CD47AE85447784052570F
+        iOS: zHmHol0CddKE0vk1ncrOrru8dyXj8uLW/9aznEJyDe80Q1UR88qe2wMj3RLREa7yPXQ1iWnChF33v5EK8gJUhk6An+RZ4TYOT2DgbKKyD190f7gkBTHieH+Sum+3WcAqDDlZMenZbfk4yAXXDJ4r+g==
+      pfmDashboardCheckUp:
+        errorCodeList:
+          - code: '01179005'
+            type: ARCO
+          - code: '01179004'
+            type: DATA
+          - code: '01179009'
+            type: DATA
+        offerList:
+          - tipId: 31
+            icon: tip_checkup_efi.svg
+            offerId: '0340'
+            eventName: efi-info
+            api: offers
+          - tipId: 39
+            icon: tip_life_insurance.svg
+            offerId: '4046'
+            eventName: insurance-info
+            api: offers
+            persist: true
+          - tipId: 40
+            icon: tip_life_insurance.svg
+            offerId: '4046'
+            eventName: insurance-info
+            api: offers
+            persist: true
+          - tipId: 41
+            icon: tip_life_insurance.svg
+            offerId: '4046'
+            eventName: insurance-info
+            api: offers
+            persist: true
+          - tipId: 49
+            icon: tip_life_insurance.svg
+            offerId: '4046'
+            eventName: insurance-info
+            api: offers
+            persist: true
+          - tipId: 50
+            icon: tip_life_insurance.svg
+            offerId: '4046'
+            eventName: insurance-info
+            api: offers
+            persist: true
+          - tipId: 42
+            icon: tip_life_insurance.svg
+            offerId: '4046'
+            eventName: insurance-info
+            api: offers
+            persist: true
+      dimo:
+        publicKey: MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA4bhAnwj95xwb82puWSdJVmy64fjMH58o83ndL3jnHGMcG0p3mk2a5TTrIRhaf+vAGoIAluQiRjsfOajGdLYU80Q0/jlLfloiQ2AZyJY/89IYsnemTMS7Nt0G3UL7t+aAn+hbGaOPjrIQr0IQffwQMW6yvnzlWUBB00RZR29EFInZfsCd4vergZGgYm8rlHe24c/z7N0hitD3ci8t6Kgc2q+WwWkYE3Ii5EZL0vmuIkqcwaCfd05uJ9WP/LuIkRP1SXwQA/CtSmJvW1LxkCZDsNekzUfl01hA/J6f076bIqhd7mABwRjBR+hZtRC5QCq5uxLL0noqQegDM8R4qTuzWwIDAQAB
+      depositsFlowConfig:
+        termDays:
+          - 1
+          - 7
+          - 28
+          - 91
+          - 182
+        enable: true
+        defaultAmount: 50000
+        minimumAmount: 2000
+        defaultTermDays: 28
+      glomoContinuityUseCases:
+        - isCodified: false
+          name: qrCard
+          id: '1'
+      termsAndConditions:
+        - name: tc_usodelapp
+          id: GMDBMTC003
+      mortgageLoanPayment: A:90, I:90, versionFrontA:11.11.191112, versionFrontI:11.11.191112
+      cardlessWithdrawal:
+        maxInputChars: 6
+        amountHasToUpdate: 1
+        amounts:
+          - 100
+          - 200
+          - 300
+          - 500
+          - 1000
+          - 1500
+        maxWithdrawal: 12000
+        multiple: 100
+        minLimit: 100
+      fundraising:
+        minValue: '20'
+        firstValue: '50'
+        secondValue: '100'
+        maxValue: '8000'
+        thirdValue: '200'
+      loanPaymentConsumo: '5074'
+      externalUrlLinkCard:
+        url: https://bbva.mx/personas/productos/cuentas/link-card.html
+      autologinEnabled: true
+      segmentation:
+        seg01:
+          - P2
+          - P3
+          - P4
+          - IM
+          - P5
+          - P6
+          - P7
+          - P8
+          - P9
+        seg02:
+          - R1
+          - R2
+          - R3
+          - R4
+        seg03:
+          - Q1
+          - FE
+          - F2
+          - F3
+          - F4
+          - F5
+          - F6
+          - F7
+          - F9
+          - im
+        seg05:
+          - P0
+          - P1
+      digitalActivation:
+        chatEndTime: '22:50'
+        chatStartTime: '08:30'
+        isActiveChat: true
+      mobileTopUp:
+        timeLimit: 8000
+        delayCompanies:
+          - delayOnLimit: 4000
+            providerId: '01'
+            isEnabled: false
+            delayOnInterval: 2000
+        interval: 2000
+        onOffCompanies:
+          - providerId: '01'
+            isEnabled: true
+          - providerId: '02'
+            isEnabled: true
+          - providerId: '03'
+            isEnabled: true
+          - providerId: '05'
+            isEnabled: true
+          - providerId: '08'
+            isEnabled: true
+          - providerId: '09'
+            isEnabled: true
+          - providerId: '10'
+            isEnabled: true
+          - providerId: '11'
+            isEnabled: true
+          - providerId: '12'
+            isEnabled: true
+          - providerId: '13'
+            isEnabled: true
+          - providerId: '14'
+            isEnabled: false
+          - providerId: '15'
+            isEnabled: false
+          - providerId: '16'
+            isEnabled: false
+          - providerId: '17'
+            isEnabled: false
+          - providerId: '18'
+            isEnabled: false
+          - providerId: '19'
+            isEnabled: false
+          - providerId: '20'
+            isEnabled: false
+      ':status': 200 OK
+      deviceAccess:
+        qrReactivation: false
+        reBiometricFacial: true
+        ivr: false
+        facialKey: false
+        qrReactivationDecipher: false
+      externalUrlBbvaPoints:
+        url: https://www.bbva.mx/personas/productos/tarjetas-de-credito/promociones/puntos-bbva.html
+      ivr: 1:0049,2:0049,3:0049,4:0049,5:0049,6:0049,0:0049
+      biometricFacial: I:3869,F:4547,R:2549
+      ':headers':
+        X-Cache: Miss from cloudfront
+        content-length: '139019'
+        Server: AmazonS3
+        Access-Control-Allow-Origin: '*'
+        Access-Control-Allow-Methods: GET, HEAD
+        X-Amz-Cf-Pop: QRO50-P1
+        Connection: keep-alive
+        Last-Modified: Thu, 13 Feb 2025 20:07:23 GMT
+        Date: Fri, 14 Feb 2025 00:03:55 GMT
+        Access-Control-Allow-Headers: content-type
+        Via: 1.1 6ed11322f8e6efdd7b1357abda6973d0.cloudfront.net (CloudFront)
+        Access-Control-Expose-Headers: Access-Control-Allow-Origin
+        X-OpenWeb-Version: '2'
+        ETag: W/"1d6e90d9688ca411231451c1a52f80e5"
+        X-Amz-Cf-Id: BkxuVeCJ2l3s9H6HPHGtBQYM3jr4quHxuoG3pUShf1MubBKXDHka9Q==
+        Vary: Accept-Encoding
+        Content-Type: application/json
+      configureProducts:
+        enabled: true
+      cardOriginationOcDebitCardInmediateDelivery:
+        deliveryTime: 7
+      securityEncryptor:
+        GLOMO: '2024-10-01'
+      simpleview:
+        maxAge: 70
+      mgmCampaignData:
+        dataLinkGenerator:
+          referrerName: mgmPorta
+          referrerCustomerId: ''
+          brandDomain: mgm.bbva.mx
+          campaingDescription: ¡Hola! Cambia tu nómina a BBVA y te regalo $500 en Amazon México. Entra en el link. Desde tu cuenta BBVA busca Cambiar nómina del menú más. Si no tienes una cuenta ¡abre una desde la app!
+          channel: glomo
+          campaign: portability
+          idConsoleCampaign: WA3b
+          parameters:
+            af_dp: bbvamovilmx://opperativeType=MgMDeepLink
+            af_force_deeplink: true
+            deep_link_sub1: ''
+            is_retargeting: true
+            deep_link_value: member_get_member
+      maxLimitUdis: 12374
+      landing:
+        - background:
+            landing: /content/dam/caas/mexico/glomo/landing/background/ilanding-febrero-2024.jpg
+            login: /content/dam/caas/mexico/glomo/landing/background/ilanding-febrero-2024.jpg
+            dashboard: /content/dam/caas/mexico/glomo/landing/background/AEM_IMG_Login_1.png
+          segment: nouser
+          shortcuts: /content/caas/mexico/glomo/landing/shortcuts/nouser.model.json
+          header:
+            default:
+              shortcuts: /content/caas/mexico/glomo/landing/shortcuts/nouser.model.json
+            blocked:
+              shortcuts: /content/caas/mexico/glomo/landing/shortcuts/blocked/nouser.model.json
+            force-update:
+              shortcuts: /content/caas/mexico/glomo/landing/shortcuts/forceupdate/nouser.model.json
+          sections:
+            - type: message-card
+              priority: 0
+              url: /content/caas/mexico/glomo/landing/priority/nouser.model.json
+              reactivateInDays: 1
+            - type: message-card
+              priority: 1
+              url: /content/caas/mexico/glomo/landing/digital-sales/nouser.model.json
+              reactivateInDays: 1
+            - type: message-card
+              priority: 2
+              url: /content/caas/mexico/glomo/landing/onboarding/nouser.model.json
+              reactivateInDays: 1
+        - background:
+            landing: /content/dam/caas/mexico/glomo/landing/background/ilanding-febrero-2024.jpg
+            login: /content/dam/caas/mexico/glomo/landing/background/ilanding-febrero-2024.jpg
+            dashboard: /content/dam/caas/mexico/glomo/landing/background/AEM_IMG_Login_1.png
+          segment: personal
+          shortcuts: /content/caas/mexico/glomo/landing/shortcuts/default.model.json
+          header:
+            default:
+              shortcuts: /content/caas/mexico/glomo/landing/shortcuts/default.model.json
+            blocked:
+              shortcuts: /content/caas/mexico/glomo/landing/shortcuts/blocked/default.model.json
+              message:
+                icon: /content/dam/public-web/global/images/micro-illustrations/error.png
+                description: Vuele a intentarlo más tarde.
+                title: Nuestra app está temporalmente fuera de servicio
+            force-update:
+              shortcuts: /content/caas/mexico/glomo/landing/shortcuts/forceupdate/default.model.json
+              message:
+                icon: /content/dam/public-web/global/images/micro-illustrations/update_app.png
+                description: Para que puedas seguir operando necesitamos que actualices la aplicación.
+                title: Actualiza la app BBVA
+                buttonLabel: Actualizar
+          sections:
+            - isVisibleByDefault: true
+              type: cvv-card
+              priority: 0
+            - type: message-card
+              priority: 1
+              url: /content/caas/mexico/glomo/landing/priority/default.model.json
+              reactivateInDays: 1
+            - type: message-card
+              priority: 2
+              url: /content/caas/mexico/glomo/landing/digital-sales/default.model.json
+              reactivateInDays: 1
+            - type: message-card
+              priority: 3
+              url: /content/caas/mexico/glomo/landing/messages/default.model.json
+              reactivateInDays: 1
+        - condition: isMonoEnterpriseDebitCardClient
+          background:
+            landing: /content/dam/caas/mexico/glomo/landing/background/ilanding-febrero-2024.jpg
+            login: /content/dam/caas/mexico/glomo/landing/background/ilanding-febrero-2024.jpg
+            dashboard: /content/dam/caas/mexico/glomo/landing/background/mockup-ilanding-marzo-V1.jpg
+          segment: tdde
+          profile: personal
+          header:
+            default:
+              shortcuts: /content/caas/mexico/glomo/landing/shortcuts/tde.model.json
+            blocked:
+              shortcuts: /content/caas/mexico/glomo/landing/shortcuts/blocked/tde.model.json
+            force-update:
+              shortcuts: /content/caas/mexico/glomo/landing/shortcuts/forceupdate/tde.model.json
+          segmentDescription: clientes con tarjeta debito empresa
+          priority: 0
+          sections:
+            - isVisibleByDefault: true
+              type: cvv-card
+              priority: 0
+        - condition: isBetterwareClient
+          background:
+            landing: /content/dam/caas/mexico/glomo/betterware/Imagen-Betterware-ilanding-01.jpg
+            login: /content/dam/caas/mexico/glomo/landing/background/ilanding-febrero-2024.jpg
+            dashboard: /content/dam/caas/mexico/glomo/betterware/Imagen-Betterware-ilanding-01.jpg
+          segment: betterware
+          profile: personal
+          header:
+            default:
+              shortcuts: /content/caas/mexico/glomo/landing/shortcuts/betterware.model.json
+            blocked:
+              shortcuts: /content/caas/mexico/glomo/landing/shortcuts/blocked/betterware.model.json
+            force-update:
+              shortcuts: /content/caas/mexico/glomo/landing/shortcuts/forceupdate/betterware.model.json
+          avatar: /content/dam/caas/global/glomo/landing/micro-illustrations/betterware.png
+          segmentDescription: clientes empresa betterware
+          sections:
+            - type: message-card
+              priority: 0
+              url: /content/caas/mexico/glomo/landing/messages/betterware.model.json
+              reactivateInDays: 1
+      maximumRequestAmountCodi:
+        value: 100000
+      experiencesSection:
+        iOS:
+          versions:
+            - path: /content/caas/mexico/glomo/experiences/11-60/experiences-list.model.json
+              compatible_versions:
+                - '11.60'
+              domain: $(${backend.aem.protocol}://${backend.aem.host}:${backend.aem.port})
+        Android:
+          versions:
+            - path: /content/caas/mexico/glomo/experiences/11-60/experiences-list.model.json
+              compatible_versions:
+                - '11.60'
+              domain: $(${backend.aem.protocol}://${backend.aem.host}:${backend.aem.port})
+      publicAppSetting: app_settings_glomo
+      geolocation:
+        urls:
+          moreInformation: https://www.bbva.mx/personas/landings/07/geolocalizacion
+          detailLocation: https://www.bbva.mx/content/dam/public-web/mexico/documents/landing/5-tips-para-activar-tu-ubicacion.pdf
+        publicKey: MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAvnwsZS/2j84uHnrDvEeSqsvulf2CoPKSm3by7qnvTOdODwErav6laSl82DjkaXJC5vVpwpTaZklCNb5fgR9TSZqh56YQ74qhRit21nBmor6uDpnaslMMllch2BKExgeyDuVgdTmw8kS+TSsX7Ywze6xWAgAGiX2aEkPddnuuWatyZDilo+jDaZuzjL4piY7fPyg4P6QM+XfF8gtZwDn/EekhPK+3QBmKV/JxRFhiNssFQhxGfYx674TmQMpBh4WDb5RPfw3sl7Klb1K2dE4rC7TRrvb0ykj8DXlYTrChre8o1gcbkrAEZzqaaGEGLL0rJaxeMsDGInYyVEsTNEdqDQIDAQAB

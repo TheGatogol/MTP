@@ -1,0 +1,45 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: 0ad8233a-9a20-44d7-8aa1-732484cb9cdd
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: equity
+    lock: 'false'
+then:
+- return:
+    :body:
+    - data:
+        locale: es_mx
+        tags:
+        - equity
+        products:
+          equityContract:
+          - name: Pt6649
+            id: Td-tykaA8Aq9WAzheJ-E53K7ONV3MyXFyDTw0fWM4gmlIoMW_0jiSA
+        authentication:
+          password: Glomo2024
+          user: '5519633975'
+          deviceId: 26D350B06EDBD7EA2F96594AFDCF03DC
+      lockType: null
+      lockExpiration: null
+      id: 2648666
+    :headers:
+      content-length: '334'
+      Strict-Transport-Security: max-age=15768000
+      Server: nginx
+      ECS-Entry-Point-Zone: ext
+      Connection: keep-alive
+      host: datamanager.globaldevtools.bbva.com
+      Vary: Accept-Encoding
+      Date: Wed, 29 May 2024 15:17:23 GMT
+      Content-Type: application/json
+    :status: 200 OK

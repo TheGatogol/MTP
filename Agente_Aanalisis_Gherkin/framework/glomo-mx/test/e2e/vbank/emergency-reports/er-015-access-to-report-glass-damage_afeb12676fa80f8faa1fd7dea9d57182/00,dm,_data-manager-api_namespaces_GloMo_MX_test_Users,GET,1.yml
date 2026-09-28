@@ -1,0 +1,41 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: 6b0f86c0-54c6-4003-8a53-e192fcfa4c4a
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: emergency_vehicle_reports
+    lock: 'false'
+then:
+- return:
+    :body:
+    - data:
+        locale: es_mx
+        tags:
+        - '5520799055'
+        - emergency_vehicle_reports
+        authentication:
+          password: Glomo2024
+          user: '3318707280'
+          deviceId: FE1F76D1B4C3F7F301A812031F323630
+      lockExpiration: null
+      lockType: null
+      id: 3506365
+    :headers:
+      Server: nginx
+      Cache-Control: max-age=0
+      Connection: keep-alive
+      host: datamanager.globaldevtools.bbva.com
+      Expires: Mon, 20 Oct 2025 14:53:51 GMT
+      Content-Length: '249'
+      Date: Mon, 20 Oct 2025 14:53:51 GMT
+      Content-Type: application/json; charset=utf-8
+    :status: 200 OK

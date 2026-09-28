@@ -1,0 +1,59 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: b7f9b1d5-11c3-455d-b2fa-f979e6178e4d
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: deferred_signature_coowners
+    lock: 'false'
+then:
+- return:
+    :body:
+    - data:
+        notifications:
+          expiredSignature: 684a4ba7e167e866649ff716
+          success: 6850a0d1218f570362c35a3e
+          deferredSignatureCoowners: 6851f7aa218f570362c384ee
+          retryError: 684a4ba7e167e866649ff714
+        tags:
+        - '5557329043'
+        - deferred_signature_coowners
+        - happy_path_deferred
+        authentication:
+          password: Glomo2025
+          user: '5557329043'
+          deviceId: C1B615856AEF7003B7E5AC09A52F0E7D
+      id: 36141396
+      lockType: null
+      lockExpiration: null
+    - data:
+        notifications:
+          deferredSignatureCoowners: 68406606052e87333918f231
+        tags:
+        - '5548956990'
+        - deferred_signature_coowners
+        authentication:
+          password: Glomo2025
+          user: '5548956990'
+          deviceId: 085A2A41F2A1978B6596E77F6D5FDD70
+      id: 36133286
+      lockType: null
+      lockExpiration: null
+    :headers:
+      content-length: '769'
+      Cache-Control: max-age=0
+      Connection: keep-alive
+      host: datamanager.globaldevtools.bbva.com
+      Vary: Accept-Encoding
+      Expires: Thu, 19 Jun 2025 20:48:31 GMT
+      Date: Thu, 19 Jun 2025 20:48:31 GMT
+      Content-Type: application/json; charset=utf-8
+    :status: 200 OK

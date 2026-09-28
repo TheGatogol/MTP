@@ -1,0 +1,179 @@
+when:
+  sequence: 3
+  path: /SRVS_A02/cards/v2/cards/1213
+  method: GET
+  backend: glomo
+request:
+  headers:
+    sec-fetch-mode: cors
+    content-length: '0'
+    referer: http://localhost:8001/
+    sec-fetch-site: same-site
+    accept-language: es-ES,es-MX;q=0.9,es;q=0.8
+    origin: http://localhost:8001
+    tsec: 1728a3332be831fb9551ec93fb6992810b72bca7
+    accept: application/json, text/html, */*; q=0.1
+    sec-ch-ua: '"Chromium";v="110", "Not A(Brand";v="24", "Google Chrome";v="110"'
+    sec-ch-ua-mobile: ?0
+    x-vbank-session: 6838c33b-c814-478d-8f05-8e88dbd7f678
+    sec-ch-ua-platform: '"macOS"'
+    host: localhost:9000
+    content-type: application/json
+    connection: keep-alive
+    cache-control: no-cache, no-store, must-revalidate
+    accept-encoding: gzip, deflate, br
+    sec-fetch-dest: empty
+    user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36
+      (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36
+  query:
+    expand: payment-methods,blocks,indicators,activations
+then:
+- return:
+    data:
+      numberType:
+        description: Permanent Account Number
+        id: PAN
+      brandAssociation:
+        description: VISA
+        id: VISA
+      availableBalance:
+        currentBalances:
+        - amount: 10000
+          currency: MXN
+        pendingBalances:
+        - amount: 50000
+          currency: MXN
+        postedBalances:
+        - amount: 15000
+          currency: MXN
+      number: '*71213'
+      bank:
+        name: BBVA Bancomer
+        id: 549300WIWQK5Q9MCUN92
+      cutOffDate: '2017-12-09T12:00:00Z'
+      paymentMethods:
+      - nextPaymentDate: '2017-07-05T12:00:00Z'
+        description: Pago mínimo
+        id: MINIMUM_AMOUNT_PAYMENT
+        monetaryPayments:
+        - amount: 0
+          currency: MXN
+      - nextPaymentDate: '2017-07-05T12:00:00Z'
+        description: Pago para no generar intereses
+        id: MINIMUM_AMOUNT_TO_AVOID_INTEREST_PAYMENT
+        monetaryPayments:
+        - amount: 0
+          currency: MXN
+      - nextPaymentDate: '2017-07-05T12:00:00Z'
+        description: Deuda de este mes
+        id: LAST_PERIOD_AMOUNT_PAYMENT
+        monetaryPayments:
+        - amount: 70000
+          currency: MXN
+      - nextPaymentDate: '2017-07-05T12:00:00Z'
+        description: Saldo al corte
+        id: TOTAL_AMOUNT_PAYMENT
+        monetaryPayments:
+        - amount: 75000
+          currency: MXN
+      alias: Tarjeta 1213
+      id: '1213'
+      simpleCode: '1213'
+      issueDate: '2017-10-01T12:55:22Z'
+      openingDate: '2017-10-01T12:44:22Z'
+      expirationDate: '**/**'
+      product:
+        name: Card limits editable
+        id: VN
+      holderName: Carlos Santana
+      images:
+      - name: Front face of the card
+        id: FRONT_CARD
+        url: https://openapi.bbva.com/ccds/covers?pg=0T00000225&bin=554629&default_image=true&v=4&width=303&height=192&country=mx&app_id=com.bbva.wallet&issue_date=20160601
+      - name: Back face of the card
+        id: BACK_CARD
+        url: /imageBack.jpg
+      blocks: []
+      physicalSupport:
+        description: Plástico normal
+        id: NORMAL_PLASTIC
+      cardType:
+        description: Crédito Bancomer
+        id: CREDIT_CARD
+      disposedBalance:
+        currentBalances:
+        - amount: 20000
+          currency: MXN
+        pendingBalances:
+        - amount: 0
+          currency: MXN
+        postedBalances:
+        - amount: 15000
+          currency: MXN
+      indicators:
+      - description: Editar alias
+        id: EDITABLE_ALIAS
+        isActive: true
+      - description: Ver CVV
+        id: SECURITY_DATA_READ
+        isActive: true
+      - description: Recargar celular
+        id: ORIGIN_MOBILE_PHONE_RECHARGES
+        isActive: true
+      - description: Bloquear tarjeta
+        id: BLOCKABLE
+        isActive: true
+      - description: Cancelar tarjeta
+        id: CANCELABLE
+        isActive: true
+      - description: Pagar tarjeta
+        id: DESTINATION_TRANSFER_FROM_ACCOUNT
+        isActive: true
+      - description: Pagar tarjeta
+        id: DESTINATION_INTERNATIONAL_TRANSFER_FROM_ACCOUNT
+        isActive: true
+      - description: Avance en línea
+        id: ORIGIN_TRANSFER_TO_ACCOUNT
+        isActive: true
+      - description: Avance en línea
+        id: ORIGIN_INTERNATIONAL_TRANSFER_TO_ACCOUNT
+        isActive: true
+      transactions:
+      - id: 000A0000
+      - id: 000A0005
+      - id: 000A0006
+      - id: 000A0007
+      - id: 000A0008
+      grantedCredits:
+      - amount: 30000
+        currency: MXN
+      activations: []
+      activationDate: '2017-10-01T14:11:31Z'
+      currencies:
+      - isMajor: true
+        currency: MXN
+      status:
+        id: OPERATIVE
+    :headers:
+      access-control-allow-origin: '*'
+      content-length: '4908'
+      Access-Control-Expose-Headers: tsec, vnd.bbva.access-token-type,vnd.bbva.access-token,
+        vnd.bbva.sso-pkcs7, authenticationtype, authenticationdata, authenticationstate,
+        authenticationchallenge
+      Server: artichoke
+      Alt-Svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      access-control-allow-headers: Content-Type, tsec, authenticationtype, authenticationdata,
+        authenticationstate, contactid, consumeruuid, consumerapplicationid, perimetertsec,
+        authorization, responsewarningcode, responsewarningdescription, cuf, field,
+        bcs-device-app-version, bcs-device-app-version, vnd.bbva.authorization
+      content-type: application/json;charset=UTF-8
+      Vary: Accept-Encoding
+      tsec: 1728a3332be831fb9551ec93fb6992810b72bca7
+      X-Response-Time: 462ms
+      Date: Wed, 26 Apr 2023 13:18:30 GMT
+      Via: 1.1 google
+    :status: 200 OK
+    apiInfo:
+      name: cards
+      category: products
+      version: 0.19.0

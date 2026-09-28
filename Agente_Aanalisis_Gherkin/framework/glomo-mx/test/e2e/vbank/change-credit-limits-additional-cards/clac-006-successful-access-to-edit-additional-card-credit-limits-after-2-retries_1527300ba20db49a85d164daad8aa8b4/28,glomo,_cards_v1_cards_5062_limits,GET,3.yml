@@ -1,0 +1,135 @@
+when:
+  sequence: 3
+  path: /SRVS_A02/cards/v1/cards/5062/limits
+  method: GET
+  backend: glomo
+request:
+  headers:
+    sec-fetch-mode: cors
+    content-length: '0'
+    referer: http://localhost:8001/
+    sec-fetch-site: same-site
+    origin: http://localhost:8001
+    tsec: 52c5d9809905fcc28cbd39b930c5d95b63d84634
+    accept: application/json, text/html, */*; q=0.1
+    sec-ch-ua: '"Not A(Brand";v="99", "HeadlessChrome";v="121", "Chromium";v="121"'
+    sec-ch-ua-mobile: ?0
+    x-vbank-session: bbf15da3-e270-4dd8-bddc-a4714af87f29
+    sec-ch-ua-platform: '"macOS"'
+    host: localhost:9000
+    content-type: application/json
+    connection: keep-alive
+    cache-control: no-cache, no-store, must-revalidate
+    accept-encoding: gzip, deflate, br
+    sec-fetch-dest: empty
+    user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36
+      (KHTML, like Gecko) HeadlessChrome/121.0.6167.139 Safari/537.36
+then:
+- return:
+    data:
+    - isEditable: true
+      name: Límite mensual de compras en un comercio
+      disposedLimitPercentage: '25'
+      id: POS_DAILY
+      amountLimits:
+      - amount: 5000
+        currency: MXP
+      allowedInterval:
+        maximumAmount:
+          amount: 20000
+          currency: MXP
+        minimumAmount:
+          amount: 50
+          currency: MXP
+      disposedLimits:
+      - amount: 5000
+        currency: MXP
+    - isEditable: true
+      name: Retiro de efectivo en cajero
+      disposedLimitPercentage: '15'
+      id: ATM_DAILY
+      amountLimits:
+      - amount: 15000
+        currency: MXN
+      allowedInterval:
+        maximumAmount:
+          amount: 20000
+          currency: USD
+        minimumAmount:
+          amount: 50
+          currency: USD
+      disposedLimits:
+      - amount: 1000
+        currency: MXN
+    - isEditable: true
+      name: Retiro de efectivo en oficina
+      disposedLimitPercentage: '15'
+      id: OFFICE_DAILY
+      amountLimits:
+      - amount: 12000
+        currency: MXN
+      allowedInterval:
+        maximumAmount:
+          amount: 20000
+          currency: USD
+        minimumAmount:
+          amount: 100
+          currency: USD
+      disposedLimits:
+      - amount: 2000
+        currency: MXN
+    - isEditable: true
+      name: Transaction
+      id: TRANSACTION_DAILY
+      amountLimits:
+      - amount: 2000
+        currency: MXN
+      allowedInterval:
+        maximumAmount:
+          amount: 5000
+          currency: USD
+        minimumAmount:
+          amount: 1000
+          currency: USD
+      disposedLimits:
+      - amount: 100
+        currency: MXN
+    - description: Maximun comsumption limit.
+      id: GRANTED_CREDIT
+      amountLimits:
+      - amount: 1000
+        currency: MXN
+      allowedInterval:
+        maximumAmount:
+          amount: 2460
+          currency: MXN
+        minimumAmount:
+          amount: 181
+          currency: MXN
+      disposedLimits:
+      - amount: 600
+        currency: MXN
+    :headers:
+      content-length: '2937'
+      Server: artichoke
+      Alt-Svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      access-control-allow-headers: Content-Type, tsec, authenticationtype, authenticationdata,
+        authenticationstate, contactid, consumeruuid, consumerapplicationid, perimetertsec,
+        authorization, responsewarningcode, responsewarningdescription, cuf, field,
+        bcs-device-app-version, bcs-device-app-version, vnd.bbva.authorization, device-id
+      tsec: 52c5d9809905fcc28cbd39b930c5d95b63d84634
+      X-Response-Time: 466ms
+      Date: Tue, 06 Feb 2024 03:57:03 GMT
+      Via: 1.1 google
+      access-control-allow-origin: '*'
+      Access-Control-Expose-Headers: tsec, vnd.bbva.access-token-type,vnd.bbva.access-token,
+        vnd.bbva.sso-pkcs7, authenticationtype, authenticationdata, authenticationstate,
+        authenticationchallenge
+      Cache-Control: private, no-store
+      content-type: application/json;charset=UTF-8
+      Vary: Accept-Encoding
+    :status: 200 OK
+    apiInfo:
+      name: cards
+      category: products
+      version: 0.19.0

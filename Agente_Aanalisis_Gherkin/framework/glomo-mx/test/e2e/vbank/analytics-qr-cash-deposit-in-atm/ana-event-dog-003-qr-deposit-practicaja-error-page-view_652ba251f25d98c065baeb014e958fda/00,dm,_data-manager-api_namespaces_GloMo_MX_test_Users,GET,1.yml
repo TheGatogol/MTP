@@ -1,0 +1,43 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: account_balance
+    lock: 'false'
+then:
+- return:
+    :body:
+    - data:
+        qrLink: iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg==
+        tags:
+        - account_balance
+        - '3223046179'
+        products:
+          accounts:
+          - number: '00740010001505202413'
+            id: Uvn6wi1Rh6Bqbwdx16MN-U72irdCNwvOJYaO3dx-N70sgoRwjuBMFg
+        authentication:
+          password: Glomo2025
+          user: '3223046179'
+          deviceId: F6D4C73F21805250396A7A5BBA918166
+      id: 36379066
+    :headers:
+      content-length: '409'
+      Server: nginx
+      Cache-Control: max-age=0
+      Connection: keep-alive
+      host: datamanager.globaldevtools.bbva.com
+      Vary: Accept-Encoding
+      Expires: Mon, 23 Mar 2026 22:23:15 GMT
+      Date: Mon, 23 Mar 2026 22:23:15 GMT
+      Content-Type: application/json; charset=utf-8
+    :status: 200 OK

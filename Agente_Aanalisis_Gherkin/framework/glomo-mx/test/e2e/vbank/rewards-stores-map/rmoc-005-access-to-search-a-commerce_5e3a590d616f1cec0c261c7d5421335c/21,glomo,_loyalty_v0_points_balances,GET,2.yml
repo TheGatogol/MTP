@@ -1,0 +1,53 @@
+when:
+  sequence: 2
+  path: /SRVS_A02/loyalty/v0/points/balances
+  method: GET
+  backend: glomo
+request:
+  headers:
+    content-length: '0'
+    contactid: 603300ab-1306-4bc4-9b06-056b4e68a899
+    host: localhost:9000
+    connection: Keep-Alive
+    content-type: application/json
+    tsec: bc8fd756f00db5df2ff7ed076356deb80778044c
+    cache-control: no-cache
+    accept-encoding: gzip
+    user-agent: GLOMO_MX/99.99.99 (Android;12;Google sdk_gphone64_arm64)
+    accept: application/json, text/html, */*; q=0.1
+then:
+- return:
+    data:
+      totalSaved:
+        amount: 180955.42
+        currency: MXN
+      pointsToBeExpired:
+        amount: 7561
+        expirationDate: '2037-10-02'
+      accumulatedPoints:
+        amount: 9335
+        exchangeUnit:
+          amount: 70938.33
+          currency: MXN
+      areRedeemable: true
+      expiredPoints:
+        amount: 4974
+    :headers:
+      access-control-allow-origin: '*'
+      content-length: '409'
+      Access-Control-Expose-Headers: tsec, vnd.bbva.access-token-type,vnd.bbva.access-token,
+        vnd.bbva.sso-pkcs7, authenticationtype, authenticationdata, authenticationstate,
+        authenticationchallenge
+      Server: artichoke
+      Alt-Svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      access-control-allow-headers: Content-Type, tsec, authenticationtype, authenticationdata,
+        authenticationstate, contactid, consumeruuid, consumerapplicationid, perimetertsec,
+        authorization, responsewarningcode, responsewarningdescription, cuf, field,
+        bcs-device-app-version, bcs-device-app-version, vnd.bbva.authorization, device-id
+      content-type: application/json;charset=UTF-8
+      Vary: Accept-Encoding
+      tsec: bc8fd756f00db5df2ff7ed076356deb80778044c
+      X-Response-Time: 494ms
+      Date: Tue, 08 Aug 2023 10:13:25 GMT
+      Via: 1.1 google
+    :status: 200 OK

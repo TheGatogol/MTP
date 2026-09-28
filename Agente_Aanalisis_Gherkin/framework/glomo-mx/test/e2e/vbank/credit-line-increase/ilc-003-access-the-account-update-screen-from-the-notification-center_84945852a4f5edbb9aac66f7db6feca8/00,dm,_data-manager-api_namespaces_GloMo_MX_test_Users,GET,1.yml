@@ -1,0 +1,51 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: ea0d309d-a0ff-4f31-a846-b7bf741f42ee
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: credit_line_notif
+    lock: 'false'
+then:
+- return:
+    :body:
+    - data:
+        pushNILC:
+          eventID: nilcp1
+          productId: regBNghwnb8fWFuj5VZrna72_c66TigA_d7ahaf2smY
+          offerId: jNceQQ2m7o_x7FuQO5G9KUjoLagilS9-
+        text:
+          description: La línea de tu tarjeta podría ser hasta $50,000.00. Actualiza
+            tu información en los próximos 30 días para ver tu nueva oferta. <br>
+            <br> ¡Hazlo aquí!
+          title: ¡Aumenta el límite de tu tarjeta!
+          category: Ofertas y promociones
+        notifications:
+          notifictationId: 69bb34c7719af80d87ce1846
+        tags:
+        - '5524241056'
+        - credit_line_notif
+        authentication:
+          password: Glomo2028
+          user: '5524241056'
+          deviceId: 40D578E7DA1FD29C7EFDB9A45B70E1D0
+      id: 36284909
+    :headers:
+      content-length: '637'
+      Server: nginx
+      Cache-Control: max-age=0
+      Connection: keep-alive
+      host: datamanager.globaldevtools.bbva.com
+      Vary: Accept-Encoding
+      Expires: Thu, 19 Mar 2026 17:04:43 GMT
+      Date: Thu, 19 Mar 2026 17:04:43 GMT
+      Content-Type: application/json; charset=utf-8
+    :status: 200 OK

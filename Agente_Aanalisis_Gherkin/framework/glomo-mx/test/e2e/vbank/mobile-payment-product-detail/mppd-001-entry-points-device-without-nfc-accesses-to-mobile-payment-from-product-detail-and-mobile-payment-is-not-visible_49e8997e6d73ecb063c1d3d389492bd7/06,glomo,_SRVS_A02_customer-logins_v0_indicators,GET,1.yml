@@ -1,0 +1,61 @@
+when:
+  sequence: 1
+  path: /SRVS_A02/customer-logins/v0/indicators
+  method: GET
+  backend: glomo
+request:
+  headers:
+    content-length: "0"
+    authenticationdata: deviceId=11111111
+    contactid: 27bb7f9b-4a87-495e-8060-3ecd9e96e8dc
+    host: 127.0.0.1:9000
+    connection: Keep-Alive
+    authenticationtype: "58"
+    tsec: 0c3e7cc135e91b031c9012920d6f7eb566f0b206
+    cache-control: no-cache
+    accept-encoding: gzip
+    user-agent: GLOMO_MX/99.99.99;Mozilla/5.0 (Linux; U; Android 4.0.2; en-us;
+      Galaxy Nexus Build/ICL53F) AppleWebKit/534.30 (KHTML, like Gecko)
+      Version/4.0 Mobile Safari/534.30
+then:
+  - return:
+      data:
+        customerId: b_TCwi5citu5euHzqryDL=
+        nationalities:
+          - description: mx
+            id: MX
+        indicators:
+          - description: Indica si el cliente tiene seguro contratado
+            id: INSURANCE
+            isActive: false
+      :headers:
+        content-length: "2400"
+        Server: artichoke
+        Alt-Svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+        access-control-allow-headers: Content-Type, tsec, authenticationtype,
+          authenticationdata, authenticationstate, contactid, consumeruuid,
+          consumerapplicationid, perimetertsec, authorization,
+          responsewarningcode, responsewarningdescription, cuf, field,
+          bcs-device-app-version, bcs-device-app-version,
+          vnd.bbva.authorization, device-id
+        tsec: 0c3e7cc135e91b031c9012920d6f7eb566f0b206
+        X-Response-Time: 479ms
+        Date: Fri, 01 Dec 2023 10:22:30 GMT
+        Via: 1.1 google
+        access-control-allow-origin: "*"
+        Access-Control-Expose-Headers: tsec,
+          vnd.bbva.access-token-type,vnd.bbva.access-token, vnd.bbva.sso-pkcs7,
+          authenticationtype, authenticationdata, authenticationstate,
+          authenticationchallenge
+        Cache-Control: private, no-store
+        content-type: application/json;charset=UTF-8
+        Vary: Accept-Encoding
+      :status: 200 OK
+      apiInfo:
+        name: customers
+        category: people
+        version: 0.24.0
+      messages:
+        - code: KNA1008
+          message: CONSULTA REALIZADA
+          type: WARNING

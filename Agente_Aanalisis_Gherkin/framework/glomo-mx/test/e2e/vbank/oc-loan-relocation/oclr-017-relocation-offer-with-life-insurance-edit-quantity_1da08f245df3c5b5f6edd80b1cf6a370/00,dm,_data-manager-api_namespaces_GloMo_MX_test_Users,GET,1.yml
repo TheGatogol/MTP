@@ -1,0 +1,44 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: a19e16da-8eef-4347-87af-6c2e5ec7622a
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: loan_relocation_life_insurance
+    lock: 'false'
+then:
+- return:
+    :body:
+    - data:
+        offers:
+          loanRelocation: banneroijaIOaQcRf9_Tjn9SJl9pzDCGDkQ_lV0GyBjSRsYwk
+        amountExceeded: '1500001'
+        newAmount: '260000'
+        locale: es_mx
+        tags:
+        - loan_relocation_life_insurance
+        amountLess: '0'
+        authentication:
+          password: Glomo2024
+          user: '2283174287'
+          deviceId: EF25D727748FADF01CA49096C7F2B022
+      lockType: null
+      lockExpiration: null
+      id: 35879085
+    :headers:
+      content-length: '395'
+      Server: nginx
+      Connection: keep-alive
+      host: datamanager.globaldevtools.bbva.com
+      Vary: Accept-Encoding
+      Date: Thu, 14 Nov 2024 23:59:35 GMT
+      Content-Type: application/json
+    :status: 200 OK

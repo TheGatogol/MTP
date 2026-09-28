@@ -1,0 +1,48 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: b068f66b-b40e-437f-9aef-4aba0d168108
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: car_loan_plans
+    lock: 'false'
+then:
+- return:
+    :body:
+    - data:
+        data:
+          catalogs:
+            catalogs: []
+        locale: es_mx
+        offers:
+          decreaseCar: cP7vcq1dDysIJAlQp3lJK3TcJc0MLb4d
+          decreaseCarError: cP7vcq1dDytKoJzAiWrOsCb2_wxkvFgI
+        tags:
+        - '9191389659'
+        - car_loan_plans
+        authentication:
+          password: Glomo2023
+          user: '9191389659'
+          deviceId: 3423497A88411DC3D012C3B4060ECE07
+      lockExpiration: null
+      lockType: null
+      id: 35699675
+    :headers:
+      content-length: '279'
+      Strict-Transport-Security: max-age=15768000
+      Server: nginx
+      ECS-Entry-Point-Zone: ext
+      Connection: keep-alive
+      host: datamanager.globaldevtools.bbva.com
+      Vary: Accept-Encoding
+      Date: Fri, 15 Dec 2023 18:33:10 GMT
+      Content-Type: application/json
+    :status: 200 OK

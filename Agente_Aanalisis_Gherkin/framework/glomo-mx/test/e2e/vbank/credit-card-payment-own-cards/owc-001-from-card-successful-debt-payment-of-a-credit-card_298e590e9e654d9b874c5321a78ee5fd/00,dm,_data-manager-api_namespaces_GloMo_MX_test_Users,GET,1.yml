@@ -1,0 +1,86 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: 4ec78965-deb4-4901-a7dd-cbde6a6c4309
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: credit_card_with_mx_debt,accounts,credit_card
+    lock: 'false'
+then:
+- return:
+    :body:
+    - data:
+        otp: ''
+        tags:
+        - '5533534860'
+        - credit_card_with_mx_debt
+        - accounts
+        - credit_card
+        products:
+          cards:
+          - number: '4772102445879176'
+            cardId: CJKs3kNEeWBBTVX9lUS8lRlA3bSfnQyRiYDB4TBV7sY
+            paymentMethods:
+            - paymentAmounts:
+              - values:
+                - amount: 1725000
+                id: MINIMUM_AMOUNT
+            physicalSupport:
+              name: CONVENCIONAL
+              id: NORMAL_PLASTIC
+            cardType:
+              name: TARJETA DE CREDITO
+              id: CREDIT_CARD
+            status:
+              name: VIGENTE
+              id: OPERATIVE
+            currencies:
+            - isMajor: true
+              currency: MXN
+            participants:
+            - participantType:
+                id: HOLDER
+          accounts:
+          - number: '00740010001500311345'
+            accountId: '1208'
+            status:
+              name: Cuenta operativa
+              id: ACTIVATED
+            currencies:
+            - isMajor: true
+              currency: MXN
+            availableBalance:
+              currentBalances:
+              - amount: 1950220
+                currency: MXN
+              pendingBalances:
+              - amount: 25000
+                currency: MXN
+              postedBalances:
+              - amount: 1725000
+                currency: MXN
+        authentication:
+          password: Glomo2025
+          user: '5533534860'
+          deviceId: F32B2A6B627C8F9782DBFF971523D14C
+      lockExpiration: '2025-03-21T17:12:37.514491Z'
+      lockType: SHARED
+      id: 3509229
+    :headers:
+      content-length: '1192'
+      Cache-Control: max-age=0
+      Connection: keep-alive
+      host: datamanager.globaldevtools.bbva.com
+      Vary: Accept-Encoding
+      Expires: Fri, 21 Mar 2025 17:12:09 GMT
+      Date: Fri, 21 Mar 2025 17:12:09 GMT
+      Content-Type: application/json; charset=utf-8
+    :status: 200 OK

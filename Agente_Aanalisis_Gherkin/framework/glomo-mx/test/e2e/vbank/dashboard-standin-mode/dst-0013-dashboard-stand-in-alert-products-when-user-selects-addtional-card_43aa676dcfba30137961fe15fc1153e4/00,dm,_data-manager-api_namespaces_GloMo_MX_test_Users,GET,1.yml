@@ -1,0 +1,57 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: 215559df-6a29-4225-a0bf-15789e69e2d1
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: stand_in_cards_additional
+    lock: 'false'
+then:
+- return:
+    :body:
+    - data:
+        locale: es_mx
+        tags:
+        - stand_in_cards_additional
+        products:
+          cards:
+          - number: '4101810429392477'
+            product:
+              name: 'PLATINUM BBVA   '
+              id: TP
+            numberType:
+              id: PAN
+            cardId: q8HisC4QRMiC8Raz1_V3EKGxRiCOmr-o
+            cardType:
+              name: TARJETA DE CREDITO
+              id: CREDIT_CARD
+            productType: CARD
+            status:
+              name: NO R.INACT
+              id: BLOCKED
+        authentication:
+          password: Glomo2023
+          user: '5583809055'
+          deviceId: 93617EE00E7997DE5CB2FFEEE3B9C97F
+      id: 35693938
+      lockType: null
+      lockExpiration: null
+    :headers:
+      content-length: '560'
+      Strict-Transport-Security: max-age=15768000
+      Server: nginx
+      ECS-Entry-Point-Zone: ext
+      Connection: keep-alive
+      host: datamanager.globaldevtools.bbva.com
+      Vary: Accept-Encoding
+      Date: Fri, 20 Oct 2023 17:36:47 GMT
+      Content-Type: application/json
+    :status: 200 OK

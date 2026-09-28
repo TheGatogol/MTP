@@ -1,0 +1,36 @@
+when:
+  backend: digitalButlerHost
+  method: POST
+  path: /digital-butler/v0/conversations/1a2s3d4f-1q2w-1z2x-1a2s-1a2s3d4f5g6h/messages
+  match:
+    body.message: 'cual es mi saldo?'
+then:
+  - delay: 1s
+  - return:
+      :status: 200 OK
+      data:
+        conversationId: '1a2s3d4f-1q2w-1z2x-1a2s-1a2s3d4f5g6h'
+        messageTracking: 
+          category: 'Balances'
+          subCategory: 'Check Account and Check Card'
+          intent: 'consulting.balance'
+        messages:
+          - id: 'botResponse'
+            messageType: BOT_TEXT
+            detail:
+              - content: 'Este es un ejemplo de sugerencias para saldos'
+        suggestions: 
+        - suggestionType: 'MESSAGE'
+          id: 'cuentas'
+          title: 'Cuentas'
+          message: 'Sugerencia Cuentas'
+          messagePayload: 
+            payloadType: 'MESSAGE'
+            content: 'Cuentas'
+        - suggestionType: 'MESSAGE'
+          id: 'tarjetas'
+          title: 'Tarjetas'
+          message: 'Sugerencia Tarjetas'
+          messagePayload: 
+            payloadType: 'MESSAGE'
+            content: 'Tarjetas'

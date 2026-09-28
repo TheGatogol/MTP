@@ -1,0 +1,45 @@
+when:
+  sequence: 13
+  path: /SRVS_A02/loyalty/v0/rewards
+  method: GET
+  backend: glomo
+request:
+  headers:
+    content-length: '0'
+    accept-language: es;q=1, en-MX;q=0.9
+    x-sl-chef-ip: 10.130.9.71
+    tsec: 9712923d13afdd6db7bad1bf0f17115220b2d093
+    via: 1.1 packer-tunnel-f1d6f3c6 (squid/4.6)
+    accept: application/json, text/html, */*; q=0.1
+    x-sl-job-id: 6aeb9159693f48adba6b7bb28d5fc6df
+    host: localhost:9000
+    connection: keep-alive
+    content-type: application/json
+    cache-control: max-age=0
+    x-sl-tunnel-id: 717d30b771064b869094e74c34692141
+    accept-encoding: gzip, deflate, br
+    user-agent: GLOMO_MX/99.99.99 (iPhone; iOS 14.0.1)
+  query:
+    billingPeriod: OPEN_PERIOD
+    contract.id: '0070'
+then:
+- return:
+    :body: ''
+    :headers:
+      access-control-allow-origin: '*'
+      content-length: '0'
+      Access-Control-Expose-Headers: tsec, vnd.bbva.access-token-type,vnd.bbva.access-token,
+        vnd.bbva.sso-pkcs7, authenticationtype, authenticationdata, authenticationstate,
+        authenticationchallenge
+      Server: artichoke
+      Alt-Svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      access-control-allow-headers: Content-Type, tsec, authenticationtype, authenticationdata,
+        authenticationstate, contactid, consumeruuid, consumerapplicationid, perimetertsec,
+        authorization, responsewarningcode, responsewarningdescription, cuf, field,
+        bcs-device-app-version, bcs-device-app-version, vnd.bbva.authorization, device-id
+      Vary: Accept-Encoding
+      tsec: 9712923d13afdd6db7bad1bf0f17115220b2d093
+      X-Response-Time: 462ms
+      Date: Mon, 20 Nov 2023 13:47:00 GMT
+      Via: 1.1 google
+    :status: 204 No Content

@@ -1,0 +1,76 @@
+when:
+  sequence: 1
+  path: /SRVS_A02/cards/v1/cards/5029/conditions
+  method: GET
+  backend: glomo
+request:
+  headers:
+    sec-fetch-mode: cors
+    content-length: '0'
+    referer: http://localhost:8001/
+    sec-fetch-site: same-site
+    accept-language: es-MX,es;q=0.9
+    origin: http://localhost:8001
+    tsec: 163f0d47a0b36d8bf07cc0a6881066bcaab49add
+    accept: application/json, text/html, */*; q=0.1
+    sec-ch-ua: '"Chromium";v="116", "Not)A;Brand";v="24", "Google Chrome";v="116"'
+    sec-ch-ua-mobile: ?0
+    x-vbank-session: 7f617379-c57d-4d38-b3ff-39b59e64d320
+    sec-ch-ua-platform: '"macOS"'
+    host: localhost:9000
+    content-type: application/json
+    connection: keep-alive
+    cache-control: no-cache, no-store, must-revalidate
+    accept-encoding: gzip, deflate, br
+    sec-fetch-dest: empty
+    user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36
+      (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36
+then:
+- return:
+    data:
+    - period:
+        name: Yearly
+        id: YEARLY
+        checkDate: '2020-01-24T14:00:01Z'
+      conditionId: CARD_MAINTENANCE_FEE
+      outcomes:
+      - outcomeType:
+          name: Fee Amount
+          id: Fee Amount
+        feeAmount:
+          amount: 13
+          currency: MXN
+        dueDate: '2021-01-30T14:00:01Z'
+      name: CARD_MAINTENANCE_FEE
+    - isDefault: 'true'
+      isNegotiable: 'false'
+      dueDate: '2020-07-12'
+      format:
+        amount:
+          amount: 10
+          currency: MXN
+        formatType: AMOUNT
+      id: CARD_MAINTENANCE_FEE
+    :headers:
+      access-control-allow-origin: '*'
+      content-length: '897'
+      Access-Control-Expose-Headers: tsec, vnd.bbva.access-token-type,vnd.bbva.access-token,
+        vnd.bbva.sso-pkcs7, authenticationtype, authenticationdata, authenticationstate,
+        authenticationchallenge
+      Server: artichoke
+      Alt-Svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      access-control-allow-headers: Content-Type, tsec, authenticationtype, authenticationdata,
+        authenticationstate, contactid, consumeruuid, consumerapplicationid, perimetertsec,
+        authorization, responsewarningcode, responsewarningdescription, cuf, field,
+        bcs-device-app-version, bcs-device-app-version, vnd.bbva.authorization, device-id
+      content-type: application/json;charset=UTF-8
+      Vary: Accept-Encoding
+      tsec: 163f0d47a0b36d8bf07cc0a6881066bcaab49add
+      X-Response-Time: 472ms
+      Date: Wed, 06 Sep 2023 15:25:16 GMT
+      Via: 1.1 google
+    :status: 200 OK
+    apiInfo:
+      name: cards
+      category: products
+      version: 0.19.0

@@ -1,0 +1,510 @@
+when:
+  sequence: 1
+  path: /SRVS_A02/sustainability/v1/recommendations
+  method: GET
+  backend: glomo
+request:
+  headers:
+    sec-fetch-mode: cors
+    content-length: '0'
+    referer: http://localhost:8001/
+    sec-fetch-site: same-site
+    accept-language: es-MX
+    origin: http://localhost:8001
+    tsec: ZXlKaFlYQWlPaUl4TURBd01ERTROeUlzSW10bGVWWmxjbk5wYjI0aU9qRXNJbUZ3Y0Vsa0lqb2lRVkJRTVNJc0ltdHBaQ0k2SWtGUVVERXViRzlqWVd3dU1TSXNJbVZ1WXlJNklrRXhPVEpIUTAwaUxDSnJaWGxVZVhCbElqb2liRzlqWVd3aUxDSmhiR2NpT2lKa2FYSWlMQ0owYzJWalNXUWlPaUkzWkdWa00yUXdNaTFqWWpZMUxUUmpOakl0WVRWaU9DMDVPV1pqWVRFek1EQTVaVFFpZlEuLmoxQkFoYlM3WVM1NkVQMjcuTHh0dFFlQmV4bG1LVmlTWkRXMWRGMEg3bExRMjY2NWJLdEZ3M0Z3czh6OU9CZkFOYlR1ODQ4OHR2MWlUVlA3RE9IY3FuN25mU3J0MUx1M21KWExMVElXUUJIU1BKWFpoeFJNd3ltUmIxdTZOVzYtb1V1d0piMlRVbldxTmRXcXZPd3daelpjZjBtbTJweUtGNHpYTUJLbmM3VjA5WEZaT0N4OHpFeFdBMU54UnVxa0NzUkhsUVIxSW1sR185ZnRLeG5jOVhJNml0ZmhjSUZCbFc3ek15cGRPTk4tVEhQUk5kTGxzQmw5TGV0VXF0V2JkRVZpV0lka3FtWHBGYzNsYmJ5N204SFZfMkVQbUcwanFzajA5bUY3eUxHVUg1c3NxVHVXNHBqYWIyZm0tZGxIMV8xaTM3V281LTdhVFJGTkpMWXNPamVEVjZsc0lQblpmMmFsMjFGUTcyQXRyRF9ZRF9FWUJ3dkhVZF9nZ29Vb0RIZ0dMM1B0engzbjJMNkJKTkw3M3E4OWNZRnpBZjhndnVBdUJoNGFXektUNl90Z2ZRNHh6NkFRUkRyQ2haamt5SUhEaGllc09lVDZKdkVORUx5Tlk3S0pBQlNJQUJacmcwckk3SEhHMkpVVXc2NzBLN2ZYaXN4SW1tX3hPWjdlNUV4eVFnajRsQXdkQ3RzbHBueTYwX1RFYjh4dG9PM1o3VWtRTV9iWU15RFdpLVM3WE12MDJ3bkNMcV82Y2NTTVgycUpaVTVWcXhybWtQc1BwUlAtQUtsSWlGYjk5NllhMzBYUDI4anpNWl9TSE8tc2xXdlVUQUJ0TGNxbEVYZ25LbWw3clYtVnFRZFYxX1ZFNjhhU0g4eVpoMlMydGE4SmpWTHplc3ZFR0x5d2E5cGlJWkdGeTBoRmZfSlktNFlPemk4OFFsVmpUNm0wZ2VaREdhbW80Yl9sX1FSak1FZVljQXI4TlVud1NGakJSaWlwYWhfaWY1cDl4MW1PWEFKZ1gwRTlLcEJuREFJbHdKbXVfTFZqX2FlQlB6aS1LZlJDR1NvdWNfNlBZVjUzUDFFbE5wc3l2Yi1taTNKUjBqNnNGZjZET1NYdS1xRDVHOGpjWXlWR3I5cVpOTFVfTDZjNEdyV3NsZ2tMTnMtc25ZMkliekYtbnR1aUFJcWo1VjhRQmVSSWdMeWQ2Ym1ycWRaZml5aWtWRXJ1TGFGY0FuSDU2MFBCX3N3cVVmYTJyMHp2TTJnOVN4MTgya1NNOEtSZk5ZeXlaZ0dIbmt5Y3FmSVd4RDdfNHFRV1pTSVlEZnk1cVAyMFg4VWZZaGtKdllSemVPRUpNQ1BRMlRxQkwyR18tVDc4c3FaTUctQjZlTDNDOFBDZVZpN0xuSkl0blQ1dUlrN1dNRnNXTms5R2ZjLXBaVXhkSkhKelhaVHBxNHBjd3VER1BVc2N1V1llWkNIcjRweExRUzF1WWl6ckMyejhsbEJ2eF96cmVGYlZWUGZ0SzZ4ZndfZUd3ZnJVMWlqWGowbUlCSjRYMjA1OTVpbkVUVlo5XzNBaGpTdTlLaVoxZVo0cXdzOU5Uc3BMY1daQjJQYTRUNGIyS0tfZUFvM2tPcDc3aXk1T2YyOHlFZVpmQkpHVmkzbzZ2SG8wRXQzSUVndFZFaEo1dGFialBFcXJnMVZub1JoMHhEdmczU1hvNm5QdzliNFU2Rklpb3htQTBZMDQ0TkYxUk44ZEYwbHYyMWt2ZU9Kd1VZNmRsTXJ0cExZT3BaZ0JDSklkQkh1Tnh1SzRWQWtDbWRDTzdWN3NHTnlWbVF1anhvTHhPQU9mX2VURGF4bTJ1UTlRU3ctY3c0YTJ4aHZTblItZm1nZXdpZF9KTTI3Z0JxTGNuc2xnOFpfb0VPLXlWN2dkV1RQVVZfZnZFd2QtdEw0UUlHRUszenlxY0RDTDA3elZ0RFJ4X0lGdGlDTWdkRzJydDdOOTRnak9rUlR4bGZFRUEzaWIwVEE1bFA1Wm9zaVpuS3RfS054TzEtUEJkVGlNUUpBREltYWprbmpTX2ZPTng0YTI0S3RHaTcyRUhrZ2RxbmthT0JmTUxOdHRLeEI5VWM2bzhRb0tUM3FBaXJrSUFRY25fV1dlTElvWktBQ3Nybkx6S1pDZXZYZDlpSVpEV0FQaGR4Y0tZT0JUZjAwdUgxODZNbm9HaGhTbTlJM2tJOHR5blk1Zk91T3NUM0ZrREdOVmFNY1JGaHV3UlVteHZKem1pTHFqUFZ5RndFdWhoOWEwQlNPRm12MTk4T0tJT3hHdEMxZnU1UHNGd2ljSFJCOHltWkN5dlFXU2R6Z0VyajFFR3JfS0tCMmJucFRyaWdBVnNIOTk4VjhCREJhQnF6b2N0Q244UVctdmxfRHRsLXVCdEhuY2twTC1iZGVYVnp3UXBfYVFJWFduOTJfeEg2a05XX3F5NDQ4cGVlcVRDLVNpSFkyT29ncVRPb3AxYjFZeUM5ZEg4MzB2OVJPSnA3cnBCTmhhOGpMbWtzaG5vUlVXM1Z5bjg2eHlaTGdrMUlaZTcwN0JXNkt0b0ZneFBrd0drSm1UdWJnLlBHUTNWMVdMVzVNRDJBdHpUVWpydmc=
+    accept: application/json, text/html, */*; q=0.1
+    sec-ch-ua: '"Not_A Brand";v="8", "Chromium";v="120", "Google Chrome";v="120"'
+    sec-ch-ua-mobile: ?0
+    x-vbank-session: b16d39ed-1a57-47d2-af41-168d3d3cec36
+    sec-ch-ua-platform: '"Linux"'
+    host: localhost:9000
+    content-type: application/json
+    connection: keep-alive
+    cache-control: no-cache, no-store, must-revalidate
+    accept-encoding: gzip, deflate, br
+    sec-fetch-dest: empty
+    user-agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko)
+      Chrome/120.0.0.0 Safari/537.36
+then:
+- return:
+    data:
+    - images:
+      - name: solar_panel.svg
+        description: Solar panel
+        links:
+        - method: GET
+          rel: headerImg
+          href: /global/glomo/sustainability/recommendations/images/solar_panel.svg
+          title: Solar panel
+        id: rfd7uxt50tsrecna0014
+        imageType: ICON
+      watched: false
+      description: Ahorra hasta el 98% en tu recibo de luz.
+      commitment:
+        totalUsers: 1356
+        isActive: false
+      groups:
+      - images:
+        - name: bulb
+          link:
+            rel: Image
+            href: bulb
+          description: bulb
+          id: bulb
+          imageType: IMAGE
+        name: Electricidad
+        id: electricity
+        priority: 0
+      id: home-elec-panels
+      title: Instalar paneles solares
+      recommendationType: SIMULABLE
+      priority: 0
+      impactType:
+        name: Gran impacto
+        id: high
+    - images:
+      - name: fridge.svg
+        description: Fridge
+        links:
+        - method: GET
+          rel: headerImg
+          href: /global/glomo/sustainability/recommendations/images/fridge.svg
+          title: Fridge
+        id: vjbnbtjardfrecna0004
+        imageType: ICON
+      watched: false
+      description: Descubre cuánto ahorrarías al cambiar tus electrodomésticos.
+      commitment:
+        totalUsers: 1356
+        isActive: false
+      groups:
+      - images:
+        - name: bulb
+          link:
+            rel: Image
+            href: bulb
+          description: bulb
+          id: bulb
+          imageType: IMAGE
+        name: Electricidad
+        id: electricity
+        priority: 0
+      id: home-elec-newappl
+      title: Elegir electrodomésticos de bajo consumo energético
+      recommendationType: SIMULABLE
+      priority: 1
+      impactType:
+        name: Gran impacto
+        id: high
+    - images:
+      - name: car_leaf.svg
+        description: Car_leaf
+        links:
+        - method: GET
+          rel: headerImg
+          href: /global/glomo/sustainability/recommendations/images/car_leaf.svg
+          title: Car_leaf
+        id: jgjeuyk5n6irecna0012
+        imageType: ICON
+      watched: false
+      description: Conoce las ventajas y comienza a ahorrar en gastos de transporte.
+      commitment:
+        totalUsers: 1356
+        isActive: false
+      groups:
+      - images:
+        - name: carleaf
+          link:
+            rel: Image
+            href: carleaf
+          description: carleaf
+          id: carleaf
+          imageType: IMAGE
+        name: Transporte
+        id: transportation
+        priority: 1
+      id: tran-fuel-elec-car
+      title: Manejar un auto de bajas emisiones
+      recommendationType: SIMULABLE
+      priority: 2
+      impactType:
+        name: Gran impacto
+        id: high
+    - images:
+      - name: ecofriendly_home.svg
+        description: Ecofriendly Home
+        links:
+        - method: GET
+          rel: headerImg
+          href: /global/glomo/sustainability/recommendations/images/ecofriendly_home.svg
+          title: Ecofriendly Home
+        id: 5nppnhc23agrecna0003
+        imageType: ICON
+      watched: false
+      description: Mejora el aislamiento y mantén tu casa a una temperatura agradable.##Ahorrarás
+        en tus recibos de gas y de luz.
+      commitment:
+        totalUsers: 1356
+        isActive: false
+      groups:
+      - images:
+        - name: heating
+          link:
+            rel: Image
+            href: heating
+          description: heating
+          id: heating
+          imageType: IMAGE
+        name: Climatización
+        id: heating
+        priority: 2
+      id: home-heat-window
+      title: Dar mantenimiento a tus ventanas
+      recommendationType: INFORMATIVE
+      priority: 3
+      impactType:
+        name: Día a Día
+        id: daily
+    - images:
+      - name: fire.svg
+        description: Fire
+        links:
+        - method: GET
+          rel: headerImg
+          href: /global/glomo/sustainability/recommendations/images/fire.svg
+          title: Fire
+        id: 18wr5v9z21urecna0002
+        imageType: ICON
+      watched: false
+      description: Reduce el consumo de gas necesario para calentar tu hogar.##Reduce
+        el consumo de gas necesario para calentar tu hogar.
+      commitment:
+        totalUsers: 1356
+        isActive: false
+      groups:
+      - images:
+        - name: heating
+          link:
+            rel: Image
+            href: heating
+          description: heating
+          id: heating
+          imageType: IMAGE
+        name: Climatización
+        id: heating
+        priority: 2
+      id: home-heat-boiler
+      title: Cambiar y optimizar el uso de tu calentador
+      recommendationType: INFORMATIVE
+      priority: 4
+      impactType:
+        name: Día a Día
+        id: daily
+    - images:
+      - name: idea.svg
+        description: Idea
+        links:
+        - method: GET
+          rel: headerImg
+          href: /global/glomo/sustainability/recommendations/images/idea.svg
+          title: Idea
+        id: sa5k7ky1dvorecna0001
+        imageType: ICON
+      watched: false
+      description: Permite ahorrar hasta un 88% en la iluminación de tu hogar.##Ahorra
+        hasta un 88% de luz en la iluminación de tu casa.
+      commitment:
+        totalUsers: 1356
+        isActive: false
+      groups:
+      - images:
+        - name: bulb
+          link:
+            rel: Image
+            href: bulb
+          description: bulb
+          id: bulb
+          imageType: IMAGE
+        name: Electricidad
+        id: electricity
+        priority: 0
+      id: home-elec-leds
+      title: Cambiar a focos LED
+      recommendationType: INFORMATIVE
+      priority: 5
+      impactType:
+        name: Día a Día
+        id: daily
+    - images:
+      - name: heating.svg
+        description: Heating
+        links:
+        - method: GET
+          rel: headerImg
+          href: /global/glomo/sustainability/recommendations/images/heating.svg
+          title: Heating
+        id: b6i8km34m1frecna0011
+        imageType: ICON
+      watched: false
+      description: Ahorra hasta un 7% en tus recibos del hogar por cada grado reducido.##Utiliza
+        tu sistema de climatización de forma eficiente y reduce tu consumo asociado
+        a calefacción y aire acondicionado.
+      commitment:
+        totalUsers: 1356
+        isActive: false
+      groups:
+      - images:
+        - name: heating
+          link:
+            rel: Image
+            href: heating
+          description: heating
+          id: heating
+          imageType: IMAGE
+        name: Climatización
+        id: heating
+        priority: 2
+      id: home-heat-temp
+      title: Regular la temperatura de tu casa
+      recommendationType: CUSTOMIZED
+      priority: 7
+      impactType:
+        name: Día a Día
+        id: daily
+    - images:
+      - name: home_appliances.svg
+        description: Home_appliances
+        links:
+        - method: GET
+          rel: headerImg
+          href: /global/glomo/sustainability/recommendations/images/home_appliances.svg
+          title: Home_appliances
+        id: 0zwk11xgsxirecna0009
+        imageType: ICON
+      watched: false
+      description: Implica un ahorro en tus recibos de luz y reduce tus emisiones.##Introduciendo
+        pequeños cambios en tu día a día puedes reducir tu consumo de luz y tus emisiones
+        en carbono.
+      commitment:
+        totalUsers: 1356
+        isActive: false
+      groups:
+      - images:
+        - name: bulb
+          link:
+            rel: Image
+            href: bulb
+          description: bulb
+          id: bulb
+          imageType: IMAGE
+        name: Electricidad
+        id: electricity
+        priority: 0
+      id: home-elec-appliance
+      title: Optimizar el uso de tus electrodomésticos
+      recommendationType: CUSTOMIZED
+      priority: 8
+      impactType:
+        name: Día a Día
+        id: daily
+    - images:
+      - name: devices.svg
+        description: Devices
+        links:
+        - method: GET
+          rel: headerImg
+          href: /global/glomo/sustainability/recommendations/images/devices.svg
+          title: Devices
+        id: qratszeg34grecna0010
+        imageType: ICON
+      watched: false
+      description: Disminuye su consumo de energía y te permite ahorrar.##Al optimizar
+        la forma en que utilizas tus dispositivos podrás reducir su consumo de energía
+        y reducir tu recibo de luz y tus emisiones de carbono.
+      commitment:
+        totalUsers: 1356
+        isActive: false
+      groups:
+      - images:
+        - name: bulb
+          link:
+            rel: Image
+            href: bulb
+          description: bulb
+          id: bulb
+          imageType: IMAGE
+        name: Electricidad
+        id: electricity
+        priority: 0
+      id: home-elec-devices
+      title: Optimizar el uso de tus aparatos electrónicos
+      recommendationType: CUSTOMIZED
+      priority: 9
+      impactType:
+        name: Día a Día
+        id: daily
+    - images:
+      - name: train.svg
+        description: Train
+        links:
+        - method: GET
+          rel: headerImg
+          href: /global/glomo/sustainability/recommendations/images/train.svg
+          title: Train
+        id: 0uiiabh2uqzrecna0006
+        imageType: ICON
+      watched: false
+      description: Favorece que tu movilidad genere menos emisiones de carbono.##Eligiendo
+        el medio de transporte más eficiente puedes reducir hasta un 75% las emisiones
+        asociadas a tu movilidad.
+      commitment:
+        totalUsers: 1356
+        isActive: false
+      groups:
+      - images:
+        - name: carleaf
+          link:
+            rel: Image
+            href: carleaf
+          description: carleaf
+          id: carleaf
+          imageType: IMAGE
+        name: Transporte
+        id: transportation
+        priority: 1
+      id: tran-fuel-eco-trans
+      title: Elegir transportes más sostenibles
+      recommendationType: INFORMATIVE
+      priority: 11
+      impactType:
+        name: Día a Día
+        id: daily
+    - images:
+      - name: shopping.svg
+        description: Shopping
+        links:
+        - method: GET
+          rel: headerImg
+          href: /global/glomo/sustainability/recommendations/images/shopping.svg
+          title: Shopping
+        id: khzu2pux8ecrecna0007
+        imageType: ICON
+      watched: false
+      description: Ayuda a que los productos que consumes tengan menor impacto ambiental.##Eligiendo
+        cómo son los productos que adquieres o su procedencia puedes realizar una
+        compra más sostenible.
+      commitment:
+        totalUsers: 1356
+        isActive: false
+      groups:
+      - images:
+        - name: shoppingbag
+          link:
+            rel: Image
+            href: shoppingbag
+          description: shoppingbag
+          id: shoppingbag
+          imageType: IMAGE
+        name: Compras
+        id: shopping
+        priority: 3
+      id: circ-econ-comsuption
+      title: Comprar con responsabilidad
+      recommendationType: INFORMATIVE
+      priority: 12
+      impactType:
+        name: Día a Día
+        id: daily
+    - images:
+      - name: flowers.svg
+        description: Flowers
+        links:
+        - method: GET
+          rel: headerImg
+          href: /global/glomo/sustainability/recommendations/images/flowers.svg
+          title: Flowers
+        id: 3c9nyup1t5srecna0008
+        imageType: ICON
+      watched: false
+      description: 'Contribuye a la economía circular: reduce, recicla y reutiliza.##Utilizando
+        responsablemente los recursos del planeta contribuirás a que sigan disponibles
+        en el futuro.'
+      commitment:
+        totalUsers: 1356
+        isActive: false
+      groups:
+      - images:
+        - name: shoppingbag
+          link:
+            rel: Image
+            href: shoppingbag
+          description: shoppingbag
+          id: shoppingbag
+          imageType: IMAGE
+        name: Compras
+        id: shopping
+        priority: 3
+      id: circ-econ-earthcare
+      title: Comprometerte con el medio ambiente
+      recommendationType: INFORMATIVE
+      priority: 13
+      impactType:
+        name: Día a Día
+        id: daily
+    :headers:
+      content-length: '9910'
+      X-EdgeConnect-Origin-MEX-Latency: '191'
+      Access-Control-Allow-Origin: '*'
+      ECS-Entry-Point-Zone: ext
+      Access-Control-Allow-Methods: GET, POST, DELETE, PUT, OPTIONS, PATCH
+      X-Content-Type-Options: nosniff
+      Connection: keep-alive
+      tsec: ZXlKaFlYQWlPaUl4TURBd01ERTROeUlzSW10bGVWWmxjbk5wYjI0aU9qRXNJbUZ3Y0Vsa0lqb2lRVkJRTVNJc0ltdHBaQ0k2SWtGUVVERXViRzlqWVd3dU1TSXNJbVZ1WXlJNklrRXhPVEpIUTAwaUxDSnJaWGxVZVhCbElqb2liRzlqWVd3aUxDSmhiR2NpT2lKa2FYSWlMQ0owYzJWalNXUWlPaUkzWkdWa00yUXdNaTFqWWpZMUxUUmpOakl0WVRWaU9DMDVPV1pqWVRFek1EQTVaVFFpZlEuLmoxQkFoYlM3WVM1NkVQMjcuTHh0dFFlQmV4bG1LVmlTWkRXMWRGMEg3bExRMjY2NWJLdEZ3M0Z3czh6OU9CZkFOYlR1ODQ4OHR2MWlUVlA3RE9IY3FuN25mU3J0MUx1M21KWExMVElXUUJIU1BKWFpoeFJNd3ltUmIxdTZOVzYtb1V1d0piMlRVbldxTmRXcXZPd3daelpjZjBtbTJweUtGNHpYTUJLbmM3VjA5WEZaT0N4OHpFeFdBMU54UnVxa0NzUkhsUVIxSW1sR185ZnRLeG5jOVhJNml0ZmhjSUZCbFc3ek15cGRPTk4tVEhQUk5kTGxzQmw5TGV0VXF0V2JkRVZpV0lka3FtWHBGYzNsYmJ5N204SFZfMkVQbUcwanFzajA5bUY3eUxHVUg1c3NxVHVXNHBqYWIyZm0tZGxIMV8xaTM3V281LTdhVFJGTkpMWXNPamVEVjZsc0lQblpmMmFsMjFGUTcyQXRyRF9ZRF9FWUJ3dkhVZF9nZ29Vb0RIZ0dMM1B0engzbjJMNkJKTkw3M3E4OWNZRnpBZjhndnVBdUJoNGFXektUNl90Z2ZRNHh6NkFRUkRyQ2haamt5SUhEaGllc09lVDZKdkVORUx5Tlk3S0pBQlNJQUJacmcwckk3SEhHMkpVVXc2NzBLN2ZYaXN4SW1tX3hPWjdlNUV4eVFnajRsQXdkQ3RzbHBueTYwX1RFYjh4dG9PM1o3VWtRTV9iWU15RFdpLVM3WE12MDJ3bkNMcV82Y2NTTVgycUpaVTVWcXhybWtQc1BwUlAtQUtsSWlGYjk5NllhMzBYUDI4anpNWl9TSE8tc2xXdlVUQUJ0TGNxbEVYZ25LbWw3clYtVnFRZFYxX1ZFNjhhU0g4eVpoMlMydGE4SmpWTHplc3ZFR0x5d2E5cGlJWkdGeTBoRmZfSlktNFlPemk4OFFsVmpUNm0wZ2VaREdhbW80Yl9sX1FSak1FZVljQXI4TlVud1NGakJSaWlwYWhfaWY1cDl4MW1PWEFKZ1gwRTlLcEJuREFJbHdKbXVfTFZqX2FlQlB6aS1LZlJDR1NvdWNfNlBZVjUzUDFFbE5wc3l2Yi1taTNKUjBqNnNGZjZET1NYdS1xRDVHOGpjWXlWR3I5cVpOTFVfTDZjNEdyV3NsZ2tMTnMtc25ZMkliekYtbnR1aUFJcWo1VjhRQmVSSWdMeWQ2Ym1ycWRaZml5aWtWRXJ1TGFGY0FuSDU2MFBCX3N3cVVmYTJyMHp2TTJnOVN4MTgya1NNOEtSZk5ZeXlaZ0dIbmt5Y3FmSVd4RDdfNHFRV1pTSVlEZnk1cVAyMFg4VWZZaGtKdllSemVPRUpNQ1BRMlRxQkwyR18tVDc4c3FaTUctQjZlTDNDOFBDZVZpN0xuSkl0blQ1dUlrN1dNRnNXTms5R2ZjLXBaVXhkSkhKelhaVHBxNHBjd3VER1BVc2N1V1llWkNIcjRweExRUzF1WWl6ckMyejhsbEJ2eF96cmVGYlZWUGZ0SzZ4ZndfZUd3ZnJVMWlqWGowbUlCSjRYMjA1OTVpbkVUVlo5XzNBaGpTdTlLaVoxZVo0cXdzOU5Uc3BMY1daQjJQYTRUNGIyS0tfZUFvM2tPcDc3aXk1T2YyOHlFZVpmQkpHVmkzbzZ2SG8wRXQzSUVndFZFaEo1dGFialBFcXJnMVZub1JoMHhEdmczU1hvNm5QdzliNFU2Rklpb3htQTBZMDQ0TkYxUk44ZEYwbHYyMWt2ZU9Kd1VZNmRsTXJ0cExZT3BaZ0JDSklkQkh1Tnh1SzRWQWtDbWRDTzdWN3NHTnlWbVF1anhvTHhPQU9mX2VURGF4bTJ1UTlRU3ctY3c0YTJ4aHZTblItZm1nZXdpZF9KTTI3Z0JxTGNuc2xnOFpfb0VPLXlWN2dkV1RQVVZfZnZFd2QtdEw0UUlHRUszenlxY0RDTDA3elZ0RFJ4X0lGdGlDTWdkRzJydDdOOTRnak9rUlR4bGZFRUEzaWIwVEE1bFA1Wm9zaVpuS3RfS054TzEtUEJkVGlNUUpBREltYWprbmpTX2ZPTng0YTI0S3RHaTcyRUhrZ2RxbmthT0JmTUxOdHRLeEI5VWM2bzhRb0tUM3FBaXJrSUFRY25fV1dlTElvWktBQ3Nybkx6S1pDZXZYZDlpSVpEV0FQaGR4Y0tZT0JUZjAwdUgxODZNbm9HaGhTbTlJM2tJOHR5blk1Zk91T3NUM0ZrREdOVmFNY1JGaHV3UlVteHZKem1pTHFqUFZ5RndFdWhoOWEwQlNPRm12MTk4T0tJT3hHdEMxZnU1UHNGd2ljSFJCOHltWkN5dlFXU2R6Z0VyajFFR3JfS0tCMmJucFRyaWdBVnNIOTk4VjhCREJhQnF6b2N0Q244UVctdmxfRHRsLXVCdEhuY2twTC1iZGVYVnp3UXBfYVFJWFduOTJfeEg2a05XX3F5NDQ4cGVlcVRDLVNpSFkyT29ncVRPb3AxYjFZeUM5ZEg4MzB2OVJPSnA3cnBCTmhhOGpMbWtzaG5vUlVXM1Z5bjg2eHlaTGdrMUlaZTcwN0JXNkt0b0ZneFBrd0drSm1UdWJnLlBHUTNWMVdMVzVNRDJBdHpUVWpydmc=
+      Access-Control-Allow-Headers: Accept-Encoding, Accept, Content-Type, tsec, consumerrequestid,
+        authenticationchallenge, authenticationtype, authenticationdata, authenticationstate,
+        contactid, consumeruuid, consumerapplicationid, perimetertsec, authorization,
+        responsewarningcode, responsewarningdescription, cuf, prefer, phoneNumber,
+        Location, X-RHO-PARENTSPANID, X-RHO-TRACEID, preferredauthenticationtype,
+        X-HTTP-Method-Override, Access-Control-Allow-Methods, iv-remote-address, thirdparty-x-forwarded-for,
+        thirdparty-user-agent, thirdparty-geolocation, thirdparty-calculated-scoring,
+        thirdparty-deviceid, vnd.bbva.security-client-certificate, order-preferredaction,
+        authenticationresponse, Access-Control-Max-Age, BCS-Device-Id, BCS-Device-OS-Name,
+        BCS-Device-Model-Name, BCS-Device-Model-Manufacturer, BCS-Device-Screen-Size,
+        BCS-Device-OS-Version, BCS-Device-DPI, BCS-Device-App-Name, BCS-Device-App-Version,
+        Third-Party-Application-Id, ECS-Signature-Platform-Use-Case, BCS-Process-Code,
+        BCS-Operation-Tracer, BCS-Process-Tracer, vnd.bbva.user-id, order-preferredaction,
+        order-id, order-accepteddisclaimers, x-forwarded-for, Date, x-dmz-orgn, onsite-accountTerm,
+        onsite-logicalTerm, Akamai-BM-Telemetry, order-hmac, order-signed, BCS-Third-Party-Session-Id,
+        Cache-Control, clave, Content-Encoding, ECS-Entry-Point-Zone, firma, Geolocation,
+        Third-Party-Collaborator-Id, user-agent, Via
+      Date: Tue, 26 Dec 2023 21:21:12 GMT
+      Referrer-Policy: same-origin
+      X-Frame-Options: sameorigin
+      Strict-Transport-Security: max-age=31536000; includeSubDomains
+      Access-Control-Expose-Headers: Accept-Encoding, Accept, Content-Type, tsec,
+        consumerrequestid, authenticationchallenge, authenticationtype, authenticationdata,
+        authenticationstate, contactid, consumeruuid, consumerapplicationid, perimetertsec,
+        authorization, responsewarningcode, responsewarningdescription, cuf, prefer,
+        phoneNumber, Location, X-RHO-PARENTSPANID, X-RHO-TRACEID, preferredauthenticationtype,
+        X-HTTP-Method-Override, Access-Control-Allow-Methods, iv-remote-address, thirdparty-x-forwarded-for,
+        thirdparty-user-agent, thirdparty-geolocation, thirdparty-calculated-scoring,
+        thirdparty-deviceid, vnd.bbva.security-client-certificate, order-preferredaction,
+        authenticationresponse, Access-Control-Max-Age, BCS-Device-Id, BCS-Device-OS-Name,
+        BCS-Device-Model-Name, BCS-Device-Model-Manufacturer, BCS-Device-Screen-Size,
+        BCS-Device-OS-Version, BCS-Device-DPI, BCS-Device-App-Name, BCS-Device-App-Version,
+        Third-Party-Application-Id, ECS-Signature-Platform-Use-Case, BCS-Process-Code,
+        BCS-Operation-Tracer, BCS-Process-Tracer, vnd.bbva.user-id, order-preferredaction,
+        order-id, order-accepteddisclaimers, x-forwarded-for, Date, x-dmz-orgn, onsite-accountTerm,
+        onsite-logicalTerm, Akamai-BM-Telemetry, order-hmac, order-signed, BCS-Third-Party-Session-Id,
+        Cache-Control, clave, Content-Encoding, ECS-Entry-Point-Zone, firma, Geolocation,
+        Third-Party-Collaborator-Id, user-agent, Via
+      Cache-Control: no-cache,no-store,must-revalidate
+      Content-Security-Policy: script-src 'self'
+      Vary: Accept-Encoding
+      Set-Cookie: vbank-session=b16d39ed-1a57-47d2-af41-168d3d3cec36
+      Expires: '-1'
+      X-XSS-Protection: 1; mode=block
+      X-EdgeConnect-MidMile-RTT: '30'
+      consumerrequestid: 8d019037-8e93-4017-addf-6444534f641d
+      Content-Type: application/json; charset=UTF-8
+    :status: 200 OK

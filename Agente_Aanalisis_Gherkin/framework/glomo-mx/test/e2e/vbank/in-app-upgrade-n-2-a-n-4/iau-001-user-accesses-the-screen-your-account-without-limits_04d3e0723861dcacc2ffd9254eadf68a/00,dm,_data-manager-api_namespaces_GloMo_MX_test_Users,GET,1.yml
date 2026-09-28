@@ -1,0 +1,84 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: ec2587af-0d69-4f51-85c0-f1474e335d0f
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: in_app_upgrade_n2_n4
+    lock: 'false'
+then:
+- return:
+    :body:
+    - data:
+        locale: es_mx
+        dataInApp:
+        - image:
+            name: dollar_large
+            id: '0312'
+            url: dollarlarge
+          period:
+            endDate: '2026-02-15'
+            startDate: '2025-07-23'
+          additionalLinks:
+          - id: '0013'
+            priority: 3
+            url: upgradeCustomer
+          - id: '0004'
+            priority: 1
+            url: Modal
+          origin:
+            id: P
+          segment:
+            id: '0000'
+          name: InApp_PedroMartinez
+          channel:
+            id: '132'
+          description: InApp para limite de 3000 UDIS
+          id: '00000031'
+          message:
+            additionalInformation: |
+              ¿Por qué mi cuenta tiene un límite?|Cuando contrataste tu cuenta tenía un limite permitido al mes de $25,523.00, lo que equivale a 3,000 UDIS, según el cálculo realizado el 11 de julio de 2025 publicado por Banxico en el Diario Oficial de la Federación.|Las UDIs o unidades de inversion fueron creadas por el Banco de México|Su valor cambia cada día, generalmente a la alza|Son una herramienta para que tu dinero no pierda valor con el tiempo|
+            messageType:
+              description: Avanzada
+              id: '0002'
+            subtitle: Inapp PEDRO MARTINEZ
+            header: Tu cuenta sin limites
+            description: |
+              Tu cuenta puede recibir hasta $25,523.00 en depósitos mensuales.
+              Puedes quitar este limite en unos minutos para poder recibir más dinero en tu cuenta.
+            title: ¿Pronto recibirás más dinero?
+            focalPoint: Solo ten a la mano tu INE vigente y un comprobante de domicilio
+              no mayor a 3 meses.
+          category:
+            description: Opcional
+            id: '0001'
+          priority: '1'
+        tags:
+        - in_app_upgrade_n2_n4
+        - active
+        authentication:
+          password: Glomo2025
+          user: '4433308891'
+          deviceId: 0B640F94353210E283206546DCC468A8
+      lockExpiration: null
+      lockType: null
+      id: 36246722
+    :headers:
+      content-length: '1709'
+      Server: nginx
+      Cache-Control: max-age=0
+      Connection: keep-alive
+      host: datamanager.globaldevtools.bbva.com
+      Vary: Accept-Encoding
+      Expires: Fri, 17 Oct 2025 03:16:13 GMT
+      Date: Fri, 17 Oct 2025 03:16:13 GMT
+      Content-Type: application/json; charset=utf-8
+    :status: 200 OK

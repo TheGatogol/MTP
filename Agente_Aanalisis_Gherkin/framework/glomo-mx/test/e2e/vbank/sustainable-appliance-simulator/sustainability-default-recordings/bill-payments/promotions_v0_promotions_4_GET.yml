@@ -1,0 +1,55 @@
+when:
+  backend: mybackend
+  method: GET
+  path: /promotions/v0/promotions
+  match:
+    query.paginationKey: '4'
+then:
+  - return:
+      :status: 200 OK
+      data:
+      - id: '20000009'
+        name: En COMEX obtén 20% en tres líneas de producto premium más MSI con BBVA
+        descriptions:
+        - id: SUMMARY
+          name: Summary
+          value: En COMEX obtén 20% en tres líneas de producto premium más MSI con BBVA
+        - id: EXTENDED
+          name: Extended
+          value: En COMEX obtén 20% en tres líneas de producto premium más MSI con BBVA
+        startDate: '2023-01-23'
+        endDate: '2023-02-28'
+        promotionType:
+          id: RATE
+          name: Descuento
+        images:
+        - id: LIST
+          name: deco_hogar_01.jpg
+          url: ./images/applianceSimulator/promotion_list.svg
+        - id: DETAIL
+          name: deco_hogar_01.jpg
+          url: ./images/applianceSimulator/promotion_detail.svg
+        categories:
+        - id: HOME
+          name: Decoración y hogar
+        - id: ECOMMERCE
+          name: Online
+        usageTypes:
+        - id: PHYSICAL
+          name: Presencial
+        - id: ONLINE
+          name: En línea
+        commerceInformation:
+          name: Comex
+          description: comex
+          web: https://www.comex.com.mx
+        trending:
+          id: HOT
+          name: HOT
+        benefit: 1%
+        publicationDate: '2023-01-12T00:00:00.000-0600'
+      pagination:
+        links:
+          first: "/promotions/v0/promotions?promotionType.id=in=(RATE,FIXED,GIFT,CASHBACK,OTHER)&title.id=in=(AV,AV,AV,AV,DX,DX)"
+          last: "/promotions/v0/promotions?promotionType.id=in=(RATE,FIXED,GIFT,CASHBACK,OTHER)&title.id=in=(AV,AV,AV,AV,DX,DX)&paginationKey=LAST"
+          next: "/promotions/v0/promotions?promotionType.id=in=(RATE,FIXED,GIFT,CASHBACK,OTHER)&title.id=in=(AV,AV,AV,AV,DX,DX)&paginationKey=5&pageSize="

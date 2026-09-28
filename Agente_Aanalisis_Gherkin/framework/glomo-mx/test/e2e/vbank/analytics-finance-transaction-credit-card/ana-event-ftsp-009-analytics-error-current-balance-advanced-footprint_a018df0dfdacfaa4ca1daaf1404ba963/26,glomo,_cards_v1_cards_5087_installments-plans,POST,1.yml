@@ -1,0 +1,90 @@
+when:
+  sequence: 1
+  path: /SRVS_A02/cards/v1/cards/5087/installments-plans
+  method: POST
+  backend: glomo
+request:
+  headers:
+    sec-fetch-mode: cors
+    referer: http://localhost:8001/
+    content-length: '588'
+    sec-fetch-site: same-site
+    accept-language: es-MX,es;q=0.9
+    origin: http://localhost:8001
+    tsec: 73e0e351cabbd51f6059f1817c82c1a5247e0204
+    accept: application/json, text/html, */*; q=0.1
+    sec-ch-ua: '"Chromium";v="116", "Not)A;Brand";v="24", "Google Chrome";v="116"'
+    sec-ch-ua-mobile: ?0
+    x-vbank-session: f7fb74d9-f846-4ffb-a83d-940c701461f7
+    sec-ch-ua-platform: '"macOS"'
+    host: localhost:9000
+    content-type: application/json
+    connection: keep-alive
+    cache-control: no-cache, no-store, must-revalidate
+    accept-encoding: gzip, deflate, br
+    sec-fetch-dest: empty
+    user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36
+      (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36
+  body:
+    pointsBalances:
+    - pointsBalanceType:
+        id: POINTS_DELETED_BY_THE_PURCHASE
+      points: 800
+    financingCalculationFormat:
+      unit:
+        number: 3
+        id: TERM
+        frequency: MONTHLY
+      id: TOTAL_AMOUNT_PAYMENT
+    specificAmounts:
+    - amount:
+        amount: '1500.1'
+        currency: MXN
+      id: ORIGINAL_AMOUNT
+    rates:
+      itemizeRates:
+      - rateType: CAT
+        itemizeRatesUnit:
+          unitRateType: PERCENTAGE
+          percentage: 10
+      - rateType: TASA
+        itemizeRatesUnit:
+          unitRateType: PERCENTAGE
+          percentage: 12
+    offerId: '9001'
+    financingType:
+      id: MONTHS_WITHOUT_INTERESTS
+    transactionId: MXN0001
+then:
+- return:
+    severity: FATAL
+    :headers:
+      access-control-allow-origin: '*'
+      content-length: '466'
+      Access-Control-Expose-Headers: tsec, vnd.bbva.access-token-type,vnd.bbva.access-token,
+        vnd.bbva.sso-pkcs7, authenticationtype, authenticationdata, authenticationstate,
+        authenticationchallenge
+      Server: artichoke
+      Alt-Svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      access-control-allow-headers: Content-Type, tsec, authenticationtype, authenticationdata,
+        authenticationstate, contactid, consumeruuid, consumerapplicationid, perimetertsec,
+        authorization, responsewarningcode, responsewarningdescription, cuf, field,
+        bcs-device-app-version, bcs-device-app-version, vnd.bbva.authorization, device-id
+      Vary: Accept-Encoding
+      tsec: 73e0e351cabbd51f6059f1817c82c1a5247e0204
+      X-Response-Time: 460ms
+      Date: Wed, 06 Sep 2023 15:48:16 GMT
+      Content-Type: application/json; charset=utf-8
+      Via: 1.1 google
+    httpStatus: 400
+    errorMessage: Acceso denegado, cambio de estado progresando
+    systemErrorCode: stateChangeGoOn
+    errorCode: MPE0000                           MONTO DEL TRASPASO EXCEDE SALDO DE
+      REVOLVENTE.
+    messages:
+    - code: MPE0000                           MONTO DEL TRASPASO EXCEDE SALDO DE REVOLVENTE.
+      message: invalidParameters
+      type: ERROR
+    :status: 400 Bad Request
+    version: 1
+    systemErrorDescription: Acceso denegado, cambio de estado progresando

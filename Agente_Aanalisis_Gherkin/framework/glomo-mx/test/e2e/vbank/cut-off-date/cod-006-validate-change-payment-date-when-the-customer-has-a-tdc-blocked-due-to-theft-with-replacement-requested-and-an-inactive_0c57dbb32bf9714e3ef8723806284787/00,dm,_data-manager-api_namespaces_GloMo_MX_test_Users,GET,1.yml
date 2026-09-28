@@ -1,0 +1,166 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: ea7d0ec9-64c8-4284-93d5-d5d8d3ccda8d
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: cut_off_date,digital_inactive
+    lock: 'false'
+then:
+- return:
+    :body:
+    - data:
+        dateSelected: '2020012020200210'
+        tags:
+        - cut_off_date
+        - blocked_theft
+        - replacement_request
+        - digital_inactive
+        products:
+          cards:
+          - images: []
+            product:
+              name: UNAM BBVA
+              id: UM
+            formats:
+            - number: '012975974022763147'
+              numberType:
+                description: Primary Account Number
+                id: CLABE
+            numberType:
+              description: PRIMARY ACCOUNT NUMBER
+              id: PAN
+            brandAssociation:
+              description: M
+              id: MASTER_CARD
+            cardType:
+              grantedCredits:
+              - amount: 42700.1
+                currency: MXN
+              holderName: EMMA YOLANDA GANTES JALIFE FDG
+              physicalSupport:
+                description: CONVENCIONAL
+                id: NORMAL_PLASTIC
+              disposedBalance:
+                currentBalances:
+                - amount:
+                    amount: 2215.36
+                    currency: MXN
+                pendingBalances:
+                - amount: 0
+                  currency: MXN
+                postedBalances:
+                - amount: 2215.36
+                  currency: MXN
+              description: TARJETA DE CREDITO
+              id: CREDIT_CARD
+              availableBalance:
+                pendingBalances:
+                - amount: 0
+                  currency: MXN
+                postedBalances:
+                - amount: 40484.74
+                  currency: MXN
+            indicators:
+            - description: Indica si se trata de una tarjeta limpia
+              id: IS_CLEAN_CARD
+              isActive: false
+            - description: Indica si la tarjeta puede ser tokenizada
+              id: TOKENIZED_CARD
+              isActive: true
+            - description: Indica si la tarjeta está relacionada con la tecnología
+                biométrica de huellas dactilares
+              id: HAS_FINGERPRINT_BIOMETRIC
+              isActive: false
+            - description: Indica si la tarjeta tarjeta está relacionada con tecnología
+                contactless
+              id: HAS_CONTACTLESS
+              isActive: false
+            - description: Indica si la tarjeta puede estar relacionada con tarjetas
+                adicionales
+              id: ASSOCIABLE_TO_ADDITIONAL_CARDS
+              isActive: false
+            - description: Indica si la tarjeta está vinculada a una llave inteligente
+              id: IS_SMART_KEY
+              isActive: false
+            availableBalance:
+              currentBalances:
+              - amount:
+                  amount: 40484.74
+                  currency: MXN
+            number: '5546293937770718'
+            bank:
+              name: BBVA
+              id: '0074'
+            relatedContracts: []
+            cutOffDate: '2014-12-03'
+            isBusiness: false
+            paymentMethods:
+            - nextPaymentDate: '2020-01-09'
+              percentage: 0
+              id: LAST_PERIOD_AMOUNT_PAYMENT
+              monetaryPayments:
+              - amount: 0
+                currency: MXN
+            - nextPaymentDate: '2020-01-09'
+              percentage: 0
+              id: MINIMUM_AMOUNT_PAYMENT
+              monetaryPayments:
+              - amount: 0
+                currency: MXN
+            - nextPaymentDate: '2020-01-09'
+              percentage: 0
+              id: MINIMUM_AMOUNT_TO_AVOID_INTEREST_PAYMENT
+              monetaryPayments:
+              - amount: 0
+                currency: MXN
+            - nextPaymentDate: '2020-01-09'
+              percentage: 0
+              id: TOTAL_AMOUNT_PAYMENT
+              monetaryPayments:
+              - amount: 2215.36
+                currency: MXN
+            activations:
+            - id: DCVV
+              isActive: false
+            alias: 0002TC5667
+            id: 6H3YR-WlRxUaEk-mTyM3J-hMJJrcDYpV
+            issueDate: 2013-12-16T00:00:00.000-0600
+            activationDate: '2013-12-16'
+            openingDate: 2013-12-16T00:00:00.000-0600
+            status:
+              reason:
+                description: TJ. ROBADA
+                id: STOLEN_CANCELATION
+              lastUpdateDate: '2025-07-18'
+              description: TJ. ROBADA
+              id: BLOCKED
+            currencies:
+            - isMajor: true
+              currency: MXN
+            expirationDate: '2038-11-30'
+        authentication:
+          password: Glomo2025
+          user: '4481137867'
+          deviceId: 5E615611C56A389B5225B9190BBD8E93
+      lockType: null
+      lockExpiration: null
+      id: 36177832
+    :headers:
+      content-length: '3372'
+      Cache-Control: max-age=0
+      Connection: keep-alive
+      host: datamanager.globaldevtools.bbva.com
+      Vary: Accept-Encoding
+      Expires: Mon, 21 Jul 2025 21:15:33 GMT
+      Date: Mon, 21 Jul 2025 21:15:33 GMT
+      Content-Type: application/json; charset=utf-8
+    :status: 200 OK

@@ -1,0 +1,43 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: df13e6fb-bc96-417d-9415-c1cfa71935a3
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: insurance_payment
+    lock: 'false'
+then:
+- return:
+    :body:
+    - data:
+        notifications:
+          tdc: •5877
+          insurancePayment: 67bf9368f34f437a8735e4bc
+        tags:
+        - insurance_delayed_payment
+        - insurance_payment
+        authentication:
+          password: Password00
+          user: '5549838862'
+          deviceId: 5E700549EFA3494DD69D748B4FDF75B7
+      lockExpiration: '2025-02-28T23:52:16.755783Z'
+      lockType: SHARED
+      id: 36068165
+    :headers:
+      content-length: '353'
+      Cache-Control: max-age=0
+      Connection: keep-alive
+      host: datamanager.globaldevtools.bbva.com
+      Vary: Accept-Encoding
+      Expires: Fri, 28 Feb 2025 23:51:18 GMT
+      Date: Fri, 28 Feb 2025 23:51:18 GMT
+      Content-Type: application/json; charset=utf-8
+    :status: 200 OK

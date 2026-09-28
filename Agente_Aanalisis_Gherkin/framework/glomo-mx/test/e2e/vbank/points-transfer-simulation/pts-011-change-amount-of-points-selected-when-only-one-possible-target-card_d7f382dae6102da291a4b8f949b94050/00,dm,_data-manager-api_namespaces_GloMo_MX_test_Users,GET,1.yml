@@ -1,0 +1,41 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: bbd4a44b-d7ef-4bf5-b65b-a1d55b2ea8af
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: only_one_possible_target_card
+    lock: 'false'
+then:
+- return:
+    :body:
+    - data:
+        cardId:
+        - id: ORO BBVA - 4772133890057455
+        tags:
+        - only_one_possible_target_card
+        authentication:
+          password: Glomo2024
+          user: '8332652264'
+          deviceId: 151C329EC3FB1B6C213F86C0A7875432
+      lockExpiration: null
+      lockType: null
+      id: 36070028
+    :headers:
+      content-length: '272'
+      Cache-Control: max-age=0
+      Connection: keep-alive
+      host: datamanager.globaldevtools.bbva.com
+      Vary: Accept-Encoding
+      Expires: Fri, 07 Mar 2025 19:53:14 GMT
+      Date: Fri, 07 Mar 2025 19:53:14 GMT
+      Content-Type: application/json; charset=utf-8
+    :status: 200 OK

@@ -1,0 +1,70 @@
+when:
+  sequence: 1
+  path: /SRVS_A02/customer-logins/v0/indicators
+  method: GET
+  backend: glomo
+request:
+  headers:
+    sec-fetch-mode: cors
+    content-length: "0"
+    referer: http://localhost:8001/
+    sec-fetch-site: same-site
+    accept-language: es-MX,es;q=0.9
+    origin: http://localhost:8001
+    tsec: cd14a16dc7fd95255db210a5c088149c5aa0f76d
+    accept: application/json, text/html, */*; q=0.1
+    sec-ch-ua: '"Chromium";v="122", "Not(A:Brand";v="24", "Google Chrome";v="122"'
+    sec-ch-ua-mobile: ?0
+    x-vbank-session: 642e08b5-22b5-47f6-848a-162aa008297f
+    sec-ch-ua-platform: '"macOS"'
+    host: localhost:9000
+    content-type: application/json
+    connection: keep-alive
+    cache-control: no-cache, no-store, must-revalidate
+    accept-encoding: gzip, deflate, br
+    sec-fetch-dest: empty
+    user-agent: GLOMO_MX/99.99.99;Mozilla/5.0 (Linux; U; Android 4.0.2; en-us;
+      Galaxy Nexus Build/ICL53F) AppleWebKit/534.30 (KHTML, like Gecko)
+      Version/4.0 Mobile Safari/534.30
+then:
+  - return:
+      data:
+        customerId: b_TCwi5citu5euHzqryDL=
+        nationalities:
+          - description: mx
+            id: MX
+        indicators:
+          - description: Indica si el cliente tiene seguro contratado
+            id: INSURANCE
+            isActive: false
+      :headers:
+        content-length: "2212"
+        Server: artichoke
+        Alt-Svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+        access-control-allow-headers: Content-Type, tsec, authenticationtype,
+          authenticationdata, authenticationstate, contactid, consumeruuid,
+          consumerapplicationid, perimetertsec, authorization,
+          responsewarningcode, responsewarningdescription, cuf, field,
+          bcs-device-app-version, bcs-device-app-version,
+          vnd.bbva.authorization, device-id
+        tsec: cd14a16dc7fd95255db210a5c088149c5aa0f76d
+        X-Response-Time: 938ms
+        Date: Tue, 05 Mar 2024 16:13:14 GMT
+        Via: 1.1 google
+        access-control-allow-origin: "*"
+        Access-Control-Expose-Headers: tsec,
+          vnd.bbva.access-token-type,vnd.bbva.access-token, vnd.bbva.sso-pkcs7,
+          authenticationtype, authenticationdata, authenticationstate,
+          authenticationchallenge
+        Cache-Control: private, no-store
+        content-type: application/json;charset=UTF-8
+        Vary: Accept-Encoding
+      :status: 200 OK
+      apiInfo:
+        name: customers
+        category: people
+        version: 0.24.0
+      messages:
+        - code: KNA1008
+          message: CONSULTA REALIZADA
+          type: WARNING

@@ -1,0 +1,90 @@
+module.exports = PRODUCT => (CONFIG) => {
+  const CONSTANT = require('./common/_constants');
+  const UTILS = require('./common/_utils');
+  const LITERALS = require('./common/_literals');
+
+  const BINDED_CONSTANTS = {
+    account: 'cuentas',
+    card: 'tarjetas',
+    equity: 'contrato',
+    policy: 'polizas'
+  };
+
+  const COMMON = {
+    [CONSTANT.PAGE_PAGEINFO_AREA]: LITERALS.commons.private,
+    [CONSTANT.PAGE_PAGEINFO_PAGEINTENT]: LITERALS.commons.information,
+    [CONSTANT.PAGE_INSTANCE_ID]: CONFIG.pageInstanceID,
+    [CONSTANT.PAGE_PAGEINFO_PAGESEGMENT]: LITERALS.commons.persons,
+    [CONSTANT.USER_USERSTATE]: 'logado',
+    [CONSTANT.PAGE_PAGEINFO_LEVEL1]: BINDED_CONSTANTS[PRODUCT],
+    [CONSTANT.PAGE_PAGEINFO_LEVEL2]: LITERALS.commons.detail,
+    [CONSTANT.PAGE_PAGEINFO_LEVEL3]: 'editar alias',
+    [CONSTANT.PAGE_PAGEINFO_PROJECTNAME]: LITERALS.sections.glomo
+  };
+
+  const CREDIT_CARD = {
+    [CONSTANT.PAGE_PAGEINFO_AREA]: LITERALS.commons.private,
+    [CONSTANT.PAGE_PAGEINFO_PAGEINTENT]: LITERALS.commons.information,
+    [CONSTANT.PAGE_INSTANCE_ID]: CONFIG.pageInstanceID,
+    [CONSTANT.PAGE_PAGEINFO_PAGESEGMENT]: LITERALS.commons.persons,
+    [CONSTANT.USER_USERSTATE]: 'logado',
+    [CONSTANT.PAGE_PAGEINFO_LEVEL1]: BINDED_CONSTANTS[PRODUCT],
+    [CONSTANT.PAGE_PAGEINFO_LEVEL2]: 'credito',
+    [CONSTANT.PAGE_PAGEINFO_LEVEL3]: LITERALS.commons.detail,
+    [CONSTANT.PAGE_PAGEINFO_LEVEL4]: 'editar alias',
+    [CONSTANT.PAGE_PAGEINFO_PROJECTNAME]: LITERALS.sections.glomo
+  };
+
+  const DEBIT_CARD = {
+    [CONSTANT.PAGE_PAGEINFO_AREA]: LITERALS.commons.private,
+    [CONSTANT.PAGE_PAGEINFO_PAGEINTENT]: LITERALS.commons.information,
+    [CONSTANT.PAGE_INSTANCE_ID]: CONFIG.pageInstanceID,
+    [CONSTANT.PAGE_PAGEINFO_PAGESEGMENT]: LITERALS.commons.persons,
+    [CONSTANT.USER_USERSTATE]: 'logado',
+    [CONSTANT.PAGE_PAGEINFO_LEVEL1]: BINDED_CONSTANTS[PRODUCT],
+    [CONSTANT.PAGE_PAGEINFO_LEVEL2]: 'debito',
+    [CONSTANT.PAGE_PAGEINFO_LEVEL3]: LITERALS.commons.detail,
+    [CONSTANT.PAGE_PAGEINFO_LEVEL4]: 'editar alias',
+    [CONSTANT.PAGE_PAGEINFO_PROJECTNAME]: LITERALS.sections.glomo
+  };
+
+  const EQUITY_CONTRACTS = {
+    [CONSTANT.PAGE_PAGEINFO_AREA]: LITERALS.commons.private,
+    [CONSTANT.PAGE_PAGEINFO_PAGEINTENT]: LITERALS.commons.information,
+    [CONSTANT.PAGE_INSTANCE_ID]: CONFIG.pageInstanceID,
+    [CONSTANT.PAGE_PAGEINFO_PAGESEGMENT]: LITERALS.commons.patrimonial,
+    [CONSTANT.USER_USERSTATE]: 'logado',
+    [CONSTANT.USER_SEGMENT_GLOBAL]: '003003',
+    [CONSTANT.PAGE_PAGEINFO_LEVEL1]: BINDED_CONSTANTS[PRODUCT],
+    [CONSTANT.PAGE_PAGEINFO_LEVEL2]: LITERALS.commons.detail,
+    [CONSTANT.PAGE_PAGEINFO_LEVEL3]: 'editar alias',
+    [CONSTANT.PAGE_PAGEINFO_PROJECTNAME]: LITERALS.sections.glomo
+  };
+
+  const UNIT_LINKED = {
+    ...COMMON,
+    [CONSTANT.PAGE_PAGEINFO_LEVEL1]: 'polizas'
+  };
+
+  const APP_HUELLA_EDIT_ALIAS = UTILS.getAdvancedFootprint(COMMON);
+  const CREDIT_CARD_APP_HUELLA_EDIT_ALIAS = UTILS.getAdvancedFootprint(CREDIT_CARD);
+  const DEBIT_CARD_APP_HUELLA_EDIT_ALIAS = UTILS.getAdvancedFootprint(DEBIT_CARD);
+  const EQUITY_CONTRACTS_APP_HUELLA_EDIT_ALIAS = UTILS.getAnalyticFeatureFlag('equityDetail', UTILS.getAdvancedFootprint(EQUITY_CONTRACTS));
+  const UNIT_LINKED_APP_HUELLA_EDIT_ALIAS = UTILS.getAnalyticFeatureFlag('unitLinkedDetail', UTILS.getAdvancedFootprint(UNIT_LINKED));
+
+  [
+    APP_HUELLA_EDIT_ALIAS,
+    CREDIT_CARD_APP_HUELLA_EDIT_ALIAS,
+    DEBIT_CARD_APP_HUELLA_EDIT_ALIAS
+  ].forEach(item => UTILS.getAnalyticFeatureFlag('editAlias', item));
+
+  return {
+    BINDED_CONSTANTS,
+    APP_HUELLA_EDIT_ALIAS,
+    CREDIT_CARD_APP_HUELLA_EDIT_ALIAS,
+    DEBIT_CARD_APP_HUELLA_EDIT_ALIAS,
+    EQUITY_CONTRACTS_APP_HUELLA_EDIT_ALIAS,
+    UNIT_LINKED_APP_HUELLA_EDIT_ALIAS
+  };
+
+};

@@ -1,0 +1,41 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: afa9b4c2-8767-4386-b318-b0c6883cddee
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: disability_videocall_global
+    lock: 'false'
+then:
+- return:
+    :body:
+    - data:
+        locale: es_mx
+        tags:
+        - disability_videocall_global
+        authentication:
+          password: Glomo2023
+          user: '5523777350'
+          deviceId: F94118D6041DDD02B4940BD9EB34B29D
+      lockExpiration: '2024-01-31T16:16:23.606045Z'
+      lockType: SHARED
+      id: 35755744
+    :headers:
+      content-length: '267'
+      Strict-Transport-Security: max-age=15768000
+      Server: nginx
+      ECS-Entry-Point-Zone: ext
+      Connection: keep-alive
+      host: datamanager.globaldevtools.bbva.com
+      Vary: Accept-Encoding
+      Date: Wed, 31 Jan 2024 16:16:14 GMT
+      Content-Type: application/json
+    :status: 200 OK

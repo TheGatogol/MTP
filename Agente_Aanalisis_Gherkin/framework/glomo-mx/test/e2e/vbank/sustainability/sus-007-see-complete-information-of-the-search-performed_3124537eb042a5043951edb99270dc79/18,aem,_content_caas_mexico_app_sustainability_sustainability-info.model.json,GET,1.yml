@@ -1,0 +1,140 @@
+when:
+  sequence: 1
+  path: /content/caas/mexico/app/sustainability/sustainability-info.model.json
+  method: GET
+  backend: aem
+request:
+  headers:
+    sec-fetch-mode: cors
+    content-length: '0'
+    referer: http://localhost:8001/
+    sec-fetch-site: same-site
+    accept-language: es-MX,es;q=0.9
+    origin: http://localhost:8001
+    accept: application/json, text/plain, */*; q=0.01
+    sec-ch-ua: '"Not_A Brand";v="8", "Chromium";v="120", "Google Chrome";v="120"'
+    sec-ch-ua-mobile: ?0
+    x-vbank-session: 353e6066-e1d3-4a93-b2bf-c8ab70d6cd6b
+    sec-ch-ua-platform: '"Linux"'
+    host: localhost:9031
+    content-type: text/plain
+    connection: keep-alive
+    cache-control: no-cache, no-store, must-revalidate
+    accept-encoding: gzip, deflate, br
+    sec-fetch-dest: empty
+    user-agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko)
+      Chrome/120.0.0.0 Safari/537.36
+then:
+- return:
+    brandSlug: ''
+    ::items:
+      root:
+        ::items:
+          contentfragmentlist:
+            ::type: bbva/pwebs/components/par/corecomponents/contentfragmentlist
+            id: contentfragmentlist
+            items:
+            - elementsOrder:
+              - title
+              - items
+              - image_url
+              - video_url
+              variations: []
+              elements:
+                video_url:
+                  dataType: string
+                  ::type: string
+                  title: Video (url)
+                  multiValue: false
+                  value: https://www.youtube.com/embed/rpWoJT9r0O4
+                image_url:
+                  dataType: string
+                  ::type: string
+                  title: Path imagen
+                  multiValue: false
+                  value: /content/dam/caas/global/glomo/sustainability/recommendations/images/4.2.17-min.png
+                title:
+                  dataType: string
+                  ::type: string
+                  title: Titulo
+                  multiValue: false
+                  value: ¿Quieres saber como calculamos tu huella?
+                  translate: true
+                items:
+                  dataType: string
+                  ::type: string
+                  title: Listado items
+                  multiValue: true
+                  value:
+                  - 'Para calcular tu huella de carbono, tomamos en cuenta tus <b>recibos
+                    de luz y gas</b> domiciliados a tu cuenta BBVA, así como tus pagos
+                    en gasolineras realizados con tus tarjetas BBVA a lo largo del
+                    año. Este cálculo es aproximado y no hace referencia al total
+                    de tus emisiones. '
+                  - Este estimado de tu huella de carbono supone, <b>aproximadamente,
+                    un 53.2% de tus emisiones totales.</b> El resto están asociadas
+                    a consumos y hábitos que no podemos estimar.
+                  - 'Para calcular este estimado, utilizamos el valor en pesos (MXN)
+                    de los recibos y pagos antes mencionados. '
+                  - '<b>Multiplicamos estas cantidades por las variables</b> ofrecidas
+                    por el Instituto Nacional de Ecología y Cambio Climático (INECC).
+                    Para ello, consultamos siempre la última publicación de datos
+                    oficiales. '
+                  - Esta información es rigurosa y está contrastada, aunque no sustituye
+                    técnicas de cálculo más precisas. <b>Ten en cuenta</b> que no
+                    se trata de información orientada al asesoramiento financiero
+                    y que <b>no debe ser tomada como el único factor de decisión a
+                    la hora de realizar operaciones o contrataciones.</b>
+                  translate: true
+              name: ecodes
+              description: ''
+              model: caascfm/models/global-cells-sustainability-info
+              ::type: dam:Asset
+              title: sobre-tu-huella
+        allowedComponents:
+          components:
+          - path: /content/caas/mexico/app/sustainability/sustainability-info/jcr:content/root/bbva/pwebs/components/par/corecomponents/contentfragment
+            title: Content Fragment
+          - path: /content/caas/mexico/app/sustainability/sustainability-info/jcr:content/root/bbva/pwebs/components/par/corecomponents/dynamiccontentfragment
+            title: Dynamic Content Fragment
+          - path: /content/caas/mexico/app/sustainability/sustainability-info/jcr:content/root/bbva/pwebs/components/par/corecomponents/contentfragmentlist
+            title: Content Fragment List
+          applicable: false
+        columnClassNames:
+          contentfragmentlist: aem-GridColumn aem-GridColumn--default--12
+        gridClassNames: aem-Grid aem-Grid--12 aem-Grid--default--12
+        ::itemsOrder:
+        - contentfragmentlist
+        ::type: wcm/foundation/components/responsivegrid
+        columnCount: 12
+    lastModifiedDate: 1654187486775
+    htmlPageItems: []
+    :headers:
+      Access-Control-Allow-Origin: http://localhost:8001
+      X-Content-Type-Options: nosniff
+      Connection: keep-alive
+      Date: Tue, 26 Dec 2023 21:27:29 GMT
+      Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Access-Control-Request-Method,
+        x-requested-with
+      Strict-Transport-Security: max-age=31536000; includeSubdomains; preload
+      Cache-Control: max-age=2690
+      ETag: '"0cd428536d5730ae5ec00b56f0695e89-gzip"'
+      Content-Security-Policy: frame-ancestors 'self' https://s3-dev.movil.bbva.es/
+        https://pre.web.bbva.es/ https://qa.web.grupobbva.com/ https://*.es.igrupobbva/
+        https://*.igrupobbva/  http://localhost http://localhost:4200 https://*bbva-cells-files.s3.amazonaws.com/
+        https://ei-netcash.bbva.es/ https://ei-empresas.bbva.es/ https://ei.bbva.es/
+        https://ei.bbva.it/ https://pre.web.bbva.it/ https://s3-dev.mobile.bbva.it/  https://ei.bbvanetcash.com/
+      Vary: Accept-Encoding
+      Expires: Tue, 26 Dec 2023 22:12:19 GMT
+      X-XSS-Protection: 1; mode=block
+      Content-Length: '3381'
+      Content-Type: application/json
+    language: en-US
+    title: sustainability-info
+    cssClassNames: caasinitiativecontent page basicpage
+    templateName: caasinitiativecontent
+    ::itemsOrder:
+    - root
+    ::type: bbva/pwebs/components/pages/caasinitiativecontent
+    :status: 200 OK
+    id: caasinitiativecontent-2f86160047

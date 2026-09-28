@@ -1,0 +1,64 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: 2ee0f28f-326b-44bc-a5d7-078be6b045e0
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: profile_recipients
+    lock: 'false'
+then:
+- return:
+    :body:
+    - data:
+        beneficiary:
+          percentageOne: '100'
+          percentageFour: '20'
+          percentageThree: '20'
+          birthDay: '1998-12-13'
+          lastName: Gonzales
+          secondLastName: Mireles
+          percentageSix: '20'
+          kinship: socio
+          name: David
+          percentageFive: '20'
+          newAddress: false
+          percentageTwo: '10'
+          relationship: '[value="Padre"]'
+        address:
+          zipCode: '97000'
+          outerN: '89'
+          colony: PRIVADA DEL MAESTRO
+          innerN: '89'
+          street: Avenida insurgentes
+          cpFewerThan5: '5300'
+          invalidCP: '00000'
+          streetLongName: abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz
+        locale: es_mx
+        tags:
+        - profile_recipients
+        - '5578475284'
+        authentication:
+          password: Glomo2025
+          user: '4661345972'
+          deviceId: 8FE0EC998C44DF548D88148D0957FD0E
+      lockExpiration: null
+      lockType: null
+      id: 3510517
+    :headers:
+      content-length: '788'
+      Cache-Control: max-age=0
+      Connection: keep-alive
+      host: datamanager.globaldevtools.bbva.com
+      Vary: Accept-Encoding
+      Expires: Wed, 30 Apr 2025 22:59:29 GMT
+      Date: Wed, 30 Apr 2025 22:59:29 GMT
+      Content-Type: application/json; charset=utf-8
+    :status: 200 OK

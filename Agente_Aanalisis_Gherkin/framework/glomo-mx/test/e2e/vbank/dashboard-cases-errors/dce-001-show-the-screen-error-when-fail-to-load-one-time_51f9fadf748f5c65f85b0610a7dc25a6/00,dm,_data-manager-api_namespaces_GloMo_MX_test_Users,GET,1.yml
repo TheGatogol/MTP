@@ -1,0 +1,41 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6U2tnYUQ0SmNvck9MTW5LN3NSZjg4MFFnanYwVDB2WTFncFVvaUM2MQ==
+    content-length: '0'
+    x-vbank-session: d0b2d1f6-23ff-4dac-9df7-f40a183bb6a6
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: accounts,1_attempted_error_in_the_redemption_execution
+then:
+- return:
+    :body:
+    - data:
+        locale: es_mx
+        tags:
+        - '5523847320'
+        - accounts
+        - 1_attempted_error_in_the_redemption_execution
+        - more_than_3_attempted_error_in_the_redemption_execution
+        authentication:
+          password: glomo2021
+          user: '5523847320'
+          deviceId: A4E42DDC00B8FFB98D23C40B1436F43B
+      lockExpiration: null
+      lockType: null
+      id: 2685866
+    :headers:
+      Strict-Transport-Security: max-age=15724800; includeSubDomains
+      Server: nginx
+      ECS-Entry-Point-Zone: ext
+      Connection: keep-alive
+      Content-Length: '340'
+      Date: Thu, 21 Apr 2022 12:25:14 GMT
+      Content-Type: application/json
+    :status: 200 OK

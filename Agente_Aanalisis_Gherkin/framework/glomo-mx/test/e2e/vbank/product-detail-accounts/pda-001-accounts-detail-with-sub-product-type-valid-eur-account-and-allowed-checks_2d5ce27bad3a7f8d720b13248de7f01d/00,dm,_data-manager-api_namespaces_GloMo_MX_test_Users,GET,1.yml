@@ -1,0 +1,86 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: aae3366c-c1c5-4939-a7bf-3e425d78ab15
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: eur_account_with_checks_allowed
+then:
+- return:
+    :body:
+    - data:
+        data:
+          catalogs:
+            catalogs: []
+        locale: es_mx
+        tags:
+        - multiple_accounts
+        - eur_account_with_checks_allowed
+        products:
+          cards: []
+          loans: []
+          accounts:
+          - number: '00740010000465788161'
+            product:
+              name: Cuenta de Cheques
+              id: CH
+            numberType:
+              id: CCC
+            alias: MEMBRESIA BP
+            id: Uvn6wi1Rh6BaBZPoy3hetF92LUtWSpaEwBKJR_iqf7gycBE65s6VeA
+            detail:
+              level: '04'
+              specificAmounts:
+              - amounts:
+                - amount: 74.03
+                  currency: EUR
+                name: Saldo actual
+                id: CURRENT_BALANCE
+              - amounts:
+                - amount: 0
+                  currency: EUR
+                name: Saldo buen cobro
+                id: PENDING_DEPOSIT_BALANCE
+              indicators:
+              - name: Indica si la cuenta es de nómina
+                id: IS_PAYROLL_ACCOUNT
+                isActive: false
+              - name: Indica si la cuenta es eje
+                id: IS_PRINCIPAL_ACCOUNT
+                isActive: false
+              - name: Indica si la cuenta tiene pockets
+                id: HAS_POCKETS
+                isActive: false
+            productType: ACCOUNT
+            status:
+              name: Cuenta Activa
+              id: ACTIVE
+            subProductType:
+              name: MEMBRESIA BP
+              id: '0102'
+            signedAuthorization: {}
+        authentication:
+          password: glomo2022
+          user: '5562557617'
+          deviceId: 11223344556677889900AABBCCDDEEFF
+      lockExpiration: null
+      lockType: null
+      id: 1051749
+    :headers:
+      content-length: '1274'
+      Strict-Transport-Security: max-age=15768000
+      Server: nginx
+      ECS-Entry-Point-Zone: ext
+      Connection: keep-alive
+      Vary: Accept-Encoding
+      Date: Thu, 30 Jun 2022 21:11:36 GMT
+      Content-Type: application/json
+    :status: 200 OK

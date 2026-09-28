@@ -1,0 +1,85 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: 88a83d47-705e-4502-bed4-fe2cd78f1ae2
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: dashboard_accounts,account_balance
+    lock: 'false'
+then:
+- return:
+    :body:
+    - data:
+        homeFutura: false
+        skeleton: skeleton1
+        locale: es_mx
+        tags:
+        - '5533535656'
+        - dashboard_accounts
+        - account_balance
+        products:
+        - accounts:
+          - number: 150 115 4529
+            accountId: '0230'
+            accountType:
+              name: Cuenta de Ahorro
+              id: AH
+            alias: 0004ah5806
+            currency: MXN
+            id: Uvn6wi1Rh6DCtLBMyvXuUIVnbMlHYbYhsUmRGyrOQp5KKNWAARropA
+            status:
+              name: CUENTA ACTIVA
+              id: ACTIVE
+            availableBalance:
+              currentBalance: $0.00
+          - number: 150 115 4537
+            accountId: '0230'
+            accountType:
+              name: Cuenta de Ahorro
+              id: AH
+            alias: 0010AH5021
+            currency: MXN
+            id: Uvn6wi1Rh6DCtLBMyvXuUKH4Uu0ZswVfk91RGNIRCkrDmTUUGzu1mQ
+            status:
+              name: CUENTA ACTIVA
+              id: ACTIVE
+            availableBalance:
+              currentBalance: $1,000,000.00
+          - number: 150 118 9128
+            accountId: '0230'
+            accountType:
+              name: Cuenta de Ahorro
+              id: AH
+            alias: 0002AH9128
+            currency: MXN
+            id: Uvn6wi1Rh6DCtLBMyvXuUCYUhVV1O1Ig4GElM2PW6e18__Ovi84VZA
+            status:
+              name: Cuenta Activa
+              id: ACTIVE
+            availableBalance:
+              currentBalance: $0.06
+        authentication:
+          password: Glomo2024
+          user: '5533535656'
+          deviceId: F1E306E4AA5CB3811975FB2B9E929A6E
+      id: 35883391
+      lockType: null
+      lockExpiration: null
+    :headers:
+      content-length: '1267'
+      Cache-Control: max-age=0
+      Connection: keep-alive
+      host: datamanager.globaldevtools.bbva.com
+      Vary: Accept-Encoding
+      Expires: Wed, 16 Jul 2025 19:06:31 GMT
+      Date: Wed, 16 Jul 2025 19:06:31 GMT
+      Content-Type: application/json; charset=utf-8
+    :status: 200 OK

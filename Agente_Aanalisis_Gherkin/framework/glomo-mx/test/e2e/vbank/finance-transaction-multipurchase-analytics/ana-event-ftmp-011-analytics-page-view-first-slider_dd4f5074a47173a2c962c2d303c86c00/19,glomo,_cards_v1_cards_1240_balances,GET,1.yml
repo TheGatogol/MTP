@@ -1,0 +1,66 @@
+when:
+  sequence: 1
+  path: /SRVS_A02/cards/v1/cards/1240/balances
+  method: GET
+  backend: glomo
+request:
+  headers:
+    sec-fetch-mode: cors
+    content-length: '0'
+    referer: http://localhost:8001/
+    sec-fetch-site: same-site
+    accept-language: en-US
+    origin: http://localhost:8001
+    tsec: bd97a60fc5d0d76db0ba279fde17b8237fd2ab69
+    accept: application/json, text/html, */*; q=0.1
+    sec-ch-ua: ''
+    sec-ch-ua-mobile: ?0
+    x-vbank-session: c1d93203-4eb9-4fad-9651-3d225dbd1253
+    sec-ch-ua-platform: ''
+    host: localhost:9000
+    content-type: application/json
+    connection: keep-alive
+    cache-control: no-cache, no-store, must-revalidate
+    accept-encoding: gzip, deflate, br
+    sec-fetch-dest: empty
+    user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36
+      (KHTML, like Gecko) HeadlessChrome/108.0.5359.124 Safari/537.36
+then:
+- return:
+    data:
+      specificAmountsBalance:
+        specificAmounts:
+        - amount:
+            amount: 140000
+            currency: MXN
+          id: REVOLVING_BALANCE
+        rates:
+          itemizeRates:
+          - rateType: PERSONALIZED
+            itemizeRatesUnit:
+              unitRateType: PERCENTAGE
+              percentage: 49.99
+    :headers:
+      access-control-allow-origin: '*'
+      content-length: '340'
+      Access-Control-Expose-Headers: tsec, vnd.bbva.access-token-type,vnd.bbva.access-token,
+        vnd.bbva.sso-pkcs7, authenticationtype, authenticationdata, authenticationstate,
+        authenticationchallenge
+      Server: artichoke
+      Alt-Svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      access-control-allow-headers: Content-Type, tsec, authenticationtype, authenticationdata,
+        authenticationstate, contactid, consumeruuid, consumerapplicationid, perimetertsec,
+        authorization, responsewarningcode, responsewarningdescription, cuf, field,
+        bcs-device-app-version, bcs-device-app-version, vnd.bbva.authorization
+      Vary: Accept-Encoding
+      tsec: bd97a60fc5d0d76db0ba279fde17b8237fd2ab69
+      X-Response-Time: 1106ms
+      Date: Fri, 16 Dec 2022 13:04:03 GMT
+      Content-Type: application/json; charset=utf-8
+      Via: 1.1 google
+    :status: 200 OK
+    responseStatus: 200
+    apiInfo:
+      name: cards
+      category: products
+      version: 0.19.0

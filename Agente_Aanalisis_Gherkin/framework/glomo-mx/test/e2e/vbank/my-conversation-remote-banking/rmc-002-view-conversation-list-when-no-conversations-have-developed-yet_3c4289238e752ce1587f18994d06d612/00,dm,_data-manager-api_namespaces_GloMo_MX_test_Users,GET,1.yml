@@ -1,0 +1,46 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: 9638e761-0b01-41ee-be48-a2f01e374d87
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: remote_banking_account,remote_bank_account_without_conversations
+    lock: 'false'
+then:
+- return:
+    :body:
+    - data:
+        searchSubject: prue
+        titleConversationHTML: <h1>Hola</h1>
+        segment: remote
+        locale: es_mx
+        keyOnboarding: true
+        tags:
+        - '6563721474'
+        - remote_banking_account
+        - remote_bank_account_without_conversations
+        authentication:
+          password: Glomo2026
+          user: '8110391662'
+          deviceId: 5DD6FC58368AC3C7CB053222560F6283
+        titleConversation: titulo de prueba
+      id: 36059070
+    :headers:
+      content-length: '384'
+      Server: nginx
+      Cache-Control: max-age=0
+      Connection: keep-alive
+      host: datamanager.globaldevtools.bbva.com
+      Vary: Accept-Encoding
+      Expires: Tue, 27 Jan 2026 22:31:48 GMT
+      Date: Tue, 27 Jan 2026 22:31:48 GMT
+      Content-Type: application/json; charset=utf-8
+    :status: 200 OK

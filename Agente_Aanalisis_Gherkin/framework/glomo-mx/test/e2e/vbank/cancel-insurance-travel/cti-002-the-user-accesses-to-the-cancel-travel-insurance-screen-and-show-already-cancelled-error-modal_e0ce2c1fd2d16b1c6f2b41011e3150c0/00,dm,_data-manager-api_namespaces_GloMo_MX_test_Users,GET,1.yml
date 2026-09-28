@@ -1,0 +1,79 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: has_insurances_travel_life_2
+    lock: 'false'
+then:
+- return:
+    :body:
+    - data:
+        data:
+          birthday: 14/11/1995
+          second_lastname: Nava
+          name: Teresa
+          last_name: Sanchez
+        tags:
+        - '5580391983'
+        - insurances
+        - has_insurances_travel_life_2
+        products:
+          insurances:
+          - number: '    126713001J         1'
+            alias: VALUE
+            id: YJ-i4dtYULv-yzVeuF4DT-QOPUu73OsaUBCnvva8BD0
+            detail:
+              template:
+                id: peTXkNxL1nk
+              statusDate: '2025-12-30'
+              nextPaymentDate: 1970-01-01T00:00:00.000-0600
+              dueDate: '2026-03-30'
+              renewalType:
+                id: WITHOUT_RENEWAL
+              installmentFrequency: UNIQUE
+              specificAmounts:
+              - amounts:
+                - amount: 12.97
+                  currency: USD
+                name: Prima Total Anual
+                id: PRIMATOTALANUAL
+              lastPaymentDate: 1970-01-01T00:00:00.000-0600
+              hasPendingPayments: false
+              commertialProductId: '4035'
+              startDate: '2025-12-30'
+              productDescription: Seguro De Viaje
+              status: FORMALIZED
+            participant:
+              lastName: HERRERA
+              secondLastName: D¿AZ
+              name: FERNANDO
+              participantType:
+                id: HOLDER
+            productType: INSURANCE
+            subProductType:
+              id: VIDA INDIVIDUAL
+        authentication:
+          password: Glomo2025
+          user: '5580391983'
+          deviceId: E3A233AFC814A076864695A476ED2BA7
+      id: 36442939
+    :headers:
+      content-length: '1132'
+      Server: nginx
+      Cache-Control: max-age=0
+      Connection: keep-alive
+      host: datamanager.globaldevtools.bbva.com
+      Vary: Accept-Encoding
+      Expires: Tue, 14 Apr 2026 17:26:48 GMT
+      Date: Tue, 14 Apr 2026 17:26:48 GMT
+      Content-Type: application/json; charset=utf-8
+    :status: 200 OK

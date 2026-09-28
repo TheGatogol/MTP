@@ -1,0 +1,41 @@
+when:
+  sequence: 22
+  path: /SRVS_A02/loyalty/v0/rewards
+  method: GET
+  backend: glomo
+request:
+  headers:
+    content-length: '0'
+    contactid: f7504129-b7fa-4911-9e18-a8451f905fc3
+    host: localhost:9000
+    connection: Keep-Alive
+    content-type: application/json
+    tsec: 963067270fa65fc77ef0dc6ff364614bc29eb43f
+    cache-control: no-cache
+    accept-encoding: gzip
+    user-agent: GLOMO_MX/99.99.99 (Android;12;Google sdk_gphone64_arm64)
+    accept: application/json, text/html, */*; q=0.1
+  query:
+    billingPeriod: OPEN_PERIOD
+    contract.id: '4017'
+then:
+- return:
+    :body: ''
+    :headers:
+      access-control-allow-origin: '*'
+      content-length: '0'
+      Access-Control-Expose-Headers: tsec, vnd.bbva.access-token-type,vnd.bbva.access-token,
+        vnd.bbva.sso-pkcs7, authenticationtype, authenticationdata, authenticationstate,
+        authenticationchallenge
+      Server: artichoke
+      Alt-Svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      access-control-allow-headers: Content-Type, tsec, authenticationtype, authenticationdata,
+        authenticationstate, contactid, consumeruuid, consumerapplicationid, perimetertsec,
+        authorization, responsewarningcode, responsewarningdescription, cuf, field,
+        bcs-device-app-version, bcs-device-app-version, vnd.bbva.authorization, device-id
+      Vary: Accept-Encoding
+      tsec: 963067270fa65fc77ef0dc6ff364614bc29eb43f
+      X-Response-Time: 487ms
+      Date: Mon, 20 Nov 2023 13:37:05 GMT
+      Via: 1.1 google
+    :status: 204 No Content

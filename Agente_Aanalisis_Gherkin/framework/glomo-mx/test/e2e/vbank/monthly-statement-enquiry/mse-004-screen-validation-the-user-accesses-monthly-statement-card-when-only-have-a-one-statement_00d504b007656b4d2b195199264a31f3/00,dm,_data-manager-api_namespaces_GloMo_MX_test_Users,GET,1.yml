@@ -1,0 +1,43 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: da242229-d019-4351-92d7-0d4bc8881388
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: monthly_statement
+then:
+- return:
+    :body:
+    - data:
+        product:
+        - cards:
+          - number: '4772102170339834'
+            alias: 0003tc9834
+        locale: es_mx
+        tags:
+        - '5531024942'
+        - monthly_statement
+        authentication:
+          password: glomo2023
+          user: '5531024942'
+          deviceId: F930D3A983F4F7A0F1ABD43EE8AADCC6
+      lockExpiration: null
+      lockType: null
+      id: 3521648
+    :headers:
+      Strict-Transport-Security: max-age=15768000
+      Server: nginx
+      ECS-Entry-Point-Zone: ext
+      Connection: keep-alive
+      Content-Length: '322'
+      Date: Tue, 14 Mar 2023 23:09:51 GMT
+      Content-Type: application/json
+    :status: 200 OK

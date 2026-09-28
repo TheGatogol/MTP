@@ -1,0 +1,45 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: 44d47028-31a2-4b9b-8e8c-e0564e80d736
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: cardless_withdrawal_historic,cardless_withdrawal_pending,multiple_accounts
+    lock: 'false'
+then:
+- return:
+    :body:
+    - data:
+        locale: es_mx
+        tags:
+        - '5569632073'
+        - multiple_status
+        - multiple_accounts
+        - cardless_withdrawal_pending
+        - cardless_withdrawal_historic
+        authentication:
+          password: Glomo2024
+          user: '5569632073'
+          deviceId: 273C36175E5F5BB486AE05BAE754CDD5
+      lockExpiration: null
+      lockType: null
+      id: 35621095
+    :headers:
+      content-length: '305'
+      Strict-Transport-Security: max-age=15768000
+      Server: nginx
+      ECS-Entry-Point-Zone: ext
+      Connection: keep-alive
+      host: datamanager.globaldevtools.bbva.com
+      Vary: Accept-Encoding
+      Date: Tue, 10 Oct 2023 17:01:55 GMT
+      Content-Type: application/json
+    :status: 200 OK

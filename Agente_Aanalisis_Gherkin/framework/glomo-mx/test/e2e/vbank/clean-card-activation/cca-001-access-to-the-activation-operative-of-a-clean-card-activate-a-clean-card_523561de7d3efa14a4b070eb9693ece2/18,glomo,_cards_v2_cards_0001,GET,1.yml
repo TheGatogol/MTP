@@ -1,0 +1,172 @@
+when:
+  sequence: 1
+  path: /SRVS_A02/cards/v2/cards/simpleCode0001
+  method: GET
+  backend: glomo
+request:
+  headers:
+    sec-fetch-mode: cors
+    content-length: '0'
+    referer: http://localhost:8001/
+    sec-fetch-site: same-site
+    accept-language: es-MX,es;q=0.9
+    origin: http://localhost:8001
+    tsec: b9c40487f522f10c9c426e2ddfdcadd292baf585
+    accept: application/json, text/html, */*; q=0.1
+    sec-ch-ua: '"Chromium";v="124", "Google Chrome";v="124", "Not-A.Brand";v="99"'
+    sec-ch-ua-mobile: ?0
+    x-vbank-session: 6300285d-3cc1-46fa-86db-6b8fc67dc1df
+    sec-ch-ua-platform: '"macOS"'
+    host: localhost:9000
+    content-type: application/json
+    connection: keep-alive
+    cache-control: no-cache, no-store, must-revalidate
+    accept-encoding: gzip, deflate, br, zstd
+    sec-fetch-dest: empty
+    user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36
+      (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36
+  query:
+    expand: payment-methods,blocks,indicators,activations
+then:
+- return:
+    data:
+      id: 'simpleCode0001'
+      number: '4555457083070001'
+      numberType:
+        id: PAN
+        description: Permanent Account Number
+      product:
+        id: V1
+        name: Crédito BBVA SHUTDOWN alias vacio
+      availableBalance:
+        currentBalances:
+          - amount:
+              amount: 2000000
+              currency: MXN
+      cardType:
+        id: CREDIT_CARD
+        description: Tarjeta de crédito
+        physicalSupport:
+          id: NORMAL_PLASTIC
+          description: Plástico normal
+        holderName: Edivato Barragan
+        grantedCredits:
+          - amount: 3000000
+            currency: MXN
+        availableBalance:
+          postedBalances:
+            - amount: 2000000
+              currency: MXN
+          pendingBalances:
+            - amount: 0
+              currency: MXN
+        disposedBalance:
+          currentBalances:
+            - amount:
+                amount: 1000000
+                currency: MXN
+          postedBalances:
+            - amount: 1000000
+              currency: MXN
+          pendingBalances:
+            - amount: 0
+              currency: MXN
+      alias: Aqua 0001 - Inoperative
+      brandAssociation:
+        id: VISA
+        description: VISA
+      expirationDate: '**/**'
+      currencies:
+        - currency: MXN
+          isMajor: true
+      status:
+        id: INOPERATIVE
+        description: PDT.ENTREG
+      bank:
+        id: '504'
+        name: BBVA Mexico
+      images:
+        - id: FRONT_CARD
+          name: Front face of the card
+          url: https://cardcovers.caasbbva.com/mexico/477291-AC.png.imgcaas.w320.png
+        - id: BACK_CARD
+          name: Back face of the card
+          url: /imageBack.jpg
+      cutOffDate: '2016-10-01T12:00:00Z'
+      openingDate: '2016-07-01T11:31:45Z'
+      activationDate: '2016-07-01T13:32:02Z'
+      issueDate: '2016-07-01T12:05:13Z'
+      isBusiness: false
+      indicators:
+        - id: ASSOCIABLE_TO_NFC
+          description: The card can be associable to nfc.
+          isActive: false
+        - id: SECURITY_DATA_READ
+          description: Indica si los datos de seguridad de la tarjeta pueden ser leídos.
+          isActive: true
+        - id: DINAMIC_CVV
+          description: Indica si el CVV2 es dinámico
+          isActive: false
+        - id: ASSOCIABLE_TO_ADDITIONAL_CARDS
+          description: Indica si la tarjeta puede tener tarjetas asociadas
+          isActive: true
+        - id: IS_CLEAN_CARD
+          description: Indica si la tarjeta es limpia
+          isActive: true
+      activations:
+        - id: ON_OFF
+          name: Activation for global card usage
+          isActive: true
+      paymentMethods:
+        - id: MINIMUM_AMOUNT_PAYMENT
+          description: Pago mínimo
+          monetaryPayments:
+            - amount: 0
+              currency: MXN
+          nextPaymentDate: '2017-07-05T12:00:00Z'
+        - id: MINIMUM_AMOUNT_TO_AVOID_INTEREST_PAYMENT
+          description: Pago para no generar intereses
+          monetaryPayments:
+            - amount: 0
+              currency: MXN
+          nextPaymentDate: '2017-07-05T12:00:00Z'
+        - id: LAST_PERIOD_AMOUNT_PAYMENT
+          description: Deuda de este mes
+          monetaryPayments:
+            - amount: 70000
+              currency: MXN
+          nextPaymentDate: '2017-07-05T12:00:00Z'
+        - id: TOTAL_AMOUNT_PAYMENT
+          description: Saldo al corte
+          monetaryPayments:
+            - amount: 75000
+              currency: MXN
+          nextPaymentDate: '2017-07-05T12:00:00Z'
+      transactions:
+        - id: 3699A0441
+        - id: 3699A0002
+        - id: 999A1125
+    :headers:
+      content-length: '4565'
+      Server: artichoke
+      Alt-Svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      access-control-allow-headers: Content-Type, tsec, authenticationtype, authenticationdata,
+        authenticationstate, contactid, consumeruuid, consumerapplicationid, perimetertsec,
+        authorization, responsewarningcode, responsewarningdescription, cuf, field,
+        bcs-device-app-version, bcs-device-app-version, vnd.bbva.authorization, device-id
+      tsec: b9c40487f522f10c9c426e2ddfdcadd292baf585
+      X-Response-Time: 471ms
+      Date: Tue, 23 Apr 2024 17:53:20 GMT
+      Via: 1.1 google
+      access-control-allow-origin: '*'
+      Access-Control-Expose-Headers: tsec, vnd.bbva.access-token-type,vnd.bbva.access-token,
+        vnd.bbva.sso-pkcs7, authenticationtype, authenticationdata, authenticationstate,
+        authenticationchallenge
+      Cache-Control: private, no-store
+      content-type: application/json;charset=UTF-8
+      Vary: Accept-Encoding
+    :status: 200 OK
+    apiInfo:
+      name: cards
+      category: products
+      version: 0.19.0

@@ -1,0 +1,204 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: c0ee5232-4186-4f84-ba88-2729ddc48f0f
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: only_clarification_blocking_card_movement
+    lock: 'false'
+then:
+- return:
+    :body:
+    - data:
+        tags:
+        - only_clarification_blocking_card_movement
+        - '9191957962'
+        products:
+          cards:
+          - product:
+              name: ORO BBVA
+              id: AV
+            numberType:
+              id: PAN
+            cardType:
+              name: TARJETA DE CREDITO
+              id: CREDIT_CARD
+            movements:
+            - data:
+                operationDate: '2024-07-16T09:38:00.000-06:00'
+                additionalInformation:
+                  updatedBalance:
+                    amount: 0
+                    currency: MXN
+                  additionalData: ADICIONAL
+                concept: Dato de prueba recurrencia
+                contract:
+                  number: '4772133770829361'
+                  bank:
+                    name: BBVA BANCOMER
+                    id: '40012'
+                  product:
+                    name: CARDS
+                    id: CARDS
+                  numberType:
+                    name: PAN
+                    id: PAN
+                  id: MYAE3MHBB8AQ93VJCJP5MGXEZZA34KBTMCE0A4KW4H0B8R21QJY0
+                accountedDate: '2024-07-16T00:00:00.000-06:00'
+                financingType:
+                  name: PENDING
+                  id: PENDING
+                originAmount:
+                  amount: 2717
+                  currency: OTR
+                transactionType:
+                  name: PURCHASE
+                  id: PURCHASE
+                  internalCode:
+                    name: BIENES Y SERVICIOS ( COMPRAS )
+                    id: '00'
+                valuationDate: '2024-07-16T09:38:00.000-06:00'
+                moneyFlow:
+                  name: EXPENSE
+                  id: EXPENSE
+                id: 32A0V5K42DJGFZMN5KFZCNYNH7AY4WYJS5SME9WZN5XG3N4G6YT5JQXAJ0YHAE6PSMVMM55AV95T008W34EMXEP5H1DRV8NXZ9Z2G5TM0W1TRH752H5K6YTDW2JVYNJNTGS4TYN33G2H4Z1482T60GDWQG
+                detail:
+                  authorizationNumber: '800088'
+                  linkedContract:
+                    number: '007410027422443682'
+                    product:
+                      name: CARDS
+                      id: CARDS
+                    numberType:
+                      name: PAN
+                      id: PAN
+                    alias: CARDS
+                    id: '007410027422443682'
+                  store:
+                    name: OXXO
+                    logo: {}
+                    id: '00006412498'
+                    category:
+                      name: ALIMENTOS, CONSUMO, SERVICIOS
+                      id: '5499'
+                  points:
+                    totalAmount:
+                      amount: 0
+                      currency: MXN
+                    monetaryEquivalence:
+                      amount: 0
+                      currency: MXN
+                  paymentChannel: {}
+                category:
+                  name: ALIMENTOS, CONSUMO, SERVICIOS
+                  id: '5499'
+                status:
+                  name: PENDING
+                  id: PENDING
+                localAmount:
+                  amount: 2717
+                  currency: MXN
+            number: '4772133770829361'
+            relatedContracts:
+            - contractId: '007410027422443682'
+              id: HZ_9_OftTNridGwYbj_-2MTMxCCrpIKxKL2dpgPmNDg
+            cardId: pfJ_zbWH-rTewlLOoahndsgMaFnyPj5XmATpgcb5UB0
+            alias: 0009TC9361
+            detail:
+              images:
+              - name: Front face of the card
+                id: FRONT_CARD
+                url: https://cardcovers.caasbbva.com/mexico/477213-AV.png.imgcaas.w320.png
+              cardAgreement: '007410027422443682'
+              specificAmounts:
+              - amounts:
+                - amount: 51168.05
+                  currency: MXN
+                name: Saldo actual
+                id: CURRENT_BALANCE
+              - amounts:
+                - amount: 580.05
+                  currency: MXN
+                name: Saldo en tránsito
+                id: PENDING_CHARGE_BALANCE
+              - amounts:
+                - amount: 48831.95
+                  currency: MXN
+                name: Saldo disponible
+                id: AVAILABLE_BALANCE
+              - amounts:
+                - amount: 0
+                  currency: MXN
+                name: Saldo pago minimo
+                id: MINIMUM_PAYMENT_BALANCE
+              physicalSupport:
+                name: CONVENCIONAL
+                id: NORMAL_PLASTIC
+              activations:
+              - name: Indica si la tarjeta esta encendida o apagada
+                id: ON_OFF
+                isActive: true
+              indicators:
+              - name: Indica si la tarjeta cuenta con NFC
+                id: ASSOCIABLE_TO_NFC
+                isActive: true
+              - name: Indica si la tarjeta cuenta con sticker asociado
+                id: ASSOCIABLE_TO_STICKER_CARDS
+                isActive: false
+              - name: Indica si la tarjeta cuenta con una tarjeta virtual asociada
+                id: ASSOCIABLE_TO_VIRTUAL_CARDS
+                isActive: false
+              - name: Indica si la tarjeta puede ser bloqueada
+                id: BLOCKABLE
+                isActive: true
+              - name: Indica si la tarjeta puede modificar el nip de forma online
+                  por una aplicación
+                id: BLOCKABLE_NIP
+                isActive: false
+              - name: Indica si los datos de seguridad de la tarjeta pueden ser leídos
+                id: SECURITY_DATA_READ
+                isActive: false
+              - name: Indica si el CVV2 es dinámico
+                id: DINAMIC_CVV
+                isActive: true
+              - name: Indica si la tarjeta es adicional
+                id: IS_ADDITIONAL
+                isActive: false
+              rewards:
+              - name: Puntos Bancomer
+                id: BANCOMER_POINTS
+                nonMonetaryValue: 129
+              expirationDate: 2027-08-31T00:00:00.000-0600
+            simpleCode: pfJ_zbWH-rTewlLOoahndn1b1T42Ucl2
+            userAccessControl:
+            - canOperate: false
+            productType: CARD
+            status:
+              name: VIGENTE
+              id: OPERATIVE
+        authentication:
+          password: Glomo2024
+          user: '9191957962'
+          deviceId: 71A56C699197CD2FC7386802275C8243
+      lockType: null
+      lockExpiration: null
+      id: 35884439
+    :headers:
+      content-length: '4368'
+      Strict-Transport-Security: max-age=15768000
+      Server: nginx
+      ECS-Entry-Point-Zone: ext
+      Connection: keep-alive
+      host: datamanager.globaldevtools.bbva.com
+      Vary: Accept-Encoding
+      Date: Wed, 17 Jul 2024 04:04:27 GMT
+      Content-Type: application/json
+    :status: 200 OK

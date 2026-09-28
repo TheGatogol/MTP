@@ -1,0 +1,54 @@
+when:
+  sequence: 1
+  path: /SRVS_A02/personal-finances/v1/pfms/initialize
+  method: POST
+  backend: glomo
+request:
+  headers:
+    content-length: '23'
+    contactid: 603300ab-1306-4bc4-9b06-056b4e68a899
+    host: localhost:9000
+    connection: Keep-Alive
+    content-type: application/json
+    tsec: bc8fd756f00db5df2ff7ed076356deb80778044c
+    cache-control: no-cache
+    accept-encoding: gzip
+    user-agent: GLOMO_MX/99.99.99 (Android;12;Google sdk_gphone64_arm64)
+    accept: application/json, text/html, */*; q=0.1
+  body:
+    relatedContracts: []
+then:
+- return:
+    severity: FATAL
+    system-error-cause: Selected contracts couldn't be found for logged user.
+    consumer-request-id: 207a2723-e82b-4c47-a64c-ea8836f245cd
+    :headers:
+      access-control-allow-origin: '*'
+      content-length: '481'
+      Access-Control-Expose-Headers: tsec, vnd.bbva.access-token-type,vnd.bbva.access-token,
+        vnd.bbva.sso-pkcs7, authenticationtype, authenticationdata, authenticationstate,
+        authenticationchallenge
+      Server: artichoke
+      Alt-Svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      access-control-allow-headers: Content-Type, tsec, authenticationtype, authenticationdata,
+        authenticationstate, contactid, consumeruuid, consumerapplicationid, perimetertsec,
+        authorization, responsewarningcode, responsewarningdescription, cuf, field,
+        bcs-device-app-version, bcs-device-app-version, vnd.bbva.authorization, device-id
+      content-type: application/json;charset=UTF-8
+      Vary: Accept-Encoding
+      tsec: bc8fd756f00db5df2ff7ed076356deb80778044c
+      X-Response-Time: 489ms
+      Date: Tue, 08 Aug 2023 10:13:22 GMT
+      Via: 1.1 google
+    system-error-code: '400'
+    http-status: 400
+    system-error-description: Bad Request
+    error-code: '400'
+    version: 1
+    error-message: Bad Request
+    httpStatus: 400
+    messages:
+    - message: Error 400 genérico
+      type: FATAL
+      parameters: []
+    :status: 400 Bad Request

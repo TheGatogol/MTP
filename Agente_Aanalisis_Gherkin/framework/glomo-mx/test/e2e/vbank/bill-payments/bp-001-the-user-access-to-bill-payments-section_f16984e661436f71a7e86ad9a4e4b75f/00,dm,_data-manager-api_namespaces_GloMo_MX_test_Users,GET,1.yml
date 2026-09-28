@@ -1,0 +1,97 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: 4ac3e825-54f1-4de2-b6f5-c732fe829799
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: bill_payments
+then:
+- return:
+    :body:
+    - data:
+        search2:
+          search: amer
+          name: AMERICAN EXPRESS
+          alias: alitest
+          id: '000081306'
+          billNumber: '370700043409009'
+        search1:
+          search: sears
+          name: SEARS
+          alias: Tarjeta
+          id: '000653837'
+          billNumber: '123456789123'
+        tags:
+        - bill_payments
+        - stored_services
+        - one_account
+        - common_account
+        products:
+          accounts:
+          - number: '00743607000152394847'
+            product:
+              name: Cuenta de Ahorro
+              id: AH
+            numberType:
+              id: CCC
+            alias: 0010AH5021
+            id: Td-tykaA8AodU0LlgnbzY-V04zBgztZ8OBP7-TqKgfwN_lAjCsNTmA
+            detail:
+              level: '04'
+              specificAmounts:
+              - amounts:
+                - amount: 9.999636749E8
+                  currency: MXN
+                name: Saldo actual
+                id: CURRENT_BALANCE
+              - amounts:
+                - amount: 0
+                  currency: MXN
+                name: Saldo buen cobro
+                id: PENDING_DEPOSIT_BALANCE
+              indicators:
+              - name: Indica si la cuenta es de nómina
+                id: IS_PAYROLL_ACCOUNT
+                isActive: false
+              - name: Indica si la cuenta es eje
+                id: IS_PRINCIPAL_ACCOUNT
+                isActive: true
+              - name: Indica si la cuenta tiene pockets
+                id: HAS_POCKETS
+                isActive: false
+              - name: Indica si la cuenta es digital
+                id: IS_DIGITAL
+                isActive: false
+            productType: ACCOUNT
+            status:
+              name: Cuenta Activa
+              id: ACTIVE
+            subProductType:
+              name: TARJETA NOMINA BASIC
+              id: '0230'
+            signedAuthorization: {}
+        authentication:
+          password: password00
+          user: '5569631171'
+          deviceId: 9829D45F91502980AD735D091DCB4BBC
+      lockType: null
+      lockExpiration: null
+      id: 1889953
+    :headers:
+      content-length: '1512'
+      Strict-Transport-Security: max-age=15768000
+      Server: nginx
+      ECS-Entry-Point-Zone: ext
+      Connection: keep-alive
+      Vary: Accept-Encoding
+      Date: Mon, 22 Aug 2022 17:53:33 GMT
+      Content-Type: application/json
+    :status: 200 OK

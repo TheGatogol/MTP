@@ -1,0 +1,41 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: 9d5ee766-9689-436f-82e0-ec30e4c98490
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: international_transfers_with_one_n4_account
+    lock: 'false'
+then:
+- return:
+    :body:
+    - data:
+        tags:
+        - international_transfers_with_one_n4_account
+        - international_transfers
+        authentication:
+          password: Glomo2023
+          user: '5520172051'
+          deviceId: 41955008FADAD196A37C87545DEEA519
+      lockExpiration: '2023-08-16T20:48:32.893180Z'
+      lockType: SHARED
+      id: 3487091
+    :headers:
+      content-length: '290'
+      Strict-Transport-Security: max-age=15768000
+      Server: nginx
+      ECS-Entry-Point-Zone: ext
+      Connection: keep-alive
+      host: datamanager.globaldevtools.bbva.com
+      Vary: Accept-Encoding
+      Date: Wed, 16 Aug 2023 20:48:06 GMT
+      Content-Type: application/json
+    :status: 200 OK

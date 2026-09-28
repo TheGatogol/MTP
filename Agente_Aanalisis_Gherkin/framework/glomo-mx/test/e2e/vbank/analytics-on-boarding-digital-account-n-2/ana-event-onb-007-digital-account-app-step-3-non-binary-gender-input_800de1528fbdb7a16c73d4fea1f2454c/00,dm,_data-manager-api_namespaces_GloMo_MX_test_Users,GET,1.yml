@@ -1,0 +1,69 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: 4005b41c-2c02-4729-a949-2e40f578a851
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: open_an_account_non_binary
+    lock: 'false'
+then:
+- return:
+    :body:
+    - data:
+        password:
+        - password: Glomo2023
+          invalidPass: glomO#
+        address:
+        - zipCode: '54715'
+          street: Calle 54
+          invalidZP: '12345'
+          outsideNumber: '304'
+          colonies: '20632'
+          internalNumber: '1'
+          wrongZP: '00000'
+        data:
+        - numberIne: '252923074'
+          secondLastName: ALVAREZ
+          placeOfBirth: BC
+          firstLastName: ALVARADO
+          gender: NON_BINARY
+          name: ELISA
+        contact:
+        - number: '5583267462'
+          password: Glomo2023
+          invalidPhone: '123'
+          email: test@bbva.com
+          invalidEmail: a@hotmail
+        otp:
+          otp: '945327'
+        locale: es_mx
+        people:
+          customer:
+            birthData:
+              birthDate: '1954-12-05'
+        tags:
+        - '5570130950'
+        - open_an_account_non_binary
+        authentication:
+          user: '5507310950'
+      lockExpiration: null
+      lockType: null
+      id: 36050811
+    :headers:
+      content-length: '806'
+      Cache-Control: max-age=0
+      Connection: keep-alive
+      host: datamanager.globaldevtools.bbva.com
+      Vary: Accept-Encoding
+      Expires: Thu, 27 Feb 2025 21:46:12 GMT
+      Date: Thu, 27 Feb 2025 21:46:12 GMT
+      Content-Type: application/json; charset=utf-8
+    :status: 200 OK

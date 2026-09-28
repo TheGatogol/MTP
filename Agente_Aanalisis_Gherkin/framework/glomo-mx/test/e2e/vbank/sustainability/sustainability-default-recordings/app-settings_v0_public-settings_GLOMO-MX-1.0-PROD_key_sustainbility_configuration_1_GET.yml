@@ -1,0 +1,576 @@
+when:
+  backend: glomo
+  method: GET
+  path: /app-settings/v0/public-settings/GLOMO-MX-1.0-PROD
+  match:
+    query.key: 'sustainability_carbon_footprint'
+then:
+  - return:
+      :status: 200 OK
+      data:
+      - key: sustainability_carbon_footprint
+        value: '{
+            "data": {
+                "texts": {
+                  "alerts": {
+                    "noTransactionsAlert": {
+                      "titleId": "noFootprintTitle",
+                      "micro": "emptystateday",
+                      "useAltDescription": true,
+                      "ambient": "dark",
+                      "possibleActions": [
+                        {
+                          "subtitleId": "noFootprintSubtitle",
+                          "questionId": "suggestions",
+                          "actions": [
+                            "bringReceipts",
+                            "payWithCard",
+                            "pfmRecategorization"
+                          ],
+                          "rules": [
+                            {
+                              "id": "appHasBringReceiptsFeature",
+                              "value": true
+                            }
+                          ]
+                        },
+                        {
+                          "subtitleId": "noFootprintSubtitle",
+                          "questionId": "suggestions",
+                          "actions": [
+                            "payReceipts",
+                            "domicileReceipts",
+                            "payWithCard" 
+                          ],
+                          "rules": [
+                            {
+                              "id": "appHasBringReceiptsFeature",
+                              "value": false
+                            },
+                            {
+                              "id": "clientHasCard",
+                              "value": true
+                            }
+                          ]
+                        },
+                        {
+                          "subtitleId": "noFootprintSubtitle",
+                          "questionId": "suggestions",
+                          "actions": [
+                            "domicileReceipts",
+                            "viewCards",
+                            "payReceipts"
+                          ],
+                          "rules": [
+                            {
+                              "id": "appHasBringReceiptsFeature",
+                              "value": false
+                            },
+                            {
+                              "id": "clientHasCard",
+                              "value": false
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    "noElectricityCategory": {
+                      "titleId": "noElectricityTitle",
+                      "micro": "searchticket",
+                      "possibleActions": [
+                        {
+                          "subtitleId": "needElectricityReceiptsSubtitle",
+                          "questionId": "bringElectricityReceiptsQuestion",
+                          "actions": [
+                            "bringReceipts",
+                            "pfmRecategorization"
+                          ],
+                          "rules": [
+                            {
+                              "id": "appHasBringReceiptsFeature",
+                              "value": true
+                            }
+                          ]
+                        },
+                        {
+                          "subtitleId": "needElectricityExpensesSubtitle",
+                          "questionId": "payElectricityReceiptsQuestion",
+                          "actions": [
+                            "payReceipts",
+                            "domicileReceipts"
+                          ],
+                          "rules": [
+                            {
+                              "id": "appHasBringReceiptsFeature",
+                              "value": false
+                            },
+                            {
+                              "id": "appHasPayInAppFeature",
+                              "value": true
+                            }
+                          ]
+                        },
+                        {
+                          "subtitleId": "needElectricityExpensesSubtitle",
+                          "questionId": "payElectricityReceiptsQuestion",
+                          "actions": [
+                            "domicileReceipts"
+                          ],
+                          "rules": [
+                            {
+                              "id": "appHasBringReceiptsFeature",
+                              "value": false
+                            },
+                            {
+                              "id": "appHasPayInAppFeature",
+                              "value": false
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    "noGasCategory": {
+                      "titleId": "noGasTitle",
+                      "micro": "searchticket",
+                      "possibleActions": [
+                        {
+                          "subtitleId": "needGasReceiptsSubtitle",
+                          "questionId": "bringGasReceiptsQuestion",
+                          "actions": [
+                            "bringReceipts",
+                            "pfmRecategorization"
+                          ],
+                          "rules": [
+                            {
+                              "id": "appHasBringReceiptsFeature",
+                              "value": true
+                            }
+                          ]
+                        },
+                        {
+                          "subtitleId": "needGasExpensesSubtitle",
+                          "questionId": "payGasReceiptsQuestion",
+                          "actions": [
+                            "payReceipts",
+                            "domicileReceipts"
+                          ],
+                          "rules": [
+                            {
+                              "id": "appHasBringReceiptsFeature",
+                              "value": false
+                            },
+                            {
+                              "id": "appHasPayInAppFeature",
+                              "value": true
+                            }
+                          ]
+                        },
+                        {
+                          "subtitleId": "needGasExpensesSubtitle",
+                          "questionId": "payGasReceiptsQuestion",
+                          "actions": [
+                            "domicileReceipts"
+                          ],
+                          "rules": [
+                            {
+                              "id": "appHasBringReceiptsFeature",
+                              "value": false
+                            },
+                            {
+                              "id": "appHasPayInAppFeature",
+                              "value": false
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    "noFuelsCategory": {
+                      "titleId": "noFuelsTitle",
+                      "micro": "searchticket",
+                      "possibleActions": [
+                        {
+                          "subtitleId": "needFuelsExpensesSubtitle",
+                          "questionId": "useCardFuelsQuestion",
+                                    "actions":[
+                                      "payWithCard",
+                                      "pfmRecategorization"
+                                    ],
+                                    "rules":[
+                                      {
+                                        "id": "clientHasCard",
+                                        "value": true
+                                      },
+                                      {
+                                        "id": "appHasRecategorization",
+                                        "value": true
+                                      }
+                                  ]
+                                },
+                        {
+                          "subtitleId": "needFuelsExpensesSubtitle",
+                          "questionId": "useCardFuelsQuestion",
+                          "actions": [
+                            "accept"
+                          ],
+                          "rules": [
+                            {
+                              "id": "clientHasCard",
+                              "value": true
+                            },
+                                      {
+                                        "id": "appHasRecategorization",
+                                        "value": false
+                                      }
+                          ]
+                        },
+                        {
+                          "subtitleId": "needFuelsExpensesSubtitle",
+                          "questionId": "contractCardFuelsQuestion",
+                          "actions": [
+                            "viewCards"
+                          ],
+                          "rules": [
+                            {
+                              "id": "clientHasCard",
+                              "value": false
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    "noHomeCategory": {
+                      "titleId": "noHomeTitle",
+                      "micro": "searchticket",
+                      "possibleActions": [
+                        {
+                          "subtitleId": "needHomeReceiptsSubtitle",
+                          "questionId": "bringHomeReceiptsQuestion",
+                          "actions": [
+                            "bringReceipts",
+                            "pfmRecategorization"
+                          ],
+                          "rules": [
+                            {
+                              "id": "appHasBringReceiptsFeature",
+                              "value": true
+                            }
+                          ]
+                        },
+                        {
+                          "subtitleId": "needHomeReceiptsSubtitle",
+                          "questionId": "payHomeReceiptsQuestion",
+                          "actions": [
+                            "payReceipts",
+                            "domicileReceipts"
+                          ],
+                          "rules": [
+                            {
+                              "id": "appHasBringReceiptsFeature",
+                              "value": false
+                            },
+                            {
+                              "id": "appHasPayInAppFeature",
+                              "value": true
+                            }
+                          ]
+                        },
+                        {
+                          "subtitleId": "needHomeReceiptsSubtitle",
+                          "questionId": "payHomeReceiptsQuestion",
+                          "actions": [
+                            "domicileReceipts"
+                          ],
+                          "rules": [
+                            {
+                              "id": "appHasBringReceiptsFeature",
+                              "value": false
+                            },
+                            {
+                              "id": "appHasPayInAppFeature",
+                              "value": false
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    "noFuelsAndOtherCategory": {
+                      "titleId": "noFuelsAndOtherTitle",
+                      "micro": "searchticket",
+                      "possibleActions": [
+                        {
+                          "subtitleId": "needFuelsAndOtherInfoSubtitle",
+                          "questionId": "bringReceiptsUseYourCardFuelsQuestion",
+                          "actions": [
+                            "bringReceipts",
+                            "pfmRecategorization"
+                          ],
+                          "rules": [
+                            {
+                              "id": "appHasBringReceiptsFeature",
+                              "value": true
+                            }
+                          ]
+                        },
+                        {
+                          "subtitleId": "needFuelsAndOtherInfoSubtitle",
+                          "questionId": "bringReceiptsUseYourCardFuelsQuestion",
+                          "actions": [
+                            "payReceipts",
+                            "domicileReceipts",
+                            "payWithCard"
+                          ],
+                          "rules": [
+                            {
+                              "id": "appHasBringReceiptsFeature",
+                              "value": false
+                            },
+                            {
+                              "id": "countryClientsMustHaveCardLinkedWithAccount",
+                              "value": true
+                            }
+                          ]
+                        },
+                        {
+                          "subtitleId": "needFuelsAndOtherInfoSubtitle",
+                          "questionId": "bringReceiptsUseYourCardFuelsQuestion",
+                          "actions": [
+                            "domicileReceipts",
+                            "payReceipts"
+                          ],
+                          "rules": [
+                            {
+                              "id": "appHasBringReceiptsFeature",
+                              "value": false
+                            },
+                            {
+                              "id": "countryClientsMustHaveCardLinkedWithAccount",
+                              "value": false
+                            },
+                            {
+                              "id": "clientHasCard",
+                              "value": true
+                            }
+                          ]
+                        },
+                        {
+                          "subtitleId": "needFuelsAndOtherInfoSubtitle",
+                          "questionId": "bringReceiptsUseCardFuelsQuestion",
+                          "actions": [
+                            "domicileReceipts",
+                            "viewCards"
+                          ],
+                          "rules": [
+                            {
+                              "id": "appHasBringReceiptsFeature",
+                              "value": false
+                            },
+                            {
+                              "id": "countryClientsMustHaveCardLinkedWithAccount",
+                              "value": false
+                            },
+                            {
+                              "id": "clientHasCard",
+                              "value": false
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    "highFuelsEmmisions": {
+                      "titleId": "highFuelsTitle",
+                      "micro": "speedometerhigh",
+                      "groupAction": "transportation",
+                      "possibleActions": [
+                        {
+                          "subtitleId": "highFuelsSubtitle",
+                          "questionId": "highEmissionsQuestion",
+                          "actions": [
+                            "viewAdvices"
+                          ],
+                          "rules": []
+                        }
+                      ]
+                    },
+                    "highGasEmmisions": {
+                      "titleId": "highGasTitle",
+                      "micro": "speedometerhigh",
+                      "groupAction": "heating",
+                      "possibleActions": [
+                        {
+                          "subtitleId": "highGasSubtitle",
+                          "questionId": "highEmissionsQuestion",
+                          "actions": [
+                            "viewAdvices"
+                          ],
+                          "rules": []
+                        }
+                      ]
+                    },
+                    "highElectricityEmmisions": {
+                      "titleId": "highElectricityTitle",
+                      "micro": "speedometerhigh",
+                      "groupAction": "electricity",
+                      "possibleActions": [
+                        {
+                          "subtitleId": "highElectricitySubtitle",
+                          "questionId": "highEmissionsQuestion",
+                          "actions": [
+                            "viewAdvices"
+                          ],
+                          "rules": []
+                        }
+                      ]
+                    },
+                    "highHomeEmmisions": {
+                      "titleId": "highHomeTitle",
+                      "micro": "speedometerhigh",
+                      "groupAction": "heating",
+                      "possibleActions": [
+                        {
+                          "subtitleId": "highHomeSubtitle",
+                          "questionId": "highEmissionsQuestion",
+                          "actions": [
+                            "viewAdvices"
+                          ],
+                          "rules": []
+                        }
+                      ]
+                    },
+                    "highHomeAndFuelsEmmisions": {
+                      "titleId": "highHomeAndFuelsTitle",
+                      "micro": "speedometerhigh",
+                      "groupAction": "transportation",
+                      "possibleActions": [
+                        {
+                          "subtitleId": "highHomeAndFuelsSubtitle",
+                          "questionId": "highEmissionsQuestion",
+                          "actions": [
+                            "viewAdvices"
+                          ],
+                          "rules": []
+                        }
+                      ]
+                    }
+                  },
+                  "actions": {
+                    "bringReceipts": {
+                      "icon": "bbvaTicket",
+                      "titleId": "bringReceiptsActionTitle",
+                      "descriptionId": "payElectricityGas"
+                    },
+                    "domicileReceipts": {
+                      "titleId": "domicileReceiptsActionTitle",
+                      "descriptionId": "enablePayReceipts",
+                      "altDescriptions": [{ "textId": "payElectricityGas" }],
+                      "icon": "bbvaTicket",
+                      "modal": {
+                        "titleId": "domicileYourReceipts",
+                        "descriptionId": "domicileReceiptsExplanation",
+                        "buttonTextId": "accept",
+                        "icon": "bbvaInfo"
+                      }
+                    },
+                    "payReceipts": {
+                      "titleId": "payReceiptsActionTitle",
+                      "descriptionId": "payReceiptsActionDescription",
+                      "icon": "bbvaMobile",
+                          "rule": {
+                              "id": "appHasPayInAppFeature",
+                              "value": true
+                          }
+                    },
+                    "accept": {
+                      "titleId": "accept"
+                    },
+                    "viewCards": {
+                      "titleId": "viewCardsActionTitle",
+                      "descriptionId": "viewCardsActionDescription",
+                      "altDescriptions": [{ "textId": "payReceiptsAndFuels" }],
+                      "icon": "bbvaCard"
+                    },
+                    "payWithCard": {
+                      "titleId": "payWithCardActionTitle",
+                      "descriptionId":"payReceiptsAndFuels",
+                      "altDescriptions": [
+                        {
+                          "linkedWith": "bringReceipts",
+                          "textId": "useCardFuels"
+                        },
+                        {
+                          "linkedWith": "domicileReceipts",
+                          "textId": "payReceiptsAndFuels"
+                        }
+                      ],
+                      "icon": "bbvaCard",
+                      "rule": {
+                        "id": "appHasPayInAppFeature",
+                        "value": true
+                      },
+                      "disableLink": true
+                    },
+                    "viewAdvices": {
+                      "titleId": "viewAdvicesActionTitle"
+                    },
+                    "pfmRecategorization": {
+                      "titleId": "pfmRecategorizationActionTitle",
+                      "descriptionId": "pfmRecategorizationActionDescription",
+                      "icon": "bbvaSales",
+                      "rule": {
+                        "id": "appHasRecategorization",
+                        "value": true
+                      }
+                    }
+                  },
+                  "recommendations": {
+                    "home-heat-boiler": {
+                      "url": "",
+                      "isEnabled": true
+                    },
+                    "home-elec-leds": {
+                      "url": "",
+                      "isEnabled": true
+                    },
+                    "tran-fuel-eco-trans": {
+                      "url": "",
+                      "isEnabled": true
+                    },
+                    "home-heat-window": {
+                      "url": "",
+                      "isEnabled": true
+                    },
+                    "circ-econ-comsuption": {
+                      "url": "",
+                      "isEnabled": true
+                    },
+                    "home-elec-newappl": {
+                      "url": "",
+                      "isEnabled": true
+                    },
+                    "circ-econ-earthcare": {
+                      "url": "",
+                      "isEnabled": true
+                    },
+                    "home-elec-appliance": {
+                      "url": "",
+                      "isEnabled": true
+                    },
+                    "home-elec-devices": {
+                      "url": "",
+                      "isEnabled": true
+                    },
+                    "home-heat-temp": {
+                      "url": "",
+                      "isEnabled": true
+                    },
+                    "tran-fuel-elec-car": {
+                      "url": "",
+                      "isEnabled": true
+                    },
+                    "home-elec-panels": {
+                      "url": "",
+                      "isEnabled": true
+                    }
+                  }
+                }
+            }
+}'

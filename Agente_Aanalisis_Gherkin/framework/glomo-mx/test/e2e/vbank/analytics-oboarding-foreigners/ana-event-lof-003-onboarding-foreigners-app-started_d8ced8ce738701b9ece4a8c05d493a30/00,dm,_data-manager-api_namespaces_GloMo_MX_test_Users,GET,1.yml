@@ -1,0 +1,86 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: ba0a0054-3cf2-4126-bc42-c48f863ed1ff
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: open_new_account_foreing
+    lock: 'false'
+then:
+- return:
+    :body:
+    - data:
+        password:
+        - password: Glomo2023
+          invalidPass: glomO#
+        address:
+        - zipCode: '42830'
+          outerNumber: '3'
+          colony: Tolteca
+          invalidstreet: Calle!
+          street: Rio Usuamacinta
+          invalidZP: '00066'
+          invalidZPcharacters: '006'
+          outsideNumber: '10'
+          newstreet: Hidalgo
+          internalNumber: '04'
+        data:
+        - secondLastName: Ulloa
+          placeOfBirth: Cl
+          firstLastName: Carcamo
+          gender: Mujer
+          passport: F40224056
+          name: Carolina Andrea
+          newname: Maria Elena
+        dataError:
+        - secondLastName: Hernández-García
+          placeOfBirth: Cl
+          firstLastName: Hernández-García
+          gender: Mujer
+          passport: Z123
+          name: Ariel-zoe
+          newname: Maria Elena
+        contact:
+        - number: '7351620629'
+          password: Glomo2023
+          invalidPhone: '123'
+          email: prueba@gmail.com
+          invalidEmail: a@hotmail
+        otp:
+          otp: '945327'
+        peopleError:
+          customer:
+            birthData:
+              birthDate: '2025-06-06'
+        locale: es_mx
+        people:
+          customer:
+            birthData:
+              birthDate: '1995-11-14'
+        tags:
+        - '7351620629'
+        - open_new_account_foreing
+        authentication:
+          user: '5583267461'
+          deviceId: CA4454A3D02655594C0071A0E57B5A39
+      lockExpiration: null
+      lockType: null
+      id: 36141398
+    :headers:
+      content-length: '1247'
+      Cache-Control: max-age=0
+      Connection: keep-alive
+      host: datamanager.globaldevtools.bbva.com
+      Vary: Accept-Encoding
+      Expires: Fri, 03 Oct 2025 04:23:37 GMT
+      Date: Fri, 03 Oct 2025 04:23:37 GMT
+      Content-Type: application/json; charset=utf-8
+    :status: 200 OK

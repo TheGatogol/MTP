@@ -1,0 +1,679 @@
+when:
+  sequence: 1
+  path: /SRVS_A02/cards/v2/cards/ab8002
+  method: GET
+  backend: glomo
+request:
+  headers:
+    sec-fetch-mode: cors
+    content-length: '0'
+    referer: http://localhost:8001/
+    sec-fetch-site: same-site
+    accept-language: es-MX,es;q=0.9
+    origin: http://localhost:8001
+    tsec: 54f314b43f4313479a41bce549148da86538645d
+    accept: application/json, text/html, */*; q=0.1
+    sec-ch-ua: '"Not(A:Brand";v="8", "Chromium";v="144", "Google Chrome";v="144"'
+    sec-ch-ua-mobile: ?0
+    x-vbank-session: 525e16f5-b8e7-48ea-9af9-38e5dad3dc9c
+    sec-ch-ua-platform: '"macOS"'
+    host: localhost:9000
+    content-type: application/json
+    connection: keep-alive
+    cache-control: no-cache, no-store, must-revalidate
+    accept-encoding: gzip, deflate, br, zstd
+    sec-fetch-dest: empty
+    user-agent: GLOMO_MX/99.99.99 (Android;14;Samsung)
+  query:
+    expand: activations,blocks,indicators,payment-methods,related-contracts
+then:
+- return:
+    data:
+      brandAssociation:
+        description: VISA
+        id: VISA
+      formats:
+      - number: ''
+        numberType:
+          description: Primary Account Number
+          id: CLABE
+      numberType:
+        description: PRIMARY ACCOUNT NUMBER
+        id: PAN
+      cardAgreement: '050400010100128001'
+      availableBalance:
+        currentBalances:
+        - amount:
+            amount: 2000000
+            currency: MXN
+      number: '7555457083008002'
+      balances:
+        specificAmountsBalance:
+          specificAmounts:
+          - amount:
+              amount: 140000
+              currency: MXN
+            id: REVOLVING_BALANCE
+          rates:
+            itemizeRates:
+            - rateType: PERSONALIZED
+              itemizeRatesUnit:
+                unitRateType: PERCENTAGE
+                percentage: 49.99
+      bank:
+        name: BBVA Mexico
+        id: '504'
+      pin: '1234'
+      cutOffDate: '2024-12-03T12:00:00Z'
+      paymentMethods:
+      - nextPaymentDate: '2024-12-23T12:00:00Z'
+        description: Saldo al corte
+        id: TOTAL_AMOUNT_PAYMENT
+        monetaryPayments:
+        - amount: 75000
+          currency: MXN
+        frequency:
+          name: Monthly payment
+          id: MONTHLY
+      alias: 0001AH8002
+      simpleCode: ab8002
+      id: ab8002
+      issueDate: 2025-02-14T00:00:00.000-0600
+      installmentsPlans:
+        simulations:
+        - capital:
+            amount: 5000
+            currency: MXN
+          fees:
+            itemizeFees:
+            - description: Specific Transaction
+              feeType: SPECIFIC_TRANSACTION
+              itemizeFeeUnit:
+                unitType: PERCENTAGE
+                percentage: 0.2
+            - description: TIN
+              feeType: DIRECT_PERIODIC
+              itemizeFeeUnit:
+                unitType: PERCENTAGE
+                percentage: 5
+            - description: TAE
+              feeType: DIRECT_PERIODIC
+              itemizeFeeUnit:
+                unitType: PERCENTAGE
+                percentage: 3
+          firstInstallmentDate: '2017-06-24'
+          pointsBalances:
+          - pointsBalanceType:
+              name: Current points
+              id: POINTS_TO_DAY
+            points: 2000
+          - pointsBalanceType:
+              name: Eliminated points
+              id: POINTS_DELETED_BY_THE_PURCHASE
+            points: 800
+          - pointsBalanceType:
+              name: Remaining points
+              id: REMAINING_POINTS
+            points: 1200
+          financingCalculationFormat:
+            unit:
+              amount: 5000
+              currency: MXN
+              id: AMOUNT
+            id: TOTAL_AMOUNT_PAYMENT
+          installments:
+          - number: 1
+            specificAmounts:
+            - amount:
+                amount: 300
+                currency: MXN
+              id: PAYMENT_AMOUNT
+            maturityDate: '2021-01-24'
+            id: 76654-5453
+          - number: 2
+            specificAmounts:
+            - amount:
+                amount: 300
+                currency: MXN
+              id: PAYMENT_AMOUNT
+            maturityDate: '2021-02-24'
+            id: 54-343
+          - number: 3
+            specificAmounts:
+            - amount:
+                amount: 300
+                currency: MXN
+              id: PAYMENT_AMOUNT
+            maturityDate: '2021-03-24'
+            id: 76654-5453
+          specificAmounts:
+          - amount:
+              amount: 1200
+              currency: MXN
+            id: TOTAL
+          - amount:
+              amount: 1200
+              currency: MXN
+            id: CAPITAL
+          - amount:
+              amount: 400
+              currency: MXN
+            id: PAYMENT_AMOUNT
+          lastInstallmentDate: '2017-06-24'
+          rates:
+            totalRates:
+              amount: 75
+              currency: MXN
+            itemizeRates:
+            - rateType: CAT
+              itemizeRatesUnit:
+                unitRateType: PERCENTAGE
+                percentage: 10
+              description: CAT
+              calculationDate: '2021-04-30'
+            - rateType: TASA
+              itemizeRatesUnit:
+                unitRateType: PERCENTAGE
+                percentage: 12
+              description: Tasa anual
+              calculationDate: '2021-04-30'
+          id: '123324234'
+          transactions:
+          - id: MXN0001
+          promotionPeriods:
+          - promotionPeriodType:
+              id: VALIDITY
+            endDate: '2019-05-31'
+            initialDate: '2019-05-19'
+          - promotionPeriodType:
+              id: PURCHASE_REGISTRY
+            endDate: '2019-06-06'
+            initialDate: '2019-05-25'
+      openingDate: 2025-02-14T00:00:00.000-0600
+      productType:
+        id: CARD
+      limits:
+      - isEditable: true
+        name: Límite mensual de compras en un comercio
+        disposedLimitPercentage: 25
+        id: POS_DAILY
+        amountLimits:
+        - amount: 5000
+          currency: MXN
+        allowedInterval:
+          maximumAmount:
+            amount: 20000
+            currency: USD
+          minimumAmount:
+            amount: 50
+            currency: USD
+        disposedLimits:
+        - amount: 5000
+          currency: MXN
+      - isEditable: true
+        name: Límite máximo de consumo
+        id: GRANTED_CREDIT
+        amountLimits:
+        - amount: 250000
+          currency: MXN
+        allowedInterval:
+          maximumAmount:
+            amount: 500000
+            currency: MXN
+          minimumAmount:
+            amount: 50
+            currency: MXN
+        disposedLimits:
+        - amount: 150000
+          currency: MXN
+      expirationDate: '2031-05-31'
+      participants:
+      - participantId: '1234123276'
+        firstName: Hugo
+        lastName: Sánchez
+        participantType:
+          name: Titular
+          id: HOLDER
+      offers:
+      - isEditable: true
+        rates:
+          totalRates:
+            amount: 240
+            currency: MXN
+          itemizeRates:
+          - rateType: Costo Anual Total
+            itemizeRatesUnit:
+              amount: 20
+              currency: MXN
+            description: Costo Anual Total
+            calculationDate: '2020-04-27'
+          - rateType: Tasa Anual
+            itemizeRatesUnit:
+              unitRateType: PERCENTAGE
+              percentage: 10.01
+            description: Tasa Anual
+            calculationDate: '2020-04-27'
+          - rateType: Revire
+            itemizeRatesUnit:
+              unitRateType: PERCENTAGE
+              percentage: 20
+            description: Revire
+            calculationDate: '2020-04-27'
+          - rateType: Tasa
+            itemizeRatesUnit:
+              unitRateType: PERCENTAGE
+              percentage: 2
+            description: Tasa
+            calculationDate: '2020-04-27'
+        details:
+          minimumTerms:
+          - number: 3
+            frequency: MONTHLY
+          product:
+            name: MSI
+            subproduct:
+              name: MSA
+              id: MSA
+            id: MSI
+          period:
+            maxDisposalDate: '2020-10-31'
+            endDate: '2020-12-31'
+            requestDate: '2020-12-31'
+            startDate: '2020-12-20'
+          receivingAccount:
+            relationType:
+              name: Reciever account.
+              id: RECEIVER_ACCOUNT
+            number: '6573548902'
+            product:
+              name: Una cuenta como el producto financiero asociado al contrato.
+              id: ACCOUNTS
+            numberType:
+              name: Código Cuenta Cliente, español para Código de Cuenta de Cliente.
+                Es un nombre dado en España a una cuenta bancaria estándar.
+              id: CCC
+            alias: Cuenta de Nómina
+            id: '1002'
+          fees:
+            itemizeFees:
+            - mode:
+                name: Amount
+                id: AMOUNT
+              name: Direct monthly
+              feeType: DIRECT_PERIODIC
+              itemizeFeeUnit:
+                amount: 0
+                currency: MXN
+          suggestedAmount:
+            amount: 7000
+            currency: MXN
+          installmentAmount:
+            amount: 180.55
+            currency: MXN
+          maximumAmount:
+            amount: 12000
+            currency: MXN
+          preferential:
+            id: S
+          offerType: CASH_ADVANCE
+          totalAmount:
+            amount: 5000
+            currency: MXN
+          maximumTerms:
+          - number: 24
+            frequency: MONTHLY
+          suggestedTerm: 3
+          allowedTerms:
+          - number: 3
+            frequency: MONTHLY
+          - number: 6
+            frequency: MONTHLY
+          - number: 9
+            frequency: MONTHLY
+          - number: 12
+            frequency: MONTHLY
+          - number: 24
+            frequency: MONTHLY
+          minimumAmount:
+            amount: 5000
+            currency: MXN
+          offerGroupCategory:
+            categoryType:
+              id: '0002'
+            subgroups:
+              id: '0003'
+            id: '0001'
+        id: '9001'
+      - isEditable: true
+        rates:
+        - mode:
+            name: Porcentaje a cobrar
+            id: PERCENTAGE
+          rateType:
+            name: Tasa de la cuota
+            id: TASA MENSUAL
+          unit:
+            percentage: 0.25
+        - mode:
+            name: Porcentaje a cobrar
+            id: PERCENTAGE
+          rateType:
+            name: Tasa anual ponderada
+            id: TASA ANUAL SALDO
+          unit:
+            percentage: 0.3
+        - mode:
+            name: Porcentaje a cobrar
+            id: PERCENTAGE
+          rateType:
+            name: Anual
+            id: CAT
+          unit:
+            percentage: 38.2
+          calculationDate: '2018-06-01'
+        details:
+          minimumTerms: 3
+          totalAmount:
+            amount: 5000
+            currency: MXN
+          receivingAccount:
+            relationType:
+              name: Reciever account.
+              id: RECEIVER_ACCOUNT
+            number: '6573548902'
+            product:
+              name: Una cuenta como el producto financiero asociado al contrato.
+              id: ACCOUNTS
+            numberType:
+              name: Código Cuenta Cliente, español para Código de Cuenta de Cliente.
+                Es un nombre dado en España a una cuenta bancaria estándar.
+              id: CCC
+            alias: Cuenta de Nómina
+            id: '1002'
+          fees:
+            itemizeFees:
+            - mode:
+                name: Amount
+                id: AMOUNT
+              name: Direct monthly
+              feeType: DIRECT_PERIODIC
+              itemizeFeeUnit:
+                amount: 0
+                currency: MXN
+          suggestedAmount:
+            amount: 7000
+            currency: MXN
+          maximumTerms: 18
+          installmentAmount:
+            amount: 180.55
+            currency: MXN
+          suggestedTerm: 9
+          allowedTerms:
+          - number: 3
+            frequency: MONTHLY
+          - number: 6
+            frequency: MONTHLY
+          - number: 9
+            frequency: MONTHLY
+          - number: 12
+            frequency: MONTHLY
+          - number: 15
+            frequency: MONTHLY
+          - number: 18
+            frequency: MONTHLY
+          maximumAmount:
+            amount: 12000
+            currency: MXN
+          minimumAmount:
+            amount: 5000
+            currency: MXN
+          contractReferenceNumber: '75645378390023415647'
+        id: '1234'
+        type:
+          name: Efectivo inmediato
+          id: CASH_ADVANCE
+      images:
+      - name: Front face of the card
+        id: FRONT_CARD
+        url: https://cardcovers.caasbbva.com/mexico/415231-VD.png.imgcaas.w320.png
+      - name: Back face of the card
+        id: BACK_CARD
+        url: /imageBack.jpg
+      product:
+        name: DEBITO BBVA
+        description: 0001AH8002
+        id: VD
+      blocks:
+      - blockId: STOLEN
+        reference: A23456
+        dynamicDate: -3
+        reason:
+          name: Card is blocked
+          id: STOLEN
+        additionalInformation: Card blocked internally due customer has a debt that
+          is not collectible. Reported by Bill White
+        blockDate: '2016-12-01T16:05:14Z'
+        isReissued: false
+        name: Card blocked due internally process
+        isActive: true
+      - blockId: LOST
+        reference: A23456
+        dynamicDate: -3
+        reason:
+          name: Card is blocked
+          id: LOST
+        additionalInformation: Card blocked internally due customer has a debt that
+          is not collectible. Reported by Bill White
+        blockDate: '2016-12-01T16:05:14Z'
+        isReissued: false
+        name: Card blocked due internally process
+        isActive: true
+      deliveriesPost:
+      - serviceType:
+          description: Work Place Office
+          id: workPlace
+        operationDate: '2023-06-23T10:00:00Z'
+        address:
+          addressType: SPECIFIC
+          location:
+            additionalInformation: COSTADO COLEGIO SAN AGUSTIN
+            formattedAddress: Avenida República de Ecuador 1234 Piso 2 Interior 205
+              Urbanización Corpac
+            locationTypes:
+            - HOME
+            meta:
+              stratum: High
+            addressComponents:
+            - code: PE
+              componentTypes:
+              - COUNTRY
+            - code: LI
+              componentTypes:
+              - ADMINISTRATIVE_AREA_LEVEL_2
+            - componentTypes:
+              - CITY
+              name: Lima
+            - code: '0101004'
+              componentTypes:
+              - UBIGEO
+            - componentTypes:
+              - URBANIZATION
+              name: Corpac
+            - componentTypes:
+              - AVENUE
+              name: República de Ecuador
+            - componentTypes:
+              - EXTERIOR_NUMBER
+              name: '1234'
+            - componentTypes:
+              - FLOOR
+              name: '2'
+            - componentTypes:
+              - INTERIOR_NUMBER
+              name: '205'
+            - componentTypes:
+              - DOOR
+              name: B
+            - code: '34566'
+              componentTypes:
+              - POSTAL_CODE
+            geolocation:
+              latitude: 40.814507
+              longitude: -74.07273
+        method: PRIORITY
+        receiver:
+          receiverType:
+            id: EMPLOYED
+          fullName: Joaquín Velázquez de León
+        contact:
+          contact:
+            number: '0525512345678'
+            contactDetailType: MOBILE
+            phoneCompany:
+              name: TELEKOM
+              id: TELCEL
+          contactType: SPECIFIC
+          id: 454fdf
+        destination:
+          id: HOME
+          branch:
+            id: MAD1234
+        id: '75646873'
+        deliverySchedules:
+        - date: '2023-06-23'
+          startTime: '10:00:00'
+          endTime: '12:00:00'
+          id: FRIDAY
+        packagingType:
+          name: Automated fulfillment for existing customers on standard card replacements
+          id: STANDARD
+      cardType:
+        grantedCredits:
+        - amount: 3000000
+          currency: MXN
+        holderName: Carlos Santana
+        physicalSupport:
+          description: CONVENCIONAL
+          id: NORMAL_PLASTIC
+        disposedBalance:
+          currentBalances:
+          - amount:
+              amount: 1900000
+              currency: MXN
+          pendingBalances:
+          - amount: 0
+            currency: MXN
+          postedBalances:
+          - amount: 1900000
+            currency: MXN
+        description: Tarjeta de debito
+        id: DEBIT_CARD
+        availableBalance:
+          pendingBalances:
+          - amount: 0
+            currency: MXN
+          postedBalances:
+          - amount: 2000000
+            currency: MXN
+      transactions: []
+      indicators:
+      - id: BLOCKABLE
+        isActive: true
+      zeroInterest:
+      - card_payments_simulate_zero_interest
+      availableCutOffDates:
+      - cutOffDate: '2025-10-01'
+        id: '2020012020200210'
+        paymentDate: '2025-10-21'
+      - cutOffDate: '2025-10-03'
+        id: '2020012220200211'
+        paymentDate: '2025-10-23'
+      relatedContracts:
+      - relationType:
+          name: Linked with
+          id: LINKED_WITH
+        number: '050400010100128001'
+        product:
+          name: Tarjetas
+          id: CARDS
+        numberType:
+          name: Permanent Account Number
+          id: PAN
+        relatedContractId: '8001'
+        contractId: '8001'
+      security_data:
+      - validityPeriod:
+          value: 180
+          timeUnit: SECONDS
+        code: '001'
+        name: Card Verification Value
+        id: CVV
+      activations:
+      - description: Activation for global card usage
+        isActive: true
+        activationId: ON_OFF
+      blockTypes:
+      - name: Indicates that the card is blocked because of damage.
+        id: DAMAGE
+      - name: Card blocked by lost.
+        id: LOST
+      - name: Indicates that the card is blocked because of stolen.
+        id: STOLEN
+      userAccessControl:
+      - canOperate: false
+      activationDate: '2025-02-14'
+      conditions: []
+      rewards:
+      - unitType:
+          name: Puntos
+          id: POINTS
+        nonMonetaryValueExpirationDate: '2018-10-19'
+        isRedeemable: false
+        rewardId: BANCOMER_POINTS
+        balance:
+          endDate: '2018-09-01'
+          rewardBreakDown:
+          - id: GENERATED
+            nonMonetaryValue: 7030
+          - id: APPLIED
+            nonMonetaryValue: 150
+          - id: EXPIRED
+            nonMonetaryValue: 110
+          - id: CURRENT
+            nonMonetaryValue: 8000
+          - id: PREVIOUS
+            nonMonetaryValue: 1230
+          startDate: '2018-08-01'
+        name: Puntos bancomer
+        nonMonetaryValueCloseToExpire: 1240
+        nonMonetaryValue: 8000
+        nonMonetaryRedemptionSavings:
+          amount: 8
+          currency: MXN
+      currencies:
+      - isMajor: true
+        currency: MXN
+      status:
+        reason:
+          id: EXPIRED
+        description: VENCIDA
+        id: BLOCKED
+    :headers:
+      access-control-allow-origin: '*'
+      content-length: '12952'
+      Access-Control-Expose-Headers: tsec, vnd.bbva.access-token-type,vnd.bbva.access-token,
+        vnd.bbva.sso-pkcs7, authenticationtype, authenticationdata, authenticationstate,
+        authenticationchallenge
+      Server: artichoke
+      access-control-allow-headers: Content-Type, tsec, authenticationtype, authenticationdata,
+        authenticationstate, contactid, consumeruuid, consumerapplicationid, perimetertsec,
+        authorization, responsewarningcode, responsewarningdescription, cuf, field,
+        bcs-device-app-version, bcs-device-app-version, vnd.bbva.authorization, device-id,
+        Bcs-Device-Os-Name, bcs-device-app-name, bcs-device-dpi, BCS-Device-Id
+      Connection: keep-alive
+      Vary: Accept-Encoding
+      tsec: 54f314b43f4313479a41bce549148da86538645d
+      X-Response-Time: 69ms
+      Date: Mon, 16 Feb 2026 17:29:49 GMT
+      Content-Type: application/json; charset=utf-8
+    :status: 200 OK

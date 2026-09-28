@@ -1,0 +1,921 @@
+when:
+  sequence: 1
+  path: /SRVS_A02/products/v0/investment-fund-products/EJOP/funds
+  method: GET
+  backend: glomo
+request:
+  headers:
+    sec-fetch-mode: cors
+    content-length: '0'
+    referer: http://localhost:8001/
+    sec-fetch-site: same-site
+    accept-language: es-MX,es;q=0.9
+    origin: http://localhost:8001
+    tsec: ZXlKaFlYQWlPaUl4TURBd01ERTROeUlzSW10bGVWWmxjbk5wYjI0aU9qRXNJbUZ3Y0Vsa0lqb2lRVkJRTVNJc0ltdHBaQ0k2SWtGUVVERXViRzlqWVd3dU1TSXNJbVZ1WXlJNklrRXhPVEpIUTAwaUxDSnJaWGxVZVhCbElqb2liRzlqWVd3aUxDSmhiR2NpT2lKa2FYSWlMQ0owYzJWalNXUWlPaUkzT1RWbFl6VXlOeTAyWWpsbUxUUmxOMkV0T0dGaE15MWhOalV6WVRrM1pqUTFObUlpZlEuLlJ1X0o5X0M1UnMzc1E5dzQuMXFscnJrMG5LakJtNVVBNWFiZGU2TGR0QV9WbDU3cXRHMFRuWUpQZnZTQlFVNWhsZHFxcDdlS0F2cDFnUVpZbFhZTFBTYkI1WHY1WDlNWG1QZHpfUnBwLWlac1NnNkMzWVlpemVEUVhtTHQtdXJfZE52akp4Y0x4S0N1RW93R1hzamxUNUx0bzNNRWszeU5SeTRhcDZEQ2FybC1TUUFReXlqTlZYalg5V2hfdGF3RlJHd1lWMUk0TGgwRXNNNDlGMFU5RTF4SVhxZk1WN3ZtZTNYODZsWkxNUDRxX3Q3ZFhGbTBKUy1OdFBxV21wcTdYb2tUdG9vdlRXLWlDcGpTY1BfQ3E3RkY1Z1M0SVNzcWRKZ2Qtd0JPaU81c2k1NzJoeVpFNzRmU3h4NDgta2ZMc0xsQW5BSDVHNE5sX0R4QlBKQk1FSk1LUGJ6ZFpteGV6MzhiQ2xneVdGU2IyVEFJYm1qTElyWXUxRUt2T0o0S0U2UmMtVHN1eTBtMTlLNE9HdnhWZ0kzR0NoYlBKRU9GRlVqY2RuczdtX1IteGRnNC1WcVBqU0ZPSC1UM05ROGFudFZCSnVLZWRfUjRLUUtrWmVBaURvS0s3YlNZbEtFaVJxYUFGQVNtbEtqcndUWUZxcVBqOVdhSTZlMUpDaTJqTlJnZmo1d3l6OFJLUV9nUlduTW84NzVvTUhUVkNVNTBqSlV3VTJ1eDBZWk5jdHl1dTdsV1VtUl8teVlzSktHaFpndUhBYXR6ZXNBN2J1cy03a2VxdjlveXNWenpRZzZnUmFUVVNkWkZKQ3Z2bUw4V0hpa3g0dkR5MWZQVEpTaENyeDlmaUpPRlR3el94R3N6Tlh6dkdwSFRIaGE2a3A5YU9kbG9JZ2JnTkxTMmRET1ZjNERyVU9kbldIME1tMmRrZUZkbXRWNV9vYnpkMExlWmdybVpQd2xmR3RtZjNrZzhIYWVsV1hkaXk0dG14Yldtc2N2RmlSVVZSREZIc2NWYWM2RkhWRzVxZVpnbXhRWXdMU1U4OWh2SEw1MzlpMDY0UUJycWR2ZTJBbFUtbUx0eTItMW5TcWFyNnYxYWZkMW9ieHQzT181aHVuVWFIYTBNZ2tWLThpNnBmOUxPMXZiRHV4MXN2ZXZ4Mm5rM09mYVhPWV93MnZHTTNzM1lXVjlJeXdHTGlxS1NMTThWOThsZVdzcXNaYkJsbnFnVDZrSmVKWUhLeHd6akNzVHMzZVJmSWE0bDlINFo3SWVaSzF4d1N4ZkVlZmtXdWUzcGtOQXlPVW5Tbmc0X2JMbEdIUkNUN1BEQUtiUWs2TTV2cmRCV3dyN2djWmtwVmU4Q3VKZEMwSDhnUHFrNGJLaTRIcWI4cHItaWlYR0dhb2dpcXdyT2xEXzQ4SXVONi1jTURnQURvb2RQQnc5SFBTeGNPYUQzVmhqc0JlMm9JS3llaUpvdl9vOVQ2SlZSSzk1Q0ZfUzA1N3F0d0c4Ui11YW5VQ1FUTFN5REdBWkdKRnF4VkMxN3B5cnRnZlNEc1h5MTY4NHlOd1NqbklpUm5pT1B3X29yOFZrTWtWZWV3dnJiSE45c3lpOXVKNFVDWENldkNOZG9KUGNYWk4tRzVnZzFCS2VXVndlNkpzWnJJd09LREVtTFR3cTZ5c3RkSTVxcHZVMTJjSUYwRXNpdTNFQWxCRzEzR0pyTmMwcTJCd0RoV05sQVoxMkQ3MDhXT3pfUkhNZFBqZGdVYTlEeGhTd3l0YmpPMC1IdS12UkdOcXFiZEMyc05MNnljdlFwUVlUQU1FTWJHb1NKNDE3a19vYlVaY0dPbmdhMGloS3VYR20xeWlXb3NWYjY3S3hBSHJ6RjNhUlZaWlF6ZVRZb0JhWjZLOEFBdk5EejI3eXhyNE1HMy1lbDRYWUNRUmJILUtDNmpqTnRYX2VycnBWVTNSMjk5Nm95bU9xRkZHM3pBUWJGZGJHVHNGdVgtb3hxUUtsLXA0dmtjZlVINnhYOXotbHFNUXVtQWVJVmZfQWgzbnlRWGt6Vzl5aUxEOS1ndFlhZEUxNEVqLm4tNjZEcXdtRmVWUHlXQ1U0V3o4dXc=
+    accept: application/json, text/html, */*; q=0.1
+    sec-ch-ua: '"Chromium";v="140", "Not=A?Brand";v="24", "Google Chrome";v="140"'
+    sec-ch-ua-mobile: ?0
+    x-vbank-session: 2003a784-56dd-4f0f-ad99-28dd287e08bc
+    sec-ch-ua-platform: '"macOS"'
+    host: localhost:9000
+    content-type: application/json
+    connection: keep-alive
+    cache-control: no-cache, no-store, must-revalidate
+    accept-encoding: gzip, deflate, br, zstd
+    sec-fetch-dest: empty
+    user-agent: GLOMO_MX/99.99.99 (Android;14;Samsung)
+  query:
+    name: ''
+    serie: ''
+then:
+- return:
+    data:
+    - fundType:
+        id: DEUDA CORTO PLAZO
+      fundImportance:
+        id: '9999'
+      name: B+EDUCA
+      description: EDUCA
+      profitabilityRiskScale:
+        id: '1'
+      liquidity:
+        id: MISMO DIA
+      id: '2199'
+      experienceLevelRequired: EJOP
+      conditions:
+        priceCondition:
+          amount: 0.45
+        id: MONTO PRIMERA COMPRA
+      investmentHorizon:
+        id: CORTO PLAZO
+    - fundType:
+        id: CRECIMIENTO
+      fundImportance:
+        id: '9999'
+      name: B+PCRAL
+      description: FONDO DE PRESERVACIÓN DE CAPITAL DOLARIZADO
+      profitabilityRiskScale:
+        id: '3'
+      liquidity:
+        id: 48 HORAS
+      id: '2215'
+      experienceLevelRequired: EJOP
+      conditions:
+        priceCondition:
+          amount: 35.02
+        id: MONTO PRIMERA COMPRA
+      investmentHorizon:
+        id: LARGO PLAZO
+    - fundType:
+        id: RENTA VARIABLE
+      fundImportance:
+        id: '9999'
+      name: B+RVUS2
+      description: ACCIONES USA2
+      profitabilityRiskScale:
+        id: '5'
+      liquidity:
+        id: 24 HORAS
+      id: '2089'
+      experienceLevelRequired: EJOP
+      conditions:
+        priceCondition:
+          amount: 322.34
+        id: MONTO PRIMERA COMPRA
+      investmentHorizon:
+        id: LARGO PLAZO
+    - fundType:
+        id: MERCADO ESTRATEGIA
+      fundImportance:
+        id: '9999'
+      name: BBVAA
+      description: MULTIESTRATEGIA AGRESIVO
+      profitabilityRiskScale:
+        id: '6'
+      liquidity:
+        id: 72 HORAS
+      id: '2321'
+      experienceLevelRequired: EJOP
+      conditions:
+        priceCondition:
+          amount: 24.32
+        id: MONTO PRIMERA COMPRA
+      investmentHorizon:
+        id: ESTRATEGIA-3F
+    - fundType:
+        id: MERCADO ESTRATEGIA
+      fundImportance:
+        id: '9999'
+      name: BBVAAD
+      description: MULTIESTRATEGIA AGRESIVO DÓLARES
+      profitabilityRiskScale:
+        id: '6'
+      liquidity:
+        id: 72 HORAS
+      id: '2324'
+      experienceLevelRequired: EJOP
+      conditions:
+        priceCondition:
+          amount: 22.74
+        id: MONTO PRIMERA COMPRA
+      investmentHorizon:
+        id: ESTRATEGIA-3F
+    - fundType:
+        id: MERCADO ESTRATEGIA
+      fundImportance:
+        id: '9999'
+      name: BBVAC
+      description: MULTIESTRATEGIA CONSERVADOR
+      profitabilityRiskScale:
+        id: '3'
+      liquidity:
+        id: 72 HORAS
+      id: '2319'
+      experienceLevelRequired: EJOP
+      conditions:
+        priceCondition:
+          amount: 24.49
+        id: MONTO PRIMERA COMPRA
+      investmentHorizon:
+        id: ESTRATEGIA-3F
+    - fundType:
+        id: PRESERVACION CAPITAL
+      fundImportance:
+        id: '9999'
+      name: BBVAC+
+      description: CONSERVADOR + PESOS
+      profitabilityRiskScale:
+        id: '2'
+      liquidity:
+        id: 24 HORAS
+      id: '2315'
+      experienceLevelRequired: EJOP
+      conditions:
+        priceCondition:
+          amount: 26.71
+        id: MONTO PRIMERA COMPRA
+      investmentHorizon:
+        id: ESTRATEGIA-3F
+    - fundType:
+        id: MERCADO ESTRATEGIA
+      fundImportance:
+        id: '9999'
+      name: BBVACD
+      description: MULTIESTRATEGIA CONSERVADOR DÓLARES
+      profitabilityRiskScale:
+        id: '3'
+      liquidity:
+        id: 72 HORAS
+      id: '2322'
+      experienceLevelRequired: EJOP
+      conditions:
+        priceCondition:
+          amount: 24.71
+        id: MONTO PRIMERA COMPRA
+      investmentHorizon:
+        id: ESTRATEGIA-3F
+    - fundType:
+        id: MERCADO ESTRATEGIA
+      fundImportance:
+        id: '9999'
+      name: BBVACD+
+      description: CONSERVADOR + DÓLARES
+      profitabilityRiskScale:
+        id: '3'
+      liquidity:
+        id: 48 HORAS
+      id: '2316'
+      experienceLevelRequired: EJOP
+      conditions:
+        priceCondition:
+          amount: 21.26
+        id: MONTO PRIMERA COMPRA
+      investmentHorizon:
+        id: ESTRATEGIA-3F
+    - fundType:
+        id: CRECIMIENTO
+      fundImportance:
+        id: '9999'
+      name: BBVACR
+      description: CRECIMIENTO
+      profitabilityRiskScale:
+        id: '3'
+      liquidity:
+        id: 72 HORAS
+      id: '2332'
+      experienceLevelRequired: EJOP
+      conditions:
+        priceCondition:
+          amount: 0.38
+        id: MONTO PRIMERA COMPRA
+      investmentHorizon:
+        id: LARGO PLAZO
+    - fundType:
+        id: CRECIMIENTO
+      fundImportance:
+        id: '9999'
+      name: BBVACRD
+      description: CRECIMIENTO DÓLARES
+      profitabilityRiskScale:
+        id: '3'
+      liquidity:
+        id: 72 HORAS
+      id: '2334'
+      experienceLevelRequired: EJOP
+      conditions:
+        priceCondition:
+          amount: 0.36
+        id: MONTO PRIMERA COMPRA
+      investmentHorizon:
+        id: LARGO PLAZO
+    - fundType:
+        id: RENTA VARIABLE
+      fundImportance:
+        id: '9999'
+      name: BBVACRE
+      description: PORTAFOLIO MIXTO DIVERSIFICADO
+      profitabilityRiskScale:
+        id: '3'
+      liquidity:
+        id: 48 HORAS
+      id: '2318'
+      experienceLevelRequired: EJOP
+      conditions:
+        priceCondition:
+          amount: 200.11
+        id: MONTO PRIMERA COMPRA
+      investmentHorizon:
+        id: LARGO PLAZO
+    - fundType:
+        id: DEUDA LARGO PLAZO
+      fundImportance:
+        id: '9999'
+      name: BBVADCB
+      description: DE DEUDACORPORATIVA Y BANCARIA
+      profitabilityRiskScale:
+        id: '4'
+      liquidity:
+        id: PREAVISO 24 HORAS
+      id: '2241'
+      experienceLevelRequired: EJOP
+      conditions:
+        priceCondition:
+          amount: 21.41
+        id: MONTO PRIMERA COMPRA
+      investmentHorizon:
+        id: CORTO PLAZO
+    - fundType:
+        id: RENTA VARIABLE
+      fundImportance:
+        id: '0003'
+      name: BBVADIG
+      description: ECONOMÍA DIGITAL
+      profitabilityRiskScale:
+        id: '6'
+      liquidity:
+        id: 24 HORAS
+      id: '2343'
+      experienceLevelRequired: EJOP
+      conditions:
+        priceCondition:
+          amount: 23.29
+        id: MONTO PRIMERA COMPRA
+      investmentHorizon:
+        id: LARGO PLAZO
+    - fundType:
+        id: DEUDA CORTO PLAZO
+      fundImportance:
+        id: '9999'
+      name: BBVADLP
+      description: DEUDA LARGO PLAZO
+      profitabilityRiskScale:
+        id: '3'
+      liquidity:
+        id: 48 HORAS
+      id: '2238'
+      experienceLevelRequired: EJOP
+      conditions:
+        priceCondition:
+          amount: 51.78
+        id: MONTO PRIMERA COMPRA
+      investmentHorizon:
+        id: LARGO PLAZO
+    - fundType:
+        id: DEUDA CORTO PLAZO
+      fundImportance:
+        id: '9999'
+      name: BBVADOL
+      description: LIQUIDEZ DÓLARES
+      profitabilityRiskScale:
+        id: '7'
+      liquidity:
+        id: 48 HORAS
+      id: '2119'
+      experienceLevelRequired: EJOP
+      conditions:
+        priceCondition:
+          amount: 47.57
+        id: MONTO PRIMERA COMPRA
+      investmentHorizon:
+        id: CORTO PLAZO
+    - fundType:
+        id: RENTA VARIABLE
+      fundImportance:
+        id: '9999'
+      name: BBVAEMG
+      description: ACCIONES MERCADOS EMERGENTES
+      profitabilityRiskScale:
+        id: '4'
+      liquidity:
+        id: 24 HORAS
+      id: '2081'
+      experienceLevelRequired: EJOP
+      conditions:
+        priceCondition:
+          amount: 31.74
+        id: MONTO PRIMERA COMPRA
+      investmentHorizon:
+        id: LARGO PLAZO
+    - fundType:
+        id: RENTA VARIABLE
+      fundImportance:
+        id: '9999'
+      name: BBVAESG
+      description: FONDO DE INVERSION SOSTENIBLE
+      profitabilityRiskScale:
+        id: '5'
+      liquidity:
+        id: 24 HORAS
+      id: '2336'
+      experienceLevelRequired: EJOP
+      conditions:
+        priceCondition:
+          amount: 23.17
+        id: MONTO PRIMERA COMPRA
+      investmentHorizon:
+        id: LARGO PLAZO
+    - fundType:
+        id: DEUDA CORTO PLAZO
+      fundImportance:
+        id: '9999'
+      name: BBVAEUR
+      description: LIQUIDEZ EUROS
+      profitabilityRiskScale:
+        id: '4'
+      liquidity:
+        id: 48 HORAS
+      id: '2170'
+      experienceLevelRequired: EJOP
+      conditions:
+        priceCondition:
+          amount: 170.74
+        id: MONTO PRIMERA COMPRA
+      investmentHorizon:
+        id: CORTO PLAZO
+    - fundType:
+        id: RENTA VARIABLE
+      fundImportance:
+        id: '9999'
+      name: BBVAE50
+      description: ACCIONES EUROPA
+      profitabilityRiskScale:
+        id: '5'
+      liquidity:
+        id: 48 HORAS
+      id: '2026'
+      experienceLevelRequired: EJOP
+      conditions:
+        priceCondition:
+          amount: 5.41
+        id: MONTO PRIMERA COMPRA
+      investmentHorizon:
+        id: LARGO PLAZO
+    - fundType:
+        id: DEUDA CORTO PLAZO
+      fundImportance:
+        id: '0002'
+      name: BBVAGB2
+      description: CORTO PLAZO GUBERNAMENTAL 2
+      profitabilityRiskScale:
+        id: '1'
+      liquidity:
+        id: MISMO DIA
+      id: '2227'
+      experienceLevelRequired: EJOP
+      conditions:
+        priceCondition:
+          amount: 86.41
+        id: MONTO PRIMERA COMPRA
+      investmentHorizon:
+        id: CORTO PLAZO
+    - fundType:
+        id: GENERACION FLUJOS
+      fundImportance:
+        id: '9999'
+      name: BBVAGF
+      description: GENERACIÓN DE FLUJO
+      profitabilityRiskScale:
+        id: '3'
+      liquidity:
+        id: 24 HORAS
+      id: '2333'
+      experienceLevelRequired: EJOP
+      conditions:
+        priceCondition:
+          amount: 0.38
+        id: MONTO PRIMERA COMPRA
+      investmentHorizon:
+        id: LARGO PLAZO
+    - fundType:
+        id: GENERACION FLUJOS
+      fundImportance:
+        id: '9999'
+      name: BBVAGFD
+      description: GENERACIÓN DE FLUJO DÓLARES
+      profitabilityRiskScale:
+        id: '3'
+      liquidity:
+        id: 72 HORAS
+      id: '2335'
+      experienceLevelRequired: EJOP
+      conditions:
+        priceCondition:
+          amount: 0.33
+        id: MONTO PRIMERA COMPRA
+      investmentHorizon:
+        id: LARGO PLAZO
+    - fundType:
+        id: DEUDA LARGO PLAZO
+      fundImportance:
+        id: '9999'
+      name: BBVAGLP
+      description: GUBERNAMENTAL LARGO PLAZO
+      profitabilityRiskScale:
+        id: '4'
+      liquidity:
+        id: 48 HORAS
+      id: '2236'
+      experienceLevelRequired: EJOP
+      conditions:
+        priceCondition:
+          amount: 39.63
+        id: MONTO PRIMERA COMPRA
+      investmentHorizon:
+        id: LARGO PLAZO
+    - fundType:
+        id: GENERACION FLUJOS
+      fundImportance:
+        id: '9999'
+      name: BBVAGL3
+      description: FONDO MULTIACTIVOS GL3
+      profitabilityRiskScale:
+        id: '3'
+      liquidity:
+        id: 48 HORAS
+      id: '2337'
+      experienceLevelRequired: EJOP
+      conditions:
+        priceCondition:
+          amount: 20.06
+        id: MONTO PRIMERA COMPRA
+      investmentHorizon:
+        id: LARGO PLAZO
+    - fundType:
+        id: GENERACION FLUJOS
+      fundImportance:
+        id: '9999'
+      name: BBVAGL4
+      description: FONDO MULTIACTIVOS GL4
+      profitabilityRiskScale:
+        id: '4'
+      liquidity:
+        id: 48 HORAS
+      id: '2339'
+      experienceLevelRequired: EJOP
+      conditions:
+        priceCondition:
+          amount: 35.04
+        id: MONTO PRIMERA COMPRA
+      investmentHorizon:
+        id: LARGO PLAZO
+    - fundType:
+        id: GENERACION FLUJOS
+      fundImportance:
+        id: '9999'
+      name: BBVAGL5
+      description: FONDO MULTIACTIVOS GL5
+      profitabilityRiskScale:
+        id: '4'
+      liquidity:
+        id: 48 HORAS
+      id: '2338'
+      experienceLevelRequired: EJOP
+      conditions:
+        priceCondition:
+          amount: 20.81
+        id: MONTO PRIMERA COMPRA
+      investmentHorizon:
+        id: LARGO PLAZO
+    - fundType:
+        id: DEUDA CORTO PLAZO
+      fundImportance:
+        id: '0002'
+      name: BBVAGOB
+      description: CORTO PLAZO GUBERNAMENTAL
+      profitabilityRiskScale:
+        id: '1'
+      liquidity:
+        id: MISMO DIA
+      id: '2230'
+      experienceLevelRequired: EJOP
+      conditions:
+        priceCondition:
+          amount: 111.56
+        id: MONTO PRIMERA COMPRA
+      investmentHorizon:
+        id: CORTO PLAZO
+    - fundType:
+        id: DEUDA CORTO PLAZO
+      fundImportance:
+        id: '9999'
+      name: BBVAGUB
+      description: LIQUIDEZ GUBERNAMENTAL
+      profitabilityRiskScale:
+        id: '1'
+      liquidity:
+        id: MISMO DIA
+      id: '2224'
+      experienceLevelRequired: EJOP
+      conditions:
+        priceCondition:
+          amount: 33.86
+        id: MONTO PRIMERA COMPRA
+      investmentHorizon:
+        id: CORTO PLAZO
+    - fundType:
+        id: DEUDA CORTO PLAZO
+      fundImportance:
+        id: '0001'
+      name: BBVALIQ
+      description: LIQUIDO PESOS
+      profitabilityRiskScale:
+        id: '1'
+      liquidity:
+        id: MISMO DIA
+      id: '2229'
+      experienceLevelRequired: EJOP
+      conditions:
+        priceCondition:
+          amount: 38.94
+        id: MONTO PRIMERA COMPRA
+      investmentHorizon:
+        id: CORTO PLAZO
+    - fundType:
+        id: MERCADO ESTRATEGIA
+      fundImportance:
+        id: '9999'
+      name: BBVAM
+      description: MULTIESTRATEGIA MODERADO
+      profitabilityRiskScale:
+        id: '4'
+      liquidity:
+        id: 72 HORAS
+      id: '2320'
+      experienceLevelRequired: EJOP
+      conditions:
+        priceCondition:
+          amount: 24.34
+        id: MONTO PRIMERA COMPRA
+      investmentHorizon:
+        id: ESTRATEGIA-3F
+    - fundType:
+        id: MERCADO ESTRATEGIA
+      fundImportance:
+        id: '9999'
+      name: BBVAMD
+      description: MULTIESTRATEGIA MODERADO DÓLARES
+      profitabilityRiskScale:
+        id: '4'
+      liquidity:
+        id: 72 HORAS
+      id: '2323'
+      experienceLevelRequired: EJOP
+      conditions:
+        priceCondition:
+          amount: 22.45
+        id: MONTO PRIMERA COMPRA
+      investmentHorizon:
+        id: ESTRATEGIA-3F
+    - fundType:
+        id: DEUDA LARGO PLAZO
+      fundImportance:
+        id: '9999'
+      name: BBVAMRF
+      description: RETORNO ABSOLUTO DEUDA
+      profitabilityRiskScale:
+        id: '3'
+      liquidity:
+        id: PREAVISO 24 HORAS
+      id: '2234'
+      experienceLevelRequired: EJOP
+      conditions:
+        priceCondition:
+          amount: 27.62
+        id: MONTO PRIMERA COMPRA
+      investmentHorizon:
+        id: LARGO PLAZO
+    - fundType:
+        id: RENTA VARIABLE
+      fundImportance:
+        id: '9999'
+      name: BBVAMT
+      description: ACCIONES MÉXICO DIVIDENDOS
+      profitabilityRiskScale:
+        id: '4'
+      liquidity:
+        id: 48 HORAS
+      id: '2342'
+      experienceLevelRequired: EJOP
+      conditions:
+        priceCondition:
+          amount: 250.79
+        id: MONTO PRIMERA COMPRA
+      investmentHorizon:
+        id: LARGO PLAZO
+    - fundType:
+        id: RENTA VARIABLE
+      fundImportance:
+        id: '0002'
+      name: BBVANDQ
+      description: ACCIONES NASDAQ
+      profitabilityRiskScale:
+        id: '5'
+      liquidity:
+        id: 24 HORAS
+      id: '2080'
+      experienceLevelRequired: EJOP
+      conditions:
+        priceCondition:
+          amount: 230.84
+        id: MONTO PRIMERA COMPRA
+      investmentHorizon:
+        id: LARGO PLAZO
+    - fundType:
+        id: PRESERVACION CAPITAL
+      fundImportance:
+        id: '9999'
+      name: BBVAPC
+      description: PRESERVACIÓN DE CAPITAL
+      profitabilityRiskScale:
+        id: '2'
+      liquidity:
+        id: 48 HORAS
+      id: '2239'
+      experienceLevelRequired: EJOP
+      conditions:
+        priceCondition:
+          amount: 0.36
+        id: MONTO PRIMERA COMPRA
+      investmentHorizon:
+        id: LARGO PLAZO
+    - fundType:
+        id: PRESERVACION CAPITAL
+      fundImportance:
+        id: '9999'
+      name: BBVAPCD
+      description: PRESERVACIÓN DE CAPITAL DÓLARES
+      profitabilityRiskScale:
+        id: '3'
+      liquidity:
+        id: 48 HORAS
+      id: '2240'
+      experienceLevelRequired: EJOP
+      conditions:
+        priceCondition:
+          amount: 0.32
+        id: MONTO PRIMERA COMPRA
+      investmentHorizon:
+        id: LARGO PLAZO
+    - fundType:
+        id: DEUDA CORTO PLAZO
+      fundImportance:
+        id: '9999'
+      name: BBVAPYM
+      description: PYME
+      profitabilityRiskScale:
+        id: '1'
+      liquidity:
+        id: MISMO DIA
+      id: '2223'
+      experienceLevelRequired: EJOP
+      conditions:
+        priceCondition:
+          amount: 74.36
+        id: MONTO PRIMERA COMPRA
+      investmentHorizon:
+        id: CORTO PLAZO
+    - fundType:
+        id: DEUDA CORTO PLAZO
+      fundImportance:
+        id: '9999'
+      name: BBVAPZO
+      description: DEUDA CORTO PLAZO
+      profitabilityRiskScale:
+        id: '1'
+      liquidity:
+        id: PREAVISO 24 HORAS
+      id: '2233'
+      experienceLevelRequired: EJOP
+      conditions:
+        priceCondition:
+          amount: 118.77
+        id: MONTO PRIMERA COMPRA
+      investmentHorizon:
+        id: CORTO PLAZO
+    - fundType:
+        id: DEUDA CORTO PLAZO
+      fundImportance:
+        id: '9999'
+      name: BBVARF
+      description: DEUDA PRIVADA CORTO PLAZO
+      profitabilityRiskScale:
+        id: '1'
+      liquidity:
+        id: MISMO DIA
+      id: '2222'
+      experienceLevelRequired: EJOP
+      conditions:
+        priceCondition:
+          amount: 27.84
+        id: MONTO PRIMERA COMPRA
+      investmentHorizon:
+        id: CORTO PLAZO
+    - fundType:
+        id: RENTA VARIABLE
+      fundImportance:
+        id: '9999'
+      name: BBVARV
+      description: ACCIONES MÉXICO
+      profitabilityRiskScale:
+        id: '5'
+      liquidity:
+        id: 24 HORAS
+      id: '2325'
+      experienceLevelRequired: EJOP
+      conditions:
+        priceCondition:
+          amount: 34.27
+        id: MONTO PRIMERA COMPRA
+      investmentHorizon:
+        id: LARGO PLAZO
+    - fundType:
+        id: RENTA VARIABLE
+      fundImportance:
+        id: '9999'
+      name: BBVASIC
+      description: ACCIONES INTERNACIONALES CON COBERTURA CAMBIARIA
+      profitabilityRiskScale:
+        id: '5'
+      liquidity:
+        id: 24 HORAS
+      id: '2327'
+      experienceLevelRequired: EJOP
+      conditions:
+        priceCondition:
+          amount: 129.23
+        id: MONTO PRIMERA COMPRA
+      investmentHorizon:
+        id: LARGO PLAZO
+    - fundType:
+        id: DEUDA LARGO PLAZO
+      fundImportance:
+        id: '9999'
+      name: BBVAUDI
+      description: UDIS
+      profitabilityRiskScale:
+        id: '3'
+      liquidity:
+        id: 48 HORAS
+      id: '2237'
+      experienceLevelRequired: EJOP
+      conditions:
+        priceCondition:
+          amount: 50.19
+        id: MONTO PRIMERA COMPRA
+      investmentHorizon:
+        id: LARGO PLAZO
+    - fundType:
+        id: DEUDA LARGO PLAZO
+      fundImportance:
+        id: '9999'
+      name: BBVAUMS
+      description: GUBERNAMENTAL MÉXICO DÓLARES
+      profitabilityRiskScale:
+        id: '5'
+      liquidity:
+        id: 72 HORAS
+      id: '2235'
+      experienceLevelRequired: EJOP
+      conditions:
+        priceCondition:
+          amount: 40.96
+        id: MONTO PRIMERA COMPRA
+      investmentHorizon:
+        id: LARGO PLAZO
+    - fundType:
+        id: RENTA VARIABLE
+      fundImportance:
+        id: '9999'
+      name: BBVAUS
+      description: ACCIONES USA
+      profitabilityRiskScale:
+        id: '5'
+      liquidity:
+        id: MISMO DIA
+      id: '2330'
+      experienceLevelRequired: EJOP
+      conditions:
+        priceCondition:
+          amount: 138.3
+        id: MONTO PRIMERA COMPRA
+      investmentHorizon:
+        id: LARGO PLAZO
+    - fundType:
+        id: RENTA VARIABLE
+      fundImportance:
+        id: '9999'
+      name: BMERIND
+      description: ACCIONES MÉXICO DIVIDENDOS
+      profitabilityRiskScale:
+        id: '4'
+      liquidity:
+        id: 48 HORAS
+      id: '2023'
+      experienceLevelRequired: EJOP
+      conditions:
+        priceCondition:
+          amount: 244.04
+        id: MONTO PRIMERA COMPRA
+      investmentHorizon:
+        id: LARGO PLAZO
+    :headers:
+      content-length: '16491'
+      Access-Control-Allow-Origin: '*'
+      ECS-Entry-Point-Zone: ext
+      Access-Control-Allow-Methods: GET, POST, DELETE, PUT, OPTIONS, PATCH
+      X-Content-Type-Options: nosniff
+      Connection: keep-alive
+      tsec: ZXlKaFlYQWlPaUl4TURBd01ERTROeUlzSW10bGVWWmxjbk5wYjI0aU9qRXNJbUZ3Y0Vsa0lqb2lRVkJRTVNJc0ltdHBaQ0k2SWtGUVVERXViRzlqWVd3dU1TSXNJbVZ1WXlJNklrRXhPVEpIUTAwaUxDSnJaWGxVZVhCbElqb2liRzlqWVd3aUxDSmhiR2NpT2lKa2FYSWlMQ0owYzJWalNXUWlPaUkzT1RWbFl6VXlOeTAyWWpsbUxUUmxOMkV0T0dGaE15MWhOalV6WVRrM1pqUTFObUlpZlEuLlJ1X0o5X0M1UnMzc1E5dzQuMXFscnJrMG5LakJtNVVBNWFiZGU2TGR0QV9WbDU3cXRHMFRuWUpQZnZTQlFVNWhsZHFxcDdlS0F2cDFnUVpZbFhZTFBTYkI1WHY1WDlNWG1QZHpfUnBwLWlac1NnNkMzWVlpemVEUVhtTHQtdXJfZE52akp4Y0x4S0N1RW93R1hzamxUNUx0bzNNRWszeU5SeTRhcDZEQ2FybC1TUUFReXlqTlZYalg5V2hfdGF3RlJHd1lWMUk0TGgwRXNNNDlGMFU5RTF4SVhxZk1WN3ZtZTNYODZsWkxNUDRxX3Q3ZFhGbTBKUy1OdFBxV21wcTdYb2tUdG9vdlRXLWlDcGpTY1BfQ3E3RkY1Z1M0SVNzcWRKZ2Qtd0JPaU81c2k1NzJoeVpFNzRmU3h4NDgta2ZMc0xsQW5BSDVHNE5sX0R4QlBKQk1FSk1LUGJ6ZFpteGV6MzhiQ2xneVdGU2IyVEFJYm1qTElyWXUxRUt2T0o0S0U2UmMtVHN1eTBtMTlLNE9HdnhWZ0kzR0NoYlBKRU9GRlVqY2RuczdtX1IteGRnNC1WcVBqU0ZPSC1UM05ROGFudFZCSnVLZWRfUjRLUUtrWmVBaURvS0s3YlNZbEtFaVJxYUFGQVNtbEtqcndUWUZxcVBqOVdhSTZlMUpDaTJqTlJnZmo1d3l6OFJLUV9nUlduTW84NzVvTUhUVkNVNTBqSlV3VTJ1eDBZWk5jdHl1dTdsV1VtUl8teVlzSktHaFpndUhBYXR6ZXNBN2J1cy03a2VxdjlveXNWenpRZzZnUmFUVVNkWkZKQ3Z2bUw4V0hpa3g0dkR5MWZQVEpTaENyeDlmaUpPRlR3el94R3N6Tlh6dkdwSFRIaGE2a3A5YU9kbG9JZ2JnTkxTMmRET1ZjNERyVU9kbldIME1tMmRrZUZkbXRWNV9vYnpkMExlWmdybVpQd2xmR3RtZjNrZzhIYWVsV1hkaXk0dG14Yldtc2N2RmlSVVZSREZIc2NWYWM2RkhWRzVxZVpnbXhRWXdMU1U4OWh2SEw1MzlpMDY0UUJycWR2ZTJBbFUtbUx0eTItMW5TcWFyNnYxYWZkMW9ieHQzT181aHVuVWFIYTBNZ2tWLThpNnBmOUxPMXZiRHV4MXN2ZXZ4Mm5rM09mYVhPWV93MnZHTTNzM1lXVjlJeXdHTGlxS1NMTThWOThsZVdzcXNaYkJsbnFnVDZrSmVKWUhLeHd6akNzVHMzZVJmSWE0bDlINFo3SWVaSzF4d1N4ZkVlZmtXdWUzcGtOQXlPVW5Tbmc0X2JMbEdIUkNUN1BEQUtiUWs2TTV2cmRCV3dyN2djWmtwVmU4Q3VKZEMwSDhnUHFrNGJLaTRIcWI4cHItaWlYR0dhb2dpcXdyT2xEXzQ4SXVONi1jTURnQURvb2RQQnc5SFBTeGNPYUQzVmhqc0JlMm9JS3llaUpvdl9vOVQ2SlZSSzk1Q0ZfUzA1N3F0d0c4Ui11YW5VQ1FUTFN5REdBWkdKRnF4VkMxN3B5cnRnZlNEc1h5MTY4NHlOd1NqbklpUm5pT1B3X29yOFZrTWtWZWV3dnJiSE45c3lpOXVKNFVDWENldkNOZG9KUGNYWk4tRzVnZzFCS2VXVndlNkpzWnJJd09LREVtTFR3cTZ5c3RkSTVxcHZVMTJjSUYwRXNpdTNFQWxCRzEzR0pyTmMwcTJCd0RoV05sQVoxMkQ3MDhXT3pfUkhNZFBqZGdVYTlEeGhTd3l0YmpPMC1IdS12UkdOcXFiZEMyc05MNnljdlFwUVlUQU1FTWJHb1NKNDE3a19vYlVaY0dPbmdhMGloS3VYR20xeWlXb3NWYjY3S3hBSHJ6RjNhUlZaWlF6ZVRZb0JhWjZLOEFBdk5EejI3eXhyNE1HMy1lbDRYWUNRUmJILUtDNmpqTnRYX2VycnBWVTNSMjk5Nm95bU9xRkZHM3pBUWJGZGJHVHNGdVgtb3hxUUtsLXA0dmtjZlVINnhYOXotbHFNUXVtQWVJVmZfQWgzbnlRWGt6Vzl5aUxEOS1ndFlhZEUxNEVqLm4tNjZEcXdtRmVWUHlXQ1U0V3o4dXc=
+      Access-Control-Allow-Headers: remaining-time, Bbva-User-Agent, Accept-Encoding,
+        Accept, Content-Type, tsec, consumerrequestid, authenticationchallenge, authenticationtype,
+        authenticationdata, authenticationstate, contactid, consumeruuid, consumerapplicationid,
+        perimetertsec, authorization, responsewarningcode, responsewarningdescription,
+        cuf, prefer, phoneNumber, Location, X-RHO-PARENTSPANID, X-RHO-TRACEID, preferredauthenticationtype,
+        X-HTTP-Method-Override, Access-Control-Allow-Methods, iv-remote-address, thirdparty-x-forwarded-for,
+        thirdparty-user-agent, thirdparty-geolocation, thirdparty-calculated-scoring,
+        thirdparty-deviceid, vnd.bbva.security-client-certificate, order-preferredaction,
+        authenticationresponse, Access-Control-Max-Age, BCS-Device-Id, BCS-Device-OS-Name,
+        BCS-Device-Model-Name, BCS-Device-Model-Manufacturer, BCS-Device-Screen-Size,
+        BCS-Device-OS-Version, BCS-Device-DPI, BCS-Device-App-Name, BCS-Device-App-Version,
+        Third-Party-Application-Id, ECS-Signature-Platform-Use-Case, BCS-Process-Code,
+        BCS-Operation-Tracer, BCS-Process-Tracer, vnd.bbva.user-id, order-id, order-accepteddisclaimers,
+        x-forwarded-for, Date, order-hmac, x-dmz-orgn, onsite-accountTerm, onsite-logicalTerm,
+        Akamai-BM-Telemetry, BCS-Third-Party-Session-Id, Cache-Control, clave, Content-Encoding,
+        ECS-Entry-Point-Zone, firma, Geolocation, Third-Party-Collaborator-Id, user-agent,
+        Via, order-signed, loginauthenticationtype, x-cau
+      Date: Tue, 09 Sep 2025 22:30:37 GMT
+      Referrer-Policy: same-origin
+      X-Frame-Options: sameorigin
+      ResponseWarningCode: YHA0002
+      Strict-Transport-Security: max-age=31536000; includeSubDomains
+      Access-Control-Expose-Headers: remaining-time, Bbva-User-Agent, Accept-Encoding,
+        Accept, Content-Type, tsec, consumerrequestid, authenticationchallenge, authenticationtype,
+        authenticationdata, authenticationstate, contactid, consumeruuid, consumerapplicationid,
+        perimetertsec, authorization, responsewarningcode, responsewarningdescription,
+        cuf, prefer, phoneNumber, Location, X-RHO-PARENTSPANID, X-RHO-TRACEID, preferredauthenticationtype,
+        X-HTTP-Method-Override, Access-Control-Allow-Methods, iv-remote-address, thirdparty-x-forwarded-for,
+        thirdparty-user-agent, thirdparty-geolocation, thirdparty-calculated-scoring,
+        thirdparty-deviceid, vnd.bbva.security-client-certificate, order-preferredaction,
+        authenticationresponse, Access-Control-Max-Age, BCS-Device-Id, BCS-Device-OS-Name,
+        BCS-Device-Model-Name, BCS-Device-Model-Manufacturer, BCS-Device-Screen-Size,
+        BCS-Device-OS-Version, BCS-Device-DPI, BCS-Device-App-Name, BCS-Device-App-Version,
+        Third-Party-Application-Id, ECS-Signature-Platform-Use-Case, BCS-Process-Code,
+        BCS-Operation-Tracer, BCS-Process-Tracer, vnd.bbva.user-id, order-id, order-accepteddisclaimers,
+        x-forwarded-for, Date, order-hmac, x-dmz-orgn, onsite-accountTerm, onsite-logicalTerm,
+        Akamai-BM-Telemetry, BCS-Third-Party-Session-Id, Cache-Control, clave, Content-Encoding,
+        ECS-Entry-Point-Zone, firma, Geolocation, Third-Party-Collaborator-Id, user-agent,
+        Via, order-signed, loginauthenticationtype, x-cau
+      Cache-Control: no-cache,no-store,must-revalidate
+      Content-Security-Policy: script-src 'self'
+      Vary: Accept-Encoding
+      Set-Cookie: vbank-session=2003a784-56dd-4f0f-ad99-28dd287e08bc
+      Expires: '-1'
+      X-XSS-Protection: 1; mode=block
+      ResponseWarningDescription: CONSULTA EFECTUADA
+      consumerrequestid: e3f6c58b-0e69-4b03-a154-3834dba9072e
+      Content-Type: application/json; charset=UTF-8
+    messages:
+    - code: YHA0002
+      message: CONSULTA EFECTUADA
+      type: WARNING
+    :status: 200 OK

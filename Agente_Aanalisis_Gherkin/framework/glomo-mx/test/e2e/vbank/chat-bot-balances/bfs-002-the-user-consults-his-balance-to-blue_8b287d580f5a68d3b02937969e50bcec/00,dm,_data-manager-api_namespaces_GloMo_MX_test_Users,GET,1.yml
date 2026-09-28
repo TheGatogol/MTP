@@ -1,0 +1,82 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: d4cb1519-7dd9-46f6-9042-fd0acb3499ac
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: one_account,user_with_physical_credit_card,user_with_positive_amounts
+    lock: 'false'
+then:
+- return:
+    :body:
+    - data:
+        messagesGroupRequest:
+          accountAlias:
+          - ¿Cuál es alias de mi cuenta?
+          - '8396'
+          allAccountDetails:
+          - Quiero ver todos los detalles de mi cuenta de ahorro
+          - terminación 1492
+          editAccountAlias:
+          - Quiero editar el alias de mi cuenta
+          - OPCION 5
+          - CUENTA EXTRANJERA
+          accountParticipants:
+          - ¿Quienes son los intervinientes de mi cuenta?
+          - '1969'
+          editAccountDetails:
+          - Quiero editar los detalles de mi cuenta
+          - Alias
+          clabe:
+          - CLABE
+          - '1969'
+          mainAccountDetails:
+          - ¿cuales son los datos principales de mi cuenta?
+          - 0002AH1985
+          - CLABE
+          swift:
+          - Swift
+          - '8396'
+          someAccountDetails:
+          - Quiero ver Alias, CLABE Y código SWIFT
+          - 0002AH1985
+        tags:
+        - '4428080957'
+        - one_account
+        - user_with_some_products
+        - user_with_pending_update_account
+        - user_with_restricted_account
+        - user_with_pending_activation_card
+        - user_with_overdue_card
+        - credit_card_blocked
+        - blocked_account
+        - user_with_physical_credit_card
+        - user_with_positive_amounts
+        - user_with_negative_amounts
+        - user_with_some_products
+        - status_off
+        authentication:
+          password: Glomo2024
+          user: '4428080957'
+          deviceId: C5DAFDB995384400B4FAFBFC4F22C40F
+      lockExpiration: null
+      lockType: null
+      id: 36059053
+    :headers:
+      content-length: '1796'
+      Cache-Control: max-age=0
+      Connection: keep-alive
+      host: datamanager.globaldevtools.bbva.com
+      Vary: Accept-Encoding
+      Expires: Fri, 04 Apr 2025 22:38:34 GMT
+      Date: Fri, 04 Apr 2025 22:38:34 GMT
+      Content-Type: application/json; charset=utf-8
+    :status: 200 OK

@@ -1,0 +1,92 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: b2777d96-5050-4eb5-bfff-d9272616a24e
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: msd_general
+then:
+- return:
+    :body:
+    - data:
+        accountNumbers:
+        - '00740010000473321789'
+        - '00740010000473358127'
+        executiveCode: MTS001MB55727
+        genericAddress:
+          zipCode: '03300'
+          outerN: '557'
+          colony: '08902'
+          innerN: '3'
+          street: Odesa
+        locale: es_mx
+        wrongBeneficiares:
+        - birthDay: '1999-04-15'
+          lastName: 1,+?/2
+          secondLastName: 1,+?/2
+          kinship: '0005'
+          name: 1,+?/2
+          newAddress: false
+        beneficiaries:
+        - birthDay: '1999-04-15'
+          lastName: Perez
+          secondLastName: Avila
+          kinship: '0005'
+          name: Juan
+          newAddress: false
+        - birthDay: '1956-03-23'
+          lastName: Rogers
+          secondLastName: Carter
+          address:
+            zipCode: '03300'
+            outerN: '557'
+            colony: '08902'
+            innerN: '3'
+            street: Odesa
+          kinship: '0007'
+          name: Steve
+          newAddress: true
+        - birthDay: '1995-12-23'
+          lastName: Vazquez
+          secondLastName: Espinoza
+          kinship: '0008'
+          name: Sandra
+          newAddress: false
+        - birthDay: '1985-05-12'
+          lastName: Gonzalez
+          secondLastName: Gutierrez
+          kinship: '0003'
+          name: Pedro
+          newAddress: false
+        tags:
+        - '5534320395'
+        - level_n4_account
+        - msd_patrimonial
+        - age_between_40_and_60
+        - older_than_40_years
+        - msd_general
+        authentication:
+          password: Glomo2022
+          user: '5534320395'
+          deviceId: 0CF3E18E0F7E3FCFEDF51C39D241D593
+      lockExpiration: null
+      lockType: null
+      id: 3497954
+    :headers:
+      content-length: '1360'
+      Strict-Transport-Security: max-age=15768000
+      Server: nginx
+      ECS-Entry-Point-Zone: ext
+      Connection: keep-alive
+      Vary: Accept-Encoding
+      Date: Wed, 28 Dec 2022 23:00:25 GMT
+      Content-Type: application/json
+    :status: 200 OK

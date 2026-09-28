@@ -1,0 +1,41 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: f62546f6-97e3-4410-9e09-210217ef48e0
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: various_points
+    lock: 'false'
+then:
+- return:
+    :body:
+    - data:
+        cardId:
+        - id: INFINITE BBVA - 4555043000274895
+        tags:
+        - various_points
+        authentication:
+          password: Glomo2024
+          user: '6622027788'
+          deviceId: 6E55BD585EF1BC9415E319604D95E581
+      lockExpiration: null
+      lockType: null
+      id: 36073056
+    :headers:
+      content-length: '262'
+      Cache-Control: max-age=0
+      Connection: keep-alive
+      host: datamanager.globaldevtools.bbva.com
+      Vary: Accept-Encoding
+      Expires: Sat, 08 Mar 2025 01:35:52 GMT
+      Date: Sat, 08 Mar 2025 01:35:52 GMT
+      Content-Type: application/json; charset=utf-8
+    :status: 200 OK

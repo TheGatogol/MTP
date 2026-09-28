@@ -1,0 +1,103 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: 4a26735a-87f5-48ba-9b08-cbb75d5740fd
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: dh_with_coupon
+    lock: 'false'
+then:
+- return:
+    :body:
+    - data:
+        locale: es_mx
+        tags:
+        - dh_with_coupon
+        - '5527113788'
+        - with_coupon
+        products:
+          accounts:
+          - number: 110 004 7174
+            accountId: '1001'
+            accountType:
+              name: Cuenta corriente
+              id: COMMON_ACCOUNT
+            alias: 0010ah5021
+            currency: MXN
+            status:
+              name: Cuenta operativa
+              id: ACTIVATED
+            availableBalance:
+              currentBalance: 20,995
+          - number: 150 000 2205
+            accountId: '1002'
+            accountType:
+              name: Cuenta corriente
+              id: COMMON_ACCOUNT
+            alias: Libreto Básico
+            currency: MXN
+            status:
+              name: Cuenta operativa
+              id: ACTIVATED
+            availableBalance:
+              currentBalance: 999,689,617
+          - number: 150 000 2310
+            accountId: '1003'
+            accountType:
+              name: Cuenta corriente
+              id: COMMON_ACCOUNT
+            alias: 0006ah2310
+            currency: MXN
+            status:
+              name: Cuenta operativa
+              id: ACTIVATED
+            availableBalance:
+              currentBalance: 17,137
+          - number: 150 000 2311
+            accountId: '1004'
+            accountType:
+              name: Cuenta corriente
+              id: COMMON_ACCOUNT
+            alias: Cuenta Dolares
+            currency: USD
+            status:
+              name: Cuenta operativa
+              id: ACTIVATED
+            availableBalance:
+              currentBalance: 999,999,855
+          - number: 046 578 8161
+            accountId: '1005'
+            accountType:
+              name: Cuenta corriente
+              id: COMMON_ACCOUNT
+            alias: Membresia Bp
+            currency: EUR
+            status:
+              name: Cuenta operativa
+              id: ACTIVATED
+            availableBalance:
+              currentBalance: '74'
+        authentication:
+          password: Glomo2024
+          user: '5527113788'
+          deviceId: 21ED61A0C57F339061D9823C72AA4B4B
+      lockType: null
+      lockExpiration: null
+      id: 35922296
+    :headers:
+      content-length: '1644'
+      Server: nginx
+      Connection: keep-alive
+      host: datamanager.globaldevtools.bbva.com
+      Vary: Accept-Encoding
+      Date: Tue, 05 Nov 2024 19:09:56 GMT
+      Content-Type: application/json
+    :status: 200 OK

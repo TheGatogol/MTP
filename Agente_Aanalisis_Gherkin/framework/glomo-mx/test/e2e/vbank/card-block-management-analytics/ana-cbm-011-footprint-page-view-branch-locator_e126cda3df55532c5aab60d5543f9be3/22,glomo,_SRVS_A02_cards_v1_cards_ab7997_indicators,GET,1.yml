@@ -1,0 +1,70 @@
+when:
+  sequence: 1
+  path: /SRVS_A02/cards/v1/cards/ab7997/indicators
+  method: GET
+  backend: glomo
+request:
+  headers:
+    sec-fetch-mode: cors
+    content-length: '0'
+    referer: http://localhost:8001/
+    sec-fetch-site: same-site
+    accept-language: es-MX,es;q=0.9
+    origin: http://localhost:8001
+    tsec: ca55846d7b5957a5e93f5dd3684fa6bc8e70aa3d
+    accept: application/json, text/html, */*; q=0.1
+    sec-ch-ua: '"Not(A:Brand";v="8", "Chromium";v="144", "Google Chrome";v="144"'
+    sec-ch-ua-mobile: ?0
+    x-vbank-session: 1626f91a-71c3-4b10-ac0c-231717e941dd
+    sec-ch-ua-platform: '"macOS"'
+    host: localhost:9000
+    content-type: application/json
+    connection: keep-alive
+    cache-control: no-cache, no-store, must-revalidate
+    accept-encoding: gzip, deflate, br, zstd
+    sec-fetch-dest: empty
+    user-agent: GLOMO_MX/99.99.99 (Android;14;Samsung)
+then:
+- return:
+    data:
+    - description: Indica si la tarjeta puede ser tokenizada
+      id: TOKENIZED_CARD
+      isActive: true
+    - description: Indica si la tarjeta tarjeta está relacionada con tecnología contactless
+      id: HAS_CONTACTLESS
+      isActive: true
+    - description: Indica si la tarjeta está relacionada con la tecnología biométrica
+        de huellas dactilares
+      id: HAS_FINGERPRINT_BIOMETRIC
+      isActive: false
+    - description: Indica si la tarjeta está vinculada a una llave inteligente
+      id: IS_SMART_KEY
+      isActive: false
+    - id: BLOCKABLE
+      isActive: true
+    - description: the card is not an additional card
+      id: IS_ADDITIONAL
+      isActive: false
+    :headers:
+      access-control-allow-origin: '*'
+      content-length: '710'
+      Access-Control-Expose-Headers: tsec, vnd.bbva.access-token-type,vnd.bbva.access-token,
+        vnd.bbva.sso-pkcs7, authenticationtype, authenticationdata, authenticationstate,
+        authenticationchallenge
+      Server: artichoke
+      access-control-allow-headers: Content-Type, tsec, authenticationtype, authenticationdata,
+        authenticationstate, contactid, consumeruuid, consumerapplicationid, perimetertsec,
+        authorization, responsewarningcode, responsewarningdescription, cuf, field,
+        bcs-device-app-version, bcs-device-app-version, vnd.bbva.authorization, device-id,
+        Bcs-Device-Os-Name, bcs-device-app-name, bcs-device-dpi, BCS-Device-Id
+      Connection: keep-alive
+      content-type: application/json;charset=UTF-8
+      Vary: Accept-Encoding
+      tsec: ca55846d7b5957a5e93f5dd3684fa6bc8e70aa3d
+      X-Response-Time: 9ms
+      Date: Mon, 16 Feb 2026 18:06:22 GMT
+    :status: 200 OK
+    apiInfo:
+      name: cards
+      category: products
+      version: 0.19.0

@@ -1,0 +1,67 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: cb5b1947-4819-44b2-915a-b1bd0427d53f
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: card_block_and_replacement,credit_card_error_access_block_management
+    lock: 'false'
+then:
+- return:
+    :body:
+    - data:
+        tags:
+        - '8134142984'
+        - additional_credit_card_operative
+        - card_block_and_replacement
+        - credit_card_error_access_block_management
+        products:
+          cards:
+          - number: '4555043000344722'
+            blocks:
+            - reference: VG_VIGENTE
+              reason:
+                description: VIGENTE
+                id: VIGENTE
+              additionalInformation: Indica que la tarjeta está bloqueada debido a
+                VIGENTE
+              isActive: false
+            cardId: BOqrkDMiMybWaMr13jzV4dD9FH66YR22
+            physicalSupport:
+              name: Plástico normal
+              id: NORMAL_PLASTIC
+            cardType:
+              name: CREDIT_CARD
+              id: CREDIT_CARD
+            alias: Replacement additional 3
+            indicators:
+            - id: IS_ADDITIONAL
+              isActive: true
+            status:
+              description: La tarjeta se puede utilizar según la configuración que
+                el cliente haya configurado para las diferentes activaciones.
+              id: OPERATIVE
+        authentication:
+          password: Glomo2026
+          user: '8134142984'
+          deviceId: BB662BB48A805B863D1FC484A9332449
+      id: 36269848
+    :headers:
+      content-length: '921'
+      Server: nginx
+      Cache-Control: max-age=0
+      Connection: keep-alive
+      host: datamanager.globaldevtools.bbva.com
+      Vary: Accept-Encoding
+      Expires: Thu, 26 Feb 2026 11:51:06 GMT
+      Date: Thu, 26 Feb 2026 11:51:06 GMT
+      Content-Type: application/json; charset=utf-8
+    :status: 200 OK

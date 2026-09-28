@@ -1,0 +1,109 @@
+when:
+  sequence: 1
+  path: /QSRV_A02/TechArchitecture/mx/grantingTicket/V02
+  method: POST
+  backend: glomo
+request:
+  headers:
+    sec-fetch-mode: cors
+    referer: http://localhost:8001/
+    content-length: '261'
+    sec-fetch-site: same-site
+    accept-language: es-MX,es;q=0.9
+    origin: http://localhost:8001
+    accept: application/json, text/html, */*; q=0.1
+    sec-ch-ua: '"Chromium";v="134", "Not:A-Brand";v="24", "Google Chrome";v="134"'
+    sec-ch-ua-mobile: ?0
+    x-vbank-session: cfe0e61d-4538-4c1b-bba1-b88dfc06d7d6
+    sec-ch-ua-platform: '"macOS"'
+    host: localhost:9000
+    content-type: application/json
+    connection: keep-alive
+    cache-control: no-cache, no-store, must-revalidate
+    accept-encoding: gzip, deflate, br, zstd
+    sec-fetch-dest: empty
+    user-agent: GLOMO_MX/99.99.99 (Android;14;Samsung)
+  body:
+    backendUserRequest:
+      accessCode: '8186548670'
+      dialogId: ''
+      userId: ''
+    authentication:
+      authenticationData:
+      - authenticationData:
+        - Glomo2024
+        idAuthenticationData: password
+      consumerID: '10000187'
+      authenticationType: '02'
+      userID: '8186548670'
+then:
+- return:
+    backendUserResponse:
+      userStatus: A1
+      clientId: D0929222
+      clientStatus: A1
+      userType: '1'
+    authenticationResponse:
+      authenticationData: []
+      authenticationState: OK
+    :headers:
+      content-length: '178'
+      Access-Control-Allow-Origin: '*'
+      ECS-Entry-Point-Zone: ext
+      Access-Control-Allow-Methods: GET, POST, DELETE, PUT, OPTIONS, PATCH
+      Referrer-Policy: same-origin
+      X-Frame-Options: sameorigin
+      Strict-Transport-Security: max-age=31536000; includeSubDomains
+      Access-Control-Expose-Headers: remaining-time, Bbva-User-Agent, Accept-Encoding,
+        Accept, Content-Type, tsec, consumerrequestid, authenticationchallenge, authenticationtype,
+        authenticationdata, authenticationstate, contactid, consumeruuid, consumerapplicationid,
+        perimetertsec, authorization, responsewarningcode, responsewarningdescription,
+        cuf, prefer, phoneNumber, Location, X-RHO-PARENTSPANID, X-RHO-TRACEID, preferredauthenticationtype,
+        X-HTTP-Method-Override, Access-Control-Allow-Methods, iv-remote-address, thirdparty-x-forwarded-for,
+        thirdparty-user-agent, thirdparty-geolocation, thirdparty-calculated-scoring,
+        thirdparty-deviceid, vnd.bbva.security-client-certificate, order-preferredaction,
+        authenticationresponse, Access-Control-Max-Age, BCS-Device-Id, BCS-Device-OS-Name,
+        BCS-Device-Model-Name, BCS-Device-Model-Manufacturer, BCS-Device-Screen-Size,
+        BCS-Device-OS-Version, BCS-Device-DPI, BCS-Device-App-Name, BCS-Device-App-Version,
+        Third-Party-Application-Id, ECS-Signature-Platform-Use-Case, BCS-Process-Code,
+        BCS-Operation-Tracer, BCS-Process-Tracer, vnd.bbva.user-id, order-preferredaction,
+        order-id, order-accepteddisclaimers, x-forwarded-for, Date, order-hmac, x-dmz-orgn,
+        onsite-accountTerm, onsite-logicalTerm, Akamai-BM-Telemetry, BCS-Third-Party-Session-Id,
+        Cache-Control, clave, Content-Encoding, ECS-Entry-Point-Zone, firma, Geolocation,
+        Third-Party-Collaborator-Id, user-agent, Via, order-signed, loginauthenticationtype,
+        x-cau
+      Content-Security-Policy: script-src 'self'
+      Set-Cookie: vbank-session=cfe0e61d-4538-4c1b-bba1-b88dfc06d7d6
+      X-XSS-Protection: 1; mode=block
+      oauth: ''
+      consumerrequestid: 30a32a23-c149-485a-a9c4-1cf8fd41b43d
+      Content-Type: application/json; charset=UTF-8
+      X-EdgeConnect-Origin-MEX-Latency: '445'
+      X-Content-Type-Options: nosniff
+      old-catalog: 'true'
+      Connection: keep-alive
+      tsec: ZXlKaFlYQWlPaUl4TURBd01ERTROeUlzSW10bGVWWmxjbk5wYjI0aU9qRXNJbUZ3Y0Vsa0lqb2lRVkJRTVNJc0ltdHBaQ0k2SWtGUVVERXViRzlqWVd3dU1TSXNJbVZ1WXlJNklrRXhPVEpIUTAwaUxDSnJaWGxVZVhCbElqb2liRzlqWVd3aUxDSmhiR2NpT2lKa2FYSWlMQ0owYzJWalNXUWlPaUprTkdNM1pqaGhOaTFtTkRGbUxUUTBZVEF0WW1aaU1pMW1aVFUxTjJZeFl6Z3paR1lpZlEuLjlWakxpTjc3UU51alA2bksuZmIwTkRkSDVEaGtpaFdEUVdMYk94Z3pNaGdGQS01dVI3dmRVUTZjWmtnQ3NPY0JCTl9ycTI1OEhUb2ppQXFqZ2xUZ3U4UjRwXzJ2OFduaEhIVm1SR01LejBXQThpYW5feWdKemVVQ192UW94dWNkem9NNzVBTTNTTFlTQ0w5U3F6NzJ4cDJmbVdlWnZ4U1N6cEFfdDNjS1hWc0EzNzJuMnVMMWVkTmxSOTZiYzJrNmJjTHItQjAwWXJ1R3gyMzlMSEdPY1V4VjA1c2dGc2d4SkZYWmh3V2NLdlliMjBISE82VHFqR0tBLXlzcjRvaUV4MkxRZDdrNDduZENEV3JYbTJPN012V2tiWlF6WURTZHpBNG5ybjFFQ2puZV9EVk4yMVlvZl90TUZ4cU1kUWZWYnp2NE1kSXlQQXVqSjllS3lMYUc2Z082UHFRQmFRMlB2dTNpaEVkWHg0S3RwUTJXYnNoUU1MOC1renJPcDJIWWZyMHhMdWRsNkRsWGk4endZc1dCQ1g3WXJNN0ZWbmNOQnJUajRJLS10ZGdubW5CZTBmaDYxdmJmVkhSVW5Gd2J0blhzVlltdW02OE53dGlpaTRWcWhOYmxCQ194VWJPdmJmZkRfYzVseGdKN1ZPcWtCQmVNalZzY3dKMVpYeXUyNnBTLV82QUNrWTkzUjNVVEVjRVZiU1cyZkpUX1FnU3RNMzBrR0EweFQtanpKckNiUzdoNEhsamhBdlpEZG0yaktCQmRxVE0wUkZUVlgwNXdRald4LXBqZF96Q0VwVUFONWduR0JMaElBUmlDZUdfQTJtRHRRLWxOSm0wSm4tclRVMTBwTXBDUzQ1eFdKSW53SzBqN0R1QlZybDNRSDRCRVJPd1RwZTNkVk5hMk9KRW16cTZuQm8wblRSVjZNRkpfbVJ2WFdlMWtxbndkcHlOMnlUVEgyT05Sbmk3UDBPZW15d2NEYlZTN1JnRkQzYndjZ0NrV1NsY1RGUnRTNlZucm0wLW9SUG4wb1ZzaEdMY2N0a0J3cDhiSjZWVmlKYTNrRWNEVFRlTmFfanpKT0d0TFhIMVd1WWJkQ01DMG5DWUdfSE1UcHRIaTNiSzI5ZjRkb00zdEVzZnk4NGZKYkduTzBvcHZnM3J4UWpkd0Zmb01XUjBpX3p4amRXV0hDY05JZXZPSDQ0aFFpWDVHM09vNWJNNXJZYmVEMXVwdFdOMGwxcV91VUJRc3M3czJiSHFITnA2T1RvdEE3dWpIVUxKRl9wLWprVWdVVUM2RzhjV2VhcVl0ak8yVzMtbk04R3pjMjJqZ0MyOUo5RndndE1iUU1vZENNRHRDRlZZOFpmdU1TY1RUS2xQWEpmZlk3RlU5SWJKZ3FGd3pHek9uUExiMHVrd2szRGJxVVRZbGJzNlA2VUdoSy1DVV9WZFF3dEpiTUF6NDVHdllJMjZlVVpZMUxDcW8wQWNSV2dBSEc2dzhOVEVBZkl2NFJrTmhNWHVDM0ZUQ182WFFJRFJLZ0JRdnQ0cFlHTlY5aXR0dTZzUXFoOGlUamNKZEhCald5VUNGZVhZNEF1ZENFVy1VamUtMW51OTZ2dUEweVZhUVB0eWVwT2VHSGRfa3h6ZE5mX2FrZXBwWXZLcFFGaGdHZWhEdG1xMTF0dEZYZWtKNnBaN0pnV0JSaW90MDNiYkpwUFFiRXdtUkxaUzJUbWRGZWs3VDJWQU5LdzYybkdQNkEtVlItSXRxUU1rQmszdUI3SVVnR1hkUGlUc3pXSjA0QU5aSjZaWklfNEowalIwY2dTV0lkWjAxNUVOXzBoR0JPa2hRc1NYNWkxM2R5d2p2cmpOUlZuUWRveWw3UHlKSUhPWVhfXzEwUnBIc216RTdKX2xGRnN5djBPZU5LTGFZeFNoamt6TlRuenpvNXFFbGN3NkF3UnM5RnBKYzlWTlNNWTcyZW5nbTJGa2RLb3F6Qlp5NEJ6M0h2T0NEMHRmaTVudjI2bEVuLUstbjlWQ3dsTDk5eDNidktJZjFVTWlfOUEwd0duS2lkR3NmM1lhUW1CRzJTQWUtYjQ1OElmeDNMOXlOX1VRbjY4UVR4Tjd1b05HWndxelJoSDlqaW5qeW5uQ090SzFNZHlYZGd6ZGNhb3E4Vy11ZF8wTDdIYjZWRkp2M3FZdHFZSmFYQnJYalZIVXVGUHNHTExoSWd1cEVjNEdVQXFIMHV6ZjZ0QmNvdzEwZWNGQXNCenFDREpieHBpc2hJdWZ6RHVDX25qVHRMQkxKdXdmY2VvVXBtaUdzbXpFaGxVZENobkhXbmxxSDBzWEVaaFQ4bG53cGFTWUpxX1RuVnVNUXJnakhBc2dETWI1cEFhQjRxUGdJdFVhUU4wU1dzcE5rQURYM01pcDdvR2dxS0xLcXp4QmZmMDNrWTA4R1k3dEVWSXN0TUNDbjFvSnVSTTdiRjB3LjlObkZ3Z0I5S0hETEdjY3RRSEpZX0E=
+      Access-Control-Allow-Headers: remaining-time, Bbva-User-Agent, Accept-Encoding,
+        Accept, Content-Type, tsec, consumerrequestid, authenticationchallenge, authenticationtype,
+        authenticationdata, authenticationstate, contactid, consumeruuid, consumerapplicationid,
+        perimetertsec, authorization, responsewarningcode, responsewarningdescription,
+        cuf, prefer, phoneNumber, Location, X-RHO-PARENTSPANID, X-RHO-TRACEID, preferredauthenticationtype,
+        X-HTTP-Method-Override, Access-Control-Allow-Methods, iv-remote-address, thirdparty-x-forwarded-for,
+        thirdparty-user-agent, thirdparty-geolocation, thirdparty-calculated-scoring,
+        thirdparty-deviceid, vnd.bbva.security-client-certificate, order-preferredaction,
+        authenticationresponse, Access-Control-Max-Age, BCS-Device-Id, BCS-Device-OS-Name,
+        BCS-Device-Model-Name, BCS-Device-Model-Manufacturer, BCS-Device-Screen-Size,
+        BCS-Device-OS-Version, BCS-Device-DPI, BCS-Device-App-Name, BCS-Device-App-Version,
+        Third-Party-Application-Id, ECS-Signature-Platform-Use-Case, BCS-Process-Code,
+        BCS-Operation-Tracer, BCS-Process-Tracer, vnd.bbva.user-id, order-preferredaction,
+        order-id, order-accepteddisclaimers, x-forwarded-for, Date, order-hmac, x-dmz-orgn,
+        onsite-accountTerm, onsite-logicalTerm, Akamai-BM-Telemetry, BCS-Third-Party-Session-Id,
+        Cache-Control, clave, Content-Encoding, ECS-Entry-Point-Zone, firma, Geolocation,
+        Third-Party-Collaborator-Id, user-agent, Via, order-signed, loginauthenticationtype,
+        x-cau
+      Date: Fri, 07 Mar 2025 19:01:38 GMT
+      Cache-Control: no-cache,no-store,must-revalidate
+      Vary: Accept-Encoding
+      Expires: '-1'
+      X-EdgeConnect-MidMile-RTT: '0'
+    :status: 200 OK

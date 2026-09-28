@@ -1,0 +1,42 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: credit_line_increase_offer
+    lock: 'false'
+then:
+- return:
+    :body:
+    - data:
+        pushNILC:
+          eventID: nilcp1
+          productId: regBNghwnb8fWFuj5VZrna72_c66TigA_d7ahaf2smY
+          offerId: jNceQQ2m7o_x7FuQO5G9KUjoLagilS9-
+        tags:
+        - '5535561350'
+        - credit_line_increase_offer
+        authentication:
+          password: Glomo2026
+          user: '5535561350'
+          deviceId: FCAF831C6510A9E74C8A5E70D50C72A8
+      id: 36402878
+    :headers:
+      content-length: '324'
+      Server: nginx
+      Cache-Control: max-age=0
+      Connection: keep-alive
+      host: datamanager.globaldevtools.bbva.com
+      Vary: Accept-Encoding
+      Expires: Wed, 08 Apr 2026 22:49:43 GMT
+      Date: Wed, 08 Apr 2026 22:49:43 GMT
+      Content-Type: application/json; charset=utf-8
+    :status: 200 OK

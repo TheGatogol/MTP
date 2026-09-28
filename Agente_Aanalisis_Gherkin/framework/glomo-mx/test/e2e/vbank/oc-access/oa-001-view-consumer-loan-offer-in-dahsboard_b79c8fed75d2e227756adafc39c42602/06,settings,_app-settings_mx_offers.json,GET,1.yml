@@ -1,0 +1,55 @@
+when:
+  sequence: 1
+  path: /app-settings/mx/offers.json
+  method: GET
+  backend: settings
+request:
+  headers:
+    sec-fetch-mode: cors
+    content-length: '0'
+    referer: http://localhost:8001/
+    sec-fetch-site: same-site
+    accept-language: es-ES
+    origin: http://localhost:8001
+    accept: application/json, text/plain, */*; q=0.01
+    sec-ch-ua: ''
+    sec-ch-ua-mobile: ?0
+    x-vbank-session: 0933906b-663a-44b5-b2c9-107d28e2361d
+    sec-ch-ua-platform: ''
+    host: localhost:9001
+    content-type: application/json
+    connection: keep-alive
+    cache-control: no-cache, no-store, must-revalidate
+    accept-encoding: gzip, deflate, br
+    sec-fetch-dest: empty
+    user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36
+      (KHTML, like Gecko) HeadlessChrome/96.0.4664.93 Safari/537.36
+then:
+- return:
+    0ILC:
+      id: limit-increase
+    '0070':
+      id: limit-increase
+    0NOM:
+      id: consumer-loan
+    '0060':
+      id: consumer-loan
+    0PPI:
+      id: consumer-loan
+    ANOM:
+      id: payroll-advance
+    :headers:
+      Keep-Alive: timeout=5
+      Access-Control-Allow-Origin: http://localhost:8001
+      Connection: keep-alive
+      Last-Modified: Fri, 14 Jan 2022 17:52:46 GMT
+      Date: Fri, 14 Jan 2022 19:54:39 GMT
+      Accept-Ranges: bytes
+      Cache-Control: public, max-age=0
+      ETag: W/"e5-17e59b86fbb"
+      Access-Control-Allow-Credentials: 'true'
+      Vary: Origin, Accept-Encoding
+      Content-Length: '229'
+      X-Powered-By: Express
+      Content-Type: application/json; charset=UTF-8
+    :status: 200 OK

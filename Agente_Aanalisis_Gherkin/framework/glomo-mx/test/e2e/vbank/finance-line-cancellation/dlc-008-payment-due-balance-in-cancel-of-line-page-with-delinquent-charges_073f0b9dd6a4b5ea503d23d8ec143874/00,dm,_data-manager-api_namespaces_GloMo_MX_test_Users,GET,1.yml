@@ -1,0 +1,132 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: 1a2ce58f-dfee-42cb-91e3-6b4825d700c6
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: financing_line,late_payments
+    lock: 'false'
+then:
+- return:
+    :body:
+    - data:
+        homeFutura: false
+        cardsConfig:
+          paymentsConfig:
+            simulateConfig:
+              feesConfig:
+                fees:
+                  totalFees:
+                    amount: 20
+                    currency: MXN
+                  itemizeFees:
+                  - amount:
+                      amount: 10
+                      currency: MXN
+                    percentage: 1
+                    name: Direct periodic
+                    feeType: DIRECT_PERIODIC
+                  - amount:
+                      amount: 10
+                      currency: MXN
+                    percentage: 1
+                    name: Interés
+                    feeType: INTEREST
+                emptyOriginFees:
+                  totalFees:
+                    amount: 20
+                    currency: MXN
+                zeroFees:
+                  totalFees:
+                    amount: 0
+                    currency: MXN
+                  itemizeFees:
+                  - amount:
+                      amount: 0
+                      currency: MXN
+                    percentage: 0
+                    name: Direct periodic
+                    feeType: DIRECT_PERIODIC
+              taxesConfig:
+                zeroTaxes:
+                  totalTaxes:
+                    amount: 0
+                    currency: MXN
+                  itemizeTaxes:
+                  - amount:
+                      amount: 0
+                      currency: MXN
+                    percentage: 0
+                    name: Tariff
+                    taxType: TARIFF
+                taxes:
+                  totalTaxes:
+                    amount: 10
+                    currency: MXN
+                  itemizeTaxes:
+                  - amount:
+                      amount: 10
+                      currency: MXN
+                    percentage: 1
+                    name: Tariff
+                    taxType: TARIFF
+              exchangeRateConfig:
+                exchangeRate:
+                  date: '2020-01-30'
+                  targetCurrency: USD
+                  values:
+                    exchangeType: PURCHASE
+                    factor:
+                      value: 49
+                      ratio: 49.44
+                  baseCurrency: MXN
+        data:
+          catalogs:
+            catalogs: []
+            nonGovernmentalOrganizations: []
+        locale: es_mx
+        tags:
+        - '5530514388'
+        - financing_line
+        - late_payments
+        products:
+          cards:
+          - number: '4152313966884012'
+            cardId: 9YK9GXzCWZ8K9RGCpbwd25GCleDDTKngQBbr55s3Y08
+            cardType:
+              id: DEBIT_CARD
+            alias: 0001ah6370
+            id: 9YK9GXzCWZ8K9RGCpbwd25GCleDDTKngQBbr55s3Y08
+            title:
+              name: AZUL BBVA
+              id: AC
+            status:
+              id: OPERATIVE
+          accounts:
+            number: '00740010001502116370'
+        authentication:
+          password: Glomo2024
+          user: '5530514388'
+          deviceId: D76C7F92FAB740B15A484CAAB8DF3E46
+      lockExpiration: '2024-05-21T16:33:39.442575Z'
+      lockType: SHARED
+      id: 35817843
+    :headers:
+      content-length: '708'
+      Strict-Transport-Security: max-age=15768000
+      Server: nginx
+      ECS-Entry-Point-Zone: ext
+      Connection: keep-alive
+      host: datamanager.globaldevtools.bbva.com
+      Vary: Accept-Encoding
+      Date: Tue, 21 May 2024 16:33:23 GMT
+      Content-Type: application/json
+    :status: 200 OK

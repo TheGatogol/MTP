@@ -1,0 +1,43 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: 06ec064a-2d56-416c-ba68-c6dba8ab1f78
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: deferred_signature_note
+    lock: 'false'
+then:
+- return:
+    :body:
+    - data:
+        notifications:
+          deferredSignature: 6650ef3ae1b02e02726ad81c
+        tags:
+        - '5522431890'
+        - deferred_signature_note
+        authentication:
+          password: Glomo2024
+          user: '5522431890'
+          deviceId: EC6FEEBF78831E0992E8299DF77873AC
+      lockType: null
+      lockExpiration: null
+      id: 35815269
+    :headers:
+      content-length: '297'
+      Strict-Transport-Security: max-age=15768000
+      Server: nginx
+      ECS-Entry-Point-Zone: ext
+      Connection: keep-alive
+      host: datamanager.globaldevtools.bbva.com
+      Vary: Accept-Encoding
+      Date: Tue, 11 Jun 2024 21:10:20 GMT
+      Content-Type: application/json
+    :status: 200 OK

@@ -1,0 +1,39 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: c2770e02-6e5e-4603-ba56-c9a70ecdb199
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: emergency_vehicle_reports
+then:
+- return:
+    :body:
+    - data:
+        locale: es_mx
+        tags:
+        - '5540320358'
+        - emergency_vehicle_reports
+        authentication:
+          password: Glomo2022
+          user: '5540320358'
+          deviceId: B0887D1C2FB748088EBBD5398B9F2AC0
+      lockExpiration: null
+      lockType: null
+      id: 3506365
+    :headers:
+      Strict-Transport-Security: max-age=15768000
+      Server: nginx
+      ECS-Entry-Point-Zone: ext
+      Connection: keep-alive
+      Content-Length: '249'
+      Date: Thu, 09 Mar 2023 18:56:13 GMT
+      Content-Type: application/json
+    :status: 200 OK

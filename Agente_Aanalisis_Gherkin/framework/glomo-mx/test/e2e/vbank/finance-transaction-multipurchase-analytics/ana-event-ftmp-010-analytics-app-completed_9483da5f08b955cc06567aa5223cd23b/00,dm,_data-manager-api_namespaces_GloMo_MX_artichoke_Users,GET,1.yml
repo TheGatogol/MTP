@@ -1,0 +1,56 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_artichoke_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: c8cf941f-eafd-4ca4-b301-d75277ea169e
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: test_finance_multipurchase
+    lock: 'false'
+then:
+- return:
+    :body:
+    - data:
+        homeFutura: false
+        tags:
+        - test_finance_multipurchase
+        products:
+          cards:
+          - number: '4555042024225263'
+            cardId: cKzHdvcOUM2QmW4u83X7jNxmh1MzJnI2ibD1gCwQIVc
+            cardType:
+              name: TARJETA DE CREDITO
+              id: CREDIT_CARD
+            alias: 0006TC4634
+            indicators:
+            - indicatorId: MULTIPURCHASE_FINANCING_AVAILABLE
+              isActive: true
+            - indicatorId: PERSONAL_FINANCE_PLAN
+              isActive: false
+            status:
+              name: VIGENTE
+              id: OPERATIVE
+        authentication:
+          password: Glomo2025
+          user: '5554579372'
+          deviceId: BC95C9FD3DE177BB29925EA10200749C
+      id: 36177838
+      lockType: null
+      lockExpiration: null
+    :headers:
+      content-length: '619'
+      Cache-Control: max-age=0
+      Connection: keep-alive
+      host: datamanager.globaldevtools.bbva.com
+      Vary: Accept-Encoding
+      Expires: Sun, 20 Jul 2025 02:03:38 GMT
+      Date: Sun, 20 Jul 2025 02:03:38 GMT
+      Content-Type: application/json; charset=utf-8
+    :status: 200 OK

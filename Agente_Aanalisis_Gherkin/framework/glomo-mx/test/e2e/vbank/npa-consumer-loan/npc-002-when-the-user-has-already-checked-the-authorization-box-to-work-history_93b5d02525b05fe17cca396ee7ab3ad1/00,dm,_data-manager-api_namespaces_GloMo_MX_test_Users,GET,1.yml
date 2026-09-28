@@ -1,0 +1,43 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: npa_consumer_loan_offer
+    lock: 'false'
+then:
+- return:
+    :body:
+    - data:
+        data:
+          name: Laura Imelda
+        locale: es_mx
+        tags:
+        - '5589765737'
+        - npa_consumer_loan_offer
+        authentication:
+          password: Glomo2026
+          user: '5589765737'
+          deviceId: C5D72FCFD0282C3E761B99D1AC5BC271
+      id: 36810251
+      lockType: SHARED
+      lockExpiration: '2026-08-11T16:25:03.856027Z'
+    :headers:
+      content-length: '297'
+      Server: nginx
+      Cache-Control: max-age=0
+      Connection: keep-alive
+      host: datamanager.globaldevtools.bbva.com
+      Vary: Accept-Encoding
+      Expires: Tue, 11 Aug 2026 16:24:40 GMT
+      Date: Tue, 11 Aug 2026 16:24:40 GMT
+      Content-Type: application/json; charset=utf-8
+    :status: 200 OK

@@ -1,0 +1,60 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: 7f248a4a-9816-4fea-8d01-6cf1e1652d2d
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: mortgage_credit_payment
+    lock: 'false'
+then:
+- return:
+    :body:
+    - data:
+        locale: es_mx
+        amountReceipt: '4783.71'
+        tags:
+        - '5520293563'
+        - mortgage_credit_payment
+        products:
+        - accountId:
+          - vsm:
+            - id: PR5594 - 00740001009663465594
+            mxn:
+            - id: PR3776 - 00740632009851083776
+            udi:
+            - id: PR0282 - 00740001009681950282
+          accounts:
+          - number: '00740632009851083776'
+            alias: PR3776
+            id: QtKrWfyozUPFFIpYTcDvz80nBchowIq3
+          - number: '00740001009681950282'
+            alias: PR0282
+            id: QkyuCAIWfE4d40ar1CtkfMDfVUyFNlru
+          - number: '00740001009663465594'
+            alias: PR5594
+        authentication:
+          password: Glomo2402
+          user: '5520293563'
+          deviceId: BAA31676590B99E4010781ADB3C9C022
+      lockExpiration: null
+      lockType: null
+      id: 35667889
+    :headers:
+      content-length: '638'
+      Strict-Transport-Security: max-age=15768000
+      Server: nginx
+      ECS-Entry-Point-Zone: ext
+      Connection: keep-alive
+      host: datamanager.globaldevtools.bbva.com
+      Vary: Accept-Encoding
+      Date: Mon, 08 Jan 2024 18:58:58 GMT
+      Content-Type: application/json
+    :status: 200 OK

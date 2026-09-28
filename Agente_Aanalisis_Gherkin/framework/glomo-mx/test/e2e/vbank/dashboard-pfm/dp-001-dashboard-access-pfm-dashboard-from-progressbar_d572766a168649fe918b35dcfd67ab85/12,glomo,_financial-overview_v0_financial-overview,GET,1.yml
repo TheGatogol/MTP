@@ -1,0 +1,183 @@
+when:
+  sequence: 1
+  path: /SRVS_A02/financial-overview/v1/financial-overview
+  method: GET
+  backend: glomo
+request:
+  headers:
+    sec-fetch-mode: cors
+    content-length: '0'
+    referer: http://127.0.0.1:9090/
+    sec-fetch-site: cross-site
+    accept-language: es
+    origin: http://127.0.0.1:9090
+    x-forwarded-for: 10.23.99.95
+    tsec: 3d1ae36f5403b2997d72fba360edba220b3f18bd
+    via: 1.1 tunnel-5b97b979-d4a5-4290-b81a-51520b1ebd4b (squid/3.5.27)
+    accept: application/json, text/html, */*; q=0.1
+    sec-ch-ua: '" Not;A Brand";v="99", "Google Chrome";v="91", "Chromium";v="91"'
+    sec-ch-ua-mobile: ?0
+    x-vbank-session: 4a83b366-7eff-41c4-9926-77487f7717fd
+    host: localhost:9000
+    content-type: application/json
+    cache-control: no-cache, no-store, must-revalidate
+    accept-encoding: gzip
+    sec-fetch-dest: empty
+    user-agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko)
+      Chrome/91.0.4472.77 Safari/537.36
+then:
+- return:
+    data:
+      family:
+      - balances:
+        - amountBalance:
+          - amount: '1870000'
+            isMajor: 'false'
+            currency: MXN
+          name: Saldo disponible
+          id: CURRENT_BALANCE
+        - amountBalance:
+          - amount: '25000'
+            isMajor: 'false'
+            currency: MXN
+          name: Saldo buen cobro
+          id: PENDING_DEPOSIT_BALANCE
+        name: Mi Cuenta corriente
+        id: ACCOUNT
+      contracts:
+      - number: '982376345443472184'
+        product:
+          name: Cuenta corriente con línea de crédito
+          description: Mi Cuenta corriente
+          id: CORRIENTE_LCREDITO_CL
+        numberType:
+          id: LIC
+        alias: Mi Cuenta corriente
+        id: '982376345443472184'
+        detail:
+          specificAmounts:
+          - amounts:
+            - amount: 1870000
+              currency: MXN
+            name: Saldo disponible
+            id: CURRENT_BALANCE
+          - amounts:
+            - amount: 25000
+              currency: MXN
+            name: Saldo buen cobro
+            id: PENDING_DEPOSIT_BALANCE
+          level: N2
+        productType: ACCOUNT
+        status:
+          name: Cuenta operativa
+          id: ACTIVATED
+        subProductType:
+          name: Common
+          id: COMMON
+      - number: '4940830703602001'
+        product:
+          name: Despues BBVA Continental
+          description: Tarjeta crédito
+          id: CREDIT_PE
+        numberType:
+          id: PAN
+        alias: Tarjeta crédito
+        id: '2001'
+        detail:
+          images:
+          - name: Front face of the card
+            id: FRONT_CARD
+            url: https://openapi.bbva.com/ccds/covers?pg=0T00000225&bin=453973&default_image=true&v=4&width=303&height=192&country=es&app_id=com.bbva.wallet&issue_date=20160601
+          - name: Back face of the card
+            id: BACK_CARD
+            url: /imageBack.jpg
+          specificAmounts:
+          - amounts:
+            - amount: 20300
+              currency: MXN
+            name: Saldo actual
+            id: CURRENT_BALANCE
+          - amounts:
+            - amount: 300
+              currency: MXN
+            name: Saldo en tránsito
+            id: PENDING_CHARGE_BALANCE
+          - amounts:
+            - amount: 10000
+              currency: MXN
+            name: Saldo disponible
+            id: AVAILABLE_BALANCE
+          physicalSupport:
+            name: Plástico normal
+            id: NORMAL_PLASTIC
+          activations:
+          - name: Activation for global card usage
+            id: ON_OFF
+            isActive: true
+          expirationDate: 2019-06
+        status:
+          name: Operative card
+          id: OPERATIVE
+        subProductType:
+          name: Tarjeta de crédito
+          id: CREDIT_CARD
+      - number: '4940830723712002'
+        product:
+          name: Pago móvil Continental
+          description: Tarjeta prepago
+          id: PREPAID_PE
+        numberType:
+          id: PAN
+        alias: Tarjeta prepago
+        id: '2002'
+        detail:
+          images:
+          - name: Front face of the card
+            id: FRONT_CARD
+            url: https://openapi.bbva.com/ccds/covers?pg=0011&bin=455103&default_image=false&v=4&country=pe&app_id=com.bbva.wallet&issue_date=20130801
+          - name: Back face of the card
+            id: BACK_CARD
+            url: https://openapi.bbva.com/ccds/covers?pg=0011&bin=455103&default_image=false&v=4&country=pe&app_id=com.bbva.wallet&issue_date=20130801&back=true
+          specificAmounts:
+          - amounts:
+            - amount: 150
+              currency: MXN
+            name: Saldo disponible
+            id: AVAILABLE_BALANCE
+          physicalSupport:
+            name: Plástico normal
+            id: NORMAL_PLASTIC
+          activations:
+          - name: Activation for global card usage
+            id: ON_OFF
+            isActive: true
+          expirationDate: 2019-06
+        status:
+          name: Operative card
+          id: OPERATIVE
+        subProductType:
+          name: Tarjeta de prepago
+          id: PREPAID_CARD
+    :headers:
+      access-control-allow-origin: '*'
+      content-length: '6063'
+      Access-Control-Expose-Headers: tsec, vnd.bbva.access-token-type,vnd.bbva.access-token,
+        vnd.bbva.sso-pkcs7, authenticationtype, authenticationdata, authenticationstate,
+        authenticationchallenge
+      Server: artichoke
+      Alt-Svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      access-control-allow-headers: Content-Type, tsec, authenticationtype, authenticationdata,
+        authenticationstate, contactid, consumeruuid, consumerapplicationid, perimetertsec,
+        authorization, responsewarningcode, responsewarningdescription, cuf, field,
+        bcs-device-app-version, bcs-device-app-version, vnd.bbva.authorization
+      content-type: application/json;charset=UTF-8
+      Vary: Accept-Encoding
+      tsec: 3d1ae36f5403b2997d72fba360edba220b3f18bd
+      X-Response-Time: 631ms
+      Date: Mon, 30 May 2022 06:53:52 GMT
+      Via: 1.1 google
+    :status: 200 OK
+    apiInfo:
+      name: financial-overview
+      category: people
+      version: 0.7.0

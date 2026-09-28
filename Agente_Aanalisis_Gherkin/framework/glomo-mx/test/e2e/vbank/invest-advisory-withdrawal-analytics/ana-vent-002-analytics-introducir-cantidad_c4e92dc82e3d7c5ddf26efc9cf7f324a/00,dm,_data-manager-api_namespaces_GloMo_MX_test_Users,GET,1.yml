@@ -1,0 +1,39 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: e66d2a85-f9b1-40ef-925c-ea3a40693fc3
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: invest_advisory_withdrawal
+    lock: 'false'
+then:
+- return:
+    :body:
+    - data:
+        locale: es_mx
+        tags:
+        - invest_advisory_withdrawal
+        authentication:
+          password: Glomo2024
+          user: '5562984793'
+          deviceId: 02FFEEEF2B9C2C4BB5673D32ED77F113
+      lockType: SHARED
+      lockExpiration: '2024-10-22T19:52:51.468370Z'
+      id: 35952469
+    :headers:
+      content-length: '266'
+      Server: nginx
+      Connection: keep-alive
+      host: datamanager.globaldevtools.bbva.com
+      Vary: Accept-Encoding
+      Date: Tue, 22 Oct 2024 19:52:27 GMT
+      Content-Type: application/json
+    :status: 200 OK

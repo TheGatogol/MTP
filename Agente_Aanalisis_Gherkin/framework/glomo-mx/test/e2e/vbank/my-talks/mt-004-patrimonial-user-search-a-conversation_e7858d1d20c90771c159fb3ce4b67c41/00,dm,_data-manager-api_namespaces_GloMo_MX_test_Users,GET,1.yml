@@ -1,0 +1,45 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: 26a7108b-a2c1-4430-b9c6-0e5b3cf3f2ca
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: patrimonial_account
+    lock: 'false'
+then:
+- return:
+    :body:
+    - data:
+        statusNew: new
+        searchSubject: prue
+        locale: es_mx
+        userSegment: patrimonial
+        tags:
+        - patrimonial_account
+        authentication:
+          password: Password00
+          user: '5562010362'
+          deviceId: 8A76F61A69C3227CAD1C6712D789574E
+        titleConversation: titulo de prueba
+      lockExpiration: null
+      lockType: null
+      id: 1901472
+    :headers:
+      content-length: '301'
+      Strict-Transport-Security: max-age=15768000
+      Server: nginx
+      ECS-Entry-Point-Zone: ext
+      Connection: keep-alive
+      host: datamanager.globaldevtools.bbva.com
+      Vary: Accept-Encoding
+      Date: Thu, 28 Dec 2023 16:27:51 GMT
+      Content-Type: application/json
+    :status: 200 OK

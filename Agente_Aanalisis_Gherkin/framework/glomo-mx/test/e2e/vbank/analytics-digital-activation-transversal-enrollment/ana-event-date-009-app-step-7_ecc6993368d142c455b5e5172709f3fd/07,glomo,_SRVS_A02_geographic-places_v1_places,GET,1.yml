@@ -1,0 +1,115 @@
+when:
+  sequence: 1
+  path: /SRVS_A02/geographic-places/v1/places
+  method: GET
+  backend: glomo
+request:
+  headers:
+    sec-fetch-mode: cors
+    content-length: '0'
+    referer: http://localhost:8001/
+    sec-fetch-site: same-site
+    accept-language: es-MX,es;q=0.9
+    origin: http://localhost:8001
+    tsec: ZXlKaFlYQWlPaUl4TURBd01ESTBNeUlzSW10bGVWWmxjbk5wYjI0aU9qRXNJbUZ3Y0Vsa0lqb2lRVkJRTVNJc0ltdHBaQ0k2SWtGUVVERXViRzlqWVd3dU1TSXNJbVZ1WXlJNklrRXhPVEpIUTAwaUxDSnJaWGxVZVhCbElqb2liRzlqWVd3aUxDSmhiR2NpT2lKa2FYSWlMQ0owYzJWalNXUWlPaUkxTVRaaE9ESmtOaTFqT0dSaExUUmpNVFV0WVdFek5pMWxNakE1Tm1NeVpHSTNZak1pZlEuLl95cXdUalFmZXgxbU0xVG8ueFJHYjhhazl1ZFlRaDJubHdkYXhRTzZUdTNKT3hpdjR5ZFdyVFNyNlE3cEFGTDB4U05jZXJwT0N1QXBNRDUwZXlWRlgzT2lyRlIwOVdLSGNOSnVpRHBwQjh3ZENrMmZFeEtzaG1xdHRxUlF2Zjg2a0J4dGVaRm1NWFJQQW5oOVdGV1JWQk83cnk3THg5eFFCeXBIQXNHYW40MXcwdk1pTVZMZFpSY1djRnFUd2oyRFM0TUl4Rmk5TENtMloyaXI4UXBKenVGQU1KVkxTbi1SUWNiWDFuRk9KWjJERVJnbWNvTmNHa0FweVB1b1U3UkFkODhwaVg2Y0wzSGwxaHB1QUctM0Z3ZlhpQ3QtdGZBSGltUXZZVW1jYXo0ZHV1YkN0NlNXSldlWlIzY1J4Q2VRVkQ4SUliTkFmc0FENlpGbHRTSF9FbDdia1pDeF91RURaZ2twbm1RUWNFQ2g1NnhDakRLay1BMS1jN2lZTWRJY2hUb3JyQlRSeV9HNlV3d0NsLTNGTnNQWkdWbENYOHNCQ3YycmpxOUdsNThWeXFabmdqeHUzZTRhenE4cWRDMm9Oa0dXMnRwc1VncHQ2SEU3NWJTUHZDVmtRZnd0dENDTEFKcXhveElRcjBQTk1VNEljLWZiQjZTRjFMbU9WQl9hQ2NKR2E5RGhKN3VQOEpPNmNxVTItc3RUOUxGWXFLeWtFcFM2RXVYQk84LXFYb2JTanVyNU5yU0owZk1UZHVVelhmSGM3RG1jeW1LaGxFczRGc0xOS2hrRzhVRmFpR3JqMk93V0U5M2RjLTFMWHRabkhlVmhVZlBIN3Y5eVZZYlpZOGhjUjRuWGZJOU9mOENfcnM0aUg2VU9jZXBDR0FYSTdvSlF5aWR2NFVBZnY5WXFRVWNrckt2WGE3Qm1GcjlzX2Zya3k3R3FkVEMwUjZ0VTluMDJibExWcldVaDFtdjFVQ192NjJySzh2aEU2QnpaYUUyeTRNczhtNU1ZMFk5ZXJoUzZuRFVBSWZObk1obFlvaVUwdG9QN0RGbnpudVFnUWJQTHhBY1lfQm9Ha24yOFE5MXp0YlVPZmI0aGdwZ1p2SHlEbUtWZ2JxMXRmcURRWFBzdmU1OHJXNU9yLVdkZ1dUbm1Bcng4SUdWR3Zpa3F3RVN6ZUdiaU8zeGRnQlBQT3FtQUxjQUVycHJJLWdRLW9CWURFVC01cWpoRTBuLUdXM0hxY05FY2EyY2R3eHJJVnp5S3I3c3NxZ3dWSmhSa2tBQjU4aEMwSEc5Yy1FMVp1U0lzMnpzbjNveENjcUE1TU1zbm9LZFg1dFE1VVdIbTRfN1l6cjVMdUREWEctRXFnajZqcXUzLXQ0YjE1TDJTdURtUThXaDJFdldJc0FoR0lzQTBwcncuVV9rd3lFNmpCTGVZdUFwTldOd0Z4Zw==
+    accept: application/json, text/html, */*; q=0.1
+    sec-ch-ua: '"Not:A-Brand";v="99", "Google Chrome";v="145", "Chromium";v="145"'
+    sec-ch-ua-mobile: ?0
+    x-vbank-session: bdafeb89-9cd8-40f9-9ca5-d2726d583e3b
+    sec-ch-ua-platform: '"macOS"'
+    host: localhost:9000
+    content-type: application/json
+    connection: keep-alive
+    cache-control: no-cache, no-store, must-revalidate
+    accept-encoding: gzip, deflate, br, zstd
+    sec-fetch-dest: empty
+    user-agent: GLOMO_MX/99.99.99 (Android;14;Samsung)
+  query:
+    catalog.id: SEPOMEX
+    zipCode: '03103'
+    geographicPlaceType.id: COLONY
+then:
+- return:
+    pagination:
+      pageSize: 100
+      links:
+        next: /geographic-places/v1/places?catalog.id=SEPOMEX&zipCode=03103&geographicPlaceType.id=COLONY&paginationKey=N&pageSize=100
+        first: /geographic-places/v1/places?catalog.id=SEPOMEX&zipCode=03103&geographicPlaceType.id=COLONY
+    data:
+    - zipCode: '03103'
+      catalog:
+        id: SEPOMEX
+      name: DEL VALLE NORTE
+      id: '08892'
+      state:
+        name: CIUDAD DE MEXICO
+        id: DF
+      geographicPlaceTypes:
+      - name: Municipio
+        id: MUNICIPALITY
+        value: BENITO JUAREZ
+    :headers:
+      content-length: '587'
+      Access-Control-Allow-Origin: '*'
+      ECS-Entry-Point-Zone: ext
+      Access-Control-Allow-Methods: GET, POST, DELETE, PUT, OPTIONS, PATCH
+      X-Content-Type-Options: nosniff
+      Connection: keep-alive
+      tsec: ZXlKaFlYQWlPaUl4TURBd01ESTBNeUlzSW10bGVWWmxjbk5wYjI0aU9qRXNJbUZ3Y0Vsa0lqb2lRVkJRTVNJc0ltdHBaQ0k2SWtGUVVERXViRzlqWVd3dU1TSXNJbVZ1WXlJNklrRXhPVEpIUTAwaUxDSnJaWGxVZVhCbElqb2liRzlqWVd3aUxDSmhiR2NpT2lKa2FYSWlMQ0owYzJWalNXUWlPaUkxTVRaaE9ESmtOaTFqT0dSaExUUmpNVFV0WVdFek5pMWxNakE1Tm1NeVpHSTNZak1pZlEuLl95cXdUalFmZXgxbU0xVG8ueFJHYjhhazl1ZFlRaDJubHdkYXhRTzZUdTNKT3hpdjR5ZFdyVFNyNlE3cEFGTDB4U05jZXJwT0N1QXBNRDUwZXlWRlgzT2lyRlIwOVdLSGNOSnVpRHBwQjh3ZENrMmZFeEtzaG1xdHRxUlF2Zjg2a0J4dGVaRm1NWFJQQW5oOVdGV1JWQk83cnk3THg5eFFCeXBIQXNHYW40MXcwdk1pTVZMZFpSY1djRnFUd2oyRFM0TUl4Rmk5TENtMloyaXI4UXBKenVGQU1KVkxTbi1SUWNiWDFuRk9KWjJERVJnbWNvTmNHa0FweVB1b1U3UkFkODhwaVg2Y0wzSGwxaHB1QUctM0Z3ZlhpQ3QtdGZBSGltUXZZVW1jYXo0ZHV1YkN0NlNXSldlWlIzY1J4Q2VRVkQ4SUliTkFmc0FENlpGbHRTSF9FbDdia1pDeF91RURaZ2twbm1RUWNFQ2g1NnhDakRLay1BMS1jN2lZTWRJY2hUb3JyQlRSeV9HNlV3d0NsLTNGTnNQWkdWbENYOHNCQ3YycmpxOUdsNThWeXFabmdqeHUzZTRhenE4cWRDMm9Oa0dXMnRwc1VncHQ2SEU3NWJTUHZDVmtRZnd0dENDTEFKcXhveElRcjBQTk1VNEljLWZiQjZTRjFMbU9WQl9hQ2NKR2E5RGhKN3VQOEpPNmNxVTItc3RUOUxGWXFLeWtFcFM2RXVYQk84LXFYb2JTanVyNU5yU0owZk1UZHVVelhmSGM3RG1jeW1LaGxFczRGc0xOS2hrRzhVRmFpR3JqMk93V0U5M2RjLTFMWHRabkhlVmhVZlBIN3Y5eVZZYlpZOGhjUjRuWGZJOU9mOENfcnM0aUg2VU9jZXBDR0FYSTdvSlF5aWR2NFVBZnY5WXFRVWNrckt2WGE3Qm1GcjlzX2Zya3k3R3FkVEMwUjZ0VTluMDJibExWcldVaDFtdjFVQ192NjJySzh2aEU2QnpaYUUyeTRNczhtNU1ZMFk5ZXJoUzZuRFVBSWZObk1obFlvaVUwdG9QN0RGbnpudVFnUWJQTHhBY1lfQm9Ha24yOFE5MXp0YlVPZmI0aGdwZ1p2SHlEbUtWZ2JxMXRmcURRWFBzdmU1OHJXNU9yLVdkZ1dUbm1Bcng4SUdWR3Zpa3F3RVN6ZUdiaU8zeGRnQlBQT3FtQUxjQUVycHJJLWdRLW9CWURFVC01cWpoRTBuLUdXM0hxY05FY2EyY2R3eHJJVnp5S3I3c3NxZ3dWSmhSa2tBQjU4aEMwSEc5Yy1FMVp1U0lzMnpzbjNveENjcUE1TU1zbm9LZFg1dFE1VVdIbTRfN1l6cjVMdUREWEctRXFnajZqcXUzLXQ0YjE1TDJTdURtUThXaDJFdldJc0FoR0lzQTBwcncuVV9rd3lFNmpCTGVZdUFwTldOd0Z4Zw==
+      Access-Control-Allow-Headers: rcp-id, rcp-app, remaining-time, Bbva-User-Agent,
+        Accept-Encoding, Accept, Content-Type, tsec, consumerrequestid, authenticationchallenge,
+        authenticationtype, authenticationdata, authenticationstate, contactid, consumeruuid,
+        consumerapplicationid, perimetertsec, authorization, responsewarningcode,
+        responsewarningdescription, cuf, prefer, phoneNumber, Location, X-RHO-PARENTSPANID,
+        X-RHO-TRACEID, preferredauthenticationtype, X-HTTP-Method-Override, Access-Control-Allow-Methods,
+        iv-remote-address, thirdparty-x-forwarded-for, thirdparty-user-agent, thirdparty-geolocation,
+        thirdparty-calculated-scoring, thirdparty-deviceid, vnd.bbva.security-client-certificate,
+        order-preferredaction, authenticationresponse, Access-Control-Max-Age, BCS-Device-Id,
+        BCS-Device-OS-Name, BCS-Device-Model-Name, BCS-Device-Model-Manufacturer,
+        BCS-Device-Screen-Size, BCS-Device-OS-Version, BCS-Device-DPI, BCS-Device-App-Name,
+        BCS-Device-App-Version, Third-Party-Application-Id, ECS-Signature-Platform-Use-Case,
+        BCS-Process-Code, BCS-Operation-Tracer, BCS-Process-Tracer, order-preferredaction,
+        order-id, order-accepteddisclaimers, x-forwarded-for, Date, order-hmac, x-dmz-orgn,
+        onsite-accountTerm, onsite-logicalTerm, Akamai-BM-Telemetry, BCS-Third-Party-Session-Id,
+        Cache-Control, clave, Content-Encoding, ECS-Entry-Point-Zone, firma, Geolocation,
+        Third-Party-Collaborator-Id, user-agent, Via, order-signed, loginauthenticationtype,
+        x-cau, onsite-physicalBank, onsite-operationalBank, onsite-operationalBranch,
+        onsite-physicalBranch
+      Date: Fri, 20 Feb 2026 22:48:40 GMT
+      Referrer-Policy: same-origin
+      X-Frame-Options: sameorigin
+      ResponseWarningCode: PEA0020
+      Strict-Transport-Security: max-age=31536000; includeSubDomains
+      Access-Control-Expose-Headers: rcp-id, rcp-app, remaining-time, Bbva-User-Agent,
+        Accept-Encoding, Accept, Content-Type, tsec, consumerrequestid, authenticationchallenge,
+        authenticationtype, authenticationdata, authenticationstate, contactid, consumeruuid,
+        consumerapplicationid, perimetertsec, authorization, responsewarningcode,
+        responsewarningdescription, cuf, prefer, phoneNumber, Location, X-RHO-PARENTSPANID,
+        X-RHO-TRACEID, preferredauthenticationtype, X-HTTP-Method-Override, Access-Control-Allow-Methods,
+        iv-remote-address, thirdparty-x-forwarded-for, thirdparty-user-agent, thirdparty-geolocation,
+        thirdparty-calculated-scoring, thirdparty-deviceid, vnd.bbva.security-client-certificate,
+        order-preferredaction, authenticationresponse, Access-Control-Max-Age, BCS-Device-Id,
+        BCS-Device-OS-Name, BCS-Device-Model-Name, BCS-Device-Model-Manufacturer,
+        BCS-Device-Screen-Size, BCS-Device-OS-Version, BCS-Device-DPI, BCS-Device-App-Name,
+        BCS-Device-App-Version, Third-Party-Application-Id, ECS-Signature-Platform-Use-Case,
+        BCS-Process-Code, BCS-Operation-Tracer, BCS-Process-Tracer, order-preferredaction,
+        order-id, order-accepteddisclaimers, x-forwarded-for, Date, order-hmac, x-dmz-orgn,
+        onsite-accountTerm, onsite-logicalTerm, Akamai-BM-Telemetry, BCS-Third-Party-Session-Id,
+        Cache-Control, clave, Content-Encoding, ECS-Entry-Point-Zone, firma, Geolocation,
+        Third-Party-Collaborator-Id, user-agent, Via, order-signed, loginauthenticationtype,
+        x-cau, onsite-physicalBank, onsite-operationalBank, onsite-operationalBranch,
+        onsite-physicalBranch
+      Cache-Control: no-cache,no-store,must-revalidate
+      Content-Security-Policy: script-src 'self'
+      Vary: Accept-Encoding
+      Set-Cookie: vbank-session=bdafeb89-9cd8-40f9-9ca5-d2726d583e3b
+      Expires: '-1'
+      X-XSS-Protection: 1; mode=block
+      ResponseWarningDescription: OK. CONSULTA EFECTUADA
+      consumerrequestid: e1d34958-3fdf-4907-a332-85d8b7a2d782
+      Content-Type: application/json; charset=UTF-8
+    messages:
+    - code: PEA0020
+      message: OK. CONSULTA EFECTUADA
+      type: WARNING
+    :status: 200 OK

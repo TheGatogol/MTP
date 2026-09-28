@@ -1,0 +1,116 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: d7e436b9-7c26-4ef2-8b19-d05b340ac70a
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: bill_payments_only_one_account
+    lock: 'false'
+then:
+- return:
+    :body:
+    - data:
+        search2:
+          search: amer
+          name: AMERICAN EXPRESS
+          alias: amex1
+          id: '000081306'
+          billNumber: '370700038834005'
+        search3:
+          search: CFE
+          name: CFE
+          alias: cfe
+          id: '000578869'
+          billNumber: '10010707025561100000'
+        search1:
+          search: sears
+          name: SEARS
+          alias: Tarjeta
+          id: '000653837'
+          billNumber: '123456789123'
+        locale: es_mx
+        tags:
+        - '9512522972'
+        - bill_payments_only_one_account
+        search5:
+          search: sears
+          name: SEARS
+          alias: Tarjeta
+          id: '000653837'
+          billNumber: '123456789123'
+        products:
+          accounts:
+          - number: '00740010001503305673'
+            product:
+              name: Cuenta de Ahorro
+              id: AH
+            numberType:
+              id: CCC
+            alias: 0002ah5673
+            id: Uvn6wi1Rh6DOXM2kCdTWjy32Qj60B8n7lM5AGGHX-M9hTdhUJinZTw
+            detail:
+              level: '04'
+              specificAmounts:
+              - amounts:
+                - amount: 0
+                  currency: MXN
+                name: Saldo actual
+                id: CURRENT_BALANCE
+              - amounts:
+                - amount: 0
+                  currency: MXN
+                name: Saldo buen cobro
+                id: PENDING_DEPOSIT_BALANCE
+              - amounts:
+                - amount: 0
+                  currency: MXN
+                name: '000000001'
+                id: ACCOUNT_MOVEMENT_NUMBER
+              indicators:
+              - name: Indica si la cuenta es de nómina
+                id: IS_PAYROLL_ACCOUNT
+                isActive: false
+              - name: Indica si la cuenta es eje
+                id: IS_PRINCIPAL_ACCOUNT
+                isActive: false
+              - name: Indica si la cuenta tiene pockets
+                id: HAS_POCKETS
+                isActive: false
+              - name: Indica si la cuenta es digital
+                id: IS_DIGITAL
+                isActive: false
+            simpleCode: Uvn6wi1Rh6DOXM2kCdTWjzqtDos10C8g
+            productType: ACCOUNT
+            status:
+              name: Cuenta Activa
+              id: ACTIVE
+            subProductType:
+              name: TARJETA NOMINA BASIC
+              id: '0230'
+            signedAuthorization:
+              name: Cuenta Individual
+              id: SINGLE
+        authentication:
+          password: Glomo2024
+          user: '7861350476'
+          deviceId: 1A38D7F335469DFEEE2482AE3C0CF64D
+      lockExpiration: null
+      lockType: null
+      id: 35966994
+    :headers:
+      content-length: '1964'
+      Server: nginx
+      Connection: keep-alive
+      host: datamanager.globaldevtools.bbva.com
+      Vary: Accept-Encoding
+      Date: Thu, 31 Oct 2024 23:04:43 GMT
+      Content-Type: application/json
+    :status: 200 OK

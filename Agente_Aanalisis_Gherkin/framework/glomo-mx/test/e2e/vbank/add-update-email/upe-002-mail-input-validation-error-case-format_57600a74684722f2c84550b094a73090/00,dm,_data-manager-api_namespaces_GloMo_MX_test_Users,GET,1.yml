@@ -1,0 +1,39 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: 9c9378ab-8e79-4679-a355-2708ba9e1f1b
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: user_without_mail
+then:
+- return:
+    :body:
+    - data:
+        otp: '12345678'
+        locale: es_mx
+        tags:
+        - user_without_mail
+        authentication:
+          password: password00
+          user: '5532447874'
+          deviceId: A4C2BDC34320F68463ACFF651EB10641
+      lockType: null
+      lockExpiration: null
+      id: 2698649
+    :headers:
+      Strict-Transport-Security: max-age=15768000
+      Server: nginx
+      ECS-Entry-Point-Zone: ext
+      Connection: keep-alive
+      Content-Length: '247'
+      Date: Thu, 28 Jul 2022 19:27:17 GMT
+      Content-Type: application/json
+    :status: 200 OK

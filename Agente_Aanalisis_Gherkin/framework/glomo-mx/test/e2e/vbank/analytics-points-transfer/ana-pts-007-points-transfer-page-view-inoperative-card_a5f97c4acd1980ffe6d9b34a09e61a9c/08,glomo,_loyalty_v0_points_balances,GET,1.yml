@@ -1,0 +1,62 @@
+when:
+  sequence: 1
+  path: /SRVS_A02/loyalty/v0/points/balances
+  method: GET
+  backend: glomo
+request:
+  headers:
+    sec-fetch-mode: cors
+    content-length: '0'
+    referer: http://localhost:8001/
+    sec-fetch-site: same-site
+    accept-language: es-MX,es;q=0.9
+    origin: http://localhost:8001
+    tsec: 3f5b5775012de5072d22663dcaf463145ad53ff7
+    accept: application/json, text/html, */*; q=0.1
+    sec-ch-ua: '"Google Chrome";v="113", "Chromium";v="113", "Not-A.Brand";v="24"'
+    sec-ch-ua-mobile: ?0
+    x-vbank-session: f3b2605c-7138-43c4-993a-33cd79532685
+    sec-ch-ua-platform: '"macOS"'
+    host: localhost:9000
+    content-type: application/json
+    connection: keep-alive
+    cache-control: no-cache, no-store, must-revalidate
+    accept-encoding: gzip, deflate, br
+    sec-fetch-dest: empty
+    user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36
+      (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36
+then:
+- return:
+    data:
+      totalSaved:
+        amount: 180955.42
+        currency: MXN
+      pointsToBeExpired:
+        amount: 7561
+        expirationDate: '2037-10-02'
+      accumulatedPoints:
+        amount: 10
+        exchangeUnit:
+          amount: 70938.33
+          currency: MXN
+      areRedeemable: true
+      expiredPoints:
+        amount: 4974
+    :headers:
+      access-control-allow-origin: '*'
+      content-length: '407'
+      Access-Control-Expose-Headers: tsec, vnd.bbva.access-token-type,vnd.bbva.access-token,
+        vnd.bbva.sso-pkcs7, authenticationtype, authenticationdata, authenticationstate,
+        authenticationchallenge
+      Server: artichoke
+      access-control-allow-headers: Content-Type, tsec, authenticationtype, authenticationdata,
+        authenticationstate, contactid, consumeruuid, consumerapplicationid, perimetertsec,
+        authorization, responsewarningcode, responsewarningdescription, cuf, field,
+        bcs-device-app-version, bcs-device-app-version, vnd.bbva.authorization
+      Connection: keep-alive
+      content-type: application/json;charset=UTF-8
+      Vary: Accept-Encoding
+      tsec: 3f5b5775012de5072d22663dcaf463145ad53ff7
+      X-Response-Time: 8ms
+      Date: Mon, 22 May 2023 17:51:51 GMT
+    :status: 200 OK

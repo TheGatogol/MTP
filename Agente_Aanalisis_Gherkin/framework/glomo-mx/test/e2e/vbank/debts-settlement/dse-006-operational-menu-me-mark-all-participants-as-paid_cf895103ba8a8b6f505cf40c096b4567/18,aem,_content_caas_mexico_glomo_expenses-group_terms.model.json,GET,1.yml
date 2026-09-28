@@ -1,0 +1,148 @@
+when:
+  sequence: 1
+  path: /content/caas/mexico/glomo/expenses-group/terms.model.json
+  method: GET
+  backend: aem
+request:
+  headers:
+    sec-fetch-mode: cors
+    content-length: '0'
+    referer: http://localhost:8001/
+    sec-fetch-site: same-site
+    accept-language: es-MX,es;q=0.9
+    origin: http://localhost:8001
+    accept: application/json, text/plain, */*; q=0.01
+    sec-ch-ua: '"Chromium";v="134", "Not:A-Brand";v="24", "Google Chrome";v="134"'
+    sec-ch-ua-mobile: ?0
+    x-vbank-session: 4ece3a09-b797-45eb-bdfd-cafd13520845
+    sec-ch-ua-platform: '"macOS"'
+    host: localhost:9031
+    content-type: application/json
+    connection: keep-alive
+    cache-control: no-cache, no-store, must-revalidate
+    accept-encoding: gzip, deflate, br, zstd
+    sec-fetch-dest: empty
+    user-agent: GLOMO_MX/99.99.99 (Android;14;Samsung)
+then:
+- return:
+    brandSlug: ''
+    ::items:
+      root:
+        ::items:
+          contentfragmentlist:
+            ::type: bbva/pwebs/components/par/corecomponents/contentfragmentlist
+            id: terms
+            items:
+            - elementsOrder:
+              - idTerm
+              - image
+              - content
+              - buttonText
+              - buttonAction
+              - buttonStyle
+              variations: []
+              elements:
+                image:
+                  dataType: string
+                  ::type: string
+                  title: image
+                  multiValue: false
+                  value: bbva:logobbva
+                buttonText:
+                  dataType: string
+                  ::type: string
+                  title: button1Text
+                  multiValue: false
+                  value: Entendido
+                  translate: true
+                idTerm:
+                  dataType: string
+                  ::type: string
+                  title: id
+                  multiValue: false
+                  value: legalConditions
+                buttonStyle:
+                  dataType: string
+                  ::type: string
+                  title: button1Style
+                  multiValue: false
+                  value: LINK
+                buttonAction:
+                  dataType: string
+                  ::type: string
+                  title: button1Action
+                  multiValue: false
+                  value: goBack
+                content:
+                  dataType: string
+                  ::type: text/plain
+                  title: content
+                  multiValue: false
+                  value: |+
+                    <p><b>COMPARTIR GASTOS</b></p>
+                    <p>Los usuarios son responsables de la información que otorgan. Dado que esta herramienta se limita al intercambio informal de datos, BBVA no garantiza que la información sea verdadera. Las personas participantes en los grupos no están vinculadas legalmente.</p>
+                    <p><b>USO DE DATOS PERSONALES</b></p>
+                    <p>La información proporcionada por los invitados se guardarán por el tiempo que dure el grupo y serán visibles para todos los integrantes. En caso de que alguien no acepte la invitación, sus datos se almacenarán por 15 días.</p>
+                    <p>Reconozco haber informado a los terceros sobre el tratamiento de sus datos y cuento con su consentimiento y conformidad.</p>
+                    <p><b>AVISO DE PRIVACIDAD</b></p>
+                    <p> Consulta el Aviso de Privacidad de BBVA México en cualquier sucursal de BBVA o en bbva.mx </p>
+
+                  translate: true
+              name: legalconditions
+              description: ''
+              model: caascfm/models/mexico-glomo-expenses-group-terms
+              ::type: dam:Asset
+              title: legalConditions
+        allowedComponents:
+          components:
+          - path: /content/caas/mexico/glomo/expenses-group/terms/jcr:content/root/bbva/pwebs/components/par/corecomponents/contentfragment
+            title: Content Fragment
+          - path: /content/caas/mexico/glomo/expenses-group/terms/jcr:content/root/bbva/pwebs/components/par/corecomponents/dynamiccontentfragment
+            title: Dynamic Content Fragment
+          - path: /content/caas/mexico/glomo/expenses-group/terms/jcr:content/root/bbva/pwebs/components/par/corecomponents/contentfragmentlist
+            title: Content Fragment List
+          applicable: false
+        columnClassNames:
+          contentfragmentlist: aem-GridColumn aem-GridColumn--default--12
+        gridClassNames: aem-Grid aem-Grid--12 aem-Grid--default--12
+        ::itemsOrder:
+        - contentfragmentlist
+        ::type: wcm/foundation/components/responsivegrid
+        columnCount: 12
+    lastModifiedDate: 1734002524899
+    htmlPageItems: []
+    :headers:
+      X-EdgeConnect-Origin-MEX-Latency: '177'
+      X-EdgeConnect-Cache-Status: '1'
+      Access-Control-Allow-Origin: http://localhost:8001
+      X-Content-Type-Options: nosniff
+      Connection: keep-alive
+      Date: Thu, 27 Mar 2025 04:29:40 GMT
+      Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Access-Control-Request-Method,
+        x-requested-with, x-rho-traceid, x-forwarded-for, contactid
+      Strict-Transport-Security: max-age=31536000; includeSubdomains; preload
+      Akamai-Parent-IP: 23.63.30.29
+      Cache-Control: max-age=3070
+      ETag: '"aadc936a85e21d89b5e66113b58d3864-gzip"'
+      Content-Security-Policy: frame-ancestors 'self' https://s3-dev.movil.bbva.es/
+        https://pre.web.bbva.es/ https://qa.web.grupobbva.com/ https://*.es.igrupobbva/
+        https://*.igrupobbva/  http://localhost http://localhost:4200 https://*.bbva-cells-files.s3.amazonaws.com/
+        https://ei-netcash.bbva.es/ https://ei-empresas.bbva.es/ https://ei.bbva.es/
+        https://ei.bbva.it/ https://pre.web.bbva.it/ https://s3-dev.mobile.bbva.it/  https://ei.bbvanetcash.com/
+        http://localhost:8001 https://int-bbva-cells-files.s3.amazonaws.com/ https://qa.bbvanetcash.pe
+        https://test.bbvanetcash.pe https://empresaslo.bbvanet.com.mx/ https://ei-net.bbvapivot.com
+      Vary: Accept-Encoding
+      Expires: Thu, 27 Mar 2025 05:20:50 GMT
+      X-XSS-Protection: 1; mode=block
+      Content-Length: '3278'
+      X-EdgeConnect-MidMile-RTT: '30'
+      Content-Type: application/json
+    language: en-US
+    title: terms
+    cssClassNames: caasinitiativecontent page basicpage
+    templateName: caasinitiativecontent
+    ::itemsOrder:
+    - root
+    ::type: bbva/pwebs/components/pages/caasinitiativecontent
+    :status: 200 OK
+    id: caasinitiativecontent-2238a77039

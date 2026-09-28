@@ -1,0 +1,55 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: e74377d4-94ac-45fe-8072-76c4a1286958
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: dimo_payments,debt_expenses_group
+    lock: 'false'
+then:
+- return:
+    :body:
+    - data:
+        data:
+          name: MARIA ANGELINA
+        debtors:
+          data:
+          - name: LUIS ENRIQUE
+          - name: OLIBIA
+          - name: SILVIA SOLEDAD
+        locale: es_mx
+        tags:
+        - '5537429385'
+        - dimo_payments
+        - debt_expenses_group
+        products:
+        - accountId:
+          - other:
+            - id: 0001ah5471 - 00740010001503805471
+            - id: 0002ah6426 - 00740010001503806426
+            - id: 0003ah5784 - 00743902002634905784
+        authentication:
+          password: Glomo2024
+          user: '5537429385'
+          deviceId: 42EE7DA2FD9AE34536E5615B51DECF7C
+      lockExpiration: '2025-01-13T17:59:13.967448Z'
+      lockType: SHARED
+      id: 36021592
+    :headers:
+      content-length: '602'
+      Cache-Control: max-age=0
+      Connection: keep-alive
+      host: datamanager.globaldevtools.bbva.com
+      Vary: Accept-Encoding
+      Expires: Mon, 13 Jan 2025 17:58:44 GMT
+      Date: Mon, 13 Jan 2025 17:58:44 GMT
+      Content-Type: application/json; charset=utf-8
+    :status: 200 OK

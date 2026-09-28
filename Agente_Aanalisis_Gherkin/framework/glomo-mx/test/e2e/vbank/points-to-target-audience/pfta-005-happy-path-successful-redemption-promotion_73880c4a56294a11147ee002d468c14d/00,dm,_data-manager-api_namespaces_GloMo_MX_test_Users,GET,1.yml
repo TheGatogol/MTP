@@ -1,0 +1,678 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: 50c1b43e-cb19-4516-99cc-d1fab340a937
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: card_with_transactions,target_audience_purchases
+    lock: 'false'
+then:
+- return:
+    :body:
+    - data:
+        homeFutura: false
+        otp: '12345678'
+        locale: es_mx
+        tags:
+        - card_with_transactions
+        - target_audience_purchases
+        products:
+          cards:
+          - formats:
+            - number: '012975474001175133'
+              numberType:
+                id: CLABE
+            numberType:
+              description: Número de Cuenta Principal
+              id: PAN
+            brandAssociation:
+              description: VISA
+              id: VISA
+            availableBalance:
+              currentBalances:
+              - amount: 9300.1
+                currency: MXN
+              pendingBalances:
+              - amount: 0
+                currency: MXN
+              postedBalances:
+              - amount: 9300.1
+                currency: MXN
+            number: '4772135027082728'
+            bank:
+              name: '0074'
+              id: '0074'
+            cutOffDate: '2016-11-14'
+            isBusiness: false
+            paymentMethods:
+            - nextPaymentDate: '2020-01-09'
+              description: Last period amount
+              id: LAST_PERIOD_AMOUNT_PAYMENT
+              monetaryPayments:
+              - amount: 0
+                currency: MXN
+            - nextPaymentDate: '2020-01-09'
+              description: Minimun amount
+              id: MINIMUM_AMOUNT_PAYMENT
+              monetaryPayments:
+              - amount: 0
+                currency: MXN
+            - nextPaymentDate: '2020-01-09'
+              description: Minimum amount to avoid interest
+              id: MINIMUM_AMOUNT_TO_AVOID_INTEREST_PAYMENT
+              monetaryPayments:
+              - amount: 0
+                currency: MXN
+            - nextPaymentDate: '2020-01-09'
+              description: Total debt amount
+              id: TOTAL_AMOUNT_PAYMENT
+              monetaryPayments:
+              - amount: 11000
+                currency: MXN
+            alias: 0002TC5667
+            id: xZGoAcRYXc0lcjku5ih1xG62cGS4sUdEidInKKyz3wQ
+            issueDate: 2016-02-17T00:00:00.000-0600
+            openingDate: 2016-02-17T00:00:00.000-0600
+            expirationDate: '2027-05-31'
+            images:
+            - name: Front face of the card
+              id: FRONT_CARD
+              url: https://openapi.bbva.com/ccds/covers?pg=AV&bin=477213&default_image=true&v=4&country=mx&app_id=com.bbva.glomo_mx
+            product:
+              name: ORO BBVA
+              id: AV
+            holderName: JESUS ARTURO CUELLAR MICHACA FDG
+            blocks:
+            - reference: VG_VIGENTE
+              reason:
+                description: VIGENTE
+                id: VIGENTE
+              additionalInformation: Indica que la tarjeta está bloqueada debido a
+                VIGENTE
+              isActive: false
+            physicalSupport:
+              description: VISA
+              id: NORMAL_PLASTIC
+            cardType:
+              description: CREDIT_CARD
+              id: CREDIT_CARD
+            disposedBalance:
+              pendingBalance:
+              - amount: 0
+                currency: MXN
+              currentBalances:
+              - amount: 11000
+                currency: MXN
+              postedBalance:
+              - amount: 11000
+                currency: MXN
+            indicators:
+            - description: Indica si se trata de una tarjeta limpia
+              id: IS_CLEAN_CARD
+              isActive: false
+            - description: Indica si la tarjeta puede ser tokenizada
+              id: TOKENIZED_CARD
+              isActive: true
+            - description: Indica si la tarjeta está relacionada con la tecnología
+                biométrica de huellas dactilares
+              id: HAS_FINGERPRINT_BIOMETRIC
+              isActive: false
+            - description: Indica si la tarjeta tarjeta está relacionada con tecnología
+                contactless
+              id: HAS_CONTACTLESS
+              isActive: false
+            - description: Indica si la tarjeta puede estar relacionada con tarjetas
+                adicionales
+              id: ASSOCIABLE_TO_ADDITIONAL_CARDS
+              isActive: true
+            - description: Indica si la tarjeta está vinculada a una llave inteligente
+              id: IS_SMART_KEY
+              isActive: false
+            transactions:
+            - transactionType:
+                name: Purchase
+                id: PURCHASE
+                internalCode:
+                  name: BIENES Y SERVICIOS ( COMPRAS )
+                  id: '00'
+              operationDate: '2023-08-30T01:00:00.000-05:00'
+              additionalInformation:
+                updatedBalance:
+                  amount: 12000
+                  currency: MXN
+                additionalData: TITULAR
+                rewardBenefits:
+                - description: Deferral
+                  id: DEFERRAL
+                - description: Special Benefit
+                  id: SPECIAL_BENEFIT
+              valuationDate: '2023-08-30T01:00:00.000-05:00'
+              concept: 'COMPRA MARCA 12               '
+              contract:
+                number: '4772135027082728'
+                product:
+                  name: Cards
+                  id: CARDS
+                numberType:
+                  name: Pan
+                  id: PAN
+                id: 4772135027082728    TC      C
+              moneyFlow:
+                name: Expense
+                id: EXPENSE
+              id: 32A0V5K42DJGFZMN5KFZCNYNH5SJC7HP6FXAVKAXEX83BD3KVCY2FDV6X5MDMWTQXVWQE2C9QSY80XS4WG8A9B8BHXRXTHG0817VPQQFZPJVGGCV4EFTB14B580RG1DZ
+              accountedDate: '2023-08-22T01:00:00.000-05:00'
+              financingType:
+                name: Financing available.
+                id: FINANCING_AVAILABLE
+              status:
+                name: Settled
+                id: SETTLED
+              localAmount:
+                amount: 100
+                currency: MXN
+            - transactionType:
+                name: Purchase
+                id: PURCHASE
+                internalCode:
+                  name: BIENES Y SERVICIOS ( COMPRAS )
+                  id: '00'
+              operationDate: '2023-08-30T01:00:00.000-05:00'
+              additionalInformation:
+                updatedBalance:
+                  amount: 11900
+                  currency: MXN
+                additionalData: TITULAR
+                rewardBenefits:
+                - description: Deferral
+                  id: DEFERRAL
+                - description: Special Benefit
+                  id: SPECIAL_BENEFIT
+              valuationDate: '2023-08-30T01:00:00.000-05:00'
+              concept: 'COMPRA MARCA 12               '
+              contract:
+                number: '4772135027082728'
+                product:
+                  name: Cards
+                  id: CARDS
+                numberType:
+                  name: Pan
+                  id: PAN
+                id: 4772135027082728    TC      C
+              moneyFlow:
+                name: Expense
+                id: EXPENSE
+              id: 32A0V5K42DJGFZMN5KFZCNYNH5SJC7HP6FXAVKAXEX83BD3KVCY0SDMQJF0CA4WDYTSQ8W5J7N384XS4WG8A9B8BHXRXTHG0817VPQQFZPJVGGCV4EFTB14B580RG1DZ
+              accountedDate: '2023-08-22T01:00:00.000-05:00'
+              financingType:
+                name: Financing available.
+                id: FINANCING_AVAILABLE
+              status:
+                name: Settled
+                id: SETTLED
+              localAmount:
+                amount: 100
+                currency: MXN
+            - transactionType:
+                name: Purchase
+                id: PURCHASE
+                internalCode:
+                  name: BIENES Y SERVICIOS ( COMPRAS )
+                  id: '00'
+              operationDate: '2023-08-30T01:00:00.000-05:00'
+              additionalInformation:
+                updatedBalance:
+                  amount: 11800
+                  currency: MXN
+                additionalData: TITULAR
+                rewardBenefits:
+                - description: Deferral
+                  id: DEFERRAL
+                - description: Special Benefit
+                  id: SPECIAL_BENEFIT
+              valuationDate: '2023-08-30T01:00:00.000-05:00'
+              concept: 'COMPRA MARCA 12               '
+              contract:
+                number: '4772135027082728'
+                product:
+                  name: Cards
+                  id: CARDS
+                numberType:
+                  name: Pan
+                  id: PAN
+                id: 4772135027082728    TC      C
+              moneyFlow:
+                name: Expense
+                id: EXPENSE
+              id: 32A0V5K42DJGFZMN5KFZCNYNH5SJC7HP6FXAVKAXEX83BD3KVCYFXYN64W92Q8PHME3VJGH48CCQ8XS4WG8A9B8BHXRXTHG0817VPQQFZPJVGGCV4EFTB14B580RG1DZ
+              accountedDate: '2023-08-22T01:00:00.000-05:00'
+              financingType:
+                name: Financing available.
+                id: FINANCING_AVAILABLE
+              status:
+                name: Settled
+                id: SETTLED
+              localAmount:
+                amount: 100
+                currency: MXN
+            - transactionType:
+                name: Purchase
+                id: PURCHASE
+                internalCode:
+                  name: BIENES Y SERVICIOS ( COMPRAS )
+                  id: '00'
+              operationDate: '2023-08-30T01:00:00.000-05:00'
+              additionalInformation:
+                updatedBalance:
+                  amount: 11700
+                  currency: MXN
+                additionalData: TITULAR
+                rewardBenefits:
+                - description: Deferral
+                  id: DEFERRAL
+                - description: Special Benefit
+                  id: SPECIAL_BENEFIT
+              valuationDate: '2023-08-30T01:00:00.000-05:00'
+              concept: 'COMPRA MARCA 12               '
+              contract:
+                number: '4772135027082728'
+                product:
+                  name: Cards
+                  id: CARDS
+                numberType:
+                  name: Pan
+                  id: PAN
+                id: 4772135027082728    TC      C
+              moneyFlow:
+                name: Expense
+                id: EXPENSE
+              id: 32A0V5K42DJGFZMN5KFZCNYNH5SJC7HP6FXAVKAXEX83BD3KVCY3T2JG5GCJFKDY9P9451NMXYQ7MXS4WG8A9B8BHXRXTHG0817VPQQFZPJVGGCV4EFTB14B580RG1DZ
+              accountedDate: '2023-08-22T01:00:00.000-05:00'
+              financingType:
+                name: Financing available.
+                id: FINANCING_AVAILABLE
+              status:
+                name: Settled
+                id: SETTLED
+              localAmount:
+                amount: 100
+                currency: MXN
+            - transactionType:
+                name: Purchase
+                id: PURCHASE
+                internalCode:
+                  name: BIENES Y SERVICIOS ( COMPRAS )
+                  id: '00'
+              operationDate: '2023-08-30T01:00:00.000-05:00'
+              additionalInformation:
+                updatedBalance:
+                  amount: 11600
+                  currency: MXN
+                additionalData: TITULAR
+                rewardBenefits:
+                - description: Deferral
+                  id: DEFERRAL
+                - description: Special Benefit
+                  id: SPECIAL_BENEFIT
+              valuationDate: '2023-08-30T01:00:00.000-05:00'
+              concept: 'COMPRA MARCA 12               '
+              contract:
+                number: '4772135027082728'
+                product:
+                  name: Cards
+                  id: CARDS
+                numberType:
+                  name: Pan
+                  id: PAN
+                id: 4772135027082728    TC      C
+              moneyFlow:
+                name: Expense
+                id: EXPENSE
+              id: 32A0V5K42DJGFZMN5KFZCNYNH5SJC7HP6FXAVKAXEX83BD3KVCY3XZ18YB1TXF4C3VDFVFRE5EFQTXS4WG8A9B8BHXRXTHG0817VPQQFZPJVGGCV4EFTB14B580RG1DZ
+              accountedDate: '2023-08-22T01:00:00.000-05:00'
+              financingType:
+                name: Financing available.
+                id: FINANCING_AVAILABLE
+              status:
+                name: Settled
+                id: SETTLED
+              localAmount:
+                amount: 100
+                currency: MXN
+            - transactionType:
+                name: Purchase
+                id: PURCHASE
+                internalCode:
+                  name: BIENES Y SERVICIOS ( COMPRAS )
+                  id: '00'
+              operationDate: '2023-08-30T01:00:00.000-05:00'
+              additionalInformation:
+                updatedBalance:
+                  amount: 11500
+                  currency: MXN
+                additionalData: TITULAR
+                rewardBenefits:
+                - description: Points
+                  id: POINTS
+                - description: Deferral
+                  id: DEFERRAL
+                - description: Special Benefit
+                  id: SPECIAL_BENEFIT
+              valuationDate: '2023-08-30T01:00:00.000-05:00'
+              concept: 'COMPRA MARCA 14               '
+              contract:
+                number: '4772135027082728'
+                product:
+                  name: Cards
+                  id: CARDS
+                numberType:
+                  name: Pan
+                  id: PAN
+                id: 4772135027082728    TC      C
+              moneyFlow:
+                name: Expense
+                id: EXPENSE
+              id: 32A0V5K42DJGFZMN5KFZCNYNH5SJC7HP6FXAVKAXEX83BD3KVCY3M64GGEW9T6Q0TBMFMCHJAVRX0XS4WG8A9B8BHXRXTHG0817VPQQFZPJVGGCV4EFTB14B580RG1DZ
+              accountedDate: '2023-08-22T01:00:00.000-05:00'
+              financingType:
+                name: Non financing.
+                id: NON_FINANCING
+              status:
+                name: Settled
+                id: SETTLED
+              localAmount:
+                amount: 100
+                currency: MXN
+            - transactionType:
+                name: Purchase
+                id: PURCHASE
+                internalCode:
+                  name: BIENES Y SERVICIOS ( COMPRAS )
+                  id: '00'
+              operationDate: '2023-08-30T01:00:00.000-05:00'
+              additionalInformation:
+                updatedBalance:
+                  amount: 11400
+                  currency: MXN
+                additionalData: TITULAR
+                rewardBenefits:
+                - description: Points
+                  id: POINTS
+                - description: Deferral
+                  id: DEFERRAL
+                - description: Special Benefit
+                  id: SPECIAL_BENEFIT
+              valuationDate: '2023-08-30T01:00:00.000-05:00'
+              concept: 'COMPRA MARCA 14               '
+              contract:
+                number: '4772135027082728'
+                product:
+                  name: Cards
+                  id: CARDS
+                numberType:
+                  name: Pan
+                  id: PAN
+                id: 4772135027082728    TC      C
+              moneyFlow:
+                name: Expense
+                id: EXPENSE
+              id: 32A0V5K42DJGFZMN5KFZCNYNH5SJC7HP6FXAVKAXEX83BD3KVCYA14NW809XTTVB4AMDXXS45TZ4CXS4WG8A9B8BHXRXTHG0817VPQQFZPJVGGCV4EFTB14B580RG1DZ
+              accountedDate: '2023-08-22T01:00:00.000-05:00'
+              financingType:
+                name: Non financing.
+                id: NON_FINANCING
+              status:
+                name: Settled
+                id: SETTLED
+              localAmount:
+                amount: 100
+                currency: MXN
+            - transactionType:
+                name: Purchase
+                id: PURCHASE
+                internalCode:
+                  name: BIENES Y SERVICIOS ( COMPRAS )
+                  id: '00'
+              operationDate: '2023-08-30T01:00:00.000-05:00'
+              additionalInformation:
+                updatedBalance:
+                  amount: 11300
+                  currency: MXN
+                additionalData: TITULAR
+                rewardBenefits:
+                - description: Points
+                  id: POINTS
+                - description: Deferral
+                  id: DEFERRAL
+                - description: Special Benefit
+                  id: SPECIAL_BENEFIT
+              valuationDate: '2023-08-30T01:00:00.000-05:00'
+              concept: 'COMPRA MARCA 14               '
+              contract:
+                number: '4772135027082728'
+                product:
+                  name: Cards
+                  id: CARDS
+                numberType:
+                  name: Pan
+                  id: PAN
+                id: 4772135027082728    TC      C
+              moneyFlow:
+                name: Expense
+                id: EXPENSE
+              id: 32A0V5K42DJGFZMN5KFZCNYNH5SJC7HP6FXAVKAXEX83BD3KVCYEQXY9Z0MJS8DES9J2MRWAS71CYXS4WG8A9B8BHXRXTHG0817VPQQFZPJVGGCV4EFTB14B580RG1DZ
+              accountedDate: '2023-08-22T01:00:00.000-05:00'
+              financingType:
+                name: Non financing.
+                id: NON_FINANCING
+              status:
+                name: Settled
+                id: SETTLED
+              localAmount:
+                amount: 100
+                currency: MXN
+            - transactionType:
+                name: Purchase
+                id: PURCHASE
+                internalCode:
+                  name: BIENES Y SERVICIOS ( COMPRAS )
+                  id: '00'
+              operationDate: '2023-08-30T01:00:00.000-05:00'
+              additionalInformation:
+                updatedBalance:
+                  amount: 11200
+                  currency: MXN
+                additionalData: TITULAR
+                rewardBenefits:
+                - description: Points
+                  id: POINTS
+                - description: Deferral
+                  id: DEFERRAL
+                - description: Special Benefit
+                  id: SPECIAL_BENEFIT
+              valuationDate: '2023-08-30T01:00:00.000-05:00'
+              concept: 'COMPRA MARCA 14               '
+              contract:
+                number: '4772135027082728'
+                product:
+                  name: Cards
+                  id: CARDS
+                numberType:
+                  name: Pan
+                  id: PAN
+                id: 4772135027082728    TC      C
+              moneyFlow:
+                name: Expense
+                id: EXPENSE
+              id: 32A0V5K42DJGFZMN5KFZCNYNH5SJC7HP6FXAVKAXEX83BD3KVCYE1HGFQ52EV3GVDMFW9JCDXT4CJXS4WG8A9B8BHXRXTHG0817VPQQFZPJVGGCV4EFTB14B580RG1DZ
+              accountedDate: '2023-08-22T01:00:00.000-05:00'
+              financingType:
+                name: Non financing.
+                id: NON_FINANCING
+              status:
+                name: Settled
+                id: SETTLED
+              localAmount:
+                amount: 100
+                currency: MXN
+            - transactionType:
+                name: Purchase
+                id: PURCHASE
+                internalCode:
+                  name: BIENES Y SERVICIOS ( COMPRAS )
+                  id: '00'
+              operationDate: '2023-08-30T01:00:00.000-05:00'
+              additionalInformation:
+                updatedBalance:
+                  amount: 11100
+                  currency: MXN
+                additionalData: TITULAR
+                rewardBenefits:
+                - description: Points
+                  id: POINTS
+                - description: Deferral
+                  id: DEFERRAL
+                - description: Special Benefit
+                  id: SPECIAL_BENEFIT
+              valuationDate: '2023-08-30T01:00:00.000-05:00'
+              concept: 'COMPRA MARCA 14               '
+              contract:
+                number: '4772135027082728'
+                product:
+                  name: Cards
+                  id: CARDS
+                numberType:
+                  name: Pan
+                  id: PAN
+                id: 4772135027082728    TC      C
+              moneyFlow:
+                name: Expense
+                id: EXPENSE
+              id: 32A0V5K42DJGFZMN5KFZCNYNH5SJC7HP6FXAVKAXEX83BD3KVCYCXTZSNAN9H7NBHWW17T7SDR2FPXS4WG8A9B8BHXRXTHG0817VPQQFZPJVGGCV4EFTB14B580RG1DZ
+              accountedDate: '2023-08-22T01:00:00.000-05:00'
+              financingType:
+                name: Non financing.
+                id: NON_FINANCING
+              status:
+                name: Settled
+                id: SETTLED
+              localAmount:
+                amount: 100
+                currency: MXN
+            - transactionType:
+                name: Purchase
+                id: PURCHASE
+                internalCode:
+                  name: BIENES Y SERVICIOS ( COMPRAS )
+                  id: '00'
+              operationDate: '2023-08-30T01:00:00.000-05:00'
+              additionalInformation:
+                updatedBalance:
+                  amount: 11000
+                  currency: MXN
+                additionalData: TITULAR
+              valuationDate: '2023-08-30T01:00:00.000-05:00'
+              concept: 'COMPRA MARCA 12               '
+              contract:
+                number: '4772135027082728'
+                product:
+                  name: Cards
+                  id: CARDS
+                numberType:
+                  name: Pan
+                  id: PAN
+                id: 4772135027082728    TC      C
+              moneyFlow:
+                name: Expense
+                id: EXPENSE
+              id: 32A0V5K42DJGFZMN5KFZCNYNH5SJC7HP6FXAVKAXEX83BD3KVCYCEEWGKZRGEZ5E22SWX5MJ3G478XS4WG8A9B8BHXRXTHG0817VPQQFZPJVGGCV4EFTB14B580RG1DZ
+              accountedDate: '2023-08-22T01:00:00.000-05:00'
+              financingType:
+                name: Non financing.
+                id: NON_FINANCING
+              status:
+                name: Settled
+                id: SETTLED
+              localAmount:
+                amount: 2000
+                currency: MXN
+            - transactionType:
+                name: Purchase
+                id: PURCHASE
+                internalCode:
+                  name: BIENES Y SERVICIOS ( COMPRAS )
+                  id: '00'
+              operationDate: '2023-08-30T01:00:00.000-05:00'
+              additionalInformation:
+                updatedBalance:
+                  amount: 9000
+                  currency: MXN
+                additionalData: TITULAR
+              valuationDate: '2023-08-30T01:00:00.000-05:00'
+              concept: 'COMPRA MARCA 12               '
+              contract:
+                number: '4772135027082728'
+                product:
+                  name: Cards
+                  id: CARDS
+                numberType:
+                  name: Pan
+                  id: PAN
+                id: 4772135027082728    TC      C
+              moneyFlow:
+                name: Expense
+                id: EXPENSE
+              id: 32A0V5K42DJGFZMN5KFZCNYNH5SJC7HP6FXAVKAXEX83BD3KVCY6WH9E4YTXX8VJEQ3CF3E4KEJDYXS4WG8A9B8BHXRXTHG0817VPQQFZPJVGGCV4EFTB14B580RG1DZ
+              accountedDate: '2023-08-22T01:00:00.000-05:00'
+              financingType:
+                name: Non financing.
+                id: NON_FINANCING
+              status:
+                name: Settled
+                id: SETTLED
+              localAmount:
+                amount: 20000
+                currency: MXN
+            grantedCredits:
+            - amount: 20300.1
+              currency: MXN
+            activations:
+            - description: DCVV
+              id: DCVV
+              isActive: false
+            activationDate: 2016-03-17T00:00:00.000-0600
+            status:
+              description: La tarjeta se puede utilizar según la configuración que
+                el cliente haya configurado para las diferentes activaciones.
+              id: OPERATIVE
+            currencies:
+            - isMajor: true
+              currency: MXN
+          loans: []
+          accounts: []
+        authentication:
+          password: Glomo2023
+          user: '5510947057'
+          deviceId: 5721D4761D85B362A92F3F93AF69BE71
+      lockExpiration: null
+      lockType: null
+      id: 35625305
+    :headers:
+      content-length: '16962'
+      Strict-Transport-Security: max-age=15768000
+      Server: nginx
+      ECS-Entry-Point-Zone: ext
+      Connection: keep-alive
+      host: datamanager.globaldevtools.bbva.com
+      Vary: Accept-Encoding
+      Date: Fri, 01 Sep 2023 01:06:15 GMT
+      Content-Type: application/json
+    :status: 200 OK

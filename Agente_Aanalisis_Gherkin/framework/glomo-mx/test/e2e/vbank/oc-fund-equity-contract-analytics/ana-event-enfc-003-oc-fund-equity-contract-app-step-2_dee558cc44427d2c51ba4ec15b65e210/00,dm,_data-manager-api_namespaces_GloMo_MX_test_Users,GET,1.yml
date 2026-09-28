@@ -1,0 +1,43 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: 7b433e06-09e9-4b5a-9330-57ee1e053bc6
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: equity_new_fund_contract
+    lock: 'false'
+then:
+- return:
+    :body:
+    - data:
+        tags:
+        - equity_new_fund_contract
+        - new_fund
+        authentication:
+          password: Glomo2024
+          respaldo:
+            password: Glomo2024
+            user: '6645906665'
+            deviceId: 5D8892A707210BCF9CBE5B5E2A1EC8C2
+          user: '6122316985'
+          deviceId: 14596056054D2872B6A64F45560D4473
+      lockType: null
+      lockExpiration: null
+      id: 35815282
+    :headers:
+      content-length: '337'
+      Server: nginx
+      Connection: keep-alive
+      host: datamanager.globaldevtools.bbva.com
+      Vary: Accept-Encoding
+      Date: Tue, 30 Jul 2024 21:42:29 GMT
+      Content-Type: application/json
+    :status: 200 OK

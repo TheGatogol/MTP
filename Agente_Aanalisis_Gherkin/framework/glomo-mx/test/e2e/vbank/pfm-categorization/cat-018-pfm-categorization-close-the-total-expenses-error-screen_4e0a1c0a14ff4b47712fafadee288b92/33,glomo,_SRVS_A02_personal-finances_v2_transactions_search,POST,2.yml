@@ -1,0 +1,680 @@
+when:
+  sequence: 2
+  path: /SRVS_A02/personal-finances/v2/transactions/search
+  method: POST
+  backend: glomo
+request:
+  headers:
+    sec-fetch-mode: cors
+    referer: http://localhost:8001/
+    content-length: '149'
+    sec-fetch-site: same-site
+    accept-language: es-MX
+    origin: http://localhost:8001
+    tsec: ZXlKaFlYQWlPaUl4TURBd01ERTROeUlzSW10bGVWWmxjbk5wYjI0aU9qRXNJbUZ3Y0Vsa0lqb2lRVkJRTVNJc0ltdHBaQ0k2SWtGUVVERXViRzlqWVd3dU1TSXNJbVZ1WXlJNklrRXhPVEpIUTAwaUxDSnJaWGxVZVhCbElqb2liRzlqWVd3aUxDSmhiR2NpT2lKa2FYSWlMQ0owYzJWalNXUWlPaUppTmpObU5HVXdZaTA0T0RWaExUUmlNakl0T1Rrd05DMDRPRFJsTW1NNU1qZGxNbUVpZlEuLnJuMEZDem5nN1dseE5IaXAuQkJyZEdaeDExTGRNSUFlOGpnc1NZd3BCX3BLdWp6a1drX01aS0FocmRqZFMtVm5fZVc3aVIxSVpRbG5GWlAzcEhvTkprYXFuYlJHYy1CY05BT1h2R2JiVm9iODVYRnVQT1dQazcyTWJsMzNTbk9qemJZX1k5Qy1mMWszdUxGYnh0aksxeDZvU1d0dXB6c0lQUnBvMm5yRDdBWXdyNnVQNFFvU3pYRjA3RDVaR3dmZnN4UEtoNFlzQjRlcDlMWlVkaVI1YTJvdVhfTXRkNnk4SXBFbEw1dHp2SFA4QXFSc1RjNUxiMG83Z2xiWVJjWlJaZzU2VHJmMGhBa0s1NWNaZTRGVGx2NVY3Z2pBSUxGeXBnRmRldEFZdktLUlY3OXZiOW1TTGt0MnU3Z0xiV0JsNlRrMFlfWVp3cHhEZWNVMGxFLVpSWVpZanNyUmttaFpxRGx4VVJxTE1iNHRZZVItUjZlLTdDdzVURjdFQlQ2R01ZNjZUSWN4aHJyb09mOC03cmlYY1VyMlN4cmVxc01wdE84ZlFSUUxDcXdzbWVQbE9qQVZBMkxJWG1aRWttejhrQl93ME0tdW9ERmRicVctTTNfbklfVnJnTkxVTUsxX0tNemFocHJuUXQzX2Z6Ui1IbVIzaThUeXRrMzJ4clhJU2MtRW41QzlyTFZENmhSdXo3VnNlX0FjazZQWkhpd0NKbTFSVDNvUTVBd1oxZVh1XzdaN0JYSjJTdkZiQkQ1dVJLXzk1YjZLVHpUcXdJNE4zaldma1AwWDFZbl9uNmxjaGpoRDFGcjV4aWVhSU10MnFfMDk2RWRQWGJsZjR0VG9jSDd6Ull5YWM4amdvNEpHa3ZQcGJaV1gtU0UwQXpMakt6UldnTEZKcl9tdXB0Vm9sWFpZak1mOXlfQ1VZQXhINXJTUm1Xc0V3OGhKXzBTVEFMUHdjbUdkY01fNkpjd1FuYUlmWWJ4dlBJVG9WOXFfYTRlWk45MFc1UF9GVXZrWTk2cmJvWS1TSTZlVldRbUU5MGJuWjdYSlpYU29nVTNET2JmTVZqcHVTQ1RtTGpYZURjcXE2ZHFkUjh2ZEJUd2J0Umt2S2ZiMS0zZmlNaTdFb2pQaWR3S1lNRXdWNDMxeWRqc3U3Q0NHZEZNTE8xSHlxaTQtNDM0LS1fMmJ2Wm1sN2JjS0RHcEE3bFJ2T0gxTG40bm9HdjdreGY1VThfVnNfenJJWXV2NlRSUnJZZG9GNHNoWGpDa1ZhME9tajdGV3gyejZyZHpNN1JQRDVsblJvdkkyNFZoRXk3MTFkWjAxRXdhQ2dQZ2dQZTRuN2NLOTJRS0NMWDJGS0tpb3dJYnE0RkxBWjg5OHByQUc4a1NpaHVyMm1HVnVoOHVPdXRtTWR5dHZuWkR1ekJTb2Fzcy1RdUtyNl9pRXRGTjJrRFNBZ2o4UmVKa2x5Tm9ORXNMWXVmRVBmWWN5dVhQNXdoWk5WNnF4MXVuSXhrQlhrcVQybG45WFR3RjdrVk5BbEIyc2dwMlhaaHZBNkYtR0NibUdGSE5BTm9uanNZcEN1a2xNa29OZ1lpaHNCNXhBQ0dCTGRaUzF6dnBSTmpQaktJeGQ5c1MzNFBGLUxncVBIbUppYV9wSm1BR09Jd051V0MwNUtIalFwUWktRXR3anFwRXMxZHNyb3hNNVVBV2pUaVEzeDdmSk15VEdqNVVldjRSSUFTVGlNV1dBbVhHaDFBd1U5bjBha01zLTJtZWNyRmRMVnBTUEZNRF90SlhSUnFxY29nMy1sLV9vQzBqN2kyQl9GczlUM2MtTlJ6Z3V4blRUOGk0Q0FNb3FLNklaX3ZjTmhWbGhYaWJOcTR0aEs5NmY1eE1vblVMRjl3NlA1Q0RTSllNZUlscXhEd0VTWVo0TTNUQ3pQM2JFWHpyYzd2YkczREh5R3BnS19vMG5PS3pwRWY5R0ltM3F5Qm1UZ1Mxay1NbGhVblFoemdGSnlZcG9wLUdGY1lFNDV0cmJ4T0pUWmwwcUM1Um5HSXI4LlhXeGUtWDBkWnI3ZjRtQW5mY3Y3WWc=
+    accept: application/json, text/html, */*; q=0.1
+    sec-ch-ua: '"Chromium";v="140", "Not=A?Brand";v="24", "Google Chrome";v="140"'
+    sec-ch-ua-mobile: ?0
+    x-vbank-session: 7b5ed194-9195-4165-a9cd-9042cce24d2d
+    sec-ch-ua-platform: '"macOS"'
+    host: localhost:9000
+    content-type: application/json
+    connection: keep-alive
+    cache-control: no-cache, no-store, must-revalidate
+    accept-encoding: gzip, deflate, br, zstd
+    sec-fetch-dest: empty
+    user-agent: GLOMO_MX/99.99.99 (Android;14;Samsung)
+  body:
+    periodStartDate: '2025-08-20T06:00:00.000Z'
+    groupIds:
+    - '2'
+    pfmId: '1'
+    orderBy: operationDate desc
+    periodEndDate: '2025-09-20T05:59:59.999Z'
+then:
+- return:
+    pagination:
+      totalPages: 1
+      pageSize: 20
+      links:
+        next: /personal-finances/v2/transactions/search?paginationKey=MjA&pageSize=20
+        last: /personal-finances/v2/transactions/search?paginationKey=LAST
+        previous: /personal-finances/v2/transactions/search?paginationKey=MA&pageSize=20
+        first: /personal-finances/v2/transactions/search
+      totalElements: 22
+    data:
+    - transactionType:
+        internalCode:
+          id: MX00740200101506032244000002446
+      operationDate: 2025-08-21T00:00:00.000-0600
+      amount:
+        amount: -315.0
+        currency: MXN
+      concept: 'COMPRA COMERC. '
+      contract:
+        product:
+          name: MX0074150500
+          productType:
+            id: ACCOUNTS
+        channelContractId: '00740010001506032244'
+        id: MX007400101506032244
+      id: MX00740200101506032244000002446
+      accountedDate: 2025-08-29T00:00:00.000-0600
+      group:
+        name: Gastos
+        id: '2'
+        category:
+          image:
+            id: home
+          name: Casa
+          id: '201'
+          subcategory:
+            name: Supermercado
+            id: '20113'
+      tags: []
+    - transactionType:
+        internalCode:
+          id: MX00740200101506032244000013936
+      operationDate: 2025-08-21T00:00:00.000-0600
+      amount:
+        amount: -179.0
+        currency: MXN
+      concept: 'COMPRA COMERC. '
+      contract:
+        product:
+          name: MX0074010209
+          productType:
+            id: ACCOUNTS
+        channelContractId: '00740010001506032244'
+        id: MX007400101506032244
+      id: MX00740200101506032244000013936
+      accountedDate: 2025-08-27T00:00:00.000-0600
+      group:
+        name: Gastos
+        id: '2'
+        category:
+          image:
+            id: shopping
+          name: Compras y servicios
+          id: '202'
+          subcategory:
+            name: Compras en línea
+            id: '20209'
+      tags: []
+    - transactionType:
+        internalCode:
+          id: MX00740200101506032244000002443
+      operationDate: 2025-08-21T00:00:00.000-0600
+      amount:
+        amount: -40.0
+        currency: MXN
+      concept: 'COMPRA COMERC. '
+      contract:
+        product:
+          name: MX0074150500
+          productType:
+            id: ACCOUNTS
+        channelContractId: '00740010001506032244'
+        id: MX007400101506032244
+      id: MX00740200101506032244000002443
+      accountedDate: 2025-08-26T00:00:00.000-0600
+      group:
+        name: Gastos
+        id: '2'
+        category:
+          image:
+            id: shopping
+          name: Compras y servicios
+          id: '202'
+          subcategory:
+            name: Tiendas departamentales
+            id: '20206'
+      tags: []
+    - transactionType:
+        internalCode:
+          id: MX00740200101506032244000002444
+      operationDate: 2025-08-21T00:00:00.000-0600
+      amount:
+        amount: -60.0
+        currency: MXN
+      concept: 'COMPRA COMERC. '
+      contract:
+        product:
+          name: MX0074150500
+          productType:
+            id: ACCOUNTS
+        channelContractId: '00740010001506032244'
+        id: MX007400101506032244
+      id: MX00740200101506032244000002444
+      accountedDate: 2025-08-26T00:00:00.000-0600
+      group:
+        name: Gastos
+        id: '2'
+        category:
+          image:
+            id: leisure
+          name: Entretenimiento
+          id: '203'
+          subcategory:
+            name: Espectáculos
+            id: '20302'
+      tags: []
+    - transactionType:
+        internalCode:
+          id: MX00740200101506032244000002445
+      operationDate: 2025-08-21T00:00:00.000-0600
+      amount:
+        amount: -150.0
+        currency: MXN
+      concept: 'COMPRA COMERC. '
+      contract:
+        product:
+          name: MX0074150500
+          productType:
+            id: ACCOUNTS
+        channelContractId: '00740010001506032244'
+        id: MX007400101506032244
+      id: MX00740200101506032244000002445
+      accountedDate: 2025-08-26T00:00:00.000-0600
+      group:
+        name: Gastos
+        id: '2'
+        category:
+          image:
+            id: shopping
+          name: Compras y servicios
+          id: '202'
+          subcategory:
+            name: Compras en línea
+            id: '20209'
+      tags: []
+    - transactionType:
+        internalCode:
+          id: MX00740200101506032244000003224
+      operationDate: 2025-08-21T00:00:00.000-0600
+      amount:
+        amount: -1077.2
+        currency: MXN
+      concept: 'COMPRA COMERC. '
+      contract:
+        product:
+          name: MX0074150500
+          productType:
+            id: ACCOUNTS
+        channelContractId: '00740010001506032244'
+        id: MX007400101506032244
+      id: MX00740200101506032244000003224
+      accountedDate: 2025-08-26T00:00:00.000-0600
+      group:
+        name: Gastos
+        id: '2'
+        category:
+          image:
+            id: travel
+          name: Transporte y viajes
+          id: '206'
+          subcategory:
+            name: Gasolina
+            id: '20604'
+      tags: []
+    - transactionType:
+        internalCode:
+          id: MX00740200101506032244000003226
+      operationDate: 2025-08-21T00:00:00.000-0600
+      amount:
+        amount: -777.42
+        currency: MXN
+      concept: 'COMPRA COMERC. '
+      contract:
+        product:
+          name: MX0074150500
+          productType:
+            id: ACCOUNTS
+        channelContractId: '00740010001506032244'
+        id: MX007400101506032244
+      id: MX00740200101506032244000003226
+      accountedDate: 2025-08-26T00:00:00.000-0600
+      group:
+        name: Gastos
+        id: '2'
+        category:
+          image:
+            id: travel
+          name: Transporte y viajes
+          id: '206'
+          subcategory:
+            name: Boletos y gastos de avión
+            id: '20610'
+      tags: []
+    - transactionType:
+        internalCode:
+          id: MX00740200101506032244000003227
+      operationDate: 2025-08-21T00:00:00.000-0600
+      amount:
+        amount: -777.42
+        currency: MXN
+      concept: 'COMPRA COMERC. '
+      contract:
+        product:
+          name: MX0074150500
+          productType:
+            id: ACCOUNTS
+        channelContractId: '00740010001506032244'
+        id: MX007400101506032244
+      id: MX00740200101506032244000003227
+      accountedDate: 2025-08-26T00:00:00.000-0600
+      group:
+        name: Gastos
+        id: '2'
+        category:
+          image:
+            id: travel
+          name: Transporte y viajes
+          id: '206'
+          subcategory:
+            name: Boletos y gastos de avión
+            id: '20610'
+      tags: []
+    - transactionType:
+        internalCode:
+          id: MX00740200101506032244000003228
+      operationDate: 2025-08-21T00:00:00.000-0600
+      amount:
+        amount: -668.62
+        currency: MXN
+      concept: 'COMPRA COMERC. '
+      contract:
+        product:
+          name: MX0074150500
+          productType:
+            id: ACCOUNTS
+        channelContractId: '00740010001506032244'
+        id: MX007400101506032244
+      id: MX00740200101506032244000003228
+      accountedDate: 2025-08-26T00:00:00.000-0600
+      group:
+        name: Gastos
+        id: '2'
+        category:
+          image:
+            id: travel
+          name: Transporte y viajes
+          id: '206'
+          subcategory:
+            name: Boletos y gastos de avión
+            id: '20610'
+      tags: []
+    - transactionType:
+        internalCode:
+          id: MX00740200101506032244000004084
+      operationDate: 2025-08-21T00:00:00.000-0600
+      amount:
+        amount: -500.0
+        currency: MXN
+      concept: 'COMPRA COMERC. '
+      contract:
+        product:
+          name: MX0074010007
+          productType:
+            id: ACCOUNTS
+        channelContractId: '00740010001506032244'
+        id: MX007400101506032244
+      id: MX00740200101506032244000004084
+      accountedDate: 2025-08-26T00:00:00.000-0600
+      group:
+        name: Gastos
+        id: '2'
+        category:
+          image:
+            id: travel
+          name: Transporte y viajes
+          id: '206'
+          subcategory:
+            name: Gasolina
+            id: '20604'
+      tags: []
+    - transactionType:
+        internalCode:
+          id: MX00740200101506032244000013920
+      operationDate: 2025-08-21T00:00:00.000-0600
+      amount:
+        amount: -50.0
+        currency: MXN
+      concept: 'COMPRA COMERC. '
+      contract:
+        product:
+          name: MX0074010209
+          productType:
+            id: ACCOUNTS
+        channelContractId: '00740010001506032244'
+        id: MX007400101506032244
+      id: MX00740200101506032244000013920
+      accountedDate: 2025-08-26T00:00:00.000-0600
+      group:
+        name: Gastos
+        id: '2'
+        category:
+          image:
+            id: shopping
+          name: Compras y servicios
+          id: '202'
+          subcategory:
+            name: Telefonía celular
+            id: '20210'
+      tags: []
+    - transactionType:
+        internalCode:
+          id: MX00740200101506032244000013921
+      operationDate: 2025-08-21T00:00:00.000-0600
+      amount:
+        amount: -50.0
+        currency: MXN
+      concept: 'COMPRA COMERC. '
+      contract:
+        product:
+          name: MX0074010209
+          productType:
+            id: ACCOUNTS
+        channelContractId: '00740010001506032244'
+        id: MX007400101506032244
+      id: MX00740200101506032244000013921
+      accountedDate: 2025-08-26T00:00:00.000-0600
+      group:
+        name: Gastos
+        id: '2'
+        category:
+          image:
+            id: shopping
+          name: Compras y servicios
+          id: '202'
+          subcategory:
+            name: Telefonía celular
+            id: '20210'
+      tags: []
+    - transactionType:
+        internalCode:
+          id: MX00740200101506032244000001532
+      operationDate: 2025-08-21T00:00:00.000-0600
+      amount:
+        amount: -94.5
+        currency: MXN
+      concept: 'COMPRA COMERC. '
+      contract:
+        product:
+          name: MX0074150500
+          productType:
+            id: ACCOUNTS
+        channelContractId: '00740010001506032244'
+        id: MX007400101506032244
+      id: MX00740200101506032244000001532
+      accountedDate: 2025-08-25T00:00:00.000-0600
+      group:
+        name: Gastos
+        id: '2'
+        category:
+          image:
+            id: health
+          name: Salud y belleza
+          id: '204'
+          subcategory:
+            name: Farmacias
+            id: '20402'
+      tags: []
+    - transactionType:
+        internalCode:
+          id: MX00740200101506032244000001534
+      operationDate: 2025-08-21T00:00:00.000-0600
+      amount:
+        amount: -132.9
+        currency: MXN
+      concept: 'COMPRA COMERC. '
+      contract:
+        product:
+          name: MX0074150500
+          productType:
+            id: ACCOUNTS
+        channelContractId: '00740010001506032244'
+        id: MX007400101506032244
+      id: MX00740200101506032244000001534
+      accountedDate: 2025-08-25T00:00:00.000-0600
+      group:
+        name: Gastos
+        id: '2'
+        category:
+          image:
+            id: shopping
+          name: Compras y servicios
+          id: '202'
+          subcategory:
+            name: Tiendas de conveniencia
+            id: '20212'
+      tags: []
+    - transactionType:
+        internalCode:
+          id: MX00740200101506032244000002434
+      operationDate: 2025-08-21T00:00:00.000-0600
+      amount:
+        amount: -42.0
+        currency: MXN
+      concept: 'COMPRA COMERC. '
+      contract:
+        product:
+          name: MX0074150500
+          productType:
+            id: ACCOUNTS
+        channelContractId: '00740010001506032244'
+        id: MX007400101506032244
+      id: MX00740200101506032244000002434
+      accountedDate: 2025-08-24T00:00:00.000-0600
+      group:
+        name: Gastos
+        id: '2'
+        category:
+          image:
+            id: shopping
+          name: Compras y servicios
+          id: '202'
+          subcategory:
+            name: Compras en línea
+            id: '20209'
+      tags: []
+    - transactionType:
+        internalCode:
+          id: MX00740200101506032244000002435
+      operationDate: 2025-08-21T00:00:00.000-0600
+      amount:
+        amount: -130.0
+        currency: MXN
+      concept: 'COMPRA COMERC. '
+      contract:
+        product:
+          name: MX0074150500
+          productType:
+            id: ACCOUNTS
+        channelContractId: '00740010001506032244'
+        id: MX007400101506032244
+      id: MX00740200101506032244000002435
+      accountedDate: 2025-08-24T00:00:00.000-0600
+      group:
+        name: Gastos
+        id: '2'
+        category:
+          image:
+            id: leisure
+          name: Entretenimiento
+          id: '203'
+          subcategory:
+            name: Actividades recreativas
+            id: '20304'
+      tags: []
+    - transactionType:
+        internalCode:
+          id: MX00740200101506032244000002439
+      operationDate: 2025-08-21T00:00:00.000-0600
+      amount:
+        amount: -229.0
+        currency: MXN
+      concept: 'COMPRA COMERC. '
+      contract:
+        product:
+          name: MX0074150500
+          productType:
+            id: ACCOUNTS
+        channelContractId: '00740010001506032244'
+        id: MX007400101506032244
+      id: MX00740200101506032244000002439
+      accountedDate: 2025-08-24T00:00:00.000-0600
+      group:
+        name: Gastos
+        id: '2'
+        category:
+          image:
+            id: home
+          name: Casa
+          id: '201'
+          subcategory:
+            name: Supermercado
+            id: '20113'
+      tags: []
+    - transactionType:
+        internalCode:
+          id: MX00740200101506032244000002440
+      operationDate: 2025-08-21T00:00:00.000-0600
+      amount:
+        amount: -91.0
+        currency: MXN
+      concept: 'COMPRA COMERC. '
+      contract:
+        product:
+          name: MX0074150500
+          productType:
+            id: ACCOUNTS
+        channelContractId: '00740010001506032244'
+        id: MX007400101506032244
+      id: MX00740200101506032244000002440
+      accountedDate: 2025-08-24T00:00:00.000-0600
+      group:
+        name: Gastos
+        id: '2'
+        category:
+          image:
+            id: home
+          name: Casa
+          id: '201'
+          subcategory:
+            name: Supermercado
+            id: '20113'
+      tags: []
+    - transactionType:
+        internalCode:
+          id: MX00740200101506032244000004080
+      operationDate: 2025-08-21T00:00:00.000-0600
+      amount:
+        amount: -210.0
+        currency: MXN
+      concept: 'COMPRA COMERC. '
+      contract:
+        product:
+          name: MX0074010007
+          productType:
+            id: ACCOUNTS
+        channelContractId: '00740010001506032244'
+        id: MX007400101506032244
+      id: MX00740200101506032244000004080
+      accountedDate: 2025-08-24T00:00:00.000-0600
+      group:
+        name: Gastos
+        id: '2'
+        category:
+          image:
+            id: shopping
+          name: Compras y servicios
+          id: '202'
+          subcategory:
+            name: Compras en línea
+            id: '20209'
+      tags: []
+    - transactionType:
+        internalCode:
+          id: MX00740200101506032244000002441
+      operationDate: 2025-08-21T00:00:00.000-0600
+      amount:
+        amount: -130.5
+        currency: MXN
+      concept: 'COMPRA COMERC. '
+      contract:
+        product:
+          name: MX0074150500
+          productType:
+            id: ACCOUNTS
+        channelContractId: '00740010001506032244'
+        id: MX007400101506032244
+      id: MX00740200101506032244000002441
+      accountedDate: 2025-08-21T00:00:00.000-0600
+      group:
+        name: Gastos
+        id: '2'
+        category:
+          image:
+            id: shopping
+          name: Compras y servicios
+          id: '202'
+          subcategory:
+            name: Tiendas de conveniencia
+            id: '20212'
+      tags: []
+    :headers:
+      content-length: '12552'
+      Access-Control-Allow-Origin: '*'
+      ECS-Entry-Point-Zone: ext
+      Access-Control-Allow-Methods: GET, POST, DELETE, PUT, OPTIONS, PATCH
+      X-Content-Type-Options: nosniff
+      Connection: keep-alive
+      tsec: ZXlKaFlYQWlPaUl4TURBd01ERTROeUlzSW10bGVWWmxjbk5wYjI0aU9qRXNJbUZ3Y0Vsa0lqb2lRVkJRTVNJc0ltdHBaQ0k2SWtGUVVERXViRzlqWVd3dU1TSXNJbVZ1WXlJNklrRXhPVEpIUTAwaUxDSnJaWGxVZVhCbElqb2liRzlqWVd3aUxDSmhiR2NpT2lKa2FYSWlMQ0owYzJWalNXUWlPaUppTmpObU5HVXdZaTA0T0RWaExUUmlNakl0T1Rrd05DMDRPRFJsTW1NNU1qZGxNbUVpZlEuLnJuMEZDem5nN1dseE5IaXAuQkJyZEdaeDExTGRNSUFlOGpnc1NZd3BCX3BLdWp6a1drX01aS0FocmRqZFMtVm5fZVc3aVIxSVpRbG5GWlAzcEhvTkprYXFuYlJHYy1CY05BT1h2R2JiVm9iODVYRnVQT1dQazcyTWJsMzNTbk9qemJZX1k5Qy1mMWszdUxGYnh0aksxeDZvU1d0dXB6c0lQUnBvMm5yRDdBWXdyNnVQNFFvU3pYRjA3RDVaR3dmZnN4UEtoNFlzQjRlcDlMWlVkaVI1YTJvdVhfTXRkNnk4SXBFbEw1dHp2SFA4QXFSc1RjNUxiMG83Z2xiWVJjWlJaZzU2VHJmMGhBa0s1NWNaZTRGVGx2NVY3Z2pBSUxGeXBnRmRldEFZdktLUlY3OXZiOW1TTGt0MnU3Z0xiV0JsNlRrMFlfWVp3cHhEZWNVMGxFLVpSWVpZanNyUmttaFpxRGx4VVJxTE1iNHRZZVItUjZlLTdDdzVURjdFQlQ2R01ZNjZUSWN4aHJyb09mOC03cmlYY1VyMlN4cmVxc01wdE84ZlFSUUxDcXdzbWVQbE9qQVZBMkxJWG1aRWttejhrQl93ME0tdW9ERmRicVctTTNfbklfVnJnTkxVTUsxX0tNemFocHJuUXQzX2Z6Ui1IbVIzaThUeXRrMzJ4clhJU2MtRW41QzlyTFZENmhSdXo3VnNlX0FjazZQWkhpd0NKbTFSVDNvUTVBd1oxZVh1XzdaN0JYSjJTdkZiQkQ1dVJLXzk1YjZLVHpUcXdJNE4zaldma1AwWDFZbl9uNmxjaGpoRDFGcjV4aWVhSU10MnFfMDk2RWRQWGJsZjR0VG9jSDd6Ull5YWM4amdvNEpHa3ZQcGJaV1gtU0UwQXpMakt6UldnTEZKcl9tdXB0Vm9sWFpZak1mOXlfQ1VZQXhINXJTUm1Xc0V3OGhKXzBTVEFMUHdjbUdkY01fNkpjd1FuYUlmWWJ4dlBJVG9WOXFfYTRlWk45MFc1UF9GVXZrWTk2cmJvWS1TSTZlVldRbUU5MGJuWjdYSlpYU29nVTNET2JmTVZqcHVTQ1RtTGpYZURjcXE2ZHFkUjh2ZEJUd2J0Umt2S2ZiMS0zZmlNaTdFb2pQaWR3S1lNRXdWNDMxeWRqc3U3Q0NHZEZNTE8xSHlxaTQtNDM0LS1fMmJ2Wm1sN2JjS0RHcEE3bFJ2T0gxTG40bm9HdjdreGY1VThfVnNfenJJWXV2NlRSUnJZZG9GNHNoWGpDa1ZhME9tajdGV3gyejZyZHpNN1JQRDVsblJvdkkyNFZoRXk3MTFkWjAxRXdhQ2dQZ2dQZTRuN2NLOTJRS0NMWDJGS0tpb3dJYnE0RkxBWjg5OHByQUc4a1NpaHVyMm1HVnVoOHVPdXRtTWR5dHZuWkR1ekJTb2Fzcy1RdUtyNl9pRXRGTjJrRFNBZ2o4UmVKa2x5Tm9ORXNMWXVmRVBmWWN5dVhQNXdoWk5WNnF4MXVuSXhrQlhrcVQybG45WFR3RjdrVk5BbEIyc2dwMlhaaHZBNkYtR0NibUdGSE5BTm9uanNZcEN1a2xNa29OZ1lpaHNCNXhBQ0dCTGRaUzF6dnBSTmpQaktJeGQ5c1MzNFBGLUxncVBIbUppYV9wSm1BR09Jd051V0MwNUtIalFwUWktRXR3anFwRXMxZHNyb3hNNVVBV2pUaVEzeDdmSk15VEdqNVVldjRSSUFTVGlNV1dBbVhHaDFBd1U5bjBha01zLTJtZWNyRmRMVnBTUEZNRF90SlhSUnFxY29nMy1sLV9vQzBqN2kyQl9GczlUM2MtTlJ6Z3V4blRUOGk0Q0FNb3FLNklaX3ZjTmhWbGhYaWJOcTR0aEs5NmY1eE1vblVMRjl3NlA1Q0RTSllNZUlscXhEd0VTWVo0TTNUQ3pQM2JFWHpyYzd2YkczREh5R3BnS19vMG5PS3pwRWY5R0ltM3F5Qm1UZ1Mxay1NbGhVblFoemdGSnlZcG9wLUdGY1lFNDV0cmJ4T0pUWmwwcUM1Um5HSXI4LlhXeGUtWDBkWnI3ZjRtQW5mY3Y3WWc=
+      Access-Control-Allow-Headers: remaining-time, Bbva-User-Agent, Accept-Encoding,
+        Accept, Content-Type, tsec, consumerrequestid, authenticationchallenge, authenticationtype,
+        authenticationdata, authenticationstate, contactid, consumeruuid, consumerapplicationid,
+        perimetertsec, authorization, responsewarningcode, responsewarningdescription,
+        cuf, prefer, phoneNumber, Location, X-RHO-PARENTSPANID, X-RHO-TRACEID, preferredauthenticationtype,
+        X-HTTP-Method-Override, Access-Control-Allow-Methods, iv-remote-address, thirdparty-x-forwarded-for,
+        thirdparty-user-agent, thirdparty-geolocation, thirdparty-calculated-scoring,
+        thirdparty-deviceid, vnd.bbva.security-client-certificate, order-preferredaction,
+        authenticationresponse, Access-Control-Max-Age, BCS-Device-Id, BCS-Device-OS-Name,
+        BCS-Device-Model-Name, BCS-Device-Model-Manufacturer, BCS-Device-Screen-Size,
+        BCS-Device-OS-Version, BCS-Device-DPI, BCS-Device-App-Name, BCS-Device-App-Version,
+        Third-Party-Application-Id, ECS-Signature-Platform-Use-Case, BCS-Process-Code,
+        BCS-Operation-Tracer, BCS-Process-Tracer, vnd.bbva.user-id, order-id, order-accepteddisclaimers,
+        x-forwarded-for, Date, order-hmac, x-dmz-orgn, onsite-accountTerm, onsite-logicalTerm,
+        Akamai-BM-Telemetry, BCS-Third-Party-Session-Id, Cache-Control, clave, Content-Encoding,
+        ECS-Entry-Point-Zone, firma, Geolocation, Third-Party-Collaborator-Id, user-agent,
+        Via, order-signed, loginauthenticationtype, x-cau
+      Date: Thu, 04 Sep 2025 15:33:43 GMT
+      Referrer-Policy: same-origin
+      X-Frame-Options: sameorigin
+      Strict-Transport-Security: max-age=31536000; includeSubDomains
+      Access-Control-Expose-Headers: remaining-time, Bbva-User-Agent, Accept-Encoding,
+        Accept, Content-Type, tsec, consumerrequestid, authenticationchallenge, authenticationtype,
+        authenticationdata, authenticationstate, contactid, consumeruuid, consumerapplicationid,
+        perimetertsec, authorization, responsewarningcode, responsewarningdescription,
+        cuf, prefer, phoneNumber, Location, X-RHO-PARENTSPANID, X-RHO-TRACEID, preferredauthenticationtype,
+        X-HTTP-Method-Override, Access-Control-Allow-Methods, iv-remote-address, thirdparty-x-forwarded-for,
+        thirdparty-user-agent, thirdparty-geolocation, thirdparty-calculated-scoring,
+        thirdparty-deviceid, vnd.bbva.security-client-certificate, order-preferredaction,
+        authenticationresponse, Access-Control-Max-Age, BCS-Device-Id, BCS-Device-OS-Name,
+        BCS-Device-Model-Name, BCS-Device-Model-Manufacturer, BCS-Device-Screen-Size,
+        BCS-Device-OS-Version, BCS-Device-DPI, BCS-Device-App-Name, BCS-Device-App-Version,
+        Third-Party-Application-Id, ECS-Signature-Platform-Use-Case, BCS-Process-Code,
+        BCS-Operation-Tracer, BCS-Process-Tracer, vnd.bbva.user-id, order-id, order-accepteddisclaimers,
+        x-forwarded-for, Date, order-hmac, x-dmz-orgn, onsite-accountTerm, onsite-logicalTerm,
+        Akamai-BM-Telemetry, BCS-Third-Party-Session-Id, Cache-Control, clave, Content-Encoding,
+        ECS-Entry-Point-Zone, firma, Geolocation, Third-Party-Collaborator-Id, user-agent,
+        Via, order-signed, loginauthenticationtype, x-cau
+      Cache-Control: no-cache,no-store,must-revalidate
+      Content-Security-Policy: script-src 'self'
+      Vary: Accept-Encoding
+      Set-Cookie: vbank-session=7b5ed194-9195-4165-a9cd-9042cce24d2d
+      Expires: '-1'
+      X-XSS-Protection: 1; mode=block
+      consumerrequestid: 46f91e4e-15a2-4fb5-97e0-34fee3562305
+      Content-Type: application/json; charset=UTF-8
+    :status: 500

@@ -1,0 +1,70 @@
+when:
+  sequence: 1
+  path: /SRVS_A02/personal-finances/v1/pfms/initialize
+  method: POST
+  backend: glomo
+request:
+  headers:
+    content-length: '366'
+    contactid: f7504129-b7fa-4911-9e18-a8451f905fc3
+    host: localhost:9000
+    connection: Keep-Alive
+    content-type: application/json
+    tsec: 963067270fa65fc77ef0dc6ff364614bc29eb43f
+    cache-control: no-cache
+    accept-encoding: gzip
+    user-agent: GLOMO_MX/99.99.99 (Android;12;Google sdk_gphone64_arm64)
+    accept: application/json, text/html, */*; q=0.1
+  body:
+    relatedContracts:
+    - contractId: '050400010100000000'
+      productType:
+        name: accounts
+        id: ACCOUNTS
+    - contractId: '050400010100000001'
+      productType:
+        name: accounts
+        id: ACCOUNTS
+    - contractId: '050400010100000003'
+      productType:
+        name: accounts
+        id: ACCOUNTS
+    - contractId: '050400010100000000'
+      productType:
+        name: accounts
+        id: ACCOUNTS
+then:
+- return:
+    severity: FATAL
+    system-error-cause: {}
+    consumer-request-id: 207a2723-e82b-4c47-a64c-ea8836f245cd
+    :headers:
+      access-control-allow-origin: '*'
+      content-length: '428'
+      Access-Control-Expose-Headers: tsec, vnd.bbva.access-token-type,vnd.bbva.access-token,
+        vnd.bbva.sso-pkcs7, authenticationtype, authenticationdata, authenticationstate,
+        authenticationchallenge
+      Server: artichoke
+      Alt-Svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      access-control-allow-headers: Content-Type, tsec, authenticationtype, authenticationdata,
+        authenticationstate, contactid, consumeruuid, consumerapplicationid, perimetertsec,
+        authorization, responsewarningcode, responsewarningdescription, cuf, field,
+        bcs-device-app-version, bcs-device-app-version, vnd.bbva.authorization, device-id
+      content-type: application/json;charset=UTF-8
+      Vary: Accept-Encoding
+      tsec: 963067270fa65fc77ef0dc6ff364614bc29eb43f
+      X-Response-Time: 1057ms
+      Date: Mon, 20 Nov 2023 13:36:46 GMT
+      Via: 1.1 google
+    system-error-code: '400'
+    http-status: 400
+    system-error-description: Bad Request
+    error-code: '400'
+    version: 1
+    error-message: Bad Request
+    httpStatus: 400
+    messages:
+    - message: Error 400 genérico
+      type: FATAL
+      parameters: []
+    :status: 400 Bad Request

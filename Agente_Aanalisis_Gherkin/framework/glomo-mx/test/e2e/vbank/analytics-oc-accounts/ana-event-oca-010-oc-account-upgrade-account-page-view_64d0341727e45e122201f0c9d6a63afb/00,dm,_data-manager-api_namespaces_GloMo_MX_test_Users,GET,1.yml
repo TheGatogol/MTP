@@ -1,0 +1,39 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: eb52211f-9ae9-48e1-882a-651cf4680948
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: oc_account_with_offer
+    lock: 'false'
+then:
+- return:
+    :body:
+    - data:
+        tags:
+        - '9711008963'
+        - oc_account
+        - oc_account_with_offer
+        authentication:
+          password: Glomo2026
+          user: '4461199582'
+          deviceId: 6A902929FD80BFAD21E441F3A49FFC54
+      id: 35856961
+    :headers:
+      Server: nginx
+      Cache-Control: max-age=0
+      Connection: keep-alive
+      host: datamanager.globaldevtools.bbva.com
+      Expires: Fri, 30 Jan 2026 19:20:34 GMT
+      Content-Length: '193'
+      Date: Fri, 30 Jan 2026 19:20:34 GMT
+      Content-Type: application/json; charset=utf-8
+    :status: 200 OK

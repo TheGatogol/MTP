@@ -1,0 +1,951 @@
+when:
+  sequence: 1
+  path: /SRVS_A02/pois/v0/bank-pois
+  method: GET
+  backend: glomo
+request:
+  headers:
+    sec-fetch-mode: cors
+    content-length: '0'
+    referer: http://localhost:8001/
+    sec-fetch-site: same-site
+    accept-language: es
+    origin: http://localhost:8001
+    tsec: ZXlKaFlYQWlPaUl4TURBd01EQXpNeUlzSW10bGVWWmxjbk5wYjI0aU9qRXNJbUZ3Y0Vsa0lqb2lRVkJRTVNJc0ltdHBaQ0k2SWtGUVVERXViRzlqWVd3dU1TSXNJbVZ1WXlJNklrRXhPVEpIUTAwaUxDSnJaWGxVZVhCbElqb2liRzlqWVd3aUxDSmhiR2NpT2lKa2FYSWlMQ0owYzJWalNXUWlPaUkwTTJKak9HVm1OUzFqTXpFMkxUUXdPRFF0T1dZMVppMHpZMll5TURJek56WmhaakFpZlEuLlBnTFozWmE4X2ZWLXpPZC0uN1E2aU9pRjN6REtfekVGRjhWNXlkQ20xVWpPMGlDOGZnSHRHNEgzbUVwVENPaXo1WEtKWW5YTnhqVllSUUZyc0VmN19VV1BTZTNjMmUtWWRPUENWR0RDVEJmZEVkTy00N3A2TVpVendxeWE4aGJLdTFJWk1oTG9CbGoxeFBnNVAwMWNLU2VDblFwa09uVWNudEdlNWVfSGtGSVJIaGptR2pOZkppYXNsWkRka3lRcHpRVV92bm10OXRJRVliVW1kRkJXdGpaRlNnYk9WcDBnY3RvbGRKLV9iSHpocGxOWng1OXk2U1pxcVlHQzEtMUJ3eVBabWxxTmlkNV9uQjJSRF9sTUhHVW12NmtzanBxQ3h5RE4xdFJubk9TajU3Y0p3emxUei1UT29TQ2xnVlREUjVNQjVOMzZ4S2p1OWhEZmhuREZoa0UxNDAzM2hZanVXWDRtMVFieXpVMF9EdHZkSEUxYnY3eGU3aXFMRXVWTXdlSDdndWJKdWh0QVVlZEJGaHRmQ0xselNLRXA1ZVVwcjA2Vmc2Vy1JX1BEYjhpeUxnM0I0MTFpejVxMnk1R1hRS3dGVExKTTNnTGhQbmswYm9nZzBlMEY2NlgxWjF1MzZFMjczODlUS0cyVWpMZGl3bk0zUTZpdUFnOWsyZ2xNbldiUkhTWVJDYlhmbEpqRkZxdjJ0NnN0Q0gzY21IcUR3czV1QURlM3lfY29QN25Dby1QSmZRaUt5dGxWSWE1S3hkcUNjOVpvQVZfUzNIaFhqYVM5c2lyOEtYaVhsQjJzVVRvOFhXa3lrWFdqbVVUVGVMUTNDRUZscmlpYzk2TDh5OURQbGVaSklQSkd2SmZtOVBFS1BJbkhYNm5IX01qaDAyZTZmLVJkU0Z4TXhEX3U2VWhONmJWb3lmYmF3d1g2Wkt6OUJXM24zcF9UUGpLSkNwMnI1bHYwSk9VWEV0QTZYQk5BT3R2c3lRQUQ2UEpTbE9KOTBJWnRtRnB4dW1VTWRKTVA4X0czSWwtUW9vWUF3aUJLTnFUSXBkX2xneHhGR2tHRzBLVHl5NUNHdHVtUWdYcVZPQ1R2V1EtY2lfZ2tYSGphaHhkVmlvcGVmMUs2bzUybFFIQVRfWUhyU2JFT2pUWUFRdG5oN3dlYnNuZFk5OEhWanQ3blk3RTEtS1VWblU5VHh6NUpmMUI0a2w2R0VfSGZrTllROHNZY1ZiTHUwUmY5Vnp3SldfWlp6cW44ZWJXOXpBTTNlazZpbVJlYUo5T3haTHlYVlUxSDlNMDBmd1RhZjZ6N0JiZjY1QmZCTUV0OHJQa3RKS19SM0lWcThNR1dEN0NyNGJHdjFOZi1LZ0dEeUE0bzUtV2g2TGZFMmhzbGdhVzd5WGNaQk84b1ZFenlrMTFuSC1sYm4tS0FoUU15d01EZ0g4MmJ6Nl85MkhUVGRycUlsdnNRZVVTSmp2RXlwbi1qRm9IZlpfQmlyQW5XUjU4MGhWXzhmR3RtN0lkR2NQbmpRUVZCdGZ1SGczdVdFbVVCVDZ5WDV5UHJHY2M3ek0zbmFtUTcxbThiVjlTX085NUFMQ0d4bFBkTnpfNnhSaV9zLXZVZUJaWVp2Rm5FNWJ0QTBpUWlPWHZMX2RMRk9qNUZDWHotUWpfeGJER1Bwa1JDSmwyVUttcmpRbWJxTjRTVG05UEdRV0NjTEtvWUZfSFcxY2w5WVdtSUdnN01mY2NDV1h4UWlqN0tSZ2FTd3N6ZW4xZE5HSXh0SW1WbVYtVHU3OC1sNjJaRGhyYUJNdmhzeE44Z3NuUnRicUpPX05aUS1ldjVmd2FEdzJ2SFJZaGtKMDU2QVUxREEydFFzaVA1cm4xS3NrUWhoQUgyRE80TE9kOTlqWWNON21LcFJGcHdKMWRDNC1jdVJlYUlBOGxBWkxlSkQ2aGFkbjJJelhNaVIwU0lObERlR0NldmpTMDl2eTk4SE1ldDRXcUZ3UnNpQkZwRmFRbzdUYmoyeklWVlcwZTJXbWRBVXdDWFhORElLMi0zQnUwNUt3Yi1zX0V6RW5kUm1Yd3luUmhsT3VDcktfaG8wN084Q0xmS3h0UWxpc3pCd2pyUDdYWDM2RlE4NG5ESjFWZG9tYWQ4VnZGWk92bjZ3TEFHeDcySERkRENKeUpjeUl0Vk1LOFFYcURmaEtSdGFoSm5kUXRIM1BOWXJPbXVDQlZFNXNXclVmYVFxZ3pnZmlRVkFvZlhFeWoyQlJ3SmhrYV83Z0VDZ1lKOTZTREI3VmxwNnNEb255cjYyMVhrVDNZZHI5NDZIR08xZU1VNENldGhERUR2VTBJQnNVWGRSQi01T01pWHduZklhc3h1S1NhZWJDX0xhYzF5bjNJVS4tZmtNci13UFlTN21rVHN0MEFsVlBn
+    accept: application/json, text/html, */*; q=0.1
+    sec-ch-ua: '" Not A;Brand";v="99", "Chromium";v="102", "Google Chrome";v="102"'
+    sec-ch-ua-mobile: ?0
+    x-vbank-session: 0b891100-c3ce-4a41-8dd1-bfc308ae3be0
+    sec-ch-ua-platform: '"macOS"'
+    host: localhost:9000
+    content-type: application/json
+    connection: keep-alive
+    cache-control: no-cache, no-store, must-revalidate
+    accept-encoding: gzip, deflate, br
+    sec-fetch-dest: empty
+    user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36
+      (KHTML, like Gecko) Chrome/102.0.5005.115 Safari/537.36
+  query:
+    branchType.id: INDIVIDUALS
+    latitude: '19.433433873982867'
+    pageSize: '25'
+    radius: '2500'
+    longitude: '-99.12954888652594'
+then:
+- return:
+    pagination:
+      totalPages: 7
+      pageSize: 25
+      links:
+        next: /pois/v0/bank-pois?branchType.id=INDIVIDUALS&latitude=19.433433873982867&longitude=-99.12954888652594&pageSize=25&paginationKey=1&radius=2500
+        last: /pois/v0/bank-pois?branchType.id=INDIVIDUALS&latitude=19.433433873982867&longitude=-99.12954888652594&pageSize=25&paginationKey=6&radius=2500
+        first: /pois/v0/bank-pois?branchType.id=INDIVIDUALS&latitude=19.433433873982867&longitude=-99.12954888652594&pageSize=25&paginationKey=0&radius=2500
+      page: 0
+      totalElements: 154
+    data:
+    - atmType:
+        name: Dispensadores
+        id: DP
+      address:
+        zipCode: '06000'
+        country:
+          name: MÉXICO
+          id: MX
+        city: CUAUHTÉMOC
+        geographicGroups:
+        - geographicGroupType:
+            name: COLONY
+            id: COLONY
+          name: CENTRO (ÁREA 1)
+        addressName: REPÚBLICA DE GUATEMALA 91
+        state:
+          name: DISTRITO FEDERAL
+        geolocation:
+          latitude: 19.434302
+          longitude: -99.128284
+      distance: 164
+      scope: PUBLIC
+      description: CUAUHTÉMOC
+      links:
+      - method: GET
+        rel: ATM
+        id: MX9600
+        href: /pois/v0/atms/MX9600
+      - method: GET
+        rel: BRANCH
+        id: MX3601
+        href: /pois/v0/branches/MX3601
+      id: ZEEJTRBQDCY8A38MGB96ZX5ME4
+      type: ATM
+    - atmType:
+        name: Dispensadores
+        id: DP
+      address:
+        zipCode: '06000'
+        country:
+          name: MÉXICO
+          id: MX
+        city: CUAUHTÉMOC
+        geographicGroups:
+        - geographicGroupType:
+            name: COLONY
+            id: COLONY
+          name: CENTRO (ÁREA 1)
+        addressName: REPUBLICA DE GUATEMALA 91
+        state:
+          name: DISTRITO FEDERAL
+        geolocation:
+          latitude: 19.434373
+          longitude: -99.128277
+      distance: 169
+      scope: PUBLIC
+      description: CUAUHTÉMOC
+      links:
+      - method: GET
+        rel: ATM
+        id: MX5083
+        href: /pois/v0/atms/MX5083
+      - method: GET
+        rel: BRANCH
+        id: MX3601
+        href: /pois/v0/branches/MX3601
+      id: J7CQFPP6HKY1PW5MABYQZ581T8
+      type: ATM
+    - atmType:
+        name: Dispensadores
+        id: DP
+      address:
+        zipCode: '06010'
+        country:
+          name: MÉXICO
+          id: MX
+        city: CUAUHTÉMOC
+        geographicGroups:
+        - geographicGroupType:
+            name: COLONY
+            id: COLONY
+          name: CENTRO (ÁREA 2)
+        addressName: PLAZA DE LA CONSTITUCION 7
+        state:
+          name: DISTRITO FEDERAL
+        geolocation:
+          latitude: 19.4325
+          longitude: -99.131599999
+      distance: 238
+      scope: PUBLIC
+      description: CUAUHTÉMOC
+      links:
+      - method: GET
+        rel: ATM
+        id: MX0361
+        href: /pois/v0/atms/MX0361
+      - method: GET
+        rel: BRANCH
+        id: MX6062
+        href: /pois/v0/branches/MX6062
+      id: S1CFRZTPQF0D3ZCKZTB1MBXPMR
+      type: ATM
+    - address:
+        zipCode: '06000'
+        country:
+          name: MÉXICO
+          id: MX
+        city: CUAUHTÉMOC
+        geographicGroups:
+        - geographicGroupType:
+            name: COLONY
+            id: COLONY
+          name: CENTRO
+        addressName: CORREGIDORA 40
+        state:
+          name: DISTRITO FEDERAL
+        geolocation:
+          latitude: 19.431281
+          longitude: -99.12862
+      isOpen: true
+      distance: 258
+      availableServices:
+      - id: ONLINE_APPOINTMENT
+      description: D.F. CORREGIDORA
+      links:
+      - method: GET
+        rel: BRANCH
+        id: MX0066
+        href: /pois/v0/branches/MX0066
+      id: NMQV4022R1PXE82CWTN1C5R2EG
+      atmsInBranch:
+      - number: 2
+        id: DP
+      type: BRANCH
+    - atmType:
+        name: Dispensadores
+        id: DP
+      address:
+        zipCode: '06000'
+        country:
+          name: MÉXICO
+          id: MX
+        city: CUAUHTÉMOC
+        geographicGroups:
+        - geographicGroupType:
+            name: COLONY
+            id: COLONY
+          name: CENTRO (ÁREA 1)
+        addressName: CORREGIDORA 40
+        state:
+          name: DISTRITO FEDERAL
+        geolocation:
+          latitude: 19.431281
+          longitude: -99.12862
+      distance: 258
+      scope: PUBLIC
+      description: CUAUHTÉMOC
+      links:
+      - method: GET
+        rel: ATM
+        id: MXA165
+        href: /pois/v0/atms/MXA165
+      - method: GET
+        rel: BRANCH
+        id: MX0066
+        href: /pois/v0/branches/MX0066
+      id: 90RGM31DKRCDK9C09X7GRXGQGC
+      type: ATM
+    - atmType:
+        name: Dispensadores
+        id: DP
+      address:
+        zipCode: '06000'
+        country:
+          name: MÉXICO
+          id: MX
+        city: CUAUHTÉMOC
+        geographicGroups:
+        - geographicGroupType:
+            name: COLONY
+            id: COLONY
+          name: CENTRO (ÁREA 1)
+        addressName: CORREGIDORA 40
+        state:
+          name: DISTRITO FEDERAL
+        geolocation:
+          latitude: 19.431281
+          longitude: -99.12862
+      distance: 258
+      scope: PUBLIC
+      description: CUAUHTÉMOC
+      links:
+      - method: GET
+        rel: ATM
+        id: MXA166
+        href: /pois/v0/atms/MXA166
+      - method: GET
+        rel: BRANCH
+        id: MX0066
+        href: /pois/v0/branches/MX0066
+      id: XASAYCW5F8580DESZBVNHG9FJ0
+      type: ATM
+    - atmType:
+        name: Practicajas
+        id: PC
+      address:
+        zipCode: '06000'
+        country:
+          name: MÉXICO
+          id: MX
+        city: CUAUHTÉMOC
+        geographicGroups:
+        - geographicGroupType:
+            name: COLONY
+            id: COLONY
+          name: CENTRO (ÁREA 1)
+        addressName: CORREGIDORA 40
+        state:
+          name: DISTRITO FEDERAL
+        geolocation:
+          latitude: 19.431299
+          longitude: -99.128549
+      distance: 259
+      scope: PUBLIC
+      description: CUAUHTÉMOC
+      links:
+      - method: GET
+        rel: ATM
+        id: MXD027
+        href: /pois/v0/atms/MXD027
+      - method: GET
+        rel: BRANCH
+        id: MX0066
+        href: /pois/v0/branches/MX0066
+      id: 0BXJM9MZ2YVP1EDQNJS60H23B0
+      type: ATM
+    - atmType:
+        name: Practicajas
+        id: PC
+      address:
+        zipCode: '06000'
+        country:
+          name: MÉXICO
+          id: MX
+        city: CUAUHTÉMOC
+        geographicGroups:
+        - geographicGroupType:
+            name: COLONY
+            id: COLONY
+          name: CENTRO (ÁREA 1)
+        addressName: CORREGIDORA 40
+        state:
+          name: DISTRITO FEDERAL
+        geolocation:
+          latitude: 19.431299
+          longitude: -99.128549
+      distance: 259
+      scope: PUBLIC
+      description: CUAUHTÉMOC
+      links:
+      - method: GET
+        rel: ATM
+        id: MXD028
+        href: /pois/v0/atms/MXD028
+      - method: GET
+        rel: BRANCH
+        id: MX0066
+        href: /pois/v0/branches/MX0066
+      id: 44PBZQ9PA6P2SVY30HXV8G485G
+      type: ATM
+    - atmType:
+        name: Recicladores
+        id: RC
+      address:
+        zipCode: '06000'
+        country:
+          name: MÉXICO
+          id: MX
+        city: CUAUHTÉMOC
+        geographicGroups:
+        - geographicGroupType:
+            name: COLONY
+            id: COLONY
+          name: CENTRO (ÁREA 1)
+        addressName: VENUSTIANO CARRANZA 125
+        state:
+          name: DISTRITO FEDERAL
+        geolocation:
+          latitude: 19.430508
+          longitude: -99.130613
+      distance: 343
+      scope: PUBLIC
+      description: CUAUHTÉMOC
+      links:
+      - method: GET
+        rel: ATM
+        id: MXE914
+        href: /pois/v0/atms/MXE914
+      - method: GET
+        rel: BRANCH
+        id: MX6062
+        href: /pois/v0/branches/MX6062
+      id: K39KYQDKM6QQ7YQRCVWCV6016W
+      type: ATM
+    - atmType:
+        name: Dispensadores
+        id: DP
+      address:
+        zipCode: '06020'
+        country:
+          name: MÉXICO
+          id: MX
+        city: CUAUHTÉMOC
+        geographicGroups:
+        - geographicGroupType:
+            name: COLONY
+            id: COLONY
+          name: CENTRO (ÁREA 3)
+        addressName: DONCELES 100
+        state:
+          name: DISTRITO FEDERAL
+        geolocation:
+          latitude: 19.4359
+          longitude: -99.1325
+      distance: 413
+      scope: PUBLIC
+      description: CUAUHTÉMOC
+      links:
+      - method: GET
+        rel: ATM
+        id: MX9477
+        href: /pois/v0/atms/MX9477
+      - method: GET
+        rel: BRANCH
+        id: MX6062
+        href: /pois/v0/branches/MX6062
+      id: WB2SJN752K6JX6J5AP879MGA8R
+      type: ATM
+    - atmType:
+        name: Dispensadores
+        id: DP
+      address:
+        zipCode: '06000'
+        country:
+          name: MÉXICO
+          id: MX
+        city: CUAUHTÉMOC
+        geographicGroups:
+        - geographicGroupType:
+            name: COLONY
+            id: COLONY
+          name: CENTRO (ÁREA 1)
+        addressName: MONTE DE PIEDAD 5
+        state:
+          name: DISTRITO FEDERAL
+        geolocation:
+          latitude: 19.4344
+          longitude: -99.1342
+      distance: 499
+      scope: PUBLIC
+      description: CUAUHTÉMOC
+      links:
+      - method: GET
+        rel: ATM
+        id: MX3351
+        href: /pois/v0/atms/MX3351
+      - method: GET
+        rel: BRANCH
+        id: MX6062
+        href: /pois/v0/branches/MX6062
+      id: ZE5D1ZX467Z6HW9V61GJ9890YG
+      type: ATM
+    - atmType:
+        name: Dispensadores
+        id: DP
+      address:
+        zipCode: '03420'
+        country:
+          name: MÉXICO
+          id: MX
+        city: CUAUHTÉMOC
+        geographicGroups:
+        - geographicGroupType:
+            name: COLONY
+            id: COLONY
+          name: MIGUEL ALEMAN
+        addressName: AV 20 DE NOVIEMBRE 3
+        state:
+          name: DISTRITO FEDERAL
+        geolocation:
+          latitude: 19.4311
+          longitude: -99.133699999
+      distance: 506
+      scope: PUBLIC
+      description: CUAUHTÉMOC
+      links:
+      - method: GET
+        rel: ATM
+        id: MX8465
+        href: /pois/v0/atms/MX8465
+      - method: GET
+        rel: BRANCH
+        id: MX6062
+        href: /pois/v0/branches/MX6062
+      id: EBEE2FYE9YKV0PR1QWE6N44SC4
+      type: ATM
+    - address:
+        zipCode: '06000'
+        country:
+          name: MÉXICO
+          id: MX
+        city: VENUSTIANO CARRANZA
+        geographicGroups:
+        - geographicGroupType:
+            name: COLONY
+            id: COLONY
+          name: CENTRO
+        addressName: AV CIRCUNVALACION 209 F
+        state:
+          name: DISTRITO FEDERAL
+        geolocation:
+          latitude: 19.4332
+          longitude: -99.1243
+      isOpen: true
+      distance: 551
+      availableServices:
+      - id: ONLINE_APPOINTMENT
+      description: D.F. MERCED
+      links:
+      - method: GET
+        rel: BRANCH
+        id: MX0008
+        href: /pois/v0/branches/MX0008
+      id: RA5M0H3XP9JD1YEXP160AQ6YJR
+      atmsInBranch:
+      - number: 3
+        id: DP
+      - number: 2
+        id: PC
+      type: BRANCH
+    - atmType:
+        name: Dispensadores
+        id: DP
+      address:
+        zipCode: '06000'
+        country:
+          name: MÉXICO
+          id: MX
+        city: VENUSTIANO CARRANZA
+        geographicGroups:
+        - geographicGroupType:
+            name: COLONY
+            id: COLONY
+          name: CENTRO (AREA 1)
+        addressName: AV CIRCUNVALACION 209 F
+        state:
+          name: DISTRITO FEDERAL
+        geolocation:
+          latitude: 19.4332
+          longitude: -99.1243
+      distance: 551
+      scope: PUBLIC
+      description: VENUSTIANO CARRANZA
+      links:
+      - method: GET
+        rel: ATM
+        id: MX0347
+        href: /pois/v0/atms/MX0347
+      - method: GET
+        rel: BRANCH
+        id: MX0008
+        href: /pois/v0/branches/MX0008
+      id: C305EMER4XHCRW1P9QMZRX9G5M
+      type: ATM
+    - atmType:
+        name: Practicajas
+        id: PC
+      address:
+        zipCode: '06000'
+        country:
+          name: MÉXICO
+          id: MX
+        city: CUAUHTÉMOC
+        geographicGroups:
+        - geographicGroupType:
+            name: COLONY
+            id: COLONY
+          name: CENTRO (ÁREA 1)
+        addressName: AV CIRCUNVALACION 209 F
+        state:
+          name: DISTRITO FEDERAL
+        geolocation:
+          latitude: 19.4332
+          longitude: -99.1243
+      distance: 551
+      scope: PUBLIC
+      description: CUAUHTÉMOC
+      links:
+      - method: GET
+        rel: ATM
+        id: MX0400
+        href: /pois/v0/atms/MX0400
+      - method: GET
+        rel: BRANCH
+        id: MX0008
+        href: /pois/v0/branches/MX0008
+      id: 64VZ6TYHGY403KNX1AT7WEVQG0
+      type: ATM
+    - atmType:
+        name: Practicajas
+        id: PC
+      address:
+        zipCode: '06000'
+        country:
+          name: MÉXICO
+          id: MX
+        city: CUAUHTÉMOC
+        geographicGroups:
+        - geographicGroupType:
+            name: COLONY
+            id: COLONY
+          name: CENTRO (ÁREA 1)
+        addressName: AV CIRCUNVALACION 209 F
+        state:
+          name: DISTRITO FEDERAL
+        geolocation:
+          latitude: 19.4332
+          longitude: -99.1243
+      distance: 551
+      scope: PUBLIC
+      description: CUAUHTÉMOC
+      links:
+      - method: GET
+        rel: ATM
+        id: MX0416
+        href: /pois/v0/atms/MX0416
+      - method: GET
+        rel: BRANCH
+        id: MX0008
+        href: /pois/v0/branches/MX0008
+      id: 0DQRS2BYBDARSP4W5GVSD6H2DR
+      type: ATM
+    - atmType:
+        name: Dispensadores
+        id: DP
+      address:
+        zipCode: '06000'
+        country:
+          name: MÉXICO
+          id: MX
+        city: VENUSTIANO CARRANZA
+        geographicGroups:
+        - geographicGroupType:
+            name: COLONY
+            id: COLONY
+          name: CENTRO (AREA 1)
+        addressName: AV CIRCUNVALACION 209 F
+        state:
+          name: DISTRITO FEDERAL
+        geolocation:
+          latitude: 19.4332
+          longitude: -99.1243
+      distance: 551
+      scope: PUBLIC
+      description: VENUSTIANO CARRANZA
+      links:
+      - method: GET
+        rel: ATM
+        id: MX7062
+        href: /pois/v0/atms/MX7062
+      - method: GET
+        rel: BRANCH
+        id: MX0008
+        href: /pois/v0/branches/MX0008
+      id: 605XDF9Z65PMRZAHGF4TXQMB8W
+      type: ATM
+    - atmType:
+        name: Dispensadores
+        id: DP
+      address:
+        zipCode: '06000'
+        country:
+          name: MÉXICO
+          id: MX
+        city: VENUSTIANO CARRANZA
+        geographicGroups:
+        - geographicGroupType:
+            name: COLONY
+            id: COLONY
+          name: CENTRO (AREA 1)
+        addressName: AV CIRCUNVALACION 209 F
+        state:
+          name: DISTRITO FEDERAL
+        geolocation:
+          latitude: 19.4332
+          longitude: -99.1243
+      distance: 551
+      scope: PUBLIC
+      description: VENUSTIANO CARRANZA
+      links:
+      - method: GET
+        rel: ATM
+        id: MX7066
+        href: /pois/v0/atms/MX7066
+      - method: GET
+        rel: BRANCH
+        id: MX0008
+        href: /pois/v0/branches/MX0008
+      id: 6TVS49TGGA707Q5KMBXDD35ZXC
+      type: ATM
+    - address:
+        zipCode: '06000'
+        country:
+          name: MÉXICO
+          id: MX
+        city: CUAUHTÉMOC
+        geographicGroups:
+        - geographicGroupType:
+            name: COLONY
+            id: COLONY
+          name: CENTRO
+        addressName: CRUCES 32
+        state:
+          name: DISTRITO FEDERAL
+        geolocation:
+          latitude: 19.428234
+          longitude: -99.129462
+      isOpen: true
+      distance: 578
+      availableServices:
+      - id: ONLINE_APPOINTMENT
+      description: D.F. MERCED CRUCES
+      links:
+      - method: GET
+        rel: BRANCH
+        id: MX0065
+        href: /pois/v0/branches/MX0065
+      id: EMH0NH4V9HEAPB0JXNFB2Q6Z2G
+      atmsInBranch:
+      - number: 3
+        id: DP
+      - number: 3
+        id: PC
+      type: BRANCH
+    - atmType:
+        name: Practicajas
+        id: PC
+      address:
+        zipCode: '06000'
+        country:
+          name: MÉXICO
+          id: MX
+        city: CUAUHTÉMOC
+        geographicGroups:
+        - geographicGroupType:
+            name: COLONY
+            id: COLONY
+          name: CENTRO (AREA 1)
+        addressName: CRUCES 32
+        state:
+          name: DISTRITO FEDERAL
+        geolocation:
+          latitude: 19.428234
+          longitude: -99.129462
+      distance: 578
+      scope: PUBLIC
+      description: CUAUHTÉMOC
+      links:
+      - method: GET
+        rel: ATM
+        id: MX0515
+        href: /pois/v0/atms/MX0515
+      - method: GET
+        rel: BRANCH
+        id: MX0065
+        href: /pois/v0/branches/MX0065
+      id: EXVSSJYB24CYDN7YANRZDY3R9M
+      type: ATM
+    - atmType:
+        name: Practicajas
+        id: PC
+      address:
+        zipCode: '06000'
+        country:
+          name: MÉXICO
+          id: MX
+        city: CUAUHTÉMOC
+        geographicGroups:
+        - geographicGroupType:
+            name: COLONY
+            id: COLONY
+          name: CENTRO (AREA 1)
+        addressName: CRUCES 32
+        state:
+          name: DISTRITO FEDERAL
+        geolocation:
+          latitude: 19.428234
+          longitude: -99.129462
+      distance: 578
+      scope: PUBLIC
+      description: CUAUHTÉMOC
+      links:
+      - method: GET
+        rel: ATM
+        id: MX0534
+        href: /pois/v0/atms/MX0534
+      - method: GET
+        rel: BRANCH
+        id: MX0065
+        href: /pois/v0/branches/MX0065
+      id: FN8QZXEMB3JB8N43Q5XWRSXR58
+      type: ATM
+    - atmType:
+        name: Practicajas
+        id: PC
+      address:
+        zipCode: '06000'
+        country:
+          name: MÉXICO
+          id: MX
+        city: CUAUHTÉMOC
+        geographicGroups:
+        - geographicGroupType:
+            name: COLONY
+            id: COLONY
+          name: CENTRO (AREA 1)
+        addressName: CRUCES 32
+        state:
+          name: DISTRITO FEDERAL
+        geolocation:
+          latitude: 19.428234
+          longitude: -99.129462
+      distance: 578
+      scope: PUBLIC
+      description: CUAUHTÉMOC
+      links:
+      - method: GET
+        rel: ATM
+        id: MX0541
+        href: /pois/v0/atms/MX0541
+      - method: GET
+        rel: BRANCH
+        id: MX0065
+        href: /pois/v0/branches/MX0065
+      id: W8QT85403RQQ8MMRDMZEW8VN30
+      type: ATM
+    - atmType:
+        name: Dispensadores
+        id: DP
+      address:
+        zipCode: '06000'
+        country:
+          name: MÉXICO
+          id: MX
+        city: CUAUHTÉMOC
+        geographicGroups:
+        - geographicGroupType:
+            name: COLONY
+            id: COLONY
+          name: CENTRO (AREA 1)
+        addressName: CRUCES 32
+        state:
+          name: DISTRITO FEDERAL
+        geolocation:
+          latitude: 19.428234
+          longitude: -99.129462
+      distance: 578
+      scope: PUBLIC
+      description: CUAUHTÉMOC
+      links:
+      - method: GET
+        rel: ATM
+        id: MX0838
+        href: /pois/v0/atms/MX0838
+      - method: GET
+        rel: BRANCH
+        id: MX0065
+        href: /pois/v0/branches/MX0065
+      id: R1HATF74VZY33M9BK4MC9GZMNC
+      type: ATM
+    - atmType:
+        name: Dispensadores
+        id: DP
+      address:
+        zipCode: '06000'
+        country:
+          name: MÉXICO
+          id: MX
+        city: CUAUHTÉMOC
+        geographicGroups:
+        - geographicGroupType:
+            name: COLONY
+            id: COLONY
+          name: CENTRO (AREA 1)
+        addressName: CRUCES 32
+        state:
+          name: DISTRITO FEDERAL
+        geolocation:
+          latitude: 19.428234
+          longitude: -99.129462
+      distance: 578
+      scope: PUBLIC
+      description: CUAUHTÉMOC
+      links:
+      - method: GET
+        rel: ATM
+        id: MX4395
+        href: /pois/v0/atms/MX4395
+      - method: GET
+        rel: BRANCH
+        id: MX0065
+        href: /pois/v0/branches/MX0065
+      id: YXJ6VXX4C3WN1WR8KVBQ8JCDZ4
+      type: ATM
+    - atmType:
+        name: Dispensadores
+        id: DP
+      address:
+        zipCode: '06000'
+        country:
+          name: MÉXICO
+          id: MX
+        city: CUAUHTÉMOC
+        geographicGroups:
+        - geographicGroupType:
+            name: COLONY
+            id: COLONY
+          name: CENTRO (AREA 1)
+        addressName: CRUCES 32
+        state:
+          name: DISTRITO FEDERAL
+        geolocation:
+          latitude: 19.428234
+          longitude: -99.129462
+      distance: 578
+      scope: PUBLIC
+      description: CUAUHTÉMOC
+      links:
+      - method: GET
+        rel: ATM
+        id: MX7258
+        href: /pois/v0/atms/MX7258
+      - method: GET
+        rel: BRANCH
+        id: MX0065
+        href: /pois/v0/branches/MX0065
+      id: K86ZPF9RRDETRG4D57GZ4D9JFC
+      type: ATM
+    :headers:
+      content-length: '16482'
+      X-EdgeConnect-Origin-MEX-Latency: '626'
+      Access-Control-Allow-Origin: '*'
+      ECS-Entry-Point-Zone: ext
+      Access-Control-Allow-Methods: GET, POST, DELETE, PUT, OPTIONS, PATCH
+      X-Content-Type-Options: nosniff
+      old-catalog: 'true'
+      Connection: keep-alive
+      tsec: ZXlKaFlYQWlPaUl4TURBd01EQXpNeUlzSW10bGVWWmxjbk5wYjI0aU9qRXNJbUZ3Y0Vsa0lqb2lRVkJRTVNJc0ltdHBaQ0k2SWtGUVVERXViRzlqWVd3dU1TSXNJbVZ1WXlJNklrRXhPVEpIUTAwaUxDSnJaWGxVZVhCbElqb2liRzlqWVd3aUxDSmhiR2NpT2lKa2FYSWlMQ0owYzJWalNXUWlPaUkwTTJKak9HVm1OUzFqTXpFMkxUUXdPRFF0T1dZMVppMHpZMll5TURJek56WmhaakFpZlEuLlBnTFozWmE4X2ZWLXpPZC0uN1E2aU9pRjN6REtfekVGRjhWNXlkQ20xVWpPMGlDOGZnSHRHNEgzbUVwVENPaXo1WEtKWW5YTnhqVllSUUZyc0VmN19VV1BTZTNjMmUtWWRPUENWR0RDVEJmZEVkTy00N3A2TVpVendxeWE4aGJLdTFJWk1oTG9CbGoxeFBnNVAwMWNLU2VDblFwa09uVWNudEdlNWVfSGtGSVJIaGptR2pOZkppYXNsWkRka3lRcHpRVV92bm10OXRJRVliVW1kRkJXdGpaRlNnYk9WcDBnY3RvbGRKLV9iSHpocGxOWng1OXk2U1pxcVlHQzEtMUJ3eVBabWxxTmlkNV9uQjJSRF9sTUhHVW12NmtzanBxQ3h5RE4xdFJubk9TajU3Y0p3emxUei1UT29TQ2xnVlREUjVNQjVOMzZ4S2p1OWhEZmhuREZoa0UxNDAzM2hZanVXWDRtMVFieXpVMF9EdHZkSEUxYnY3eGU3aXFMRXVWTXdlSDdndWJKdWh0QVVlZEJGaHRmQ0xselNLRXA1ZVVwcjA2Vmc2Vy1JX1BEYjhpeUxnM0I0MTFpejVxMnk1R1hRS3dGVExKTTNnTGhQbmswYm9nZzBlMEY2NlgxWjF1MzZFMjczODlUS0cyVWpMZGl3bk0zUTZpdUFnOWsyZ2xNbldiUkhTWVJDYlhmbEpqRkZxdjJ0NnN0Q0gzY21IcUR3czV1QURlM3lfY29QN25Dby1QSmZRaUt5dGxWSWE1S3hkcUNjOVpvQVZfUzNIaFhqYVM5c2lyOEtYaVhsQjJzVVRvOFhXa3lrWFdqbVVUVGVMUTNDRUZscmlpYzk2TDh5OURQbGVaSklQSkd2SmZtOVBFS1BJbkhYNm5IX01qaDAyZTZmLVJkU0Z4TXhEX3U2VWhONmJWb3lmYmF3d1g2Wkt6OUJXM24zcF9UUGpLSkNwMnI1bHYwSk9VWEV0QTZYQk5BT3R2c3lRQUQ2UEpTbE9KOTBJWnRtRnB4dW1VTWRKTVA4X0czSWwtUW9vWUF3aUJLTnFUSXBkX2xneHhGR2tHRzBLVHl5NUNHdHVtUWdYcVZPQ1R2V1EtY2lfZ2tYSGphaHhkVmlvcGVmMUs2bzUybFFIQVRfWUhyU2JFT2pUWUFRdG5oN3dlYnNuZFk5OEhWanQ3blk3RTEtS1VWblU5VHh6NUpmMUI0a2w2R0VfSGZrTllROHNZY1ZiTHUwUmY5Vnp3SldfWlp6cW44ZWJXOXpBTTNlazZpbVJlYUo5T3haTHlYVlUxSDlNMDBmd1RhZjZ6N0JiZjY1QmZCTUV0OHJQa3RKS19SM0lWcThNR1dEN0NyNGJHdjFOZi1LZ0dEeUE0bzUtV2g2TGZFMmhzbGdhVzd5WGNaQk84b1ZFenlrMTFuSC1sYm4tS0FoUU15d01EZ0g4MmJ6Nl85MkhUVGRycUlsdnNRZVVTSmp2RXlwbi1qRm9IZlpfQmlyQW5XUjU4MGhWXzhmR3RtN0lkR2NQbmpRUVZCdGZ1SGczdVdFbVVCVDZ5WDV5UHJHY2M3ek0zbmFtUTcxbThiVjlTX085NUFMQ0d4bFBkTnpfNnhSaV9zLXZVZUJaWVp2Rm5FNWJ0QTBpUWlPWHZMX2RMRk9qNUZDWHotUWpfeGJER1Bwa1JDSmwyVUttcmpRbWJxTjRTVG05UEdRV0NjTEtvWUZfSFcxY2w5WVdtSUdnN01mY2NDV1h4UWlqN0tSZ2FTd3N6ZW4xZE5HSXh0SW1WbVYtVHU3OC1sNjJaRGhyYUJNdmhzeE44Z3NuUnRicUpPX05aUS1ldjVmd2FEdzJ2SFJZaGtKMDU2QVUxREEydFFzaVA1cm4xS3NrUWhoQUgyRE80TE9kOTlqWWNON21LcFJGcHdKMWRDNC1jdVJlYUlBOGxBWkxlSkQ2aGFkbjJJelhNaVIwU0lObERlR0NldmpTMDl2eTk4SE1ldDRXcUZ3UnNpQkZwRmFRbzdUYmoyeklWVlcwZTJXbWRBVXdDWFhORElLMi0zQnUwNUt3Yi1zX0V6RW5kUm1Yd3luUmhsT3VDcktfaG8wN084Q0xmS3h0UWxpc3pCd2pyUDdYWDM2RlE4NG5ESjFWZG9tYWQ4VnZGWk92bjZ3TEFHeDcySERkRENKeUpjeUl0Vk1LOFFYcURmaEtSdGFoSm5kUXRIM1BOWXJPbXVDQlZFNXNXclVmYVFxZ3pnZmlRVkFvZlhFeWoyQlJ3SmhrYV83Z0VDZ1lKOTZTREI3VmxwNnNEb255cjYyMVhrVDNZZHI5NDZIR08xZU1VNENldGhERUR2VTBJQnNVWGRSQi01T01pWHduZklhc3h1S1NhZWJDX0xhYzF5bjNJVS4tZmtNci13UFlTN21rVHN0MEFsVlBn
+      Access-Control-Allow-Headers: Accept-Encoding, Accept, Content-Type, tsec, consumerrequestid,
+        authenticationchallenge, authenticationtype, authenticationdata, authenticationstate,
+        contactid, consumeruuid, consumerapplicationid, perimetertsec, authorization,
+        responsewarningcode, responsewarningdescription, cuf, prefer, phoneNumber,
+        Location, X-RHO-PARENTSPANID, X-RHO-TRACEID, preferredauthenticationtype,
+        X-HTTP-Method-Override, Access-Control-Allow-Methods, iv-remote-address, thirdparty-x-forwarded-for,
+        thirdparty-user-agent, thirdparty-geolocation, thirdparty-calculated-scoring,
+        thirdparty-deviceid, vnd.bbva.security-client-certificate, order-preferredaction,
+        authenticationresponse, Access-Control-Max-Age, BCS-Device-Id, BCS-Device-OS-Name,
+        BCS-Device-Model-Name, BCS-Device-Model-Manufacturer, BCS-Device-Screen-Size,
+        BCS-Device-OS-Version, BCS-Device-DPI, BCS-Device-App-Name, BCS-Device-App-Version,
+        Third-Party-Application-Id, ECS-Signature-Platform-Use-Case, BCS-Process-Code,
+        BCS-Operation-Tracer, BCS-Process-Tracer, vnd.bbva.user-id, order-preferredaction,
+        order-id, order-accepteddisclaimers, x-forwarded-for, Date, x-dmz-orgn, onsite-accountTerm,
+        onsite-logicalTerm, Akamai-BM-Telemetry, order-hmac, order-signed, BCS-Third-Party-Session-Id,
+        Cache-Control, clave, Content-Encoding, ECS-Entry-Point-Zone, firma, Geolocation,
+        Third-Party-Collaborator-Id, user-agent, Via
+      Date: Wed, 15 Jun 2022 15:28:59 GMT
+      Referrer-Policy: same-origin
+      X-Frame-Options: sameorigin
+      Strict-Transport-Security: max-age=31536000; includeSubDomains
+      Access-Control-Expose-Headers: Accept-Encoding, Accept, Content-Type, tsec,
+        consumerrequestid, authenticationchallenge, authenticationtype, authenticationdata,
+        authenticationstate, contactid, consumeruuid, consumerapplicationid, perimetertsec,
+        authorization, responsewarningcode, responsewarningdescription, cuf, prefer,
+        phoneNumber, Location, X-RHO-PARENTSPANID, X-RHO-TRACEID, preferredauthenticationtype,
+        X-HTTP-Method-Override, Access-Control-Allow-Methods, iv-remote-address, thirdparty-x-forwarded-for,
+        thirdparty-user-agent, thirdparty-geolocation, thirdparty-calculated-scoring,
+        thirdparty-deviceid, vnd.bbva.security-client-certificate, order-preferredaction,
+        authenticationresponse, Access-Control-Max-Age, BCS-Device-Id, BCS-Device-OS-Name,
+        BCS-Device-Model-Name, BCS-Device-Model-Manufacturer, BCS-Device-Screen-Size,
+        BCS-Device-OS-Version, BCS-Device-DPI, BCS-Device-App-Name, BCS-Device-App-Version,
+        Third-Party-Application-Id, ECS-Signature-Platform-Use-Case, BCS-Process-Code,
+        BCS-Operation-Tracer, BCS-Process-Tracer, vnd.bbva.user-id, order-preferredaction,
+        order-id, order-accepteddisclaimers, x-forwarded-for, Date, x-dmz-orgn, onsite-accountTerm,
+        onsite-logicalTerm, Akamai-BM-Telemetry, order-hmac, order-signed, BCS-Third-Party-Session-Id,
+        Cache-Control, clave, Content-Encoding, ECS-Entry-Point-Zone, firma, Geolocation,
+        Third-Party-Collaborator-Id, user-agent, Via
+      Cache-Control: no-cache,no-store,must-revalidate
+      Content-Security-Policy: script-src 'self'
+      Vary: Accept-Encoding
+      Set-Cookie: vbank-session=0b891100-c3ce-4a41-8dd1-bfc308ae3be0
+      Expires: '-1'
+      X-XSS-Protection: 1; mode=block
+      X-EdgeConnect-MidMile-RTT: '31'
+      consumerrequestid: 62b0734c-f422-4850-abd9-2dbde61447bb
+      Content-Type: application/json; charset=UTF-8
+    :status: 200 OK

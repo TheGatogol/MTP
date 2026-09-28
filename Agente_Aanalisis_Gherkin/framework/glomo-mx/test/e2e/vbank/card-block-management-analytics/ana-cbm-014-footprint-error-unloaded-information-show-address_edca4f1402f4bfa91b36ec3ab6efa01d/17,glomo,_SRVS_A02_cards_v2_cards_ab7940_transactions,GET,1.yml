@@ -1,0 +1,53 @@
+when:
+  sequence: 1
+  path: /SRVS_A02/cards/v2/cards/ab7940/transactions
+  method: GET
+  backend: glomo
+request:
+  headers:
+    sec-fetch-mode: cors
+    content-length: '0'
+    referer: http://localhost:8001/
+    sec-fetch-site: same-site
+    accept-language: es-MX,es;q=0.9
+    origin: http://localhost:8001
+    tsec: 791cc5c0dabada23db6d9183aaa286b67fa71461
+    accept: application/json, text/html, */*; q=0.1
+    sec-ch-ua: '"Google Chrome";v="137", "Chromium";v="137", "Not/A)Brand";v="24"'
+    sec-ch-ua-mobile: ?0
+    x-vbank-session: 384c4d69-24ad-4eac-8d2b-4fa73ff10d76
+    sec-ch-ua-platform: '"macOS"'
+    host: localhost:9000
+    content-type: application/json
+    connection: keep-alive
+    cache-control: no-cache, no-store, must-revalidate
+    accept-encoding: gzip, deflate, br, zstd
+    sec-fetch-dest: empty
+    user-agent: GLOMO_MX/99.99.99 (Android;14;Samsung)
+  query:
+    includeAdditionalCards: 'true'
+    toOperationDate: '2025-10-15'
+    fromOperationDate: '2025-07-15'
+    pageSize: '5'
+then:
+- return:
+    :body: Not Found
+    :headers:
+      access-control-allow-origin: '*'
+      Access-Control-Expose-Headers: tsec, vnd.bbva.access-token-type,vnd.bbva.access-token,
+        vnd.bbva.sso-pkcs7, authenticationtype, authenticationdata, authenticationstate,
+        authenticationchallenge
+      Server: artichoke
+      access-control-allow-headers: Content-Type, tsec, authenticationtype, authenticationdata,
+        authenticationstate, contactid, consumeruuid, consumerapplicationid, perimetertsec,
+        authorization, responsewarningcode, responsewarningdescription, cuf, field,
+        bcs-device-app-version, bcs-device-app-version, vnd.bbva.authorization, device-id,
+        Bcs-Device-Os-Name, bcs-device-app-name, bcs-device-dpi, BCS-Device-Id
+      Connection: keep-alive
+      Vary: Accept-Encoding
+      tsec: 791cc5c0dabada23db6d9183aaa286b67fa71461
+      Content-Length: '9'
+      X-Response-Time: 25ms
+      Date: Wed, 15 Oct 2025 10:53:27 GMT
+      Content-Type: text/plain; charset=utf-8
+    :status: 404 Not Found

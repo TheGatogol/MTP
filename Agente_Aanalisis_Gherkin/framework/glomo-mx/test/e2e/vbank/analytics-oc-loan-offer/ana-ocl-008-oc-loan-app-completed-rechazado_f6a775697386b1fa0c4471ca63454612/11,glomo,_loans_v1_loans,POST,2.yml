@@ -1,0 +1,162 @@
+when:
+  sequence: 2
+  path: /SRVS_A02/loans/v1/loans
+  method: POST
+  backend: glomo
+request:
+  headers:
+    sec-fetch-mode: cors
+    referer: http://localhost:8001/
+    content-length: '225'
+    sec-fetch-site: same-site
+    accept-language: es
+    origin: http://localhost:8001
+    authenticationtype: '33'
+    tsec: dd1144fc9c51c907bd43a6d28c5344cd7d1d0f79
+    accept: application/json, text/html, */*; q=0.1
+    authenticationdata: otp-token=12345678
+    sec-ch-ua: '"Google Chrome";v="93", " Not;A Brand";v="99", "Chromium";v="93"'
+    sec-ch-ua-mobile: ?0
+    x-vbank-session: 5e0ce79c-a05e-4dec-aa80-8db5bd187fbf
+    sec-ch-ua-platform: '"macOS"'
+    host: localhost:9000
+    content-type: application/json
+    connection: keep-alive
+    cache-control: no-cache, no-store, must-revalidate
+    accept-encoding: gzip, deflate, br
+    sec-fetch-dest: empty
+    user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36
+      (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36
+  body:
+    initialAmounts:
+    - amount: 228700
+      currency: MXN
+    contractingDate: '2021-09-23'
+    terms:
+      number: 60
+      frequency: MONTHLY
+    purposeGroup:
+      id: '00156'
+    offerId: XFRAB1QNN13NDPDKGEEREAS1JZM6AP7XZ4QCWHY9ZWR24KDJXEY0
+then:
+- return:
+    data:
+      initialAmounts:
+      - amount: 400000
+        currency: MXN
+      loanType:
+        name: Personal loan
+        id: CONSUME_PERSONAL
+      rates:
+      - rateType:
+          name: tasa anual
+          id: TASA ANUAL
+        unit:
+          percentage: 25.75
+        calculationDate: '2021-05-20'
+      - rateType:
+          name: tasa ordinaria
+          id: TASA ORDINARIA
+        unit:
+          percentage: 25.75
+        calculationDate: '2021-05-20'
+      - rateType:
+          name: tasa moratoria
+          id: TASA MORATORIA
+        unit:
+          percentage: 51.5
+        calculationDate: '2021-05-20'
+      - rateType:
+          name: Tasa mensual
+          id: TASA MENSUAL
+        unit:
+          percentage: 2.145833
+        calculationDate: '2021-05-20'
+      - rateType:
+          name: comision apertura
+          id: COMISION APERTURA
+        unit:
+          amount: 11600
+          currency: MXN
+        calculationDate: '2021-05-20'
+      number: '00740960960051049100'
+      relatedContracts:
+      - relationType:
+          name: Ligado con
+          id: LINKED_WITH
+        number: '00740680001500885078'
+        product:
+          name: Cuenta
+          id: ACCOUNTS
+        numberType:
+          name: Código interno local
+          id: LIC
+        contractId: KNKH00RRZJFZG976KZSJP2TM4BA6CZ5BS0NDVRYJ6KVE7GXEK860
+      contractingDate: '2021-05-20'
+      terms:
+        number: 24
+        frequency: BIWEEKLY
+      operationNumber: '0499379868'
+      additionalProducts:
+      - amount:
+          amount: 0
+          currency: MXN
+        numberType:
+          name: Código interno local
+          id: LIC
+        id: NO APLICA
+        managementCompany:
+          name: NO APLICA
+          id: NO APLICA
+      alias: PERSONAL QUINCENAL
+      paymentMethod:
+        name: Pago Automático Sobre la Cuenta
+        id: PAC
+      currentInstallment:
+        number: 1
+        maturityDate: '2023-05-16'
+        AMOUNT_CONSTANT: Current installment monetary amount.
+        principals:
+        - amount: 3000
+          currency: MXN
+      internalCode:
+        name: PBCCMPPI04
+        id: PBCCMPPI04
+      status:
+        reason:
+          id: DECLINED
+        name: El préstamo está en un estado válido
+        id: VALID
+      currencies:
+      - isMajor: true
+        currency: MXN
+      loanBreakDown:
+      - amount: 3000
+        name: Monto de la couta
+        currency: MXN
+        id: INSTALLMENT
+      - amount: 556863.84
+        name: Costo Total
+        currency: MXN
+        id: TOTAL_COST
+      - name: Importe neto de crédito, cantidad solicitada por el cliente.
+        currency: MXN
+        id: NET_AMOUNT
+    :headers:
+      access-control-allow-origin: '*'
+      content-length: '2128'
+      Access-Control-Expose-Headers: tsec, vnd.bbva.access-token-type,vnd.bbva.access-token,
+        authenticationtype, authenticationdata, authenticationstate
+      Server: artichoke
+      access-control-allow-headers: Content-Type, tsec, authenticationtype, authenticationdata,
+        authenticationstate, contactid, consumeruuid, consumerapplicationid, perimetertsec,
+        authorization, responsewarningcode, responsewarningdescription, cuf, field,
+        bcs-device-app-version, bcs-device-app-version
+      Connection: keep-alive
+      content-type: application/json;charset=UTF-8
+      Vary: Accept-Encoding
+      tsec: dd1144fc9c51c907bd43a6d28c5344cd7d1d0f79
+      X-Response-Time: 9ms
+      Date: Thu, 23 Sep 2021 19:03:32 GMT
+    :status: 201 Created
+    locale: es_mx

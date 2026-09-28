@@ -1,0 +1,90 @@
+when:
+  sequence: 1
+  path: /SRVS_A02/customer-logins/v1/logins
+  method: GET
+  backend: glomo
+request:
+  headers:
+    sec-fetch-mode: cors
+    content-length: "0"
+    referer: http://localhost:8001/
+    sec-fetch-site: same-site
+    accept-language: es-MX,es;q=0.9
+    origin: http://localhost:8001
+    authenticationtype: "58"
+    tsec: 9a9f49cc6eea5c613134c87e7a1c8f7fe7aee67f
+    accept: application/json, text/html, */*; q=0.1
+    authenticationdata: deviceid=11111111
+    sec-ch-ua: '"Chromium";v="116", "Not)A;Brand";v="24", "Google Chrome";v="116"'
+    sec-ch-ua-mobile: ?0
+    x-vbank-session: d7ae56f9-de21-4981-b5d0-5b66d0c1d968
+    sec-ch-ua-platform: '"macOS"'
+    host: localhost:9000
+    content-type: application/json
+    connection: keep-alive
+    cache-control: no-cache, no-store, must-revalidate
+    accept-encoding: gzip, deflate, br
+    sec-fetch-dest: empty
+    user-agent: GLOMO_MX/99.99.99;Mozilla/5.0 (Linux; U; Android 4.0.2; en-us;
+      Galaxy Nexus Build/ICL53F) AppleWebKit/534.30 (KHTML, like Gecko)
+      Version/4.0 Mobile Safari/534.30
+  query: {}
+then:
+- return:
+    data:
+      classifications:
+        - id: ECONOMIC_SECTOR
+          sector:
+            id: F
+            subSector:
+              id: "32"
+          segments: []
+      bank:
+        id: "0074"
+        branch:
+          id: "0010"
+      identityDocument:
+        documentType:
+          id: I
+        documentNumber: 52341234A
+      personType:
+        firstName: HUGO
+        lastName: SANCHEZ
+        secondLastName: ABUNDES FDG
+        gender:
+          id: M
+        birthData:
+          birthDate: "1984-05-13T00:00:00.000Z"
+        id: NATURAL
+      segments: []
+    :headers:
+      content-length: "2030"
+      Server: artichoke
+      Alt-Svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      access-control-allow-headers: Content-Type, tsec, authenticationtype,
+        authenticationdata, authenticationstate, contactid, consumeruuid,
+        consumerapplicationid, perimetertsec, authorization,
+        responsewarningcode, responsewarningdescription, cuf, field,
+        bcs-device-app-version, bcs-device-app-version, vnd.bbva.authorization,
+        device-id
+      tsec: 9a9f49cc6eea5c613134c87e7a1c8f7fe7aee67f
+      X-Response-Time: 469ms
+      Date: Wed, 30 Aug 2023 06:18:35 GMT
+      Via: 1.1 google
+      access-control-allow-origin: "*"
+      Access-Control-Expose-Headers: tsec,
+        vnd.bbva.access-token-type,vnd.bbva.access-token, vnd.bbva.sso-pkcs7,
+        authenticationtype, authenticationdata, authenticationstate,
+        authenticationchallenge
+      Cache-Control: private, no-store
+      content-type: application/json;charset=UTF-8
+      Vary: Accept-Encoding
+    :status: 200 OK
+    apiInfo:
+      name: customers
+      category: people
+      version: 0.24.0
+    messages:
+      - code: KNA1008
+        message: CONSULTA REALIZADA
+        type: WARNING

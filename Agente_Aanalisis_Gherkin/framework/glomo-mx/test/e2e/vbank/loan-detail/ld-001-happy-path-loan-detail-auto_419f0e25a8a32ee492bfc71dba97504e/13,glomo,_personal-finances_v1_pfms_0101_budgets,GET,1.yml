@@ -1,0 +1,107 @@
+when:
+  sequence: 1
+  path: /SRVS_A02/personal-finances/v1/pfms/0101/budgets
+  method: GET
+  backend: glomo
+request:
+  headers:
+    sec-fetch-mode: cors
+    content-length: '0'
+    referer: http://localhost:8001/
+    sec-fetch-site: same-site
+    accept-language: es
+    origin: http://localhost:8001
+    tsec: 0ca65021b61f5abb1a62debe06e9adc6c14b0d22
+    accept: application/json, text/html, */*; q=0.1
+    sec-ch-ua: '" Not;A Brand";v="99", "Google Chrome";v="91", "Chromium";v="91"'
+    sec-ch-ua-mobile: ?0
+    x-vbank-session: 90cc6224-cefb-4bf0-8bcb-7c1923ac6780
+    host: localhost:9000
+    content-type: application/json
+    connection: keep-alive
+    cache-control: no-cache, no-store, must-revalidate
+    accept-encoding: gzip, deflate, br
+    sec-fetch-dest: empty
+    user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36
+      (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36
+  query:
+    pageSize: '4'
+then:
+- return:
+    data:
+    - period:
+        endDate: '2020-02-28'
+        startDate: '2020-01-01'
+      limit:
+        amount: 1500
+        currency: MXN
+      available:
+        amount: 900
+        currency: MXN
+      disposed:
+        amount: 600
+        currency: MXN
+      id: '0001'
+      category:
+        image:
+          id: education
+          url: https://upload.wikimedia.org/wikipedia/commons/1/1e/Default-avatar.jpg
+        name: Education
+        id: '9'
+      status:
+        id: ACTIVE
+      frequency:
+        name: monthly
+        id: MONTHLY
+    - period:
+        endDate: '2020-12-31'
+        startDate: '2020-01-01'
+      limit:
+        amount: 3000
+        currency: MXN
+      available:
+        amount: 300
+        currency: MXN
+      disposed:
+        amount: 2700
+        currency: MXN
+      id: '0001'
+      category:
+        image:
+          id: shopping
+          url: https://upload.wikimedia.org/wikipedia/commons/1/1e/Default-avatar.jpg
+        name: Shoppings
+        id: '8'
+      subcategory:
+        image:
+          id: shopping
+          url: https://upload.wikimedia.org/wikipedia/commons/1/1e/Default-avatar.jpg
+        name: Feeding
+        id: '48'
+      status:
+        id: ACTIVE
+      frequency:
+        name: yearly
+        id: YEARLY
+    :headers:
+      access-control-allow-origin: '*'
+      content-length: '1776'
+      Access-Control-Expose-Headers: tsec, vnd.bbva.access-token-type,vnd.bbva.access-token,
+        authenticationtype, authenticationdata, authenticationstate
+      Server: artichoke
+      Alt-Svc: clear
+      access-control-allow-headers: Content-Type, tsec, authenticationtype, authenticationdata,
+        authenticationstate, contactid, consumeruuid, consumerapplicationid, perimetertsec,
+        authorization, responsewarningcode, responsewarningdescription, cuf, field,
+        bcs-device-app-version, bcs-device-app-version
+      content-type: application/json;charset=UTF-8
+      Vary: Accept-Encoding
+      tsec: 0ca65021b61f5abb1a62debe06e9adc6c14b0d22
+      X-Response-Time: 486ms
+      Date: Fri, 09 Jul 2021 07:34:18 GMT
+      Via: 1.1 google
+    :status: 200 OK
+    apiInfo:
+      name: personal-finances
+      category: finances
+      version: 1.6.0

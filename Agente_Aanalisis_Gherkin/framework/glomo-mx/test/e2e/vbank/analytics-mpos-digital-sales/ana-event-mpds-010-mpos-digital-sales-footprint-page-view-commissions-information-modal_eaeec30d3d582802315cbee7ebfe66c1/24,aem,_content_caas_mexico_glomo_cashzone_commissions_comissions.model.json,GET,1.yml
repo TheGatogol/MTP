@@ -1,0 +1,154 @@
+when:
+  sequence: 1
+  path: /content/caas/mexico/glomo/cashzone/commissions/comissions.model.json
+  method: GET
+  backend: aem
+request:
+  headers:
+    sec-fetch-mode: cors
+    content-length: '0'
+    referer: http://localhost:8001/
+    sec-fetch-site: same-site
+    accept-language: es-MX,es;q=0.9
+    origin: http://localhost:8001
+    accept: application/json, text/plain, */*; q=0.01
+    sec-ch-ua: '"Not:A-Brand";v="24", "Chromium";v="134"'
+    sec-ch-ua-mobile: ?0
+    x-vbank-session: b95f2de5-b91c-42d5-bb9a-8bbbe259e73b
+    sec-ch-ua-platform: '"macOS"'
+    x-requested-with: XMLHttpRequest
+    host: localhost:9031
+    content-type: application/json
+    connection: keep-alive
+    cache-control: no-cache, no-store, must-revalidate
+    accept-encoding: gzip, deflate, br, zstd
+    sec-fetch-dest: empty
+    user-agent: GLOMO_MX/99.99.99 (Android;14;Samsung)
+then:
+- return:
+    brandSlug: ''
+    ::items:
+      root:
+        ::items:
+          contentfragmentlist:
+            ::type: bbva/pwebs/components/par/corecomponents/contentfragmentlist
+            id: cashzone
+            items:
+            - elementsOrder:
+              - tittleComissions
+              - textComissions
+              - bulletsComissions
+              - tittleMSI
+              - msiComissions
+              - detailMSI
+              variations: []
+              elements:
+                bulletsComissions:
+                  dataType: string
+                  ::type: string
+                  title: Detalle Comisiones (bullets)
+                  multiValue: true
+                  value:
+                  - La comisión mínima por cada venta realizada con Visa, Mastercard
+                    y Carnet es de 2.99% más IVA. Para American Express un 3.5% más
+                    IVA y 3.7% más IVA con tarjetas internacionales.
+                  - Se descontará del monto del cobro y recibirás el restante en tu
+                    cuenta en 1 día hábil o 3 días hábiles si es American Express.
+                  - Si el cobro no llega a efectuarse o se cancela, no se aplicará
+                    ninguna comisión. En una devolución, sí se cobrará.
+                tittleMSI:
+                  dataType: string
+                  ::type: string
+                  title: Titulo MSI
+                  multiValue: false
+                  value: Comisiones al ofrecer meses sin intereses
+                detailMSI:
+                  dataType: string
+                  ::type: string
+                  title: Detalle Msi
+                  multiValue: true
+                  value:
+                  - '3 mensualidades: 4.8% + IVA'
+                  - 'Monto mínimo: $300'
+                  - '6 mensualidades: 7.8% + IVA'
+                  - 'Monto mínimo: $600'
+                  - '9 mensualidades: 10.8% + IVA'
+                  - 'Monto mínimo: $900'
+                  - '12 mensualidades: 13.8% + IVA'
+                  - 'Monto mínimo: $1,200'
+                tittleComissions:
+                  dataType: string
+                  ::type: string
+                  title: Titulo Comisiones
+                  multiValue: false
+                  value: Comisiones de venta
+                msiComissions:
+                  dataType: string
+                  ::type: text/x-markdown
+                  title: Texto Comisiones MSI
+                  multiValue: false
+                  value: "Si ofreces meses sin intereses para que tu cliente difiera\
+                    \ su pago, además de la comisión de venta pagarás una comisió\
+                    n extra por la operación.  \n\nEl porcentaje de la comisión cambiará\
+                    \ según el plazo:"
+                textComissions:
+                  dataType: string
+                  ::type: text/x-markdown
+                  title: Texto Comisiones Base
+                  multiValue: false
+                  value: |+
+                    Estas comisiones de venta se cobran en los pagos con tarjeta, las aplica Openpay by BBVA y se ajustan a tus condiciones contratadas:                name: test
+              description: ''
+              model: caascfm/models/mexico-glomo-comissions
+              ::type: dam:Asset
+              title: Comisiones Zona Cobro
+        allowedComponents:
+          components:
+          - path: /content/caas/mexico/glomo/cashzone/commissions/comissions/jcr:content/root/bbva/pwebsnew/components/par/corecomponents/contentfragment
+            title: Content Fragment
+          - path: /content/caas/mexico/glomo/cashzone/commissions/comissions/jcr:content/root/bbva/pwebsnew/components/par/corecomponents/dynamiccontentfragment
+            title: Dynamic Content Fragment
+          - path: /content/caas/mexico/glomo/cashzone/commissions/comissions/jcr:content/root/bbva/pwebsnew/components/par/corecomponents/contentfragmentlist
+            title: Content Fragment List
+          applicable: false
+        gridClassNames: aem-Grid aem-Grid--12 aem-Grid--default--12
+        columnClassNames:
+          contentfragmentlist: aem-GridColumn aem-GridColumn--default--12
+        ::itemsOrder:
+        - contentfragmentlist
+        ::type: wcm/foundation/components/responsivegrid
+        columnCount: 12
+    lastModifiedDate: 1727688090821
+    htmlPageItems: []
+    :headers:
+      Access-Control-Allow-Origin: http://localhost:8001
+      X-Content-Type-Options: nosniff
+      Connection: keep-alive
+      Date: Fri, 08 Aug 2025 08:40:39 GMT
+      Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Access-Control-Request-Method,
+        x-requested-with, x-rho-traceid, x-forwarded-for, contactid
+      Strict-Transport-Security: max-age=31536000; includeSubdomains; preload
+      Cache-Control: max-age=3600
+      ETag: '"ccb7e336125e20e43cd6cbe5fd6d5cbd-gzip"'
+      Content-Security-Policy: frame-ancestors 'self' https://s3-dev.movil.bbva.es/
+        https://pre.web.bbva.es/ https://qa.web.grupobbva.com/ https://*.es.igrupobbva/
+        https://*.igrupobbva/  http://localhost http://localhost:4200 https://*.bbva-cells-files.s3.amazonaws.com/
+        https://ei-netcash.bbva.es/ https://ei-empresas.bbva.es/ https://ei.bbva.es/
+        https://ei.bbva.it/ https://pre.web.bbva.it/ https://s3-dev.mobile.bbva.it/  https://ei.bbvanetcash.com/
+        http://localhost:8001 https://int-bbva-cells-files.s3.amazonaws.com/ https://qa.bbvanetcash.pe
+        https://test.bbvanetcash.pe https://empresaslo.bbvanet.com.mx/ https://ei-net.bbvapivot.com  https://qa-bbva-cells-files.s3.amazonaws.com
+      Vary: Accept-Encoding
+      Set-Cookie: vbank-session=b95f2de5-b91c-42d5-bb9a-8bbbe259e73b
+      Expires: Fri, 08 Aug 2025 09:40:39 GMT
+      X-XSS-Protection: 1; mode=block
+      Content-Length: '3377'
+      Content-Type: application/json
+    language: en-US
+    title: comissions
+    cssClassNames: caasinitiativecontent page basicpage
+    templateName: caasinitiativecontent
+    ::itemsOrder:
+    - root
+    ::type: bbva/pwebsnew/components/pages/caasinitiativecontent
+    :status: 200 OK
+    id: caasinitiativecontent-66342c8eae

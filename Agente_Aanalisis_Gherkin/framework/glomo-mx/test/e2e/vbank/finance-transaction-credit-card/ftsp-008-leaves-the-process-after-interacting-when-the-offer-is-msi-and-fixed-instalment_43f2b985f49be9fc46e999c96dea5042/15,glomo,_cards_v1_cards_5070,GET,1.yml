@@ -1,0 +1,180 @@
+when:
+  sequence: 1
+  path: /SRVS_A02/cards/v1/cards/5070
+  method: GET
+  backend: glomo
+request:
+  headers:
+    sec-fetch-mode: cors
+    content-length: '0'
+    referer: http://localhost:8001/
+    sec-fetch-site: same-site
+    accept-language: es-MX,es;q=0.9
+    origin: http://localhost:8001
+    tsec: d13c0298e3662f396f606cfd1be4b7d5ce6f98b9
+    accept: application/json, text/html, */*; q=0.1
+    sec-ch-ua: '"Chromium";v="116", "Not)A;Brand";v="24", "Google Chrome";v="116"'
+    sec-ch-ua-mobile: ?0
+    x-vbank-session: a97280a6-e93a-49d4-b605-a23c28dfe48a
+    sec-ch-ua-platform: '"macOS"'
+    host: localhost:9000
+    content-type: application/json
+    connection: keep-alive
+    cache-control: no-cache, no-store, must-revalidate
+    accept-encoding: gzip, deflate, br
+    sec-fetch-dest: empty
+    user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36
+      (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36
+  query:
+    expand: payment-methods,blocks,indicators,activations
+then:
+- return:
+    data:
+      numberType:
+        description: Permanent Account Number
+        id: PAN
+      brandAssociation:
+        description: VISA
+        id: VISA
+      availableBalance:
+        currentBalances:
+        - amount: 2000000
+          currency: MXN
+        pendingBalances:
+        - amount: 0
+          currency: MXN
+        postedBalances:
+        - amount: 2000000
+          currency: MXN
+      number: '4555457083005070'
+      bank:
+        name: BBVA Mexico
+        id: '504'
+      cutOffDate: '2016-10-01T12:00:00Z'
+      paymentMethods:
+      - nextPaymentDate: '2017-07-05T12:00:00Z'
+        description: Pago mínimo
+        id: MINIMUM_AMOUNT_PAYMENT
+        monetaryPayments:
+        - amount: 0
+          currency: MXN
+      - nextPaymentDate: '2017-07-05T12:00:00Z'
+        description: Pago para no generar intereses
+        id: MINIMUM_AMOUNT_TO_AVOID_INTEREST_PAYMENT
+        monetaryPayments:
+        - amount: 0
+          currency: MXN
+      - nextPaymentDate: '2017-07-05T12:00:00Z'
+        description: Deuda de este mes
+        id: LAST_PERIOD_AMOUNT_PAYMENT
+        monetaryPayments:
+        - amount: 70000
+          currency: MXN
+      - nextPaymentDate: '2017-07-05T12:00:00Z'
+        description: Saldo al corte
+        id: TOTAL_AMOUNT_PAYMENT
+        monetaryPayments:
+        - amount: 75000
+          currency: MXN
+      alias: MSI 6 meses
+      id: '5070'
+      simpleCode: '5070'
+      issueDate: '2016-07-01T12:05:13Z'
+      openingDate: '2016-07-01T11:31:45Z'
+      expirationDate: '**/**'
+      product:
+        name: Zero interest payment
+        id: V1
+      holderName: Carlos Santana
+      images:
+      - name: Front face of the card
+        id: FRONT_CARD
+        url: https://cardcovers-stage.caasbbva.com/peru/491947_VISA-CORPORATE_front.png?width=120&height=76
+      - name: Back face of the card
+        id: BACK_CARD
+        url: /imageBack.jpg
+      blocks:
+      - reference: A23456
+        reason:
+          description: Card is blocked because it is VIGENTE
+          id: VIGENTE
+        additionalInformation: Card blocked by reason ID
+        blockDate: '2022-10-10T16:05:14Z'
+        description: Card blocked VIGENTE
+        id: Internal
+        isActive: true
+      physicalSupport:
+        description: Plástico normal
+        id: NORMAL_PLASTIC
+      cardType:
+        description: Tarjeta de crédito
+        id: CREDIT_CARD
+      disposedBalance:
+        currentBalances:
+        - amount: 1000000
+          currency: MXN
+        pendingBalances:
+        - amount: 0
+          currency: MXN
+        postedBalances:
+        - amount: 1000000
+          currency: MXN
+      indicators:
+      - description: Pagar tarjeta
+        id: DESTINATION_TRANSFER_FROM_ACCOUNT
+        isActive: true
+      - description: Avance en línea
+        id: ORIGIN_TRANSFER_TO_ACCOUNT
+        isActive: true
+      - description: Bloquear tarjeta
+        id: BLOCKABLE
+        isActive: true
+      - description: Ver CVV
+        id: SECURITY_DATA_READ
+        isActive: true
+      - description: Editar alias
+        id: EDITABLE_ALIAS
+        isActive: true
+      transactions:
+      - id: MXN0001
+      - id: MXN0002
+      - id: MXN0004
+      - id: MXN0008
+      - id: MXN0005
+      grantedCredits:
+      - amount: 3000000
+        currency: MXN
+      activations:
+      - name: Activation for global card usage
+        isActive: true
+        activationId: ON_OFF
+      activationDate: '2016-07-01T13:32:02Z'
+      currencies:
+      - isMajor: true
+        currency: MXN
+      status:
+        id: OPERATIVE
+    :headers:
+      content-length: '4814'
+      Server: artichoke
+      Alt-Svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      access-control-allow-headers: Content-Type, tsec, authenticationtype, authenticationdata,
+        authenticationstate, contactid, consumeruuid, consumerapplicationid, perimetertsec,
+        authorization, responsewarningcode, responsewarningdescription, cuf, field,
+        bcs-device-app-version, bcs-device-app-version, vnd.bbva.authorization, device-id
+      tsec: d13c0298e3662f396f606cfd1be4b7d5ce6f98b9
+      X-Response-Time: 471ms
+      Date: Thu, 07 Sep 2023 23:23:51 GMT
+      Via: 1.1 google
+      access-control-allow-origin: '*'
+      Access-Control-Expose-Headers: tsec, vnd.bbva.access-token-type,vnd.bbva.access-token,
+        vnd.bbva.sso-pkcs7, authenticationtype, authenticationdata, authenticationstate,
+        authenticationchallenge
+      Cache-Control: private, no-store
+      content-type: application/json;charset=UTF-8
+      Vary: Accept-Encoding
+    :status: 200 OK
+    apiInfo:
+      name: cards
+      category: products
+      version: 0.19.0

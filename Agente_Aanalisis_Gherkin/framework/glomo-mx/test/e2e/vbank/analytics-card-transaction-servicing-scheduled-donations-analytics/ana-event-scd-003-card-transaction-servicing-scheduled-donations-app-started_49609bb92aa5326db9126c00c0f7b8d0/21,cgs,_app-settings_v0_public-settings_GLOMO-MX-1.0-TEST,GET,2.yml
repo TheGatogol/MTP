@@ -1,0 +1,53 @@
+when:
+  sequence: 2
+  path: /app-settings/v0/public-settings/GLOMO-MX-1.0-TEST
+  method: GET
+  backend: cgs
+request:
+  headers:
+    sec-fetch-mode: cors
+    content-length: '0'
+    referer: http://localhost:8001/
+    sec-fetch-site: same-site
+    accept-language: es-MX,es;q=0.9
+    origin: http://localhost:8001
+    accept: application/json, text/html, */*; q=0.1
+    sec-ch-ua: '"Chromium";v="140", "Not=A?Brand";v="24", "Google Chrome";v="140"'
+    sec-ch-ua-mobile: ?0
+    x-vbank-session: 78f3d0fc-da5d-46d9-ba1d-5178efc750d9
+    x-api-key: psJbscoM0i9O4L40SzKW02i8XhfR80df1iB9ODgj
+    sec-ch-ua-platform: '"macOS"'
+    host: localhost:9085
+    content-type: application/json
+    connection: keep-alive
+    cache-control: no-cache, no-store, must-revalidate
+    accept-encoding: gzip, deflate, br, zstd
+    sec-fetch-dest: empty
+    user-agent: GLOMO_MX/99.99.99 (Android;14;Samsung)
+  query:
+    key: scheduled_donations
+then:
+- return:
+    data:
+    - value: '{"data":{"fundraising":[{"minValue":"20","firstValue":"50","secondValue":"100","thirdValue":"200","maxValue":"8000","stationId":"08055","stationName":"Fundación
+        BBVA México","endDate":"0001-01-01","donationPeriod":"MONTHLY","productId":"DONATIVOS_FUNDACIONBBVA","productIdValue":"GMDDFGV001","numberTypeId":"SIMPLE_ACCOUNT","operationType":"Alta
+        del donativo"}]}}'
+      key: scheduled_donations
+    :headers:
+      x-amz-apigw-id: LSjrgEqeoAMFz-g=
+      X-EdgeConnect-Origin-MEX-Latency: '304'
+      X-EdgeConnect-Cache-Status: '1'
+      Access-Control-Allow-Origin: '*'
+      Connection: keep-alive
+      X-Amzn-Trace-Id: Root=1-68374caf-7d4eda93b56ce3cf13131a6b;Parent=035a85a922eb93bc;Sampled=0;Lineage=1:06614fa4:0
+      Date: Fri, 19 Sep 2025 07:16:00 GMT
+      Akamai-Parent-IP: 23.47.59.239
+      Cache-Control: max-age=300
+      ETag: '"36d465879f0c891f75f675c3debd868b230dbf1e"'
+      x-amzn-RequestId: b4f33841-448b-474f-b903-18182007230b
+      Vary: Accept-Encoding
+      Expires: Fri, 19 Sep 2025 07:21:00 GMT
+      Content-Length: '491'
+      X-EdgeConnect-MidMile-RTT: '5'
+      Content-Type: application/json; charset=UTF-8
+    :status: 200 OK

@@ -1,0 +1,38 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: sustainability_product_loan
+    lock: 'false'
+then:
+- return:
+    :body:
+    - data:
+        tags:
+        - '5539397577'
+        - sustainability_product_loan
+        - sustainability
+        authentication:
+          password: Glomo2025
+          user: '5539397577'
+          deviceId: 1BB3AA055B027F126A7DA525F9FCC7F8
+      id: 36600452
+    :headers:
+      Server: nginx
+      Cache-Control: max-age=0
+      Connection: keep-alive
+      host: datamanager.globaldevtools.bbva.com
+      Expires: Tue, 30 Jun 2026 20:26:02 GMT
+      Content-Length: '203'
+      Date: Tue, 30 Jun 2026 20:26:02 GMT
+      Content-Type: application/json; charset=utf-8
+    :status: 200 OK

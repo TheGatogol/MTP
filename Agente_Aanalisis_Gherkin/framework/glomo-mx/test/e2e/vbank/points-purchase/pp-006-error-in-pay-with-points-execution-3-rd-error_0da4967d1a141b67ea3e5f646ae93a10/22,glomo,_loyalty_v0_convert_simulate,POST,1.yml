@@ -1,0 +1,96 @@
+when:
+  sequence: 1
+  path: /SRVS_A02/loyalty/v0/convert/simulate
+  method: POST
+  backend: glomo
+request:
+  headers:
+    sec-fetch-mode: cors
+    referer: http://localhost:8001/
+    content-length: '137'
+    sec-fetch-site: same-site
+    accept-language: es-MX,es;q=0.9
+    origin: http://localhost:8001
+    tsec: e0680670a923d9e49d429d75e2d0bb2260974500
+    accept: application/json, text/html, */*; q=0.1
+    sec-ch-ua: '"Chromium";v="116", "Not)A;Brand";v="24", "Google Chrome";v="116"'
+    sec-ch-ua-mobile: ?0
+    x-vbank-session: d6a7994f-3b6b-4556-872b-00af90435478
+    sec-ch-ua-platform: '"macOS"'
+    host: localhost:9000
+    content-type: application/json
+    connection: keep-alive
+    cache-control: no-cache, no-store, must-revalidate
+    accept-encoding: gzip, deflate, br
+    sec-fetch-dest: empty
+    user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36
+      (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36
+  body:
+    sourceTransaction:
+      id: 000B0007
+    contractId: '4001'
+    conversionType:
+      id: MONEY_TO_REWARD_POINTS
+    productType:
+      id: CARDS
+then:
+- return:
+    balances:
+    - id: POINTS_AFTER_CONVERSION
+      value:
+        unitType: REWARD_POINTS
+        value: 100
+    - id: POINTS_BEFORE_CONVERSION
+      value:
+        unitType: REWARD_POINTS
+        value: 100
+    - id: REVOLVING_AFTER_CONVERSION
+      value:
+        unitType: MONEY
+        conversionAmount:
+          amount: 500
+          currency: MXN
+    - id: REVOLVING_BEFORE_CONVERSION
+      value:
+        unitType: MONEY
+        conversionAmount:
+          amount: 450
+          currency: MXN
+    conversionFactor: 0.1
+    :headers:
+      access-control-allow-origin: '*'
+      content-length: '1316'
+      Access-Control-Expose-Headers: tsec, vnd.bbva.access-token-type,vnd.bbva.access-token,
+        vnd.bbva.sso-pkcs7, authenticationtype, authenticationdata, authenticationstate,
+        authenticationchallenge
+      Server: artichoke
+      Alt-Svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      access-control-allow-headers: Content-Type, tsec, authenticationtype, authenticationdata,
+        authenticationstate, contactid, consumeruuid, consumerapplicationid, perimetertsec,
+        authorization, responsewarningcode, responsewarningdescription, cuf, field,
+        bcs-device-app-version, bcs-device-app-version, vnd.bbva.authorization, device-id
+      content-type: application/json;charset=UTF-8
+      Vary: Accept-Encoding
+      tsec: e0680670a923d9e49d429d75e2d0bb2260974500
+      X-Response-Time: 456ms
+      Date: Fri, 08 Sep 2023 01:46:20 GMT
+      Via: 1.1 google
+    operationSumary:
+    - operationSumaryItem:
+        unitType: REWARD_POINTS
+        value: 80
+      operationType: CHARGE
+    - operationSumaryItem:
+        unitType: REWARD_POINTS
+        value: 50
+      operationType: PAYMENT
+    - operationSumaryItem:
+        unitType: MONEY
+        conversionAmount:
+          amount: 200
+          currency: MXN
+      operationType: CONVERSION
+    :status: 200 OK
+    paymentAmount:
+      amount: 1000
+      currency: MXN

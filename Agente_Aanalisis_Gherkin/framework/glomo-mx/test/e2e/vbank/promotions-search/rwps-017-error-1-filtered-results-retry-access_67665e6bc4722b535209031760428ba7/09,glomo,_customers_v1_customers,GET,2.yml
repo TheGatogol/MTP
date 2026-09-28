@@ -1,0 +1,118 @@
+when:
+  sequence: 2
+  path: /SRVS_A02/customers/v1/customers
+  method: GET
+  backend: glomo
+request:
+  headers:
+    sec-fetch-mode: cors
+    content-length: '0'
+    referer: http://localhost:8001/
+    sec-fetch-site: same-site
+    accept-language: es-MX,es;q=0.9
+    origin: http://localhost:8001
+    tsec: c0a4d553dc2058cf0994d605113c273c06000c14
+    accept: application/json, text/html, */*; q=0.1
+    sec-ch-ua: '"Not.A/Brand";v="8", "Chromium";v="114", "Google Chrome";v="114"'
+    sec-ch-ua-mobile: ?0
+    x-vbank-session: 5e6f112a-6839-4425-a98c-f7ef5f366091
+    sec-ch-ua-platform: '"macOS"'
+    host: localhost:9000
+    content-type: application/json
+    connection: keep-alive
+    cache-control: no-cache, no-store, must-revalidate
+    accept-encoding: gzip, deflate, br
+    sec-fetch-dest: empty
+    user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36
+      (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+  query:
+    expand: indicators
+then:
+- return:
+    data:
+    - lastName: Sánchez
+      gender:
+        name: Varón
+        id: MALE
+      birthData:
+        country:
+          name: México
+          id: MX
+        city: Guadalajara
+        state:
+          name: Jalisco
+          id: JALISCO
+        birthDate: '1984-05-13T00:00:00.000Z'
+      nationalities:
+      - name: Mexicana
+        id: MX
+      suffix: JR
+      indicators:
+      - indicatorId: INSURANCE
+        name: Indica si el cliente tiene seguro contratado
+        isActive: false
+      membershipDate: '1992-11-03T09:00:33Z'
+      firstName: Hugo
+      bank:
+        bankId: 549300WIWQK5Q9MCUN92
+        name: BBVA Bancomer
+        branch:
+          branchId: '33'
+          costCenter: '123'
+          name: Oficina 33
+      lastAccessDate: '2016-08-07T11:28:36.096Z'
+      customerId: b_TCwi5citu5euHzqryDL=
+      identityDocuments:
+      - country:
+          name: México
+          id: MX
+        documentType:
+          name: Documento Nacional de Identidad
+          id: DNI
+        documentNumber: 52341234A
+        state:
+          name: Jalisco
+          id: JALISCO
+        issueDate: '2008-08-19T09:00:33Z'
+        status:
+          name: Activo
+          id: Active
+        expirationDate: '2018-08-19T09:00:33Z'
+      personalTitle:
+        name: MR
+        id: MR
+      residence:
+        country:
+          name: México
+          id: MX
+        residenceType:
+          name: Permanente
+          id: PERMANENT
+        startDate: '1980-03-22T09:00:33Z'
+      maritalStatus:
+        name: Casado
+        id: MARRIED
+    :headers:
+      content-length: '2213'
+      Server: artichoke
+      Alt-Svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      access-control-allow-headers: Content-Type, tsec, authenticationtype, authenticationdata,
+        authenticationstate, contactid, consumeruuid, consumerapplicationid, perimetertsec,
+        authorization, responsewarningcode, responsewarningdescription, cuf, field,
+        bcs-device-app-version, bcs-device-app-version, vnd.bbva.authorization, device-id
+      tsec: c0a4d553dc2058cf0994d605113c273c06000c14
+      X-Response-Time: 456ms
+      Date: Mon, 24 Jul 2023 14:09:01 GMT
+      Via: 1.1 google
+      access-control-allow-origin: '*'
+      Access-Control-Expose-Headers: tsec, vnd.bbva.access-token-type,vnd.bbva.access-token,
+        vnd.bbva.sso-pkcs7, authenticationtype, authenticationdata, authenticationstate,
+        authenticationchallenge
+      Cache-Control: private, no-store
+      content-type: application/json;charset=UTF-8
+      Vary: Accept-Encoding
+    :status: 200 OK
+    apiInfo:
+      name: customers
+      category: people
+      version: 0.24.0

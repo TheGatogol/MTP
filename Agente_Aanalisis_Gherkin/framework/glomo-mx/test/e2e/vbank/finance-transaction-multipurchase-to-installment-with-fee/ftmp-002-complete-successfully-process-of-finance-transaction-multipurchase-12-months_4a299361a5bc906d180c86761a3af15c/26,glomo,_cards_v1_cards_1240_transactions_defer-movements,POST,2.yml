@@ -1,0 +1,97 @@
+when:
+  sequence: 2
+  path: /SRVS_A02/cards/v1/cards/1240/transactions/defer-movements
+  method: POST
+  backend: glomo
+request:
+  headers:
+    sec-fetch-mode: cors
+    referer: http://localhost:8001/
+    content-length: '725'
+    sec-fetch-site: same-site
+    accept-language: en-US
+    origin: http://localhost:8001
+    authenticationtype: '05'
+    tsec: 3a4236c8db705657d2138c33c93769173c27f685
+    accept: application/json, text/html, */*; q=0.1
+    authenticationdata: otp-sms
+    sec-ch-ua: ''
+    sec-ch-ua-mobile: ?0
+    x-vbank-session: ac91d634-24d3-4aeb-a7e9-e7e7ece6aed4
+    sec-ch-ua-platform: ''
+    host: localhost:9000
+    content-type: application/json
+    connection: keep-alive
+    cache-control: no-cache, no-store, must-revalidate
+    accept-encoding: gzip, deflate, br
+    sec-fetch-dest: empty
+    user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36
+      (KHTML, like Gecko) HeadlessChrome/108.0.5359.124 Safari/537.36
+  body:
+    product:
+      description: Crédito BBVA Saldo a favor
+    installment:
+      offer:
+        id: '85'
+      firstInstallmentDate: '2022-06-23'
+      financingCalculationFormat:
+        unit:
+          number: 12
+          frequency: MONTHLY
+        id: TOTAL_AMOUNT_PAYMENT
+      rate:
+        itemizeRates:
+        - rateType: PREFERENTIAL
+          itemizeRatesUnit:
+            unitRateType: PERCENTAGE
+            percentage: 50
+          description: Tasa de interes para el finananciamiento en porcentaje
+        - rateType: CAT
+          itemizeRatesUnit:
+            unitRateType: PERCENTAGE
+            percentage: 79.99
+          description: CAT
+      specificAmounts:
+      - amount:
+          amount: 7500.32
+          currency: MXN
+        id: CAPITAL
+      financingType:
+        id: MONTHS_WITH_INTERESTS
+    transactions:
+    - id: MXN0021
+    - id: MXN0022
+    - id: MXN0023
+then:
+- return:
+    severity: FATAL
+    system-error-cause: Expected AuthenticationData header to contain otp-token=otpTokenValue
+    error-message: Expected AuthenticationData header to contain otp-token=otpTokenValue
+    consumer-request-id: 954cbbbf-5361-4ae3-a250-2999244729a0
+    :headers:
+      Server: artichoke
+      Alt-Svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      access-control-allow-headers: Content-Type, tsec, authenticationtype, authenticationdata,
+        authenticationstate, contactid, consumeruuid, consumerapplicationid, perimetertsec,
+        authorization, responsewarningcode, responsewarningdescription, cuf, field,
+        bcs-device-app-version, bcs-device-app-version, vnd.bbva.authorization
+      authenticationtype: '05'
+      tsec: 3a4236c8db705657d2138c33c93769173c27f685
+      X-Response-Time: 7ms
+      Date: Fri, 16 Dec 2022 13:15:32 GMT
+      Via: 1.1 google
+      access-control-allow-origin: '*'
+      Access-Control-Expose-Headers: tsec, vnd.bbva.access-token-type,vnd.bbva.access-token,
+        vnd.bbva.sso-pkcs7, authenticationtype, authenticationdata, authenticationstate,
+        authenticationchallenge
+      authenticationdata: otp-sms
+      authenticationstate: e3b0c44298
+      Content-Length: '462'
+      Content-Type: application/json; charset=utf-8
+    system-error-code: stateChangeGoOn
+    messages: []
+    :status: 401 Unauthorized
+    http-status: 401
+    system-error-description: Expected AuthenticationData header to contain otp-token=otpTokenValue
+    error-code: '999'
+    version: 1

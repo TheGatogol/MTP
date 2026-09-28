@@ -1,0 +1,109 @@
+when:
+  sequence: 1
+  path: /SRVS_A02/accounts/v0/accounts/1200
+  method: GET
+  backend: glomo
+request:
+  headers:
+    content-length: '0'
+    cookie: AWSALBCORS=Z9Hnbr5K9nwi3NFyUvsbaYrhPPzj5n1STjFePVue4d//a2yTF2hMEaSB6227pWIUZ2m98OQIUiSovWfiYK+fE5aScK13ZRb+7INfhwuBLjgbjqJRQdIQoWy8KNOf
+    contactid: 27bb7f9b-4a87-495e-8060-3ecd9e96e8dc
+    host: localhost:9000
+    connection: Keep-Alive
+    content-type: application/json
+    tsec: 0c3e7cc135e91b031c9012920d6f7eb566f0b206
+    cache-control: no-cache
+    accept-encoding: gzip
+    user-agent: GLOMO_MX/99.99.99 (Android;13;Google sdk_gphone64_arm64)
+    accept: application/json, text/html, */*; q=0.1
+  query:
+    expand: holds,participants,customized-formats,conditions
+  cookies:
+    AWSALBCORS: Z9Hnbr5K9nwi3NFyUvsbaYrhPPzj5n1STjFePVue4d//a2yTF2hMEaSB6227pWIUZ2m98OQIUiSovWfiYK+fE5aScK13ZRb+7INfhwuBLjgbjqJRQdIQoWy8KNOf
+then:
+- return:
+    data:
+      numberType:
+        name: Local Identification Code
+        id: LIC
+      address:
+        country:
+          name: Mexico
+          id: MX
+        zipCode: '3580000'
+        city: Santiago
+        alias: Dirección actual
+        addressName: Av. Pte.Roque Saenz Pena 991
+        state: Región Metropolitana
+      customizedFormats: []
+      accountType:
+        name: Cuenta corriente
+        id: COMMON_ACCOUNT
+      accountFamily:
+        name: Common
+        id: COMMON
+      title:
+        name: Cuenta corriente lcred
+        id: CORRIENTE_LCREDITO_CL
+      availableBalance:
+        currentBalances:
+        - amount: 1900000
+          currency: MXN
+        pendingBalances:
+        - amount: 25000
+          currency: MXN
+        postedBalances:
+        - amount: 1725000
+          currency: MXN
+      accountId: '1200'
+      number: '050400010100120000'
+      bank:
+        name: BBVA Mexico
+        id: '504'
+      meta:
+        accountLevel: N2
+      alias: Cuenta corriente lcred
+      holds: []
+      conditions: []
+      openingDate: '2016-01-08T11:02:32.096Z'
+      status:
+        name: Cuenta operativa
+        id: ACTIVATED
+      currencies:
+      - isMajor: true
+        currency: MXN
+      participants:
+      - firstName: Carlos
+        lastName: Santana
+        participantType:
+          name: Titular
+          id: HOLDER
+      - firstName: Jorge
+        lastName: Campos
+        participantType:
+          name: Adicional
+          id: AUTHORIZED
+    :headers:
+      content-length: '1995'
+      Server: artichoke
+      Alt-Svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      access-control-allow-headers: Content-Type, tsec, authenticationtype, authenticationdata,
+        authenticationstate, contactid, consumeruuid, consumerapplicationid, perimetertsec,
+        authorization, responsewarningcode, responsewarningdescription, cuf, field,
+        bcs-device-app-version, bcs-device-app-version, vnd.bbva.authorization, device-id
+      tsec: 0c3e7cc135e91b031c9012920d6f7eb566f0b206
+      X-Response-Time: 501ms
+      Date: Fri, 01 Dec 2023 10:23:02 GMT
+      Via: 1.1 google
+      access-control-allow-origin: '*'
+      Access-Control-Expose-Headers: tsec, vnd.bbva.access-token-type,vnd.bbva.access-token,
+        vnd.bbva.sso-pkcs7, authenticationtype, authenticationdata, authenticationstate,
+        authenticationchallenge
+      Cache-Control: private, no-store
+      content-type: application/json;charset=UTF-8
+      Vary: Accept-Encoding
+    :status: 200 OK
+    apiInfo:
+      name: accounts
+      category: products
+      version: 0.16.0

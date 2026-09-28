@@ -1,0 +1,47 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: 4a162725-e155-4e14-a88d-2d5291c5b641
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: programmed_payment
+    lock: 'false'
+then:
+- return:
+    :body:
+    - data:
+        homeFutura: false
+        reference: '234235423523523'
+        threeLetters: TEL
+        amount: '10'
+        service: fundacion
+        name: Juan Perez
+        fourLetters: AXTE
+        locale: es_mx
+        tags:
+        - programmed_payment
+        authentication:
+          password: Glomo2024
+          user: '9512522972'
+          deviceId: 0C5AC55CF0B4BC199F0A2E8FC072C292
+      lockExpiration: '2024-12-13T18:25:31.380274Z'
+      lockType: SHARED
+      id: 35825551
+    :headers:
+      content-length: '258'
+      Cache-Control: max-age=0
+      Connection: keep-alive
+      host: datamanager.globaldevtools.bbva.com
+      Vary: Accept-Encoding
+      Expires: Fri, 13 Dec 2024 18:25:15 GMT
+      Date: Fri, 13 Dec 2024 18:25:15 GMT
+      Content-Type: application/json; charset=utf-8
+    :status: 200 OK

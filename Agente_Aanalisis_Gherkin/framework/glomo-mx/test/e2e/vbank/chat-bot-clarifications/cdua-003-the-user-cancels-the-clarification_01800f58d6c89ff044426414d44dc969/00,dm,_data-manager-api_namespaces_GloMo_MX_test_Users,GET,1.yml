@@ -1,0 +1,58 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: 5e0a2c3f-5b1d-4dce-86b8-7681c9be5c1d
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: user_with_physical_credit_card,user_with_movements,6145280790
+    lock: 'false'
+then:
+- return:
+    :body:
+    - data:
+        messagesGroupRequest:
+          unrecognizedMovement:
+          - message: Cargo no reconocido
+          unrelatedMovement:
+          - message: Cargo no reconocido
+          - message: No reconozco el cargo
+          - message: Si
+          - validateComponent: desambiguation card
+            message: 'No'
+          - message: '1677'
+          - actionComponent:
+              type: select movement
+              value: Mercado Pago
+          - actionComponent:
+              type: suggestion
+              value: cancel
+        tags:
+        - '6145280790'
+        - user_with_movements
+        - user_with_physical_credit_card
+        authentication:
+          password: Glomo2025
+          user: '6145280790'
+          deviceId: C5DAFDB995384400B4FAFBFC4F22C40F
+      lockExpiration: '2025-10-21T05:20:51.738622Z'
+      lockType: SHARED
+      id: 36264844
+    :headers:
+      content-length: '610'
+      Server: nginx
+      Cache-Control: max-age=0
+      Connection: keep-alive
+      host: datamanager.globaldevtools.bbva.com
+      Vary: Accept-Encoding
+      Expires: Tue, 21 Oct 2025 05:20:16 GMT
+      Date: Tue, 21 Oct 2025 05:20:16 GMT
+      Content-Type: application/json; charset=utf-8
+    :status: 200 OK

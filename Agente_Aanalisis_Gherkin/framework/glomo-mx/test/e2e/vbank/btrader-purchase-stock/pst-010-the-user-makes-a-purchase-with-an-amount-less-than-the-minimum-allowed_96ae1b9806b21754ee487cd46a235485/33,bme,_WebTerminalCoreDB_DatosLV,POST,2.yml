@@ -1,0 +1,66 @@
+when:
+  sequence: 2
+  path: /WebTerminalCoreDB/DatosLV
+  method: POST
+  backend: bme
+request:
+  headers:
+    sec-fetch-mode: cors
+    referer: http://localhost:8001/
+    content-length: '174'
+    sec-fetch-site: same-site
+    accept-language: es-MX,es;q=0.9
+    origin: http://localhost:8001
+    accept: application/json, text/plain, */*; q=0.01
+    sec-ch-ua: '"Google Chrome";v="137", "Chromium";v="137", "Not/A)Brand";v="24"'
+    sec-ch-ua-mobile: ?0
+    x-vbank-session: 3770df85-e718-44f4-9d77-4cb4e2931467
+    sec-ch-ua-platform: '"macOS"'
+    x-requested-with: XMLHttpRequest
+    host: localhost:9003
+    content-type: application/json
+    connection: keep-alive
+    cache-control: no-cache, no-store, must-revalidate
+    accept-encoding: gzip, deflate, br, zstd
+    sec-fetch-dest: empty
+    user-agent: GLOMO_MX/99.99.99 (Android;14;Samsung)
+  body:
+    Sesion: 38ABF5A8C9594551B7FFF3BFCF596772
+    TipoPeticion: '12'
+    Instrumentos: NAFTRAC ISHRS
+    Descriptores: 420,60,70,250,390,410,370,330,740,340,750,100,80,330,642,240
+then:
+- return:
+    datos:
+      LV:
+        V:
+        - D80001: NAFTRAC
+          D80002: ISHRS
+          MV: M3NAF02
+          D642: '2'
+          D410: '56.88'
+          D740: '20'
+          D420: '57.05'
+          D750: '74700'
+          D100: NACIONAL FINANCIERA-ISHRS
+          D330: '57'
+          D340: '57.07'
+          D240: '-0.35'
+          D250: '-0.609756'
+          D370: '57.4'
+          D390: '0'
+          D70: '222001'
+          D80: NAFTRACISHRS
+          D60: '20250617'
+    :headers:
+      content-length: '329'
+      Server: Microsoft-IIS/10.0
+      Access-Control-Allow-Origin: http://localhost:8001
+      Access-Control-Allow-Credentials: 'true'
+      Vary: Origin
+      X-Response-Time-ms: '4'
+      Date: Tue, 17 Jun 2025 23:49:01 GMT
+      Content-Type: application/json; charset=utf-8
+      X-Powered-By: ASP.NET
+    :status: 200 OK
+    error: 0

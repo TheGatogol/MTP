@@ -1,0 +1,121 @@
+{
+    "$id": "requests/transfers_v0_own_transfers",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Glomo - Post to own transfers",
+    "$comment": "https://catalogs.platform.bbva.com/apicatalog/business/apis/apis-paymentmethods-transfers/versions/global-0.16.0/resources/transfersapiowntransfersv0/",
+    "type": "object",
+    "required": [
+        "sender",
+        "receiver",
+        "sentMoney"
+    ],
+    "properties":{
+        "ownTransferId": {
+            "type": "string",
+            "description": "Identifier of the own transfer."
+        },
+        "concept": {
+            "type": "string",
+            "description": "Short description of the transfer."
+        },
+        "sender": {
+            "type": "object",
+            "description": "Sender of the own transfer. Represents information about the origin of the transfer which, in the case of a own transfer, could be only a product",
+            "required": [
+                "contract"
+            ],
+            "properties": {
+                "contract": {
+                    "type": "object",
+                    "description": "Contract benefactor of the own transfer. It refers to the contract from which the charge over a certain amount is transferred to a recipient, in the case of a mobile transfer: an account or card.",
+                    "properties": {
+                        "contractId": {
+                            "type": "string",
+                            "description": "Corresponds with the identifier of a contract. It should be a code that identifies univocally a contract."
+                        },
+                        "number": {
+                            "type": "string",
+                            "description": "Contract number. This number consists in an alpha-numerical sequence to identify a specific hired product. It should be used only in the absence of the unique identifier"
+                        },
+                        "numberType": {
+                            "type": "object",
+                            "description": "Type of contract number.",
+                            "required": [
+                                "id"
+                            ],
+                            "properties": {
+                                "id": {
+                                    "type": "string",
+                                    "description": "Contract number type identifier.",
+                                    "enum": [
+                                        "CCC",
+                                        "IBAN",
+                                        "SWIFT",
+                                        "CLABE",
+                                        "SPEI",
+                                        "LIC",
+                                        "SIMPLE_ACCOUNT",
+                                        "PAN"
+                                    ]
+                                },
+                                "name": {
+                                    "type": "string",
+                                    "description": "Contract number type description."
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "receiver": {
+            "type": "object",
+            "description": "Receiver of the own transfer. Represents information about the destination of the transfer which, in the case of a own transfer, could be only a product that belongs to the same customer that performs the transfer",
+            "required": [
+                "contract"
+            ],
+            "properties": {
+                "contract": {
+                    "type": "object",
+                    "description": "Recipient contract of the own transfer. It refers to the contract that receives the amount transferred, such an account, card, pension fund, mutual fund, etc.",
+                    "properties": {
+                        "contractId": {
+                            "type": "string",
+                            "description": "Corresponds with the identifier of a contract from where the mobile transfer will be send. It should be a code that identifies univocally a contract. In the case of using this unique identifier, field \\'number\\' should not be used and it will be ignored"
+                        },
+                        "number": {
+                            "type": "string",
+                            "description": "Contract number. This number consists in an alpha-numerical sequence to identify a specific hired product. It should be used only in the absence of the unique identifier"
+                        }
+                    }
+                }
+            }
+        },
+        "sentMoney": {
+            "type": "array",
+            "description": "Amount of the transfer.",
+            "items": {
+                "type": "object",
+                "description": "Amount of the transfer.",
+                "required": [
+                    "amount",
+                    "currency"
+                ],
+                "properties": {
+                    "amount": {
+                        "type": "number",
+                        "description": "Transfer monetary amount."
+                    },
+                    "currency": {
+                        "type": "string",
+                        "description": "String based on ISO-4217 for specifying the currency related to the transfer monetary amount."
+                    },
+                    "isMajor": {
+                        "type": "boolean",
+                        "description": "Flag indicating whether this currency corresponds to the main currency."
+                    }
+                }
+            }
+        }
+    }
+}

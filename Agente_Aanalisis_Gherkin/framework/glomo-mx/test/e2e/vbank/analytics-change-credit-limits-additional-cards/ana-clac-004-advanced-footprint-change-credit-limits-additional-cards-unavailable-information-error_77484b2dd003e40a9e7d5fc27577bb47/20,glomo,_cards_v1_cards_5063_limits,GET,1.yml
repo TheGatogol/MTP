@@ -1,0 +1,55 @@
+when:
+  sequence: 1
+  path: /SRVS_A02/cards/v1/cards/5063/limits
+  method: GET
+  backend: glomo
+request:
+  headers:
+    sec-fetch-mode: cors
+    content-length: '0'
+    referer: http://localhost:8001/
+    sec-fetch-site: same-site
+    accept-language: es
+    origin: http://localhost:8001
+    tsec: 815fc86afdbde50af83873d9b6591f192b17478d
+    accept: application/json, text/html, */*; q=0.1
+    sec-ch-ua: '" Not A;Brand";v="99", "Chromium";v="99", "Google Chrome";v="99"'
+    sec-ch-ua-mobile: ?0
+    x-vbank-session: 46eb4bfc-d567-4696-b743-d7a2b344d0d9
+    sec-ch-ua-platform: '"macOS"'
+    host: localhost:9000
+    content-type: application/json
+    connection: keep-alive
+    cache-control: no-cache, no-store, must-revalidate
+    accept-encoding: gzip, deflate, br
+    sec-fetch-dest: empty
+    user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36
+      (KHTML, like Gecko) Chrome/99.0.4844.51 Safari/537.36
+then:
+- return:
+    severity: FATAL
+    error-message: Server error
+    consumer-request-id: 207a2723-e82b-4c47-a64c-ea8836f245cd
+    :headers:
+      access-control-allow-origin: '*'
+      Access-Control-Expose-Headers: tsec, vnd.bbva.access-token-type,vnd.bbva.access-token,
+        vnd.bbva.sso-pkcs7, authenticationtype, authenticationdata, authenticationstate,
+        authenticationchallenge
+      Server: artichoke
+      Alt-Svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      access-control-allow-headers: Content-Type, tsec, authenticationtype, authenticationdata,
+        authenticationstate, contactid, consumeruuid, consumerapplicationid, perimetertsec,
+        authorization, responsewarningcode, responsewarningdescription, cuf, field,
+        bcs-device-app-version, bcs-device-app-version, vnd.bbva.authorization
+      tsec: 815fc86afdbde50af83873d9b6591f192b17478d
+      Content-Length: '264'
+      X-Response-Time: 2ms
+      Date: Fri, 11 Mar 2022 13:19:06 GMT
+      Content-Type: application/json; charset=utf-8
+      Via: 1.1 google
+    system-error-code: serviceNotAvailable
+    :status: 500 Internal Server Error
+    http-status: 500
+    system-error-description: Service not available right now
+    error-code: '161'
+    version: 1

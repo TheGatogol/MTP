@@ -1,0 +1,71 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: edd61800-5963-4cdc-9740-4364366f6496
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: one_account,user_with_account_in_dollars
+    lock: 'false'
+then:
+- return:
+    :body:
+    - data:
+        messagesGroupRequest:
+          accountAlias:
+          - ¿Cuál es alias de mi cuenta?
+          - '8396'
+          allAccountDetails:
+          - Quiero ver todos los detalles de mi cuenta de ahorro
+          - terminación 1492
+          editAccountAlias:
+          - Quiero editar el alias de mi cuenta
+          - OPCION 5
+          - CUENTA EXTRANJERA
+          accountParticipants:
+          - ¿Quienes son los intervinientes de mi cuenta?
+          - '1969'
+          editAccountDetails:
+          - Quiero editar los detalles de mi cuenta
+          - Alias
+          clabe:
+          - CLABE
+          - '1969'
+          mainAccountDetails:
+          - ¿cuales son los datos principales de mi cuenta?
+          - 0002AH1985
+          - CLABE
+          swift:
+          - Swift
+          - '8396'
+          someAccountDetails:
+          - Quiero ver Alias, CLABE Y código SWIFT
+          - 0002AH1985
+        tags:
+        - '4622699861'
+        - one_account
+        - user_with_account_in_dollars
+        authentication:
+          password: Glomo2024
+          user: '4622699861'
+          deviceId: 35EB0677060C0F35D86DB1D363BF6F1B
+      lockType: null
+      lockExpiration: null
+      id: 36057011
+    :headers:
+      content-length: '934'
+      Cache-Control: max-age=0
+      Connection: keep-alive
+      host: datamanager.globaldevtools.bbva.com
+      Vary: Accept-Encoding
+      Expires: Thu, 03 Apr 2025 23:44:58 GMT
+      Date: Thu, 03 Apr 2025 23:44:58 GMT
+      Content-Type: application/json; charset=utf-8
+    :status: 200 OK

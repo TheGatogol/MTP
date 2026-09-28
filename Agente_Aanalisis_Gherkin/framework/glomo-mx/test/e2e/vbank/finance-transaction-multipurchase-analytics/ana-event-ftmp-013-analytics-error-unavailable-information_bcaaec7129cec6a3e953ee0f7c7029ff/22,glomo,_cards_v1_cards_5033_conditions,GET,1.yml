@@ -1,0 +1,59 @@
+when:
+  sequence: 1
+  path: /SRVS_A02/cards/v1/cards/5033/conditions
+  method: GET
+  backend: glomo
+request:
+  headers:
+    sec-fetch-mode: cors
+    content-length: '0'
+    referer: http://localhost:8001/
+    sec-fetch-site: same-site
+    accept-language: en-US
+    origin: http://localhost:8001
+    tsec: 6651c681c3eafdfc307cda34128f01465419e2a9
+    accept: application/json, text/html, */*; q=0.1
+    sec-ch-ua: ''
+    sec-ch-ua-mobile: ?0
+    x-vbank-session: cafa8383-cdf1-4d6f-a85e-99c3760ee675
+    sec-ch-ua-platform: ''
+    host: localhost:9000
+    content-type: application/json
+    connection: keep-alive
+    cache-control: no-cache, no-store, must-revalidate
+    accept-encoding: gzip, deflate, br
+    sec-fetch-dest: empty
+    user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36
+      (KHTML, like Gecko) HeadlessChrome/108.0.5359.124 Safari/537.36
+  query:
+    id:
+    - THRESHOLD_AVAILABLE_BALANCE_FINANCING_MULTIPURCHASE
+    - THRESHOLD_AMOUNT_PER_PURCHASE_FINANCING_MULTIPURCHASE
+then:
+- return:
+    severity: FATAL
+    error-message: Server error
+    consumer-request-id: 207a2723-e82b-4c47-a64c-ea8836f245cd
+    :headers:
+      access-control-allow-origin: '*'
+      Access-Control-Expose-Headers: tsec, vnd.bbva.access-token-type,vnd.bbva.access-token,
+        vnd.bbva.sso-pkcs7, authenticationtype, authenticationdata, authenticationstate,
+        authenticationchallenge
+      Server: artichoke
+      Alt-Svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      access-control-allow-headers: Content-Type, tsec, authenticationtype, authenticationdata,
+        authenticationstate, contactid, consumeruuid, consumerapplicationid, perimetertsec,
+        authorization, responsewarningcode, responsewarningdescription, cuf, field,
+        bcs-device-app-version, bcs-device-app-version, vnd.bbva.authorization
+      tsec: 6651c681c3eafdfc307cda34128f01465419e2a9
+      Content-Length: '246'
+      X-Response-Time: 2ms
+      Date: Fri, 16 Dec 2022 13:08:36 GMT
+      Content-Type: application/json; charset=utf-8
+      Via: 1.1 google
+    system-error-code: serviceNotFound
+    :status: 500 Internal Server Error
+    http-status: 500
+    system-error-description: Service not found
+    error-code: '161'
+    version: 1

@@ -1,0 +1,50 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: f49a9266-7041-4375-8ffd-eb49591e4256
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: reuse_operation_list_transfers
+    lock: 'false'
+then:
+- return:
+    :body:
+    - data:
+        tags:
+        - reuse_operation_list_transfers
+        products:
+        - accountId:
+          - accountown:
+            - id: 0001ah0964 - 00740010001503060964
+          accounts:
+          - number: '00740010001503060964'
+            alias: 0001AH0964
+        authentication:
+          password: Glomo2024
+          user: '5545159429'
+          deviceId: 97CAAA12FAD7492E5A2692BDAEE38205
+        operationsIds:
+          own: 9YX60ZYj8CaeTlEILmXIeNe9NJFi3rXS9lI4LzgJveY
+          internal: 9YX60ZYj8CaeTlEILmXIeNe9NJFi3rXSzVedSPQDbmU
+          interbank: u0dHXL1sJ94cfPgoH_qhDwoBaS3KtpofpC2grhLR9x31UeM-WhiIiBGG_v-V6fc3udyQajOluIsyqu74GG-W_Q
+      lockExpiration: null
+      lockType: null
+      id: 36050178
+    :headers:
+      content-length: '389'
+      Cache-Control: max-age=0
+      Connection: keep-alive
+      host: datamanager.globaldevtools.bbva.com
+      Vary: Accept-Encoding
+      Expires: Mon, 17 Feb 2025 00:10:17 GMT
+      Date: Mon, 17 Feb 2025 00:10:17 GMT
+      Content-Type: application/json; charset=utf-8
+    :status: 200 OK

@@ -1,0 +1,43 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: ed2a342c-02b9-4b5e-a9ce-1b2ae46e1dba
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: emergency_with_cardless_withdrawal
+    lock: 'false'
+then:
+- return:
+    :body:
+    - data:
+        locale: es_mx
+        tags:
+        - '5520798566'
+        - emergency with cardless withdrawal
+        - emergency_with_cardless_withdrawal
+        authentication:
+          password: Glomo2023
+          user: '5520798566'
+          deviceId: 16EC0D581BC13B243CE0BBC5C1D00642
+      lockExpiration: null
+      lockType: null
+      id: 35720510
+    :headers:
+      content-length: '297'
+      Strict-Transport-Security: max-age=15768000
+      Server: nginx
+      ECS-Entry-Point-Zone: ext
+      Connection: keep-alive
+      host: datamanager.globaldevtools.bbva.com
+      Vary: Accept-Encoding
+      Date: Sun, 28 Jan 2024 21:48:19 GMT
+      Content-Type: application/json
+    :status: 200 OK

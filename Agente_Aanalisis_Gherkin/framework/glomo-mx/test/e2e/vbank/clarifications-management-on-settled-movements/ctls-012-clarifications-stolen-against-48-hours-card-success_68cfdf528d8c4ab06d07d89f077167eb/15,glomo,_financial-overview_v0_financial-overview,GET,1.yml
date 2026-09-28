@@ -1,0 +1,835 @@
+when:
+  sequence: 1
+  path: /SRVS_A02/financial-overview/v1/financial-overview
+  method: GET
+  backend: glomo
+request:
+  headers:
+    sec-fetch-mode: cors
+    content-length: '0'
+    referer: http://localhost:8001/
+    sec-fetch-site: same-site
+    origin: http://localhost:8001
+    tsec: ZXlKaFlYQWlPaUl4TURBd01ERTROeUlzSW10bGVWWmxjbk5wYjI0aU9qRXNJbUZ3Y0Vsa0lqb2lRVkJRTVNJc0ltdHBaQ0k2SWtGUVVERXViRzlqWVd3dU1TSXNJbVZ1WXlJNklrRXhPVEpIUTAwaUxDSnJaWGxVZVhCbElqb2liRzlqWVd3aUxDSmhiR2NpT2lKa2FYSWlMQ0owYzJWalNXUWlPaUkyTXpJeU56STJOaTFsWTJVNExUUTVNV1V0WWprelppMWxNMlZtT1RBeU9EQTVNVElpZlEuLjNVdWJLcERSOGw5V0hkbGcuX2tFYzAyZW5tMm8xZzcxRzN0RXgxelpScGtwaVBBcW0xWkN1eGtfa18xcUNHdzctYVl5X1l3WnNYaFdJbXB6QjRRVlFvSzF3V2UwSE5JcVBzeEtHU0dyOTVldWdKQU1RNVdCLXc3UDJ0ZWp5S2xrdUd6XzFUbUFYX2xyeVpEZU9Jb21QRUotV1hXX0VtRnh2cXRsVlg4ak1VTUZHZ3pvdkd2aERIZF9wR0pGQ1p0NVQxdkpzRFdpUjFXLWpHRXVubWQ2V1gyczhBQTYxSG5JUUFLLWpfV0k0UkNlZmtXRlJYZXdkWEkwUUJ2V2tGMHVBdk1PZWVtMEZSVnc0Yzg4bFZQR0gtS0dBbXdOWkZOUWk0OHZwTHljMldQX2Y2SlczZE5EYkh3SFlaNDEyRUkxTko0dFN3aERFNUxhN0ZPeVBrekNBYkR0ZDdmcDRHaTZ6TUxSUWd4Uy1mRHBMXzkzc2JuMTRvcE5mRFIySm1OVWdzZXJ1RXhrRnVmdmNMMmU1NGZqUUt0SzhQTTFCRGFhQlNEeGZtbzZuRjJXQXNySGdCLUxlaXFSRUVBSXJ1akNHU3FFM0tvV2I1aTFwRzViejQ2OU42NEpZd3BqUjZTWU5NSVFidURmOVpnTHhQYy1jREp6ZUtCbTNjUE8yY3dscFNrazZMZFF2NjBKV1JuR3A0OFpCRjJkcF9SaXRlV0sxN2llWXpYRldBLTJZS2h0NjJfT2l2bjd4VE9kbENFRjVBXzdPbGlCTFV3ZmlYR3NNUUlIOTNjRHpfQ0NoWVBnZnpaMm5lX0lhTk1OWllVV2gzanBPbWs1LWZwN2NkVXo2djY2Z1ZWbjlFRzJrZVVRUURfYkpOOGFSSE92X2hBT08xV0lNQm1oZmNwTHJnV2R1amxpSDYtV3BfZGlrVFVoY3VhQkVfUEp0TDNkaFFIaURkSzg2cUR4ZVVtTTJXZVU1TW10YVB5eWd2Znh4SEMycWFCdVFKSi11azAyaFNkZk05U3dCUlpEUGhGM3E5b18yU0R6RW5WdFFfLU95bmxwa0xiM0dBUVdRSUJOck5PbWlnSURCS0RkLXgyYk9EY04zTGV0c3R6WWdWVEFLRk5wTElobExaMXRKMnkzaWJyYTRoQ1Z6Tm1mUWNCZFMzM1ZjS0hkTnNqSnAwYWpiRVBkc1ZhUG9mcnNma25kYlZwNVZBQWRlMUthNEZLTzVpZkl2Z2tjdWV3NHI3RGhPSWY2LS1PUkJQMGc3QkhtTl9SclV4WEllMGRELVVtdXFYc3YxOG4taXZfa0ZaQnJmeERCTlN3eHlHSlViS0F6RGs4VmNubHBjRVJzUlJ4ajRoZDhwYlRGWGJ2clhZVkE0N2c2amFwVnZaNnRsOE5MTmpFUVFiRkstY3dwT2tXLXFKUkhpZ0dkS01xZ1BoMS1jeEdGN05qbVN4MGpfdk5aSmRLWURYNU1LczJvSFBVLXVNWEtabXotd0YzaTJvUkNPNGJvempfM3Z6VmdfNVFjalhHVW5aX0JyWHpVOFFxRmxtWnVmZXZKclhaT21aT2Y1cVVSM1NSYUxGTTFYdUJaUVJDOUdWMVpCYUlENjF4bkdmODFjQjlfSjMxWWVWazRNWDB0bHpjNzNvbHZfWk9xQUJFM3hiMVZEbW5VemhLNXFrTU5pVkdxWV9vQXNFbWtSN215NXlFczVucDNzbUVXZ0cyLTdJVTVXVkU2SzM5QlFKTUhIdVBYTkhsdFBuSC1wX1U3LVhrLVVNUXNISWJYU01ENWF4YUU1czhKRktHREhTVHFuNTlkQU0yMldCSHFnOHpKelBRUUoweHVnOUk4ZlYxMlRIblRzQmFDRkFaTTNOQllvTURUamJ0cEMwRHJoZVh3TUwzYnBNamk0WTQxYXZwVkVSeTFjMmE0MzhrTU9iMERUTDBDem9OdDhoMkd1MWZoUzRwcEJlMTZnOXZmcUJsMEtGRzdCdkhac0tld1dlSGxIVlR6NFhMMFJiUk9iVXNZZHhkNjRFOGd5MDVHUHhkWXBFSEFOV1dSaDJIMHRtRERzV2RHckRkeUZWSnh2SmYxQ1VldG1QSjB2bTQwQU9IYm5EYk43Nk8xTFZUYy1WMTdFZ2dSVVFsWG12UVUzcFlpejVUdjJjRVRyWUxSbm9hS3dGTnhldTVDMEhiQ1l2a2FSZzhPNFY3Sl9oYXlGbWhLNk4tSHUxNTJkajlTd0hqeWNLWnlXT2lCc0lVemYzSWJ2NWtmb2FUbXRCZ1B5QklYLU5rbENHcWxJTW1SbXk3UkhrV1JzZVZvOTF2RDFaWWxpelBMcjRtTWMwbjlFb0h1WmpVVU1lNGVpcTZ1ZHBGWERtTmwwN01aZzdFVjVzb3luajl5SG1SM0lPUGxTeXVYRU42a2RoSU1QMTNlZHFzSi16ODhWTDBKTU5LeGQ4cW5pOVZfQXpzc08xYl9ST0lYMjNuRTY4UEIyWlhfeWVfTlhkUXpIWS11bXAyUTJVTDZSR1BzcnZ1YzVtOUxOcHVoZV9hd3ZNbHRmQ3hIQl9ZWXN3amJDWHpVT1FBSzdZT0RnQU9OX3p3eG9BazAuWl9PUzN0WEpoR1FISl9GMlI4eEFXZw==
+    accept: application/json, text/html, */*; q=0.1
+    sec-ch-ua: '"Chromium";v="124", "HeadlessChrome";v="124", "Not-A.Brand";v="99"'
+    sec-ch-ua-mobile: ?0
+    x-vbank-session: 7b4f209a-8c14-47eb-a76e-5768fa354816
+    sec-ch-ua-platform: '"macOS"'
+    host: localhost:9000
+    content-type: application/json
+    connection: keep-alive
+    cache-control: no-cache, no-store, must-revalidate
+    accept-encoding: gzip, deflate, br
+    sec-fetch-dest: empty
+    user-agent: GLOMO_MX/11.88;Mozilla/5.0 (Linux; U; Android 2.3.6; en-us; Nexus
+      S Build/GRK39F) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1
+then:
+- return:
+    data:
+      family:
+      - balances:
+        - amountBalance:
+          - amount: 152824.07
+            currency: MXN
+          name: Monto total actual
+          id: TOTAL_CURRENT_AMOUNT
+        name: Cuentas
+        id: ACCOUNTS
+      - balances:
+        - amountBalance:
+          - amount: 0.0
+          name: Monto total actual
+          id: TOTAL_CURRENT_AMOUNT
+        name: Fondos de inversión
+        id: INVESTMENT_FUNDS
+      contracts:
+      - number: '00740010001501718733'
+        product:
+          name: Cuenta de Ahorro
+          id: AH
+        numberType:
+          id: CCC
+        alias: 0002AH8733
+        id: Uvn6wi1Rh6DsAFtoOFKOLp5IZ8HlyBvuQdXe90k7_j5mSIAYifvNvw
+        detail:
+          level: '04'
+          specificAmounts:
+          - amounts:
+            - amount: 97999.0
+              currency: MXN
+            name: Saldo actual
+            id: CURRENT_BALANCE
+          - amounts:
+            - amount: 0.0
+              currency: MXN
+            name: Saldo buen cobro
+            id: PENDING_DEPOSIT_BALANCE
+          - amounts:
+            - amount: 0
+              currency: MXN
+            name: '000000005'
+            id: ACCOUNT_MOVEMENT_NUMBER
+          indicators:
+          - name: Indica si la cuenta es de nómina
+            id: IS_PAYROLL_ACCOUNT
+            isActive: false
+          - name: Indica si la cuenta es eje
+            id: IS_PRINCIPAL_ACCOUNT
+            isActive: false
+          - name: Indica si la cuenta tiene pockets
+            id: HAS_POCKETS
+            isActive: false
+          - name: Indica si la cuenta es digital
+            id: IS_DIGITAL
+            isActive: false
+        simpleCode: Uvn6wi1Rh6DsAFtoOFKOLuBb8hZmFPjf
+        productType: ACCOUNT
+        status:
+          name: Cuenta Activa
+          id: ACTIVE
+        signedAuthorization:
+          name: Cuenta Individual
+          id: SINGLE
+        subProductType:
+          name: TARJETA NOMINA BASIC
+          id: '0230'
+      - number: '00743607621510229027'
+        product:
+          name: Cuenta de Ahorro
+          id: AH
+        numberType:
+          id: CCC
+        alias: 0010AH5021
+        id: 1O4kEZWWPSrrDqtxTq0HpSDCvOasw_eCLjbMflKpbIIYpXVJTNg_xA
+        detail:
+          level: '04'
+          specificAmounts:
+          - amounts:
+            - amount: 485.33
+              currency: MXN
+            name: Saldo actual
+            id: CURRENT_BALANCE
+          - amounts:
+            - amount: 0.0
+              currency: MXN
+            name: Saldo buen cobro
+            id: PENDING_DEPOSIT_BALANCE
+          - amounts:
+            - amount: 0
+              currency: MXN
+            name: '000003408'
+            id: ACCOUNT_MOVEMENT_NUMBER
+          - amounts:
+            - amount: 0.0
+              currency: MXN
+            name: Saldo total de pockets
+            id: TOTAL_POCKET_AMOUNT
+          indicators:
+          - name: Indica si la cuenta es de nómina
+            id: IS_PAYROLL_ACCOUNT
+            isActive: true
+          - name: Indica si la cuenta es eje
+            id: IS_PRINCIPAL_ACCOUNT
+            isActive: false
+          - name: Indica si la cuenta tiene pockets
+            id: HAS_POCKETS
+            isActive: true
+          - name: Indica si la cuenta es digital
+            id: IS_DIGITAL
+            isActive: true
+        simpleCode: 1O4kEZWWPSrrDqtxTq0Hpaq47HJxQuNs
+        productType: ACCOUNT
+        status:
+          name: Cuenta Activa
+          id: ACTIVE
+        signedAuthorization:
+          name: Cuenta Individual
+          id: SINGLE
+        subProductType:
+          name: LIBRETON BASICO CUEN
+          id: '0500'
+      - number: '00743621000100399531'
+        product:
+          name: Cuenta de Cheques
+          id: CH
+        numberType:
+          id: CCC
+        id: tW0aUZLAlq8dFDln2tQCzyfWdpz_kj0N46RtJ425-mKMKxRg_RavGA
+        detail:
+          level: '04'
+          specificAmounts:
+          - amounts:
+            - amount: 6728.72
+              currency: MXN
+            name: Saldo actual
+            id: CURRENT_BALANCE
+          - amounts:
+            - amount: 0.0
+              currency: MXN
+            name: Saldo buen cobro
+            id: PENDING_DEPOSIT_BALANCE
+          - amounts:
+            - amount: 0
+              currency: MXN
+            name: '000005088'
+            id: ACCOUNT_MOVEMENT_NUMBER
+          - amounts:
+            - amount: 0.0
+              currency: MXN
+            name: Saldo total de pockets
+            id: TOTAL_POCKET_AMOUNT
+          indicators:
+          - name: Indica si la cuenta es de nómina
+            id: IS_PAYROLL_ACCOUNT
+            isActive: true
+          - name: Indica si la cuenta es eje
+            id: IS_PRINCIPAL_ACCOUNT
+            isActive: true
+          - name: Indica si la cuenta tiene pockets
+            id: HAS_POCKETS
+            isActive: true
+          - name: Indica si la cuenta es digital
+            id: IS_DIGITAL
+            isActive: false
+        simpleCode: tW0aUZLAlq8dFDln2tQCz5FbC2A7drAw
+        productType: ACCOUNT
+        status:
+          name: Cuenta Activa
+          id: ACTIVE
+        signedAuthorization:
+          name: Cuenta Individual
+          id: SINGLE
+        subProductType:
+          name: LIBRETON 2.0
+          id: '0007'
+      - number: '00743621000100399531'
+        product:
+          name: Cuenta de Cheques
+          id: CH
+        numberType:
+          id: CCC
+        id: tW0aUZLAlq8dFDln2tQCzyfWdpz_kj0N46RtJ425-mKMKxRg_RavGA
+        detail:
+          level: '04'
+          specificAmounts:
+          - amounts:
+            - amount: 6728.72
+              currency: MXN
+            name: Saldo actual
+            id: CURRENT_BALANCE
+          - amounts:
+            - amount: 0.0
+              currency: MXN
+            name: Saldo buen cobro
+            id: PENDING_DEPOSIT_BALANCE
+          - amounts:
+            - amount: 0
+              currency: MXN
+            name: '000005088'
+            id: ACCOUNT_MOVEMENT_NUMBER
+          - amounts:
+            - amount: 0.0
+              currency: MXN
+            name: Saldo total de pockets
+            id: TOTAL_POCKET_AMOUNT
+          indicators:
+          - name: Indica si la cuenta es de nómina
+            id: IS_PAYROLL_ACCOUNT
+            isActive: true
+          - name: Indica si la cuenta es eje
+            id: IS_PRINCIPAL_ACCOUNT
+            isActive: false
+          - name: Indica si la cuenta tiene pockets
+            id: HAS_POCKETS
+            isActive: true
+          - name: Indica si la cuenta es digital
+            id: IS_DIGITAL
+            isActive: false
+        simpleCode: tW0aUZLAlq8dFDln2tQCz5FbC2A7drAw
+        productType: ACCOUNT
+        status:
+          name: Cuenta Activa
+          id: ACTIVE
+        signedAuthorization:
+          name: Cuenta Individual
+          id: SINGLE
+        subProductType:
+          name: LIBRETON 2.0
+          id: '0007'
+      - number: '00744755002913507718'
+        product:
+          name: Cuenta de Ahorro
+          id: AH
+        numberType:
+          id: CCC
+        alias: 0010AH5021
+        id: j1XmIhaZYLJFz0LGAz72RCCOLaiwJgyaUYrCz-aPVIemT6p5I-svCg
+        detail:
+          level: '04'
+          specificAmounts:
+          - amounts:
+            - amount: 25916.7
+              currency: MXN
+            name: Saldo actual
+            id: CURRENT_BALANCE
+          - amounts:
+            - amount: 0.0
+              currency: MXN
+            name: Saldo buen cobro
+            id: PENDING_DEPOSIT_BALANCE
+          - amounts:
+            - amount: 0
+              currency: MXN
+            name: '000003332'
+            id: ACCOUNT_MOVEMENT_NUMBER
+          - amounts:
+            - amount: 0.0
+              currency: MXN
+            name: Saldo total de pockets
+            id: TOTAL_POCKET_AMOUNT
+          indicators:
+          - name: Indica si la cuenta es de nómina
+            id: IS_PAYROLL_ACCOUNT
+            isActive: false
+          - name: Indica si la cuenta es eje
+            id: IS_PRINCIPAL_ACCOUNT
+            isActive: false
+          - name: Indica si la cuenta tiene pockets
+            id: HAS_POCKETS
+            isActive: true
+          - name: Indica si la cuenta es digital
+            id: IS_DIGITAL
+            isActive: false
+        simpleCode: j1XmIhaZYLJFz0LGAz72RF6rgspR3RjM
+        productType: ACCOUNT
+        status:
+          name: Cuenta Activa
+          id: ACTIVE
+        signedAuthorization:
+          name: Cuenta Individual
+          id: SINGLE
+        subProductType:
+          name: TARJETA BASICA BBVA
+          id: '0231'
+      - number: '00746669001117565429'
+        product:
+          name: Cuenta de Ahorro
+          id: AH
+        numberType:
+          id: CCC
+        alias: 0001AH5429
+        id: vKN7zLZyB0dHW6fJG1pkEKU5berAyQYijxyFM56UoAq0EaHvsSj3ww
+        detail:
+          level: '04'
+          specificAmounts:
+          - amounts:
+            - amount: 14965.6
+              currency: MXN
+            name: Saldo actual
+            id: CURRENT_BALANCE
+          - amounts:
+            - amount: 0.0
+              currency: MXN
+            name: Saldo buen cobro
+            id: PENDING_DEPOSIT_BALANCE
+          - amounts:
+            - amount: 0
+              currency: MXN
+            name: '000003574'
+            id: ACCOUNT_MOVEMENT_NUMBER
+          - amounts:
+            - amount: 0.66
+              currency: MXN
+            name: Saldo total de pockets
+            id: TOTAL_POCKET_AMOUNT
+          indicators:
+          - name: Indica si la cuenta es de nómina
+            id: IS_PAYROLL_ACCOUNT
+            isActive: true
+          - name: Indica si la cuenta es eje
+            id: IS_PRINCIPAL_ACCOUNT
+            isActive: true
+          - name: Indica si la cuenta tiene pockets
+            id: HAS_POCKETS
+            isActive: true
+          - name: Indica si la cuenta es digital
+            id: IS_DIGITAL
+            isActive: false
+        simpleCode: vKN7zLZyB0dHW6fJG1pkEJL2B0qa5zZQ
+        productType: ACCOUNT
+        status:
+          name: Cuenta Activa
+          id: ACTIVE
+        signedAuthorization:
+          name: Cuenta Individual
+          id: SINGLE
+        subProductType:
+          name: LIBRETON NOMINA
+          id: '0225'
+      - number: '4152313946690612'
+        product:
+          name: DEBITO BBVA
+          id: VD
+        numberType:
+          id: PAN
+        relatedContracts:
+        - canOperate: N
+          contractId: '00740010001501718733'
+          id: Uvn6wi1Rh6DsAFtoOFKOLla5I_BASC0J68U8MtDH9Dh5Tlv1wUw-LA
+        alias: 0002AH8733
+        id: 9YK9GXzCWZ-gjHhNfXSq-KqnCYgYFkgvxfFSg3kcMbQ
+        userAccessControl:
+        - canOperate: false
+        detail:
+          images:
+          - name: Front face of the card
+            id: FRONT_CARD
+            url: https://cardcovers.caasbbva.com/mexico/415231-VD.png.imgcaas.w320.png
+          specificAmounts:
+          - amounts:
+            - amount: 97999.0
+              currency: MXN
+            name: Saldo actual
+            id: CURRENT_BALANCE
+          - amounts:
+            - amount: 1841.0
+              currency: MXN
+            name: Saldo en tránsito
+            id: PENDING_CHARGE_BALANCE
+          - amounts:
+            - amount: 0.0
+              currency: MXN
+            name: Saldo disponible
+            id: AVAILABLE_BALANCE
+          physicalSupport:
+            name: CONVENCIONAL
+            id: NORMAL_PLASTIC
+          activations:
+          - name: Indica si la tarjeta esta encendida o apagada
+            id: ON_OFF
+            isActive: true
+          indicators:
+          - name: Indica si la tarjeta cuenta con NFC
+            id: ASSOCIABLE_TO_NFC
+            isActive: true
+          - name: Indica si la tarjeta cuenta con sticker asociado
+            id: ASSOCIABLE_TO_STICKER_CARDS
+            isActive: false
+          - name: Indica si la tarjeta cuenta con una tarjeta virtual asociada
+            id: ASSOCIABLE_TO_VIRTUAL_CARDS
+            isActive: false
+          - name: Indica si la tarjeta puede ser bloqueada
+            id: BLOCKABLE
+            isActive: true
+          - name: Indica si la tarjeta puede modificar el nip de forma online por
+              una aplicación
+            id: BLOCKABLE_NIP
+            isActive: false
+          - name: Indica si los datos de seguridad de la tarjeta pueden ser leídos
+            id: SECURITY_DATA_READ
+            isActive: false
+          - name: Indica si el CVV2 es dinámico
+            id: DINAMIC_CVV
+            isActive: true
+          - name: Indica si la tarjeta es adicional
+            id: IS_ADDITIONAL
+            isActive: false
+          rewards:
+          - name: Puntos Bancomer
+            id: BANCOMER_POINTS
+            nonMonetaryValue: 0
+          expirationDate: '2030-10-31'
+          agreementContract: '00740010001501718733'
+        simpleCode: 9YK9GXzCWZ-gjHhNfXSq-Dd5D_FfRJfA
+        productType: CARD
+        status:
+          name: VIGENTE
+          id: OPERATIVE
+        subProductType:
+          name: TARJETA DE DEBITO
+          id: DEBIT_CARD
+      - number: '4815160009436204'
+        product:
+          name: DEBITO DIGITAL
+          id: DY
+        numberType:
+          id: PAN
+        relatedContracts:
+        - canOperate: N
+          contractId: '00740010001501718733'
+          id: Uvn6wi1Rh6DsAFtoOFKOLla5I_BASC0J68U8MtDH9Dh5Tlv1wUw-LA
+        id: Z2X3Wm6Hqge0W8FUbop_-n2kuXp6lEpw-3yS4vNQkJI
+        userAccessControl:
+        - canOperate: false
+        detail:
+          images:
+          - name: Front face of the card
+            id: FRONT_CARD
+            url: https://cardcovers.caasbbva.com/mexico/481516-DY-415231.png.imgcaas.w320.png
+          specificAmounts:
+          - amounts:
+            - amount: 97999.0
+              currency: MXN
+            name: Saldo actual
+            id: CURRENT_BALANCE
+          - amounts:
+            - amount: 15.0
+              currency: MXN
+            name: Saldo en tránsito
+            id: PENDING_CHARGE_BALANCE
+          - amounts:
+            - amount: 0.0
+              currency: MXN
+            name: Saldo disponible
+            id: AVAILABLE_BALANCE
+          physicalSupport:
+            name: DIGITAL
+            id: VIRTUAL
+          activations:
+          - name: Indica si la tarjeta esta encendida o apagada
+            id: ON_OFF
+            isActive: true
+          indicators:
+          - name: Indica si la tarjeta cuenta con NFC
+            id: ASSOCIABLE_TO_NFC
+            isActive: true
+          - name: Indica si la tarjeta cuenta con sticker asociado
+            id: ASSOCIABLE_TO_STICKER_CARDS
+            isActive: false
+          - name: Indica si la tarjeta cuenta con una tarjeta virtual asociada
+            id: ASSOCIABLE_TO_VIRTUAL_CARDS
+            isActive: false
+          - name: Indica si la tarjeta puede ser bloqueada
+            id: BLOCKABLE
+            isActive: false
+          - name: Indica si la tarjeta puede modificar el nip de forma online por
+              una aplicación
+            id: BLOCKABLE_NIP
+            isActive: false
+          - name: Indica si los datos de seguridad de la tarjeta pueden ser leídos
+            id: SECURITY_DATA_READ
+            isActive: true
+          - name: Indica si el CVV2 es dinámico
+            id: DINAMIC_CVV
+            isActive: false
+          - name: Indica si la tarjeta es adicional
+            id: IS_ADDITIONAL
+            isActive: false
+          rewards:
+          - name: Puntos Bancomer
+            id: BANCOMER_POINTS
+            nonMonetaryValue: 0
+          expirationDate: '2026-12-31'
+          agreementContract: '00740010001501718733'
+        simpleCode: Z2X3Wm6Hqge0W8FUbop_-ktaxaHkSzsJ
+        productType: CARD
+        status:
+          name: VIGENTE
+          id: OPERATIVE
+        subProductType:
+          name: TARJETA DE DEBITO
+          id: DEBIT_CARD
+      - number: '4152317115609162'
+        product:
+          name: DEBITO BBVA
+          id: VD
+        numberType:
+          id: PAN
+        relatedContracts:
+        - canOperate: N
+          contractId: '00743607621510229027'
+          id: 1O4kEZWWPSrrDqtxTq0HpZg5BWLubuTq9KmX0JkwD0onX8QX3atOuA
+        alias: 0010AH5021
+        id: 6yo8YC8Xb7r9j4rc_83U6RKdWNhePgo6HOk4Rq5p2OY
+        userAccessControl:
+        - canOperate: false
+        detail:
+          images:
+          - name: Front face of the card
+            id: FRONT_CARD
+            url: https://cardcovers.caasbbva.com/mexico/415231-VD.png.imgcaas.w320.png
+          specificAmounts:
+          - amounts:
+            - amount: 485.33
+              currency: MXN
+            name: Saldo actual
+            id: CURRENT_BALANCE
+          - amounts:
+            - amount: 160.85
+              currency: MXN
+            name: Saldo en tránsito
+            id: PENDING_CHARGE_BALANCE
+          - amounts:
+            - amount: 0.0
+              currency: MXN
+            name: Saldo disponible
+            id: AVAILABLE_BALANCE
+          physicalSupport:
+            name: CONVENCIONAL
+            id: NORMAL_PLASTIC
+          activations:
+          - name: Indica si la tarjeta esta encendida o apagada
+            id: ON_OFF
+            isActive: true
+          indicators:
+          - name: Indica si la tarjeta cuenta con NFC
+            id: ASSOCIABLE_TO_NFC
+            isActive: true
+          - name: Indica si la tarjeta cuenta con sticker asociado
+            id: ASSOCIABLE_TO_STICKER_CARDS
+            isActive: false
+          - name: Indica si la tarjeta cuenta con una tarjeta virtual asociada
+            id: ASSOCIABLE_TO_VIRTUAL_CARDS
+            isActive: true
+          - name: Indica si la tarjeta puede ser bloqueada
+            id: BLOCKABLE
+            isActive: true
+          - name: Indica si la tarjeta puede modificar el nip de forma online por
+              una aplicación
+            id: BLOCKABLE_NIP
+            isActive: false
+          - name: Indica si los datos de seguridad de la tarjeta pueden ser leídos
+            id: SECURITY_DATA_READ
+            isActive: false
+          - name: Indica si el CVV2 es dinámico
+            id: DINAMIC_CVV
+            isActive: true
+          - name: Indica si la tarjeta es adicional
+            id: IS_ADDITIONAL
+            isActive: false
+          rewards:
+          - name: Puntos Bancomer
+            id: BANCOMER_POINTS
+            nonMonetaryValue: 0
+          expirationDate: '2025-06-30'
+          agreementContract: '00743607621510229027'
+        simpleCode: 6yo8YC8Xb7r9j4rc_83U6eFeK2F1D8fC
+        productType: CARD
+        status:
+          name: VIGENTE
+          id: OPERATIVE
+        subProductType:
+          name: TARJETA DE DEBITO
+          id: DEBIT_CARD
+      - number: '4772142979694203'
+        product:
+          name: PLATINUM BBVA
+          id: AP
+        numberType:
+          id: PAN
+        relatedContracts:
+        - canOperate: N
+          contractId: '007410187331755868'
+          id: 8k7ikvTbgIOi4NQgjobAsnZfPhhlACTurka1Hifg0Uw
+        alias: 0002TC5667
+        id: 542rEMurflGJRv7Q4khFSuekeui187vEi4nbPQSBrqU
+        userAccessControl:
+        - canOperate: false
+        detail:
+          images:
+          - name: Front face of the card
+            id: FRONT_CARD
+            url: https://cardcovers.caasbbva.com/mexico/477214-AP.png.imgcaas.w320.png
+          specificAmounts:
+          - amounts:
+            - amount: 364110.77
+              currency: MXN
+            name: Saldo actual
+            id: CURRENT_BALANCE
+          - amounts:
+            - amount: 365.0
+              currency: MXN
+            name: Saldo en tránsito
+            id: PENDING_CHARGE_BALANCE
+          - amounts:
+            - amount: 60289.33
+              currency: MXN
+            name: Saldo disponible
+            id: AVAILABLE_BALANCE
+          physicalSupport:
+            name: CONVENCIONAL
+            id: NORMAL_PLASTIC
+          activations:
+          - name: Indica si la tarjeta esta encendida o apagada
+            id: ON_OFF
+            isActive: true
+          indicators:
+          - name: Indica si la tarjeta cuenta con NFC
+            id: ASSOCIABLE_TO_NFC
+            isActive: true
+          - name: Indica si la tarjeta cuenta con sticker asociado
+            id: ASSOCIABLE_TO_STICKER_CARDS
+            isActive: false
+          - name: Indica si la tarjeta cuenta con una tarjeta virtual asociada
+            id: ASSOCIABLE_TO_VIRTUAL_CARDS
+            isActive: true
+          - name: Indica si la tarjeta puede ser bloqueada
+            id: BLOCKABLE
+            isActive: true
+          - name: Indica si la tarjeta puede modificar el nip de forma online por
+              una aplicación
+            id: BLOCKABLE_NIP
+            isActive: false
+          - name: Indica si los datos de seguridad de la tarjeta pueden ser leídos
+            id: SECURITY_DATA_READ
+            isActive: false
+          - name: Indica si el CVV2 es dinámico
+            id: DINAMIC_CVV
+            isActive: true
+          - name: Indica si la tarjeta es adicional
+            id: IS_ADDITIONAL
+            isActive: false
+          rewards:
+          - name: Puntos Bancomer
+            id: BANCOMER_POINTS
+            nonMonetaryValue: 34479
+          expirationDate: '2025-04-30'
+          agreementContract: '007410187331755868'
+        simpleCode: 542rEMurflGJRv7Q4khFSnoNQOD4Wsuz
+        productType: CARD
+        status:
+          name: VIGENTE
+          id: OPERATIVE
+        subProductType:
+          name: TARJETA DE CREDITO
+          id: CREDIT_CARD
+      - number: '4772913004223402'
+        product:
+          name: AZUL BBVA
+          id: AC
+        numberType:
+          id: PAN
+        relatedContracts:
+        - canOperate: N
+          contractId: '007422005502388898'
+          id: flx6kXGPHBa3RZucW0c8qryZ02km_Vk8XyFIjaL8bRM
+        alias: 0002TC5667
+        id: B6m6FTRAa4niLMntC0oH1x_1k7XJrtCQgq70n54Mlq0
+        userAccessControl:
+        - canOperate: false
+        detail:
+          images:
+          - name: Front face of the card
+            id: FRONT_CARD
+            url: https://cardcovers.caasbbva.com/mexico/477291-AC.png.imgcaas.w320.png
+          specificAmounts:
+          - amounts:
+            - amount: 184613.95
+              currency: MXN
+            name: Saldo actual
+            id: CURRENT_BALANCE
+          - amounts:
+            - amount: 6254.0
+              currency: MXN
+            name: Saldo en tránsito
+            id: PENDING_CHARGE_BALANCE
+          - amounts:
+            - amount: 2886.15
+              currency: MXN
+            name: Saldo disponible
+            id: AVAILABLE_BALANCE
+          physicalSupport:
+            name: CONVENCIONAL
+            id: NORMAL_PLASTIC
+          activations:
+          - name: Indica si la tarjeta esta encendida o apagada
+            id: ON_OFF
+            isActive: true
+          indicators:
+          - name: Indica si la tarjeta cuenta con NFC
+            id: ASSOCIABLE_TO_NFC
+            isActive: true
+          - name: Indica si la tarjeta cuenta con sticker asociado
+            id: ASSOCIABLE_TO_STICKER_CARDS
+            isActive: false
+          - name: Indica si la tarjeta cuenta con una tarjeta virtual asociada
+            id: ASSOCIABLE_TO_VIRTUAL_CARDS
+            isActive: true
+          - name: Indica si la tarjeta puede ser bloqueada
+            id: BLOCKABLE
+            isActive: true
+          - name: Indica si la tarjeta puede modificar el nip de forma online por
+              una aplicación
+            id: BLOCKABLE_NIP
+            isActive: false
+          - name: Indica si los datos de seguridad de la tarjeta pueden ser leídos
+            id: SECURITY_DATA_READ
+            isActive: false
+          - name: Indica si el CVV2 es dinámico
+            id: DINAMIC_CVV
+            isActive: true
+          - name: Indica si la tarjeta es adicional
+            id: IS_ADDITIONAL
+            isActive: false
+          rewards:
+          - name: Puntos Bancomer
+            id: BANCOMER_POINTS
+            nonMonetaryValue: 8751
+          expirationDate: '2028-03-31'
+          agreementContract: '007422005502388898'
+        simpleCode: B6m6FTRAa4niLMntC0oH1zu9zANuxPgj
+        productType: CARD
+        status:
+          name: VIGENTE
+          id: OPERATIVE
+        subProductType:
+          name: TARJETA DE CREDITO
+          id: CREDIT_CARD
+    :headers:
+      content-length: '18283'
+      X-EdgeConnect-Origin-MEX-Latency: '259'
+      Access-Control-Allow-Origin: '*'
+      ECS-Entry-Point-Zone: ext
+      Access-Control-Allow-Methods: GET, POST, DELETE, PUT, OPTIONS, PATCH
+      X-Content-Type-Options: nosniff
+      Connection: keep-alive
+      tsec: ZXlKaFlYQWlPaUl4TURBd01ERTROeUlzSW10bGVWWmxjbk5wYjI0aU9qRXNJbUZ3Y0Vsa0lqb2lRVkJRTVNJc0ltdHBaQ0k2SWtGUVVERXViRzlqWVd3dU1TSXNJbVZ1WXlJNklrRXhPVEpIUTAwaUxDSnJaWGxVZVhCbElqb2liRzlqWVd3aUxDSmhiR2NpT2lKa2FYSWlMQ0owYzJWalNXUWlPaUkyTXpJeU56STJOaTFsWTJVNExUUTVNV1V0WWprelppMWxNMlZtT1RBeU9EQTVNVElpZlEuLjNVdWJLcERSOGw5V0hkbGcuX2tFYzAyZW5tMm8xZzcxRzN0RXgxelpScGtwaVBBcW0xWkN1eGtfa18xcUNHdzctYVl5X1l3WnNYaFdJbXB6QjRRVlFvSzF3V2UwSE5JcVBzeEtHU0dyOTVldWdKQU1RNVdCLXc3UDJ0ZWp5S2xrdUd6XzFUbUFYX2xyeVpEZU9Jb21QRUotV1hXX0VtRnh2cXRsVlg4ak1VTUZHZ3pvdkd2aERIZF9wR0pGQ1p0NVQxdkpzRFdpUjFXLWpHRXVubWQ2V1gyczhBQTYxSG5JUUFLLWpfV0k0UkNlZmtXRlJYZXdkWEkwUUJ2V2tGMHVBdk1PZWVtMEZSVnc0Yzg4bFZQR0gtS0dBbXdOWkZOUWk0OHZwTHljMldQX2Y2SlczZE5EYkh3SFlaNDEyRUkxTko0dFN3aERFNUxhN0ZPeVBrekNBYkR0ZDdmcDRHaTZ6TUxSUWd4Uy1mRHBMXzkzc2JuMTRvcE5mRFIySm1OVWdzZXJ1RXhrRnVmdmNMMmU1NGZqUUt0SzhQTTFCRGFhQlNEeGZtbzZuRjJXQXNySGdCLUxlaXFSRUVBSXJ1akNHU3FFM0tvV2I1aTFwRzViejQ2OU42NEpZd3BqUjZTWU5NSVFidURmOVpnTHhQYy1jREp6ZUtCbTNjUE8yY3dscFNrazZMZFF2NjBKV1JuR3A0OFpCRjJkcF9SaXRlV0sxN2llWXpYRldBLTJZS2h0NjJfT2l2bjd4VE9kbENFRjVBXzdPbGlCTFV3ZmlYR3NNUUlIOTNjRHpfQ0NoWVBnZnpaMm5lX0lhTk1OWllVV2gzanBPbWs1LWZwN2NkVXo2djY2Z1ZWbjlFRzJrZVVRUURfYkpOOGFSSE92X2hBT08xV0lNQm1oZmNwTHJnV2R1amxpSDYtV3BfZGlrVFVoY3VhQkVfUEp0TDNkaFFIaURkSzg2cUR4ZVVtTTJXZVU1TW10YVB5eWd2Znh4SEMycWFCdVFKSi11azAyaFNkZk05U3dCUlpEUGhGM3E5b18yU0R6RW5WdFFfLU95bmxwa0xiM0dBUVdRSUJOck5PbWlnSURCS0RkLXgyYk9EY04zTGV0c3R6WWdWVEFLRk5wTElobExaMXRKMnkzaWJyYTRoQ1Z6Tm1mUWNCZFMzM1ZjS0hkTnNqSnAwYWpiRVBkc1ZhUG9mcnNma25kYlZwNVZBQWRlMUthNEZLTzVpZkl2Z2tjdWV3NHI3RGhPSWY2LS1PUkJQMGc3QkhtTl9SclV4WEllMGRELVVtdXFYc3YxOG4taXZfa0ZaQnJmeERCTlN3eHlHSlViS0F6RGs4VmNubHBjRVJzUlJ4ajRoZDhwYlRGWGJ2clhZVkE0N2c2amFwVnZaNnRsOE5MTmpFUVFiRkstY3dwT2tXLXFKUkhpZ0dkS01xZ1BoMS1jeEdGN05qbVN4MGpfdk5aSmRLWURYNU1LczJvSFBVLXVNWEtabXotd0YzaTJvUkNPNGJvempfM3Z6VmdfNVFjalhHVW5aX0JyWHpVOFFxRmxtWnVmZXZKclhaT21aT2Y1cVVSM1NSYUxGTTFYdUJaUVJDOUdWMVpCYUlENjF4bkdmODFjQjlfSjMxWWVWazRNWDB0bHpjNzNvbHZfWk9xQUJFM3hiMVZEbW5VemhLNXFrTU5pVkdxWV9vQXNFbWtSN215NXlFczVucDNzbUVXZ0cyLTdJVTVXVkU2SzM5QlFKTUhIdVBYTkhsdFBuSC1wX1U3LVhrLVVNUXNISWJYU01ENWF4YUU1czhKRktHREhTVHFuNTlkQU0yMldCSHFnOHpKelBRUUoweHVnOUk4ZlYxMlRIblRzQmFDRkFaTTNOQllvTURUamJ0cEMwRHJoZVh3TUwzYnBNamk0WTQxYXZwVkVSeTFjMmE0MzhrTU9iMERUTDBDem9OdDhoMkd1MWZoUzRwcEJlMTZnOXZmcUJsMEtGRzdCdkhac0tld1dlSGxIVlR6NFhMMFJiUk9iVXNZZHhkNjRFOGd5MDVHUHhkWXBFSEFOV1dSaDJIMHRtRERzV2RHckRkeUZWSnh2SmYxQ1VldG1QSjB2bTQwQU9IYm5EYk43Nk8xTFZUYy1WMTdFZ2dSVVFsWG12UVUzcFlpejVUdjJjRVRyWUxSbm9hS3dGTnhldTVDMEhiQ1l2a2FSZzhPNFY3Sl9oYXlGbWhLNk4tSHUxNTJkajlTd0hqeWNLWnlXT2lCc0lVemYzSWJ2NWtmb2FUbXRCZ1B5QklYLU5rbENHcWxJTW1SbXk3UkhrV1JzZVZvOTF2RDFaWWxpelBMcjRtTWMwbjlFb0h1WmpVVU1lNGVpcTZ1ZHBGWERtTmwwN01aZzdFVjVzb3luajl5SG1SM0lPUGxTeXVYRU42a2RoSU1QMTNlZHFzSi16ODhWTDBKTU5LeGQ4cW5pOVZfQXpzc08xYl9ST0lYMjNuRTY4UEIyWlhfeWVfTlhkUXpIWS11bXAyUTJVTDZSR1BzcnZ1YzVtOUxOcHVoZV9hd3ZNbHRmQ3hIQl9ZWXN3amJDWHpVT1FBSzdZT0RnQU9OX3p3eG9BazAuWl9PUzN0WEpoR1FISl9GMlI4eEFXZw==
+      Access-Control-Allow-Headers: Accept-Encoding, Accept, Content-Type, tsec, consumerrequestid,
+        authenticationchallenge, authenticationtype, authenticationdata, authenticationstate,
+        contactid, consumeruuid, consumerapplicationid, perimetertsec, authorization,
+        responsewarningcode, responsewarningdescription, cuf, prefer, phoneNumber,
+        Location, X-RHO-PARENTSPANID, X-RHO-TRACEID, preferredauthenticationtype,
+        X-HTTP-Method-Override, Access-Control-Allow-Methods, iv-remote-address, thirdparty-x-forwarded-for,
+        thirdparty-user-agent, thirdparty-geolocation, thirdparty-calculated-scoring,
+        thirdparty-deviceid, vnd.bbva.security-client-certificate, order-preferredaction,
+        authenticationresponse, Access-Control-Max-Age, BCS-Device-Id, BCS-Device-OS-Name,
+        BCS-Device-Model-Name, BCS-Device-Model-Manufacturer, BCS-Device-Screen-Size,
+        BCS-Device-OS-Version, BCS-Device-DPI, BCS-Device-App-Name, BCS-Device-App-Version,
+        Third-Party-Application-Id, ECS-Signature-Platform-Use-Case, BCS-Process-Code,
+        BCS-Operation-Tracer, BCS-Process-Tracer, vnd.bbva.user-id, order-preferredaction,
+        order-id, order-accepteddisclaimers, x-forwarded-for, Date, x-dmz-orgn, onsite-accountTerm,
+        onsite-logicalTerm, Akamai-BM-Telemetry, order-hmac, order-signed, BCS-Third-Party-Session-Id,
+        Cache-Control, clave, Content-Encoding, ECS-Entry-Point-Zone, firma, Geolocation,
+        Third-Party-Collaborator-Id, user-agent, Via
+      Date: Thu, 25 Apr 2024 23:54:23 GMT
+      Referrer-Policy: same-origin
+      X-Frame-Options: sameorigin
+      Strict-Transport-Security: max-age=31536000; includeSubDomains
+      Access-Control-Expose-Headers: Accept-Encoding, Accept, Content-Type, tsec,
+        consumerrequestid, authenticationchallenge, authenticationtype, authenticationdata,
+        authenticationstate, contactid, consumeruuid, consumerapplicationid, perimetertsec,
+        authorization, responsewarningcode, responsewarningdescription, cuf, prefer,
+        phoneNumber, Location, X-RHO-PARENTSPANID, X-RHO-TRACEID, preferredauthenticationtype,
+        X-HTTP-Method-Override, Access-Control-Allow-Methods, iv-remote-address, thirdparty-x-forwarded-for,
+        thirdparty-user-agent, thirdparty-geolocation, thirdparty-calculated-scoring,
+        thirdparty-deviceid, vnd.bbva.security-client-certificate, order-preferredaction,
+        authenticationresponse, Access-Control-Max-Age, BCS-Device-Id, BCS-Device-OS-Name,
+        BCS-Device-Model-Name, BCS-Device-Model-Manufacturer, BCS-Device-Screen-Size,
+        BCS-Device-OS-Version, BCS-Device-DPI, BCS-Device-App-Name, BCS-Device-App-Version,
+        Third-Party-Application-Id, ECS-Signature-Platform-Use-Case, BCS-Process-Code,
+        BCS-Operation-Tracer, BCS-Process-Tracer, vnd.bbva.user-id, order-preferredaction,
+        order-id, order-accepteddisclaimers, x-forwarded-for, Date, x-dmz-orgn, onsite-accountTerm,
+        onsite-logicalTerm, Akamai-BM-Telemetry, order-hmac, order-signed, BCS-Third-Party-Session-Id,
+        Cache-Control, clave, Content-Encoding, ECS-Entry-Point-Zone, firma, Geolocation,
+        Third-Party-Collaborator-Id, user-agent, Via
+      Cache-Control: no-cache,no-store,must-revalidate
+      Content-Security-Policy: script-src 'self'
+      Vary: Accept-Encoding
+      Set-Cookie: vbank-session=7b4f209a-8c14-47eb-a76e-5768fa354816
+      Expires: '-1'
+      X-XSS-Protection: 1; mode=block
+      X-EdgeConnect-MidMile-RTT: '26'
+      consumerrequestid: 12e23f03-4955-4673-92cd-328f40e11b7a
+      Content-Type: application/json; charset=UTF-8
+    :status: 200 OK

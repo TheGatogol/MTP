@@ -1,0 +1,180 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: b1ba7ccc-d501-45af-a36a-f20c7e1b79db
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: common_account,account_without_credit_cards
+then:
+- return:
+    :body:
+    - data:
+        data:
+          catalogs:
+            catalogs: []
+        campaigns: {}
+        locale: es_mx
+        people:
+          loyalty:
+            rewards: []
+            points:
+              balances: {}
+          contacts: []
+          customer: {}
+        tags:
+        - '5569631474'
+        - common_account
+        - account_without_credit_cards
+        products:
+          cards: []
+          accounts:
+          - number: '00740680000473275175'
+            product:
+              name: Cuenta de Cheques
+              id: CH
+            numberType:
+              id: CCC
+            alias: 0002CH5175
+            id: Td-tykaA8AoblrGevW-e2STfcIVQYNR8psLlUhOmURD6Qta2JvALTg
+            detail:
+              level: '04'
+              specificAmounts:
+              - amounts:
+                - amount: 0
+                  currency: MXN
+                name: Saldo actual
+                id: CURRENT_BALANCE
+              - amounts:
+                - amount: 0
+                  currency: MXN
+                name: Saldo buen cobro
+                id: PENDING_DEPOSIT_BALANCE
+              indicators:
+              - name: Indica si la cuenta es de nómina
+                id: IS_PAYROLL_ACCOUNT
+                isActive: false
+              - name: Indica si la cuenta es eje
+                id: IS_PRINCIPAL_ACCOUNT
+                isActive: false
+              - name: Indica si la cuenta tiene pockets
+                id: HAS_POCKETS
+                isActive: false
+              - name: Indica si la cuenta es digital
+                id: IS_DIGITAL
+                isActive: false
+            productType: ACCOUNT
+            status:
+              name: Cuenta Activa
+              id: ACTIVE
+            subProductType:
+              name: MEMBRESIA BP
+              id: '0102'
+            signedAuthorization: {}
+          - number: '00740680000473275183'
+            product:
+              name: Cuenta de Cheques
+              id: CH
+            numberType:
+              id: CCC
+            alias: Primer cuenta
+            id: Td-tykaA8AoblrGevW-e2bBc3d6OMy3Y0sV2Nqkevgq3UQGCwjTAsw
+            detail:
+              level: '04'
+              specificAmounts:
+              - amounts:
+                - amount: 1000000000
+                  currency: MXN
+                name: Saldo actual
+                id: CURRENT_BALANCE
+              - amounts:
+                - amount: 0
+                  currency: MXN
+                name: Saldo buen cobro
+                id: PENDING_DEPOSIT_BALANCE
+              indicators:
+              - name: Indica si la cuenta es de nómina
+                id: IS_PAYROLL_ACCOUNT
+                isActive: false
+              - name: Indica si la cuenta es eje
+                id: IS_PRINCIPAL_ACCOUNT
+                isActive: false
+              - name: Indica si la cuenta tiene pockets
+                id: HAS_POCKETS
+                isActive: false
+              - name: Indica si la cuenta es digital
+                id: IS_DIGITAL
+                isActive: false
+            transactions:
+            - transactionType:
+                name: Uncategorized
+                id: UNCATEGORIZED
+                internalCode:
+                  name: CARGO DE INTEROPERATIVIDAD
+                  id: '996'
+              operationDate: '2022-03-25T16:14:00.000-06:00'
+              additionalInformation:
+                reference: '7213647344'
+                updatedBalance:
+                  amount: 999999990
+                  currency: MXN
+                additionalData: BNET    0473275191 prueba
+              valuationDate: '2022-03-25T00:00:00.000-06:00'
+              concept: TRASPASO CUENTAS PROPIAS
+              contract:
+                number: '0473275183'
+                product:
+                  name: Accounts
+                  id: ACCOUNTS
+                numberType:
+                  name: Lic
+                  id: LIC
+                id: Td-tykaA8AoblrGevW-e2bBc3d6OMy3Y0sV2Nqkevgq3UQGCwjTAsw
+              moneyFlow:
+                name: Expense
+                id: EXPENSE
+              id: xE7G6fzYdE1FmME32mg88KtT6I7VGsf-s6T1qWsm1KMgcSqEm5fuTLCY8mHPygqi
+              accountedDate: '2022-03-25T00:00:00.000-06:00'
+              financingType:
+                name: Non financing
+                id: NON_FINANCING
+              status:
+                name: Settled
+                id: SETTLED
+              localAmount:
+                amount: -10
+                currency: MXN
+            productType: ACCOUNT
+            status:
+              name: Cuenta Activa
+              id: ACTIVE
+            subProductType:
+              name: MEMBRESIA BP
+              id: '0102'
+            signedAuthorization: {}
+          deposits: []
+          investmentFunds: []
+        authentication:
+          password: glomo2022
+          user: '5569631474'
+          deviceId: D29E6E8BFA45C85DC0C89C39C1009224
+      lockExpiration: null
+      lockType: null
+      id: 2645850
+    :headers:
+      content-length: '3505'
+      Strict-Transport-Security: max-age=15768000
+      Server: nginx
+      ECS-Entry-Point-Zone: ext
+      Connection: keep-alive
+      Vary: Accept-Encoding
+      Date: Tue, 21 Jun 2022 22:40:38 GMT
+      Content-Type: application/json
+    :status: 200 OK

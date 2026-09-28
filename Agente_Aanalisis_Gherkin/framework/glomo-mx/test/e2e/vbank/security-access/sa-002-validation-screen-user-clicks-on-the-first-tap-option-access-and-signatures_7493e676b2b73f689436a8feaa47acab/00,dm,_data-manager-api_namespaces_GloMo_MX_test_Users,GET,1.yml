@@ -1,0 +1,40 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: 869f4853-85ed-4dc1-b98c-06115b524e3e
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: fido_enrolled
+    lock: 'false'
+then:
+- return:
+    :body:
+    - data:
+        locale: es_mx
+        tags:
+        - fido_enrolled
+        authentication:
+          password: Glomo2024
+          user: '5539386256'
+          deviceId: 34441AB722BCC5403F8481BFE92C0916
+      lockExpiration: '2024-01-31T17:17:35.152610Z'
+      lockType: SHARED
+      id: 2463959
+    :headers:
+      Strict-Transport-Security: max-age=15768000
+      Server: nginx
+      ECS-Entry-Point-Zone: ext
+      Connection: keep-alive
+      host: datamanager.globaldevtools.bbva.com
+      Content-Length: '252'
+      Date: Wed, 31 Jan 2024 17:17:01 GMT
+      Content-Type: application/json
+    :status: 200 OK

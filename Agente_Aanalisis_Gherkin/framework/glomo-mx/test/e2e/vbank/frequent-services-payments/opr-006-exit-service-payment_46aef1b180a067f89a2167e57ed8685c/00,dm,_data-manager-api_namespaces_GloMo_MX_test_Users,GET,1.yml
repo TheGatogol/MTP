@@ -1,0 +1,73 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: 93dda0cf-5fdd-4dc7-b654-85f66f175788
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: frequent_operations_services
+    lock: 'false'
+then:
+- return:
+    :body:
+    - data:
+        homeFutura: false
+        suggestedOperations:
+          data:
+          - uncertaintyLevel: HIGH
+            amount:
+              amount: 9068
+              currency: MXP
+            period:
+              endDate: '2025-04-20'
+              startDate: '2025-01-18'
+            receiver:
+              bank:
+                name: '""'
+                id: '0000'
+              product:
+                name: LIBRETON PREMIUM
+                id: LIBRETON PREMIUM
+              contract:
+                number: '001042378'
+                numberType:
+                  id: CIE
+              holder:
+                fullName: BRADESCARD
+            sender:
+              contract:
+                number: '007400101504974463'
+            concept: '4812830373142017'
+            operationType: SERVICE_PAYMENT
+            id: NEjDsU7DkTlGai1rNy1RYzNESsOxRDBl
+            amountPattern: MOST_COMMON
+            frequency: BIWEEKLY
+            predictionDate: '2025-01-30'
+        tags:
+        - frequent_operations_services
+        authentication:
+          password: Glomo2024
+          user: '7224059197'
+          deviceId: D93174685091D74A258375BDA54076C5
+        messageMultipleFrequentOperations: Cerca del día 30 sueles hacer varias operaciones.
+          ¿Te gustaría ver cuáles son?
+      lockExpiration: '2025-01-31T02:14:20.726246Z'
+      lockType: SHARED
+      id: 36043998
+    :headers:
+      content-length: '1029'
+      Cache-Control: max-age=0
+      Connection: keep-alive
+      host: datamanager.globaldevtools.bbva.com
+      Vary: Accept-Encoding
+      Expires: Fri, 31 Jan 2025 02:14:06 GMT
+      Date: Fri, 31 Jan 2025 02:14:06 GMT
+      Content-Type: application/json; charset=utf-8
+    :status: 200 OK

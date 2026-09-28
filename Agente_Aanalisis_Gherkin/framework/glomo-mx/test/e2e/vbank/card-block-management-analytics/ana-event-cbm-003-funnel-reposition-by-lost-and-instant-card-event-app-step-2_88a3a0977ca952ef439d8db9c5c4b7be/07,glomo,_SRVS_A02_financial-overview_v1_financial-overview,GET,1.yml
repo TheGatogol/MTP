@@ -1,0 +1,1650 @@
+when:
+  sequence: 1
+  path: /SRVS_A02/financial-overview/v1/financial-overview
+  method: GET
+  backend: glomo
+request:
+  headers:
+    sec-fetch-mode: cors
+    content-length: '0'
+    referer: http://localhost:8001/
+    sec-fetch-site: same-site
+    accept-language: es-MX,es;q=0.9
+    origin: http://localhost:8001
+    tsec: 0aa0fbf0c5343602b8bf8ac1fde696c27af8ed1e
+    accept: application/json, text/html, */*; q=0.1
+    sec-ch-ua: '"Google Chrome";v="137", "Chromium";v="137", "Not/A)Brand";v="24"'
+    sec-ch-ua-mobile: ?0
+    x-vbank-session: 87e81e9a-aeb2-4944-9368-5050f187527c
+    sec-ch-ua-platform: '"macOS"'
+    host: localhost:9000
+    content-type: application/json
+    connection: keep-alive
+    cache-control: no-cache, no-store, must-revalidate
+    accept-encoding: gzip, deflate, br, zstd
+    sec-fetch-dest: empty
+    user-agent: GLOMO_MX/99.99.99 (Android;14;Samsung)
+then:
+- return:
+    data:
+      family:
+      - balances:
+        - amountBalance:
+          - amount: '1900000'
+            isMajor: 'false'
+            currency: MXN
+          name: Saldo disponible
+          id: CURRENT_BALANCE
+        - amountBalance:
+          - amount: '25000'
+            isMajor: 'false'
+            currency: MXN
+          name: Saldo buen cobro
+          id: PENDING_DEPOSIT_BALANCE
+        name: Cuenta corriente lcred
+        id: ACCOUNT
+      - balances:
+        - amountBalance:
+          - amount: '22000240'
+            isMajor: 'false'
+            currency: MXN
+          name: Saldo actual
+          id: CURRENT_BALANCE
+        - amountBalance:
+          - amount: '120'
+            isMajor: 'false'
+            currency: MXN
+          name: Saldo en tránsito
+          id: PENDING_CHARGE_BALANCE
+        - amountBalance:
+          - amount: '44000120'
+            isMajor: 'false'
+            currency: MXN
+          name: Saldo disponible
+          id: AVAILABLE_BALANCE
+        name: replacement 1
+        id: CARD
+      contracts:
+      - number: '05040001010012000000'
+        product:
+          name: Cuenta corriente con línea de crédito
+          description: Cuenta corriente lcred
+          id: CORRIENTE_LCREDITO_CL
+        numberType:
+          id: LIC
+        relatedContracts:
+        - relationType:
+            name: Linked with
+            id: LINKED_WITH
+          contractProductType:
+            name: Cuentas
+            id: ACCOUNTS
+          contractId: '050400010100120000'
+          id: '050400010100120000'
+        alias: Cuenta corriente lcred
+        id: '05040001010012000000'
+        simpleCode: '1200'
+        detail:
+          specificAmounts:
+          - amounts:
+            - amount: 1900000
+              currency: MXN
+            name: Saldo disponible
+            id: CURRENT_BALANCE
+          - amounts:
+            - amount: 25000
+              currency: MXN
+            name: Saldo buen cobro
+            id: PENDING_DEPOSIT_BALANCE
+          level: N2
+          indicators:
+          - name: Editar alias
+            id: EDITABLE_ALIAS
+            isActive: true
+          - name: Transferencia
+            id: ORIGIN_TRANSFER_TO_ACCOUNT
+            isActive: true
+          - name: Traspaso
+            id: ORIGIN_INTERNAL_TRANSFER_TO_ACCOUNT
+            isActive: true
+          - name: Transferencia
+            id: ORIGIN_INTERNATIONAL_TRANSFER_TO_ACCOUNT
+            isActive: true
+          - name: Pago de servicio
+            id: ORIGIN_SERVICE_PAYMENT
+            isActive: true
+          - name: Avance en línea
+            id: DESTINATION_TRANSFER_FROM_CARD
+            isActive: true
+          - name: Avance en línea
+            id: DESTINATION_INTERNATIONAL_TRANSFER_FROM_CARD
+            isActive: true
+          - name: Recarga celular
+            id: ORIGIN_MOBILE_PHONE_RECHARGES
+            isActive: true
+          - name: Aporte solidario
+            id: ORIGIN_SOLIDARY_CONTRIBUTION
+            isActive: true
+          - name: Pago PreviRed
+            id: ORIGIN_TAX_PAYMENT
+            isActive: true
+        productType: ACCOUNT
+        status:
+          name: Cuenta operativa
+          id: ACTIVATED
+        subProductType:
+          name: Common
+          id: COMMON
+      - number: '7555457083007940'
+        product:
+          name: Tarjeta de crédito replacement 1
+          description: replacement 1
+          id: V1
+        numberType:
+          id: PAN
+        alias: replacement 1
+        id: ab7940
+        simpleCode: ab7940
+        userAccessControl:
+        - canOperate: false
+        detail:
+          images:
+          - name: Front face of the card
+            id: FRONT_CARD
+            url: https://cardcovers-stage.caasbbva.com/peru/491947_VISA-CORPORATE_front.png?width=120&height=76
+          - name: Back face of the card
+            id: BACK_CARD
+            url: /imageBack.jpg
+          specificAmounts:
+          - amounts:
+            - amount: 1000000
+              currency: MXN
+            name: Saldo actual
+            id: CURRENT_BALANCE
+          - amounts:
+            - amount: 0
+              currency: MXN
+            name: Saldo en tránsito
+            id: PENDING_CHARGE_BALANCE
+          - amounts:
+            - amount: 2000000
+              currency: MXN
+            name: Saldo disponible
+            id: AVAILABLE_BALANCE
+          physicalSupport:
+            name: Plástico normal
+            id: NORMAL_PLASTIC
+          activations:
+          - name: Activation for global card usage
+            id: ON_OFF
+            isActive: true
+          indicators:
+          - id: BLOCKABLE
+            isActive: true
+          rewards:
+          - name: Puntos bancomer
+            id: BANCOMER_POINTS
+            nonMonetaryValue: 8000
+          agreementContract: '4212789653392345'
+          expirationDate: '2019-06-09'
+        productType: CARD
+        status:
+          id: OPERATIVE
+        subProductType:
+          name: Tarjeta de crédito replacement 1
+          id: CREDIT_CARD
+      - number: '7555457083007941'
+        product:
+          name: Tarjeta de crédito replacement 2
+          description: replacement 2
+          id: V1
+        numberType:
+          id: PAN
+        alias: replacement 2
+        id: ab7941
+        simpleCode: ab7941
+        userAccessControl:
+        - canOperate: false
+        detail:
+          images:
+          - name: Front face of the card
+            id: FRONT_CARD
+            url: https://cardcovers-stage.caasbbva.com/peru/491947_VISA-CORPORATE_front.png?width=120&height=76
+          - name: Back face of the card
+            id: BACK_CARD
+            url: /imageBack.jpg
+          specificAmounts:
+          - amounts:
+            - amount: 1000000
+              currency: MXN
+            name: Saldo actual
+            id: CURRENT_BALANCE
+          - amounts:
+            - amount: 0
+              currency: MXN
+            name: Saldo en tránsito
+            id: PENDING_CHARGE_BALANCE
+          - amounts:
+            - amount: 2000000
+              currency: MXN
+            name: Saldo disponible
+            id: AVAILABLE_BALANCE
+          physicalSupport:
+            name: Plástico normal
+            id: NORMAL_PLASTIC
+          activations:
+          - name: Activation for global card usage
+            id: ON_OFF
+            isActive: true
+          rewards:
+          - name: Puntos bancomer
+            id: BANCOMER_POINTS
+            nonMonetaryValue: 8000
+          agreementContract: '4212789653392345'
+          expirationDate: '2019-06-09'
+        productType: CARD
+        status:
+          reason:
+            id: LOST
+          id: BLOCKED
+        subProductType:
+          name: Tarjeta de crédito replacement 2
+          id: CREDIT_CARD
+      - number: '7555457083007942'
+        product:
+          name: Tarjeta de crédito replacement 3
+          description: replacement 3
+          id: V1
+        numberType:
+          id: PAN
+        alias: replacement 3
+        id: ab7942
+        simpleCode: ab7942
+        userAccessControl:
+        - canOperate: false
+        detail:
+          images:
+          - name: Front face of the card
+            id: FRONT_CARD
+            url: https://cardcovers-stage.caasbbva.com/peru/491947_VISA-CORPORATE_front.png?width=120&height=76
+          - name: Back face of the card
+            id: BACK_CARD
+            url: /imageBack.jpg
+          specificAmounts:
+          - amounts:
+            - amount: 1000000
+              currency: MXN
+            name: Saldo actual
+            id: CURRENT_BALANCE
+          - amounts:
+            - amount: 0
+              currency: MXN
+            name: Saldo en tránsito
+            id: PENDING_CHARGE_BALANCE
+          - amounts:
+            - amount: 2000000
+              currency: MXN
+            name: Saldo disponible
+            id: AVAILABLE_BALANCE
+          physicalSupport:
+            name: Plástico normal
+            id: NORMAL_PLASTIC
+          activations:
+          - name: Activation for global card usage
+            id: ON_OFF
+            isActive: true
+          rewards:
+          - name: Puntos bancomer
+            id: BANCOMER_POINTS
+            nonMonetaryValue: 8000
+          agreementContract: '4212789653392345'
+          expirationDate: '2019-06-09'
+        productType: CARD
+        status:
+          reason:
+            id: STOLEN
+          id: BLOCKED
+        subProductType:
+          name: Tarjeta de crédito replacement 3
+          id: CREDIT_CARD
+      - number: '7555457083007943'
+        product:
+          name: error cards indicators
+          description: error cards indicators card replacement
+          id: V1
+        numberType:
+          id: PAN
+        alias: error cards indicators card replacement
+        id: ab7943
+        simpleCode: ab7943
+        userAccessControl:
+        - canOperate: false
+        detail:
+          images:
+          - name: Front face of the card
+            id: FRONT_CARD
+            url: https://cardcovers-stage.caasbbva.com/peru/491947_VISA-CORPORATE_front.png?width=120&height=76
+          - name: Back face of the card
+            id: BACK_CARD
+            url: /imageBack.jpg
+          specificAmounts:
+          - amounts:
+            - amount: 1000000
+              currency: MXN
+            name: Saldo actual
+            id: CURRENT_BALANCE
+          - amounts:
+            - amount: 0
+              currency: MXN
+            name: Saldo en tránsito
+            id: PENDING_CHARGE_BALANCE
+          - amounts:
+            - amount: 2000000
+              currency: MXN
+            name: Saldo disponible
+            id: AVAILABLE_BALANCE
+          physicalSupport:
+            name: Plástico normal
+            id: NORMAL_PLASTIC
+          activations:
+          - name: Activation for global card usage
+            id: ON_OFF
+            isActive: true
+          indicators:
+          - name: Sobregiro
+            id: OVERDRAFT
+            isActive: true
+          - name: Avance en línea
+            id: ORIGIN_TRANSFER_TO_ACCOUNT
+            isActive: true
+          - name: Bloquear tarjeta
+            id: BLOCKABLE
+            isActive: true
+          - name: Ver CVV
+            id: SECURITY_DATA_READ
+            isActive: true
+          - name: Editar alias
+            id: EDITABLE_ALIAS
+            isActive: true
+          - name: The card have multipurchase financing available
+            id: MULTIPURCHASE_FINANCING_AVAILABLE
+            isActive: true
+          rewards:
+          - name: Puntos bancomer
+            id: BANCOMER_POINTS
+            nonMonetaryValue: 8000
+          agreementContract: '4212789653392345'
+          expirationDate: '2019-06-09'
+        productType: CARD
+        status:
+          name: Operative card
+          id: OPERATIVE
+        subProductType:
+          name: error cards indicators
+          id: CREDIT_CARD
+      - number: '7555457083007944'
+        product:
+          name: error cards conditions
+          description: error cards conditions card replacement
+          id: V1
+        numberType:
+          id: PAN
+        alias: error cards conditions card replacement
+        id: ab7944
+        simpleCode: ab7944
+        userAccessControl:
+        - canOperate: false
+        detail:
+          images:
+          - name: Front face of the card
+            id: FRONT_CARD
+            url: https://cardcovers-stage.caasbbva.com/peru/491947_VISA-CORPORATE_front.png?width=120&height=76
+          - name: Back face of the card
+            id: BACK_CARD
+            url: /imageBack.jpg
+          specificAmounts:
+          - amounts:
+            - amount: 1000000
+              currency: MXN
+            name: Saldo actual
+            id: CURRENT_BALANCE
+          - amounts:
+            - amount: 0
+              currency: MXN
+            name: Saldo en tránsito
+            id: PENDING_CHARGE_BALANCE
+          - amounts:
+            - amount: 2000000
+              currency: MXN
+            name: Saldo disponible
+            id: AVAILABLE_BALANCE
+          physicalSupport:
+            name: Plástico normal
+            id: NORMAL_PLASTIC
+          activations:
+          - name: Activation for global card usage
+            id: ON_OFF
+            isActive: true
+          indicators:
+          - name: Sobregiro
+            id: OVERDRAFT
+            isActive: true
+          - name: Avance en línea
+            id: ORIGIN_TRANSFER_TO_ACCOUNT
+            isActive: true
+          - name: Bloquear tarjeta
+            id: BLOCKABLE
+            isActive: true
+          - name: Ver CVV
+            id: SECURITY_DATA_READ
+            isActive: true
+          - name: Editar alias
+            id: EDITABLE_ALIAS
+            isActive: true
+          - name: The card have multipurchase financing available
+            id: MULTIPURCHASE_FINANCING_AVAILABLE
+            isActive: true
+          rewards:
+          - name: Puntos bancomer
+            id: BANCOMER_POINTS
+            nonMonetaryValue: 8000
+          agreementContract: '4212789653392345'
+          expirationDate: '2019-06-09'
+        productType: CARD
+        status:
+          name: Operative card
+          id: OPERATIVE
+        subProductType:
+          name: error cards conditions
+          id: CREDIT_CARD
+      - number: '7555457083007945'
+        product:
+          name: error cards replacement
+          description: error cards replacement card replacement
+          id: V1
+        numberType:
+          id: PAN
+        alias: error cards replacement card replacement
+        id: ab7945
+        simpleCode: ab7945
+        userAccessControl:
+        - canOperate: false
+        detail:
+          images:
+          - name: Front face of the card
+            id: FRONT_CARD
+            url: https://cardcovers-stage.caasbbva.com/peru/491947_VISA-CORPORATE_front.png?width=120&height=76
+          - name: Back face of the card
+            id: BACK_CARD
+            url: /imageBack.jpg
+          specificAmounts:
+          - amounts:
+            - amount: 1000000
+              currency: MXN
+            name: Saldo actual
+            id: CURRENT_BALANCE
+          - amounts:
+            - amount: 0
+              currency: MXN
+            name: Saldo en tránsito
+            id: PENDING_CHARGE_BALANCE
+          - amounts:
+            - amount: 2000000
+              currency: MXN
+            name: Saldo disponible
+            id: AVAILABLE_BALANCE
+          physicalSupport:
+            name: Plástico normal
+            id: NORMAL_PLASTIC
+          activations:
+          - name: Activation for global card usage
+            id: ON_OFF
+            isActive: true
+          indicators:
+          - name: Sobregiro
+            id: OVERDRAFT
+            isActive: true
+          - name: Avance en línea
+            id: ORIGIN_TRANSFER_TO_ACCOUNT
+            isActive: true
+          - name: Bloquear tarjeta
+            id: BLOCKABLE
+            isActive: true
+          - name: Ver CVV
+            id: SECURITY_DATA_READ
+            isActive: true
+          - name: Editar alias
+            id: EDITABLE_ALIAS
+            isActive: true
+          - name: The card have multipurchase financing available
+            id: MULTIPURCHASE_FINANCING_AVAILABLE
+            isActive: true
+          rewards:
+          - name: Puntos bancomer
+            id: BANCOMER_POINTS
+            nonMonetaryValue: 8000
+          agreementContract: '4212789653392345'
+          expirationDate: '2019-06-09'
+        productType: CARD
+        status:
+          name: Operative card
+          id: OPERATIVE
+        subProductType:
+          name: error cards replacement
+          id: CREDIT_CARD
+      - number: '7555457083007995'
+        product:
+          name: error cards replacement
+          description: error block resposition
+          id: V1
+        numberType:
+          id: PAN
+        alias: error block resposition
+        id: ab7945b
+        simpleCode: ab7945b
+        userAccessControl:
+        - canOperate: false
+        detail:
+          images:
+          - name: Front face of the card
+            id: FRONT_CARD
+            url: https://cardcovers-stage.caasbbva.com/peru/491947_VISA-CORPORATE_front.png?width=120&height=76
+          - name: Back face of the card
+            id: BACK_CARD
+            url: /imageBack.jpg
+          specificAmounts:
+          - amounts:
+            - amount: 1000000
+              currency: MXN
+            name: Saldo actual
+            id: CURRENT_BALANCE
+          - amounts:
+            - amount: 0
+              currency: MXN
+            name: Saldo en tránsito
+            id: PENDING_CHARGE_BALANCE
+          - amounts:
+            - amount: 2000000
+              currency: MXN
+            name: Saldo disponible
+            id: AVAILABLE_BALANCE
+          physicalSupport:
+            name: Plástico normal
+            id: NORMAL_PLASTIC
+          activations:
+          - name: Activation for global card usage
+            id: ON_OFF
+            isActive: true
+          indicators:
+          - name: Sobregiro
+            id: OVERDRAFT
+            isActive: true
+          - name: Avance en línea
+            id: ORIGIN_TRANSFER_TO_ACCOUNT
+            isActive: true
+          - name: Bloquear tarjeta
+            id: BLOCKABLE
+            isActive: true
+          - name: Ver CVV
+            id: SECURITY_DATA_READ
+            isActive: true
+          - name: Editar alias
+            id: EDITABLE_ALIAS
+            isActive: true
+          - name: The card have multipurchase financing available
+            id: MULTIPURCHASE_FINANCING_AVAILABLE
+            isActive: true
+          rewards:
+          - name: Puntos bancomer
+            id: BANCOMER_POINTS
+            nonMonetaryValue: 8000
+          agreementContract: '4212789653392345'
+          expirationDate: '2019-06-09'
+        productType: CARD
+        status:
+          name: Operative card
+          id: OPERATIVE
+        subProductType:
+          name: error cards replacement
+          id: CREDIT_CARD
+      - number: '7555457083002385'
+        product:
+          name: Tarjeta de crédito replacement 2
+          description: error reposition
+          id: V1
+        numberType:
+          id: PAN
+        alias: error reposition
+        id: ab7945c
+        simpleCode: ab7945c
+        userAccessControl:
+        - canOperate: false
+        detail:
+          images:
+          - name: Front face of the card
+            id: FRONT_CARD
+            url: https://cardcovers-stage.caasbbva.com/peru/491947_VISA-CORPORATE_front.png?width=120&height=76
+          - name: Back face of the card
+            id: BACK_CARD
+            url: /imageBack.jpg
+          specificAmounts:
+          - amounts:
+            - amount: 1000000
+              currency: MXN
+            name: Saldo actual
+            id: CURRENT_BALANCE
+          - amounts:
+            - amount: 0
+              currency: MXN
+            name: Saldo en tránsito
+            id: PENDING_CHARGE_BALANCE
+          - amounts:
+            - amount: 2000000
+              currency: MXN
+            name: Saldo disponible
+            id: AVAILABLE_BALANCE
+          physicalSupport:
+            name: Plástico normal
+            id: NORMAL_PLASTIC
+          activations:
+          - name: Activation for global card usage
+            id: ON_OFF
+            isActive: true
+          rewards:
+          - name: Puntos bancomer
+            id: BANCOMER_POINTS
+            nonMonetaryValue: 8000
+          agreementContract: '4212789653392385'
+          expirationDate: '2019-06-09'
+        productType: CARD
+        status:
+          reason:
+            id: LOST
+          id: BLOCKED
+        subProductType:
+          name: Tarjeta de crédito replacement 2
+          id: CREDIT_CARD
+      - number: '7555457083007946'
+        product:
+          name: error cards blocks
+          description: error cards blocks card replacement
+          id: V1
+        numberType:
+          id: PAN
+        alias: error cards blocks card replacement
+        id: ab7946
+        simpleCode: ab7946
+        userAccessControl:
+        - canOperate: false
+        detail:
+          images:
+          - name: Front face of the card
+            id: FRONT_CARD
+            url: https://cardcovers-stage.caasbbva.com/peru/491947_VISA-CORPORATE_front.png?width=120&height=76
+          - name: Back face of the card
+            id: BACK_CARD
+            url: /imageBack.jpg
+          specificAmounts:
+          - amounts:
+            - amount: 1000000
+              currency: MXN
+            name: Saldo actual
+            id: CURRENT_BALANCE
+          - amounts:
+            - amount: 0
+              currency: MXN
+            name: Saldo en tránsito
+            id: PENDING_CHARGE_BALANCE
+          - amounts:
+            - amount: 2000000
+              currency: MXN
+            name: Saldo disponible
+            id: AVAILABLE_BALANCE
+          physicalSupport:
+            name: Plástico normal
+            id: NORMAL_PLASTIC
+          activations:
+          - name: Activation for global card usage
+            id: ON_OFF
+            isActive: true
+          indicators:
+          - name: Sobregiro
+            id: OVERDRAFT
+            isActive: true
+          - name: Avance en línea
+            id: ORIGIN_TRANSFER_TO_ACCOUNT
+            isActive: true
+          - name: Bloquear tarjeta
+            id: BLOCKABLE
+            isActive: true
+          - name: Ver CVV
+            id: SECURITY_DATA_READ
+            isActive: true
+          - name: Editar alias
+            id: EDITABLE_ALIAS
+            isActive: true
+          - name: The card have multipurchase financing available
+            id: MULTIPURCHASE_FINANCING_AVAILABLE
+            isActive: true
+          rewards:
+          - name: Puntos bancomer
+            id: BANCOMER_POINTS
+            nonMonetaryValue: 8000
+          agreementContract: '4212789653392345'
+          expirationDate: '2019-06-09'
+        productType: CARD
+        status:
+          name: Operative card
+          id: OPERATIVE
+        subProductType:
+          name: error cards blocks
+          id: CREDIT_CARD
+      - number: '7555457083007947'
+        product:
+          name: error cards deliveries
+          description: error cards deliveries card replacement
+          id: V1
+        numberType:
+          id: PAN
+        alias: error cards deliveries card replacement
+        id: ab7947
+        simpleCode: ab7947
+        userAccessControl:
+        - canOperate: false
+        detail:
+          images:
+          - name: Front face of the card
+            id: FRONT_CARD
+            url: https://cardcovers-stage.caasbbva.com/peru/491947_VISA-CORPORATE_front.png?width=120&height=76
+          - name: Back face of the card
+            id: BACK_CARD
+            url: /imageBack.jpg
+          specificAmounts:
+          - amounts:
+            - amount: 1000000
+              currency: MXN
+            name: Saldo actual
+            id: CURRENT_BALANCE
+          - amounts:
+            - amount: 0
+              currency: MXN
+            name: Saldo en tránsito
+            id: PENDING_CHARGE_BALANCE
+          - amounts:
+            - amount: 2000000
+              currency: MXN
+            name: Saldo disponible
+            id: AVAILABLE_BALANCE
+          physicalSupport:
+            name: Plástico normal
+            id: NORMAL_PLASTIC
+          activations:
+          - name: Activation for global card usage
+            id: ON_OFF
+            isActive: true
+          indicators:
+          - name: Sobregiro
+            id: OVERDRAFT
+            isActive: true
+          - name: Avance en línea
+            id: ORIGIN_TRANSFER_TO_ACCOUNT
+            isActive: true
+          - name: Bloquear tarjeta
+            id: BLOCKABLE
+            isActive: true
+          - name: Ver CVV
+            id: SECURITY_DATA_READ
+            isActive: true
+          - name: Editar alias
+            id: EDITABLE_ALIAS
+            isActive: true
+          - name: The card have multipurchase financing available
+            id: MULTIPURCHASE_FINANCING_AVAILABLE
+            isActive: true
+          rewards:
+          - name: Puntos bancomer
+            id: BANCOMER_POINTS
+            nonMonetaryValue: 8000
+          agreementContract: '4212789653392345'
+          expirationDate: '2019-06-09'
+        productType: CARD
+        status:
+          name: Operative card
+          id: OPERATIVE
+        subProductType:
+          name: error cards deliveries
+          id: CREDIT_CARD
+      - number: '7555457083007951'
+        product:
+          name: Tarjeta de crédito replacement 1
+          description: cards schedules deliveries sin shedules
+          id: V1
+        numberType:
+          id: PAN
+        alias: cards schedules deliveries sin shedules
+        id: ab7951
+        simpleCode: ab7951
+        userAccessControl:
+        - canOperate: false
+        detail:
+          images:
+          - name: Front face of the card
+            id: FRONT_CARD
+            url: https://cardcovers-stage.caasbbva.com/peru/491947_VISA-CORPORATE_front.png?width=120&height=76
+          - name: Back face of the card
+            id: BACK_CARD
+            url: /imageBack.jpg
+          specificAmounts:
+          - amounts:
+            - amount: 1000000
+              currency: MXN
+            name: Saldo actual
+            id: CURRENT_BALANCE
+          - amounts:
+            - amount: 0
+              currency: MXN
+            name: Saldo en tránsito
+            id: PENDING_CHARGE_BALANCE
+          - amounts:
+            - amount: 2000000
+              currency: MXN
+            name: Saldo disponible
+            id: AVAILABLE_BALANCE
+          physicalSupport:
+            name: Plástico normal
+            id: NORMAL_PLASTIC
+          activations:
+          - name: Activation for global card usage
+            id: ON_OFF
+            isActive: true
+          indicators:
+          - id: BLOCKABLE
+            isActive: true
+          rewards:
+          - name: Puntos bancomer
+            id: BANCOMER_POINTS
+            nonMonetaryValue: 8000
+          agreementContract: '4212789653392345'
+          expirationDate: '2019-06-09'
+        productType: CARD
+        status:
+          id: OPERATIVE
+        subProductType:
+          name: Tarjeta de crédito replacement 1
+          id: CREDIT_CARD
+      - number: '7555457083007952'
+        product:
+          name: Tarjeta de crédito replacement 1
+          description: error cards schedules deliveries card replacement
+          id: V1
+        numberType:
+          id: PAN
+        alias: error cards schedules deliveries card replacement
+        id: ab7952
+        simpleCode: ab7952
+        userAccessControl:
+        - canOperate: false
+        detail:
+          images:
+          - name: Front face of the card
+            id: FRONT_CARD
+            url: https://cardcovers-stage.caasbbva.com/peru/491947_VISA-CORPORATE_front.png?width=120&height=76
+          - name: Back face of the card
+            id: BACK_CARD
+            url: /imageBack.jpg
+          specificAmounts:
+          - amounts:
+            - amount: 1000000
+              currency: MXN
+            name: Saldo actual
+            id: CURRENT_BALANCE
+          - amounts:
+            - amount: 0
+              currency: MXN
+            name: Saldo en tránsito
+            id: PENDING_CHARGE_BALANCE
+          - amounts:
+            - amount: 2000000
+              currency: MXN
+            name: Saldo disponible
+            id: AVAILABLE_BALANCE
+          physicalSupport:
+            name: Plástico normal
+            id: NORMAL_PLASTIC
+          activations:
+          - name: Activation for global card usage
+            id: ON_OFF
+            isActive: true
+          indicators:
+          - id: BLOCKABLE
+            isActive: true
+          rewards:
+          - name: Puntos bancomer
+            id: BANCOMER_POINTS
+            nonMonetaryValue: 8000
+          agreementContract: '4212789653392345'
+          expirationDate: '2019-06-09'
+        productType: CARD
+        status:
+          id: OPERATIVE
+        subProductType:
+          name: Tarjeta de crédito replacement 1
+          id: CREDIT_CARD
+      - number: '7555457083007953'
+        product:
+          name: Tarjeta de crédito replacement 1
+          description: error cards propose delivery card replacement
+          id: V1
+        numberType:
+          id: PAN
+        alias: error cards propose delivery card replacement
+        id: ab7953
+        simpleCode: ab7953
+        userAccessControl:
+        - canOperate: false
+        detail:
+          images:
+          - name: Front face of the card
+            id: FRONT_CARD
+            url: https://cardcovers-stage.caasbbva.com/peru/491947_VISA-CORPORATE_front.png?width=120&height=76
+          - name: Back face of the card
+            id: BACK_CARD
+            url: /imageBack.jpg
+          specificAmounts:
+          - amounts:
+            - amount: 1000000
+              currency: MXN
+            name: Saldo actual
+            id: CURRENT_BALANCE
+          - amounts:
+            - amount: 0
+              currency: MXN
+            name: Saldo en tránsito
+            id: PENDING_CHARGE_BALANCE
+          - amounts:
+            - amount: 2000000
+              currency: MXN
+            name: Saldo disponible
+            id: AVAILABLE_BALANCE
+          physicalSupport:
+            name: Plástico normal
+            id: NORMAL_PLASTIC
+          activations:
+          - name: Activation for global card usage
+            id: ON_OFF
+            isActive: true
+          indicators:
+          - id: BLOCKABLE
+            isActive: true
+          rewards:
+          - name: Puntos bancomer
+            id: BANCOMER_POINTS
+            nonMonetaryValue: 8000
+          agreementContract: '4212789653392345'
+          expirationDate: '2019-06-09'
+        productType: CARD
+        status:
+          id: OPERATIVE
+        subProductType:
+          name: Tarjeta de crédito replacement 1
+          id: CREDIT_CARD
+      - number: '7555457083007954'
+        product:
+          name: Tarjeta de debito replacement 1
+          description: replacement 1
+          id: V1
+        numberType:
+          id: PAN
+        alias: replacement 1
+        id: ab7954
+        simpleCode: ab7954
+        userAccessControl:
+        - canOperate: false
+        detail:
+          images:
+          - name: Front face of the card
+            id: FRONT_CARD
+            url: https://cardcovers-stage.caasbbva.com/peru/491947_VISA-CORPORATE_front.png?width=120&height=76
+          - name: Back face of the card
+            id: BACK_CARD
+            url: /imageBack.jpg
+          specificAmounts:
+          - amounts:
+            - amount: 1000000
+              currency: MXN
+            name: Saldo actual
+            id: CURRENT_BALANCE
+          - amounts:
+            - amount: 0
+              currency: MXN
+            name: Saldo en tránsito
+            id: PENDING_CHARGE_BALANCE
+          - amounts:
+            - amount: 2000000
+              currency: MXN
+            name: Saldo disponible
+            id: AVAILABLE_BALANCE
+          physicalSupport:
+            name: Plástico normal
+            id: NORMAL_PLASTIC
+          activations:
+          - name: Activation for global card usage
+            id: ON_OFF
+            isActive: true
+          indicators:
+          - id: BLOCKABLE
+            isActive: true
+          rewards:
+          - name: Puntos bancomer
+            id: BANCOMER_POINTS
+            nonMonetaryValue: 8000
+          agreementContract: '4212789653392345'
+          expirationDate: '2019-06-09'
+        productType: CARD
+        status:
+          id: OPERATIVE
+        subProductType:
+          name: Tarjeta de debito replacement 1
+          id: DEBIT_CARD
+      - number: '7555457083007955'
+        product:
+          name: Tarjeta de debito replacement 1
+          description: replacement debit 1
+          id: ''
+        numberType:
+          id: PAN
+        alias: replacement debit 1
+        id: cd7955
+        simpleCode: cd7955
+        userAccessControl:
+        - canOperate: false
+        detail:
+          images:
+          - name: Front face of the card
+            id: FRONT_CARD
+            url: https://cardcovers-stage.caasbbva.com/peru/491947_VISA-CORPORATE_front.png?width=120&height=76
+          - name: Back face of the card
+            id: BACK_CARD
+            url: /imageBack.jpg
+          specificAmounts:
+          - amounts:
+            - amount: 1000000
+              currency: MXN
+            name: Saldo actual
+            id: CURRENT_BALANCE
+          - amounts:
+            - amount: 0
+              currency: MXN
+            name: Saldo en tránsito
+            id: PENDING_CHARGE_BALANCE
+          - amounts:
+            - amount: 2000000
+              currency: MXN
+            name: Saldo disponible
+            id: AVAILABLE_BALANCE
+          physicalSupport:
+            name: Plástico normal
+            id: NORMAL_PLASTIC
+          activations:
+          - name: Activation for global card usage
+            id: ON_OFF
+            isActive: true
+          indicators:
+          - id: BLOCKABLE
+            isActive: true
+          rewards:
+          - name: Puntos bancomer
+            id: BANCOMER_POINTS
+            nonMonetaryValue: 8000
+          agreementContract: '4212789653392345'
+          expirationDate: '2019-06-09'
+        productType: CARD
+        status:
+          id: OPERATIVE
+        subProductType:
+          name: Tarjeta de debito replacement 1
+          id: DEBIT_CARD
+      - number: '7555457083007956'
+        product:
+          name: Tarjeta de debito replacement 2
+          description: replacement debit 2
+          id: V1
+        numberType:
+          id: PAN
+        alias: replacement debit 2
+        id: cd7956
+        simpleCode: cd7956
+        userAccessControl:
+        - canOperate: false
+        detail:
+          images:
+          - name: Front face of the card
+            id: FRONT_CARD
+            url: https://cardcovers-stage.caasbbva.com/peru/491947_VISA-CORPORATE_front.png?width=120&height=76
+          - name: Back face of the card
+            id: BACK_CARD
+            url: /imageBack.jpg
+          specificAmounts:
+          - amounts:
+            - amount: 1000000
+              currency: MXN
+            name: Saldo actual
+            id: CURRENT_BALANCE
+          - amounts:
+            - amount: 0
+              currency: MXN
+            name: Saldo en tránsito
+            id: PENDING_CHARGE_BALANCE
+          - amounts:
+            - amount: 2000000
+              currency: MXN
+            name: Saldo disponible
+            id: AVAILABLE_BALANCE
+          physicalSupport:
+            name: Plástico normal
+            id: NORMAL_PLASTIC
+          activations:
+          - name: Activation for global card usage
+            id: ON_OFF
+            isActive: true
+          rewards:
+          - name: Puntos bancomer
+            id: BANCOMER_POINTS
+            nonMonetaryValue: 8000
+          agreementContract: '4212789653392345'
+          expirationDate: '2019-06-09'
+        productType: CARD
+        status:
+          reason:
+            id: LOST
+          id: BLOCKED
+        subProductType:
+          name: Tarjeta de debito replacement 2
+          id: DEBIT_CARD
+      - number: '7555457083007957'
+        product:
+          name: Tarjeta de debito replacement 3
+          description: replacement debit 3
+          id: V1
+        numberType:
+          id: PAN
+        alias: replacement debit 3
+        id: cd7957
+        simpleCode: cd7957
+        userAccessControl:
+        - canOperate: false
+        detail:
+          images:
+          - name: Front face of the card
+            id: FRONT_CARD
+            url: https://cardcovers-stage.caasbbva.com/peru/491947_VISA-CORPORATE_front.png?width=120&height=76
+          - name: Back face of the card
+            id: BACK_CARD
+            url: /imageBack.jpg
+          specificAmounts:
+          - amounts:
+            - amount: 1000000
+              currency: MXN
+            name: Saldo actual
+            id: CURRENT_BALANCE
+          - amounts:
+            - amount: 0
+              currency: MXN
+            name: Saldo en tránsito
+            id: PENDING_CHARGE_BALANCE
+          - amounts:
+            - amount: 2000000
+              currency: MXN
+            name: Saldo disponible
+            id: AVAILABLE_BALANCE
+          physicalSupport:
+            name: Plástico normal
+            id: NORMAL_PLASTIC
+          activations:
+          - name: Activation for global card usage
+            id: ON_OFF
+            isActive: true
+          rewards:
+          - name: Puntos bancomer
+            id: BANCOMER_POINTS
+            nonMonetaryValue: 8000
+          agreementContract: '4212789653392345'
+          expirationDate: '2019-06-09'
+        productType: CARD
+        status:
+          reason:
+            id: STOLEN
+          id: BLOCKED
+        subProductType:
+          name: Tarjeta de debito replacement 3
+          id: DEBIT_CARD
+      - number: '7555457083007959'
+        product:
+          name: Tarjeta de debito replacement 4
+          description: replacement debit 4
+          id: V1
+        numberType:
+          id: PAN
+        alias: replacement debit 4
+        id: cd7959
+        simpleCode: cd7959
+        userAccessControl:
+        - canOperate: false
+        detail:
+          images:
+          - name: Front face of the card
+            id: FRONT_CARD
+            url: https://cardcovers-stage.caasbbva.com/peru/491947_VISA-CORPORATE_front.png?width=120&height=76
+          - name: Back face of the card
+            id: BACK_CARD
+            url: /imageBack.jpg
+          specificAmounts:
+          - amounts:
+            - amount: 1000000
+              currency: MXN
+            name: Saldo actual
+            id: CURRENT_BALANCE
+          - amounts:
+            - amount: 0
+              currency: MXN
+            name: Saldo en tránsito
+            id: PENDING_CHARGE_BALANCE
+          - amounts:
+            - amount: 2000000
+              currency: MXN
+            name: Saldo disponible
+            id: AVAILABLE_BALANCE
+          physicalSupport:
+            name: Plástico normal
+            id: NORMAL_PLASTIC
+          activations:
+          - name: Activation for global card usage
+            id: ON_OFF
+            isActive: true
+          indicators:
+          - id: BLOCKABLE
+            isActive: true
+          rewards:
+          - name: Puntos bancomer
+            id: BANCOMER_POINTS
+            nonMonetaryValue: 8000
+          agreementContract: '4212789653392345'
+          expirationDate: '2019-06-09'
+        productType: CARD
+        status:
+          reason:
+            id: EXPIRED
+          id: BLOCKED
+        subProductType:
+          name: Tarjeta de debito replacement 4
+          id: DEBIT_CARD
+      - number: '7555457083007960'
+        product:
+          name: Tarjeta de debito replacement not available balance
+          description: Tarjeta de debito replacement not available balance
+          id: V1
+        numberType:
+          id: PAN
+        alias: Tarjeta de debito replacement not available balance
+        id: cd7960
+        simpleCode: cd7960
+        userAccessControl:
+        - canOperate: false
+        detail:
+          images:
+          - name: Front face of the card
+            id: FRONT_CARD
+            url: https://cardcovers-stage.caasbbva.com/peru/491947_VISA-CORPORATE_front.png?width=120&height=76
+          - name: Back face of the card
+            id: BACK_CARD
+            url: /imageBack.jpg
+          specificAmounts:
+          - amounts:
+            - amount: 240
+              currency: MXN
+            name: Saldo actual
+            id: CURRENT_BALANCE
+          - amounts:
+            - amount: 120
+              currency: MXN
+            name: Saldo en tránsito
+            id: PENDING_CHARGE_BALANCE
+          - amounts:
+            - amount: 120
+              currency: MXN
+            name: Saldo disponible
+            id: AVAILABLE_BALANCE
+          physicalSupport:
+            name: Plástico normal
+            id: NORMAL_PLASTIC
+          activations:
+          - name: Activation for global card usage
+            id: ON_OFF
+            isActive: true
+          rewards:
+          - name: Puntos bancomer
+            id: BANCOMER_POINTS
+            nonMonetaryValue: 8000
+          agreementContract: '4212789653392345'
+          expirationDate: '2019-06-09'
+        productType: CARD
+        status:
+          reason:
+            id: LOST
+          id: BLOCKED
+        subProductType:
+          name: Tarjeta de debito replacement not available balance
+          id: DEBIT_CARD
+      - number: '4555457083077948'
+        product:
+          name: Crédito BBVA OPERATIVE
+          description: Tarjeta 7948 - CON ADICIONALES
+          id: V1
+        numberType:
+          id: PAN
+        alias: Tarjeta 7948 - CON ADICIONALES
+        id: ab7948
+        simpleCode: ab7948
+        userAccessControl:
+        - canOperate: false
+        detail:
+          images:
+          - name: Front face of the card
+            id: FRONT_CARD
+            url: https://cardcovers.caasbbva.com/mexico/477291-AC.png.imgcaas.w320.png
+          - name: Back face of the card
+            id: BACK_CARD
+            url: /imageBack.jpg
+          specificAmounts:
+          - amounts:
+            - amount: 1000000
+              currency: MXN
+            name: Saldo actual
+            id: CURRENT_BALANCE
+          - amounts:
+            - amount: 0
+              currency: MXN
+            name: Saldo en tránsito
+            id: PENDING_CHARGE_BALANCE
+          - amounts:
+            - amount: 2000000
+              currency: MXN
+            name: Saldo disponible
+            id: AVAILABLE_BALANCE
+          physicalSupport:
+            name: Plástico normal
+            id: NORMAL_PLASTIC
+          activations:
+          - name: Activation for global card usage
+            id: ON_OFF
+            isActive: true
+          indicators:
+          - name: The card can be associable to nfc.
+            id: ASSOCIABLE_TO_NFC
+            isActive: true
+          - name: Indica si la tarjeta cuenta con sticker asociado
+            id: ASSOCIABLE_TO_STICKER_CARDS
+            isActive: false
+          - name: The card can be related to virtual cards
+            id: ASSOCIABLE_TO_VIRTUAL_CARDS
+            isActive: true
+          - name: Bloquear tarjeta
+            id: BLOCKABLE
+            isActive: false
+          - name: Indica si la tarjeta puede modificar el nip de forma online por
+              una aplicación
+            id: BLOCKABLE_NIP
+            isActive: false
+          - name: Indica si los datos de seguridad de la tarjeta pueden ser leídos.
+            id: SECURITY_DATA_READ
+            isActive: true
+          - name: Indica si el CVV2 es dinámico
+            id: DINAMIC_CVV
+            isActive: false
+          - name: Indica si la tarjeta puede tener tarjetas asociadas
+            id: ASSOCIABLE_TO_ADDITIONAL_CARDS
+            isActive: true
+          rewards:
+          - name: Puntos bancomer
+            id: BANCOMER_POINTS
+            nonMonetaryValue: 8000
+          agreementContract: '234703'
+          expirationDate: '2022-03-01'
+        productType: CARD
+        status:
+          name: Operative card
+          id: OPERATIVE
+        subProductType:
+          name: Tarjeta de crédito
+          id: CREDIT_CARD
+      - number: '4555457083077949'
+        product:
+          name: Tarjeta de crédito replacement additional 1
+          description: Replacement additional 1
+          id: V1
+        numberType:
+          id: PAN
+        alias: Replacement additional 1
+        id: ab7949
+        simpleCode: ab7949
+        userAccessControl:
+        - canOperate: false
+        detail:
+          images:
+          - name: Front face of the card
+            id: FRONT_CARD
+            url: https://cardcovers.caasbbva.com/mexico/477291-AC.png.imgcaas.w320.png
+          - name: Back face of the card
+            id: BACK_CARD
+            url: /imageBack.jpg
+          specificAmounts:
+          - amounts:
+            - amount: 1000000
+              currency: MXN
+            name: Saldo actual
+            id: CURRENT_BALANCE
+          - amounts:
+            - amount: 0
+              currency: MXN
+            name: Saldo en tránsito
+            id: PENDING_CHARGE_BALANCE
+          - amounts:
+            - amount: 2000000
+              currency: MXN
+            name: Saldo disponible
+            id: AVAILABLE_BALANCE
+          physicalSupport:
+            name: Plástico normal
+            id: NORMAL_PLASTIC
+          activations:
+          - name: Activation for global card usage
+            id: ON_OFF
+            isActive: true
+          indicators:
+          - name: The card can be associable to nfc.
+            id: ASSOCIABLE_TO_NFC
+            isActive: true
+          - name: Indica si la tarjeta cuenta con sticker asociado
+            id: ASSOCIABLE_TO_STICKER_CARDS
+            isActive: false
+          - name: The card can be related to virtual cards
+            id: ASSOCIABLE_TO_VIRTUAL_CARDS
+            isActive: true
+          - name: Bloquear tarjeta
+            id: BLOCKABLE
+            isActive: false
+          - name: Indica si la tarjeta puede modificar el nip de forma online por
+              una aplicación
+            id: BLOCKABLE_NIP
+            isActive: false
+          - name: Indica si los datos de seguridad de la tarjeta pueden ser leídos.
+            id: SECURITY_DATA_READ
+            isActive: true
+          - name: Indica si el CVV2 es dinámico
+            id: DINAMIC_CVV
+            isActive: false
+          - name: IS_ADDITIONAL
+            id: IS_ADDITIONAL
+            isActive: true
+          - id: BLOCKABLE
+            isActive: true
+          rewards:
+          - name: Puntos bancomer
+            id: BANCOMER_POINTS
+            nonMonetaryValue: 8000
+          agreementContract: '234703'
+          expirationDate: '2022-03-01'
+        productType: CARD
+        status:
+          name: Operative card
+          id: OPERATIVE
+        subProductType:
+          name: Tarjeta de crédito replacement additional 1
+          id: CREDIT_CARD
+      - number: '4555457083077950'
+        product:
+          name: Tarjeta de crédito replacement additional 2
+          description: Replacement additional 2
+          id: V1
+        numberType:
+          id: PAN
+        alias: Replacement additional 2
+        id: ab7950
+        simpleCode: ab7950
+        userAccessControl:
+        - canOperate: false
+        detail:
+          images:
+          - name: Front face of the card
+            id: FRONT_CARD
+            url: https://cardcovers.caasbbva.com/mexico/477291-AC.png.imgcaas.w320.png
+          - name: Back face of the card
+            id: BACK_CARD
+            url: /imageBack.jpg
+          specificAmounts:
+          - amounts:
+            - amount: 1000000
+              currency: MXN
+            name: Saldo actual
+            id: CURRENT_BALANCE
+          - amounts:
+            - amount: 0
+              currency: MXN
+            name: Saldo en tránsito
+            id: PENDING_CHARGE_BALANCE
+          - amounts:
+            - amount: 2000000
+              currency: MXN
+            name: Saldo disponible
+            id: AVAILABLE_BALANCE
+          physicalSupport:
+            name: Plástico normal
+            id: NORMAL_PLASTIC
+          activations:
+          - name: Activation for global card usage
+            id: ON_OFF
+            isActive: false
+          indicators:
+          - name: IS_ADDITIONAL
+            id: IS_ADDITIONAL
+            isActive: true
+          rewards:
+          - name: Puntos bancomer
+            id: BANCOMER_POINTS
+            nonMonetaryValue: 8000
+          agreementContract: '234703'
+          expirationDate: '2022-03-01'
+        productType: CARD
+        status:
+          reason:
+            id: LOST
+          name: Operative card
+          id: BLOCKED
+        subProductType:
+          name: Tarjeta de crédito replacement additional 2
+          id: CREDIT_CARD
+      - number: '4555457083077958'
+        product:
+          name: Tarjeta de crédito replacement additional 3
+          description: Replacement additional 3
+          id: V1
+        numberType:
+          id: PAN
+        alias: Replacement additional 3
+        id: ab7958
+        simpleCode: ab7958
+        userAccessControl:
+        - canOperate: false
+        detail:
+          images:
+          - name: Front face of the card
+            id: FRONT_CARD
+            url: https://cardcovers.caasbbva.com/mexico/477291-AC.png.imgcaas.w320.png
+          - name: Back face of the card
+            id: BACK_CARD
+            url: /imageBack.jpg
+          specificAmounts:
+          - amounts:
+            - amount: 1000000
+              currency: MXN
+            name: Saldo actual
+            id: CURRENT_BALANCE
+          - amounts:
+            - amount: 0
+              currency: MXN
+            name: Saldo en tránsito
+            id: PENDING_CHARGE_BALANCE
+          - amounts:
+            - amount: 2000000
+              currency: MXN
+            name: Saldo disponible
+            id: AVAILABLE_BALANCE
+          physicalSupport:
+            name: Plástico normal
+            id: NORMAL_PLASTIC
+          activations:
+          - name: Activation for global card usage
+            id: ON_OFF
+            isActive: false
+          indicators:
+          - name: IS_ADDITIONAL
+            id: IS_ADDITIONAL
+            isActive: true
+          rewards:
+          - name: Puntos bancomer
+            id: BANCOMER_POINTS
+            nonMonetaryValue: 8000
+          agreementContract: '234703'
+          expirationDate: '2022-03-01'
+        productType: CARD
+        status:
+          reason:
+            id: STOLEN
+          name: Operative card
+          id: BLOCKED
+        subProductType:
+          name: Tarjeta de crédito replacement additional 3
+          id: CREDIT_CARD
+    :headers:
+      access-control-allow-origin: '*'
+      content-length: '73899'
+      Access-Control-Expose-Headers: tsec, vnd.bbva.access-token-type,vnd.bbva.access-token,
+        vnd.bbva.sso-pkcs7, authenticationtype, authenticationdata, authenticationstate,
+        authenticationchallenge
+      Server: artichoke
+      access-control-allow-headers: Content-Type, tsec, authenticationtype, authenticationdata,
+        authenticationstate, contactid, consumeruuid, consumerapplicationid, perimetertsec,
+        authorization, responsewarningcode, responsewarningdescription, cuf, field,
+        bcs-device-app-version, bcs-device-app-version, vnd.bbva.authorization, device-id,
+        Bcs-Device-Os-Name, bcs-device-app-name, bcs-device-dpi, BCS-Device-Id
+      Connection: keep-alive
+      content-type: application/json;charset=UTF-8
+      Vary: Accept-Encoding
+      tsec: 0aa0fbf0c5343602b8bf8ac1fde696c27af8ed1e
+      X-Response-Time: 68ms
+      Date: Wed, 15 Oct 2025 13:27:17 GMT
+    :status: 200 OK
+    apiInfo:
+      name: financial-overview
+      category: people
+      version: 0.7.0

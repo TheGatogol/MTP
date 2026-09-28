@@ -1,0 +1,40 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: operationals,credit_card
+    lock: 'false'
+then:
+- return:
+    :body:
+    - data:
+        locale: es_mx
+        tags:
+        - assistance_center
+        - operationals
+        - credit_card
+        - '4251249160'
+        authentication:
+          password: Glomo2025
+          user: '4251249160'
+          deviceId: B84ED5A10638BD91DDB4646888D23433
+      id: 36151967
+    :headers:
+      Server: nginx
+      Cache-Control: max-age=0
+      Connection: keep-alive
+      host: datamanager.globaldevtools.bbva.com
+      Expires: Sat, 15 Aug 2026 00:11:37 GMT
+      Content-Length: '222'
+      Date: Sat, 15 Aug 2026 00:11:37 GMT
+      Content-Type: application/json; charset=utf-8
+    :status: 200 OK

@@ -1,0 +1,39 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: 980eff7e-fee1-4f5c-80ff-74f79633154e
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: msd_cumulus
+then:
+- return:
+    :body:
+    - data:
+        locale: es_mx
+        tags:
+        - '5534320386'
+        - msd_cumulus
+        authentication:
+          password: Glomo2022
+          user: '5534320386'
+          deviceId: 21FFA30F58B325B2BADFDE1BA28937E5
+      lockExpiration: null
+      lockType: null
+      id: 3506791
+    :headers:
+      Strict-Transport-Security: max-age=15768000
+      Server: nginx
+      ECS-Entry-Point-Zone: ext
+      Connection: keep-alive
+      Content-Length: '235'
+      Date: Mon, 16 Jan 2023 20:53:14 GMT
+      Content-Type: application/json
+    :status: 200 OK

@@ -1,0 +1,37 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: 8db6faf6-7f22-433a-a77c-af154a05cdfa
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: televia_with_tags
+then:
+- return:
+    :body:
+    - data:
+        tags:
+        - televia_with_tags
+        authentication:
+          password: glomo2022
+          user: '5569631677'
+          deviceId: 962104F64C428F940A251BBD076BF592
+      lockType: null
+      lockExpiration: null
+      id: 3492460
+    :headers:
+      Strict-Transport-Security: max-age=15768000
+      Server: nginx
+      ECS-Entry-Point-Zone: ext
+      Connection: keep-alive
+      Content-Length: '208'
+      Date: Tue, 15 Nov 2022 23:49:35 GMT
+      Content-Type: application/json
+    :status: 200 OK

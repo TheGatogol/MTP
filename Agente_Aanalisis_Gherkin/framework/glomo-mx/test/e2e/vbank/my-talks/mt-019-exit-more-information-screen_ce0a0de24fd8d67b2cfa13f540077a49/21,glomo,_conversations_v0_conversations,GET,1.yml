@@ -1,0 +1,775 @@
+when:
+  sequence: 1
+  path: /SRVS_A02/conversations/v0/conversations
+  method: GET
+  backend: glomo
+request:
+  headers:
+    sec-fetch-mode: cors
+    content-length: '0'
+    referer: http://localhost:8001/
+    sec-fetch-site: same-site
+    accept-language: es-MX,es;q=0.9
+    origin: http://localhost:8001
+    tsec: ZXlKaFlYQWlPaUl4TURBd01ERTROeUlzSW10bGVWWmxjbk5wYjI0aU9qRXNJbUZ3Y0Vsa0lqb2lRVkJRTVNJc0ltdHBaQ0k2SWtGUVVERXViRzlqWVd3dU1TSXNJbVZ1WXlJNklrRXhPVEpIUTAwaUxDSnJaWGxVZVhCbElqb2liRzlqWVd3aUxDSmhiR2NpT2lKa2FYSWlMQ0owYzJWalNXUWlPaUk1TkdFeU9EQTBNUzA1WVRObUxUUmpORGN0T0dNd1l5MDFOalV3TXpGa05XWXlPVEFpZlEuLlphSU9HVDBoVzJDQjM3S1guVkVpbXotU0hRWDNiaXI0ODBxT1huZERhVm5kTF9aWHlUYkVzbXJJZnZBWnF3M0ZvbGpIbFY0RXduYlhIVEZ4bmlwUGljdjJnbG9wZ2pIcU44OWhWWHdNZkx4RlpoQzk1M3NsaUdteURQMW56dUxndHVtMklhb1dYUExwN1Z0Q2VHbklqUFRQcnE5cE5KdkNTQXNlQS1QcG16SEpwMTlIdWZHeWhXYURrbXI5M2RHV3g0dFBOZlFTajJ5UldVTHM3NEM2eWQ5UFhkdHQteXVNSWJTdEZQNTUxYzhaOHR6Sk8wT1ZyaTNfU0dMNmF6VFB6c2ozS096ZHhoN0VhMUNWdjNIeFlEb081Z0N1NWFsWGVSdWtoTDA4a2g0bFA4dVRqeWJqMjJxU3BDel8wMk9OT2ZyUHJXdjBxSHZCZndsZ0tXaUpHV01BUHN1SjVqSnd0YlRIVHJUay1wRXV3Zi1VVmZrQUNGaTJQSkxPeU1xRjJvR052azdOc3ZNSkxJd0V2LWZSemhZOV9ZWXlfZ1c1XzhlenN5SkNUbXNyY3lieDA1eFlyazRYamQyTDZWQWtLMVNkSzlmTUgwYTNRSTRYVjJGZkpuMGR2N2Z1SFQ0VzVmWUVNbzh5UTQ0T0ZMTGVOaGpQZlQzaWNFNUZYeGVGalVmSTduMUNzTFNJWTZlbmtrcDkzS3l6Z2lUTDhEalpQTzRNeTRQVzFId05ZcllpRlc1c0VnQ1I4XzVGRDVNR250cFZKTk0xbllOb1J2eU9UM0lTTFBlcGZaZ3B6M2JXc1F5NmZDbkx2RzFTOVIxNGthMjNHRlVpMFJVVDdlYXY5NXl5WkxhbmFGeUhzekU0Z3BSWTVIYTJWTE9XMTJNaVlPbTg5MFAtQmVBNlQzT2NBRV9YVDdQVFhaNFI5Tk5LNVdZZno2TE8zZjFnc1h4ZExEN042a2xFSVFyM1VyT0p6TFUtV2lOZVlaZlQ5VXVFbHg1bzBLMDNNQnNEU2J4LXFLU1AteXRXblVQLVdyU2VuUkxOMXR0M0ZON2JQRzhiWFlMYXkzck5GZ3hZLXg2QWVpeEZtc29LZHk5OUZZRzFBWG1zYm1uQkR5T0RMSTVlc2FtUXR1d1E1Z3JsUnhYOEJSclZPbFE5RTE4c29wcjVBWHdqY3l2aExWVHhRNGt4cFBSLWNtcmROVE82bnBQdUd0cXppUXkyY3k5ZzJTT0JVT1gyeWRSc0pEM0x0VWpYUDlGa1lDcmw3NGdqTFZza01KcmlxY3FDaTdtMHVxZVpUYU9pZ1g4R3ZRZG5jblRvRlhRYkpKYl9WeFF0eWVVTVpmOU5DSEl6WjUtZHRCbHVWRHQ1NVhCdmxJTXdKbVVyd2VZd1hLelpQUi1tcnotNFlKMlY5VFJJTTBDT2dOVHFMeUtsNHU3LXpzREFoRWdoNnVRU1h5UmR4MXdkSVRJZS1ONnJtREFFVFJ6SmNuSGpwNF9KNTFqY3k1Wlp0T1IwV0JyNHRjSmtRckxScTIzOGlMLWoxV1hDZEtaQlZiWVN6NUtIQkRMbWVLOC1CTmdwV0RfSHJTcVkxR21Zd0phZXRpc2xJNVdvZUFWRzdXaG1TY2RCV2JBRUQ5TmMteC1oTWRTZFo4STBqakFpMlhPZHRjRzRhVFJmUmVFLUxIN1RoMkJtb3hFWHpoQzUxWHd4YlBvZGpZZGNUNDlwQldJWUo3WWlIRUNsWkZfd2h5ZlQzVWozSWlSNzB3aUpWdUl2b2xSODE4N3JlOGlfeExSbUc3STJlMGVXZkJtbXBHU0pKbUFheHl0MG1DVGFrZF9ONGh1NWtCSGhfTkxFdlE0bFkyYVVTeEttUVRzLWJJNUtROXpTLUhzRjZfVjlWb3prblhRWjBQY2pIRmxkTXZCVzl6MHdUSGpYbDF5Y3MwbVpvLW1XTnJ1NDlLOW1FOFBKRnJpSzRFWTRORnhvU1I5OUZlZkVCME1Jc1ZaNmtocS1sR08yYmsycWktZHN4c2owXzZWcGRQS0VHc2VCdEt1Z2p1b2pVXzUzMm1nWV9PeXpjLS1fRXRUUTZWaGpxQW80YlZ0NEN1d1Jud3E0dXFOWGV2MGZXRjdMOTFYLWJBdXJqN3hjVHBzdWNXWjlxU3BSS1VJcjZ4YlFQdDExbDhWWEo3b0VMQzNmNWpFTDFtN1ZYVzZ6YUxoZ09ZczBSb3J4VUI4a2Rza3hiY0xySTBKLTFUZmh0SXQxa1h4c0hyMWtjLWh6MXhfN1lfWVZoUks5TXdZeEt2RXJjSTBKdktGa2FIWVg1bnVNUjlnNC5hS0t2YjduVWhKZ0pPQjAxcGZubXlR
+    accept: application/json, text/html, */*; q=0.1
+    sec-ch-ua: '"Google Chrome";v="113", "Chromium";v="113", "Not-A.Brand";v="24"'
+    sec-ch-ua-mobile: ?0
+    x-vbank-session: c7f0e830-81f0-4b47-a251-7b40adf286f5
+    sec-ch-ua-platform: '"Linux"'
+    host: localhost:9000
+    content-type: application/json
+    connection: keep-alive
+    cache-control: no-cache, no-store, must-revalidate
+    accept-encoding: gzip, deflate, br
+    sec-fetch-dest: empty
+    user-agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko)
+      Chrome/113.0.0.0 Safari/537.36
+  query:
+    receiver.id: FJ8K7riUxhg
+    pageSize: '100'
+    paginationKey: '1'
+then:
+- return:
+    pagination:
+      totalPages: 1
+      pageSize: 100
+      links:
+        last: /conversations/v0/conversations?receiver.id=FJ8K7riUxhg&paginationKey=0
+        previous: /conversations/v0/conversations?receiver.id=FJ8K7riUxhg&paginationKey=0&pageSize=100
+        first: /conversations/v0/conversations?receiver.id=FJ8K7riUxhg
+      totalElements: 52
+    data:
+    - businessAgent:
+        id: FJ8K7riUxhg
+      unreadMessages: 0
+      updateConversationContext: 'Lorem ipsum dolor sit amet consectetur adipiscing '
+      subject: titulo de prueba
+      isSolved: false
+      lastUpdate: 2023-05-24T13:28:20.000-0600
+      isDraft: false
+      id: '15123'
+      creationDate: 2023-05-22T13:29:07.000-0600
+      hasAttachments: false
+      customer:
+        id: r3cc5VSba3adugK-5Xiu4g
+    - businessAgent:
+        id: FJ8K7riUxhg
+      unreadMessages: 0
+      updateConversationContext: 'Lorem ipsum dolor sit amet consectetur adipiscing '
+      subject: titulo de prueba
+      isSolved: false
+      lastUpdate: 2023-05-24T13:17:57.000-0600
+      isDraft: false
+      id: '15149'
+      creationDate: 2023-05-24T13:17:01.000-0600
+      hasAttachments: false
+      customer:
+        id: r3cc5VSba3adugK-5Xiu4g
+    - businessAgent:
+        id: FJ8K7riUxhg
+      unreadMessages: 0
+      updateConversationContext: titulo de prueba
+      subject: titulo de prueba
+      isSolved: false
+      lastUpdate: 2023-05-22T13:38:12.000-0600
+      isDraft: false
+      id: '15124'
+      creationDate: 2023-05-22T13:38:12.000-0600
+      hasAttachments: false
+      customer:
+        id: r3cc5VSba3adugK-5Xiu4g
+    - businessAgent:
+        id: FJ8K7riUxhg
+      unreadMessages: 0
+      updateConversationContext: Buenas tardes prueba 2
+      subject: pruebaMarco2
+      isSolved: false
+      lastUpdate: 2023-05-12T13:56:48.000-0600
+      isDraft: false
+      id: '14625'
+      creationDate: 2023-05-12T13:56:01.000-0600
+      hasAttachments: false
+      customer:
+        id: r3cc5VSba3adugK-5Xiu4g
+    - businessAgent:
+        id: FJ8K7riUxhg
+      unreadMessages: 0
+      updateConversationContext: Buenas tardes me gustaría iniciar una operación bu
+      subject: pruebaMarco
+      isSolved: false
+      lastUpdate: 2023-05-12T13:33:02.000-0600
+      isDraft: false
+      id: '14624'
+      creationDate: 2023-05-12T13:32:38.000-0600
+      hasAttachments: false
+      customer:
+        id: r3cc5VSba3adugK-5Xiu4g
+    - businessAgent:
+        id: FJ8K7riUxhg
+      unreadMessages: 0
+      updateConversationContext: Mensaje para actualizar
+      subject: Nueva conversacion 04.10.22
+      isSolved: false
+      lastUpdate: 2023-04-27T13:07:29.000-0600
+      isDraft: false
+      id: '14115'
+      creationDate: 2023-04-27T13:06:34.000-0600
+      hasAttachments: false
+      customer:
+        id: r3cc5VSba3adugK-5Xiu4g
+    - businessAgent:
+        id: FJ8K7riUxhg
+      unreadMessages: 0
+      updateConversationContext: Prueba foto
+      subject: Seguros
+      isSolved: false
+      lastUpdate: 2023-04-27T11:52:43.000-0600
+      isDraft: false
+      id: '14204'
+      creationDate: 2023-04-27T11:28:42.000-0600
+      hasAttachments: true
+      customer:
+        id: r3cc5VSba3adugK-5Xiu4g
+    - businessAgent:
+        id: FJ8K7riUxhg
+      unreadMessages: 0
+      updateConversationContext: Prueba 5 foto
+      subject: Fideicomiso
+      isSolved: false
+      lastUpdate: 2023-04-26T16:45:14.000-0600
+      isDraft: false
+      id: '14109'
+      creationDate: 2023-04-26T16:42:32.000-0600
+      hasAttachments: true
+      customer:
+        id: r3cc5VSba3adugK-5Xiu4g
+    - businessAgent:
+        id: FJ8K7riUxhg
+      unreadMessages: 0
+      updateConversationContext: Hola
+      subject: prueba
+      isSolved: false
+      lastUpdate: 2023-04-18T11:51:29.000-0600
+      isDraft: false
+      id: '13717'
+      creationDate: 2023-04-18T11:51:24.000-0600
+      hasAttachments: false
+      customer:
+        id: r3cc5VSba3adugK-5Xiu4g
+    - businessAgent:
+        id: FJ8K7riUxhg
+      unreadMessages: 0
+      updateConversationContext: 'Prueba imagen '
+      subject: Prueba de mis conversaciones
+      isSolved: false
+      lastUpdate: 2023-04-13T10:24:01.000-0600
+      isDraft: false
+      id: '13510'
+      creationDate: 2023-04-12T20:21:00.000-0600
+      hasAttachments: true
+      customer:
+        id: r3cc5VSba3adugK-5Xiu4g
+    - businessAgent:
+        id: FJ8K7riUxhg
+      unreadMessages: 0
+      updateConversationContext: Prueba segundo mensaje
+      subject: Prueba de conversación
+      isSolved: false
+      lastUpdate: 2023-04-11T14:53:39.000-0600
+      isDraft: false
+      id: '13509'
+      creationDate: 2023-04-11T14:49:37.000-0600
+      hasAttachments: true
+      customer:
+        id: r3cc5VSba3adugK-5Xiu4g
+    - businessAgent:
+        id: FJ8K7riUxhg
+      unreadMessages: 0
+      updateConversationContext: ewdssdgdfgre
+      subject: Seguros
+      isSolved: false
+      lastUpdate: 2023-03-13T09:52:47.000-0600
+      isDraft: true
+      id: '12228'
+      creationDate: 2023-03-09T17:46:29.000-0600
+      hasAttachments: true
+      customer:
+        id: r3cc5VSba3adugK-5Xiu4g
+    - businessAgent:
+        id: FJ8K7riUxhg
+      unreadMessages: 0
+      updateConversationContext: 'Prueba de imagen '
+      subject: Seguro
+      isSolved: false
+      lastUpdate: 2023-03-08T16:35:25.000-0600
+      isDraft: false
+      id: '12224'
+      creationDate: 2023-03-08T16:33:21.000-0600
+      hasAttachments: false
+      customer:
+        id: r3cc5VSba3adugK-5Xiu4g
+    - businessAgent:
+        id: FJ8K7riUxhg
+      unreadMessages: 0
+      updateConversationContext: Prueba de foto
+      subject: 'Crédito '
+      isSolved: false
+      lastUpdate: 2023-03-07T15:50:32.000-0600
+      isDraft: false
+      id: '12108'
+      creationDate: 2023-03-07T12:55:57.000-0600
+      hasAttachments: true
+      customer:
+        id: r3cc5VSba3adugK-5Xiu4g
+    - businessAgent:
+        id: FJ8K7riUxhg
+      unreadMessages: 0
+      updateConversationContext: uuuu
+      subject: 'Fideicomisos '
+      isSolved: false
+      lastUpdate: 2023-02-28T17:40:20.000-0600
+      isDraft: false
+      id: '11704'
+      creationDate: 2023-02-20T17:03:09.000-0600
+      hasAttachments: true
+      customer:
+        id: r3cc5VSba3adugK-5Xiu4g
+    - businessAgent:
+        id: FJ8K7riUxhg
+      unreadMessages: 0
+      updateConversationContext: Prueba de foto
+      subject: Seguros
+      isSolved: false
+      lastUpdate: 2023-02-20T15:50:14.000-0600
+      isDraft: false
+      id: '11703'
+      creationDate: 2023-02-20T15:05:51.000-0600
+      hasAttachments: true
+      customer:
+        id: r3cc5VSba3adugK-5Xiu4g
+    - businessAgent:
+        id: FJ8K7riUxhg
+      unreadMessages: 0
+      updateConversationContext: 'Hola '
+      subject: titulo de prueba
+      isSolved: false
+      lastUpdate: 2023-02-16T17:49:10.000-0600
+      isDraft: false
+      id: '11527'
+      creationDate: 2023-02-15T10:28:46.000-0600
+      hasAttachments: false
+      customer:
+        id: r3cc5VSba3adugK-5Xiu4g
+    - businessAgent:
+        id: FJ8K7riUxhg
+      unreadMessages: 0
+      updateConversationContext: titulo de prueba
+      subject: titulo de prueba
+      isSolved: false
+      lastUpdate: 2023-02-16T13:13:02.000-0600
+      isDraft: false
+      id: '11544'
+      creationDate: 2023-02-16T13:13:02.000-0600
+      hasAttachments: false
+      customer:
+        id: r3cc5VSba3adugK-5Xiu4g
+    - businessAgent:
+        id: FJ8K7riUxhg
+      unreadMessages: 0
+      updateConversationContext: 'Lorem ipsum dolor sit amet consectetur adipiscing '
+      subject: titulo de prueba
+      isSolved: false
+      lastUpdate: 2023-02-16T13:13:02.000-0600
+      isDraft: false
+      id: '11379'
+      creationDate: 2023-02-16T13:13:02.000-0600
+      hasAttachments: false
+      customer:
+        id: r3cc5VSba3adugK-5Xiu4g
+    - businessAgent:
+        id: FJ8K7riUxhg
+      unreadMessages: 0
+      updateConversationContext: 'Lorem ipsum dolor sit amet consectetur adipiscing '
+      subject: titulo de prueba
+      isSolved: false
+      lastUpdate: 2023-02-15T16:29:00.000-0600
+      isDraft: false
+      id: '11354'
+      creationDate: 2023-02-15T11:54:41.000-0600
+      hasAttachments: false
+      customer:
+        id: r3cc5VSba3adugK-5Xiu4g
+    - businessAgent:
+        id: FJ8K7riUxhg
+      unreadMessages: 0
+      updateConversationContext: titulo de prueba
+      subject: titulo de prueba
+      isSolved: false
+      lastUpdate: 2023-02-15T11:54:40.000-0600
+      isDraft: false
+      id: '11353'
+      creationDate: 2023-02-15T11:54:40.000-0600
+      hasAttachments: false
+      customer:
+        id: r3cc5VSba3adugK-5Xiu4g
+    - businessAgent:
+        id: FJ8K7riUxhg
+      unreadMessages: 0
+      updateConversationContext: 'Lorem ipsum dolor sit amet consectetur adipiscing '
+      subject: titulo de prueba
+      isSolved: false
+      lastUpdate: 2023-02-15T11:52:54.000-0600
+      isDraft: false
+      id: '11352'
+      creationDate: 2023-02-15T11:52:54.000-0600
+      hasAttachments: false
+      customer:
+        id: r3cc5VSba3adugK-5Xiu4g
+    - businessAgent:
+        id: FJ8K7riUxhg
+      unreadMessages: 0
+      updateConversationContext: titulo de prueba
+      subject: titulo de prueba
+      isSolved: false
+      lastUpdate: 2023-02-15T11:52:53.000-0600
+      isDraft: false
+      id: '11351'
+      creationDate: 2023-02-15T11:52:53.000-0600
+      hasAttachments: false
+      customer:
+        id: r3cc5VSba3adugK-5Xiu4g
+    - businessAgent:
+        id: FJ8K7riUxhg
+      unreadMessages: 0
+      updateConversationContext: titulo de prueba
+      subject: titulo de prueba
+      isSolved: false
+      lastUpdate: 2023-02-15T11:51:32.000-0600
+      isDraft: false
+      id: '11349'
+      creationDate: 2023-02-15T11:51:32.000-0600
+      hasAttachments: false
+      customer:
+        id: r3cc5VSba3adugK-5Xiu4g
+    - businessAgent:
+        id: FJ8K7riUxhg
+      unreadMessages: 0
+      updateConversationContext: 'Lorem ipsum dolor sit amet consectetur adipiscing '
+      subject: titulo de prueba
+      isSolved: false
+      lastUpdate: 2023-02-15T11:51:32.000-0600
+      isDraft: false
+      id: '11350'
+      creationDate: 2023-02-15T11:51:32.000-0600
+      hasAttachments: false
+      customer:
+        id: r3cc5VSba3adugK-5Xiu4g
+    - businessAgent:
+        id: FJ8K7riUxhg
+      unreadMessages: 0
+      updateConversationContext: 'Lorem ipsum dolor sit amet consectetur adipiscing '
+      subject: titulo de prueba
+      isSolved: false
+      lastUpdate: 2023-02-15T11:45:58.000-0600
+      isDraft: false
+      id: '11348'
+      creationDate: 2023-02-15T11:45:58.000-0600
+      hasAttachments: false
+      customer:
+        id: r3cc5VSba3adugK-5Xiu4g
+    - businessAgent:
+        id: FJ8K7riUxhg
+      unreadMessages: 0
+      updateConversationContext: titulo de prueba
+      subject: titulo de prueba
+      isSolved: false
+      lastUpdate: 2023-02-15T11:45:57.000-0600
+      isDraft: false
+      id: '11347'
+      creationDate: 2023-02-15T11:45:57.000-0600
+      hasAttachments: false
+      customer:
+        id: r3cc5VSba3adugK-5Xiu4g
+    - businessAgent:
+        id: FJ8K7riUxhg
+      unreadMessages: 0
+      updateConversationContext: titulo de prueba
+      subject: titulo de prueba
+      isSolved: false
+      lastUpdate: 2023-02-15T10:50:01.000-0600
+      isDraft: false
+      id: '11536'
+      creationDate: 2023-02-15T10:50:01.000-0600
+      hasAttachments: false
+      customer:
+        id: r3cc5VSba3adugK-5Xiu4g
+    - businessAgent:
+        id: FJ8K7riUxhg
+      unreadMessages: 0
+      updateConversationContext: 'Lorem ipsum dolor sit amet consectetur adipiscing '
+      subject: titulo de prueba
+      isSolved: false
+      lastUpdate: 2023-02-15T10:50:01.000-0600
+      isDraft: false
+      id: '11346'
+      creationDate: 2023-02-15T10:50:01.000-0600
+      hasAttachments: false
+      customer:
+        id: r3cc5VSba3adugK-5Xiu4g
+    - businessAgent:
+        id: FJ8K7riUxhg
+      unreadMessages: 0
+      updateConversationContext: titulo de prueba
+      subject: titulo de prueba
+      isSolved: false
+      lastUpdate: 2023-02-15T10:48:37.000-0600
+      isDraft: false
+      id: '11535'
+      creationDate: 2023-02-15T10:48:37.000-0600
+      hasAttachments: false
+      customer:
+        id: r3cc5VSba3adugK-5Xiu4g
+    - businessAgent:
+        id: FJ8K7riUxhg
+      unreadMessages: 0
+      updateConversationContext: 'Lorem ipsum dolor sit amet consectetur adipiscing '
+      subject: titulo de prueba
+      isSolved: false
+      lastUpdate: 2023-02-15T10:48:37.000-0600
+      isDraft: false
+      id: '11345'
+      creationDate: 2023-02-15T10:48:37.000-0600
+      hasAttachments: false
+      customer:
+        id: r3cc5VSba3adugK-5Xiu4g
+    - businessAgent:
+        id: FJ8K7riUxhg
+      unreadMessages: 0
+      updateConversationContext: titulo de prueba
+      subject: titulo de prueba
+      isSolved: false
+      lastUpdate: 2023-02-15T10:42:17.000-0600
+      isDraft: false
+      id: '11344'
+      creationDate: 2023-02-15T10:42:17.000-0600
+      hasAttachments: false
+      customer:
+        id: r3cc5VSba3adugK-5Xiu4g
+    - businessAgent:
+        id: FJ8K7riUxhg
+      unreadMessages: 0
+      updateConversationContext: 'Lorem ipsum dolor sit amet consectetur adipiscing '
+      subject: titulo de prueba
+      isSolved: false
+      lastUpdate: 2023-02-15T10:42:17.000-0600
+      isDraft: false
+      id: '11534'
+      creationDate: 2023-02-15T10:42:17.000-0600
+      hasAttachments: false
+      customer:
+        id: r3cc5VSba3adugK-5Xiu4g
+    - businessAgent:
+        id: FJ8K7riUxhg
+      unreadMessages: 0
+      updateConversationContext: 'Lorem ipsum dolor sit amet consectetur adipiscing '
+      subject: titulo de prueba
+      isSolved: false
+      lastUpdate: 2023-02-15T10:41:30.000-0600
+      isDraft: false
+      id: '11343'
+      creationDate: 2023-02-15T10:41:30.000-0600
+      hasAttachments: false
+      customer:
+        id: r3cc5VSba3adugK-5Xiu4g
+    - businessAgent:
+        id: FJ8K7riUxhg
+      unreadMessages: 0
+      updateConversationContext: titulo de prueba
+      subject: titulo de prueba
+      isSolved: false
+      lastUpdate: 2023-02-15T10:41:29.000-0600
+      isDraft: false
+      id: '11533'
+      creationDate: 2023-02-15T10:41:29.000-0600
+      hasAttachments: false
+      customer:
+        id: r3cc5VSba3adugK-5Xiu4g
+    - businessAgent:
+        id: FJ8K7riUxhg
+      unreadMessages: 0
+      updateConversationContext: titulo de prueba
+      subject: titulo de prueba
+      isSolved: false
+      lastUpdate: 2023-02-15T10:40:32.000-0600
+      isDraft: false
+      id: '11532'
+      creationDate: 2023-02-15T10:40:32.000-0600
+      hasAttachments: false
+      customer:
+        id: r3cc5VSba3adugK-5Xiu4g
+    - businessAgent:
+        id: FJ8K7riUxhg
+      unreadMessages: 0
+      updateConversationContext: 'Lorem ipsum dolor sit amet consectetur adipiscing '
+      subject: titulo de prueba
+      isSolved: false
+      lastUpdate: 2023-02-15T10:40:32.000-0600
+      isDraft: false
+      id: '11342'
+      creationDate: 2023-02-15T10:40:32.000-0600
+      hasAttachments: false
+      customer:
+        id: r3cc5VSba3adugK-5Xiu4g
+    - businessAgent:
+        id: FJ8K7riUxhg
+      unreadMessages: 0
+      updateConversationContext: sxx
+      subject: titulo de prueba
+      isSolved: false
+      lastUpdate: 2023-02-15T10:39:00.000-0600
+      isDraft: false
+      id: '11531'
+      creationDate: 2023-02-15T10:38:47.000-0600
+      hasAttachments: false
+      customer:
+        id: r3cc5VSba3adugK-5Xiu4g
+    - businessAgent:
+        id: FJ8K7riUxhg
+      unreadMessages: 0
+      updateConversationContext: titulo de prueba
+      subject: titulo de prueba
+      isSolved: false
+      lastUpdate: 2023-02-15T10:38:47.000-0600
+      isDraft: false
+      id: '11341'
+      creationDate: 2023-02-15T10:38:47.000-0600
+      hasAttachments: false
+      customer:
+        id: r3cc5VSba3adugK-5Xiu4g
+    - businessAgent:
+        id: FJ8K7riUxhg
+      unreadMessages: 0
+      updateConversationContext: titulo de prueba
+      subject: titulo de prueba
+      isSolved: false
+      lastUpdate: 2023-02-15T10:37:38.000-0600
+      isDraft: false
+      id: '11340'
+      creationDate: 2023-02-15T10:37:38.000-0600
+      hasAttachments: false
+      customer:
+        id: r3cc5VSba3adugK-5Xiu4g
+    - businessAgent:
+        id: FJ8K7riUxhg
+      unreadMessages: 0
+      updateConversationContext: 'Lorem ipsum dolor sit amet consectetur adipiscing '
+      subject: titulo de prueba
+      isSolved: false
+      lastUpdate: 2023-02-15T10:37:38.000-0600
+      isDraft: false
+      id: '11530'
+      creationDate: 2023-02-15T10:37:38.000-0600
+      hasAttachments: false
+      customer:
+        id: r3cc5VSba3adugK-5Xiu4g
+    - businessAgent:
+        id: FJ8K7riUxhg
+      unreadMessages: 0
+      updateConversationContext: 'Lorem ipsum dolor sit amet consectetur adipiscing '
+      subject: titulo de prueba
+      isSolved: false
+      lastUpdate: 2023-02-15T10:36:53.000-0600
+      isDraft: false
+      id: '11339'
+      creationDate: 2023-02-15T10:36:53.000-0600
+      hasAttachments: false
+      customer:
+        id: r3cc5VSba3adugK-5Xiu4g
+    - businessAgent:
+        id: FJ8K7riUxhg
+      unreadMessages: 0
+      updateConversationContext: titulo de prueba
+      subject: titulo de prueba
+      isSolved: false
+      lastUpdate: 2023-02-15T10:36:52.000-0600
+      isDraft: false
+      id: '11529'
+      creationDate: 2023-02-15T10:36:52.000-0600
+      hasAttachments: false
+      customer:
+        id: r3cc5VSba3adugK-5Xiu4g
+    - businessAgent:
+        id: FJ8K7riUxhg
+      unreadMessages: 0
+      updateConversationContext: titulo de prueba
+      subject: titulo de prueba
+      isSolved: false
+      lastUpdate: 2023-02-15T10:26:54.000-0600
+      isDraft: false
+      id: '11526'
+      creationDate: 2023-02-15T10:26:54.000-0600
+      hasAttachments: false
+      customer:
+        id: r3cc5VSba3adugK-5Xiu4g
+    - businessAgent:
+        id: FJ8K7riUxhg
+      unreadMessages: 0
+      updateConversationContext: uuuu
+      subject: titulo de prueba
+      isSolved: false
+      lastUpdate: 2023-02-15T10:26:16.000-0600
+      isDraft: false
+      id: '11525'
+      creationDate: 2023-02-15T10:26:03.000-0600
+      hasAttachments: false
+      customer:
+        id: r3cc5VSba3adugK-5Xiu4g
+    - businessAgent:
+        id: FJ8K7riUxhg
+      unreadMessages: 0
+      updateConversationContext: titulo de prueba
+      subject: titulo de prueba
+      isSolved: false
+      lastUpdate: 2023-02-15T10:25:14.000-0600
+      isDraft: false
+      id: '11524'
+      creationDate: 2023-02-15T10:25:14.000-0600
+      hasAttachments: false
+      customer:
+        id: r3cc5VSba3adugK-5Xiu4g
+    - businessAgent:
+        id: FJ8K7riUxhg
+      unreadMessages: 0
+      updateConversationContext: titulo de prueba
+      subject: titulo de prueba
+      isSolved: false
+      lastUpdate: 2023-02-15T10:24:06.000-0600
+      isDraft: false
+      id: '11523'
+      creationDate: 2023-02-15T10:23:59.000-0600
+      hasAttachments: false
+      customer:
+        id: r3cc5VSba3adugK-5Xiu4g
+    - businessAgent:
+        id: FJ8K7riUxhg
+      unreadMessages: 0
+      updateConversationContext: titulo de prueba
+      subject: titulo de prueba
+      isSolved: false
+      lastUpdate: 2023-02-15T10:21:59.000-0600
+      isDraft: false
+      id: '11522'
+      creationDate: 2023-02-15T10:21:59.000-0600
+      hasAttachments: false
+      customer:
+        id: r3cc5VSba3adugK-5Xiu4g
+    - businessAgent:
+        id: FJ8K7riUxhg
+      unreadMessages: 0
+      updateConversationContext: Prueba de fotos
+      subject: 'Fideicomiso '
+      isSolved: false
+      lastUpdate: 2023-02-14T10:05:23.000-0600
+      isDraft: false
+      id: '11517'
+      creationDate: 2023-02-14T10:00:14.000-0600
+      hasAttachments: true
+      customer:
+        id: r3cc5VSba3adugK-5Xiu4g
+    - businessAgent:
+        id: FJ8K7riUxhg
+      unreadMessages: 0
+      updateConversationContext: Hola
+      subject: Prueba QA
+      isSolved: false
+      lastUpdate: 2023-02-13T12:20:50.000-0600
+      isDraft: false
+      id: '11316'
+      creationDate: 2023-02-13T12:20:44.000-0600
+      hasAttachments: false
+      customer:
+        id: r3cc5VSba3adugK-5Xiu4g
+    - businessAgent:
+        id: FJ8K7riUxhg
+      unreadMessages: 0
+      updateConversationContext: ddd
+      subject: ddd
+      isSolved: false
+      lastUpdate: 2023-02-13T11:55:27.000-0600
+      isDraft: false
+      id: '11315'
+      creationDate: 2023-02-13T11:55:27.000-0600
+      hasAttachments: false
+      customer:
+        id: r3cc5VSba3adugK-5Xiu4g
+    - businessAgent:
+        id: FJ8K7riUxhg
+      unreadMessages: 0
+      updateConversationContext: Prueba de foto
+      subject: Seguro
+      isSolved: false
+      lastUpdate: 2023-02-09T23:24:39.000-0600
+      isDraft: false
+      id: '11409'
+      creationDate: 2023-02-09T23:10:40.000-0600
+      hasAttachments: true
+      customer:
+        id: r3cc5VSba3adugK-5Xiu4g
+    :headers:
+      content-length: '18141'
+      X-EdgeConnect-Origin-MEX-Latency: '183'
+      Access-Control-Allow-Origin: '*'
+      ECS-Entry-Point-Zone: ext
+      Access-Control-Allow-Methods: GET, POST, DELETE, PUT, OPTIONS, PATCH
+      X-Content-Type-Options: nosniff
+      Connection: keep-alive
+      tsec: ZXlKaFlYQWlPaUl4TURBd01ERTROeUlzSW10bGVWWmxjbk5wYjI0aU9qRXNJbUZ3Y0Vsa0lqb2lRVkJRTVNJc0ltdHBaQ0k2SWtGUVVERXViRzlqWVd3dU1TSXNJbVZ1WXlJNklrRXhPVEpIUTAwaUxDSnJaWGxVZVhCbElqb2liRzlqWVd3aUxDSmhiR2NpT2lKa2FYSWlMQ0owYzJWalNXUWlPaUk1TkdFeU9EQTBNUzA1WVRObUxUUmpORGN0T0dNd1l5MDFOalV3TXpGa05XWXlPVEFpZlEuLlphSU9HVDBoVzJDQjM3S1guVkVpbXotU0hRWDNiaXI0ODBxT1huZERhVm5kTF9aWHlUYkVzbXJJZnZBWnF3M0ZvbGpIbFY0RXduYlhIVEZ4bmlwUGljdjJnbG9wZ2pIcU44OWhWWHdNZkx4RlpoQzk1M3NsaUdteURQMW56dUxndHVtMklhb1dYUExwN1Z0Q2VHbklqUFRQcnE5cE5KdkNTQXNlQS1QcG16SEpwMTlIdWZHeWhXYURrbXI5M2RHV3g0dFBOZlFTajJ5UldVTHM3NEM2eWQ5UFhkdHQteXVNSWJTdEZQNTUxYzhaOHR6Sk8wT1ZyaTNfU0dMNmF6VFB6c2ozS096ZHhoN0VhMUNWdjNIeFlEb081Z0N1NWFsWGVSdWtoTDA4a2g0bFA4dVRqeWJqMjJxU3BDel8wMk9OT2ZyUHJXdjBxSHZCZndsZ0tXaUpHV01BUHN1SjVqSnd0YlRIVHJUay1wRXV3Zi1VVmZrQUNGaTJQSkxPeU1xRjJvR052azdOc3ZNSkxJd0V2LWZSemhZOV9ZWXlfZ1c1XzhlenN5SkNUbXNyY3lieDA1eFlyazRYamQyTDZWQWtLMVNkSzlmTUgwYTNRSTRYVjJGZkpuMGR2N2Z1SFQ0VzVmWUVNbzh5UTQ0T0ZMTGVOaGpQZlQzaWNFNUZYeGVGalVmSTduMUNzTFNJWTZlbmtrcDkzS3l6Z2lUTDhEalpQTzRNeTRQVzFId05ZcllpRlc1c0VnQ1I4XzVGRDVNR250cFZKTk0xbllOb1J2eU9UM0lTTFBlcGZaZ3B6M2JXc1F5NmZDbkx2RzFTOVIxNGthMjNHRlVpMFJVVDdlYXY5NXl5WkxhbmFGeUhzekU0Z3BSWTVIYTJWTE9XMTJNaVlPbTg5MFAtQmVBNlQzT2NBRV9YVDdQVFhaNFI5Tk5LNVdZZno2TE8zZjFnc1h4ZExEN042a2xFSVFyM1VyT0p6TFUtV2lOZVlaZlQ5VXVFbHg1bzBLMDNNQnNEU2J4LXFLU1AteXRXblVQLVdyU2VuUkxOMXR0M0ZON2JQRzhiWFlMYXkzck5GZ3hZLXg2QWVpeEZtc29LZHk5OUZZRzFBWG1zYm1uQkR5T0RMSTVlc2FtUXR1d1E1Z3JsUnhYOEJSclZPbFE5RTE4c29wcjVBWHdqY3l2aExWVHhRNGt4cFBSLWNtcmROVE82bnBQdUd0cXppUXkyY3k5ZzJTT0JVT1gyeWRSc0pEM0x0VWpYUDlGa1lDcmw3NGdqTFZza01KcmlxY3FDaTdtMHVxZVpUYU9pZ1g4R3ZRZG5jblRvRlhRYkpKYl9WeFF0eWVVTVpmOU5DSEl6WjUtZHRCbHVWRHQ1NVhCdmxJTXdKbVVyd2VZd1hLelpQUi1tcnotNFlKMlY5VFJJTTBDT2dOVHFMeUtsNHU3LXpzREFoRWdoNnVRU1h5UmR4MXdkSVRJZS1ONnJtREFFVFJ6SmNuSGpwNF9KNTFqY3k1Wlp0T1IwV0JyNHRjSmtRckxScTIzOGlMLWoxV1hDZEtaQlZiWVN6NUtIQkRMbWVLOC1CTmdwV0RfSHJTcVkxR21Zd0phZXRpc2xJNVdvZUFWRzdXaG1TY2RCV2JBRUQ5TmMteC1oTWRTZFo4STBqakFpMlhPZHRjRzRhVFJmUmVFLUxIN1RoMkJtb3hFWHpoQzUxWHd4YlBvZGpZZGNUNDlwQldJWUo3WWlIRUNsWkZfd2h5ZlQzVWozSWlSNzB3aUpWdUl2b2xSODE4N3JlOGlfeExSbUc3STJlMGVXZkJtbXBHU0pKbUFheHl0MG1DVGFrZF9ONGh1NWtCSGhfTkxFdlE0bFkyYVVTeEttUVRzLWJJNUtROXpTLUhzRjZfVjlWb3prblhRWjBQY2pIRmxkTXZCVzl6MHdUSGpYbDF5Y3MwbVpvLW1XTnJ1NDlLOW1FOFBKRnJpSzRFWTRORnhvU1I5OUZlZkVCME1Jc1ZaNmtocS1sR08yYmsycWktZHN4c2owXzZWcGRQS0VHc2VCdEt1Z2p1b2pVXzUzMm1nWV9PeXpjLS1fRXRUUTZWaGpxQW80YlZ0NEN1d1Jud3E0dXFOWGV2MGZXRjdMOTFYLWJBdXJqN3hjVHBzdWNXWjlxU3BSS1VJcjZ4YlFQdDExbDhWWEo3b0VMQzNmNWpFTDFtN1ZYVzZ6YUxoZ09ZczBSb3J4VUI4a2Rza3hiY0xySTBKLTFUZmh0SXQxa1h4c0hyMWtjLWh6MXhfN1lfWVZoUks5TXdZeEt2RXJjSTBKdktGa2FIWVg1bnVNUjlnNC5hS0t2YjduVWhKZ0pPQjAxcGZubXlR
+      Access-Control-Allow-Headers: Accept-Encoding, Accept, Content-Type, tsec, consumerrequestid,
+        authenticationchallenge, authenticationtype, authenticationdata, authenticationstate,
+        contactid, consumeruuid, consumerapplicationid, perimetertsec, authorization,
+        responsewarningcode, responsewarningdescription, cuf, prefer, phoneNumber,
+        Location, X-RHO-PARENTSPANID, X-RHO-TRACEID, preferredauthenticationtype,
+        X-HTTP-Method-Override, Access-Control-Allow-Methods, iv-remote-address, thirdparty-x-forwarded-for,
+        thirdparty-user-agent, thirdparty-geolocation, thirdparty-calculated-scoring,
+        thirdparty-deviceid, vnd.bbva.security-client-certificate, order-preferredaction,
+        authenticationresponse, Access-Control-Max-Age, BCS-Device-Id, BCS-Device-OS-Name,
+        BCS-Device-Model-Name, BCS-Device-Model-Manufacturer, BCS-Device-Screen-Size,
+        BCS-Device-OS-Version, BCS-Device-DPI, BCS-Device-App-Name, BCS-Device-App-Version,
+        Third-Party-Application-Id, ECS-Signature-Platform-Use-Case, BCS-Process-Code,
+        BCS-Operation-Tracer, BCS-Process-Tracer, vnd.bbva.user-id, order-preferredaction,
+        order-id, order-accepteddisclaimers, x-forwarded-for, Date, x-dmz-orgn, onsite-accountTerm,
+        onsite-logicalTerm, Akamai-BM-Telemetry, order-hmac, order-signed, BCS-Third-Party-Session-Id,
+        Cache-Control, clave, Content-Encoding, ECS-Entry-Point-Zone, firma, Geolocation,
+        Third-Party-Collaborator-Id, user-agent, Via
+      Date: Wed, 24 May 2023 19:49:29 GMT
+      Referrer-Policy: same-origin
+      X-Frame-Options: sameorigin
+      Strict-Transport-Security: max-age=31536000; includeSubDomains
+      Access-Control-Expose-Headers: Accept-Encoding, Accept, Content-Type, tsec,
+        consumerrequestid, authenticationchallenge, authenticationtype, authenticationdata,
+        authenticationstate, contactid, consumeruuid, consumerapplicationid, perimetertsec,
+        authorization, responsewarningcode, responsewarningdescription, cuf, prefer,
+        phoneNumber, Location, X-RHO-PARENTSPANID, X-RHO-TRACEID, preferredauthenticationtype,
+        X-HTTP-Method-Override, Access-Control-Allow-Methods, iv-remote-address, thirdparty-x-forwarded-for,
+        thirdparty-user-agent, thirdparty-geolocation, thirdparty-calculated-scoring,
+        thirdparty-deviceid, vnd.bbva.security-client-certificate, order-preferredaction,
+        authenticationresponse, Access-Control-Max-Age, BCS-Device-Id, BCS-Device-OS-Name,
+        BCS-Device-Model-Name, BCS-Device-Model-Manufacturer, BCS-Device-Screen-Size,
+        BCS-Device-OS-Version, BCS-Device-DPI, BCS-Device-App-Name, BCS-Device-App-Version,
+        Third-Party-Application-Id, ECS-Signature-Platform-Use-Case, BCS-Process-Code,
+        BCS-Operation-Tracer, BCS-Process-Tracer, vnd.bbva.user-id, order-preferredaction,
+        order-id, order-accepteddisclaimers, x-forwarded-for, Date, x-dmz-orgn, onsite-accountTerm,
+        onsite-logicalTerm, Akamai-BM-Telemetry, order-hmac, order-signed, BCS-Third-Party-Session-Id,
+        Cache-Control, clave, Content-Encoding, ECS-Entry-Point-Zone, firma, Geolocation,
+        Third-Party-Collaborator-Id, user-agent, Via
+      Cache-Control: no-cache,no-store,must-revalidate
+      Content-Security-Policy: script-src 'self'
+      Vary: Accept-Encoding
+      Set-Cookie: vbank-session=c7f0e830-81f0-4b47-a251-7b40adf286f5
+      Expires: '-1'
+      X-XSS-Protection: 1; mode=block
+      X-EdgeConnect-MidMile-RTT: '14'
+      consumerrequestid: 2684c1f3-11f5-433d-af50-3b1f4bd90c5e
+      Content-Type: application/json; charset=UTF-8
+    :status: 200 OK

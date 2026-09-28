@@ -1,0 +1,100 @@
+when:
+  sequence: 1
+  path: /SRVS_A02/customers/v0/customers/1234067890123456789012/addresses
+  method: GET
+  backend: glomo
+request:
+  headers:
+    sec-fetch-mode: cors
+    content-length: '0'
+    referer: http://localhost:8001/
+    sec-fetch-site: same-site
+    accept-language: es
+    origin: http://localhost:8001
+    tsec: 063b4eb260c60f41ae373669331b3a88fbe03b58
+    accept: application/json, text/html, */*; q=0.1
+    sec-ch-ua: '"Google Chrome";v="93", " Not;A Brand";v="99", "Chromium";v="93"'
+    sec-ch-ua-mobile: ?0
+    x-vbank-session: 93af1812-b687-4835-9d60-78f253be5c67
+    sec-ch-ua-platform: '"macOS"'
+    host: localhost:9000
+    content-type: application/json
+    connection: keep-alive
+    cache-control: no-cache, no-store, must-revalidate
+    accept-encoding: gzip, deflate, br
+    sec-fetch-dest: empty
+    user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36
+      (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36
+then:
+- return:
+    data:
+    - ownershipType:
+        name: Propietario
+        id: OWNER
+      isPreferential: true
+      addressType:
+        name: Dirección hogar
+        id: HOME
+      location:
+        country:
+          name: México
+          id: MX
+        zipCode: '34566'
+        additionalInformation: COSTADO COLEGIO SAN AGUSTIN
+        city: Ciudad de México
+        meta:
+          stratum: Middle-High
+        geographicGroups:
+        - geographicGroupType:
+            name: Urbanización
+            id: URBANIZATION
+          name: Corpac
+        - geographicGroupType:
+            name: Calle
+            id: STREET
+          name: Águila
+        - geographicGroupType:
+            name: Número exterior
+            id: EXTERIOR_NUMBER
+          name: '47'
+        - geographicGroupType:
+            name: Piso
+            id: FLOOR
+          name: '2'
+        - geographicGroupType:
+            name: Número interior
+            id: INTERIOR_NUMBER
+          name: '205'
+        - geographicGroupType:
+            name: Puerta
+            id: DOOR
+          name: B
+        addressName: Águila **, Colonia Industrial
+        state:
+          name: Ciudad de México
+          id: CMX
+        geolocation:
+          latitude: 40.814505
+          longitude: -74.07272910000002
+      addressId: '1'
+    :headers:
+      access-control-allow-origin: '*'
+      content-length: '1988'
+      Access-Control-Expose-Headers: tsec, vnd.bbva.access-token-type,vnd.bbva.access-token,
+        authenticationtype, authenticationdata, authenticationstate
+      Server: artichoke
+      access-control-allow-headers: Content-Type, tsec, authenticationtype, authenticationdata,
+        authenticationstate, contactid, consumeruuid, consumerapplicationid, perimetertsec,
+        authorization, responsewarningcode, responsewarningdescription, cuf, field,
+        bcs-device-app-version, bcs-device-app-version
+      Connection: keep-alive
+      content-type: application/json;charset=UTF-8
+      Vary: Accept-Encoding
+      tsec: 063b4eb260c60f41ae373669331b3a88fbe03b58
+      X-Response-Time: 39ms
+      Date: Thu, 23 Sep 2021 20:06:15 GMT
+    :status: 200 OK
+    apiInfo:
+      name: customers
+      category: people
+      version: 0.24.0

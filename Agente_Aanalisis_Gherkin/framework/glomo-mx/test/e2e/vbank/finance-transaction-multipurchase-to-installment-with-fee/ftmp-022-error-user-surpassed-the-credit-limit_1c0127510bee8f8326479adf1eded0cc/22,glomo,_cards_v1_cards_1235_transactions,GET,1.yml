@@ -1,0 +1,88 @@
+when:
+  sequence: 1
+  path: /SRVS_A02/cards/v1/cards/1235/transactions
+  method: GET
+  backend: glomo
+request:
+  headers:
+    sec-fetch-mode: cors
+    content-length: '0'
+    referer: http://localhost:8001/
+    sec-fetch-site: same-site
+    accept-language: en-US
+    origin: http://localhost:8001
+    tsec: 96afc3a854e786a312d90e50c7d72e684a5ad0c7
+    accept: application/json, text/html, */*; q=0.1
+    sec-ch-ua: ''
+    sec-ch-ua-mobile: ?0
+    x-vbank-session: b431c026-2d23-41aa-ac96-c9004e5b4154
+    sec-ch-ua-platform: ''
+    host: localhost:9000
+    content-type: application/json
+    connection: keep-alive
+    cache-control: no-cache, no-store, must-revalidate
+    accept-encoding: gzip, deflate, br
+    sec-fetch-dest: empty
+    user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36
+      (KHTML, like Gecko) HeadlessChrome/108.0.5359.98 Safari/537.36
+  query:
+    financingType.id: FINANCING_MULTIPURCHASE
+then:
+- return:
+    data:
+    - transactionType:
+        name: purchase
+        id: PURCHASE
+      operationDate: '2020-06-25T19:51:00.000-05:00'
+      additionalInformation:
+        reference: GUIA:2605240
+        additionalData: CODIREF:70000000000011778607 1686216
+      valuationDate: '2020-06-26T00:00:00.000-05:00'
+      concept: Compra en Amazon
+      contract:
+        number: '4555457083071235'
+        product:
+          name: Tarjetas
+          id: CARDS
+        numberType:
+          name: Permanent Account Number
+          id: PAN
+        alias: Tarjeta 1235 - Off
+        id: '1235'
+      moneyFlow:
+        name: Expense
+        id: EXPENSE
+      id: 3699A0803
+      accountedDate: '2020-06-26T00:00:00.000-05:00'
+      financingType:
+        name: financing purchase
+        id: FINANCING_MULTIPURCHASE
+      localAmount:
+        amount: 1000
+        currency: MXN
+      status:
+        name: Pendiente
+        id: PENDING
+    :headers:
+      access-control-allow-origin: '*'
+      content-length: '1257'
+      Access-Control-Expose-Headers: tsec, vnd.bbva.access-token-type,vnd.bbva.access-token,
+        vnd.bbva.sso-pkcs7, authenticationtype, authenticationdata, authenticationstate,
+        authenticationchallenge
+      Server: artichoke
+      Alt-Svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      access-control-allow-headers: Content-Type, tsec, authenticationtype, authenticationdata,
+        authenticationstate, contactid, consumeruuid, consumerapplicationid, perimetertsec,
+        authorization, responsewarningcode, responsewarningdescription, cuf, field,
+        bcs-device-app-version, bcs-device-app-version, vnd.bbva.authorization
+      content-type: application/json;charset=UTF-8
+      Vary: Accept-Encoding
+      tsec: 96afc3a854e786a312d90e50c7d72e684a5ad0c7
+      X-Response-Time: 465ms
+      Date: Wed, 14 Dec 2022 10:46:41 GMT
+      Via: 1.1 google
+    :status: 200 OK
+    apiInfo:
+      name: cards
+      category: products
+      version: 0.19.0

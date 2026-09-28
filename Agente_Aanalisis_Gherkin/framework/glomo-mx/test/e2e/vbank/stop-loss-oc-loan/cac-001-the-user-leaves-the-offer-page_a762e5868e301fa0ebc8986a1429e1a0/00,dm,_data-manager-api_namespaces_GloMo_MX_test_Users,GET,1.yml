@@ -1,0 +1,38 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: d853ec26-9789-48d9-abb6-6bad723794fe
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: stop_loss_personal_loan
+    lock: 'false'
+then:
+- return:
+    :body:
+    - data:
+        offerId: kFiophX8bzyfZL-bTmlsQDiWstUyHJzx9gdL5GUDsHw
+        tags:
+        - stop_loss_personal_loan
+        authentication:
+          password: Glomo2025
+          user: '6681725596'
+          deviceId: 437FBD35DCF8C2CA1EC9A198E04C3900
+      id: 36276594
+    :headers:
+      Server: nginx
+      Cache-Control: max-age=0
+      Connection: keep-alive
+      host: datamanager.globaldevtools.bbva.com
+      Expires: Thu, 29 Jan 2026 17:33:19 GMT
+      Content-Length: '237'
+      Date: Thu, 29 Jan 2026 17:33:19 GMT
+      Content-Type: application/json; charset=utf-8
+    :status: 200 OK

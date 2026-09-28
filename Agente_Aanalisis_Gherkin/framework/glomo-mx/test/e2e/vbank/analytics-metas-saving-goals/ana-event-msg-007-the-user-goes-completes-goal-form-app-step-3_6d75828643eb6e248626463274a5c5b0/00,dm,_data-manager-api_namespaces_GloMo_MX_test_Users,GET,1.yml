@@ -1,0 +1,45 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: 22701414-57a7-4873-8af8-9e4f27cce678
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: with_plan_simulation
+    lock: 'false'
+then:
+- return:
+    :body:
+    - data:
+        tags:
+        - metas_saving_goals
+        - with_plan_simulation
+        - '5518961053'
+        localstorage:
+          onboardingDone:
+            customerId: AZJKJiRgjTrotrgNPNfkvw
+        authentication:
+          password: Glomo2023
+          user: '5518961053'
+          deviceId: 66815D10BE06C10123C575BFA6E3A56C
+      id: 35825574
+      lockType: SHARED
+      lockExpiration: '2024-04-20T18:27:53.420164Z'
+    :headers:
+      content-length: '277'
+      Strict-Transport-Security: max-age=15768000
+      Server: nginx
+      ECS-Entry-Point-Zone: ext
+      Connection: keep-alive
+      host: datamanager.globaldevtools.bbva.com
+      Vary: Accept-Encoding
+      Date: Sat, 20 Apr 2024 18:27:51 GMT
+      Content-Type: application/json
+    :status: 200 OK

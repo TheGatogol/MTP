@@ -1,0 +1,39 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: 64af578c-a6a9-44c1-a424-848212e17b2e
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: credit_bureau_authorization
+then:
+- return:
+    :body:
+    - data:
+        otp: '11114444'
+        tags:
+        - '5519901272'
+        - credit_bureau_authorization
+        authentication:
+          password: Mtp147258
+          user: '5519901272'
+          deviceId: 0109212220951B7F0B9FE57E2526C769
+      lockType: SHARED
+      lockExpiration: '2022-05-16T19:19:10.989193Z'
+      id: 2690977
+    :headers:
+      Strict-Transport-Security: max-age=15768000
+      Server: nginx
+      ECS-Entry-Point-Zone: ext
+      Connection: keep-alive
+      Content-Length: '280'
+      Date: Mon, 16 May 2022 19:19:02 GMT
+      Content-Type: application/json
+    :status: 200 OK

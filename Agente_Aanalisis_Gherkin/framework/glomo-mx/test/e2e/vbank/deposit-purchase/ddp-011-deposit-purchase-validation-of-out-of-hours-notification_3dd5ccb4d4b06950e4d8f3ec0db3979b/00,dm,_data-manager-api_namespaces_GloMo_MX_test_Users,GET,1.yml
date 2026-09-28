@@ -1,0 +1,37 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: b451420b-804e-47a9-8384-0af7455bee0e
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: deposits_purchase_with_coupon
+    lock: 'false'
+then:
+- return:
+    :body:
+    - data:
+        tags:
+        - deposits_purchase_with_coupon
+        authentication:
+          password: Glomo2024
+          user: '5527113788'
+          deviceId: 21ED61A0C57F339061D9823C72AA4B4B
+      lockType: SHARED
+      lockExpiration: '2024-10-30T18:13:55.846151Z'
+      id: 35796173
+    :headers:
+      Server: nginx
+      Connection: keep-alive
+      host: datamanager.globaldevtools.bbva.com
+      Content-Length: '250'
+      Date: Wed, 30 Oct 2024 18:13:42 GMT
+      Content-Type: application/json
+    :status: 200 OK

@@ -1,0 +1,100 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6U2tnYUQ0SmNvck9MTW5LN3NSZjg4MFFnanYwVDB2WTFncFVvaUM2MQ==
+    content-length: '0'
+    x-vbank-session: 104bd2f4-5bfd-4f93-a0e7-72f6dc2f5bc1
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: has_2_check_deposited_different_days
+then:
+- return:
+    :body:
+    - data:
+        data:
+          operationDate: 2021-03-25T00:00:00.000-0600
+          indicatorId: CHECK_PROTECTION
+          operationNumber: '000035321'
+          name: Indicates the check protection status of the account.
+          isActive: true
+        locale: es_mx
+        tags:
+        - '5518776102'
+        - multiple_accounts
+        - pesos_account_with_checks_management_active
+        - active_accounts
+        - hasn`t_accepted_the_service_terms
+        - has_1_check_deposited_charged
+        - has_1_check_deposited_rejected
+        - has_2_check_deposited_rejected
+        - has_2_check_deposited_different_days
+        - account_in_pesos
+        products:
+          cards: []
+          loans: []
+          accounts:
+          - number: '00740010000473135365'
+            product:
+              name: Cuenta de Cheques
+              id: CH
+            numberType:
+              id: CCC
+            alias: 0001CH5365
+            id: Uvn6wi1Rh6CZ7cFttOnKlEzYZzYcqt3ED9_p6VaABubYRKGX2wrAww
+            detail:
+              level: '04'
+              specificAmounts:
+              - amounts:
+                - amount: 100004797
+                  currency: MXN
+                name: Saldo actual
+                id: CURRENT_BALANCE
+              - amounts:
+                - amount: 0
+                  currency: MXN
+                name: Saldo buen cobro
+                id: PENDING_DEPOSIT_BALANCE
+              indicators:
+              - name: Indica si la cuenta es de nómina
+                id: IS_PAYROLL_ACCOUNT
+                isActive: false
+              - name: Indica si la cuenta es eje
+                id: IS_PRINCIPAL_ACCOUNT
+                isActive: false
+              - name: Indica si la cuenta tiene pockets
+                id: HAS_POCKETS
+                isActive: false
+              - name: Indica si la cuenta es digital
+                id: IS_DIGITAL
+                isActive: false
+            productType: ACCOUNT
+            status:
+              name: Cuenta Activa
+              id: ACTIVE
+            subProductType:
+              name: LIBRETON PREMIUM
+              id: '0501'
+            signedAuthorization: {}
+        authentication:
+          password: password
+          user: '5518776102'
+          deviceId: 11223344556677889900AABBCCDDEEFF
+      lockExpiration: null
+      lockType: null
+      id: 1465520
+    :headers:
+      content-length: '1774'
+      Strict-Transport-Security: max-age=15724800; includeSubDomains
+      Server: nginx
+      ECS-Entry-Point-Zone: ext
+      Connection: keep-alive
+      Vary: Accept-Encoding
+      Date: Mon, 28 Mar 2022 12:38:13 GMT
+      Content-Type: application/json
+    :status: 200 OK

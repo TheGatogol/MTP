@@ -1,0 +1,411 @@
+[
+  {
+    "rules": [
+      "PAG-004"
+    ],
+    "kind": "page",
+    "note": "Solo se cambia «>» por espacio; el resto del selector (incluido nth-child) se conserva porque no hay un atributo estable conocido.",
+    "before": "firstNameImput: '#cells-template-travelInsuranceUserDataModal > cells-form-user-data-list > #traveler-1 > cells-molecule-input:nth-child(1) > #input',",
+    "after": "firstNameImput: '#cells-template-travelInsuranceUserDataModal cells-form-user-data-list #traveler-1 cells-molecule-input:nth-child(1) #input',"
+  },
+  {
+    "rules": [
+      "PAG-003"
+    ],
+    "kind": "page",
+    "note": "Se conservan dos de los elementos existentes; los que quedan sin ningún uso se eliminan de elements. No se agregan nuevos.",
+    "before": "requiredElements: [\n    'firstNameImput',\n    'firstLastNameInput',\n    'secondLastNameInput',\n    'birthday',\n    'relationshipRadio',\n    'genderRadio',\n]",
+    "after": "requiredElements: [\n    'firstNameImput',\n    'genderRadio',\n]"
+  },
+  {
+    "rules": [
+      "SCV-003",
+      "SCV-004",
+      "COD-015"
+    ],
+    "kind": "page",
+    "note": "El case se conserva con el mismo texto y solo valida visibilidad; las acciones se mueven tal cual a un método funcional.",
+    "before": "case 'traveler number input':\n    await this.travelerNumberInput.scrollIntoView({block: 'start'});\n    await this.travelerNumberInput.waitForClickable({timeout: config.wait.S});\n    await this.travelerNumberInput.click();\n    await this.travelerNumberModalButton.waitForClickable({timeout: config.wait.M});\n    await this.travelerNumberModalButton.click();\n    break;",
+    "after": "case 'traveler number input':\n    await this.travelerNumberInput.waitForDisplayed({timeout: config.wait.S});\n    break;\n...\nasync selectTravelersNumber() {\n    await this.travelerNumberInput.waitForClickable({timeout: config.wait.S});\n    await this.travelerNumberInput.click();\n    await this.travelerNumberModalButton.waitForClickable({timeout: config.wait.M});\n    await this.travelerNumberModalButton.click();\n}"
+  },
+  {
+    "rules": [
+      "SCV-003"
+    ],
+    "kind": "page",
+    "note": "scrollIntoView es una acción: se quita y el case queda solo con la espera.",
+    "before": "case 'date start selector':\n    await this.dateStartSelector.scrollIntoView({block: 'start'});\n    await this.dateStartSelector.waitForDisplayed({timeout: config.wait.S});\n    break;",
+    "after": "case 'date start selector':\n    await this.dateStartSelector.waitForDisplayed({timeout: config.wait.S});\n    break;"
+  },
+  {
+    "rules": [
+      "COD-001"
+    ],
+    "kind": "component",
+    "note": "La línea siguiente ya espera al elemento: la pausa se borra.",
+    "before": "async showAllMyBbvaCards() {\n    await Commands.pause({time: config.wait.S});\n    await this.allCardsLink.waitForClickable({timeout: config.wait.L});\n    await this.allCardsLink.click();\n}",
+    "after": "async showAllMyBbvaCards() {\n    await this.allCardsLink.waitForClickable({timeout: config.wait.L});\n    await this.allCardsLink.click();\n}"
+  },
+  {
+    "rules": [
+      "COD-009",
+      "COD-003"
+    ],
+    "kind": "component",
+    "note": "Se deja la espera que habilita la acción y la talla baja a M.",
+    "before": "await this.changeCardCollapsed.waitForAnimation({timeout: config.wait.L});\nawait this.changeCardCollapsed.waitForClickable({timeout: config.wait.XL});\nawait this.changeCardCollapsed.click();",
+    "after": "await this.changeCardCollapsed.waitForClickable({timeout: config.wait.M});\nawait this.changeCardCollapsed.click();"
+  },
+  {
+    "rules": [
+      "COD-001",
+      "COD-003"
+    ],
+    "kind": "navigation",
+    "note": "La pausa se borra (el método de la page ya espera) y el spinner usa L como máximo.",
+    "before": "case ACCOUNT_PRODUCT_DETAIL:\n    await Commands.pause({time: config.wait.S}); // Wait for proactivity campaigns\n    await accountProductDetail.accessProactivityMessageDetailAccountDetail();\n    await this.page.waitUntilSpinnerVeil({\n        timeoutToAppear: config.wait.XS,\n        timeoutToDisappear: config.wait.XXL\n    });\n    break;",
+    "after": "case ACCOUNT_PRODUCT_DETAIL:\n    await accountProductDetail.accessProactivityMessageDetailAccountDetail();\n    await this.page.waitUntilSpinnerVeil({\n        timeoutToAppear: config.wait.XS,\n        timeoutToDisappear: config.wait.L\n    });\n    break;"
+  },
+  {
+    "rules": [
+      "COD-006"
+    ],
+    "kind": "step_definition",
+    "note": "Mensaje en inglés, con el valor recibido y el contexto.",
+    "before": "throw new Error('Unknown navigation');",
+    "after": "throw new Error(`The option \"${option}\" is not implemented in the member get member access step`);"
+  },
+  {
+    "rules": [
+      "GHK-004",
+      "STP-008"
+    ],
+    "kind": "feature",
+    "note": "El texto funcional sale del método que ya ejecuta el step (showDeliveryAddress); se cambia en el .feature y en la step definition.",
+    "before": "And the user tap on show delivery address\n// step: When(/^the user tap on show delivery address$/, async function () { await currentPage.showDeliveryAddress(); });",
+    "after": "And the user shows the delivery address\n// step: When(/^the user shows the delivery address$/, async function () { await currentPage.showDeliveryAddress(); });"
+  },
+  {
+    "rules": [
+      "GHK-008"
+    ],
+    "kind": "feature",
+    "note": "Las celdas vacías se rellenan con el valor por defecto que acepta la page; no se quita la columna que usa «Banner Date».",
+    "before": "| item         | value   |\n| Banner Image |         |\n| Banner Date  | visible |",
+    "after": "| item         | value   |\n| Banner Image | visible |\n| Banner Date  | visible |"
+  },
+  {
+    "rules": [
+      "PAG-006"
+    ],
+    "kind": "page",
+    "note": "Se borran los elementos sin uso y el import que queda sin uso.",
+    "before": "import glomoMyTripsDateSelector from '../../../components/glomo-my-trips-date-selector.js';\n...\nglomoMyTripsDate: {\n    component: {\n        ComponentClass:glomoMyTripsDateSelector\n    }\n},\ncontractOfferButton: '#travel-insurance-offer #footer > div > cells-st-button > button'",
+    "after": "(se eliminan las dos entradas y el import)"
+  },
+  {
+    "rules": [
+      "COD-005"
+    ],
+    "kind": "page",
+    "note": "Solo se traduce el comentario; el código no cambia.",
+    "before": "/**\n * Acciones para el happy path por step\n */\nasync HappyPathActions(Step) {",
+    "after": "/**\n * Actions for the happy path per step\n */\nasync HappyPathActions(Step) {"
+  },
+  {
+    "rules": [
+      "COD-004"
+    ],
+    "kind": "page",
+    "note": "El mismo elemento hacía scroll y waitForClickable: se quita el scroll (el click ya lo hace); try/catch y lógica se conservan.",
+    "before": "await this.buttonProductos.waitForDisplayed({ timeout: config.wait.XL });\nawait this.buttonProductos.scrollIntoView({block: 'center'});\ntry {\n    await (await this.buttonProductos.waitForClickable({ timeout: config.wait.M })).click({useActions: false});\n}",
+    "after": "await this.buttonProductos.waitForDisplayed({ timeout: config.wait.M });\ntry {\n    await (await this.buttonProductos.waitForClickable({ timeout: config.wait.M })).click({useActions: false});\n}"
+  },
+  {
+    "rules": [
+      "COD-011"
+    ],
+    "kind": "page",
+    "note": "Nombre funcional derivado de lo que hace; la herramienta actualiza todas las llamadas del framework.",
+    "before": "async clickEmailValidationBannerLink() {\n    await this.emailValidationBannerLink.waitForDisplayed({timeout: config.wait.M});\n    await this.emailValidationBannerLink.click();\n}\n// step: await dashboard.clickEmailValidationBannerLink();",
+    "after": "async openEmailValidation() {\n    await this.emailValidationBannerLink.waitForDisplayed({timeout: config.wait.M});\n    await this.emailValidationBannerLink.click();\n}\n// step: await dashboard.openEmailValidation();"
+  },
+  {
+    "rules": [
+      "STP-002"
+    ],
+    "kind": "step_definition",
+    "note": "Solo la navegación destino: la cadena de parentNavigation ya pasa por el dashboard.",
+    "before": "getDataCard(cardStatus, cardType);\nawait navigation.dashboard.go();\nawait navigation.card.orangeCardProductDetail.go({ card: storage['selectedProduct'].cardId });",
+    "after": "getDataCard(cardStatus, cardType);\nawait navigation.card.orangeCardProductDetail.go({ card: storage['selectedProduct'].cardId });"
+  },
+  {
+    "rules": [
+      "STP-004",
+      "STP-003"
+    ],
+    "kind": "step_definition",
+    "note": "La lógica pasa a un método de la page (archivo auxiliar) con el mismo switch y los mismos case; el step solo lo llama.",
+    "before": "When(/^the user taps on \"([^\"]*)\" profile button$/, async function (option) {\n    switch (option.toLowerCase()) {\n        case 'personal info show data':\n            await profilePage.unmaskPersonalInfo();\n            break;\n        case 'contacts show data':\n            await profilePage.unmaskContacts();\n            break;\n        ...\n    }\n});",
+    "after": "// step_definitions/profile/profile.js\nWhen(/^the user taps on \"([^\"]*)\" profile button$/, async function (option) {\n    await profilePage.openProfileOption(option);\n});\n// pages/profile/profile.js (file=página)\nasync openProfileOption(option) {\n    switch (option.toLowerCase()) {\n        case 'personal info show data':\n            await this.unmaskPersonalInfo();\n            break;\n        case 'contacts show data':\n            await this.unmaskContacts();\n            break;\n        ...\n        default:\n            throw new Error(`The profile option \"${option}\" is not implemented`);\n    }\n}"
+  },
+  {
+    "rules": [
+      "STP-006",
+      "GHK-014"
+    ],
+    "kind": "step_definition",
+    "note": "El mismo patrón existe en common/: se elimina la copia del archivo de la funcionalidad (nunca la de common).",
+    "before": "// financeTransactionCreditCard.js\nWhen(/^the user accepts terms and conditions$/, async function() {\n    await currentPage.acceptTermsAndConditions();\n});",
+    "after": "// financeTransactionCreditCard.js\n(se elimina: ya existe en step_definitions/common/common.js)"
+  },
+  {
+    "rules": [
+      "NAV-003",
+      "STP-003"
+    ],
+    "kind": "navigation",
+    "note": "La navegación no toca elementos: se crea el método en la page (archivo auxiliar) con esas mismas líneas y se llama.",
+    "before": "case DASHBOARD:\n    await dashboard.buttonNotificationCard.waitForDisplayed({timeout: config.wait.L});\n    await dashboard.buttonNotificationCard.click();\n    break;",
+    "after": "// navigation\ncase DASHBOARD:\n    await dashboard.openNotificationCard();\n    break;\n// pages/dashboard/dashboard.js (file=página)\nasync openNotificationCard() {\n    await this.buttonNotificationCard.waitForDisplayed({timeout: config.wait.L});\n    await this.buttonNotificationCard.click();\n}"
+  },
+  {
+    "rules": [
+      "SCV-002"
+    ],
+    "kind": "page",
+    "note": "Solo el default de _screenValidation usa ScreenValidationKeyNotFound (se agrega al import existente).",
+    "before": "import {page, ElementValidationKeyNotFound} from '@csqe/radish';\n...\n    default:\n        throw new ElementValidationKeyNotFound({key: item, args: arguments[0]});",
+    "after": "import {page, ElementValidationKeyNotFound, ScreenValidationKeyNotFound} from '@csqe/radish';\n...\n    default:\n        throw new ScreenValidationKeyNotFound({key: item, args: arguments[0]});"
+  },
+  {
+    "rules": [
+      "TAG-018"
+    ],
+    "kind": "feature",
+    "note": "Escenario de eventos: el interceptor se inicia justo antes de la acción que genera los eventos.",
+    "before": "And the user accesses the checks deposit screen\nWhen the user accesses the check deposit aggregator page\nThen the analytics events contains the following variables:",
+    "after": "And the user accesses the checks deposit screen\nAnd the analytics interceptor service is initiated\nWhen the user accesses the check deposit aggregator page\nThen the analytics events contains the following variables:"
+  },
+  {
+    "rules": [
+      "GHK-002"
+    ],
+    "kind": "feature",
+    "note": "Un When no valida: el texto del step se deja solo con la acción (se cambia también su step definition y los demás features).",
+    "before": "When the user adds an attachment and views an informative modal\n// step: When(/^the user adds an attachment and views an informative modal$/, ... myConversationPage.addAttachment())",
+    "after": "When the user adds an attachment\n// step: When(/^the user adds an attachment$/, ... myConversationPage.addAttachment())"
+  },
+  {
+    "rules": [
+      "GHK-012"
+    ],
+    "kind": "feature",
+    "note": "Se traduce al inglés; al cambiar el título hay que regrabar el escenario en vBank.",
+    "before": "Scenario: Digital Activation - Page View - Datos de la Tarjeta",
+    "after": "Scenario: Digital Activation - Page View - Card Data"
+  },
+  {
+    "rules": [
+      "GHK-005",
+      "GHK-001",
+      "GHK-016"
+    ],
+    "kind": "feature",
+    "note": "Los pasos que solo preparan el contexto (accesos) pasan al bloque Given con And; en When queda la acción a probar. No se crean steps nuevos.",
+    "before": "Given a user with the following criteria\n    | criteria |\n    | loan payment analytics |\nWhen the user accesses to pay credit\nAnd the user accesses to \"other amount\" pay\nAnd the user ingrese amount of \"1\"\nAnd the user enter on the calculate payment button\nAnd the analytics interceptor service is initiated\nAnd the user continues the payment",
+    "after": "Given a user with the following criteria\n    | criteria |\n    | loan payment analytics |\nAnd the user accesses to pay credit\nAnd the user accesses to \"other amount\" pay\nWhen the user ingrese amount of \"1\"\nAnd the user enter on the calculate payment button\nAnd the analytics interceptor service is initiated\nAnd the user continues the payment"
+  },
+  {
+    "rules": [
+      "GHK-006"
+    ],
+    "kind": "feature",
+    "note": "Solo cuando steps y tablas son iguales y cambian los datos: Scenario Outline con Examples (hay que regrabar).",
+    "before": "Scenario: Access to the emergency reports screen\n    When the user goes to \"emergency reports\" using deeplink navigation\n...\nScenario: Access to the crane reports screen\n    When the user goes to \"crane reports\" using deeplink navigation",
+    "after": "Scenario Outline: Access to the <screen> screen\n    When the user goes to \"<screen>\" using deeplink navigation\n    ...\n    Examples:\n        | screen            |\n        | emergency reports |\n        | crane reports     |"
+  },
+  {
+    "rules": [
+      "GHK-007",
+      "GHK-003"
+    ],
+    "kind": "feature",
+    "note": "Las validaciones van en Then; las acciones en When.",
+    "before": "When the user accesses to the summary\n    | item   |\n    | header |\nThen the user confirms the transfer",
+    "after": "When the user accesses to the summary\nAnd the user confirms the transfer\nThen the user sees the following items in the screen\n    | item   |\n    | header |"
+  },
+  {
+    "rules": [
+      "GHK-019"
+    ],
+    "kind": "feature",
+    "note": "El step que navega por deeplink lo dice en su texto.",
+    "before": "When the user goes to \"safeCard\" offer \"123456\"",
+    "after": "When \"safeCard\" offer \"123456\" is accessed using deeplink navigation"
+  },
+  {
+    "rules": [
+      "STP-007"
+    ],
+    "kind": "feature",
+    "note": "Para validar una pantalla se usa el step común con tabla.",
+    "before": "Then the user sees the about title and the about links",
+    "after": "Then the user sees the following items in the screen\n    | item       |\n    | title      |\n    | about link |"
+  },
+  {
+    "rules": [
+      "STP-005"
+    ],
+    "kind": "step_definition",
+    "note": "Patrón en minúsculas (se actualizan los features que lo usan).",
+    "before": "When(/^THE USER CONFIRMS THE OPERATION$/, async function() {",
+    "after": "When(/^the user confirms the operation$/, async function() {"
+  },
+  {
+    "rules": [
+      "COD-002"
+    ],
+    "kind": "page",
+    "note": "Timeouts con tallas de config, no en milisegundos.",
+    "before": "await this.title.waitForDisplayed({timeout: 10000});",
+    "after": "await this.title.waitForDisplayed({timeout: config.wait.M});"
+  },
+  {
+    "rules": [
+      "NAV-001"
+    ],
+    "kind": "navigation",
+    "note": "El default del switch lanza NotPathNavigationError (import de @csqe/radish).",
+    "before": "switch (currentPage.getId()) {\n    case DASHBOARD:\n        await dashboard.accessToSidebar();\n        break;\n}",
+    "after": "switch (currentPage.getId()) {\n    case DASHBOARD:\n        await dashboard.accessToSidebar();\n        break;\n    default:\n        throw new NotPathNavigationError();\n}"
+  },
+  {
+    "rules": [
+      "NAV-002",
+      "NAV-006"
+    ],
+    "kind": "navigation",
+    "note": "Un case solo usa la pantalla actual; para pasar por otra se navega y se vuelve a llamar go_impl.",
+    "before": "case DASHBOARD:\n    await dashboard.openMyTrips();\n    await myTripsPage.accessCreateTrip();\n    break;",
+    "after": "case DASHBOARD:\n    await navigation.myTrips.go();\n    await this.go_impl(args);\n    break;\ncase MY_TRIPS:\n    await myTripsPage.accessCreateTrip();\n    break;"
+  },
+  {
+    "rules": [
+      "NAV-005"
+    ],
+    "kind": "navigation",
+    "note": "La página de parentNavigation debe tener su case.",
+    "before": "super({page: 'about/aboutInfo', parentNavigation: 'about/aboutPage'});\n...\nswitch (currentPage.getId()) {\n    default:\n        throw new NotPathNavigationError();\n}",
+    "after": "super({page: 'about/aboutInfo', parentNavigation: 'about/aboutPage'});\n...\nswitch (currentPage.getId()) {\n    case ABOUT:\n        await aboutPage.accessToAboutInfo();\n        break;\n    default:\n        throw new NotPathNavigationError();\n}"
+  },
+  {
+    "rules": [
+      "GHK-018"
+    ],
+    "kind": "feature",
+    "note": "Feature flags: un Scenario Outline con los estados active/disabled/hidden.",
+    "before": "Scenario: Transfers feature flag active\n...\nScenario: Transfers feature flag hidden",
+    "after": "Scenario Outline: Transfers feature flags: <state>\n    ...\n    Then the user sees the following items in screen\n        | item     | value   |\n        | transfer | <state> |\n    Examples:\n        | state    |\n        | active   |\n        | disabled |\n        | hidden   |"
+  },
+  {
+    "rules": [
+      "CMP-005",
+      "CMP-002"
+    ],
+    "kind": "component",
+    "note": "El componente recibe por argumentos lo que cambia entre páginas y define name/elements/requiredElements.",
+    "before": "constructor() {\n    super({elements: {primaryBtn: '#primaryBtn'}});\n}\nconfirmTransfer() {\n    return this.primaryBtn.click();\n}",
+    "after": "constructor({primaryBtn = 'primaryBtn'} = {}) {\n    super(Object.assign({\n        name: 'cells-confirm-buttons',\n        elements: {[primaryBtn]: '#primaryBtn'},\n        requiredElements: [primaryBtn],\n    }, arguments[0]));\n}\nconfirmAction() {\n    return this[this.buttons.primary].click();\n}"
+  },
+  {
+    "rules": [
+      "COD-013"
+    ],
+    "kind": "page",
+    "note": "Un solo scroll por elemento; si después hay click, ninguno.",
+    "before": "await this.promotionsCarousel.scrollIntoView({block: 'center'});\nawait this.promotionsCarousel.waitForDisplayed({timeout: config.wait.M});\nawait this.promotionsCarousel.scrollIntoView({block: 'end'});",
+    "after": "await this.promotionsCarousel.scrollIntoView({block: 'center'});\nawait this.promotionsCarousel.waitForDisplayed({timeout: config.wait.M});"
+  },
+  {
+    "rules": [
+      "COD-014"
+    ],
+    "kind": "page",
+    "note": "La espera se deja fuera del ciclo (una vez basta).",
+    "before": "for (const item of items) {\n    await this.list.waitForDisplayed({timeout: config.wait.M});\n    await item.click();\n}\nawait this.list.waitForDisplayed({timeout: config.wait.M});",
+    "after": "await this.list.waitForDisplayed({timeout: config.wait.M});\nfor (const item of items) {\n    await item.click();\n}"
+  },
+  {
+    "rules": [
+      "GHK-009"
+    ],
+    "kind": "feature",
+    "note": "Dos validaciones seguidas con el mismo step y la misma pantalla se unen en una tabla.",
+    "before": "Then the user sees the following items in the screen\n    | item   |\n    | header |\nAnd the user sees the following items in the screen\n    | item  |\n    | title |",
+    "after": "Then the user sees the following items in the screen\n    | item   |\n    | header |\n    | title  |"
+  },
+  {
+    "rules": [
+      "GHK-010"
+    ],
+    "kind": "feature",
+    "note": "El item se escribe con espacios; la page conserva el case viejo y suma el nuevo (así no se rompe ningún otro feature).",
+    "before": "| item          |\n| balance_label |\n// page: case 'balance_label':",
+    "after": "| item          |\n| balance label |\n// page: case 'balance_label':\n//       case 'balance label':"
+  },
+  {
+    "rules": [
+      "GHK-015"
+    ],
+    "kind": "page",
+    "note": "Si la page ya tiene el elemento (camelCase del item), se agrega su case de visibilidad; no se inventan selectores.",
+    "before": "switch (item.toLowerCase()) {\n    case 'header':\n        await this.header.waitForDisplayed({timeout: config.wait.M});\n        break;",
+    "after": "switch (item.toLowerCase()) {\n    case 'header':\n        await this.header.waitForDisplayed({timeout: config.wait.M});\n        break;\n    case 'time out line text':\n        await this.timeOutLineText.waitForDisplayed({timeout: config.wait.M});\n        break;"
+  },
+  {
+    "rules": [
+      "PAG-007"
+    ],
+    "kind": "page",
+    "note": "La constante de selector pasa a elements con un nombre descriptivo y se usa this.<elemento>.",
+    "before": "const CARD_ITEM = 'cells-product-item.card';\n...\nawait $(CARD_ITEM).click();",
+    "after": "elements: {\n    cardItem: 'cells-product-item.card',\n},\n...\nawait this.cardItem.click();"
+  },
+  {
+    "rules": [
+      "PAG-008"
+    ],
+    "kind": "page",
+    "note": "La page no navega: la navegación se mueve al step que la usaba y el import de navigation se quita de la page.",
+    "before": "// page\nasync finishFlow() {\n    await this.continueButton.click();\n    await navigation.dashboard.go();\n}",
+    "after": "// page\nasync finishFlow() {\n    await this.continueButton.click();\n}\n// step\nawait page.finishFlow();\nawait navigation.dashboard.go();"
+  },
+  {
+    "rules": [
+      "PAG-011"
+    ],
+    "kind": "page",
+    "note": "Un elemento sin selector (undefined/null) se elimina. El selector '' es válido: representa la raíz.",
+    "before": "scroll: '',\nsoftToken: undefined,",
+    "after": "scroll: '',"
+  },
+  {
+    "rules": [
+      "PAG-002"
+    ],
+    "kind": "page",
+    "note": "La page usa como root el template que ya aparece en sus selectores.",
+    "before": "super({\n    elements: {\n        header: '#cells-template-myTrips[state=\"active\"] #header',\n    },",
+    "after": "super({\n    root: '#cells-template-myTrips[state=\"active\"]',\n    elements: {\n        header: '#header',\n    },"
+  },
+  {
+    "rules": [
+      "PAG-005"
+    ],
+    "kind": "page",
+    "note": "La posición se cambia por un id/clase/atributo que YA existe en el mismo archivo (aquí el contenedor #accountsSection que usa el selector vecino). Nunca se inventan ids, clases ni atributos.",
+    "before": "accountsSection: '#accountsSection',\naccountsTitle: 'div.products div:nth-of-type(1) h2',",
+    "after": "accountsSection: '#accountsSection',\naccountsTitle: '#accountsSection h2',"
+  }
+]

@@ -1,0 +1,52 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: 7201e17b-d608-4dab-a7b0-9030f4482197
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: credit_card,promotions_advanced_payments,account
+    lock: 'false'
+then:
+- return:
+    :body:
+    - data:
+        tags:
+        - '5578346023'
+        - credit_card
+        - promotions_advanced_payments
+        - account
+        products:
+          cards:
+          - number: '4772142483799175'
+            cardId: 3l69S8lyQSuGe4xdUlRtjf70IZeq0Ic7WQqOxpVeo3g
+            cardType:
+              name: Tarjeta de crédito
+              id: CREDIT_CARD
+            status:
+              name: VIGENTE
+              id: OPERATIVE
+        authentication:
+          password: Glomo2025
+          user: '5578346023'
+          deviceId: F6D4C73F21805250396A7A5BBA918166
+      lockType: null
+      lockExpiration: null
+      id: 36043978
+    :headers:
+      content-length: '490'
+      Cache-Control: max-age=0
+      Connection: keep-alive
+      host: datamanager.globaldevtools.bbva.com
+      Vary: Accept-Encoding
+      Expires: Mon, 15 Sep 2025 18:08:32 GMT
+      Date: Mon, 15 Sep 2025 18:08:32 GMT
+      Content-Type: application/json; charset=utf-8
+    :status: 200 OK

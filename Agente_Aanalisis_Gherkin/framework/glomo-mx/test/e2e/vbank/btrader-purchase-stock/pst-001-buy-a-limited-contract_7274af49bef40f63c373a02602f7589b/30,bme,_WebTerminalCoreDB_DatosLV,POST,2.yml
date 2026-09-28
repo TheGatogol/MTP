@@ -1,0 +1,67 @@
+when:
+  sequence: 2
+  path: /WebTerminalCoreDB/DatosLV
+  method: POST
+  backend: bme
+request:
+  headers:
+    sec-fetch-mode: cors
+    referer: http://localhost:8001/
+    content-length: '182'
+    sec-fetch-site: same-site
+    accept-language: es-MX,es;q=0.9
+    origin: http://localhost:8001
+    accept: application/json, text/plain, */*; q=0.01
+    sec-ch-ua: '"Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"'
+    sec-ch-ua-mobile: ?0
+    x-vbank-session: 38748ab9-6967-44a5-9f55-201f466458a6
+    sec-ch-ua-platform: '"macOS"'
+    x-requested-with: XMLHttpRequest
+    host: localhost:9003
+    content-type: application/json
+    connection: keep-alive
+    cache-control: no-cache, no-store, must-revalidate
+    accept-encoding: gzip, deflate, br, zstd
+    sec-fetch-dest: empty
+    user-agent: GLOMO_MX/99.99.99 (Android;14;Samsung)
+  body:
+    Sesion: ED985AD1A5CD4D9BB59D423DE937348D
+    TipoPeticion: '12'
+    Instrumentos: AAPL *
+    Descriptores: 420, 60, 70, 250, 390, 410, 370, 330, 740, 340, 750, 100, 80, 330,
+      642, 240
+then:
+- return:
+    datos:
+      LV:
+        V:
+        - D80001: AAPL
+          D80002: '*'
+          MV: M2AAPL1
+          D642: '2'
+          D410: '4839.76'
+          D740: '2000'
+          D420: '4882.21'
+          D750: '2000'
+          D100: APPLE COMPUTER INC-*
+          D330: '4887.57'
+          D340: '4899.49'
+          D240: '-102.79'
+          D250: '-2.061986'
+          D370: '4985'
+          D390: '4923.39'
+          D70: '211849'
+          D80: AAPL       *
+          D60: '20250110'
+    :headers:
+      content-length: '337'
+      Server: Microsoft-IIS/10.0
+      Access-Control-Allow-Origin: http://localhost:8001
+      Access-Control-Allow-Credentials: 'true'
+      Vary: Origin
+      X-Response-Time-ms: '5'
+      Date: Fri, 10 Jan 2025 20:22:56 GMT
+      Content-Type: application/json; charset=utf-8
+      X-Powered-By: ASP.NET
+    :status: 200 OK
+    error: 0

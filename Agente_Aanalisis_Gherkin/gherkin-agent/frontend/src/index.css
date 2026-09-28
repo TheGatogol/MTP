@@ -1,0 +1,77 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Identidad visual MTP (resources/identidad_visual.md).
+   La paleta es de fondos azul marino; los tonos claros de acento (brand-500/600) se derivan del Azul MTP
+   para que foco, pestañas y enlaces tengan contraste. */
+@theme {
+    --font-sans: "Segoe UI", system-ui, -apple-system, sans-serif;
+    --font-mono: "Cascadia Code", "Consolas", ui-monospace, monospace;
+
+    --color-mtp-navy: #0C1640;      /* Fondo principal */
+    --color-mtp-deep: #121D4A;      /* Fondo secundario */
+    --color-mtp-surface: #142055;   /* Superficie / cards */
+    --color-mtp-darkest: #09113A;   /* Fondo más oscuro */
+    --color-mtp-accent: #121D59;    /* Azul corporativo / acento */
+    --color-mtp-text: #FFFFFF;      /* Texto principal */
+    --color-mtp-muted: #B5B9C9;     /* Texto secundario */
+
+    --color-brand-50: #1C2A68;
+    --color-brand-100: #243270;
+    --color-brand-500: #9AAAF5;
+    --color-brand-600: #4C63D9;
+    --color-brand-700: #121D59;
+    --color-brand-800: #0C1640;
+
+    /* Escala neutra adaptada al tema oscuro MTP */
+    --color-slate-50: #121D4A;
+    --color-slate-100: #1A2760;
+    --color-slate-200: #243270;
+    --color-slate-300: #D0D3DE;
+    --color-slate-400: #B5B9C9;
+    --color-slate-500: #9AA0B8;
+    --color-slate-600: #C3C7D4;
+    --color-slate-700: #2C3B80;
+    --color-slate-800: #1C2A68;
+    --color-slate-900: #142055;
+    --color-slate-950: #09113A;
+}
+
+html, body, #root {
+    height: 100%;
+}
+
+body {
+    background-color: var(--color-mtp-navy);
+    color: var(--color-mtp-text);
+    @apply antialiased;
+}
+
+/* Todo elemento interactuable muestra la manita. */
+a, button, select, summary, label, [role="button"], [role="switch"], [role="tab"], [role="option"],
+[cmdk-item], [data-clickable], tr[data-clickable], input[type="checkbox"], input[type="radio"] {
+    cursor: pointer;
+}
+button:disabled, select:disabled, [aria-disabled="true"] {
+    cursor: not-allowed;
+}
+
+.code {
+    font-family: var(--font-mono);
+    font-size: 12.5px;
+    line-height: 1.55;
+    tab-size: 4;
+}
+
+/* cmdk */
+[cmdk-item][data-selected="true"] {
+    background-color: var(--color-brand-50);
+}
+[cmdk-group-heading] {
+    @apply px-3 pt-3 pb-1 text-[11px] font-semibold uppercase tracking-wide text-slate-400;
+}
+
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-thumb { background-color: var(--color-slate-700); border-radius: 9999px; border: 2px solid transparent; background-clip: padding-box; }
+::-webkit-scrollbar-track { background: transparent; }

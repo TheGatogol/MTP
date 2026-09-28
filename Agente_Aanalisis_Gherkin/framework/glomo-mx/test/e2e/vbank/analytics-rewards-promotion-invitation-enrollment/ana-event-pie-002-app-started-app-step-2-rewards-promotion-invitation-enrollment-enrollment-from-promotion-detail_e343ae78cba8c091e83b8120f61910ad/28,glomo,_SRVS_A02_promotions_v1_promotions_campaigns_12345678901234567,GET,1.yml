@@ -1,0 +1,83 @@
+when:
+  sequence: 1
+  path: /SRVS_A02/promotions/v1/promotions/campaigns/12345678901234567
+  method: GET
+  backend: glomo
+request:
+  headers:
+    sec-fetch-mode: cors
+    content-length: '0'
+    referer: http://localhost:8001/
+    sec-fetch-site: same-site
+    accept-language: es-MX,es;q=0.9
+    origin: http://localhost:8001
+    tsec: 7a87fded0789c1bd5b9cef4b967f067aada43343
+    accept: application/json, text/html, */*; q=0.1
+    sec-ch-ua: '"Chromium";v="134", "Not:A-Brand";v="24", "Google Chrome";v="134"'
+    sec-ch-ua-mobile: ?0
+    x-vbank-session: 59f537e2-ecbf-4c26-b675-5cdb14ebb00b
+    sec-ch-ua-platform: '"macOS"'
+    host: localhost:9000
+    content-type: application/json
+    connection: keep-alive
+    cache-control: no-cache, no-store, must-revalidate
+    accept-encoding: gzip, deflate, br, zstd
+    sec-fetch-dest: empty
+    user-agent: GLOMO_MX/99.99.99 (Android;14;Samsung)
+then:
+- return:
+    isRequiredControlProcess: 'false'
+    validityPeriod:
+      endDate: '2024-11-18'
+      startDate: '2025-11-15'
+    :headers:
+      access-control-allow-origin: '*'
+      content-length: '797'
+      Access-Control-Expose-Headers: tsec, vnd.bbva.access-token-type,vnd.bbva.access-token,
+        vnd.bbva.sso-pkcs7, authenticationtype, authenticationdata, authenticationstate,
+        authenticationchallenge
+      Server: artichoke
+      access-control-allow-headers: Content-Type, tsec, authenticationtype, authenticationdata,
+        authenticationstate, contactid, consumeruuid, consumerapplicationid, perimetertsec,
+        authorization, responsewarningcode, responsewarningdescription, cuf, field,
+        bcs-device-app-version, bcs-device-app-version, vnd.bbva.authorization, device-id,
+        Bcs-Device-Os-Name, bcs-device-app-name, bcs-device-dpi, BCS-Device-Id
+      Connection: keep-alive
+      Vary: Accept-Encoding
+      tsec: 7a87fded0789c1bd5b9cef4b967f067aada43343
+      X-Response-Time: 5ms
+      Date: Wed, 30 Apr 2025 10:24:52 GMT
+      Content-Type: application/json; charset=utf-8
+    isEnrolledUser: false
+    participatingCards:
+    - image:
+        url: https://cardcovers-stage.caasbbva.com/peru/491947_VISA-CORPORATE_front.png?width=120&height=76
+      product:
+        name: Tarjeta de crédito
+        id: CREDIT_CARD
+      lastFourDigits: '0001'
+      cardId: '0001'
+      contract:
+        number: '504'
+        grantedCredits:
+          amount: 3000000
+          currency: MXN
+        revolvingBalance:
+          amount: '4000'
+          currency: MXN
+      hasAdditional: 'true'
+      alias: comprobar máximo de caracteres
+    name: BLACK FRIDAY 2024
+    :status: 200 OK
+    id: '12345678901234567'
+    benefit:
+      description: 12 MSI + SKIP PAYMENT
+      details:
+      - id: MSI
+        value: '12'
+      - id: SKIP PAYMENT
+        value: '3'
+      - amount:
+          amount: 200
+          currency: MXN
+        id: CASHBACK

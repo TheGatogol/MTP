@@ -1,0 +1,102 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: sustainability_product_bill_payments
+    lock: 'false'
+then:
+- return:
+    :body:
+    - data:
+        search1:
+          search: sears
+          name: SEARS
+          alias: Tarjeta
+          id: '000653837'
+          billNumber: '123456789123'
+        locale: es_mx
+        tags:
+        - sustainability_product_bill_payments
+        search5:
+          search: PAL
+          name: PALACIO
+          alias: PALACIO DE HIERRO
+          id: '000516221'
+          billNumber: '1234567890120102'
+        products:
+          accounts:
+          - number: '00740010001501826153'
+            product:
+              name: Cuenta de Ahorro
+              id: AH
+            numberType:
+              id: CCC
+            alias: CUENTA
+            id: Uvn6wi1Rh6BedVQ4H63v6d1DDXwvKzT_yh5IYEhwTc4rzB_lTpBGCw
+            detail:
+              level: '02'
+              specificAmounts:
+              - amounts:
+                - amount: 145615287
+                  currency: MXN
+                name: Saldo actual
+                id: CURRENT_BALANCE
+              - amounts:
+                - amount: 0
+                  currency: MXN
+                name: Saldo buen cobro
+                id: PENDING_DEPOSIT_BALANCE
+              - amounts:
+                - amount: 0
+                  currency: MXN
+                name: '000000016'
+                id: ACCOUNT_MOVEMENT_NUMBER
+              indicators:
+              - name: Indica si la cuenta es de nómina
+                id: IS_PAYROLL_ACCOUNT
+                isActive: false
+              - name: Indica si la cuenta es eje
+                id: IS_PRINCIPAL_ACCOUNT
+                isActive: true
+              - name: Indica si la cuenta tiene pockets
+                id: HAS_POCKETS
+                isActive: false
+              - name: Indica si la cuenta es digital
+                id: IS_DIGITAL
+                isActive: false
+            simpleCode: Uvn6wi1Rh6BedVQ4H63v6T4qnGew5uLA
+            productType: ACCOUNT
+            status:
+              name: Cuenta Activa
+              id: ACTIVE
+            subProductType:
+              name: TARJETA NOMINA BASIC
+              id: '0230'
+            signedAuthorization:
+              name: Cuenta Individual
+              id: SINGLE
+        authentication:
+          password: Glomo2025
+          user: '5539397577'
+          deviceId: FCAF831C6510A9E74C8A5E70D50C72A8
+      id: 35733098
+    :headers:
+      content-length: '1565'
+      Server: nginx
+      Cache-Control: max-age=0
+      Connection: keep-alive
+      host: datamanager.globaldevtools.bbva.com
+      Vary: Accept-Encoding
+      Expires: Fri, 26 Jun 2026 06:18:15 GMT
+      Date: Fri, 26 Jun 2026 06:18:15 GMT
+      Content-Type: application/json; charset=utf-8
+    :status: 200 OK

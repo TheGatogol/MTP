@@ -1,0 +1,72 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: bfe32885-c9a7-4b2f-8793-2b95141d160d
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: insurance_delayed_payment
+    lock: 'false'
+then:
+- return:
+    :body:
+    - data:
+        notifications:
+          tdc: •9985
+          insurancePayment: 67bc8e29f34f437a8735c025
+        tags:
+        - insurance_delayed_payment
+        authentication:
+          password: Glomo2025
+          user: '5525884474'
+          deviceId: 5E700549EFA3494DD69D748B4FDF75B7
+      lockExpiration: null
+      lockType: null
+      id: 36057017
+    - data:
+        notifications:
+          tdc: •3120
+          product: •3006
+          insurancePaymentFinished: 6797bf998d992a1b103288bd
+          insurancePayment: 67bfad4df34f437a8735e6fd
+        tags:
+        - insurance_delayed_payment
+        - idp_e2e
+        authentication:
+          password: Glomo2024
+          user: '5525884467'
+          deviceId: 0DE6868F54D8971E939168420BE7508F
+      lockExpiration: null
+      lockType: null
+      id: 36058748
+    - data:
+        notifications:
+          tdc: •5877
+          insurancePayment: 67b36388f34f437a87356b6e
+        tags:
+        - insurance_delayed_payment
+        - insurance_no_payment
+        authentication:
+          password: Password00
+          user: '5549838862'
+          deviceId: 5E700549EFA3494DD69D748B4FDF75B7
+      lockExpiration: null
+      lockType: null
+      id: 36064407
+    :headers:
+      content-length: '1018'
+      Cache-Control: max-age=0
+      Connection: keep-alive
+      host: datamanager.globaldevtools.bbva.com
+      Vary: Accept-Encoding
+      Expires: Fri, 28 Feb 2025 16:08:30 GMT
+      Date: Fri, 28 Feb 2025 16:08:30 GMT
+      Content-Type: application/json; charset=utf-8
+    :status: 200 OK

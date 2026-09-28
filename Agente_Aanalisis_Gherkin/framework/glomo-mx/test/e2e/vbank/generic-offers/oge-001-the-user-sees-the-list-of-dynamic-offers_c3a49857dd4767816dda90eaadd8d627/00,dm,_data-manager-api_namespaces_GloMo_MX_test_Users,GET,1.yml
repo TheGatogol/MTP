@@ -1,0 +1,45 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: 5cf4e590-043d-4bfc-affa-8da115fea40e
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: dynamic_offers
+    lock: 'false'
+then:
+- return:
+    :body:
+    - data:
+        offers:
+        - promissory:
+          - id: AGFMk4OV4oL47_FQsw1z_S3hvjSTPbIv
+        -investmentFunds:
+          - id: EwGgkR3AEJNiQQiiS9ToW0nJiEb-EtJ4
+        tags:
+        - '3441124020'
+        - dynamic_offers
+        - opportunities
+        authentication:
+          password: Glomo2024
+          user: '3441124020'
+          deviceId: 4F8F7CFEDBB6B01888589E73888CCF99
+      lockExpiration: null
+      lockType: null
+      id: 35909216
+    :headers:
+      content-length: '347'
+      Server: nginx
+      Connection: keep-alive
+      host: datamanager.globaldevtools.bbva.com
+      Vary: Accept-Encoding
+      Date: Mon, 14 Oct 2024 17:20:24 GMT
+      Content-Type: application/json
+    :status: 200 OK

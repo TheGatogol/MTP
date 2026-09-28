@@ -1,0 +1,42 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: 27740ac8-daf8-4bc2-8ebd-acb0626869a4
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: international_transfers_historical,international_transfers_with_one_n4_account
+    lock: 'false'
+then:
+- return:
+    :body:
+    - data:
+        tags:
+        - '5541081551'
+        - international_transfers_historical
+        - international_transfers_with_one_n4_account
+        - international_transfers
+        authentication:
+          password: Glomo2025
+          user: '5541081551'
+          deviceId: 5F32EBABC3A9DEF9B193B1105DC7B31E
+      lockExpiration: null
+      lockType: null
+      id: 36050168
+    :headers:
+      content-length: '314'
+      Cache-Control: max-age=0
+      Connection: keep-alive
+      host: datamanager.globaldevtools.bbva.com
+      Vary: Accept-Encoding
+      Expires: Wed, 19 Feb 2025 21:39:03 GMT
+      Date: Wed, 19 Feb 2025 21:39:03 GMT
+      Content-Type: application/json; charset=utf-8
+    :status: 200 OK

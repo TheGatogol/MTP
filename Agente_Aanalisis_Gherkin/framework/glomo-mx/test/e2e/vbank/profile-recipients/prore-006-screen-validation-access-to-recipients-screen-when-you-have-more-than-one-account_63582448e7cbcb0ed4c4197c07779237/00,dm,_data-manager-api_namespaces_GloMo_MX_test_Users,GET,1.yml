@@ -1,0 +1,53 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: a52864d3-48a4-48e3-9a4e-bb704abfe010
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: profile_recipients
+    lock: 'false'
+then:
+- return:
+    :body:
+    - data:
+        beneficiry:
+          birthDay: '1998-12-13'
+          lastName: Seg
+          secondLastName: Ter
+          kinship: socio
+          name: David
+          newAddress: false
+        address:
+          zipCode: '97000'
+          outerN: '89'
+          colony: PRIVADA DEL MAESTRO
+          innerN: '89'
+          street: Avenida insurgentes
+        locale: es_mx
+        tags:
+        - profile_recipients
+        - '5578475284'
+        authentication:
+          password: Glomo2023
+          user: '5578475284'
+          deviceId: 8C46756EA201A635CD739D32D4156119
+      lockType: null
+      lockExpiration: null
+      id: 3510517
+    :headers:
+      Strict-Transport-Security: max-age=15768000
+      Server: nginx
+      ECS-Entry-Point-Zone: ext
+      Connection: keep-alive
+      Content-Length: '517'
+      Date: Thu, 27 Apr 2023 15:23:11 GMT
+      Content-Type: application/json
+    :status: 200 OK

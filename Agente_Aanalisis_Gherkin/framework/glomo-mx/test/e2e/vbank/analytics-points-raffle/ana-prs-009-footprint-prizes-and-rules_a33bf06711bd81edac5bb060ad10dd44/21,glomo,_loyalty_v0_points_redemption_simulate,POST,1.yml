@@ -1,0 +1,71 @@
+when:
+  sequence: 1
+  path: /SRVS_A02/loyalty/v0/points/redemption/simulate
+  method: POST
+  backend: glomo
+request:
+  headers:
+    sec-fetch-mode: cors
+    referer: http://localhost:8001/
+    content-length: '66'
+    sec-fetch-site: same-site
+    accept-language: es-MX,es;q=0.9
+    origin: http://localhost:8001
+    tsec: 52de5b51e7b6c210c4baba4e87cf7c5172d49811
+    accept: application/json, text/html, */*; q=0.1
+    sec-ch-ua: '"Chromium";v="112", "Google Chrome";v="112", "Not:A-Brand";v="99"'
+    sec-ch-ua-mobile: ?0
+    x-vbank-session: ec98ebe9-0558-41e0-846c-c74c7489052d
+    sec-ch-ua-platform: '"macOS"'
+    host: localhost:9000
+    content-type: application/json
+    connection: keep-alive
+    cache-control: no-cache, no-store, must-revalidate
+    accept-encoding: gzip, deflate, br
+    sec-fetch-dest: empty
+    user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36
+      (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36
+  body:
+    redemptionType: RAFFLE
+    contract:
+      id: '0001'
+    points: 8000
+then:
+- return:
+    data:
+      raffle:
+        period:
+          endDate: '2020-03-31'
+          startDate: '2020-02-01'
+        ticketValue: 1000
+        award: 9 DEPOSITOS EN EFECTIVO
+        permissionGovernment: 20180681PS04
+        ticket:
+          maximumTicketsQuantity: 8
+        raffleDate: '2020-04-10'
+        description: PARTICIPACION SORTEO
+        id: SORFEBMA
+        publicationDate: '2020-10-25'
+    :headers:
+      access-control-allow-origin: '*'
+      content-length: '386'
+      Access-Control-Expose-Headers: tsec, vnd.bbva.access-token-type,vnd.bbva.access-token,
+        vnd.bbva.sso-pkcs7, authenticationtype, authenticationdata, authenticationstate,
+        authenticationchallenge
+      Server: artichoke
+      Alt-Svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      access-control-allow-headers: Content-Type, tsec, authenticationtype, authenticationdata,
+        authenticationstate, contactid, consumeruuid, consumerapplicationid, perimetertsec,
+        authorization, responsewarningcode, responsewarningdescription, cuf, field,
+        bcs-device-app-version, bcs-device-app-version, vnd.bbva.authorization
+      Vary: Accept-Encoding
+      tsec: 52de5b51e7b6c210c4baba4e87cf7c5172d49811
+      X-Response-Time: 455ms
+      Date: Wed, 03 May 2023 20:05:44 GMT
+      Content-Type: application/json; charset=utf-8
+      Via: 1.1 google
+    :status: 200 OK
+    apiInfo:
+      name: loyalty
+      category: people
+      version: 0.2.0

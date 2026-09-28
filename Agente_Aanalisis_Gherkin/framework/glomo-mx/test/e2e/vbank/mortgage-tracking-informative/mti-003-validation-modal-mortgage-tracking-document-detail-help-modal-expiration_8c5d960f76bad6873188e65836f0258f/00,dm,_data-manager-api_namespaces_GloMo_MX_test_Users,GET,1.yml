@@ -1,0 +1,40 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: 8048274c-361f-49b3-aea2-2c42cc1ca56c
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: mortgage_tracking
+    lock: 'false'
+then:
+- return:
+    :body:
+    - data:
+        tags:
+        - '5569715750'
+        - mortgage_tracking
+        authentication:
+          password: Password00
+          user: '5569715750'
+          deviceId: F7137A14EE952593C70B24286464230F
+      id: 35780705
+      lockType: null
+      lockExpiration: null
+    :headers:
+      Strict-Transport-Security: max-age=15768000
+      Server: nginx
+      ECS-Entry-Point-Zone: ext
+      Connection: keep-alive
+      host: datamanager.globaldevtools.bbva.com
+      Content-Length: '224'
+      Date: Tue, 12 Mar 2024 22:17:30 GMT
+      Content-Type: application/json
+    :status: 200 OK

@@ -1,0 +1,96 @@
+when:
+  sequence: 1
+  path: /SRVS_A02/loyalty/v0/rewards
+  method: GET
+  backend: glomo
+request:
+  headers:
+    content-length: '0'
+    accept-language: es;q=1, en-MX;q=0.9
+    x-sl-chef-ip: 10.130.9.71
+    tsec: 9712923d13afdd6db7bad1bf0f17115220b2d093
+    via: 1.1 packer-tunnel-f1d6f3c6 (squid/4.6)
+    accept: application/json, text/html, */*; q=0.1
+    x-sl-job-id: 6aeb9159693f48adba6b7bb28d5fc6df
+    host: localhost:9000
+    connection: keep-alive
+    content-type: application/json
+    cache-control: max-age=0
+    x-sl-tunnel-id: 717d30b771064b869094e74c34692141
+    accept-encoding: gzip, deflate, br
+    user-agent: GLOMO_MX/99.99.99 (iPhone; iOS 14.0.1)
+  query:
+    billingPeriod: OPEN_PERIOD
+    contract.id: '0001'
+then:
+- return:
+    data:
+    - unitType:
+        name: Points
+        id: POINTS
+      isRedeemable: true
+      balances:
+      - itemizedBalances:
+        - id: CLOSE_TO_EXPIRE
+          nonMonetaryValue: 1200
+        endDate: '2037-12-15'
+        startDate: '2022-07-15'
+      - itemizedBalances:
+        - id: GENERATED
+          nonMonetaryValue: 1234
+        - id: APPLIED
+          nonMonetaryValue: 1234
+        - id: EXPIRED
+          nonMonetaryValue: 1234
+        - id: CURRENT
+          nonMonetaryValue: 1000
+        - id: PREVIOUS
+          nonMonetaryValue: 1234
+        - id: PARTIALLY_GENERATED
+          nonMonetaryValue: 1000
+        - id: PARTIALLY_APPLIED
+          nonMonetaryValue: 800
+        - id: SPENT_TODAY
+          nonMonetaryValue: 600
+        endDate: '2018-01-02'
+        startDate: '2018-01-01'
+      contract:
+        id: '0001'
+        productType:
+          id: CARD
+      name: Bancomer points
+      monetaryValue:
+        amount: 28.99
+        currency: MXN
+      monetaryPointEquivalence:
+        amount: 5
+        currency: MXN
+      id: BANCOMER_POINTS
+      nonMonetaryValue: 500
+      nonMonetaryRedemptionSavings:
+        amount: 5
+        currency: MXN
+    :headers:
+      access-control-allow-origin: '*'
+      content-length: '1013'
+      Access-Control-Expose-Headers: tsec, vnd.bbva.access-token-type,vnd.bbva.access-token,
+        vnd.bbva.sso-pkcs7, authenticationtype, authenticationdata, authenticationstate,
+        authenticationchallenge
+      Server: artichoke
+      Alt-Svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      access-control-allow-headers: Content-Type, tsec, authenticationtype, authenticationdata,
+        authenticationstate, contactid, consumeruuid, consumerapplicationid, perimetertsec,
+        authorization, responsewarningcode, responsewarningdescription, cuf, field,
+        bcs-device-app-version, bcs-device-app-version, vnd.bbva.authorization, device-id
+      Vary: Accept-Encoding
+      tsec: 9712923d13afdd6db7bad1bf0f17115220b2d093
+      X-Response-Time: 461ms
+      Date: Mon, 20 Nov 2023 13:46:58 GMT
+      Content-Type: application/json; charset=utf-8
+      Via: 1.1 google
+    :status: 200 OK
+    responseStatus: 200
+    apiInfo:
+      name: catalogs
+      category: data
+      version: 0.2.0

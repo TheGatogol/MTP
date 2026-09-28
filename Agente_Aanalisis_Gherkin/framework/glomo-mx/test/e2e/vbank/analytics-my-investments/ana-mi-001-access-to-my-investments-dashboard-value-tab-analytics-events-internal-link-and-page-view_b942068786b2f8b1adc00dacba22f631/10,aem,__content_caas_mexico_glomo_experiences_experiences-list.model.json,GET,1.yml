@@ -1,0 +1,160 @@
+when:
+  sequence: 1
+  path: //content/caas/mexico/glomo/experiences/experiences-list.model.json
+  method: GET
+  backend: aem
+request:
+  headers:
+    sec-fetch-mode: cors
+    content-length: '0'
+    referer: http://localhost:8001/
+    sec-fetch-site: same-site
+    accept-language: es
+    origin: http://localhost:8001
+    accept: application/json, text/plain, */*; q=0.01
+    sec-ch-ua: '" Not A;Brand";v="99", "Chromium";v="102", "Google Chrome";v="102"'
+    sec-ch-ua-mobile: ?0
+    x-vbank-session: 36cdd87f-1e8c-47c9-a34c-333d65b00cfa
+    sec-ch-ua-platform: '"macOS"'
+    host: localhost:9031
+    content-type: text/plain
+    connection: keep-alive
+    cache-control: no-cache, no-store, must-revalidate
+    accept-encoding: gzip, deflate, br
+    sec-fetch-dest: empty
+    user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36
+      (KHTML, like Gecko) Chrome/102.0.5005.61 Safari/537.36
+then:
+- return:
+    brandSlug: ''
+    ::items:
+      root:
+        ::items:
+          contentfragmentlist:
+            ::type: bbva/pwebs/components/par/corecomponents/contentfragmentlist
+            id: contentfragmentlist
+            items:
+            - elementsOrder:
+              - id
+              - title
+              - description
+              - illustration
+              - linkText
+              - linkAction
+              - buttonText
+              - priority
+              - linkId
+              elements:
+                buttonText:
+                  dataType: string
+                  ::type: string
+                  title: Button Text (T)
+                  multiValue: false
+                  translate: true
+                linkId:
+                  dataType: string
+                  ::type: string
+                  title: Link Id
+                  multiValue: false
+                description:
+                  dataType: string
+                  ::type: string
+                  title: Description (T)
+                  multiValue: false
+                  value: Crea metas y logra casi sin darte cuenta lo que te propongas.
+                  translate: true
+                illustration:
+                  dataType: string
+                  ::type: string
+                  title: Illustration
+                  multiValue: false
+                  value: /content/dam/public-web/global/images/micro-illustrations/add_goals.png
+                linkText:
+                  dataType: string
+                  ::type: string
+                  title: Link Text (T)
+                  multiValue: false
+                  value: Ver más
+                  translate: true
+                id:
+                  dataType: long
+                  ::type: long
+                  title: Id
+                  multiValue: false
+                  value: 1
+                title:
+                  dataType: string
+                  ::type: string
+                  title: Title (T)
+                  multiValue: false
+                  value: BBVA Plan
+                  translate: true
+                priority:
+                  dataType: long
+                  ::type: long
+                  title: Priority
+                  multiValue: false
+                  value: 1
+                linkAction:
+                  dataType: string
+                  ::type: string
+                  title: Link Action
+                  multiValue: false
+                  value: goals
+              name: bbva-plan
+              description: "Crea metas y logra casi sin darte\r\ncuenta lo que te\
+                \ propongas."
+              model: caascfm/models/global-cells-experiences
+              ::type: dam:Asset
+              title: BBVA Plan
+        allowedComponents:
+          components:
+          - path: /content/caas/mexico/glomo/experiences/experiences-list/jcr:content/root/bbva/pwebs/components/par/corecomponents/contentfragment
+            title: Content Fragment
+          - path: /content/caas/mexico/glomo/experiences/experiences-list/jcr:content/root/bbva/pwebs/components/par/corecomponents/dynamiccontentfragment
+            title: Dynamic Content Fragment
+          - path: /content/caas/mexico/glomo/experiences/experiences-list/jcr:content/root/bbva/pwebs/components/par/corecomponents/contentfragmentlist
+            title: Content Fragment List
+          applicable: false
+        columnClassNames:
+          contentfragmentlist: aem-GridColumn aem-GridColumn--default--12
+        gridClassNames: aem-Grid aem-Grid--12 aem-Grid--default--12
+        ::itemsOrder:
+        - contentfragmentlist
+        ::type: wcm/foundation/components/responsivegrid
+        columnCount: 12
+    lastModifiedDate: 1621243906642
+    htmlPageItems: []
+    :headers:
+      X-EdgeConnect-Origin-MEX-Latency: '164'
+      Access-Control-Allow-Origin: http://localhost:8001
+      X-Content-Type-Options: nosniff
+      Connection: keep-alive
+      Date: Tue, 14 Jun 2022 09:26:08 GMT
+      Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Access-Control-Request-Method,
+        x-requested-with
+      Strict-Transport-Security: max-age=31536000; includeSubdomains; preload
+      Cache-Control: max-age=1300
+      ETag: '"20c8510cb7a8b8ca3eb0b2e82d72e70f-gzip"'
+      Content-Security-Policy: frame-ancestors 'self' https://www.bbva.pt https://bbva.pt
+        https://online.bbva.com.ar https://s3-dev.movil.bbva.es https://movil.bbva.es
+        https://pre.web.bbva.es https://qa.web.grupobbva.com https://web.bbva.es https://*.es.igrupobbva
+        https://*.igrupobbva https://bbvanetcash.com https://www.bbvanetcash.com https://www.bbva.es
+        https://s3-dev.mobile.bbva.it http://localhost http://localhost:4200 https://int-bbva-cells-files.s3.amazonaws.com
+        https://pre.web.bbva.it
+      Vary: Accept-Encoding
+      Set-Cookie: vbank-session=36cdd87f-1e8c-47c9-a34c-333d65b00cfa
+      Expires: Tue, 14 Jun 2022 09:47:48 GMT
+      X-XSS-Protection: 1; mode=block
+      Content-Length: '2759'
+      X-EdgeConnect-MidMile-RTT: '0'
+      Content-Type: application/json
+    language: en-US
+    title: experiences-list
+    cssClassNames: caasinitiativecontent page basicpage
+    templateName: caasinitiativecontent
+    ::itemsOrder:
+    - root
+    ::type: bbva/pwebs/components/pages/caasinitiativecontent
+    :status: 200 OK
+    id: caasinitiativecontent-902dea87cd

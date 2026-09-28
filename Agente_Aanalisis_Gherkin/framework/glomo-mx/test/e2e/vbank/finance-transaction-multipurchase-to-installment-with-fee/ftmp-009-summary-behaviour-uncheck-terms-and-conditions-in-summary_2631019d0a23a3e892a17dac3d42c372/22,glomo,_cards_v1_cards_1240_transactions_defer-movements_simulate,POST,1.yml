@@ -1,0 +1,454 @@
+when:
+  sequence: 1
+  path: /SRVS_A02/cards/v1/cards/1240/transactions/defer-movements/simulate
+  method: POST
+  backend: glomo
+request:
+  headers:
+    sec-fetch-mode: cors
+    referer: http://localhost:8001/
+    content-length: '228'
+    sec-fetch-site: same-site
+    accept-language: es-ES,es;q=0.9
+    origin: http://localhost:8001
+    tsec: 0c3ca58e8a260c255d745af5bc9606ce2050fb43
+    accept: application/json, text/html, */*; q=0.1
+    sec-ch-ua: '"Chromium";v="106", "Google Chrome";v="106", "Not;A=Brand";v="99"'
+    sec-ch-ua-mobile: ?0
+    x-vbank-session: b20d4349-2ec6-43ad-bf22-642bbcdb3840
+    sec-ch-ua-platform: '"macOS"'
+    host: localhost:9000
+    content-type: application/json
+    connection: keep-alive
+    cache-control: no-cache, no-store, must-revalidate
+    accept-encoding: gzip, deflate, br
+    sec-fetch-dest: empty
+    user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36
+      (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36
+  body:
+    capital:
+      amount: 4500
+      currency: MXN
+    installments:
+    - rate:
+        itemizeRates:
+        - rateType: SIMULATION
+          itemizeRatesUnit:
+            unitRateType: PERCENTAGE
+            percentage: 49.99
+    operationType:
+      id: DEFER_MULTIPURCHASE
+then:
+- return:
+    data:
+      capital:
+        amount: 4500
+        currency: MXN
+      simulationDate: '2022-10-24'
+      installments:
+      - firstInstallmentDate: '2022-06-23'
+        financingCalculationFormat:
+          unit:
+            number: 3
+            id: TERM
+            frequency: MONTHLY
+          id: TOTAL_AMOUNT_PAYMENT
+        rate:
+          itemizeRates:
+          - rateType: PREFERENTIAL
+            itemizeRatesUnit:
+              unitRateType: PERCENTAGE
+              percentage: 20
+            description: Tasa de interes para el finananciamiento en porcentaje
+          - rateType: REGULAR
+            itemizeRatesUnit:
+              unitRateType: PERCENTAGE
+              percentage: 60.96
+            description: Tasa de interes regular de la tarjeta de credito
+          - rateType: CAT
+            itemizeRatesUnit:
+              unitRateType: PERCENTAGE
+              percentage: 49.99
+            description: CAT
+          - rateType: WEIGHTED
+            itemizeRatesUnit:
+              unitRateType: PERCENTAGE
+              percentage: 19.99
+            description: Weighted
+          - rateType: ANNUAL
+            itemizeRatesUnit:
+              unitRateType: PERCENTAGE
+              percentage: 19.99
+            description: Weighted
+        specificAmounts:
+        - amount:
+            amount: 4526
+            currency: MXN
+          id: INSTALLMENT_AMOUNT
+        - amount:
+            amount: 14522.65
+            currency: MXN
+          id: TOTAL
+        - amount:
+            amount: 5900.87
+            currency: MXN
+          id: AMOUNT_INTEREST
+        - amount:
+            amount: 3200.87
+            currency: MXN
+          id: CAPITAL
+        fee:
+          itemizeFees:
+          - feeType: ADDICIONAL_FEE
+            itemizeFeeUnit:
+              unitType: PERCENTAGE
+              percentage: 5
+          - feeType: DEFER_FEE_WITH_IVA
+            itemizeFeeUnit:
+              unitType: AMOUNT
+              amount: 865.64
+              currency: MXN
+          - feeType: DEFER_FEE_WITH_IVA
+            itemizeFeeUnit:
+              unitType: PERCENTAGE
+              percentage: 10.44
+          - feeType: DEFER_FEE_WITHOUT_IVA
+            itemizeFeeUnit:
+              unitType: AMOUNT
+              amount: 3.64
+              currency: MXN
+          - rateType: ANNUAL
+            itemizeRatesUnit:
+              unitRateType: PERCENTAGE
+              percentage: 19.99
+            description: Weighted
+        financingType:
+          id: MONTHS_WITHOUT_INTERESTS
+        promotion:
+          id: '85'
+      - firstInstallmentDate: '2022-06-23'
+        financingCalculationFormat:
+          unit:
+            number: 6
+            id: TERM
+            frequency: MONTHLY
+          id: TOTAL_AMOUNT_PAYMENT
+        rate:
+          itemizeRates:
+          - rateType: PREFERENTIAL
+            itemizeRatesUnit:
+              unitRateType: PERCENTAGE
+              percentage: 30
+            description: Tasa de interes para el finananciamiento en porcentaje
+          - rateType: REGULAR
+            itemizeRatesUnit:
+              unitRateType: PERCENTAGE
+              percentage: 60.96
+            description: Tasa de interes regular de la tarjeta de credito
+          - rateType: CAT
+            itemizeRatesUnit:
+              unitRateType: PERCENTAGE
+              percentage: 59.99
+            description: CAT
+          - rateType: WEIGHTED
+            itemizeRatesUnit:
+              unitRateType: PERCENTAGE
+              percentage: 29.99
+            description: Weighted
+          - rateType: ANNUAL
+            itemizeRatesUnit:
+              unitRateType: PERCENTAGE
+              percentage: 19.99
+            description: Weighted
+        specificAmounts:
+        - amount:
+            amount: 3526
+            currency: MXN
+          id: INSTALLMENT_AMOUNT
+        - amount:
+            amount: 15522.65
+            currency: MXN
+          id: TOTAL
+        - amount:
+            amount: 6900.87
+            currency: MXN
+          id: AMOUNT_INTEREST
+        - amount:
+            amount: 3300.87
+            currency: MXN
+          id: CAPITAL
+        fee:
+          itemizeFees:
+          - feeType: ADDICIONAL_FEE
+            itemizeFeeUnit:
+              unitType: PERCENTAGE
+              percentage: 21
+          - feeType: DEFER_FEE_WITH_IVA
+            itemizeFeeUnit:
+              unitType: AMOUNT
+              amount: 965.64
+              currency: MXN
+          - feeType: DEFER_FEE_WITH_IVA
+            itemizeFeeUnit:
+              unitType: PERCENTAGE
+              percentage: 20.44
+          - feeType: DEFER_FEE_WITHOUT_IVA
+            itemizeFeeUnit:
+              unitType: AMOUNT
+              amount: 6.64
+              currency: MXN
+        financingType:
+          id: MONTHS_WITHOUT_INTERESTS
+        promotion:
+          id: '85'
+      - firstInstallmentDate: '2022-06-23'
+        financingCalculationFormat:
+          unit:
+            number: 9
+            id: TERM
+            frequency: MONTHLY
+          id: TOTAL_AMOUNT_PAYMENT
+        rate:
+          itemizeRates:
+          - rateType: PREFERENTIAL
+            itemizeRatesUnit:
+              unitRateType: PERCENTAGE
+              percentage: 40
+            description: Tasa de interes para el finananciamiento en porcentaje
+          - rateType: REGULAR
+            itemizeRatesUnit:
+              unitRateType: PERCENTAGE
+              percentage: 70.96
+            description: Tasa de interes regular de la tarjeta de credito
+          - rateType: CAT
+            itemizeRatesUnit:
+              unitRateType: PERCENTAGE
+              percentage: 69.99
+            description: CAT
+          - rateType: WEIGHTED
+            itemizeRatesUnit:
+              unitRateType: PERCENTAGE
+              percentage: 39.99
+            description: Weighted
+          - rateType: ANNUAL
+            itemizeRatesUnit:
+              unitRateType: PERCENTAGE
+              percentage: 19.99
+            description: Weighted
+        specificAmounts:
+        - amount:
+            amount: 3026
+            currency: MXN
+          id: INSTALLMENT_AMOUNT
+        - amount:
+            amount: 16522.65
+            currency: MXN
+          id: TOTAL
+        - amount:
+            amount: 7900.87
+            currency: MXN
+          id: AMOUNT_INTEREST
+        - amount:
+            amount: 3400.87
+            currency: MXN
+          id: CAPITAL
+        fee:
+          itemizeFees:
+          - feeType: ADDICIONAL_FEE
+            itemizeFeeUnit:
+              unitType: PERCENTAGE
+              percentage: 31
+          - feeType: DEFER_FEE_WITH_IVA
+            itemizeFeeUnit:
+              unitType: AMOUNT
+              amount: 1065.64
+              currency: MXN
+          - feeType: DEFER_FEE_WITH_IVA
+            itemizeFeeUnit:
+              unitType: PERCENTAGE
+              percentage: 30.44
+          - feeType: DEFER_FEE_WITHOUT_IVA
+            itemizeFeeUnit:
+              unitType: AMOUNT
+              amount: 9.64
+              currency: MXN
+        financingType:
+          id: MONTHS_WITH_INTERESTS
+        promotion:
+          id: '85'
+      - firstInstallmentDate: '2022-06-23'
+        financingCalculationFormat:
+          unit:
+            number: 12
+            id: TERM
+            frequency: MONTHLY
+          id: TOTAL_AMOUNT_PAYMENT
+        rate:
+          itemizeRates:
+          - rateType: PREFERENTIAL
+            itemizeRatesUnit:
+              unitRateType: PERCENTAGE
+              percentage: 50
+            description: Tasa de interes para el finananciamiento en porcentaje
+          - rateType: REGULAR
+            itemizeRatesUnit:
+              unitRateType: PERCENTAGE
+              percentage: 80.96
+            description: Tasa de interes regular de la tarjeta de credito
+          - rateType: CAT
+            itemizeRatesUnit:
+              unitRateType: PERCENTAGE
+              percentage: 79.99
+            description: CAT
+          - rateType: WEIGHTED
+            itemizeRatesUnit:
+              unitRateType: PERCENTAGE
+              percentage: 49.99
+            description: Weighted
+          - rateType: ANNUAL
+            itemizeRatesUnit:
+              unitRateType: PERCENTAGE
+              percentage: 19.99
+            description: Weighted
+        specificAmounts:
+        - amount:
+            amount: 2626
+            currency: MXN
+          id: INSTALLMENT_AMOUNT
+        - amount:
+            amount: 17522.65
+            currency: MXN
+          id: TOTAL
+        - amount:
+            amount: 8900.87
+            currency: MXN
+          id: AMOUNT_INTEREST
+        - amount:
+            amount: 3500.87
+            currency: MXN
+          id: CAPITAL
+        fee:
+          itemizeFees:
+          - feeType: ADDICIONAL_FEE
+            itemizeFeeUnit:
+              unitType: PERCENTAGE
+              percentage: 41
+          - feeType: DEFER_FEE_WITH_IVA
+            itemizeFeeUnit:
+              unitType: AMOUNT
+              amount: 1165.64
+              currency: MXN
+          - feeType: DEFER_FEE_WITH_IVA
+            itemizeFeeUnit:
+              unitType: PERCENTAGE
+              percentage: 40.44
+          - feeType: DEFER_FEE_WITHOUT_IVA
+            itemizeFeeUnit:
+              unitType: AMOUNT
+              amount: 12.64
+              currency: MXN
+        financingType:
+          id: MONTHS_WITH_INTERESTS
+        promotion:
+          id: '85'
+      - firstInstallmentDate: '2022-06-23'
+        financingCalculationFormat:
+          unit:
+            number: 18
+            id: TERM
+            frequency: MONTHLY
+          id: TOTAL_AMOUNT_PAYMENT
+        rate:
+          itemizeRates:
+          - rateType: PREFERENTIAL
+            itemizeRatesUnit:
+              unitRateType: PERCENTAGE
+              percentage: 60
+            description: Tasa de interes para el finananciamiento en porcentaje
+          - rateType: REGULAR
+            itemizeRatesUnit:
+              unitRateType: PERCENTAGE
+              percentage: 90.96
+            description: Tasa de interes regular de la tarjeta de credito
+          - rateType: CAT
+            itemizeRatesUnit:
+              unitRateType: PERCENTAGE
+              percentage: 89.99
+            description: CAT
+          - rateType: WEIGHTED
+            itemizeRatesUnit:
+              unitRateType: PERCENTAGE
+              percentage: 59.99
+            description: Weighted
+          - rateType: ANNUAL
+            itemizeRatesUnit:
+              unitRateType: PERCENTAGE
+              percentage: 19.99
+            description: Weighted
+        specificAmounts:
+        - amount:
+            amount: 2426
+            currency: MXN
+          id: INSTALLMENT_AMOUNT
+        - amount:
+            amount: 19522.65
+            currency: MXN
+          id: TOTAL
+        - amount:
+            amount: 9200.87
+            currency: MXN
+          id: AMOUNT_INTEREST
+        - amount:
+            amount: 3600.87
+            currency: MXN
+          id: CAPITAL
+        fee:
+          itemizeFees:
+          - feeType: ADDICIONAL_FEE
+            itemizeFeeUnit:
+              unitType: PERCENTAGE
+              percentage: 61
+          - feeType: DEFER_FEE_WITH_IVA
+            itemizeFeeUnit:
+              unitType: AMOUNT
+              amount: 1265.64
+              currency: MXN
+          - feeType: DEFER_FEE_WITH_IVA
+            itemizeFeeUnit:
+              unitType: PERCENTAGE
+              percentage: 50.44
+          - feeType: DEFER_FEE_WITHOUT_IVA
+            itemizeFeeUnit:
+              unitType: AMOUNT
+              amount: 18.64
+              currency: MXN
+        financingType:
+          id: MONTHS_WITH_INTERESTS
+        promotion:
+          id: '85'
+      operationType:
+        id: DEFER_MULTIPURCHASE
+    :headers:
+      access-control-allow-origin: '*'
+      content-length: '8401'
+      Access-Control-Expose-Headers: tsec, vnd.bbva.access-token-type,vnd.bbva.access-token,
+        vnd.bbva.sso-pkcs7, authenticationtype, authenticationdata, authenticationstate,
+        authenticationchallenge
+      Server: artichoke
+      Alt-Svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      access-control-allow-headers: Content-Type, tsec, authenticationtype, authenticationdata,
+        authenticationstate, contactid, consumeruuid, consumerapplicationid, perimetertsec,
+        authorization, responsewarningcode, responsewarningdescription, cuf, field,
+        bcs-device-app-version, bcs-device-app-version, vnd.bbva.authorization
+      Vary: Accept-Encoding
+      tsec: 0c3ca58e8a260c255d745af5bc9606ce2050fb43
+      X-Response-Time: 464ms
+      Date: Mon, 24 Oct 2022 21:23:12 GMT
+      Content-Type: application/json; charset=utf-8
+      Via: 1.1 google
+    :status: 200 OK
+    responseStatus: 200
+    apiInfo:
+      name: cards
+      category: products
+      version: 0.19.0

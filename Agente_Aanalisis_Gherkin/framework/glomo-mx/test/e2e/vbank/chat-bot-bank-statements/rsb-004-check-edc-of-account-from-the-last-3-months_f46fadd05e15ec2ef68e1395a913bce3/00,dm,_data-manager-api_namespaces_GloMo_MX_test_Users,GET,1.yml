@@ -1,0 +1,52 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: b8506951-c86e-4bc4-8039-dc1654bd9174
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: account_statement
+    lock: 'false'
+then:
+- return:
+    :body:
+    - data:
+        messagesGroupRequest:
+          accountStatement:
+          - validateComponent: desambiguation account with alias
+            message: Quiero ver el estado de cuenta de enero del 2025
+          - message: terminación 6284
+          - chipText: Quiero buscar otro estado de cuenta
+          accountStatementLast3Months:
+          - validateProduct: '6284'
+            validateComponent: desambiguation account with termination
+            message: Quiero ver el estado de cuenta de los últimos 3 meses
+          - message: terminación 6284
+        tags:
+        - '8110033366'
+        - card_statement
+        - account_statement
+        authentication:
+          password: Glomo2024
+          user: '8110033366'
+          deviceId: C5DAFDB995384400B4FAFBFC4F22C40F
+      lockType: SHARED
+      lockExpiration: '2025-09-02T19:40:40.539959Z'
+      id: 36221279
+    :headers:
+      content-length: '757'
+      Cache-Control: max-age=0
+      Connection: keep-alive
+      host: datamanager.globaldevtools.bbva.com
+      Vary: Accept-Encoding
+      Expires: Tue, 02 Sep 2025 19:40:16 GMT
+      Date: Tue, 02 Sep 2025 19:40:16 GMT
+      Content-Type: application/json; charset=utf-8
+    :status: 200 OK

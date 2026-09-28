@@ -1,0 +1,94 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: f1bb26a5-54b7-4fd9-9278-f8a43e65494e
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: remote_banking_metasegura_user
+    lock: 'false'
+then:
+- return:
+    :body:
+    - data:
+        accountNumbers:
+        - '00740010000473321789'
+        - '00740010000473358127'
+        executiveCode: MTS002MB79380
+        genericAddress:
+          zipCode: '03300'
+          outerN: '557'
+          colony: '08902'
+          innerN: '3'
+          street: Odesa
+        locale: es_mx
+        wrongBeneficiares:
+        - birthDay: '1999-04-15'
+          lastName: 1,+?/2
+          secondLastName: 1,+?/2
+          kinship: '0005'
+          name: 1,+?/2
+          newAddress: false
+        beneficiaries:
+        - birthDay: '1999-04-15'
+          lastName: Perez
+          secondLastName: Avila
+          kinship: '0005'
+          name: Juan
+          newAddress: false
+        - birthDay: '1956-03-23'
+          lastName: Rogers
+          secondLastName: Carter
+          address:
+            zipCode: '03300'
+            outerN: '557'
+            colony: '08902'
+            innerN: '3'
+            street: Odesa
+          kinship: '0007'
+          name: Steve
+          newAddress: true
+        - birthDay: '1995-12-23'
+          lastName: Vazquez
+          secondLastName: Espinoza
+          kinship: '0008'
+          name: Sandra
+          newAddress: false
+        - birthDay: '1985-05-12'
+          lastName: Gonzalez
+          secondLastName: Gutierrez
+          kinship: '0003'
+          name: Pedro
+          newAddress: false
+        tags:
+        - '6688257373'
+        - level_n4_account
+        - msd_patrimonial
+        - age_between_40_and_60
+        - older_than_40
+        - remote_banking_metasegura_user
+        authentication:
+          password: Glomo2024
+          user: '6688257373'
+          deviceId: 8538E066AEB3466369E0D2CAFA2FFD9D
+      lockType: null
+      lockExpiration: null
+      id: 35844225
+    :headers:
+      content-length: '1374'
+      Strict-Transport-Security: max-age=15768000
+      Server: nginx
+      ECS-Entry-Point-Zone: ext
+      Connection: keep-alive
+      host: datamanager.globaldevtools.bbva.com
+      Vary: Accept-Encoding
+      Date: Thu, 18 Jul 2024 21:00:42 GMT
+      Content-Type: application/json
+    :status: 200 OK

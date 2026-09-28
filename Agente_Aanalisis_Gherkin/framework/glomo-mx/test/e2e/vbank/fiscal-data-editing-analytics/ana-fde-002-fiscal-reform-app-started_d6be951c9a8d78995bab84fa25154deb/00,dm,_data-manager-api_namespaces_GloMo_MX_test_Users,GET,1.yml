@@ -1,0 +1,42 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: 2719182a-e0eb-4e2f-bee9-c8b4952a1704
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: fiscal_data
+    lock: 'false'
+then:
+- return:
+    :body:
+    - data:
+        homeFutura: true
+        locale: es_mx
+        tags:
+        - fiscal_data
+        - '5562010290'
+        authentication:
+          password: Password00
+          user: '5562010290'
+          deviceId: 57FE642FB4237B266B3E9433BFAAE4FB
+      lockExpiration: null
+      lockType: null
+      id: 3488918
+    :headers:
+      Strict-Transport-Security: max-age=15768000
+      Server: nginx
+      ECS-Entry-Point-Zone: ext
+      Connection: keep-alive
+      Set-Cookie: vbank-session=2719182a-e0eb-4e2f-bee9-c8b4952a1704
+      Content-Length: '236'
+      Date: Wed, 07 Jun 2023 22:11:41 GMT
+      Content-Type: application/json
+    :status: 200 OK

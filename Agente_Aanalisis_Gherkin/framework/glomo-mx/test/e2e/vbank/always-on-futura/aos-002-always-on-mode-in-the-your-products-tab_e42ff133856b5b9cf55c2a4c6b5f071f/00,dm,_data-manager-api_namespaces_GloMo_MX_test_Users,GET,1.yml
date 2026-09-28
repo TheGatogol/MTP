@@ -1,0 +1,86 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: basic_accounts,credit_card,stand_in
+    lock: 'false'
+then:
+- return:
+    :body:
+    - data:
+        futura_collections:
+          home_maincard:
+            cards:
+            - internalId: CARD
+              name: Tarjetas
+              contractId: Ln6ShnDb7227J-FhXGRcSBFdBimcDMj1
+            - internalId: CARD
+              name: Tarjetas
+              contractId: hAI4jUPTFQBM7vu8yypkZp8KPcKokQLO
+            accounts:
+            - internalId: ACCOUNT
+              name: Cuentas
+              contractId: Uvn6wi1Rh6Afk4NAW6gTKDcdxE9dwuEI
+            - internalId: ACCOUNT
+              name: Cuentas
+              contractId: Uvn6wi1Rh6Afk4NAW6gTKKM1QepNQHUi
+        tags:
+        - basic_accounts
+        - credit_card
+        - stand_in
+        - '8332652264'
+        products:
+          cards:
+          - number: '4772913037971506'
+            productId: AC
+            name: 0002TC5667
+            contractId: Ln6ShnDb7227J-FhXGRcSBFdBimcDMj1
+          - number: '4772132457454493'
+            productId: AV
+            name: 0005TC4493
+            contractId: hAI4jUPTFQBM7vu8yypkZp8KPcKokQLO
+          accounts:
+          - number: '00740010001504194858'
+            name: 0001AH4858
+            contractId: Uvn6wi1Rh6Afk4NAW6gTKDcdxE9dwuEI
+          - number: '00740010001504195154'
+            name: 0002AH5154
+            contractId: Uvn6wi1Rh6Afk4NAW6gTKKM1QepNQHUi
+          - number: '00740010001505077806'
+            name: 0003AH7806
+            contractId: Uvn6wi1Rh6C2SUA9S2s4kQ0F6b-UsW6K
+          - number: '00743500002953307069'
+            name: 0004AH7069
+            contractId: 5nKbxJgAd5Pxjw7h4CdicXXsZVm9x7R5
+          deposits:
+          - number: '00743500002064161450'
+            name: SI1450
+            contractId: 5nKbxJgAd5OtHS7V1VWCArzYeSTTrLKW
+          - number: '00743500002064161451'
+            name: SIBAN0
+            contractId: 5nKbxJgAd5OtHS7V1VWCAp5b7kA6obFI
+        authentication:
+          password: Glomo2025
+          user: '8332652264'
+          deviceId: 0126FD07B70FBB8EBC4F6084A37269F3
+      id: 36813231
+    :headers:
+      content-length: '1501'
+      Server: nginx
+      Cache-Control: max-age=0
+      Connection: keep-alive
+      host: datamanager.globaldevtools.bbva.com
+      Vary: Accept-Encoding
+      Expires: Wed, 02 Sep 2026 22:59:43 GMT
+      Date: Wed, 02 Sep 2026 22:59:43 GMT
+      Content-Type: application/json; charset=utf-8
+    :status: 200 OK

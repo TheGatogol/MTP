@@ -1,0 +1,81 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: d797b015-4980-4b0c-b9f0-006bb8d1642d
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: msd_5_accounts
+    lock: 'false'
+then:
+- return:
+    :body:
+    - data:
+        accountNumbers:
+        - '4772133019444485'
+        - '00740010001501030668'
+        locale: es_mx
+        beneficiaries:
+        - birthDay: '1999-04-15'
+          lastName: Perez
+          secondLastName: Avila
+          kinship: '0005'
+          name: Juan
+          newAddress: false
+        - birthDay: '1956-03-23'
+          lastName: Rogers
+          secondLastName: Carter
+          address:
+            zipCode: '03300'
+            outerN: '557'
+            colony: '08902'
+            innerN: '3'
+            street: Odesa
+          kinship: '0007'
+          name: Steve
+          newAddress: true
+        - birthDay: '1995-12-23'
+          lastName: Vazquez
+          secondLastName: Espinoza
+          kinship: '0008'
+          name: Sandra
+          newAddress: false
+        - birthDay: '1985-05-12'
+          lastName: Gonzalez
+          secondLastName: Gutierrez
+          kinship: '0003'
+          name: Pedro
+          newAddress: false
+        tags:
+        - '5533288696'
+        - level_n4_account
+        - msd_patrimonial
+        - age_between_40_and_60
+        - older_than_40
+        - msd_contracting
+        - msd_5_accounts
+        authentication:
+          password: Glomo2023
+          user: '5537535681'
+          deviceId: 0A7765A97DA4391C91058C6ED376C799
+      lockExpiration: null
+      lockType: null
+      id: 3506261
+    :headers:
+      content-length: '1069'
+      Strict-Transport-Security: max-age=15768000
+      Server: nginx
+      ECS-Entry-Point-Zone: ext
+      Connection: keep-alive
+      host: datamanager.globaldevtools.bbva.com
+      Vary: Accept-Encoding
+      Date: Tue, 22 Aug 2023 02:53:47 GMT
+      Content-Type: application/json
+    :status: 200 OK

@@ -1,0 +1,49 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: 8ab3a84c-f1ba-4e5e-8eaf-d22815537f2f
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: associate_expenses_group,accounts
+    lock: 'false'
+then:
+- return:
+    :body:
+    - data:
+        data:
+          name: OLIBIA
+        debtors:
+          data:
+          - name: MÓNICA
+          - name: LUIS ENRIQUE
+          - name: OLIBIA
+          - name: PATRICIA DEL ROCIO
+        locale: es_mx
+        tags:
+        - associate_expenses_group
+        - accounts
+        authentication:
+          password: Glomo2024
+          user: '6865695869'
+          deviceId: 42EE7DA2FD9AE34536E5615B51DECF7C
+      lockExpiration: null
+      lockType: null
+      id: 36017117
+    :headers:
+      content-length: '397'
+      Cache-Control: max-age=0
+      Connection: keep-alive
+      host: datamanager.globaldevtools.bbva.com
+      Vary: Accept-Encoding
+      Expires: Tue, 11 Feb 2025 17:11:06 GMT
+      Date: Tue, 11 Feb 2025 17:11:06 GMT
+      Content-Type: application/json; charset=utf-8
+    :status: 200 OK

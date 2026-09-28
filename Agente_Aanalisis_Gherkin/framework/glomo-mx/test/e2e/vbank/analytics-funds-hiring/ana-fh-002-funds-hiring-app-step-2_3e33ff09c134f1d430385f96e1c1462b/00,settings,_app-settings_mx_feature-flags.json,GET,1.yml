@@ -1,0 +1,89 @@
+when:
+  sequence: 1
+  path: /app-settings/mx/feature-flags.json
+  method: GET
+  backend: settings
+request:
+  headers:
+    sec-fetch-mode: cors
+    content-length: '0'
+    referer: http://localhost:8001/
+    sec-fetch-site: same-site
+    accept-language: es
+    origin: http://localhost:8001
+    accept: application/json, text/plain, */*; q=0.01
+    sec-ch-ua: '" Not A;Brand";v="99", "Chromium";v="90", "Google Chrome";v="90"'
+    sec-ch-ua-mobile: ?0
+    x-vbank-session: 48686d04-b4b3-4229-bb05-8be8919e1ba0
+    host: localhost:9001
+    content-type: application/json
+    connection: keep-alive
+    cache-control: no-cache, no-store, must-revalidate
+    accept-encoding: gzip, deflate, br
+    sec-fetch-dest: empty
+    user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36
+      (KHTML, like Gecko) Chrome/90.0.4430.93 Safari/537.36
+then:
+- return:
+    menuSidebarItems: []
+    footerItems: {}
+    futuraCollections:
+      blue: false
+      experiences: true
+      financial_health: false
+      frequent_actions: true
+      maincard: false
+      nba: false
+      nbo: true
+      popular_actions: false
+      smart_servicing: false
+      svps: false
+      home_futura: false
+    featureFlagCollection:
+      glomo.check.management:
+        value: true
+        key: glomo.check.management
+      glomo.analytics.cardOperationalLimits.errors:
+        value: true
+        key: glomo.analytics.cardOperationalLimits.errors
+      glomo.analytics.checksDeposits:
+        value: true
+        key: glomo.analytics.checksDeposits
+      glomo.dashboard.footer.goals.link:
+        value: false
+        key: glomo.dashboard.footer.checkup.link
+      glomo.analytics.checksSection:
+        value: true
+        key: glomo.analytics.checksSection
+      glomo.dashboard.pfm.access:
+        value: true
+        key: glomo.dashboard.pfm.access
+      glomo.analytics.cardOperationalLimits:
+        value: true
+        key: glomo.analytics.cardOperationalLimits
+      glomo.check.deposit:
+        value: true
+        key: glomo.check.deposit
+    productDetailOperations:
+      accountOperations:
+        checkManagement: true
+        checkDeposit: true
+    :headers:
+      X-Cache: Miss from cloudfront
+      content-length: '1127'
+      Server: AmazonS3
+      Access-Control-Allow-Origin: '*'
+      Access-Control-Allow-Methods: GET, HEAD
+      X-Amz-Cf-Pop: DFW53-C1
+      Connection: keep-alive
+      Last-Modified: Mon, 10 May 2021 10:06:37 GMT
+      Date: Mon, 10 May 2021 19:16:29 GMT
+      Access-Control-Allow-Headers: content-type
+      Via: 1.1 5c872a96e880c64a2293daae45f1f6ae.cloudfront.net (CloudFront)
+      Access-Control-Expose-Headers: Access-Control-Allow-Origin
+      X-OpenWeb-Version: '1'
+      ETag: W/"3dcebd92a0d300e5c2ff51e8471d5274"
+      X-Amz-Cf-Id: WYTso09tdSOsJ63sVHGulRdCi3qWh-xAkB8jxLvpVy_JdVf7eRc4uA==
+      Vary: Accept-Encoding
+      Content-Type: application/json
+    :status: 200 OK

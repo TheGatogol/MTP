@@ -1,0 +1,195 @@
+when:
+  sequence: 1
+  path: /SRVS_A02/cards/v0/cards/1290
+  method: GET
+  backend: glomo
+request:
+  headers:
+    sec-fetch-mode: cors
+    content-length: '0'
+    referer: http://localhost:8001/
+    sec-fetch-site: same-site
+    accept-language: es
+    origin: http://localhost:8001
+    tsec: b1ee0908aeeea03bb918d1f2a2f7d477a67aecb5
+    accept: application/json, text/html, */*; q=0.1
+    x-vbank-session: 17d5c924-1c42-44b7-8f40-b4023ff7dd21
+    host: localhost:9000
+    content-type: application/json
+    connection: keep-alive
+    accept-encoding: gzip, deflate, br
+    sec-fetch-dest: empty
+    user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36
+      (KHTML, like Gecko) Chrome/86.0.4240.80 Safari/537.36
+  query:
+    expand: payment-methods,blocks,rewards,indicators
+then:
+- return:
+    data:
+      numberType:
+        name: Transaction Error
+        id: PAN
+      brandAssociation:
+        name: VISA
+        id: VISA
+      title:
+        name: orange_mx_credit_card_0107
+        id: V1
+      availableBalance:
+        currentBalances:
+        - amount: 3000000
+          currency: MXN
+        pendingBalances:
+        - amount: 0
+          currency: MXN
+        postedBalances:
+        - amount: 0
+          currency: MXN
+      number: '4555457083071290'
+      bank:
+        name: BBVA Mexico
+        id: '504'
+      cutOffDate: '2016-10-01T12:00:00Z'
+      paymentMethods:
+      - period:
+          name: Monthly payment
+          id: MONTHLY
+        paymentAmounts:
+        - values:
+          - amount: 350
+            currency: MXN
+          name: Pago mínimo
+          id: MINIMUM_AMOUNT
+        - values:
+          - amount: 350
+            currency: MXN
+          name: Pago para no generar intereses
+          id: MINIMUM_AMOUNT_TO_AVOID_INTEREST
+        - values:
+          - amount: 0
+            currency: MXN
+          name: Deuda de este mes
+          id: LAST_PERIOD_AMOUNT
+        - values:
+          - amount: 350
+            currency: MXN
+          name: Saldo al corte
+          id: TOTAL_DEBT_AMOUNT
+        endDate: '2017-10-01T12:00:00Z'
+        name: Free amount payment
+        id: FREE_AMOUNT_PAYMENT
+      alias: orange_mx_credit_card_0107
+      issueDate: '2016-07-01T12:05:13Z'
+      openingDate: '2016-07-01T11:31:45Z'
+      expirationDate: '**/**'
+      holderName: Carlos Santana
+      images:
+      - name: Front face of the card
+        id: FRONT_CARD
+        url: https://cardcovers.caasbbva.com/mexico/477291-AC.png.imgcaas.w320.png
+      - name: Back face of the card
+        id: BACK_CARD
+        url: /imageBack.jpg
+      blocks: []
+      physicalSupport:
+        name: Plástico normal
+        id: NORMAL_PLASTIC
+      cardType:
+        name: Tarjeta de crédito
+        id: CREDIT_CARD
+      disposedBalance:
+        currentBalances:
+        - amount: 0
+          currency: MXN
+        pendingBalances:
+        - amount: 0
+          currency: MXN
+        postedBalances:
+        - amount: 0
+          currency: MXN
+      indicators:
+      - indicatorId: ASSOCIABLE_TO_NFC
+        name: The card can be associable to nfc.
+        isActive: 'false'
+      - indicatorId: ASSOCIABLE_TO_STICKER_CARDS
+        name: Indica si la tarjeta cuenta con sticker asociado
+        isActive: 'false'
+      - indicatorId: ASSOCIABLE_TO_VIRTUAL_CARDS
+        name: The card can be related to virtual cards
+        isActive: 'false'
+      - indicatorId: BLOCKABLE
+        name: Bloquear tarjeta
+        isActive: 'false'
+      - indicatorId: BLOCKABLE_NIP
+        name: Indica si la tarjeta puede modificar el nip de forma online por una
+          aplicación
+        isActive: 'false'
+      - indicatorId: SECURITY_DATA_READ
+        name: Indica si los datos de seguridad de la tarjeta pueden ser leídos.
+        isActive: 'true'
+      - indicatorId: DINAMIC_CVV
+        name: Indica si el CVV2 es dinámico
+        isActive: 'false'
+      - indicatorId: IS_ADDITIONAL
+        name: IS_ADDITIONAL
+        isActive: 'false'
+      grantedCredits:
+      - amount: 3000000
+        currency: MXN
+      cardId: '1290'
+      activationDate: '2016-07-01T13:32:02Z'
+      rewards:
+      - unitType:
+          name: Puntos
+          id: POINTS
+        nonMonetaryValueExpirationDate: '2018-10-19'
+        isRedeemable: false
+        rewardId: BANCOMER_POINTS
+        balance:
+          endDate: '2018-09-01'
+          rewardBreakDown:
+          - id: GENERATED
+            nonMonetaryValue: 7030
+          - id: APPLIED
+            nonMonetaryValue: 150
+          - id: EXPIRED
+            nonMonetaryValue: 110
+          - id: CURRENT
+            nonMonetaryValue: 8000
+          - id: PREVIOUS
+            nonMonetaryValue: 1230
+          startDate: '2018-08-01'
+        name: Puntos bancomer
+        nonMonetaryValueCloseToExpire: 1240
+        nonMonetaryValue: 8000
+        nonMonetaryRedemptionSavings:
+          amount: 8
+          currency: MXN
+      currencies:
+      - isMajor: true
+        currency: MXN
+      status:
+        name: Operative card
+        id: OPERATIVE
+    :headers:
+      access-control-allow-origin: '*'
+      content-length: '5858'
+      Access-Control-Expose-Headers: tsec, vnd.bbva.access-token-type,vnd.bbva.access-token,
+        authenticationtype, authenticationdata, authenticationstate
+      Server: artichoke
+      Alt-Svc: clear
+      access-control-allow-headers: Content-Type, tsec, authenticationtype, authenticationdata,
+        authenticationstate, contactid, consumeruuid, consumerapplicationid, perimetertsec,
+        authorization, responsewarningcode, responsewarningdescription, cuf, field,
+        bcs-device-app-version, bcs-device-app-version
+      content-type: application/json;charset=UTF-8
+      Vary: Accept-Encoding
+      tsec: b1ee0908aeeea03bb918d1f2a2f7d477a67aecb5
+      X-Response-Time: 474ms
+      Date: Fri, 16 Oct 2020 10:07:10 GMT
+      Via: 1.1 google
+    :status: 200 OK
+    apiInfo:
+      name: cards
+      category: products
+      version: 0.19.0

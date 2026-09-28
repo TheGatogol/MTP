@@ -1,0 +1,45 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: e9750581-e750-4747-a827-630db95ac045
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: credit_line_notif
+    lock: 'false'
+then:
+- return:
+    :body:
+    - data:
+        notifications:
+          notifictationId: 690a39408dc6f004e2cb1540
+          buttonTextNotification: 69138f478dc6f004e2cb3e88
+          textNotificationOffer: 69138f478dc6f004e2cb3e88
+        tags:
+        - '5524241056'
+        - credit_line_notif
+        authentication:
+          password: Glomo2025
+          user: '5524241056'
+          deviceId: 19BC01EFE161298BEF72C9A62D707D48
+      lockType: null
+      lockExpiration: null
+      id: 36284909
+    :headers:
+      content-length: '289'
+      Server: nginx
+      Cache-Control: max-age=0
+      Connection: keep-alive
+      host: datamanager.globaldevtools.bbva.com
+      Vary: Accept-Encoding
+      Expires: Fri, 14 Nov 2025 00:42:09 GMT
+      Date: Fri, 14 Nov 2025 00:42:09 GMT
+      Content-Type: application/json; charset=utf-8
+    :status: 200 OK

@@ -1,0 +1,42 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: 2a3315a4-712a-4358-9a72-69ec97a2d177
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: cch_otp
+then:
+- return:
+    :body:
+    - data:
+        locale: es_mx
+        tags:
+        - creditCardHolder
+        - credit_card_holder
+        - cch_otp
+        - '5510809584'
+        - otp
+        authentication:
+          password: Password00
+          user: '5510809584'
+          deviceId: DA733DE32F40219EE9155D8A9E962630
+      lockType: null
+      lockExpiration: null
+      id: 3504683
+    :headers:
+      Strict-Transport-Security: max-age=15768000
+      Server: nginx
+      ECS-Entry-Point-Zone: ext
+      Connection: keep-alive
+      Content-Length: '281'
+      Date: Wed, 08 Feb 2023 00:03:48 GMT
+      Content-Type: application/json
+    :status: 200 OK

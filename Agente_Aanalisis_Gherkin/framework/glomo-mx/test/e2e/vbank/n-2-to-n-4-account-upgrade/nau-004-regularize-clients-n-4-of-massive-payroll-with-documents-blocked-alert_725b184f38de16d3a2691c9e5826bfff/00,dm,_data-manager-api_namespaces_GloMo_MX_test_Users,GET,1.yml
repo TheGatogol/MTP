@@ -1,0 +1,44 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: 094b9c31-4272-4730-bec6-dfa2e6bb7ab7
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: dashboard_accounts,accounts_status_blocked
+    lock: 'false'
+then:
+- return:
+    :body:
+    - data:
+        homeFutura: false
+        skeleton: skeleton1
+        locale: es_mx
+        tags:
+        - '5611680053'
+        - dashboard_accounts
+        - accounts_status_blocked
+        - accounts_status_incomplete
+        authentication:
+          password: Glomo2024
+          user: '5611680053'
+          deviceId: D0A19CFFA7C68CFD8188AC90A589CEA0
+      lockType: null
+      lockExpiration: null
+      id: 1551830
+    :headers:
+      content-length: '324'
+      Server: nginx
+      Connection: keep-alive
+      host: datamanager.globaldevtools.bbva.com
+      Vary: Accept-Encoding
+      Date: Wed, 28 Aug 2024 17:01:38 GMT
+      Content-Type: application/json
+    :status: 200 OK

@@ -1,0 +1,57 @@
+when:
+  sequence: 1
+  path: /SRVS_A02/cards/v1/cards/0002/pin
+  method: GET
+  backend: glomo
+request:
+  headers:
+    sec-fetch-mode: cors
+    content-length: '0'
+    referer: http://localhost:8001/
+    sec-fetch-site: same-site
+    accept-language: es
+    origin: http://localhost:8001
+    tsec: 0645002aa63209c29028732e9a34d6b9fdce1d39
+    accept: application/json, text/html, */*; q=0.1
+    sec-ch-ua: '" Not A;Brand";v="99", "Chromium";v="96", "Google Chrome";v="96"'
+    sec-ch-ua-mobile: ?0
+    x-vbank-session: 045a1154-4614-40f7-9742-61ec2defb4e5
+    sec-ch-ua-platform: '"macOS"'
+    host: localhost:9000
+    content-type: application/json
+    connection: keep-alive
+    cache-control: no-cache, no-store, must-revalidate
+    accept-encoding: gzip, deflate, br
+    sec-fetch-dest: empty
+    user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36
+      (KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36
+  query:
+    cvv: 0201B810EFD9EBAACA938D0948B1C774A0BEA00EF13C26122DF973A13BBCD0ACA873F8018B767CDB809CED66FD63E841D604
+    publicKey: '09028393384949'
+    publicKeyExponent: '010001'
+then:
+- return:
+    data:
+      pin: '1234'
+    :headers:
+      access-control-allow-origin: '*'
+      content-length: '130'
+      Access-Control-Expose-Headers: tsec, vnd.bbva.access-token-type,vnd.bbva.access-token,
+        vnd.bbva.sso-pkcs7, authenticationtype, authenticationdata, authenticationstate,
+        authenticationchallenge
+      Server: artichoke
+      access-control-allow-headers: Content-Type, tsec, authenticationtype, authenticationdata,
+        authenticationstate, contactid, consumeruuid, consumerapplicationid, perimetertsec,
+        authorization, responsewarningcode, responsewarningdescription, cuf, field,
+        bcs-device-app-version, bcs-device-app-version, vnd.bbva.authorization
+      Connection: keep-alive
+      content-type: application/json;charset=UTF-8
+      Vary: Accept-Encoding
+      tsec: 0645002aa63209c29028732e9a34d6b9fdce1d39
+      X-Response-Time: 19ms
+      Date: Wed, 05 Jan 2022 23:03:42 GMT
+    :status: 200 OK
+    apiInfo:
+      name: cards
+      category: products
+      version: 0.19.0

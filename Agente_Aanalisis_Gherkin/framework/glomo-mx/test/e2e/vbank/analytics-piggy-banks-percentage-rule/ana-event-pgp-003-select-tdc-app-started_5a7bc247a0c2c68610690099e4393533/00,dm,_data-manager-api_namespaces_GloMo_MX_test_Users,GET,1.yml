@@ -1,0 +1,38 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: c6b4020e-5b57-4c35-84a0-dbc23ca13a1a
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: piggy_banks_percentage_rule
+    lock: 'false'
+then:
+- return:
+    :body:
+    - data:
+        tags:
+        - piggy_banks_percentage_rule
+        card: '4772100710668274'
+        authentication:
+          password: Glomo2025
+          user: '4821027791'
+          deviceId: 6BE1C7B95E1144C7E84F04EA4174876D
+      id: 36351218
+    :headers:
+      Server: nginx
+      Cache-Control: max-age=0
+      Connection: keep-alive
+      host: datamanager.globaldevtools.bbva.com
+      Expires: Sat, 31 Jan 2026 00:06:40 GMT
+      Content-Length: '173'
+      Date: Sat, 31 Jan 2026 00:06:40 GMT
+      Content-Type: application/json; charset=utf-8
+    :status: 200 OK

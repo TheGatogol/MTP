@@ -1,0 +1,33 @@
+when:
+  sequence: 3
+  path: /app-settings/mx/feature-flags.json
+  method: GET
+  backend: settings
+request:
+  headers:
+    content-length: '0'
+    if-none-match: '"fd7587c1436923974511a0fdb3388ac6"'
+    host: 127.0.0.1:9001
+    connection: Keep-Alive
+    accept-encoding: gzip
+    user-agent: GLOMO_MX/99.99.99 (Android;11;unknown Android SDK built for x86)
+then:
+- return:
+    :body: ''
+    :headers:
+      X-Cache: Miss from cloudfront
+      content-length: '0'
+      Server: AmazonS3
+      Access-Control-Allow-Origin: '*'
+      Access-Control-Allow-Methods: GET, HEAD
+      X-Amz-Cf-Pop: MAD51-C3
+      Connection: keep-alive
+      Last-Modified: Mon, 11 Apr 2022 22:35:59 GMT
+      Date: Wed, 13 Apr 2022 09:20:07 GMT
+      Access-Control-Allow-Headers: content-type
+      Via: 1.1 b1cb4dc74f5dad9018280191620fa9c4.cloudfront.net (CloudFront)
+      Access-Control-Expose-Headers: Access-Control-Allow-Origin
+      X-OpenWeb-Version: '2'
+      ETag: '"fd7587c1436923974511a0fdb3388ac6"'
+      X-Amz-Cf-Id: qcYjlhzHlfdstKF_4R0vblgyEOMJfz3TAZ21v2IdwboXBY6XgjHJSQ==
+    :status: 304 Not Modified

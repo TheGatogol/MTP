@@ -1,0 +1,40 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: 031e18c3-42c8-4f3d-bcc2-b9856a899365
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: clarifications_management_list,clarifications_management_tracking
+then:
+- return:
+    :body:
+    - data:
+        locale: es_mx
+        tags:
+        - '5561628152'
+        - clarifications_management_list
+        - clarifications_management_tracking
+        authentication:
+          password: prueba01
+          user: '5561628152'
+          deviceId: 24DE43A11F8E8665C90947BD0A2D1329
+      lockExpiration: null
+      lockType: null
+      id: 2694144
+    :headers:
+      Strict-Transport-Security: max-age=15768000
+      Server: nginx
+      ECS-Entry-Point-Zone: ext
+      Connection: keep-alive
+      Content-Length: '291'
+      Date: Mon, 13 Jun 2022 17:45:18 GMT
+      Content-Type: application/json
+    :status: 200 OK

@@ -1,0 +1,54 @@
+when:
+  sequence: 1
+  path: /app-settings/v0/public-settings/GLOMO-MX-1.0-TEST
+  method: GET
+  backend: cgs
+request:
+  headers:
+    sec-fetch-mode: cors
+    content-length: '0'
+    referer: http://localhost:8001/
+    sec-fetch-site: same-site
+    accept-language: es-MX,es;q=0.9
+    origin: http://localhost:8001
+    accept: application/json, text/html, */*; q=0.1
+    sec-ch-ua: '"Chromium";v="140", "Not=A?Brand";v="24", "Google Chrome";v="140"'
+    sec-ch-ua-mobile: ?0
+    x-vbank-session: f84bc0ac-9551-472f-9502-4ae523f7c633
+    x-api-key: psJbscoM0i9O4L40SzKW02i8XhfR80df1iB9ODgj
+    sec-ch-ua-platform: '"macOS"'
+    host: localhost:9085
+    content-type: application/json
+    connection: keep-alive
+    cache-control: no-cache, no-store, must-revalidate
+    accept-encoding: gzip, deflate, br, zstd
+    sec-fetch-dest: empty
+    user-agent: GLOMO_MX/99.99.99 (Android;14;Samsung)
+  query:
+    key: scheduled_donations
+then:
+- return:
+    data:
+    - value: '{"data":{"fundraising":[{"minValue":"20","firstValue":"50","secondValue":"100","thirdValue":"200","maxValue":"8000","stationId":"08055","stationName":"Fundación
+        BBVA México","endDate":"0001-01-01","donationPeriod":"MONTHLY","productId":"DONATIVOS_FUNDACIONBBVA","productIdValue":"GMDDFGV001","numberTypeId":"SIMPLE_ACCOUNT","operationType":"Alta
+        del donativo"}]}}'
+      key: scheduled_donations
+    :headers:
+      x-amz-apigw-id: MIC-gGhWoAMFdbA=
+      X-EdgeConnect-Origin-MEX-Latency: '322'
+      X-EdgeConnect-Cache-Status: '1'
+      Access-Control-Allow-Origin: '*'
+      Connection: keep-alive
+      X-Amzn-Trace-Id: Root=1-684cb1f6-315f78dd93a2f336d5103a1c;Parent=5dfb7a2d1792df09;Sampled=0;Lineage=1:06614fa4:0
+      Date: Tue, 30 Sep 2025 23:42:18 GMT
+      Akamai-Parent-IP: 23.34.63.62
+      Cache-Control: max-age=300
+      ETag: '"36d465879f0c891f75f675c3debd868b230dbf1e"'
+      x-amzn-RequestId: 8d386472-5393-47b3-ac79-684486cb18a6
+      Vary: Accept-Encoding
+      Set-Cookie: vbank-session=f84bc0ac-9551-472f-9502-4ae523f7c633
+      Expires: Tue, 30 Sep 2025 23:47:18 GMT
+      Content-Length: '491'
+      X-EdgeConnect-MidMile-RTT: '0'
+      Content-Type: application/json; charset=UTF-8
+    :status: 200 OK

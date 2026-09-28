@@ -1,0 +1,158 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: 39139957-6a0f-4acc-b23f-a824a29452c2
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: accounts_express
+    lock: 'false'
+then:
+- return:
+    :body:
+    - data:
+        otp: '12345678'
+        locale: es_mx
+        tags:
+        - '7531640063'
+        - accounts_express
+        products:
+        - accountId:
+          - checks:
+            - id: Cuenta - 00740010130473490920
+            express:
+            - id: 0010ah5021 - 00744103002822656000
+            savings:
+            - id: 0001ah7379 - 00740010001501697379
+            otherexpress:
+            - id: 0010ah5021 - 00743569002803052702
+          addToContact:
+          - tdc:
+            - number: '5579053963168504'
+            spei:
+            - number: '2411211406'
+            clabe:
+            - number: '002343630317930427'
+          newContact:
+          - tdc:
+            - number: '4941330104335703'
+              name: Cristian
+              alias: Cris
+            spei:
+            - number: '2411201806'
+              name: Socorro
+              alias: Coco
+            tdd:
+            - number: '5204164906317241'
+              name: Antonio
+              alias: Tony
+            unrecognizedtdd:
+            - number: '4814897051035327'
+              name: Vicente
+            expressbbva:
+            - number: '5520154255'
+              alias: Patty
+            tddbbva:
+            - number: '4098513006001504'
+            checkbbva:
+            - number: '00740680000473443817'
+              alias: Aly
+            clabe:
+            - number: '002347630917630127'
+              name: Rafael
+              alias: Rafa
+          accounts:
+          - number: '00740010001501697379'
+            alias: 0001AH7379
+          - number: '00740010130473490920'
+            alias: CUENTA
+          - number: '00744103002822656000'
+            alias: 0010AH5021
+          - number: '00743569002803052702'
+            alias: 0010AH5021
+          family:
+          - balances:
+            - amountBalance:
+              - amount: 1010199587
+                currency: MXN
+              name: Monto total actual
+              id: TOTAL_CURRENT_AMOUNT
+            name: Cuentas
+            id: ACCOUNTS
+          contracts:
+          - number: '00740010001501697379'
+            product:
+              name: Cuenta de Ahorro
+              id: AH
+            numberType:
+              id: CCC
+            alias: 0001AH7379
+            id: Uvn6wi1Rh6BoN1oO5tIiPxSjQflhMK_DtP-43FZjyQn9ZCIAeDQwkA
+            detail:
+              level: '04'
+              specificAmounts:
+              - amounts:
+                - amount: 99885
+                  currency: MXN
+                name: Saldo actual
+                id: CURRENT_BALANCE
+              - amounts:
+                - amount: 0
+                  currency: MXN
+                name: Saldo buen cobro
+                id: PENDING_DEPOSIT_BALANCE
+              indicators:
+              - name: Indica si la cuenta es de nómina
+                id: IS_PAYROLL_ACCOUNT
+                isActive: false
+              - name: Indica si la cuenta es eje
+                id: IS_PRINCIPAL_ACCOUNT
+                isActive: true
+              - name: Indica si la cuenta tiene pockets
+                id: HAS_POCKETS
+                isActive: false
+            productType: ACCOUNT
+            status:
+              name: Cuenta Activa
+              id: ACTIVE
+            subProductType:
+              name: TARJETA NOMINA BASIC
+              id: '0230'
+            signedAuthorization:
+              name: Cuenta Individual
+              id: SINGLE
+          savedContact:
+          - libretonbbva:
+            - name: Darsha
+              alias: Dash
+            tdcbbva:
+            - name: Froilan C
+              alias: Froi
+            savingbbva:
+            - name: Socorro Patricia C
+              alias: Patty
+        authentication:
+          password: Glomo2023
+          user: '7531640063'
+          deviceId: 47593B44C698DDE5D23B5F50F315EF05
+      lockExpiration: null
+      lockType: null
+      id: 35670848
+    :headers:
+      content-length: '2846'
+      Strict-Transport-Security: max-age=15768000
+      Server: nginx
+      ECS-Entry-Point-Zone: ext
+      Connection: keep-alive
+      host: datamanager.globaldevtools.bbva.com
+      Vary: Accept-Encoding
+      Date: Wed, 04 Oct 2023 16:21:49 GMT
+      Content-Type: application/json
+    :status: 200 OK

@@ -1,0 +1,109 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: 6ae82ecc-0ffa-4b5b-bfac-b690c7abd338
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: reuse_operation_balance_error1
+    lock: 'false'
+then:
+- return:
+    :body:
+    - data:
+        locale: es_mx
+        tags:
+        - reuse_operation_balance_error1
+        - movements_account
+        products:
+          accounts:
+          - numberType:
+              id: CCC
+            productId: AH
+            level: '02'
+            description:
+              masked: true
+              value: '00740010001501720053'
+            subProductType: '0230'
+            number: '00740010001501720053'
+            titleName: Cuenta de Ahorro
+            originalProduct:
+              number: '00740010001501720053'
+              accountId: Uvn6wi1Rh6CW8KCgKLr1ZBVl7PVs7V6O-IzwspFHuZ1nXo6g5l97Pg
+              formats:
+              - number: '007400101501720053'
+                numberType:
+                  id: CCC
+              title:
+                name: Cuenta de Ahorro
+              availableBalance:
+                currentBalances:
+                - amount: 25
+                  currency: MXN
+                pendingDepositBalances:
+                - amount: 0
+                  currency: MXN
+            name: 0002ah0053
+            alias: 0002ah0053
+            id: Uvn6wi1Rh6CW8KCgKLr1ZBVl7PVs7V6O-IzwspFHuZ1nXo6g5l97Pg
+            detail:
+              level: '02'
+              specificAmounts:
+              - amounts:
+                - amount: 25
+                  currency: MXN
+                name: Saldo actual
+                id: CURRENT_BALANCE
+              - amounts:
+                - amount: 0
+                  currency: MXN
+                name: Saldo buen cobro
+                id: PENDING_DEPOSIT_BALANCE
+              - amounts:
+                - amount: 0
+                  currency: MXN
+                name: '000000002'
+                id: ACCOUNT_MOVEMENT_NUMBER
+              indicators:
+              - name: Indica si la cuenta es de nómina
+                id: IS_PAYROLL_ACCOUNT
+                isActive: false
+              - name: Indica si la cuenta es eje
+                id: IS_PRINCIPAL_ACCOUNT
+                isActive: false
+              - name: Indica si la cuenta tiene pockets
+                id: HAS_POCKETS
+                isActive: false
+              - name: Indica si la cuenta es digital
+                id: IS_DIGITAL
+                isActive: false
+            primaryAmount:
+              amount: 25
+              currency: MXN
+              label: dashboard-account-current-balance
+            status: ACTIVE
+        authentication:
+          password: Glomo2023
+          user: '8662783968'
+          deviceId: 47593B44C698DDE5D23B5F50F315EF05
+      lockExpiration: null
+      lockType: null
+      id: 35677667
+    :headers:
+      content-length: '1851'
+      Strict-Transport-Security: max-age=15768000
+      Server: nginx
+      ECS-Entry-Point-Zone: ext
+      Connection: keep-alive
+      host: datamanager.globaldevtools.bbva.com
+      Vary: Accept-Encoding
+      Date: Thu, 02 Nov 2023 08:22:05 GMT
+      Content-Type: application/json
+    :status: 200 OK

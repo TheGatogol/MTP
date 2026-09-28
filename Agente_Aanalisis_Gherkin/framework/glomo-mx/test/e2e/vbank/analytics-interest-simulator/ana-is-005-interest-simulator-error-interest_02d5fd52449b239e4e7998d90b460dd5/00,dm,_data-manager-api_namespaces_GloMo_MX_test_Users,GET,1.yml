@@ -1,0 +1,38 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: c8b3c4d8-dd13-4e2b-9469-48cb80b73ee6
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: credit_card_user_with_simulate
+then:
+- return:
+    :body:
+    - data:
+        tags:
+        - '5533534860'
+        - credit_card_user_with_simulate
+        authentication:
+          password: Glomo2022
+          user: '5533534860'
+          deviceId: 56FB14E308AEAAEE8AB5965058CFED42
+      lockExpiration: null
+      lockType: null
+      id: 3514038
+    :headers:
+      Strict-Transport-Security: max-age=15768000
+      Server: nginx
+      ECS-Entry-Point-Zone: ext
+      Connection: keep-alive
+      Content-Length: '235'
+      Date: Tue, 07 Mar 2023 19:20:33 GMT
+      Content-Type: application/json
+    :status: 200 OK

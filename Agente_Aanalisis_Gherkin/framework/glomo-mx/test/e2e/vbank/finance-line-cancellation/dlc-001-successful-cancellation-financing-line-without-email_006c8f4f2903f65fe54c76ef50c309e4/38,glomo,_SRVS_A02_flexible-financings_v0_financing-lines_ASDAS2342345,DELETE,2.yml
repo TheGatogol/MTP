@@ -1,0 +1,61 @@
+when:
+  sequence: 2
+  path: /SRVS_A02/flexible-financings/v0/financing-lines/ASDAS2342345
+  method: DELETE
+  backend: glomo
+request:
+  headers:
+    sec-fetch-mode: cors
+    referer: http://localhost:8001/
+    content-length: '2'
+    sec-fetch-site: same-site
+    accept-language: es-MX,es;q=0.9
+    origin: http://localhost:8001
+    authenticationtype: '05'
+    tsec: 3b5a8411da60b2c4dee166fca34fca6297a2a42e
+    accept: application/json, text/html, */*; q=0.1
+    sec-ch-ua: '"Google Chrome";v="141", "Not?A_Brand";v="8", "Chromium";v="141"'
+    authenticationdata: otp-sms
+    sec-ch-ua-mobile: ?0
+    x-vbank-session: 250795b3-43af-4aae-a9ab-ff0beefb384b
+    sec-ch-ua-platform: '"macOS"'
+    host: localhost:9000
+    content-type: application/json
+    connection: keep-alive
+    cache-control: no-cache, no-store, must-revalidate
+    accept-encoding: gzip, deflate, br, zstd
+    sec-fetch-dest: empty
+    user-agent: GLOMO_MX/99.99.99 (Android;14;Samsung)
+then:
+- return:
+    severity: FATAL
+    system-error-cause: Expected AuthenticationData header to contain otp-token=otpTokenValue
+    error-message: Expected AuthenticationData header to contain otp-token=otpTokenValue
+    consumer-request-id: 954cbbbf-5361-4ae3-a250-2999244729a0
+    :headers:
+      Server: artichoke
+      access-control-allow-headers: Content-Type, tsec, authenticationtype, authenticationdata,
+        authenticationstate, contactid, consumeruuid, consumerapplicationid, perimetertsec,
+        authorization, responsewarningcode, responsewarningdescription, cuf, field,
+        bcs-device-app-version, bcs-device-app-version, vnd.bbva.authorization, device-id,
+        Bcs-Device-Os-Name, bcs-device-app-name, bcs-device-dpi, BCS-Device-Id
+      Connection: keep-alive
+      authenticationtype: '05'
+      tsec: 3b5a8411da60b2c4dee166fca34fca6297a2a42e
+      X-Response-Time: 5ms
+      Date: Tue, 13 Jan 2026 17:05:48 GMT
+      access-control-allow-origin: '*'
+      Access-Control-Expose-Headers: tsec, vnd.bbva.access-token-type,vnd.bbva.access-token,
+        vnd.bbva.sso-pkcs7, authenticationtype, authenticationdata, authenticationstate,
+        authenticationchallenge
+      authenticationdata: otp-sms
+      authenticationstate: e3b0c44298
+      Content-Length: '462'
+      Content-Type: application/json; charset=utf-8
+    system-error-code: stateChangeGoOn
+    messages: []
+    :status: 401 Unauthorized
+    http-status: 401
+    system-error-description: Expected AuthenticationData header to contain otp-token=otpTokenValue
+    error-code: '999'
+    version: 1

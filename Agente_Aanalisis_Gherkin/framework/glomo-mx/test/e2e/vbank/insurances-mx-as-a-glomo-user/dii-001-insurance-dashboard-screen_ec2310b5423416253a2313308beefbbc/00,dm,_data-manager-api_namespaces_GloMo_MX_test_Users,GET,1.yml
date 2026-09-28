@@ -1,0 +1,39 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: 404e7aea-b7c2-42c3-a7d8-018a406fd8df
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: dashboard_insurance
+    lock: 'false'
+then:
+- return:
+    :body:
+    - data:
+        locale: es_mx
+        tags:
+        - '5520799053'
+        - dashboard_insurance
+        authentication:
+          password: Glomo2028
+          user: '5520799053'
+          deviceId: 7312B70C6CE00ABE143CB202BD616A72
+      id: 36035927
+    :headers:
+      Server: nginx
+      Cache-Control: max-age=0
+      Connection: keep-alive
+      host: datamanager.globaldevtools.bbva.com
+      Expires: Wed, 31 Dec 2025 18:24:05 GMT
+      Content-Length: '195'
+      Date: Wed, 31 Dec 2025 18:24:05 GMT
+      Content-Type: application/json; charset=utf-8
+    :status: 200 OK

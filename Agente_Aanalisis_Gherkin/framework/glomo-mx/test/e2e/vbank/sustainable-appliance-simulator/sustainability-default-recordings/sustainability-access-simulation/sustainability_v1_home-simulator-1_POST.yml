@@ -1,0 +1,81 @@
+when:
+  backend: mybackend
+  method: POST
+  path: /sustainability/v1/home-simulator
+then:
+  - return:
+      :status: 200 OK
+      data:
+        energyConsumption:
+          - consumptionType:
+              id: ELECTRICITY
+            expenseAmount:
+              amount: 2068
+              currency: EUR
+            isEstimated: false
+            averageEnergyConsumption:
+              amount: 2000
+              currency: EUR
+        energyConsumptionReduced:
+          - consumptionReducedType:
+              id: ELECTRICITY
+            consumptionReducedAmount:
+              amount: 1375.78
+              currency: EUR
+        homeAppliances:
+          - applianceType:
+              id: AIR_CONDITIONING
+              name: airConditioning
+            energySavings:
+              amount: 298.12
+              currency: EUR
+            impactType: HIGH
+            energyConsumptionType:
+              id: ELECTRICITY
+            consumptionPercentage: 21.2
+            improvementRate: 68
+          - applianceType:
+              id: FRIDGE
+              name: refrigerator
+            energySavings:
+              amount: 266.93
+              currency: EUR
+            impactType: MEDIUM
+            energyConsumptionType:
+              id: ELECTRICITY
+            consumptionPercentage: 18.17
+            improvementRate: 71.04
+          - applianceType:
+              id: WASHING_MACHINE
+              name: washingMachine
+            energySavings:
+              amount: 75.68
+              currency: EUR
+            impactType: MEDIUM
+            energyConsumptionType:
+              id: ELECTRICITY
+            consumptionPercentage: 6.1
+            improvementRate: 60
+          - applianceType:
+              id: LIGHTNING
+              name: lightning
+            energySavings:
+              amount: 51.49
+              currency: EUR
+            impactType: LOW
+            energyConsumptionType:
+              id: ELECTRICITY
+            consumptionPercentage: 4.15
+            improvementRate: 60
+        savings:
+          - savingType:
+              id: ELECTRICITY
+            savingAmounts:
+              amount: 692.22
+              currency: EUR
+            environmentalImpact:
+              description: >-
+                Con este consejo, dejas de emitir el equivalente a 3 vuelos de
+                Bilbao a Tokio
+              id: i123sus
+              title: Environmental impact

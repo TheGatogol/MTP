@@ -1,0 +1,44 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: 2f498555-a67e-4e36-aa62-2fee9dd1a89a
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: profile_user_mobile,account
+    lock: 'false'
+then:
+- return:
+    :body:
+    - data:
+        locale: es_mx
+        tags:
+        - profile_user_mobile
+        - account
+        products:
+        - accounts:
+          - number: '00740680001501035980'
+            alias: 0001ah5980
+        authentication:
+          password: Glomo2023
+          user: '5562450194'
+          deviceId: 57E00ED3AB81A433C2E81ADABE8D47D3
+      lockType: null
+      lockExpiration: null
+      id: 3379608
+    :headers:
+      Strict-Transport-Security: max-age=15768000
+      Server: nginx
+      ECS-Entry-Point-Zone: ext
+      Connection: keep-alive
+      Content-Length: '329'
+      Date: Thu, 04 May 2023 19:05:35 GMT
+      Content-Type: application/json
+    :status: 200 OK

@@ -1,0 +1,40 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: eea488b9-b903-4ae7-9ef1-bd9a99d7df5f
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: user_wants_change_password_analytics
+    lock: 'false'
+then:
+- return:
+    :body:
+    - data:
+        locale: es_mx
+        tags:
+        - user_wants_change_password_analytics
+        authentication:
+          password: Glomo2024
+          user: '5539386256'
+          deviceId: 34441AB722BCC5403F8481BFE92C0916
+      lockExpiration: null
+      lockType: null
+      id: 35759763
+    :headers:
+      Strict-Transport-Security: max-age=15768000
+      Server: nginx
+      ECS-Entry-Point-Zone: ext
+      Connection: keep-alive
+      host: datamanager.globaldevtools.bbva.com
+      Content-Length: '247'
+      Date: Mon, 29 Jan 2024 21:17:21 GMT
+      Content-Type: application/json
+    :status: 200 OK

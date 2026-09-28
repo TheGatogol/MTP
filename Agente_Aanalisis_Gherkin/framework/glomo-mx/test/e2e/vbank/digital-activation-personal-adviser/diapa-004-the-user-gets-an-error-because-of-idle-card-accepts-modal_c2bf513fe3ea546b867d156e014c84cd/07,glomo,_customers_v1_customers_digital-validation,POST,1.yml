@@ -1,0 +1,105 @@
+when:
+  sequence: 1
+  path: /SRVS_A02/customers/v1/customers/digital-validation
+  method: POST
+  backend: glomo
+request:
+  headers:
+    sec-fetch-mode: cors
+    referer: http://localhost:8001/
+    content-length: '146'
+    sec-fetch-site: same-site
+    accept-language: es
+    origin: http://localhost:8001
+    tsec: ZXlKaFlYQWlPaUl4TURBd01EQTRPQ0lzSW10bGVWWmxjbk5wYjI0aU9qRXNJbUZ3Y0Vsa0lqb2lRVkJRTVNJc0ltdHBaQ0k2SWtGUVVERXViRzlqWVd3dU1TSXNJbVZ1WXlJNklrRXhPVEpIUTAwaUxDSnJaWGxVZVhCbElqb2liRzlqWVd3aUxDSmhiR2NpT2lKa2FYSWlMQ0owYzJWalNXUWlPaUpsTldVNU56QXlPUzA1TVdZNUxUUm1Nekl0WWpWak5DMWlNREF6WldGak5UYzRNR1FpZlEuLnRWMjVPa0hUMERIbDJJcF8uUVRuNzAxUGx4cTRVQXFkZHlrYkpLd2l3SFkwcDliOVgtUkh3M00zdFg2R2VnbTdCMnhEcGJ5WXQ0aEhfdDVMcGptOW9HYk1NeFhidXlUZTRhRUZXOW5mbTN5TnVHOFdNRW9GaHZlckRTMW5yVTZHRnR5c3Z0ZUVWVkZLUVRyN1VPcTYySU50OEswSkFTS2M4TDg3SU9UeS1VS2NXYkhZbjRQWHpidHZSYVRDNTlraFc0QWtNZzdhMFFDaDgxSk04UmhYb19hOTdrUFlXbU1jZGZtYmFkaEZvY1BBWlN3REtZaUE4VTNsN2h6cU9MUlZVSkZCZmxIckpoZ2ZOT1dHRHBfbXdVcWVTRXNVOC1SalJWM0FkNjZKRUNkS0xzb1NaRjctTEwxSDJHRDRnNHBVbXpFWWJERXVkbVQ1RTRWQy1XZ3RhcDZCaVBzblA1NTkyck9yMzY2OFhtcDU4Yzgzd3ZCN3U5SzQxYVhiQ0JYZTNVMGt6UnljZEp3My00LWJMbUlaNmRPN3VSUm8xODdkaUwxejM3U2RyS1lMb0V2bWFFbnFNWGlyMEdfRGlkWDhSWEtXRlBIN28wRk44cDh0TUp1ZS0zMmFORXBvNVBpVDRTSjJid3JyUUFYZjhGSHR5eXdrNTh5R01EajVfRG9Uem5sWXVMRTZ6QUFjY3N6UloybVRGcm80bnFVWHJBNkY2LXFSRFFMYWZ5czcwclJSWHVOZk9NOWV3NGxwZWtGdU9MeXRiM1FST1IwWTVBUWlzaWd3Q1VXOFlmd21Na0lVRUV0YkNzN0Fmc0gzaE9TYnNfa2U4VXZiMFZXWUdHeGsxalkzXzVYOWhzYWV0eXk3TDM3Vlk3T2hlM2R6S0hIZmNTSXRGTWJnMHl5dTd1RVdwdTZDUERsU2IyTEhET0xuQTFqaFc3VDVUMjN1MEpDcVlyc0dpSXA5VGFvZ0p3cWRIbnRXaDdwUUhlNWF6dVVSSEVtOTlPMjl6TW9PR1M3MTBrNXJoTDBwNkFlY0t3b1hHRF9tSGo5NFc5LUhzX0NrQldkZ1ViYlB6bmVDZE0zMXZ5cmR5OTlKUEdiWEk4Yy1wWGlueFpic3JFbld4M3h5di12V1NUV3BoSlp3S1FvRnBkXzVQcmNvTE9zVFU2NzlHb1Z0X2o3UWlmVUNEV3RMN2dqLVBuSHZtYUw0cF9WZ05vclBodC14QS1GMTdtMXRzZDJ1N2V0bm5fbFdJUkEyWUxhVVFzU2t1UUJndkQ4V2YySVVmdHhmTHpXWTBObC1iei1aT1Z0S1huU0xHMUlkNTJUd2hYeERrS3NmM1pldXhyLTJsXzBnT2Y0VS5rUElvaXZ4QlVSZ0FKblBZSGhkbElB
+    accept: application/json, text/html, */*; q=0.1
+    sec-ch-ua: '"Not.A/Brand";v="8", "Chromium";v="114", "Google Chrome";v="114"'
+    sec-ch-ua-mobile: ?0
+    x-vbank-session: e29eb014-f3b0-4fc3-9bea-ed953b3523c5
+    sec-ch-ua-platform: '"macOS"'
+    host: localhost:9000
+    content-type: application/json
+    connection: keep-alive
+    cache-control: no-cache, no-store, must-revalidate
+    accept-encoding: gzip, deflate, br
+    sec-fetch-dest: empty
+    user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36
+      (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+  body:
+    contactDetail:
+      contact: '2323220656'
+      contactType:
+        id: MOBILE_NUMBER
+    contract:
+      number: '4152313945123995'
+      numberType:
+        id: PAN
+then:
+- return:
+    severity: FATAL
+    system-error-cause: 'KZE1786: TARJETA NO ACTIVA'
+    error-message: Tarjeta inactiva
+    consumer-request-id: f6b68578-9001-4279-839c-bc3aeb7d21ee
+    :headers:
+      content-length: '311'
+      Access-Control-Allow-Origin: '*'
+      ECS-Entry-Point-Zone: ext
+      Access-Control-Allow-Methods: GET, POST, DELETE, PUT, OPTIONS, PATCH
+      X-Content-Type-Options: nosniff
+      old-catalog: 'true'
+      Connection: close
+      tsec: ZXlKaFlYQWlPaUl4TURBd01EQTRPQ0lzSW10bGVWWmxjbk5wYjI0aU9qRXNJbUZ3Y0Vsa0lqb2lRVkJRTVNJc0ltdHBaQ0k2SWtGUVVERXViRzlqWVd3dU1TSXNJbVZ1WXlJNklrRXhPVEpIUTAwaUxDSnJaWGxVZVhCbElqb2liRzlqWVd3aUxDSmhiR2NpT2lKa2FYSWlMQ0owYzJWalNXUWlPaUpsTldVNU56QXlPUzA1TVdZNUxUUm1Nekl0WWpWak5DMWlNREF6WldGak5UYzRNR1FpZlEuLnRWMjVPa0hUMERIbDJJcF8uUVRuNzAxUGx4cTRVQXFkZHlrYkpLd2l3SFkwcDliOVgtUkh3M00zdFg2R2VnbTdCMnhEcGJ5WXQ0aEhfdDVMcGptOW9HYk1NeFhidXlUZTRhRUZXOW5mbTN5TnVHOFdNRW9GaHZlckRTMW5yVTZHRnR5c3Z0ZUVWVkZLUVRyN1VPcTYySU50OEswSkFTS2M4TDg3SU9UeS1VS2NXYkhZbjRQWHpidHZSYVRDNTlraFc0QWtNZzdhMFFDaDgxSk04UmhYb19hOTdrUFlXbU1jZGZtYmFkaEZvY1BBWlN3REtZaUE4VTNsN2h6cU9MUlZVSkZCZmxIckpoZ2ZOT1dHRHBfbXdVcWVTRXNVOC1SalJWM0FkNjZKRUNkS0xzb1NaRjctTEwxSDJHRDRnNHBVbXpFWWJERXVkbVQ1RTRWQy1XZ3RhcDZCaVBzblA1NTkyck9yMzY2OFhtcDU4Yzgzd3ZCN3U5SzQxYVhiQ0JYZTNVMGt6UnljZEp3My00LWJMbUlaNmRPN3VSUm8xODdkaUwxejM3U2RyS1lMb0V2bWFFbnFNWGlyMEdfRGlkWDhSWEtXRlBIN28wRk44cDh0TUp1ZS0zMmFORXBvNVBpVDRTSjJid3JyUUFYZjhGSHR5eXdrNTh5R01EajVfRG9Uem5sWXVMRTZ6QUFjY3N6UloybVRGcm80bnFVWHJBNkY2LXFSRFFMYWZ5czcwclJSWHVOZk9NOWV3NGxwZWtGdU9MeXRiM1FST1IwWTVBUWlzaWd3Q1VXOFlmd21Na0lVRUV0YkNzN0Fmc0gzaE9TYnNfa2U4VXZiMFZXWUdHeGsxalkzXzVYOWhzYWV0eXk3TDM3Vlk3T2hlM2R6S0hIZmNTSXRGTWJnMHl5dTd1RVdwdTZDUERsU2IyTEhET0xuQTFqaFc3VDVUMjN1MEpDcVlyc0dpSXA5VGFvZ0p3cWRIbnRXaDdwUUhlNWF6dVVSSEVtOTlPMjl6TW9PR1M3MTBrNXJoTDBwNkFlY0t3b1hHRF9tSGo5NFc5LUhzX0NrQldkZ1ViYlB6bmVDZE0zMXZ5cmR5OTlKUEdiWEk4Yy1wWGlueFpic3JFbld4M3h5di12V1NUV3BoSlp3S1FvRnBkXzVQcmNvTE9zVFU2NzlHb1Z0X2o3UWlmVUNEV3RMN2dqLVBuSHZtYUw0cF9WZ05vclBodC14QS1GMTdtMXRzZDJ1N2V0bm5fbFdJUkEyWUxhVVFzU2t1UUJndkQ4V2YySVVmdHhmTHpXWTBObC1iei1aT1Z0S1huU0xHMUlkNTJUd2hYeERrS3NmM1pldXhyLTJsXzBnT2Y0VS5rUElvaXZ4QlVSZ0FKblBZSGhkbElB
+      Access-Control-Allow-Headers: Accept-Encoding, Accept, Content-Type, tsec, consumerrequestid,
+        authenticationchallenge, authenticationtype, authenticationdata, authenticationstate,
+        contactid, consumeruuid, consumerapplicationid, perimetertsec, authorization,
+        responsewarningcode, responsewarningdescription, cuf, prefer, phoneNumber,
+        Location, X-RHO-PARENTSPANID, X-RHO-TRACEID, preferredauthenticationtype,
+        X-HTTP-Method-Override, Access-Control-Allow-Methods, iv-remote-address, thirdparty-x-forwarded-for,
+        thirdparty-user-agent, thirdparty-geolocation, thirdparty-calculated-scoring,
+        thirdparty-deviceid, vnd.bbva.security-client-certificate, order-preferredaction,
+        authenticationresponse, Access-Control-Max-Age, BCS-Device-Id, BCS-Device-OS-Name,
+        BCS-Device-Model-Name, BCS-Device-Model-Manufacturer, BCS-Device-Screen-Size,
+        BCS-Device-OS-Version, BCS-Device-DPI, BCS-Device-App-Name, BCS-Device-App-Version,
+        Third-Party-Application-Id, ECS-Signature-Platform-Use-Case, BCS-Process-Code,
+        BCS-Operation-Tracer, BCS-Process-Tracer, vnd.bbva.user-id, order-preferredaction,
+        order-id, order-accepteddisclaimers, x-forwarded-for, Date, x-dmz-orgn, onsite-accountTerm,
+        onsite-logicalTerm, Akamai-BM-Telemetry, order-hmac, order-signed, BCS-Third-Party-Session-Id,
+        Cache-Control, clave, Content-Encoding, ECS-Entry-Point-Zone, firma, Geolocation,
+        Third-Party-Collaborator-Id, user-agent, Via
+      Date: Mon, 05 Jun 2023 23:26:01 GMT
+      Referrer-Policy: same-origin
+      X-Frame-Options: sameorigin
+      ResponseWarningCode: KZE1786
+      Strict-Transport-Security: max-age=31536000; includeSubDomains
+      Access-Control-Expose-Headers: Accept-Encoding, Accept, Content-Type, tsec,
+        consumerrequestid, authenticationchallenge, authenticationtype, authenticationdata,
+        authenticationstate, contactid, consumeruuid, consumerapplicationid, perimetertsec,
+        authorization, responsewarningcode, responsewarningdescription, cuf, prefer,
+        phoneNumber, Location, X-RHO-PARENTSPANID, X-RHO-TRACEID, preferredauthenticationtype,
+        X-HTTP-Method-Override, Access-Control-Allow-Methods, iv-remote-address, thirdparty-x-forwarded-for,
+        thirdparty-user-agent, thirdparty-geolocation, thirdparty-calculated-scoring,
+        thirdparty-deviceid, vnd.bbva.security-client-certificate, order-preferredaction,
+        authenticationresponse, Access-Control-Max-Age, BCS-Device-Id, BCS-Device-OS-Name,
+        BCS-Device-Model-Name, BCS-Device-Model-Manufacturer, BCS-Device-Screen-Size,
+        BCS-Device-OS-Version, BCS-Device-DPI, BCS-Device-App-Name, BCS-Device-App-Version,
+        Third-Party-Application-Id, ECS-Signature-Platform-Use-Case, BCS-Process-Code,
+        BCS-Operation-Tracer, BCS-Process-Tracer, vnd.bbva.user-id, order-preferredaction,
+        order-id, order-accepteddisclaimers, x-forwarded-for, Date, x-dmz-orgn, onsite-accountTerm,
+        onsite-logicalTerm, Akamai-BM-Telemetry, order-hmac, order-signed, BCS-Third-Party-Session-Id,
+        Cache-Control, clave, Content-Encoding, ECS-Entry-Point-Zone, firma, Geolocation,
+        Third-Party-Collaborator-Id, user-agent, Via
+      Cache-Control: no-cache,no-store,must-revalidate
+      Akamai-Parent-IP: 104.124.0.213
+      Content-Security-Policy: script-src 'self'
+      Set-Cookie: vbank-session=e29eb014-f3b0-4fc3-9bea-ed953b3523c5
+      Expires: '-1'
+      X-XSS-Protection: 1; mode=block
+      ResponseWarningDescription: TARJETA NO ACTIVA
+      consumerrequestid: f6b68578-9001-4279-839c-bc3aeb7d21ee
+      Content-Type: application/json; charset=UTF-8
+    system-error-code: cardIsNotActive
+    :status: 400 Bad Request
+    http-status: 400
+    system-error-description: Tarjeta inactiva
+    error-code: cardIsNotActive
+    version: 1

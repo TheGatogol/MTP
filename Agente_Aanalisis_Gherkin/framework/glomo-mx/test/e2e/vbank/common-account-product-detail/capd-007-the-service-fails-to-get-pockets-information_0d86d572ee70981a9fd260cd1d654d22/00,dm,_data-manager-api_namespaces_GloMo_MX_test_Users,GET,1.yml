@@ -1,0 +1,94 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: 728c9c35-6289-472a-8615-9de5de07b60f
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: common_account,one_account
+then:
+- return:
+    :body:
+    - data:
+        data:
+          catalogs:
+            catalogs: []
+        campaigns: {}
+        locale: es_mx
+        people:
+          loyalty:
+            rewards: []
+            points:
+              balances: {}
+          contacts: []
+          customer: {}
+        tags:
+        - '5547348651'
+        - common_account
+        - one_account
+        products:
+          cards: []
+          accounts:
+          - joint:
+              name: Individual
+              id: SINGLE
+            numberType:
+              name: Customer Account Code
+              id: CCC
+            accountType:
+              name: SIN CHEQ
+              id: 15-0230
+            accountFamily:
+              name: Common Account
+              id: COMMON
+            title:
+              name: TARJETA NOMINA BASICA BBVA
+              id: 15-0230
+            availableBalance:
+              currentBalances:
+              - amount: '999887734.00'
+                currency: MXN
+              pendingBalances:
+              - amount: '999987879.00'
+                currency: MXN
+              postedBalances:
+              - amount: '0.00'
+                currency: MXN
+            number: '00740010001500957752'
+            accountId: Uvn6wi1Rh6AQBNnaqJkmRLgCvlE9LgFmY9kXPDwwHRf2JS-bllD-Rg
+            meta:
+              accountLevel: N4
+            alias: Pruebatd
+            openingDate: '2021-06-10'
+            status:
+              name: ACTIVA
+              id: ACTIVATED
+            currencies:
+            - isMajor: true
+              currency: MXN
+          deposits: []
+          investmentFunds: []
+        authentication:
+          password: glomo2022
+          user: '5547348651'
+          deviceId: F5DFF8155DAE4E7EA319BDB91C9181B9
+      lockExpiration: null
+      lockType: null
+      id: 2645877
+    :headers:
+      content-length: '1291'
+      Strict-Transport-Security: max-age=15768000
+      Server: nginx
+      ECS-Entry-Point-Zone: ext
+      Connection: keep-alive
+      Vary: Accept-Encoding
+      Date: Wed, 19 Oct 2022 22:19:24 GMT
+      Content-Type: application/json
+    :status: 200 OK

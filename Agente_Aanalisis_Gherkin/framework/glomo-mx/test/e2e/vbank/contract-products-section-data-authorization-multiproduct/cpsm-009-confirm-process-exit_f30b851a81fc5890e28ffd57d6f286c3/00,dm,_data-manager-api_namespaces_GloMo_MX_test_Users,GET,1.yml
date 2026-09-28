@@ -1,0 +1,43 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: 93bdf2cf-0497-4666-9934-bd172a591417
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: data_authorization_multiproduct,primary_offer
+    lock: 'false'
+then:
+- return:
+    :body:
+    - data:
+        offerName: Consulta de datos
+        offerId: sEsSZWZJJ38CLpKBEappfc2mq8gqCgv5
+        offerButton: ¡Me interesa! Consulta de datos
+        tags:
+        - data_authorization_multiproduct
+        - primary_offer
+        - '9641164768'
+        authentication:
+          password: Glomo2026
+          user: '9641164768'
+          deviceId: 21CB245B67E76A119C0196504A8EAF60
+      id: 36401329
+    :headers:
+      content-length: '332'
+      Server: nginx
+      Cache-Control: max-age=0
+      Connection: keep-alive
+      host: datamanager.globaldevtools.bbva.com
+      Vary: Accept-Encoding
+      Expires: Fri, 06 Mar 2026 15:25:21 GMT
+      Date: Fri, 06 Mar 2026 15:25:21 GMT
+      Content-Type: application/json; charset=utf-8
+    :status: 200 OK

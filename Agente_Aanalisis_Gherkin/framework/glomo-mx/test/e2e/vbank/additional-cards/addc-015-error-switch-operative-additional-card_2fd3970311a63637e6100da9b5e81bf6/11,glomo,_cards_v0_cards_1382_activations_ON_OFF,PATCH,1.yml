@@ -1,0 +1,54 @@
+when:
+  sequence: 1
+  path: /SRVS_A02/cards/v0/cards/1382/activations/ON_OFF
+  method: PATCH
+  backend: glomo
+request:
+  headers:
+    sec-fetch-mode: cors
+    referer: http://localhost:8001/
+    content-length: '17'
+    sec-fetch-site: same-site
+    accept-language: es
+    origin: http://localhost:8001
+    tsec: 0ec70ed2009b5dae4cf5dc361304246900a1a651
+    accept: application/json, text/html, */*; q=0.1
+    x-vbank-session: 47010772-fbab-446d-9ed5-d582972238bf
+    host: localhost:9000
+    content-type: application/json
+    connection: keep-alive
+    cache-control: no-cache, no-store, must-revalidate
+    accept-encoding: gzip, deflate, br
+    sec-fetch-dest: empty
+    user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36
+      (KHTML, like Gecko) Chrome/89.0.4389.82 Safari/537.36
+  body:
+    isActive: true
+then:
+- delay: 1s
+- return:
+    severity: FATAL
+    error-message: Internal Error
+    consumer-request-id: 207a2723-e82b-4c47-a64c-ea8836f245cd
+    :headers:
+      access-control-allow-origin: '*'
+      Access-Control-Expose-Headers: tsec, vnd.bbva.access-token-type,vnd.bbva.access-token,
+        authenticationtype, authenticationdata, authenticationstate
+      Server: artichoke
+      Alt-Svc: clear
+      access-control-allow-headers: Content-Type, tsec, authenticationtype, authenticationdata,
+        authenticationstate, contactid, consumeruuid, consumerapplicationid, perimetertsec,
+        authorization, responsewarningcode, responsewarningdescription, cuf, field,
+        bcs-device-app-version, bcs-device-app-version
+      tsec: 0ec70ed2009b5dae4cf5dc361304246900a1a651
+      Content-Length: '243'
+      X-Response-Time: 1ms
+      Date: Fri, 12 Mar 2021 18:01:37 GMT
+      Content-Type: application/json; charset=utf-8
+      Via: 1.1 google
+    system-error-code: '400'
+    :status: 400 Internal Server Error
+    http-status: 400
+    system-error-description: Activations ON_OFF error
+    error-code: '160'
+    version: 1

@@ -1,0 +1,56 @@
+{
+  "extends": [
+    "eslint:recommended",
+    ".cellsci/eslint-config-cells"
+  ],
+  "rules": {
+    "comma-dangle": [
+      "error",
+      "never"
+    ],
+    "no-dupe-keys": "error",
+    "no-useless-escape": "error",
+    "require-jsdoc": "off"
+  },
+  "env": {
+    "node": true
+  },
+  "globals": {
+    "__dirname": false,
+    "app": false,
+    "page": false,
+    "Polymer": false
+  },
+  "overrides": [
+    {
+      "files": ["app/locales-app/*.json"],
+      "extends": ["plugin:jsonc/recommended-with-json"],
+      "parser": "jsonc-eslint-parser",
+      "rules": {
+        "jsonc/indent": ["error", 2],
+        "jsonc/sort-keys": ["error", "asc", {"caseSensitive": true, "natural": false, "minKeys": 2}],
+        "no-irregular-whitespace": "off"
+      }
+    },
+    {
+      "files": ["bower.json"],
+      "extends": ["plugin:jsonc/recommended-with-json"],
+      "parser": "jsonc-eslint-parser",
+      "rules": {
+        "jsonc/indent": ["error", 2],
+          "jsonc/sort-keys": [
+            "error",
+            {
+              "pathPattern": "^$",
+              "order": ["name", "version", "dependencies", "resolutions"]
+            },
+            {
+              "pathPattern": "^(dependencies|resolutions)$",
+              "order": { "type": "asc" }
+            }
+          ]
+      }
+    }
+
+  ]
+}

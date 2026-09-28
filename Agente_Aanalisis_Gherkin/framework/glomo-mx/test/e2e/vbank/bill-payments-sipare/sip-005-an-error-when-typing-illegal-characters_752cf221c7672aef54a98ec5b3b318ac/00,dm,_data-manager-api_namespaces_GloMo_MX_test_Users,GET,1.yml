@@ -1,0 +1,40 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: 48ef6079-9e1d-48b8-a321-7b39e4e20b98
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: bill_payments_sipare
+    lock: 'false'
+then:
+- return:
+    :body:
+    - data:
+        homeFutura: false
+        tags:
+        - bill_payments_sipare
+        authentication:
+          password: Glomo2025
+          user: '7471254660'
+          deviceId: 89A5F10F27DF46B65966313DAE4A6234
+        lineCapture: F2FV59L04C69090K6601000000SB00000NR00000EI00000JG2000
+      lockExpiration: null
+      lockType: null
+      id: 36064404
+    :headers:
+      Cache-Control: max-age=0
+      Connection: keep-alive
+      host: datamanager.globaldevtools.bbva.com
+      Expires: Thu, 27 Feb 2025 00:57:42 GMT
+      Content-Length: '212'
+      Date: Thu, 27 Feb 2025 00:57:42 GMT
+      Content-Type: application/json; charset=utf-8
+    :status: 200 OK

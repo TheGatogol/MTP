@@ -1,0 +1,15 @@
+when:
+  sequence: 1
+  path: /SRVS_A02/cards/v3/cards/contracts/LVv7dTM4EkOSjLcS9QLRKr5VaobzGVqe/payment-reminder/search
+  method: POST
+  backend: glomo
+then:
+- return:
+    :body:
+      code: '40401'
+      message: The credit card contract does not have payment reminder service
+    :headers:
+      content-type: application/json
+      Access-Control-Allow-Origin: '*'
+      Connection: keep-alive
+    :status: 404 Not Found

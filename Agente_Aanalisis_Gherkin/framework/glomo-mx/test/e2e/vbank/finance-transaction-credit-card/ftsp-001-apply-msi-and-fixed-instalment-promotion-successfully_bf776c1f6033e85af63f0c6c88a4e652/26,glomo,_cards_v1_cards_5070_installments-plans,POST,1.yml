@@ -1,0 +1,137 @@
+when:
+  sequence: 1
+  path: /SRVS_A02/cards/v1/cards/5070/installments-plans
+  method: POST
+  backend: glomo
+request:
+  headers:
+    sec-fetch-mode: cors
+    referer: http://localhost:8001/
+    content-length: '588'
+    sec-fetch-site: same-site
+    accept-language: es-MX,es;q=0.9
+    origin: http://localhost:8001
+    tsec: b3abdb159d365ae2ea0e778692ff2df5c3e7fe14
+    accept: application/json, text/html, */*; q=0.1
+    sec-ch-ua: '"Chromium";v="116", "Not)A;Brand";v="24", "Google Chrome";v="116"'
+    sec-ch-ua-mobile: ?0
+    x-vbank-session: 1d7e9ccc-9fb6-426c-b378-8e3ff4f63f40
+    sec-ch-ua-platform: '"macOS"'
+    host: localhost:9000
+    content-type: application/json
+    connection: keep-alive
+    cache-control: no-cache, no-store, must-revalidate
+    accept-encoding: gzip, deflate, br
+    sec-fetch-dest: empty
+    user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36
+      (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36
+  body:
+    pointsBalances:
+    - pointsBalanceType:
+        id: POINTS_DELETED_BY_THE_PURCHASE
+      points: 800
+    financingCalculationFormat:
+      unit:
+        number: 6
+        id: TERM
+        frequency: MONTHLY
+      id: TOTAL_AMOUNT_PAYMENT
+    specificAmounts:
+    - amount:
+        amount: '1500.1'
+        currency: MXN
+      id: ORIGINAL_AMOUNT
+    rates:
+      itemizeRates:
+      - rateType: CAT
+        itemizeRatesUnit:
+          unitRateType: PERCENTAGE
+          percentage: 10
+      - rateType: TASA
+        itemizeRatesUnit:
+          unitRateType: PERCENTAGE
+          percentage: 12
+    offerId: '9013'
+    financingType:
+      id: MONTHS_WITHOUT_INTERESTS
+    transactionId: MXN0001
+then:
+- return:
+    data:
+      pointsBalances:
+      - pointsBalanceType:
+          id: POINTS_TO_DAY
+        points: 2000
+      - pointsBalanceType:
+          id: POINTS_DELETED_BY_THE_PURCHASE
+        points: 800
+      - pointsBalanceType:
+          id: REMAINING_POINTS
+        points: 1200
+      financingCalculationFormat:
+        unit:
+          number: 6
+          name: Plazo
+          id: TERM
+          frequency: MONTHLY
+        id: TOTAL_AMOUNT_PAYMENT
+      specificAmounts:
+      - amount:
+          amount: 1500.1
+          currency: MXN
+        id: TOTAL
+      - amount:
+          amount: 250.02
+          currency: MXN
+        id: PAYMENT_AMOUNT
+      - amount:
+          amount: 1500.1
+          currency: MXN
+        id: ORIGINAL_AMOUNT
+      terms:
+        number: 6
+        frequency: MONTHLY
+      rates:
+        itemizeRates:
+        - rateType: CAT
+          itemizeRatesUnit:
+            unitRateType: PERCENTAGE
+            percentage: 10
+        - rateType: TASA
+          itemizeRatesUnit:
+            unitRateType: PERCENTAGE
+            percentage: 12
+      offerId: PROM2024
+      description: Financiamiento de compras a Plazos
+      id: '123324234'
+      financingType:
+        description: Month without interests
+        id: MONTHS_WITHOUT_INTERESTS
+      operation:
+        operationDate: '2023-07-27'
+        internalReference: '22369'
+      transactionId: '700280641496'
+    :headers:
+      access-control-allow-origin: '*'
+      content-length: '1178'
+      Access-Control-Expose-Headers: tsec, vnd.bbva.access-token-type,vnd.bbva.access-token,
+        vnd.bbva.sso-pkcs7, authenticationtype, authenticationdata, authenticationstate,
+        authenticationchallenge
+      Server: artichoke
+      Alt-Svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      access-control-allow-headers: Content-Type, tsec, authenticationtype, authenticationdata,
+        authenticationstate, contactid, consumeruuid, consumerapplicationid, perimetertsec,
+        authorization, responsewarningcode, responsewarningdescription, cuf, field,
+        bcs-device-app-version, bcs-device-app-version, vnd.bbva.authorization, device-id
+      Vary: Accept-Encoding
+      tsec: b3abdb159d365ae2ea0e778692ff2df5c3e7fe14
+      X-Response-Time: 466ms
+      Date: Sun, 27 Aug 2023 18:43:29 GMT
+      Content-Type: application/json; charset=utf-8
+      Via: 1.1 google
+    :status: 201 Created
+    responseStatus: 200
+    apiInfo:
+      name: cards
+      category: products
+      version: 0.19.0

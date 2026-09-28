@@ -1,0 +1,63 @@
+when:
+  sequence: 2
+  path: /SRVS_A02/loyalty/v0/points/balances
+  method: GET
+  backend: glomo
+request:
+  headers:
+    sec-fetch-mode: cors
+    content-length: '0'
+    referer: http://localhost:8001/
+    sec-fetch-site: same-site
+    accept-language: es-MX,es;q=0.9
+    origin: http://localhost:8001
+    tsec: 04ac31706f79df2d2a526e0c4692431f5591efa6
+    accept: application/json, text/html, */*; q=0.1
+    sec-ch-ua: '"Not.A/Brand";v="8", "Chromium";v="114", "Google Chrome";v="114"'
+    sec-ch-ua-mobile: ?0
+    x-vbank-session: 677063b8-17c5-46be-b7e5-90ce4812c08f
+    sec-ch-ua-platform: '"macOS"'
+    host: localhost:9000
+    content-type: application/json
+    connection: keep-alive
+    cache-control: no-cache, no-store, must-revalidate
+    accept-encoding: gzip, deflate, br
+    sec-fetch-dest: empty
+    user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36
+      (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+then:
+- return:
+    data:
+      totalSaved:
+        amount: 180955.42
+        currency: MXN
+      pointsToBeExpired:
+        amount: 7561
+        expirationDate: '2037-10-02'
+      accumulatedPoints:
+        amount: 9335
+        exchangeUnit:
+          amount: 70938.33
+          currency: MXN
+      areRedeemable: true
+      expiredPoints:
+        amount: 4974
+    :headers:
+      access-control-allow-origin: '*'
+      content-length: '409'
+      Access-Control-Expose-Headers: tsec, vnd.bbva.access-token-type,vnd.bbva.access-token,
+        vnd.bbva.sso-pkcs7, authenticationtype, authenticationdata, authenticationstate,
+        authenticationchallenge
+      Server: artichoke
+      Alt-Svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      access-control-allow-headers: Content-Type, tsec, authenticationtype, authenticationdata,
+        authenticationstate, contactid, consumeruuid, consumerapplicationid, perimetertsec,
+        authorization, responsewarningcode, responsewarningdescription, cuf, field,
+        bcs-device-app-version, bcs-device-app-version, vnd.bbva.authorization
+      content-type: application/json;charset=UTF-8
+      Vary: Accept-Encoding
+      tsec: 04ac31706f79df2d2a526e0c4692431f5591efa6
+      X-Response-Time: 481ms
+      Date: Tue, 11 Jul 2023 08:45:48 GMT
+      Via: 1.1 google
+    :status: 200 OK

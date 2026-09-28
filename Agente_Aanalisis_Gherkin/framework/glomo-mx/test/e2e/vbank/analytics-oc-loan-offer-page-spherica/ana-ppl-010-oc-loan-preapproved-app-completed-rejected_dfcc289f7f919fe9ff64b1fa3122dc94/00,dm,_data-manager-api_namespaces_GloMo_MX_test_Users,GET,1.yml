@@ -1,0 +1,37 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: bef4d2a2-c1c4-4082-84c5-115dfb4124c0
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: oc_loan_pre_approved_offer_page_bad_credit_bureau
+    lock: 'false'
+then:
+- return:
+    :body:
+    - data:
+        tags:
+        - oc_loan_pre_approved_offer_page_bad_credit_bureau
+        authentication:
+          password: Glomo2026
+          user: '9541203491'
+          deviceId: EFAD785290AC30658245292CF6E6DC17
+      id: 36350344
+    :headers:
+      Server: nginx
+      Cache-Control: max-age=0
+      Connection: keep-alive
+      host: datamanager.globaldevtools.bbva.com
+      Expires: Tue, 27 Jan 2026 00:50:49 GMT
+      Content-Length: '195'
+      Date: Tue, 27 Jan 2026 00:50:49 GMT
+      Content-Type: application/json; charset=utf-8
+    :status: 200 OK

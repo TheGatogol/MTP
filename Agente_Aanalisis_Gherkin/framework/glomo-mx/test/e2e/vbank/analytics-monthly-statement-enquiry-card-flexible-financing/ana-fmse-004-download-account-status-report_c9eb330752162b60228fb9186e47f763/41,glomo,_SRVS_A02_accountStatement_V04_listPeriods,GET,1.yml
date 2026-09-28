@@ -1,0 +1,76 @@
+when:
+  sequence: 1
+  path: /SRVS_A02/accountStatement/V04/listPeriods
+  method: GET
+  backend: glomo
+request:
+  headers:
+    sec-fetch-mode: cors
+    content-length: '0'
+    referer: http://localhost:8001/
+    sec-fetch-site: same-site
+    accept-language: es-MX,es;q=0.9
+    origin: http://localhost:8001
+    tsec: 56058ddeb12ba5fc3734e9b3950dbb988066c0b9
+    accept: application/json, text/plain, */*; q=0.01
+    sec-ch-ua: '"Google Chrome";v="141", "Not?A_Brand";v="8", "Chromium";v="141"'
+    sec-ch-ua-mobile: ?0
+    x-vbank-session: b37627cd-3296-4cd4-a46a-6c3133b3bed7
+    sec-ch-ua-platform: '"macOS"'
+    host: localhost:9000
+    content-type: application/json
+    connection: keep-alive
+    cache-control: no-cache, no-store, must-revalidate
+    accept-encoding: gzip, deflate, br, zstd
+    sec-fetch-dest: empty
+    user-agent: GLOMO_MX/99.99.99 (Android;14;Samsung)
+  query:
+    accountId: '050400010100120000'
+    productType: CONSUMER
+then:
+- return:
+    listPeriods:
+    - reference: A2E090DCF2E44554887B276886923D42B8B6D627
+      period: '202402'
+      cutDate: '2024-01-27'
+      accountNumber: '00740680000473456552'
+      closingDate: C2/ENE/24
+    - reference: B5B7CF58834A8F93613FB1899D10DED5A9A3C78F
+      period: '202402'
+      cutDate: '2024-02-27'
+      accountNumber: '00740680000473456552'
+      closingDate: C1/ENE/24
+    - reference: B5B7CF58834A8F93613FB1899D10DED5A9A3C78F
+      period: '202402'
+      cutDate: '2023-12-27'
+      accountNumber: '00740680000473456552'
+      closingDate: C1/ENE/24
+    - reference: B5B7CF58834A8F93613FB1899D10DED5A9A3C78F
+      period: '202402'
+      cutDate: '2023-11-27'
+      accountNumber: '00740680000473456552'
+      closingDate: C1/ENE/24
+    - reference: B5B7CF58834A8F93613FB1899D10DED5A9A3C78F
+      period: '202402'
+      cutDate: '2023-10-27'
+      accountNumber: '00740680000473456552'
+      closingDate: C1/ENE/24
+    :headers:
+      access-control-allow-origin: '*'
+      content-length: '832'
+      Access-Control-Expose-Headers: tsec, vnd.bbva.access-token-type,vnd.bbva.access-token,
+        vnd.bbva.sso-pkcs7, authenticationtype, authenticationdata, authenticationstate,
+        authenticationchallenge
+      Server: artichoke
+      access-control-allow-headers: Content-Type, tsec, authenticationtype, authenticationdata,
+        authenticationstate, contactid, consumeruuid, consumerapplicationid, perimetertsec,
+        authorization, responsewarningcode, responsewarningdescription, cuf, field,
+        bcs-device-app-version, bcs-device-app-version, vnd.bbva.authorization, device-id,
+        Bcs-Device-Os-Name, bcs-device-app-name, bcs-device-dpi, BCS-Device-Id
+      Connection: keep-alive
+      Vary: Accept-Encoding
+      tsec: 56058ddeb12ba5fc3734e9b3950dbb988066c0b9
+      X-Response-Time: 6ms
+      Date: Tue, 30 Dec 2025 08:35:12 GMT
+      Content-Type: application/json; charset=utf-8
+    :status: 200 OK

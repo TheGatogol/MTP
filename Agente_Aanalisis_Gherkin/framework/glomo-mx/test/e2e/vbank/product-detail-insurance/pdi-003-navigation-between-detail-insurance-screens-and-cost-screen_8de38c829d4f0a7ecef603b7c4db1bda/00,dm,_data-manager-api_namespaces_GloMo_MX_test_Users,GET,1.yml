@@ -1,0 +1,106 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: 6c54a12f-e732-4261-993f-0a5f3a62b4e5
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: has_active_insurance
+then:
+- return:
+    :body:
+    - data:
+        locale: es_mx
+        tags:
+        - has_active_insurance
+        - has_cancelled_insurance
+        - has_group_insurance
+        products:
+          insurances:
+          - number: '    192731000O         1'
+            alias: VALUE
+            id: YJ-i4dtYULuc-z6fhzQeV3skfmyhlnsRdpnfKs35p-M
+            detail:
+              template:
+                id: peTXkNxL1nk
+              statusDate: '2022-08-15'
+              installmentFrequency: MONTHLY
+              specificAmounts:
+              - amounts:
+                - amount: 8673.12
+                  currency: MXN
+                name: Prima Total Anual
+                id: PRIMATOTALANUAL
+              dueDate: '2023-08-15'
+              renewalType:
+                id: AUTOMATIC
+              hasPendingPayments: true
+              commertialProductId: '4046'
+              startDate: '2022-08-15'
+              productDescription: Vidasegura Dinamico
+              status: ANNULMENT_PROCESS
+            participant:
+              lastName: HERRERA
+              secondLastName: GODOY
+              name: CARLOS
+              participantType:
+                id: HOLDER
+            productType: INSURANCE
+            subProductType:
+              id: VIDA INDIVIDUAL
+          - number: '      20015020         2'
+            alias: VALUE
+            id: YJ-i4dtYULu8H-ncXPpkPNbbtmsp9DKJsKKEIUFpDqk
+            detail:
+              template:
+                id: z7_rTy7Cnmw
+              statusDate: '2022-04-22'
+              nextPaymentDate: 2022-04-22T00:00:00.000-0500
+              installmentFrequency: ANNUAL
+              specificAmounts:
+              - amounts:
+                - amount: 24444.02
+                  currency: MXN
+                name: Prima Total Anual
+                id: PRIMATOTALANUAL
+              dueDate: '2023-04-22'
+              renewalType:
+                id: AUTOMATIC
+              hasPendingPayments: true
+              commertialProductId: '2001'
+              startDate: '2022-04-22'
+              productDescription: Autoseguro
+              status: FORMALIZED
+            participant:
+              lastName: HERRERA
+              secondLastName: GODOY
+              name: CARLOS
+              participantType:
+                id: HOLDER
+            productType: INSURANCE
+            subProductType:
+              id: AUTOMOVIL
+        authentication:
+          password: glomo2022
+          user: '5573809056'
+          deviceId: 25DCD284A522CC29FD4BE32C6EE7FF6A
+      id: 1891977
+      lockExpiration: null
+      lockType: null
+    :headers:
+      content-length: '1877'
+      Strict-Transport-Security: max-age=15768000
+      Server: nginx
+      ECS-Entry-Point-Zone: ext
+      Connection: keep-alive
+      Vary: Accept-Encoding
+      Date: Mon, 03 Oct 2022 05:32:46 GMT
+      Content-Type: application/json
+    :status: 200 OK

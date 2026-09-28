@@ -1,0 +1,69 @@
+when:
+  sequence: 2
+  path: /digital-butler/v0/conversations/2d02f403-9c72-497c-9962-5ef3e43c23e6/messages
+  method: POST
+  backend: digitalButlerHost
+request:
+  body:
+    interactionType: TEXT
+    customerMetaData:
+      appVersion: 3.1
+      origin: futura
+    message: Blue quiero hacer una transferencia de mi cuenta pago a mi cuenta alcancia
+      como ahorro
+    params: []
+then:
+- return:
+    data:
+      conversationId: 2d02f403-9c72-497c-9962-5ef3e43c23e6
+      messages:
+      - id: 3f9dbcd3-de16-4a12-ade8-57216af01a59
+        messageType: BOT_TEXT
+        detail:
+        - content: 'He preparado los detalles de tu <span style=''font-weight: 500;''>transferencia</span>
+            con la información que me diste. En el siguiente paso podrás revisarlos
+            y editarlos <span style=''font-weight: 500;''>antes de confirmar el envío.</span>'
+      - id: 3f9dbcd3-de16-4a12-ade8-57216af01a59
+        messageType: LINK
+        detail:
+        - params:
+          - value: '["transfersAndDimo"]'
+            name: api
+          - name: sender
+            value: Uvn6wi1Rh6DA3Hw967O6LsxYkwCeSTZ0cQwUV0Giaj2kAbfG0ROOUA
+          - name: type
+            value: own-transfer
+          - name: receiver
+            value: Uvn6wi1Rh6CyBcyYGt-PfMQGE1k5GBe9PjDHSBG3vLhO4us5SibstA
+          - value: '500'
+            name: amount
+          - name: senderCurrency
+            value: MXN
+          - name: concept
+            value: 'Transferencia blue'
+          isProcessed: true
+          id: transfers
+          title: "Continuar en Transferir & Dimo\xAE"
+          messageType: LINK
+          icon: sphericaTransfer
+          linkType: NAVIGATION
+          channel: app
+      - id: 3f9dbcd3-de16-4a12-ade8-57216af01a59
+        messageType: BINARY_FEEDBACK
+        detail:
+        - rating: NONE
+          forms:
+            origin:
+              id: BINARIO
+            positive:
+              id: BENSON
+            negative:
+              id: BENSON
+          content: "¿He resuelto tu consulta?"
+          channel: app
+      suggestions: []
+      messageTracking:
+        category: Funds Movement
+        subCategory: Internal Funds Transfer
+        intent: operation.transfer
+    :status: 200 OK

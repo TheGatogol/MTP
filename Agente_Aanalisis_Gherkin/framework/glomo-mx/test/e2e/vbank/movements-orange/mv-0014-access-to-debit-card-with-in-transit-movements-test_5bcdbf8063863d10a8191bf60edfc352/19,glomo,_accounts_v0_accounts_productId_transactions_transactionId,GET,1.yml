@@ -1,0 +1,118 @@
+when:
+  sequence: 1
+  path: /SRVS_A02/accounts/v0/accounts/{productId}/transactions/{transactionId}
+  method: GET
+  backend: glomo
+request:
+  headers:
+    sec-fetch-mode: cors
+    content-length: '0'
+    referer: http://localhost:8001/
+    sec-fetch-site: same-site
+    accept-language: es
+    origin: http://localhost:8001
+    tsec: 902d376d42ed847babd67ca7e5bd1b0e291e3e73
+    accept: application/json, text/html, */*; q=0.1
+    sec-ch-ua: '"Chromium";v="106", "Google Chrome";v="106", "Not;A=Brand";v="99"'
+    sec-ch-ua-mobile: ?0
+    x-vbank-session: c970f77d-269b-452d-b53f-1bf69d72001b
+    sec-ch-ua-platform: '"macOS"'
+    host: localhost:9000
+    content-type: application/json
+    connection: keep-alive
+    cache-control: no-cache, no-store, must-revalidate
+    accept-encoding: gzip, deflate, br
+    sec-fetch-dest: empty
+    user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36
+      (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36
+then:
+- return:
+    data:
+      operationDate: '2022-08-30T11:05:24.413-05:00'
+      additionalInformation:
+        additionalData: N
+      concept: PRUEBA DEVOL ACREDITADA
+      contract:
+        number: '012180015353595110'
+        bank:
+          name: BBVA MEXICO
+          id: '40012'
+        numberType:
+          name: Clabe
+          id: CLABE
+        id: EGEzIKoiPuYWrxwzzyTjqw
+      accountedDate: '2022-08-30T11:05:24.462-05:00'
+      financingType:
+        name: Non financing
+        id: NON_FINANCING
+      originAmount:
+        amount: 10.0
+        currency: MXN
+      transactionType:
+        name: Transfer Credit
+        id: TRANSFER_CREDIT
+        internalCode:
+          name: Clave de rastreo
+      valuationDate: '1900-01-01T01:01:01.000-06:36'
+      moneyFlow:
+        name: Income
+        id: INCOME
+      id: u0dHXL1sJ95QkoS-Z0mhYPTBpCNDNg15FtOBKBY6KQ6unWTGMYuaKVgPjdOLpToUMWIiKDw5bSl_5pcVeP4yjg
+      detail:
+        transferDescription: PRUEBA DEVOL ACREDITADA
+        receiver:
+          firstName: CUENTA CORRIENTE
+        references:
+        - name: Internal Reference
+          id: INTERNAL_REFERENCE
+        - name: Tracking
+          id: TRACKING
+          value: BNET01002208300000182925
+        isInternational: false
+        sender:
+          firstName: ABRAN CALAMARE BOULWARE
+          contract:
+            bank:
+              name: GEM-BANCOMER
+              id: '00512'
+            contractNumber: '012905001667096646'
+            contractNumberType:
+              name: Clabe
+              id: CLABE
+        customExternalReference:
+          trackingInformation:
+            rel: Clave CEP
+            href: https://www.banxico.org.mx/cep/go?i=40012&s=20200708&d=dAwto7aBaA%2Fo%2FYrpf%2FsEY5dIV6Se7NQRyU42YElXI3agTT7Aq9QSWZi3s%2B0edq9RvJ0qPhIM68ChZ0nwTXela1QvO8ya38x7CuxFHAkDdB4%3D
+          value: '123455'
+        paymentChannel:
+          name: TRA  TRANSFERENCIAS.
+          id: SUC
+      localAmount:
+        amount: 10.0
+        currency: MXN
+      status:
+        name: Settled
+        id: SETTLED
+    :headers:
+      access-control-allow-origin: '*'
+      content-length: '1257'
+      Access-Control-Expose-Headers: tsec, vnd.bbva.access-token-type,vnd.bbva.access-token,
+        vnd.bbva.sso-pkcs7, authenticationtype, authenticationdata, authenticationstate,
+        authenticationchallenge
+      Server: artichoke
+      Alt-Svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      access-control-allow-headers: Content-Type, tsec, authenticationtype, authenticationdata,
+        authenticationstate, contactid, consumeruuid, consumerapplicationid, perimetertsec,
+        authorization, responsewarningcode, responsewarningdescription, cuf, field,
+        bcs-device-app-version, bcs-device-app-version, vnd.bbva.authorization
+      content-type: application/json;charset=UTF-8
+      Vary: Accept-Encoding
+      tsec: 902d376d42ed847babd67ca7e5bd1b0e291e3e73
+      X-Response-Time: 488ms
+      Date: Mon, 24 Oct 2022 14:56:42 GMT
+      Via: 1.1 google
+    :status: 200 OK
+    apiInfo:
+      name: accounts
+      category: products
+      version: 0.16.0

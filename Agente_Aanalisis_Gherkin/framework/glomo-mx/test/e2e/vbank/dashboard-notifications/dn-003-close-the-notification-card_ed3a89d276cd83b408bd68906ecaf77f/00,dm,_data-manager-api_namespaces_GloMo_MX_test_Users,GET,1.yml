@@ -1,0 +1,64 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6U2tnYUQ0SmNvck9MTW5LN3NSZjg4MFFnanYwVDB2WTFncFVvaUM2MQ==
+    content-length: '0'
+    x-vbank-session: 6177e73d-bc2c-4d43-ae8e-89a3ab537a76
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: notifications_settings,app_settings
+then:
+- return:
+    :body:
+    - data:
+        homeFutura: false
+        app_settings:
+          dashboard:
+            data:
+              dashboardNotifications:
+              - enable: false
+                id: creditBureau
+                order: 1
+              - enable: false
+                flagFirstTimeAssistanceManager: false
+                id: assistanceManager
+                isAssistanceManagerSeen: false
+                isAssistanceManagerFirstTime: false
+                order: 2
+              - isNotificationsSettingsSessionsEnd: false
+                sessionCount: 0
+                enable: true
+                id: notificationsSettings
+                declineDate: ''
+                notificationReminderShownAfterDays: 6
+                isNotificationsSettingsSeen: false
+                order: 3
+                notificationReminderShowForSessions: 3
+        locale: es_mx
+        tags:
+        - '5549634175'
+        - notifications_settings
+        - app_settings
+        authentication:
+          password: glomo2022
+          user: '5549634175'
+          deviceId: 188CE34ECC78A2DB9DC230CAFF61F660
+      lockType: null
+      lockExpiration: null
+      id: 1902621
+    :headers:
+      content-length: '823'
+      Strict-Transport-Security: max-age=15724800; includeSubDomains
+      Server: nginx
+      ECS-Entry-Point-Zone: ext
+      Connection: keep-alive
+      Vary: Accept-Encoding
+      Date: Fri, 11 Feb 2022 00:19:11 GMT
+      Content-Type: application/json
+    :status: 200 OK

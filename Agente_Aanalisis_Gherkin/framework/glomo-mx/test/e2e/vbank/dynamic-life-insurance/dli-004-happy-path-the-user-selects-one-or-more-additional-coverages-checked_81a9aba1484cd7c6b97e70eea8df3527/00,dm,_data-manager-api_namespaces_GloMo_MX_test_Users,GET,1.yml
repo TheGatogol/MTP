@@ -1,0 +1,47 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6U2tnYUQ0SmNvck9MTW5LN3NSZjg4MFFnanYwVDB2WTFncFVvaUM2MQ==
+    content-length: '0'
+    x-vbank-session: c74311b0-90b7-4f2b-900b-0c52736410f0
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: dynamic_insurance
+then:
+- return:
+    :body:
+    - data:
+        data:
+          birthday: 14/11/1995
+          second_lastname: Nava
+          name: Ana
+          last_name: Sanchez
+        insuredata:
+          insured_amount_invalid: '12000'
+          coupon: KAA21DIYQ2
+        tags:
+        - '5523729193'
+        - insurance
+        - dynamic_insurance
+        authentication:
+          password: glomo2022
+          user: '5523729193'
+          deviceId: 6C6C271B3B7FD7B215FCB400007F498D
+      lockExpiration: null
+      lockType: null
+      id: 2646317
+    :headers:
+      Strict-Transport-Security: max-age=15724800; includeSubDomains
+      Server: nginx
+      ECS-Entry-Point-Zone: ext
+      Connection: keep-alive
+      Content-Length: '412'
+      Date: Tue, 12 Apr 2022 23:33:36 GMT
+      Content-Type: application/json
+    :status: 200 OK

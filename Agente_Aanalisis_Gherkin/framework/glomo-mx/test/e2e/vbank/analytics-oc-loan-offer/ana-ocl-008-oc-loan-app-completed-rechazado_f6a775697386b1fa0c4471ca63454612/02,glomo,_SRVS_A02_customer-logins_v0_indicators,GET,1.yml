@@ -1,0 +1,102 @@
+when:
+  sequence: 1
+  path: /SRVS_A02/customer-logins/v0/indicators
+  method: GET
+  backend: glomo
+request:
+  headers:
+    sec-fetch-mode: cors
+    content-length: "0"
+    referer: http://localhost:8001/
+    sec-fetch-site: same-site
+    accept-language: es
+    origin: http://localhost:8001
+    authenticationtype: "58"
+    tsec: dd1144fc9c51c907bd43a6d28c5344cd7d1d0f79
+    accept: application/json, text/html, */*; q=0.1
+    authenticationdata: deviceid=11111111
+    sec-ch-ua: '"Google Chrome";v="93", " Not;A Brand";v="99", "Chromium";v="93"'
+    sec-ch-ua-mobile: ?0
+    x-vbank-session: 5e0ce79c-a05e-4dec-aa80-8db5bd187fbf
+    sec-ch-ua-platform: '"macOS"'
+    host: localhost:9000
+    content-type: application/json
+    connection: keep-alive
+    cache-control: no-cache, no-store, must-revalidate
+    accept-encoding: gzip, deflate, br
+    sec-fetch-dest: empty
+    user-agent: GLOMO_MX/99.99.99;Mozilla/5.0 (Linux; U; Android 4.0.2; en-us;
+      Galaxy Nexus Build/ICL53F) AppleWebKit/534.30 (KHTML, like Gecko)
+      Version/4.0 Mobile Safari/534.30
+then:
+  - return:
+      data:
+        customerId: "0080054321234567890987"
+        nationalities:
+          - description: mx
+            id: MX
+        indicators:
+          - description: Indica si el cliente que ejerce sus derechos ARCO, solicitan la
+              suspensión del tratamiento de sus datos personales para todos los
+              fines distintos de los necesarios para el cumplimiento de la
+              relación jurídica.
+            id: ARCO
+            isActive: false
+          - description: Indica si el cliente tiene activado enrolamiento biométrico.
+            id: ACTIVE_BIOMETRIC_ENROLLMENT
+            isActive: false
+          - description: Indica si el cliente puede enrolar un biométrico.
+            id: BIOMETRIC_ENROLLMENT
+            isActive: false
+          - description: Indica si el cliente es empleado del banco.
+            id: EMPLOYEE
+            isActive: false
+          - description: Indica si el cliente contrata un servicio que consiste en tener a
+              alguien físico o de forma remota que le ayuda a realizar las
+              operaciones requeridas.
+            id: REMOTE_MANAGER
+            isActive: false
+          - description: Indica si el cliente tiene un banquero físico asociado disponible
+              para realizar las operaciones bancarias requeridas.
+            id: BANKER_ASSOCIATED
+            isActive: false
+          - description: Indica si el cliente tiene un banquero físico asociado disponible
+              para realizar las operaciones bancarias requeridas.
+            id: PAYROLL
+            isActive: false
+          - description: Indica si el cliente tiene una firma digital.
+            id: DIGITAL_FIRM
+            isActive: false
+          - description: Indica si el cliente tiene una prelación.
+            id: ENABLED_TO_DIRECT_DEBITS
+            isActive: false
+          - description: Indica si el cliente tiene seguro contratado.
+            id: INSURANCE
+            isActive: false
+      :headers:
+        access-control-allow-origin: "*"
+        content-length: "2037"
+        Access-Control-Expose-Headers: tsec,
+          vnd.bbva.access-token-type,vnd.bbva.access-token, authenticationtype,
+          authenticationdata, authenticationstate
+        Server: artichoke
+        access-control-allow-headers: Content-Type, tsec, authenticationtype,
+          authenticationdata, authenticationstate, contactid, consumeruuid,
+          consumerapplicationid, perimetertsec, authorization,
+          responsewarningcode, responsewarningdescription, cuf, field,
+          bcs-device-app-version, bcs-device-app-version
+        Connection: keep-alive
+        content-type: application/json;charset=UTF-8
+        Vary: Accept-Encoding
+        tsec: dd1144fc9c51c907bd43a6d28c5344cd7d1d0f79
+        X-Response-Time: 6ms
+        Date: Thu, 23 Sep 2021 19:02:57 GMT
+      :status: 200 OK
+      apiInfo:
+        name: customers
+        category: people
+        version: 0.24.0
+      messages:
+        - code: KNA1008
+          message: CONSULTA REALIZADA
+          type: WARNING

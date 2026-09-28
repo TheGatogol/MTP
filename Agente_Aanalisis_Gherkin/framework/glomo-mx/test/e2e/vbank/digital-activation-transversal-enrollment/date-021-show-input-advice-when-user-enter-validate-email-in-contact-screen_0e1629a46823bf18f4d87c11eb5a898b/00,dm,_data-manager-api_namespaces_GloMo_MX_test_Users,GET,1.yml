@@ -1,0 +1,72 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: 68d4c72d-7fb7-4b0f-9df2-d6597ebf556d
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: transversal_enrollment
+    lock: 'false'
+then:
+- return:
+    :body:
+    - data:
+        password:
+        - password: Glomo2023
+          invalidPass: glomO#
+        address:
+        - zipCode: '03103'
+          shortZipCode: '1234'
+          street: Av. Insurgentes Sur
+          invalidZP: '12345'
+          outsideNumber: '636'
+          colonies: '08892'
+          internalNumber: '701'
+          wrongZP: '00000'
+        data:
+        - numberIne: '215455993'
+          secondLastName: Hernandez
+          placeOfBirth: DF
+          firstLastName: Garcia
+          gender: FEMALE
+          name: Mirian Ivonne
+          wrongNumberIne: '735238456'
+          lessNumberIne: '89746358'
+        contact:
+        - number: '5519819672'
+          password: Glomo2025
+          invalidPhone: '123'
+          email: test@bbva.com
+          invalidEmail: a@hotmail
+        locale: es_mx
+        people:
+          customer:
+            birthData:
+              youngsterBirthDate: '2020-06-01'
+              birthDate: '1987-06-01'
+        tags:
+        - transversal_enrollment
+        authentication:
+          password: Glomo2024
+          user: '5537109006'
+          deviceId: B567715ED13BFD203DE0912B377D1C29
+      lockType: null
+      lockExpiration: null
+      id: 3508841
+    :headers:
+      content-length: '971'
+      Cache-Control: max-age=0
+      Connection: keep-alive
+      host: datamanager.globaldevtools.bbva.com
+      Vary: Accept-Encoding
+      Expires: Thu, 01 May 2025 16:50:00 GMT
+      Date: Thu, 01 May 2025 16:50:00 GMT
+      Content-Type: application/json; charset=utf-8
+    :status: 200 OK

@@ -1,0 +1,45 @@
+when:
+  sequence: 2
+  path: /SRVS_A02/accounts/v0/documentation-dossiers
+  method: GET
+  backend: glomo
+request:
+  headers:
+    content-length: '0'
+    cookie: AWSALBCORS=Z9Hnbr5K9nwi3NFyUvsbaYrhPPzj5n1STjFePVue4d//a2yTF2hMEaSB6227pWIUZ2m98OQIUiSovWfiYK+fE5aScK13ZRb+7INfhwuBLjgbjqJRQdIQoWy8KNOf
+    contactid: 27bb7f9b-4a87-495e-8060-3ecd9e96e8dc
+    host: localhost:9000
+    connection: Keep-Alive
+    content-type: application/json
+    tsec: 0c3e7cc135e91b031c9012920d6f7eb566f0b206
+    cache-control: no-cache
+    accept-encoding: gzip
+    user-agent: GLOMO_MX/99.99.99 (Android;13;Google sdk_gphone64_arm64)
+    accept: application/json, text/html, */*; q=0.1
+  query:
+    indicators.id: IS_PAYROLL_ACCOUNT
+    indicators.isActive: 'TRUE'
+  cookies:
+    AWSALBCORS: Z9Hnbr5K9nwi3NFyUvsbaYrhPPzj5n1STjFePVue4d//a2yTF2hMEaSB6227pWIUZ2m98OQIUiSovWfiYK+fE5aScK13ZRb+7INfhwuBLjgbjqJRQdIQoWy8KNOf
+then:
+- return:
+    :body: Not Found
+    :headers:
+      access-control-allow-origin: '*'
+      Access-Control-Expose-Headers: tsec, vnd.bbva.access-token-type,vnd.bbva.access-token,
+        vnd.bbva.sso-pkcs7, authenticationtype, authenticationdata, authenticationstate,
+        authenticationchallenge
+      Server: artichoke
+      Alt-Svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      access-control-allow-headers: Content-Type, tsec, authenticationtype, authenticationdata,
+        authenticationstate, contactid, consumeruuid, consumerapplicationid, perimetertsec,
+        authorization, responsewarningcode, responsewarningdescription, cuf, field,
+        bcs-device-app-version, bcs-device-app-version, vnd.bbva.authorization, device-id
+      Vary: Accept-Encoding
+      tsec: 0c3e7cc135e91b031c9012920d6f7eb566f0b206
+      Content-Length: '9'
+      X-Response-Time: 459ms
+      Date: Fri, 01 Dec 2023 10:22:52 GMT
+      Content-Type: text/plain; charset=utf-8
+      Via: 1.1 google
+    :status: 404 Not Found

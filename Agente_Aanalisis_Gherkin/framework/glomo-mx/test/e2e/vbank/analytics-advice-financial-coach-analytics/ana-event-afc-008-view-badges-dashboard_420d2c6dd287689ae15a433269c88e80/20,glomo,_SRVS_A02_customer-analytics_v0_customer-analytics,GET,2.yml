@@ -1,0 +1,803 @@
+when:
+  sequence: 2
+  path: /SRVS_A02/customer-analytics/v0/customer-analytics
+  method: GET
+  backend: glomo
+request:
+  headers:
+    sec-fetch-mode: cors
+    content-length: '0'
+    referer: http://localhost:8001/
+    sec-fetch-site: same-site
+    accept-language: es-MX,es;q=0.9
+    origin: http://localhost:8001
+    tsec: ZXlKaFlYQWlPaUl4TURBd01ERTROeUlzSW10bGVWWmxjbk5wYjI0aU9qRXNJbUZ3Y0Vsa0lqb2lRVkJRTVNJc0ltdHBaQ0k2SWtGUVVERXViRzlqWVd3dU1TSXNJbVZ1WXlJNklrRXhPVEpIUTAwaUxDSnJaWGxVZVhCbElqb2liRzlqWVd3aUxDSmhiR2NpT2lKa2FYSWlMQ0owYzJWalNXUWlPaUkyT1ROa1ptTTRZUzAzWVRoaExUUm1Zak10T1dGak5pMDBPVFExTVdSbFptWTVNREFpZlEuLndhLWNvYV9aU2FFNUFqdXcuZXpqNWc5VE5GanFwSFU4N0dfODU4QTBHWDVobHJEdHNIcEpsM2J3SjhVbmlxQ3hsUXVOcjhLdDBiZ2RrUEJNeUhsWjAxWEswUE5ubmhWdkVXYzl4ekt0TmRRLTljYjl0cjNoWVpYT1JwYTlKZXVIbzBGb2NpMGxSQ2JFd2dZd3NEUHpUMXFsY0pqajI2SmlMMEluMHBfejJKanJHN3EwRjZ5YVFqRTlHbFpGbFRzT0FfdFduQkpGeFdRT29jRkJzQWhSclJqXy1GTGUxb1dKNGUwNXZYM1JYblNEY3l2dmIyeHVMQnpkTllrbDVIbFFveUk4M0NqTTdYWGhpVEhvNDBJSi16MXNIV0lHZVNHVEhzaE9FYnhRb2lBZVdkTFpPUElFQUFzNmJ2YktyNWl6elFYVXNCOTdEb1RTeWkxcWtHcnJreE93OHhLZkRDS1VzNE9abllJdlIySzVfRDN6aXRpdm9ZM0NOcWtZR3hoTFd1c0x2TW9DVHNYRDhtd0FJNU1Cb0J5MFIxVUNTYzRNVUljSTlXMU0xdUN4ZDRMZGtWS0VRcVQyT2NVMmx1Q2lfMnNOTDlUVVRUdl9kb3JnSTM2cGJuT0RPb0RPV0lnODlpUHM0OXZEQUd4b0plU3lpdlpGTEZYcmdfU0tlb3hHLUJqVDVIT1VablhCa1V1Q1JCTmZSOWlaV3lJb2RyY2Q5X3V4cGdWcEt6M0U2QkhxLWdhcTR2Wi10ZzVGX2htdktFUFptcHNPZlNnMGdJVExmdkFBVEJNdTlsYXJEUXctNElhQUJHOWNrYzJ6ckphU19jX0s5NE0zTFIwcHVoYUhJanU5REtZa3c5eWhPYmpfaHY0dHRkekplSm03M0dvTnVYR2dCdXoxMHRDYk1RRjRsbzZCWWJtYXFkUWVkdDFkNHJoZThsY0JJRm9OeHE3NXNtb2FWMFhSZkpac1d3YnF3T015LTNXcC03UEl2cnktSnRYcTRRVWNKWjZUUFgyZ2hiR25valZCMnRNZENFTE1SQWRLY2x0Tm8zUGhWNlpkQVBVY2lYV2ZuYTNUdTdnT0R3MDR0RkpkNFVablNXdTFLNnBreEZYMTlzdHNfdHFPTThnT0RLUENqbDFiTTZPS2U1RURVdXl5VHRSWHkwclhsZmo4VC14aVVpUFliODZQN2UwWDk1REJzaEpuM2ZaZXJHa0lIaUJxcXVLRW5kLUxTUDhhQUxyaDM4aVJmWl8xQVE5cWVyeWg3dU0zR1JnSjB2aUVNWUxjc1ZkaXhXRzA5XzM4VGJJc3VSNUc0RVAxaVZwYVI2Y0xVa3dxME42cklEaGtaMDc1aUVyelhMSjU5X0t2RGtVdUM2VFN3ZHBrTXdqMGlqQ1FrWGlDal9PWEZDcXhqS2doZXZ0c1QwN2lhS21FN0V1cGtuUjFnWnYxUmExeWJucDRuZEV1aTFJY1Q1TE9qRENRcTl0S2Q5X0l0YWszTVBGVHNOUFFJX3VsOWgxWmN5c2xiZjdUQmp1UDVCekl0LUhad1RYM2tHTWZVblpSUENwSXZNVERvNVg0TnNoWEVnVHhUWlJHcFBwczEtd1ZNLS1JTmpuWXBXQTl0aTJvMHJ2aExFMnNtcG9NLWdyVlpKc2N6bVU5X0dXdS1pRjFRVURjNjRQYkRrd1RnclZKOFU4WXAzWnc5NklvOFdNQlJKZDZTSDgybWpNV19wcUdWQnZWRUlHSkVZaHA3QTgtc1dXbHFVYzRoYnJMbGhBYlJWQTFMNmhjWFo5Ui1TMjl1eFNsb3RlVWhnZ2VEYnVzMWh5bFQ2ZTVjTzRDQXJsaUVpOGhSYWw0S2xBdFR0X1cxdXVqTm1wNGxKYUpTLTZiTmtyWHk4ZTFySWRTSmJubGpmZ3dlUlBZc3FxZzJnejdBbUxyekpiVVNKbThmejVqdkh2VUdTaUYzcEQ1d3NhcHcwLXBTSUZ5WVZWNHdFNnFieXpaelRZeGV3Y0RwNG9sOWs5SkRrVF9LLUcwLTZCN29WQS5lbnBhSGtvUjN1bGd3WllaUnNXcmFR
+    accept: application/json, text/html, */*; q=0.1
+    sec-ch-ua: '"Google Chrome";v="137", "Chromium";v="137", "Not/A)Brand";v="24"'
+    sec-ch-ua-mobile: ?0
+    x-vbank-session: 35bf636c-ce63-49a5-86bf-baddcde36564
+    sec-ch-ua-platform: '"macOS"'
+    host: localhost:9000
+    content-type: application/json
+    connection: keep-alive
+    cache-control: no-cache, no-store, must-revalidate
+    accept-encoding: gzip, deflate, br, zstd
+    sec-fetch-dest: empty
+    user-agent: GLOMO_MX/99.99.99 (Android;14;Samsung)
+then:
+- return:
+    data:
+    - measures:
+      - format:
+          number: 126.0
+          formatType: NUMERIC
+        order: 1
+        frequency: ANNUAL
+      id: customerSeniority
+      group:
+        description: Customer group attributes of the customer
+        id: CUSTOMER
+    - measures:
+      - format:
+          formatType: INDICATOR
+          isActive: true
+        order: 1
+        frequency: ANNUAL
+      id: customerEmployee
+      group:
+        description: Customer group attributes of the customer
+        id: CUSTOMER
+    - measures:
+      - format:
+          text: E
+          formatType: TEXT
+        order: 1
+        frequency: ANNUAL
+      id: customerEmployeeType
+      group:
+        description: Customer group attributes of the customer
+        id: CUSTOMER
+    - measures:
+      - format:
+          text: '7'
+          formatType: TEXT
+        order: 1
+        frequency: ANNUAL
+      id: commercialSegmentId
+      group:
+        description: Customer group attributes of the customer
+        id: CUSTOMER
+    - measures:
+      - format:
+          text: DOWNWARD
+          formatType: TEXT
+        order: 1
+        frequency: ANNUAL
+      description: Customer trend according to seniority
+      id: customerTrend
+      group:
+        description: Customer group attributes of the customer
+        id: CUSTOMER
+    - measures:
+      - format:
+          text: SLIGHTLY TRANSACTIONAL
+          formatType: TEXT
+        order: 1
+        frequency: ANNUAL
+      description: Customer transactionality according to seniority
+      id: customerTransactionality
+      group:
+        description: Customer group attributes of the customer
+        id: CUSTOMER
+    - measures:
+      - format:
+          text: ES0182002000000000000000000254017085XXXXXXXXX
+          formatType: TEXT
+        order: 1
+        frequency: ANNUAL
+      - format:
+          number: 0.1
+          formatType: NUMERIC
+        order: 1
+        frequency: ANNUAL
+      - format:
+          text: ES0182002000000000000000000254017085XXXXXXXXX
+          formatType: TEXT
+        order: 2
+        frequency: ANNUAL
+      - format:
+          number: 0.06
+          formatType: NUMERIC
+        order: 2
+        frequency: ANNUAL
+      - format:
+          text: ES0182002000000000000000000254017085XXXXXXXXX
+          formatType: TEXT
+        order: 3
+        frequency: ANNUAL
+      - format:
+          number: 0.03
+          formatType: NUMERIC
+        order: 3
+        frequency: ANNUAL
+      description: Balance transactionality according to seniority
+      id: balanceTransactionality
+      group:
+        description: Customer group attributes of the customer
+        id: CUSTOMER
+    - measures:
+      - format:
+          number: 1.0
+          formatType: NUMERIC
+        order: 1
+        frequency: ANNUAL
+      id: customerMainBankPercentage
+      group:
+        description: Customer group attributes of the customer
+        id: CUSTOMER
+    - measures:
+      - format:
+          formatType: INDICATOR
+          isActive: true
+        order: 1
+        frequency: MONTHLY
+      id: workIncomesPossesionLastMonth
+      group:
+        description: Incomes group attributes of the customer
+        id: INCOMES
+    - measures:
+      - format:
+          formatType: INDICATOR
+          isActive: true
+        order: 1
+        frequency: MONTHLY
+      id: salaryIncomesPossesionLastMonth
+      group:
+        description: Incomes group attributes of the customer
+        id: INCOMES
+    - measures:
+      - format:
+          formatType: INDICATOR
+          isActive: true
+        order: 1
+        frequency: MONTHLY
+      id: allowanceIncomesPossesionLastMonth
+      group:
+        description: Incomes group attributes of the customer
+        id: INCOMES
+    - measures:
+      - format:
+          formatType: INDICATOR
+          isActive: false
+        order: 1
+        frequency: MONTHLY
+      id: pensionIncomesPossesionLastMonth
+      group:
+        description: Incomes group attributes of the customer
+        id: INCOMES
+    - measures:
+      - format:
+          number: 26.0
+          formatType: NUMERIC
+        order: 1
+        frequency: MONTHLY
+      id: workIncomesNumMovements
+      group:
+        description: Incomes group attributes of the customer
+        id: INCOMES
+    - measures:
+      - format:
+          number: 11.0
+          formatType: NUMERIC
+        order: 1
+        frequency: MONTHLY
+      id: salaryIncomesNumMovements
+      group:
+        description: Incomes group attributes of the customer
+        id: INCOMES
+    - measures:
+      - format:
+          number: 8.0
+          formatType: NUMERIC
+        order: 1
+        frequency: MONTHLY
+      id: allowanceIncomesNumMovements
+      group:
+        description: Incomes group attributes of the customer
+        id: INCOMES
+    - measures:
+      - format:
+          number: 7.0
+          formatType: NUMERIC
+        order: 1
+        frequency: MONTHLY
+      id: pensionIncomesNumMovements
+      group:
+        description: Incomes group attributes of the customer
+        id: INCOMES
+    - measures:
+      - format:
+          formatType: INDICATOR
+          isActive: false
+        order: 1
+        frequency: ANNUAL
+      id: workIncomesPossesion
+      group:
+        description: Incomes group attributes of the customer
+        id: INCOMES
+    - measures:
+      - format:
+          formatType: INDICATOR
+          isActive: true
+        order: 1
+        frequency: ANNUAL
+      id: salaryIncomesPossesion
+      group:
+        description: Incomes group attributes of the customer
+        id: INCOMES
+    - measures:
+      - format:
+          formatType: INDICATOR
+          isActive: true
+        order: 1
+        frequency: ANNUAL
+      id: allowanceIncomesPossesion
+      group:
+        description: Incomes group attributes of the customer
+        id: INCOMES
+    - measures:
+      - format:
+          formatType: INDICATOR
+          isActive: true
+        order: 1
+        frequency: ANNUAL
+      id: pensionIncomesPossesion
+      group:
+        description: Incomes group attributes of the customer
+        id: INCOMES
+    - measures:
+      - format:
+          formatType: INDICATOR
+          isActive: false
+        order: 1
+        frequency: ANNUAL
+      id: otherIncomesPossesion
+      group:
+        description: Incomes group attributes of the customer
+        id: INCOMES
+    - measures:
+      - format:
+          amounts:
+          - amount: 2300.0
+            currency: MXN
+          formatType: AMOUNT
+        order: 1
+        frequency: ANNUAL
+      id: workIncomesAverage
+      group:
+        description: Incomes group attributes of the customer
+        id: INCOMES
+    - measures:
+      - format:
+          amounts:
+          - amount: 1000.0
+            currency: MXN
+          formatType: AMOUNT
+        order: 1
+        frequency: ANNUAL
+      id: salaryIncomesAverage
+      group:
+        description: Incomes group attributes of the customer
+        id: INCOMES
+    - measures:
+      - format:
+          amounts:
+          - amount: 150.0
+            currency: MXN
+          formatType: AMOUNT
+        order: 1
+        frequency: ANNUAL
+      id: allowanceIncomesAverage
+      group:
+        description: Incomes group attributes of the customer
+        id: INCOMES
+    - measures:
+      - format:
+          amounts:
+          - amount: 250.0
+            currency: MXN
+          formatType: AMOUNT
+        order: 1
+        frequency: ANNUAL
+      id: pensionIncomesAverage
+      group:
+        description: Incomes group attributes of the customer
+        id: INCOMES
+    - measures:
+      - format:
+          amounts:
+          - amount: 120.0
+            currency: MXN
+          formatType: AMOUNT
+        order: 1
+        frequency: ANNUAL
+      id: otherIncomesAverage
+      group:
+        description: Incomes group attributes of the customer
+        id: INCOMES
+    - measures:
+      - format:
+          amounts:
+          - amount: 3000.0
+            currency: MXN
+          formatType: AMOUNT
+        order: 1
+        frequency: ANNUAL
+      id: totalIncomesAverage
+      group:
+        description: Incomes group attributes of the customer
+        id: INCOMES
+    - measures:
+      - format:
+          amounts:
+          - amount: 66109.54
+            currency: MXN
+          formatType: AMOUNT
+        order: 1
+      id: bankIncomes
+      group:
+        description: Incomes group attributes of the customer
+        id: INCOMES
+    - measures:
+      - format:
+          amounts:
+          - amount: 2180.0
+            currency: MXN
+          formatType: AMOUNT
+        order: 1
+        frequency: ANNUAL
+      id: 3mTotalIncomesAverage
+      group:
+        description: Incomes group attributes of the customer
+        id: INCOMES
+    - measures:
+      - format:
+          amounts:
+          - amount: 34454.6
+            currency: MXN
+          formatType: AMOUNT
+        order: 1
+        frequency: ANNUAL
+      id: medianIncomes
+      group:
+        description: Incomes group attributes of the customer
+        id: INCOMES
+    - measures:
+      - format:
+          date: 2025-09-12T00:00:00.0-0600
+          formatType: DATE
+        order: 1
+        frequency: ANNUAL
+      description: Expense CalculationDate
+      id: expenseCalculationDate
+      group:
+        description: Balances and expenses group attributes of the customer
+        id: BALANCES_AND_EXPENSES
+    - measures:
+      - format:
+          number: 64.47
+          formatType: NUMERIC
+        order: 1
+        frequency: ANNUAL
+      id: fixedPercentageExpensesOverAvgTotalIncomes
+      group:
+        description: Balances and expenses group attributes of the customer
+        id: BALANCES_AND_EXPENSES
+    - measures:
+      - format:
+          number: 12.32
+          formatType: NUMERIC
+        order: 1
+        frequency: ANNUAL
+      id: variablePercentageExpensesOverAvgTotalIncomes
+      group:
+        description: Balances and expenses group attributes of the customer
+        id: BALANCES_AND_EXPENSES
+    - measures:
+      - format:
+          amounts:
+          - amount: -1295.98
+            currency: MXN
+          formatType: AMOUNT
+        order: 1
+        frequency: ANNUAL
+      id: fixedAverageExpenses
+      group:
+        description: Balances and expenses group attributes of the customer
+        id: BALANCES_AND_EXPENSES
+    - measures:
+      - format:
+          amounts:
+          - amount: -250.44
+            currency: MXN
+          formatType: AMOUNT
+        order: 1
+        frequency: ANNUAL
+      id: variableAverageExpenses
+      group:
+        description: Balances and expenses group attributes of the customer
+        id: BALANCES_AND_EXPENSES
+    - measures:
+      - format:
+          amounts:
+          - amount: -230.23
+            currency: MXN
+          formatType: AMOUNT
+        order: 1
+        frequency: ANNUAL
+      id: totalWithoutPeaksAverageExpenses
+      group:
+        description: Balances and expenses group attributes of the customer
+        id: BALANCES_AND_EXPENSES
+    - measures:
+      - format:
+          amounts:
+          - amount: -57.13
+            currency: MXN
+          formatType: AMOUNT
+        order: 1
+        frequency: ANNUAL
+      id: usualIndispensableExpenses
+      group:
+        description: Balances and expenses group attributes of the customer
+        id: BALANCES_AND_EXPENSES
+    - measures:
+      - format:
+          amounts:
+          - amount: -101.73
+            currency: MXN
+          formatType: AMOUNT
+        order: 1
+        frequency: ANNUAL
+      id: usualDispensableExpenses
+      group:
+        description: Balances and expenses group attributes of the customer
+        id: BALANCES_AND_EXPENSES
+    - measures:
+      - format:
+          amounts:
+          - amount: -177.12
+            currency: MXN
+          formatType: AMOUNT
+        order: 1
+        frequency: ANNUAL
+      id: unusualIndispensableExpenses
+      group:
+        description: Balances and expenses group attributes of the customer
+        id: BALANCES_AND_EXPENSES
+    - measures:
+      - format:
+          amounts:
+          - amount: -37.21
+            currency: MXN
+          formatType: AMOUNT
+        order: 1
+        frequency: ANNUAL
+      id: unusualDispensableExpenses
+      group:
+        description: Balances and expenses group attributes of the customer
+        id: BALANCES_AND_EXPENSES
+    - measures:
+      - format:
+          amounts:
+          - amount: -85.51
+            currency: MXN
+          formatType: AMOUNT
+        order: 1
+        frequency: ANNUAL
+      id: uniqueConfigurationExpenses
+      group:
+        description: Balances and expenses group attributes of the customer
+        id: BALANCES_AND_EXPENSES
+    - measures:
+      - format:
+          text: '76'
+          formatType: TEXT
+        order: 1
+        frequency: ANNUAL
+      - format:
+          amounts:
+          - amount: -38.57
+            currency: MXN
+          formatType: AMOUNT
+        order: 1
+        frequency: ANNUAL
+      - format:
+          text: '13'
+          formatType: TEXT
+        order: 2
+        frequency: ANNUAL
+      - format:
+          amounts:
+          - amount: 0.01
+            currency: MXN
+          formatType: AMOUNT
+        order: 2
+        frequency: ANNUAL
+      description: Top 5 of variable expense categories according to seniority
+      id: variableExpensesTop5Subcategories
+      group:
+        description: Balances and expenses group attributes of the customer
+        id: BALANCES_AND_EXPENSES
+    - measures:
+      - format:
+          text: '61'
+          formatType: TEXT
+        order: 1
+        frequency: ANNUAL
+      - format:
+          amounts:
+          - amount: -46.28
+            currency: MXN
+          formatType: AMOUNT
+        order: 1
+        frequency: ANNUAL
+      - format:
+          text: '13'
+          formatType: TEXT
+        order: 2
+        frequency: ANNUAL
+      - format:
+          amounts:
+          - amount: 0.01
+            currency: MXN
+          formatType: AMOUNT
+        order: 2
+        frequency: ANNUAL
+      description: Top 10 of variable expense categories according to seniority
+      id: variableExpensesTop10Subcategories
+      group:
+        description: Balances and expenses group attributes of the customer
+        id: BALANCES_AND_EXPENSES
+    - measures:
+      - format:
+          amounts:
+          - amount: -1653.06
+            currency: MXN
+          formatType: AMOUNT
+        order: 1
+        frequency: ANNUAL
+      id: 3mTotalAverageExpenses
+      group:
+        description: Balances and expenses group attributes of the customer
+        id: BALANCES_AND_EXPENSES
+    - measures:
+      - format:
+          amounts:
+          - amount: 42000.01
+            currency: MXN
+          formatType: AMOUNT
+        order: 1
+        frequency: ANNUAL
+      id: medianExpenses
+      group:
+        description: Balances and expenses group attributes of the customer
+        id: BALANCES_AND_EXPENSES
+    - measures:
+      - format:
+          amounts:
+          - amount: 34454.0
+            currency: MXN
+          formatType: AMOUNT
+        order: 1
+        frequency: ANNUAL
+      id: targetExpenses
+      group:
+        description: Balances and expenses group attributes of the customer
+        id: BALANCES_AND_EXPENSES
+    - measures:
+      - format:
+          number: 100.0
+          formatType: NUMERIC
+        order: 1
+        frequency: ANNUAL
+      id: percentageTargetExpenses
+      group:
+        description: Balances and expenses group attributes of the customer
+        id: BALANCES_AND_EXPENSES
+    - measures:
+      - format:
+          amounts:
+          - amount: 1138.16
+            currency: MXN
+          formatType: AMOUNT
+        order: 1
+        frequency: ANNUAL
+      id: medianSpeed
+      group:
+        description: Balances and expenses group attributes of the customer
+        id: BALANCES_AND_EXPENSES
+    - measures:
+      - format:
+          number: 12.72
+          formatType: NUMERIC
+        order: 1
+        frequency: ANNUAL
+      id: medianSpeedPercentage
+      group:
+        description: Balances and expenses group attributes of the customer
+        id: BALANCES_AND_EXPENSES
+    - measures:
+      - format:
+          amounts:
+          - amount: -592.12
+            currency: MXN
+          formatType: AMOUNT
+        order: 1
+        frequency: ANNUAL
+      id: medianMandatoryExpenses
+      group:
+        description: Balances and expenses group attributes of the customer
+        id: BALANCES_AND_EXPENSES
+    - measures:
+      - format:
+          amounts:
+          - amount: -195.64
+            currency: MXN
+          formatType: AMOUNT
+        order: 1
+        frequency: ANNUAL
+      id: medianReducibleMandatoryExpenses
+      group:
+        description: Balances and expenses group attributes of the customer
+        id: BALANCES_AND_EXPENSES
+    - measures:
+      - format:
+          amounts:
+          - amount: -294.96
+            currency: MXN
+          formatType: AMOUNT
+        order: 1
+        frequency: ANNUAL
+      id: medianDiscretionaryExpenses
+      group:
+        description: Balances and expenses group attributes of the customer
+        id: BALANCES_AND_EXPENSES
+    - measures:
+      - format:
+          number: 0.0
+          formatType: NUMERIC
+        order: 1
+      id: bankDebtEffortPercentage
+      group:
+        description: Debt group attributes of the customer
+        id: DEBT
+    - measures:
+      - format:
+          amounts:
+          - amount: 23138.34
+            currency: EUR
+          formatType: AMOUNT
+        order: 1
+      id: creditWorthinessOverBankIncomes
+      group:
+        description: Debt group attributes of the customer
+        id: DEBT
+    - measures:
+      - format:
+          formatType: INDICATOR
+          isActive: true
+        order: 1
+      id: creditWorthinessOverBankIncomesPossesion
+      group:
+        description: Debt group attributes of the customer
+        id: DEBT
+    - measures:
+      - format:
+          amounts:
+          - amount: 23138.34
+            currency: EUR
+          formatType: AMOUNT
+        order: 1
+      id: paymentCapacity
+      group:
+        description: Debt group attributes of the customer
+        id: DEBT
+    - measures:
+      - format:
+          amounts:
+          - amount: 0.0
+            currency: EUR
+          formatType: AMOUNT
+        order: 1
+      id: debtEffortAmount
+      group:
+        description: Debt group attributes of the customer
+        id: DEBT
+    - measures:
+      - format:
+          text: '9'
+          formatType: TEXT
+        order: 1
+        frequency: ANNUAL
+      description: Value of the general microsegment
+      id: generalMicrosegment
+      group:
+        description: Microsegment group attributes of the customer
+        id: MICROSEGMENT
+    - measures:
+      - format:
+          text: '9.3'
+          formatType: TEXT
+        order: 1
+        frequency: ANNUAL
+      description: Value of the specific microsegment
+      id: specificMicrosegment
+      group:
+        description: Microsegment group attributes of the customer
+        id: MICROSEGMENT
+    - measures:
+      - format:
+          formatType: INDICATOR
+          isActive: false
+        order: 1
+        frequency: ANNUAL
+      id: diagnosticFlag
+      group:
+        description: Customer group attributes of the customer
+        id: CUSTOMER
+    :headers:
+      content-length: '15618'
+      Access-Control-Allow-Origin: '*'
+      ECS-Entry-Point-Zone: ext
+      Access-Control-Allow-Methods: GET, POST, DELETE, PUT, OPTIONS, PATCH
+      X-Content-Type-Options: nosniff
+      Connection: keep-alive
+      tsec: ZXlKaFlYQWlPaUl4TURBd01ERTROeUlzSW10bGVWWmxjbk5wYjI0aU9qRXNJbUZ3Y0Vsa0lqb2lRVkJRTVNJc0ltdHBaQ0k2SWtGUVVERXViRzlqWVd3dU1TSXNJbVZ1WXlJNklrRXhPVEpIUTAwaUxDSnJaWGxVZVhCbElqb2liRzlqWVd3aUxDSmhiR2NpT2lKa2FYSWlMQ0owYzJWalNXUWlPaUkyT1ROa1ptTTRZUzAzWVRoaExUUm1Zak10T1dGak5pMDBPVFExTVdSbFptWTVNREFpZlEuLndhLWNvYV9aU2FFNUFqdXcuZXpqNWc5VE5GanFwSFU4N0dfODU4QTBHWDVobHJEdHNIcEpsM2J3SjhVbmlxQ3hsUXVOcjhLdDBiZ2RrUEJNeUhsWjAxWEswUE5ubmhWdkVXYzl4ekt0TmRRLTljYjl0cjNoWVpYT1JwYTlKZXVIbzBGb2NpMGxSQ2JFd2dZd3NEUHpUMXFsY0pqajI2SmlMMEluMHBfejJKanJHN3EwRjZ5YVFqRTlHbFpGbFRzT0FfdFduQkpGeFdRT29jRkJzQWhSclJqXy1GTGUxb1dKNGUwNXZYM1JYblNEY3l2dmIyeHVMQnpkTllrbDVIbFFveUk4M0NqTTdYWGhpVEhvNDBJSi16MXNIV0lHZVNHVEhzaE9FYnhRb2lBZVdkTFpPUElFQUFzNmJ2YktyNWl6elFYVXNCOTdEb1RTeWkxcWtHcnJreE93OHhLZkRDS1VzNE9abllJdlIySzVfRDN6aXRpdm9ZM0NOcWtZR3hoTFd1c0x2TW9DVHNYRDhtd0FJNU1Cb0J5MFIxVUNTYzRNVUljSTlXMU0xdUN4ZDRMZGtWS0VRcVQyT2NVMmx1Q2lfMnNOTDlUVVRUdl9kb3JnSTM2cGJuT0RPb0RPV0lnODlpUHM0OXZEQUd4b0plU3lpdlpGTEZYcmdfU0tlb3hHLUJqVDVIT1VablhCa1V1Q1JCTmZSOWlaV3lJb2RyY2Q5X3V4cGdWcEt6M0U2QkhxLWdhcTR2Wi10ZzVGX2htdktFUFptcHNPZlNnMGdJVExmdkFBVEJNdTlsYXJEUXctNElhQUJHOWNrYzJ6ckphU19jX0s5NE0zTFIwcHVoYUhJanU5REtZa3c5eWhPYmpfaHY0dHRkekplSm03M0dvTnVYR2dCdXoxMHRDYk1RRjRsbzZCWWJtYXFkUWVkdDFkNHJoZThsY0JJRm9OeHE3NXNtb2FWMFhSZkpac1d3YnF3T015LTNXcC03UEl2cnktSnRYcTRRVWNKWjZUUFgyZ2hiR25valZCMnRNZENFTE1SQWRLY2x0Tm8zUGhWNlpkQVBVY2lYV2ZuYTNUdTdnT0R3MDR0RkpkNFVablNXdTFLNnBreEZYMTlzdHNfdHFPTThnT0RLUENqbDFiTTZPS2U1RURVdXl5VHRSWHkwclhsZmo4VC14aVVpUFliODZQN2UwWDk1REJzaEpuM2ZaZXJHa0lIaUJxcXVLRW5kLUxTUDhhQUxyaDM4aVJmWl8xQVE5cWVyeWg3dU0zR1JnSjB2aUVNWUxjc1ZkaXhXRzA5XzM4VGJJc3VSNUc0RVAxaVZwYVI2Y0xVa3dxME42cklEaGtaMDc1aUVyelhMSjU5X0t2RGtVdUM2VFN3ZHBrTXdqMGlqQ1FrWGlDal9PWEZDcXhqS2doZXZ0c1QwN2lhS21FN0V1cGtuUjFnWnYxUmExeWJucDRuZEV1aTFJY1Q1TE9qRENRcTl0S2Q5X0l0YWszTVBGVHNOUFFJX3VsOWgxWmN5c2xiZjdUQmp1UDVCekl0LUhad1RYM2tHTWZVblpSUENwSXZNVERvNVg0TnNoWEVnVHhUWlJHcFBwczEtd1ZNLS1JTmpuWXBXQTl0aTJvMHJ2aExFMnNtcG9NLWdyVlpKc2N6bVU5X0dXdS1pRjFRVURjNjRQYkRrd1RnclZKOFU4WXAzWnc5NklvOFdNQlJKZDZTSDgybWpNV19wcUdWQnZWRUlHSkVZaHA3QTgtc1dXbHFVYzRoYnJMbGhBYlJWQTFMNmhjWFo5Ui1TMjl1eFNsb3RlVWhnZ2VEYnVzMWh5bFQ2ZTVjTzRDQXJsaUVpOGhSYWw0S2xBdFR0X1cxdXVqTm1wNGxKYUpTLTZiTmtyWHk4ZTFySWRTSmJubGpmZ3dlUlBZc3FxZzJnejdBbUxyekpiVVNKbThmejVqdkh2VUdTaUYzcEQ1d3NhcHcwLXBTSUZ5WVZWNHdFNnFieXpaelRZeGV3Y0RwNG9sOWs5SkRrVF9LLUcwLTZCN29WQS5lbnBhSGtvUjN1bGd3WllaUnNXcmFR
+      Access-Control-Allow-Headers: remaining-time, Bbva-User-Agent, Accept-Encoding,
+        Accept, Content-Type, tsec, consumerrequestid, authenticationchallenge, authenticationtype,
+        authenticationdata, authenticationstate, contactid, consumeruuid, consumerapplicationid,
+        perimetertsec, authorization, responsewarningcode, responsewarningdescription,
+        cuf, prefer, phoneNumber, Location, X-RHO-PARENTSPANID, X-RHO-TRACEID, preferredauthenticationtype,
+        X-HTTP-Method-Override, Access-Control-Allow-Methods, iv-remote-address, thirdparty-x-forwarded-for,
+        thirdparty-user-agent, thirdparty-geolocation, thirdparty-calculated-scoring,
+        thirdparty-deviceid, vnd.bbva.security-client-certificate, order-preferredaction,
+        authenticationresponse, Access-Control-Max-Age, BCS-Device-Id, BCS-Device-OS-Name,
+        BCS-Device-Model-Name, BCS-Device-Model-Manufacturer, BCS-Device-Screen-Size,
+        BCS-Device-OS-Version, BCS-Device-DPI, BCS-Device-App-Name, BCS-Device-App-Version,
+        Third-Party-Application-Id, ECS-Signature-Platform-Use-Case, BCS-Process-Code,
+        BCS-Operation-Tracer, BCS-Process-Tracer, vnd.bbva.user-id, order-id, order-accepteddisclaimers,
+        x-forwarded-for, Date, order-hmac, x-dmz-orgn, onsite-accountTerm, onsite-logicalTerm,
+        Akamai-BM-Telemetry, BCS-Third-Party-Session-Id, Cache-Control, clave, Content-Encoding,
+        ECS-Entry-Point-Zone, firma, Geolocation, Third-Party-Collaborator-Id, user-agent,
+        Via, order-signed, loginauthenticationtype, x-cau
+      Date: Tue, 28 Oct 2025 14:01:58 GMT
+      Referrer-Policy: same-origin
+      X-Frame-Options: sameorigin
+      Strict-Transport-Security: max-age=31536000; includeSubDomains
+      Access-Control-Expose-Headers: remaining-time, Bbva-User-Agent, Accept-Encoding,
+        Accept, Content-Type, tsec, consumerrequestid, authenticationchallenge, authenticationtype,
+        authenticationdata, authenticationstate, contactid, consumeruuid, consumerapplicationid,
+        perimetertsec, authorization, responsewarningcode, responsewarningdescription,
+        cuf, prefer, phoneNumber, Location, X-RHO-PARENTSPANID, X-RHO-TRACEID, preferredauthenticationtype,
+        X-HTTP-Method-Override, Access-Control-Allow-Methods, iv-remote-address, thirdparty-x-forwarded-for,
+        thirdparty-user-agent, thirdparty-geolocation, thirdparty-calculated-scoring,
+        thirdparty-deviceid, vnd.bbva.security-client-certificate, order-preferredaction,
+        authenticationresponse, Access-Control-Max-Age, BCS-Device-Id, BCS-Device-OS-Name,
+        BCS-Device-Model-Name, BCS-Device-Model-Manufacturer, BCS-Device-Screen-Size,
+        BCS-Device-OS-Version, BCS-Device-DPI, BCS-Device-App-Name, BCS-Device-App-Version,
+        Third-Party-Application-Id, ECS-Signature-Platform-Use-Case, BCS-Process-Code,
+        BCS-Operation-Tracer, BCS-Process-Tracer, vnd.bbva.user-id, order-id, order-accepteddisclaimers,
+        x-forwarded-for, Date, order-hmac, x-dmz-orgn, onsite-accountTerm, onsite-logicalTerm,
+        Akamai-BM-Telemetry, BCS-Third-Party-Session-Id, Cache-Control, clave, Content-Encoding,
+        ECS-Entry-Point-Zone, firma, Geolocation, Third-Party-Collaborator-Id, user-agent,
+        Via, order-signed, loginauthenticationtype, x-cau
+      Cache-Control: no-cache,no-store,must-revalidate
+      Content-Security-Policy: script-src 'self'
+      Vary: Accept-Encoding
+      Set-Cookie: vbank-session=35bf636c-ce63-49a5-86bf-baddcde36564
+      Expires: '-1'
+      X-XSS-Protection: 1; mode=block
+      consumerrequestid: f8c066a0-807f-47be-a439-1895d848000c
+      Content-Type: application/json; charset=UTF-8
+    :status: 200 OK

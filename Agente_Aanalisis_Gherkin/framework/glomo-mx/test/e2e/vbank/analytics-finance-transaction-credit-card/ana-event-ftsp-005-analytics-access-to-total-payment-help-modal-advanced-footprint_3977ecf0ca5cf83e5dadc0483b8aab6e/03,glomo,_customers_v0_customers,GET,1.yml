@@ -1,0 +1,114 @@
+when:
+  sequence: 1
+  path: /SRVS_A02/customers/v0/customers
+  method: GET
+  backend: glomo
+request:
+  headers:
+    sec-fetch-mode: cors
+    content-length: '0'
+    referer: http://localhost:8001/
+    sec-fetch-site: same-site
+    accept-language: es-MX,es;q=0.9
+    origin: http://localhost:8001
+    authenticationtype: '58'
+    tsec: c9f0062b422caac6ae8b2ee0dcf3df2afbcfc894
+    accept: application/json, text/html, */*; q=0.1
+    authenticationdata: deviceid=11111111
+    sec-ch-ua: '"Chromium";v="116", "Not)A;Brand";v="24", "Google Chrome";v="116"'
+    sec-ch-ua-mobile: ?0
+    x-vbank-session: a3daa97d-15a3-4824-ab36-8a98d790edd7
+    sec-ch-ua-platform: '"macOS"'
+    host: localhost:9000
+    content-type: application/json
+    connection: keep-alive
+    cache-control: no-cache, no-store, must-revalidate
+    accept-encoding: gzip, deflate, br
+    sec-fetch-dest: empty
+    user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36
+      (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36
+then:
+- return:
+    data:
+    - lastName: Santana
+      gender:
+        name: masculino
+        id: MALE
+      birthData:
+        country:
+          name: México
+          id: MX
+        city: Autlan
+        state:
+          name: Jalisco
+          id: JALISCO
+        birthDate: '1947-07-20T00:00:00.000Z'
+      nationalities:
+      - name: Mexicana
+        id: MX
+      suffix: JR
+      membershipDate: '1992-11-03T09:00:33Z'
+      firstName: Carlos
+      bank:
+        bankId: 549300WIWQK5Q9MCUN92
+        name: BBVA Bancomer
+        branch:
+          branchId: '33'
+          costCenter: '123'
+          name: Oficina 33
+      lastAccessDate: '2016-08-07T11:28:36.096Z'
+      customerId: b_TCwi5citu5euHzqryDL=
+      identityDocuments:
+      - country:
+          name: México
+          id: MX
+        documentType:
+          name: Documento Nacional de Identidad
+          id: DNI
+        documentNumber: 82735627A
+        state:
+          name: Jalisco
+          id: JALISCO
+        issueDate: '2008-08-19T09:00:33Z'
+        status:
+          name: Activo
+          id: Active
+        expirationDate: '2018-08-19T09:00:33Z'
+      personalTitle:
+        name: MR
+        id: MR
+      residence:
+        country:
+          name: México
+          id: MX
+        residenceType:
+          name: Permanente
+          id: PERMANENT
+        startDate: '1980-03-22T09:00:33Z'
+      maritalStatus:
+        name: Casado
+        id: MARRIED
+    :headers:
+      content-length: '2029'
+      Server: artichoke
+      Alt-Svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      access-control-allow-headers: Content-Type, tsec, authenticationtype, authenticationdata,
+        authenticationstate, contactid, consumeruuid, consumerapplicationid, perimetertsec,
+        authorization, responsewarningcode, responsewarningdescription, cuf, field,
+        bcs-device-app-version, bcs-device-app-version, vnd.bbva.authorization, device-id
+      tsec: c9f0062b422caac6ae8b2ee0dcf3df2afbcfc894
+      X-Response-Time: 463ms
+      Date: Wed, 06 Sep 2023 15:14:48 GMT
+      Via: 1.1 google
+      access-control-allow-origin: '*'
+      Access-Control-Expose-Headers: tsec, vnd.bbva.access-token-type,vnd.bbva.access-token,
+        vnd.bbva.sso-pkcs7, authenticationtype, authenticationdata, authenticationstate,
+        authenticationchallenge
+      Cache-Control: private, no-store
+      content-type: application/json;charset=UTF-8
+      Vary: Accept-Encoding
+    :status: 200 OK
+    apiInfo:
+      name: customers
+      category: people
+      version: 0.24.0

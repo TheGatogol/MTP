@@ -1,0 +1,87 @@
+when:
+  sequence: 1
+  path: /SRVS_A02/cards/v1/cards/1235/indicators
+  method: GET
+  backend: glomo
+request:
+  headers:
+    sec-fetch-mode: cors
+    content-length: '0'
+    referer: http://localhost:8001/
+    sec-fetch-site: same-site
+    accept-language: en-US
+    origin: http://localhost:8001
+    tsec: 96afc3a854e786a312d90e50c7d72e684a5ad0c7
+    accept: application/json, text/html, */*; q=0.1
+    sec-ch-ua: ''
+    sec-ch-ua-mobile: ?0
+    x-vbank-session: b431c026-2d23-41aa-ac96-c9004e5b4154
+    sec-ch-ua-platform: ''
+    host: localhost:9000
+    content-type: application/json
+    connection: keep-alive
+    cache-control: no-cache, no-store, must-revalidate
+    accept-encoding: gzip, deflate, br
+    sec-fetch-dest: empty
+    user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36
+      (KHTML, like Gecko) HeadlessChrome/108.0.5359.98 Safari/537.36
+then:
+- return:
+    data:
+    - description: Indica si los datos de seguridad de la tarjeta pueden ser leídos.
+      id: SECURITY_DATA_READ
+      isActive: true
+    - description: The card have OVERDRAFT
+      id: OVERDRAFT
+      isActive: true
+    - description: The card have multipurchase financing available
+      id: MULTIPURCHASE_FINANCING_AVAILABLE
+      isActive: true
+    - description: IS_ADDITIONAL
+      id: IS_ADDITIONAL
+      isActive: false
+    - description: Indica si el CVV2 es dinámico
+      id: DINAMIC_CVV
+      isActive: false
+    - description: Indica si la tarjeta puede modificar el nip de forma online por
+        una aplicación
+      id: BLOCKABLE_NIP
+      isActive: false
+    - description: Bloquear tarjeta
+      id: BLOCKABLE
+      isActive: false
+    - description: The card can be related to virtual cards
+      id: ASSOCIABLE_TO_VIRTUAL_CARDS
+      isActive: false
+    - description: Indica si la tarjeta cuenta con sticker asociado
+      id: ASSOCIABLE_TO_STICKER_CARDS
+      isActive: false
+    - description: The card can be associable to nfc.
+      id: ASSOCIABLE_TO_NFC
+      isActive: false
+    - description: Indica si la tarjeta puede tener tarjetas asociadas
+      id: ASSOCIABLE_TO_ADDITIONAL_CARDS
+      isActive: true
+    :headers:
+      access-control-allow-origin: '*'
+      content-length: '1619'
+      Access-Control-Expose-Headers: tsec, vnd.bbva.access-token-type,vnd.bbva.access-token,
+        vnd.bbva.sso-pkcs7, authenticationtype, authenticationdata, authenticationstate,
+        authenticationchallenge
+      Server: artichoke
+      Alt-Svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      access-control-allow-headers: Content-Type, tsec, authenticationtype, authenticationdata,
+        authenticationstate, contactid, consumeruuid, consumerapplicationid, perimetertsec,
+        authorization, responsewarningcode, responsewarningdescription, cuf, field,
+        bcs-device-app-version, bcs-device-app-version, vnd.bbva.authorization
+      content-type: application/json;charset=UTF-8
+      Vary: Accept-Encoding
+      tsec: 96afc3a854e786a312d90e50c7d72e684a5ad0c7
+      X-Response-Time: 477ms
+      Date: Wed, 14 Dec 2022 10:46:31 GMT
+      Via: 1.1 google
+    :status: 200 OK
+    apiInfo:
+      name: cards
+      category: products
+      version: 0.19.0

@@ -1,0 +1,39 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: ee80b4ae-488e-46f0-86f9-e84c827d83f4
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: customer_contracts_list
+    lock: 'false'
+then:
+- return:
+    :body:
+    - data:
+        tags:
+        - customer_contracts_list
+        authentication:
+          password: Glomo2023
+          user: '5520800258'
+          deviceId: B1D37267B51B8A8751801A99C7A4F881
+      lockExpiration: null
+      lockType: null
+      id: 35667123
+    :headers:
+      Strict-Transport-Security: max-age=15768000
+      Server: nginx
+      ECS-Entry-Point-Zone: ext
+      Connection: keep-alive
+      host: datamanager.globaldevtools.bbva.com
+      Content-Length: '215'
+      Date: Fri, 23 Feb 2024 17:55:23 GMT
+      Content-Type: application/json
+    :status: 200 OK

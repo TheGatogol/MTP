@@ -1,0 +1,133 @@
+when:
+  sequence: 1
+  path: /SRVS_A02/transfers/v0/own-transfers
+  method: POST
+  backend: glomo
+request:
+  headers:
+    sec-fetch-mode: cors
+    referer: http://localhost:8001/
+    content-length: '228'
+    sec-fetch-site: same-site
+    accept-language: es-ES,es-MX;q=0.9,es;q=0.8
+    origin: http://localhost:8001
+    tsec: fd615b15bf23e24ed3f2bfd372926c1843390d57
+    accept: application/json, text/html, */*; q=0.1
+    sec-ch-ua: '"Chromium";v="110", "Not A(Brand";v="24", "Google Chrome";v="110"'
+    sec-ch-ua-mobile: ?0
+    x-vbank-session: b2b851e3-6c45-4bf2-a647-0c8b8b745229
+    sec-ch-ua-platform: '"macOS"'
+    host: localhost:9000
+    content-type: application/json
+    connection: keep-alive
+    cache-control: no-cache, no-store, must-revalidate
+    accept-encoding: gzip, deflate, br
+    sec-fetch-dest: empty
+    user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36
+      (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36
+  body:
+    receiver:
+      contract:
+        number: '4165573837658124'
+        numberType:
+          id: PAN
+    sender:
+      contract:
+        number: '012180245678432323'
+        numberType:
+          id: LIC
+        contractId: '7634'
+    sentMoney:
+    - amount: 3000
+      currency: MXN
+then:
+- return:
+    data:
+      date: '2023-05-09T13:19:02.426Z'
+      accountingDate: '2023-05-09T13:19:02.426Z'
+      fees:
+        totalFees:
+          amount: 90
+          currency: MXN
+        itemizeFees:
+        - amount:
+            amount: 30
+            currency: MXN
+          percentage: 1
+          name: Specific transaction fee 1
+          feeType: SPECIFIC_TRANSACTION
+          whoPayFee:
+            name: Origin bank
+            id: ORIGIN_BANK
+        - amount:
+            amount: 60
+            currency: MXN
+          percentage: 2
+          name: Specific transaction fee 2
+          feeType: SPECIFIC_TRANSACTION
+          whoPayFee:
+            name: Sender
+            id: SENDER
+      receiver:
+        contract:
+          number: '4165573837658124'
+          numberType:
+            name: PAN
+            id: PAN
+      references:
+      - name: Folio
+        id: INTERNAL_REFERENCE
+        value: '3433230051'
+      sender:
+        contract:
+          number: '012180245678432323'
+          numberType:
+            name: LIC
+            id: LIC
+          contractId: '7634'
+      operationNumber: '1683638342426'
+      ownTransferId: '1683638342426'
+      taxes:
+        totalTaxes:
+          amount: 45
+          currency: MXN
+        itemizeTaxes:
+        - amount:
+            amount: 45
+            currency: MXN
+          percentage: 1.5
+          name: Property tax
+          taxType: PROPERTY
+      chargeAmount:
+        amount: -3000
+        currency: MXN
+      sentMoney:
+      - amount: 3000
+        isMajor: true
+        currency: MXN
+      status:
+        name: Aprobada
+        id: SETTLED
+    :headers:
+      access-control-allow-origin: '*'
+      content-length: '2191'
+      Access-Control-Expose-Headers: tsec, vnd.bbva.access-token-type,vnd.bbva.access-token,
+        vnd.bbva.sso-pkcs7, authenticationtype, authenticationdata, authenticationstate,
+        authenticationchallenge
+      Server: artichoke
+      Alt-Svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      access-control-allow-headers: Content-Type, tsec, authenticationtype, authenticationdata,
+        authenticationstate, contactid, consumeruuid, consumerapplicationid, perimetertsec,
+        authorization, responsewarningcode, responsewarningdescription, cuf, field,
+        bcs-device-app-version, bcs-device-app-version, vnd.bbva.authorization
+      content-type: application/json;charset=UTF-8
+      Vary: Accept-Encoding
+      tsec: fd615b15bf23e24ed3f2bfd372926c1843390d57
+      X-Response-Time: 570ms
+      Date: Tue, 09 May 2023 13:19:02 GMT
+      Via: 1.1 google
+    :status: 201 Created
+    apiInfo:
+      name: transfers
+      category: payment-methods
+      version: 0.5.0

@@ -1,0 +1,73 @@
+when:
+  sequence: 1
+  path: /app-settings/v0/public-settings/GLOMO-MX-1.0-TEST
+  method: GET
+  backend: cgs
+request:
+  headers:
+    sec-fetch-mode: cors
+    content-length: '0'
+    referer: http://localhost:8001/
+    sec-fetch-site: same-site
+    accept-language: es-MX,es;q=0.9
+    origin: http://localhost:8001
+    accept: application/json, text/html, */*; q=0.1
+    sec-ch-ua: '"Not A(Brand";v="99", "Google Chrome";v="121", "Chromium";v="121"'
+    sec-ch-ua-mobile: ?0
+    x-vbank-session: ceed31c6-4b6a-4399-8f21-6947b09b4296
+    x-api-key: psJbscoM0i9O4L40SzKW02i8XhfR80df1iB9ODgj
+    sec-ch-ua-platform: '"macOS"'
+    host: localhost:9085
+    content-type: application/json
+    connection: keep-alive
+    cache-control: no-cache, no-store, must-revalidate
+    accept-encoding: gzip, deflate, br
+    sec-fetch-dest: empty
+    user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36
+      (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36
+  query:
+    key: app_settings_glomo
+then:
+- return:
+    data:
+    - value: '{"data":{"appVersion":{"Android":{"minOsVersion":"8","appStoreUrl":"https://play.google.com/store/apps/details?id=com.bancomer.mbanking","minVersion":1,"packageId":"com.bancomer.mbanking","forceUseBMovil":true,"adviceVersion":115600},"iOS":{"minOsVersion":"0","appStoreUrl":"https://itunes.apple.com/app/id374824226","minVersion":"1.0.0","bundleId":"com.bancomer.bbva.bancomermovil","forceUseBMovil":false,"adviceVersion":"11.56.0"}},"ivr":"1:0049,2:0049,3:0049,4:0049,5:0049,6:0049,0:0049","biometricFacial":"I:3869,F:4547,R:2549","configureProducts":{"enabled":true},"checksDeposit":{"maxValue":"25000"},"depositsFlowConfig":{"termDays":[1,7,28,91,182],"enable":true,"defaultAmount":2000,"minimumAmount":2000,"defaultTermDays":28},"feedback":{"feedbackResetIndex":5,"useStaticUrl":true,"appURL":"https://www.opinator.com/opi/glomo-app-mexico/","enabled":true},"smartAssistant":"0099","offerIdDeviceInsurance":"YKSdmB21cVHQ7YARlaDx_g","mortgageLoanPayment":"A:90,
+        I:90, versionFrontA:11.11.191112, versionFrontI:11.11.191112","loanPaymentConsumo":"5074","SIM":"0049","contact":{"preventFraudNumber":"5552262685,#000411","euca":"18003969665","other":"3039671098","equityPhone":"018001121113","phone":"5552262663","phoneNumberBbvaLine":"5552262663"},"checksProtection":{"days":"90"},"rateApp":{"value":4},"landing":[{"segment":"personal","shortcuts":"/content/caas/mexico/glomo/landing-local/shortcuts/default.model.json","background":{"landing":"/content/dam/caas/mexico/glomo/landing-local/background/default_landing.png","login":"","dashboard":""},"sections":[{"type":"message-card","priority":-1,"url":"/content/caas/mexico/glomo/landing-local/digital-sales/default.model.json","reactivateInDays":1,"cleanCacheDate":"2022-02-28"},{"type":"message-card","priority":1,"url":"/content/caas/mexico/glomo/landing-local/messages/default.model.json","reactivateInDays":2,"cleanCacheDate":"2022-03-17"}]}],"glomoContinuityUseCases":[{"id":"1","name":"qrCard","isCodified":false}],"hostAEM":"https://assets.caasbbva.com","emergencies":[{"productType":"CARD","flowSubProductType":"DEBIT_CARD","contentFragmentPath":"/content/caas/mexico/glomo/emergencys/emergencys-card.model.json","emergency":[{"id":"STOLE_LOST_CARD","helpDescription":"Robo
+        o extravío de tarjeta","flowType":"HELP_SHOW_INFO"},{"id":"REJECTED_CARD","helpDescription":"Tarjeta
+        rechazada","flowType":"HELP_SHOW_INFO"}]},{"productType":"INSURANCE","flowSubProductType":"AUTOMOVIL","contentFragmentPath":"/content/caas/mexico/glomo/emergencys/emergency-vehicle.model.json","emergency":[{"id":"SHOCK","idEventLoss":"CLAIMS","helpDescription":"Choque","flowType":"HELP_SHOW_QUESTIONS","callTimeout":{"isActive":true,"time":"3:00"}},{"id":"CRANE","idEventLoss":"ASSISTANCE","helpDescription":"Grúa
+        por avería","flowType":"HELP_SHOW_INFO","callTimeout":{"isActive":true,"time":"3:00"}},{"id":"STOLE","idEventLoss":"CLAIMS","helpDescription":"Robo
+        de vehículo","flowType":"HELP_SHOW_INFO","callTimeout":{"isActive":true,"time":"3:00"}},{"id":"VEHICLE_ASSISTANCE","idEventLoss":"ASSITANCE","helpDescription":"Asistencias","flowType":"HELP_SHOW_INFO","geolocation":{"addressComponents":"FULL_ADDRESS"},"selectionType":"MULTI_SELECTION","personData":{"isUsed":false},"typeHelp":[{"idType":"CURRENT_FLOW","helpDescription":"Paso
+        de corriente","infoHelp":""},{"idType":"GASOLINE","helpDescription":"Gasolina","infoHelp":""},{"idType":"TIRE","helpDescription":"Cambio
+        de llanta","infoHelp":"Debes contar con la llanta de refacción en buen estado
+        y su birlo de seguridad."}],"callTimeout":{"isActive":true,"time":"3:00"}},{"id":"GLASS","idEventLoss":"CLAIMS","helpDescription":"Daño
+        de cristales","flowType":"HELP_SHOW_INFO","deductiblePercentage":"20","percentageCovered":"80","glassSupplierType":[{"id":"INSURANCE_SUPPLIERS","title":"Que
+        BBVA Seguros los busque","helpDescription":"Ahorra tiempo con un pase a la
+        cristalerá que tenga inventario disponible y precios competitivos."},{"id":"PERSONAL_SUPPLIERS","title":"Quiero
+        buscarlos personalmente","helpDescription":"Elige dónde ir a buscar los cristales.
+        La disponibilidad depende del proveedor."}]}]}],"offers":{"4046":{"id":"life-insurance"},"0060":{"id":"consumer-loan"},"0PPI":{"id":"consumer-loan"},"0NOM":{"id":"consumer-loan"},"0130":{"id":"limit-increase"},"0ILC":{"id":"limit-increase"},"0296":{"id":"credit-card-holder"},"0TDC":{"id":"credit-card-holder"},"ANOM":{"id":"payroll-advance"},"AUTO":{"id":"car-loan"},"0HIP":{"id":"mortgage-loan"},"HIPO":{"id":"mortgage-loan"},"0REC":{"id":"recolocation"},"0578":{"id":"recolocation"},"0640":{"id":"instant-cash"},"0595":{"id":"credit-card-update"},"0715":{"id":"consumer-loan"},"0724":{"id":"ppf"},"0762":{"id":"ppf"},"0693":{"id":"credit-bureau"},"0557":{"id":"payroll-portability"},"0732":{"id":"product-solutions-payment"},"0733":{"id":"product-solutions-payment"},"0739":{"id":"product-solutions-payment"},"0766":{"id":"debit-card-request"},"0740":{"id":"product-solutions-payment"}},"experiencesSection":{"domain":"https://assets-stage.caasbbva.com","path":"/content/caas/mexico/glomo/experiences/experiences-list.model.json","versions":[{"compatible_versions":["1.0.0","1.2.3"],"domain":"https://assets-stage.caasbbva.com","path":"/content/caas/mexico/glomo/experiences/3-17/experiences-list.model.json"}]},"customerLogin":{"globalPrefix":"MX00740"},"notificationFieldConfig":{"operativesShortcuts":[{"id":"A000000406","iconCells":"bbvaPhishing","title":"Confirmar
+        o rechazar"},{"id":"A000000749","iconCells":"bbvaPhishing","title":"Confirmar
+        o rechazar"},{"id":"A000000838","iconCells":"bbvaPhishing","title":"Confirmar
+        o rechazar"},{"id":"A000000861","iconCells":"bbvaPhishing","title":"Confirmar
+        o rechazar"},{"id":"A000000862","iconCells":"bbvaPhishing","title":"Confirmar
+        o rechazar"},{"id":"A000000208","iconCells":"bbvaPromotion","title":"Promoción"},{"id":"A000000481","iconCells":"bbvaTicket","title":"Revisar
+        aclaración"},{"id":"A000000617","iconCells":"bbvaDigitalsignature","title":"Revisar
+        y firmar"},{"id":"A000000618","iconCells":"bbvaDigitalsignature","title":"Revisar
+        y firmar"},{"id":"A000000482","iconCells":"bbvaTicket","title":"Revisar aclaración"},{"id":"A000000484","iconCells":"bbvaTicket","title":"Revisar
+        aclaración"},{"id":"expense","call_bbva":"call-bbva","iconCells":"bbvaTelephone","title":"Llamar"}]}}}'
+      key: app_settings_glomo
+    :headers:
+      x-amz-apigw-id: Sdj2cG3fIAMFTug=
+      X-EdgeConnect-Origin-MEX-Latency: '290'
+      Access-Control-Allow-Origin: '*'
+      Connection: keep-alive
+      X-Amzn-Trace-Id: Root=1-65bbb35c-25ce7243b78f7cf454a96a8f
+      Date: Tue, 12 Mar 2024 15:13:22 GMT
+      Cache-Control: max-age=292
+      ETag: '"5e477f7e9328fb70d48912dbc38203d890e5f4e5"'
+      x-amzn-RequestId: d7f36f75-6bca-4c6d-94c0-8d9f04ee619d
+      Vary: Accept-Encoding
+      Set-Cookie: vbank-session=ceed31c6-4b6a-4399-8f21-6947b09b4296
+      Expires: Tue, 12 Mar 2024 15:18:14 GMT
+      Content-Length: '7265'
+      X-EdgeConnect-MidMile-RTT: '0'
+      Content-Type: application/json; charset=UTF-8
+    :status: 200 OK

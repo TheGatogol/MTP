@@ -1,0 +1,54 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: 8ee9cdc3-2b5e-410f-9f51-a14b626944c4
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: with_goals
+    lock: 'false'
+then:
+- return:
+    :body:
+    - data:
+        planAccount:
+          number: '00740010002309291415'
+          accountId: Uvn6wi1Rh6CZfqjoLCD23YnYnKgL8iVp4PyzAevmwS3_J3TDEMaYBA==
+          alias: Plan
+        principalAccount:
+          number: '007400101501522502'
+          accountId: Uvn6wi1Rh6CCrEHKfLk84UhuYDkDQ2hWCpcCLKQdvuBnCVlFZ_D0AQ
+        creditCard:
+          number: '007402231150471097'
+        tags:
+        - metas_saving_goals
+        - with_goals
+        - '9613141386'
+        localstorage:
+          onboardingDone:
+            customerId: vDgQUkURnv3soy2jZU_EQg==
+        authentication:
+          password: Glomo2023
+          user: '9613141386'
+          deviceId: 5CBF1B9621D9A3E2ABADB57601F24C73
+      lockExpiration: null
+      lockType: null
+      id: 35547364
+    :headers:
+      content-length: '552'
+      Strict-Transport-Security: max-age=15768000
+      Server: nginx
+      ECS-Entry-Point-Zone: ext
+      Connection: keep-alive
+      host: datamanager.globaldevtools.bbva.com
+      Vary: Accept-Encoding
+      Date: Thu, 09 May 2024 16:25:26 GMT
+      Content-Type: application/json
+    :status: 200 OK

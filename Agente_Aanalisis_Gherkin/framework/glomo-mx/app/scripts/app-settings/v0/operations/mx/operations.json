@@ -1,0 +1,449 @@
+[
+  {
+    "fieldsIndex": {
+      "products": {
+        "A.AHORRO": {
+          "name": "SAVINGS",
+          "type": "ACCOUNT"
+        },
+        "A.CORRIENTE": {
+          "name": "COMMON",
+          "type": "ACCOUNT"
+        },
+        "C.DEBIT": {
+          "name": "DEBIT_CARD",
+          "type": "CARD"
+        },
+        "C.CREDIT": {
+          "name": "CREDIT_CARD",
+          "type": "CARD"
+        }
+      },
+      "conditions": {
+        "STATUS": {
+          "fieldExtra": "id"
+        },
+        "TITLE": {
+          "fieldExtra": "id"
+        },
+        "JOINT": {
+          "fieldExtra": "id"
+        },
+        "PHYSICALSUPPORT":{
+          "fieldExtra": "id"
+        }
+      }
+    }
+  },
+  {
+    "id": "OWN_TRANSFER",
+    "name": "Transferencias propias",
+    "conditions": [{
+      "id": "currency",
+      "values": ["MXN"]
+    }],
+    "productTypesCombinations": [{
+        "originProductType": {
+          "id": "ACCOUNT",
+          "scope": "OWN",
+          "isSimulationAllowed": false,
+          "conditions": [{
+              "id": "currency",
+              "values": ["MXN"]
+            },
+            {
+              "id": "accountFamily",
+              "values": ["COMMON"]
+            }
+          ]
+        },
+        "destinationProductTypes": [{
+            "id": "ACCOUNT",
+            "scope": "OWN",
+            "isSimulationAllowed": false,
+            "conditions": [{
+                "id": "currency",
+                "values": ["MXN"]
+              },
+              {
+                "id": "accountFamily",
+                "values": ["COMMON"]
+              }
+            ]
+          },
+          {
+            "id": "CARD",
+            "scope": "OWN",
+            "isSimulationAllowed": false,
+            "conditions": [{
+                "id": "currency",
+                "values": ["MXN"]
+              },
+              {
+                "id": "cardType",
+                "values": ["CREDIT_CARD"]
+              }
+            ]
+          }
+        ],
+        "conditions": []
+      },
+      {
+        "originProductType": {
+          "id": "CARD",
+          "scope": "OWN",
+          "isSimulationAllowed": true,
+          "conditions": [{
+              "id": "status",
+              "values": ["OPERATIVE"]
+            },
+            {
+              "id": "cardType",
+              "values": ["CREDIT_CARD"]
+            }
+          ]
+        },
+        "destinationProductTypes": [{
+          "id": "ACCOUNT",
+          "scope": "OWN",
+          "isSimulationAllowed": false,
+          "conditions": [{
+              "id": "currency",
+              "values": ["MXN"]
+            },
+            {
+              "id": "accountFamily",
+              "values": ["COMMON"]
+            }
+          ]
+        }],
+        "conditions": []
+      }
+    ]
+  },
+  {
+    "id": "INTERNAL_TRANSFER",
+    "name": "Transferencias internas",
+    "conditions": [{
+      "id": "currency",
+      "values": ["MXN"]
+    }],
+    "productTypesCombinations": [{
+      "originProductType": {
+        "id": "ACCOUNT",
+        "scope": "OWN",
+        "isSimulationAllowed": false,
+        "conditions": [{
+            "id": "currency",
+            "values": ["MXN"]
+          },
+          {
+            "id": "accountFamily",
+            "values": ["COMMON"]
+          }
+        ]
+      },
+      "destinationProductTypes": [{
+          "id": "ACCOUNT",
+          "scope": "THIRD",
+          "isSimulationAllowed": false,
+          "conditions": [{
+              "id": "productType",
+              "values": ["ACCOUNT"]
+            },
+            {
+              "id": "numberType",
+              "values": ["CCC", "LIC", "SPEI"]
+            }
+          ]
+        },
+        {
+          "id": "CARD",
+          "scope": "THIRD",
+          "isSimulationAllowed": false,
+          "conditions": [{
+              "id": "productType",
+              "values": ["CARD"]
+            },
+            {
+              "id": "specificProductType",
+              "values": ["CREDIT_CARD", "DEBIT_CARD"]
+            },
+
+            {
+              "id": "numberType",
+              "values": ["PAN"]
+            }
+          ]
+        }
+      ],
+      "conditions": []
+    }]
+  },
+  {
+    "id": "INTERBANK_TRANSFER",
+    "name": "Transferencias a otros bancos",
+    "conditions": [{
+      "id": "CURRENCY",
+      "values": ["MXN"]
+    }],
+    "productTypesCombinations": [{
+        "originProductType": {
+          "id": "ACCOUNT",
+          "scope": "OWN",
+          "isSimulationAllowed": false,
+          "conditions": [{
+              "id": "currency",
+              "values": ["MXN"]
+            },
+            {
+              "id": "accountFamily",
+              "values": ["COMMON"]
+            }
+          ]
+        },
+        "destinationProductTypes": [{
+            "id": "ACCOUNT",
+            "scope": "THIRD",
+            "isSimulationAllowed": false,
+            "conditions": [{
+                "id": "productType",
+                "values": ["ACCOUNT"]
+              },
+              {
+                "id": "numberType",
+                "values": ["CCC", "LIC", "SPEI", "CLABE"]
+              }
+            ]
+          },
+          {
+            "id": "CARD",
+            "scope": "THIRD",
+            "isSimulationAllowed": false,
+            "conditions": [{
+                "id": "productType",
+                "values": ["CARD"]
+              },
+              {
+                "id": "specificProductType",
+                "values": ["CREDIT_CARD", "DEBIT_CARD"]
+              },
+
+              {
+                "id": "numberType",
+                "values": ["PAN"]
+              }
+            ]
+          }
+        ],
+        "conditions": []
+      },
+      {
+        "originProductType": {
+          "id": "CARD",
+          "scope": "OWN",
+          "isSimulationAllowed": true,
+          "conditions": [{
+              "id": "status",
+              "values": ["OPERATIVE"]
+            },
+            {
+              "id": "cardType",
+              "values": ["CREDIT_CARD"]
+            }
+          ]
+        },
+        "destinationProductTypes": [{
+          "id": "CARD",
+          "scope": "THIRD",
+          "isSimulationAllowed": false,
+          "conditions": [{
+              "id": "productType",
+              "values": ["CARD"]
+            },
+            {
+              "id": "specificProductType",
+              "values": ["CREDIT_CARD"]
+            },
+
+            {
+              "id": "numberType",
+              "values": ["PAN"]
+            }
+          ]
+        }],
+        "conditions": []
+      }
+    ]
+  },
+  {
+    "id": "SERVICE_PAYMENT",
+    "name": "Pago de servicios",
+    "conditions": [{
+      "id": "CURRENCY",
+      "values": ["MXN"]
+    }],
+    "productTypesCombinations": [{
+      "originProductType": {
+        "id": "ACCOUNT",
+        "scope": "OWN",
+        "isSimulationAllowed": false,
+        "conditions": [{
+            "id": "currency",
+            "values": ["MXN"]
+          },
+          {
+            "id": "accountFamily",
+            "values": ["COMMON"]
+          }
+        ]
+      },
+      "destinationProductTypes": [],
+      "conditions": []
+    }]
+  },
+  {
+    "id": "MOBILE_TOP_UP",
+    "name": "RECARGA TIEMPO AIRE",
+    "conditions": [{
+      "id": "CURRENCY",
+      "validations": [{
+        "operator": "EQUAL_TO",
+        "values": ["MXN"]
+      }]
+    }],
+    "productTypesCombinations": [{
+      "originProductType": {
+        "id": "ACCOUNT",
+        "scope": "OWN",
+        "isSimulationAllowed": false,
+        "conditions": [{
+            "id": "currency",
+            "values": ["MXN"]
+          },
+          {
+            "id": "accountFamily",
+            "values": ["COMMON"]
+          }
+        ]
+      },
+      "destinationProductTypes": [],
+      "conditions": []
+    }]
+  },
+  {
+    "id": "MOBILE_TRANSFER",
+    "name": "Retiro sin tarjeta",
+    "conditions": [
+
+    ],
+    "productTypesCombinations": [{
+      "originProductType": {
+        "id": "ACCOUNT",
+        "scope": "OWN",
+        "isSimulationAllowed": false,
+        "conditions": [{
+            "id": "currency",
+            "values": ["MXN"]
+          },
+          {
+            "id": "accountFamily",
+            "values": ["COMMON"]
+          }
+        ]
+      },
+      "destinationProductTypes": [],
+      "conditions": []
+    }]
+  },
+  {
+    "id": "SPEI",
+    "name": "Asociar/Disociar celular a cuenta",
+    "conditions": [],
+    "productTypesCombinations": [{
+      "originProductType": {
+        "id": "ACCOUNT",
+        "scope": "OWN",
+        "isSimulationAllowed": false,
+        "conditions": [{
+            "id": "currency",
+            "values": ["MXN"]
+          },
+          {
+            "id": "accountFamily",
+            "values": ["COMMON"]
+          }
+        ]
+      },
+      "destinationProductTypes": [],
+      "conditions": []
+    }]
+  },
+  {
+    "id": "CREDIT_CARD_DEBT_PAYMENT",
+    "name": "PAGO DE TARJETA DE CRÉDITO",
+    "conditions": [{
+      "id": "CURRENCY",
+      "values": [
+        "MXN"
+      ]
+    }],
+    "productTypesCombinations": [{
+        "originProductType": {
+          "id": "ACCOUNT",
+          "scope": "OWN",
+          "isSimulationAllowed": false,
+          "conditions": [{
+              "id": "currency",
+              "values": ["MXN"]
+            },
+            {
+              "id": "accountFamily",
+              "values": ["COMMON"]
+            }
+          ]
+        },
+        "destinationProductTypes": [{
+          "id": "CARD",
+          "scope": "OWN",
+          "isSimulationAllowed": true,
+          "conditions": [
+            {
+              "id": "cardType",
+              "values": ["CREDIT_CARD"]
+            }
+          ]
+        }],
+        "conditions": []
+      },
+      {
+        "originProductType": {
+          "id": "CARD",
+          "scope": "OWN",
+          "isSimulationAllowed": true,
+          "conditions": [{
+              "id": "status",
+              "values": ["OPERATIVE"]
+            },
+            {
+              "id": "cardType",
+              "values": ["CREDIT_CARD"]
+            }
+          ]
+        },
+        "destinationProductTypes": [{
+          "id": "CARD",
+          "scope": "OWN",
+          "isSimulationAllowed": true,
+          "conditions": [
+            {
+              "id": "cardType",
+              "values": ["CREDIT_CARD"]
+            }
+          ]
+        }],
+        "conditions": []
+      }
+    ]
+  }
+]

@@ -1,0 +1,40 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: a77815df-63cc-4326-9e70-1e6946cb9136
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: oc_car_loan_universal
+    lock: 'false'
+then:
+- return:
+    :body:
+    - data:
+        locale: es_mx
+        tags:
+        - oc_car_loan_universal
+        authentication:
+          password: Glomo2025
+          user: '8116915568'
+          deviceId: EC1EB8DEEC0E72E90D731F9857D5C54E
+      id: 36315524
+      lockType: SHARED
+      lockExpiration: '2026-01-09T18:19:08.882341Z'
+    :headers:
+      Server: nginx
+      Cache-Control: max-age=0
+      Connection: keep-alive
+      host: datamanager.globaldevtools.bbva.com
+      Expires: Fri, 09 Jan 2026 18:18:56 GMT
+      Content-Length: '251'
+      Date: Fri, 09 Jan 2026 18:18:56 GMT
+      Content-Type: application/json; charset=utf-8
+    :status: 200 OK

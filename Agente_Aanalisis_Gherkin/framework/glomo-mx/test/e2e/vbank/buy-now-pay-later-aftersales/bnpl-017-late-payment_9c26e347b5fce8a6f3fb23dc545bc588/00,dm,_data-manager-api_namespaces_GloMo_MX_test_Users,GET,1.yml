@@ -1,0 +1,59 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: ff5ff858-1244-4834-bd8a-3c8ec69bde39
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: aftersales,single_product,late_payment
+    lock: 'false'
+then:
+- return:
+    :body:
+    - data:
+        locale: es_mx
+        tags:
+        - '3321994995'
+        - aftersales
+        - single_product
+        - late_payment
+        products:
+          cards:
+          - number: '4152313984953013'
+            cardId: 9YK9GXzCWZ-9YK9GXzCWZ8txJwIihxqSvNTLO1on7Vy
+            cardType:
+              id: DEBIT_CARD
+            alias: 0001AH6487
+            id: 9YK9GXzCWZ-9YK9GXzCWZ8txJwIihxqSvNTLO1on7Vy
+            title:
+              name: Cuenta de Ahorro
+              id: AH
+            status:
+              id: OPERATIVE
+          relatedContracts:
+          - provision: Lhb0SJxB90FbJ7O4Lv76AMD9sfotnIyJ
+            account: MX007400749200000149
+        authentication:
+          password: Glomo2025
+          user: '8342723582'
+          deviceId: BA68EC0600F11B0C9C94B5E2B15FEDF6
+      lockType: null
+      lockExpiration: null
+      id: 36108840
+    :headers:
+      content-length: '683'
+      Cache-Control: max-age=0
+      Connection: keep-alive
+      host: datamanager.globaldevtools.bbva.com
+      Vary: Accept-Encoding
+      Expires: Tue, 22 Apr 2025 18:53:21 GMT
+      Date: Tue, 22 Apr 2025 18:53:21 GMT
+      Content-Type: application/json; charset=utf-8
+    :status: 200 OK

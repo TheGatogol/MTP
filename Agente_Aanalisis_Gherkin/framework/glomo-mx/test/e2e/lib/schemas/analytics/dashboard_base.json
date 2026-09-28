@@ -1,0 +1,63 @@
+{
+    "$id": "analytics/dashboard_base",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Analyticis object on Dashboard page",
+    "type": "object",
+    "required": [
+        "user"
+    ],
+    "properties": {
+        "page": {
+            "type": "object",
+            "required": [
+                "pageActivity"
+            ],
+            "properties": {
+                "pageActivity": {
+                    "properties": {
+                        "page": {
+                            "type": "object",
+                            "required": [
+                                "loginType"
+                            ],
+                            "properties": {
+                                "loginType": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "user": {
+            "required": [
+                "gender",
+                "IDs",
+                "userState"
+            ],
+            "properties": {
+                "gender": {
+                    "type": "string"
+                },
+                "IDs": {
+                    "type": "array",
+                    "items": {
+                        "required": [
+                            "profileID"
+                        ],
+                        "properties": {
+                            "profileID": {
+                                "type": "string",
+                                "pattern": "^[a-zA-Z0-9]{8,}$"
+                            }
+                        }
+                    }
+                },
+                "userState": {
+                    "type": "string"
+                }
+            }
+        }
+    }
+}

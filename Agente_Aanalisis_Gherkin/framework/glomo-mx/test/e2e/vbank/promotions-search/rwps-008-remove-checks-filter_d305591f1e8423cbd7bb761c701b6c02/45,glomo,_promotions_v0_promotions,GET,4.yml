@@ -1,0 +1,540 @@
+when:
+  sequence: 4
+  path: /SRVS_A02/promotions/v0/promotions
+  method: GET
+  backend: glomo
+request:
+  headers:
+    sec-fetch-mode: cors
+    content-length: '0'
+    referer: http://localhost:8001/
+    sec-fetch-site: same-site
+    accept-language: es-MX,es;q=0.9
+    origin: http://localhost:8001
+    tsec: 8806b386219d72610e52f5af90e7c9f42e858efd
+    accept: application/json, text/html, */*; q=0.1
+    sec-ch-ua: '"Not.A/Brand";v="8", "Chromium";v="114", "Google Chrome";v="114"'
+    sec-ch-ua-mobile: ?0
+    x-vbank-session: ef656ca1-c45a-4755-998d-093a55c54dd8
+    sec-ch-ua-platform: '"macOS"'
+    host: localhost:9000
+    content-type: application/json
+    connection: keep-alive
+    cache-control: no-cache, no-store, must-revalidate
+    accept-encoding: gzip, deflate, br
+    sec-fetch-dest: empty
+    user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36
+      (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+  query:
+    promotionType.id: in=(RATE,FIXED,GIFT,CASHBACK,OTHERS)
+    title.id: in=(AV,V5,AP,AC,V4,AR,UM,PN,V1,XA,AG)
+then:
+- return:
+    pagination:
+      totalPages: 3
+      pageSize: 15
+      links:
+        next: http://artichoke.platform.bbva.com/promotions/v0/promotions?promotionType.id=in%3D(RATE%2CFIXED%2CGIFT%2CCASHBACK%2COTHERS)&title.id=in%3D(AV%2CV5%2CAP%2CAC%2CV4%2CAR%2CUM%2CPN%2CV1%2CXA%2CAG)&paginationKey=29000088
+        last: http://artichoke.platform.bbva.com/promotions/v0/promotions?promotionType.id=in%3D(RATE%2CFIXED%2CGIFT%2CCASHBACK%2COTHERS)&title.id=in%3D(AV%2CV5%2CAP%2CAC%2CV4%2CAR%2CUM%2CPN%2CV1%2CXA%2CAG)&paginationKey=20000070
+        first: http://artichoke.platform.bbva.com/promotions/v0/promotions?promotionType.id=in%3D(RATE%2CFIXED%2CGIFT%2CCASHBACK%2COTHERS)&title.id=in%3D(AV%2CV5%2CAP%2CAC%2CV4%2CAR%2CUM%2CPN%2CV1%2CXA%2CAG)&paginationKey=WA_0008
+      page: 0
+      totalElements: 38
+    data:
+    - promotionType:
+        name: Descuento
+        id: FIXED
+      images:
+      - name: DETAIL_Rosen_12PSI
+        id: DETAIL
+        url: https://vidabbvamx-prod-commerce-images.s3-us-west-2.amazonaws.com/fotos/58.jpg
+      - name: LIST_Rosen_12PSI
+        id: LIST
+        url: https://vidabbvamx-prod-commerce-images.s3-us-west-2.amazonaws.com/logos/58.jpg
+      - name: PUSH_Rosen_12PSI
+        id: PUSH
+        url: http://imagenes.ubicanosbbvacontinental.com/promociones/2017-07-06/rosen.jpg
+      endDate: '2028-05-25'
+      fixedDiscount:
+        currency: ''
+      usageTypes:
+      - name: Physical
+        id: PHYSICAL
+      - name: Online
+        id: ONLINE
+      rateDiscount: 0
+      benefit: 0% interes hasta 12 meses
+      name: Todo Rosen hasta 12 pagos sin intereses
+      id: WA_0008
+      commerceInformation:
+        web: www.rosen.com.pe
+        name: Rosen
+        description: Empresa de fabricación y comercialización de artículos y accesorios
+          para el descanso.
+        logo:
+          name: LOGO_Rosen
+          id: WA_0008_LOGO
+          url: http://imagenes.ubicanosbbvacontinental.com/promociones/2017-05-12/LOGO_Rosen.png
+      categories:
+      - name: Auto
+        id: AUTO
+      - name: Otros
+        id: OTHER
+      legalConditions:
+        text: 'Promoción válida en todos los restaurantes. Aplica solo lunes, martes
+          y domingo. Consulta los restaurantes en www.astoria.mx Información y reservas
+          en: 52262663. Horarios: lunes y martes 13:15 a 16:00 y 19:30 a 22:30 y los
+          domingos 13:15 a 17:00. Participan todas las Tarjetas de Crédito Bancomer
+          que cuentan con el programa Vida Bancomer Puntos.'
+        url: ' https://www.bbva.mx/content/dam/public-web/mexico/documents/landing/TyC_BF_2022.pdf'
+      startDate: '2018-03-08'
+    - trending:
+        name: Suggested
+        id: SUGGESTED
+      promotionType:
+        name: Regalo
+        id: GIFT
+      images:
+      - name: DETAIL_Cassinelli_12PSI
+        id: DETAIL
+        url: https://vidabbvamx-prod-commerce-images.s3-us-west-2.amazonaws.com/fotos/2224.jpg
+      - name: LIST_Cassinelli_12PSI
+        id: LIST
+        url: https://vidabbvamx-prod-commerce-images.s3-us-west-2.amazonaws.com/logos/home_depot.jpg
+      - name: PUSH_Cassinelli_12PSI
+        id: PUSH
+        url: http://imagenes.ubicanosbbvacontinental.com/promociones/2017-07-06/Cassinelli.jpg
+      endDate: '2019-10-02'
+      fixedDiscount:
+        currency: ''
+      usageTypes:
+      - name: Sólo aplica en tiendas físicas
+        id: PHYSICAL
+      rateDiscount: 0
+      benefit: 0% interes hasta 12 meses
+      name: Todo Cassinelli hasta 12 pagos sin intereses
+      id: WA_0007
+      commerceInformation:
+        web: http://www.cassinelli.com/
+        name: Cassinelli
+        description: Tienda de acabados para la construcción.
+        logo:
+          name: LOGO_Cassinelli
+          id: WA_0007_LOGO
+          url: http://imagenes.ubicanosbbvacontinental.com/promociones/2017-05-12/LOGO_Cassinelli.png
+      categories:
+      - name: Auto
+        id: AUTO
+      - name: Compras
+        id: SHOPPING
+      startDate: '2017-05-15'
+    - promotionType:
+        name: Descuento
+        id: RATE
+      images:
+      - name: Logo
+        id: LIST
+        url: https://vidabbvamx-prod-commerce-images.s3-us-west-2.amazonaws.com/logos/58.jpg
+      - name: Detalle
+        id: DETAIL
+        url: https://vidabbvamx-prod-commerce-images.s3-us-west-2.amazonaws.com/fotos/58.jpg
+      endDate: '2028-11-25'
+      name: Ramo de rosas Grandiflora para la novia perfecta
+      id: '29000080'
+      commerceInformation:
+        web: https://www.bbva.com/es/
+        name: RAMOS MO’S
+        description: Ramo de rosas Grandiflora para la novia perfecta
+      categories:
+      - name: Florerías
+        id: FLOWER_SHOP
+      usageTypes:
+      - name: Presencial
+        id: PHYSICAL
+      startDate: '2018-09-25'
+      benefit: -40%
+    - trending:
+        name: Sugeridas
+        id: SUGGESTED
+      promotionType:
+        name: Descuento
+        id: RATE
+      images:
+      - name: Logo
+        id: LIST
+        url: https://vidabbvamx-prod-commerce-images.s3-us-west-2.amazonaws.com/logos/liverpool.jpg
+      endDate: '2029-11-28'
+      name: Hasta 15% en Mondero Electrónico ó 13 Meses Sin Intereses en Liverpool
+      id: '20000054'
+      commerceInformation:
+        web: http://www.liverpool.com.mx
+        name: Liverpool
+        description: Liverpool es una empresa mexicana que opera tiendas departamentales
+          enfocadas al consumidor de ingreso medio y alto, y que tiene su sede en
+          la Ciudad de México
+      categories:
+      - name: Departamentales
+        id: SHOPPING
+      - name: Online
+        id: ECOMMERCE
+      usageTypes:
+      - name: Presencial
+        id: PHYSICAL
+      - name: Online
+        id: ONLINE
+      startDate: '2019-01-28'
+      benefit: -15%
+    - promotionType:
+        name: Descuento
+        id: RATE
+      images:
+      - name: Logo
+        id: LIST
+        url: https://vidabbvamx-prod-commerce-images.s3-us-west-2.amazonaws.com/logos/liverpool.jpg
+      endDate: '2029-11-28'
+      name: Hasta 15% en Mondero Electrónico ó 13 Meses Sin Intereses en Liverpool
+      id: '20000054'
+      commerceInformation:
+        web: http://www.liverpool.com.mx
+        name: Liverpool
+        description: Liverpool es una empresa mexicana que opera tiendas departamentales
+          enfocadas al consumidor de ingreso medio y alto, y que tiene su sede en
+          la Ciudad de México
+      categories:
+      - name: Departamentales
+        id: SHOPPING
+      - name: Online
+        id: ECOMMERCE
+      usageTypes:
+      - name: Presencial
+        id: PHYSICAL
+      - name: Online
+        id: ONLINE
+      startDate: '2018-11-28'
+      benefit: -15%
+    - promotionType:
+        name: Descuento
+        id: RATE
+      images:
+      - name: Logo
+        id: LIST
+        url: https://vidabbvamx-prod-commerce-images.s3-us-west-2.amazonaws.com/logos/58.jpg
+      - name: Detalle
+        id: DETAIL
+        url: https://vidabbvamx-prod-commerce-images.s3-us-west-2.amazonaws.com/fotos/58.jpg
+      endDate: '2028-12-02'
+      name: Flores para bodas, bautizos, comuniones o eventos. 2500 Liatris entrega
+        gratuita
+      id: '29000089'
+      commerceInformation:
+        web: https://www.bbva.com/es/
+        name: FLORIN
+        description: Flores para bodas, bautizos, comuniones o eventos. 2500 Liatris
+          entrega gratuita
+      categories:
+      - name: Florerías
+        id: FLOWER_SHOP
+      usageTypes:
+      - name: Presencial
+        id: PHYSICAL
+      startDate: '2018-10-25'
+      benefit: -55%
+    - promotionType:
+        name: Descuento
+        id: RATE
+      images:
+      - name: Logo
+        id: LIST
+        url: https://vidabbvamx-prod-commerce-images.s3-us-west-2.amazonaws.com/logos/58.jpg
+      - name: Detalle
+        id: DETAIL
+        url: https://vidabbvamx-prod-commerce-images.s3-us-west-2.amazonaws.com/fotos/58.jpg
+      endDate: '2028-10-21'
+      name: Escapada romántica a Atenas e Islas Griegas en crucero de 9 días y 8
+        noches
+      id: '29000076'
+      commerceInformation:
+        web: https://www.bbva.com/es/
+        name: TRAVEL WORLD
+        description: Escapada romántica a Atenas e Islas Griegas en crucero de 9
+          días y 8 noches
+      categories:
+      - name: Viajes y hoteles
+        id: TRAVEL
+      usageTypes:
+      - name: Presencial
+        id: PHYSICAL
+      startDate: '2018-09-15'
+      benefit: -30%
+    - trending:
+        name: Sugeridas
+        id: SUGGESTED
+      promotionType:
+        name: Descuento
+        id: RATE
+      images:
+      - name: Logo
+        id: LIST
+        url: https://vidabbvamx-prod-commerce-images.s3-us-west-2.amazonaws.com/logos/best_day.jpg
+      - name: Detalle
+        id: DETAIL
+        url: https://vidabbvamx-prod-commerce-images.s3-us-west-2.amazonaws.com/fotos/10742.jpg
+      endDate: '2029-12-31'
+      name: En BestDay obtén aprovecha hasta 65% de descuento en hoteles
+      id: '20000045'
+      commerceInformation:
+        web: https://www.bestday.com.mx/
+        name: Best Day
+        description: Best Day o Best Day Travel Group es el corporativo de las agencias
+          de viajes receptiva y en línea más importantes de México y una de las principales
+          en Latinoamérica.
+      categories:
+      - name: Servicios
+        id: SERVICES
+      usageTypes:
+      - name: Online
+        id: ONLINE
+      startDate: '2019-02-01'
+      benefit: 65% Descuento
+    - promotionType:
+        name: Descuento
+        id: RATE
+      images:
+      - name: Logo
+        id: LIST
+        url: https://vidabbvamx-prod-commerce-images.s3-us-west-2.amazonaws.com/logos/best_day.jpg
+      - name: Detalle
+        id: DETAIL
+        url: https://vidabbvamx-prod-commerce-images.s3-us-west-2.amazonaws.com/fotos/10742.jpg
+      endDate: '2029-12-31'
+      name: En BestDay obtén aprovecha hasta 65% de descuento en hoteles
+      id: '20000045'
+      commerceInformation:
+        web: https://www.bestday.com.mx/
+        name: Best Day
+        description: Best Day o Best Day Travel Group es el corporativo de las agencias
+          de viajes receptiva y en línea más importantes de México y una de las principales
+          en Latinoamérica.
+      categories:
+      - name: Servicios
+        id: SERVICES
+      usageTypes:
+      - name: Online
+        id: ONLINE
+      startDate: '2019-02-01'
+      benefit: 65% Descuento
+    - promotionType:
+        name: Descuento
+        id: RATE
+      images:
+      - name: Logo
+        id: LIST
+        url: https://vidabbvamx-prod-commerce-images.s3-us-west-2.amazonaws.com/logos/58.jpg
+      - name: Detalle
+        id: DETAIL
+        url: https://vidabbvamx-prod-commerce-images.s3-us-west-2.amazonaws.com/fotos/58.jpg
+      endDate: '2028-11-01'
+      name: Dos helados artesanales de fruta natural
+      id: '28000076'
+      commerceInformation:
+        web: https://www.bbva.com/es/
+        name: HELADERIA ARTI
+        description: Dos helados artesanales de fruta natural
+      categories:
+      - name: Restaurante
+        id: RESTAURANTS
+      usageTypes:
+      - name: Presencial
+        id: PHYSICAL
+      startDate: '2018-07-01'
+      benefit: 2x1
+    - trending:
+        name: Hot
+        id: HOT
+      promotionType:
+        name: Regalo
+        id: GIFT
+      images:
+      - name: DETAIL_UVK_Basadre
+        id: DETAIL
+        url: https://vidabbvamx-prod-commerce-images.s3-us-west-2.amazonaws.com/fotos/2224.jpg
+      - name: LIST_UVK_Basadre
+        id: LIST
+        url: https://vidabbvamx-prod-commerce-images.s3-us-west-2.amazonaws.com/logos/home_depot.jpg
+      - name: PUSH_UVK_Basadre
+        id: PUSH
+        url: http://imagenes.ubicanosbbvacontinental.com/promociones/2017-07-06/UVK.jpg
+      endDate: '2029-10-04'
+      fixedDiscount:
+        currency: CLP
+      usageTypes:
+      - name: Aplica para crédito y débito
+        id: PHYSICAL
+      rateDiscount: 0
+      benefit: Descuentos
+      name: Disfruta hoy de las mejores películas al mejor precio en UVK Basadre 1
+      id: WA_0011
+      commerceInformation:
+        web: http://www.uvkmulticines.com/multicines/cine/UVK-PLATiNO-BASADRE-
+        name: UVK Basadre
+        description: Cadena de Cines
+        logo:
+          name: LOGO_UVK_Basadre
+          id: WA_0011_LOGO
+          url: http://imagenes.ubicanosbbvacontinental.com/promociones/2017-05-29/LOGO_UVK_Basadre.png
+      categories:
+      - name: Hobbies
+        id: HOBBIES
+      startDate: '2017-04-01'
+    - promotionType:
+        name: Descuento
+        id: GIFT
+      images:
+      - name: Logo
+        id: LIST
+        url: https://vidabbvamx-prod-commerce-images.s3-us-west-2.amazonaws.com/logos/home_depot.jpg
+      endDate: '2029-11-01'
+      name: Disfruta de la magia del cine obtén 2x1 en Cinemex de lunes a domingo
+      id: '20000043'
+      commerceInformation:
+        web: https://www.cinemex.com.mx
+        name: Cinemex
+        description: Cinemex es una empresa mexicana dedicada al desarrollo y operación
+          de complejos múltiples de exhibición cinematográfica surgida en 1988.
+      categories:
+      - name: Entretenimiento
+        id: HOBBIES
+      - name: Online
+        id: ECOMMERCE
+      usageTypes:
+      - name: Presencial
+        id: PHYSICAL
+      - name: Online
+        id: ONLINE
+      startDate: '2019-01-16'
+      benefit: Entradas 2x1
+    - trending:
+        name: Destacadas
+        id: HOT
+      promotionType:
+        name: Descuento
+        id: GIFT
+      images:
+      - name: Logo
+        id: LIST
+        url: https://vidabbvamx-prod-commerce-images.s3-us-west-2.amazonaws.com/logos/home_depot.jpg
+      endDate: '2029-12-01'
+      name: Disfruta de la magia del cine obtén 2x1 en Cinemex de lunes a domingo
+      id: '20000043'
+      commerceInformation:
+        web: https://www.cinemex.com.mx
+        name: Cinemex
+        description: Cinemex es una empresa mexicana dedicada al desarrollo y operación
+          de complejos múltiples de exhibición cinematográfica surgida en 1988.
+      categories:
+      - name: Entretenimiento
+        id: HOBBIES
+      - name: Online
+        id: ECOMMERCE
+      usageTypes:
+      - name: Presencial
+        id: PHYSICAL
+      - name: Online
+        id: ONLINE
+      startDate: '2019-01-16'
+      benefit: Entradas 2x1
+    - promotionType:
+        name: Entrada a S/ 8.00
+        id: CASHBACK
+      images:
+      - name: DETAIL_CINEPLANET
+        id: DETAIL
+        url: https://vidabbvamx-prod-commerce-images.s3-us-west-2.amazonaws.com/fotos/58.jpg
+      - name: LIST_CINEPLANET
+        id: LIST
+        url: https://vidabbvamx-prod-commerce-images.s3-us-west-2.amazonaws.com/logos/58.jpg
+      - name: PUSH_CINEPLANET
+        id: PUSH
+        url: http://imagenes.ubicanosbbvacontinental.com/promociones/2017-07-17/PUSH_Cinaplanet.png
+      endDate: '2028-08-01'
+      name: Con BBVA Wallet tu entrada a buen precio
+      fixedDiscount:
+        currency: ''
+      id: WA_0002
+      commerceInformation:
+        web: www.cineplanet.com.pe
+        name: Cineplanet
+        description: Entretenimiento
+        logo:
+          name: LOGO_CINEPLANET
+          id: WA_0002_LOGO
+          url: http://imagenes.ubicanosbbvacontinental.com/promociones/2017-07-17/LIST_CINEPLANET.png
+      categories:
+      - name: Actividades
+        id: ACTIVITIES
+      usageTypes:
+      - name: Aplica para crédito y débito
+        id: PHYSICAL
+      rateDiscount: 0
+      startDate: '2021-07-20'
+      benefit: Descuento
+    - promotionType:
+        name: Descuento
+        id: RATE
+      images:
+      - name: DETAIL_SAMS
+        id: DETAIL
+        url: https://vidabbvamx-prod-commerce-images.s3-us-west-2.amazonaws.com/fotos/1402.jpg
+      - name: Logo
+        id: LIST
+        url: https://vidabbvamx-prod-commerce-images.s3-us-west-2.amazonaws.com/logos/sam's_club.jpg
+      endDate: '2029-12-31'
+      name: Compra en Sam's Club y recibe un 2.25% de ahorro directo
+      id: '20000040'
+      commerceInformation:
+        web: https://www.sams.com.mx
+        name: Sam's Club
+        description: Sam's Club es una cadena estadounidense de tiendas de venta al
+          por mayor, que opera mediante clientes miembros de su club de precios.
+      categories:
+      - name: Supermercados
+        id: SUPERMARKET
+      - name: Online
+        id: ECOMMERCE
+      legalConditions:
+        text: 'Promoción válida en todos los restaurantes. Aplica solo lunes, martes
+          y domingo. Consulta los restaurantes en www.astoria.mx Información y reservas
+          en: 52262663. Horarios: lunes y martes 13:15 a 16:00 y 19:30 a 22:30 y los
+          domingos 13:15 a 17:00. Participan todas las Tarjetas de Crédito Bancomer
+          que cuentan con el programa Vida Bancomer Puntos.'
+        url: ' https://www.bbva.mx/content/dam/public-web/mexico/documents/landing/TyC_BF_2022.pdf'
+      usageTypes:
+      - name: Online
+        id: ONLINE
+      - name: Physical
+        id: PHYSICAL
+      startDate: '2018-11-16'
+      benefit: 2.25% Descuento
+    :headers:
+      content-length: '21633'
+      Server: artichoke
+      Alt-Svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      access-control-allow-headers: Content-Type, tsec, authenticationtype, authenticationdata,
+        authenticationstate, contactid, consumeruuid, consumerapplicationid, perimetertsec,
+        authorization, responsewarningcode, responsewarningdescription, cuf, field,
+        bcs-device-app-version, bcs-device-app-version, vnd.bbva.authorization
+      tsec: 8806b386219d72610e52f5af90e7c9f42e858efd
+      X-Response-Time: 507ms
+      Date: Fri, 21 Jul 2023 12:35:29 GMT
+      Via: 1.1 google
+      access-control-allow-origin: '*'
+      Access-Control-Expose-Headers: tsec, vnd.bbva.access-token-type,vnd.bbva.access-token,
+        vnd.bbva.sso-pkcs7, authenticationtype, authenticationdata, authenticationstate,
+        authenticationchallenge
+      Cache-Control: private, no-store
+      content-type: application/json;charset=UTF-8
+      Vary: Accept-Encoding
+    :status: 200 OK
+    apiInfo:
+      name: promotions
+      category: enterprises
+      version: 0.1.0

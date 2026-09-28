@@ -1,0 +1,59 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: a1f487ac-a687-4405-9c26-cecd4903ee56
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: mortgage_credit_payment
+    lock: 'false'
+then:
+- return:
+    :body:
+    - data:
+        locale: es_mx
+        amountReceipt: '4783.71'
+        tags:
+        - '5520293563'
+        - mortgage_credit_payment
+        products:
+        - accountId:
+          - vsm:
+            - id: PR5594 - 00740001009663465594
+            mxn:
+            - id: PR3776 - 00740632009851083776
+            udi:
+            - id: PR2458 - 00740025009682492458
+          accounts:
+          - number: '00740632009851083776'
+            alias: PR3776
+            id: QtKrWfyozUPFFIpYTcDvz80nBchowIq3
+          - number: '00740025009682492458'
+            alias: PR2458
+          - number: '00740001009663465594'
+            alias: PR5594
+        authentication:
+          password: Glomo2401
+          user: '5520293563'
+          deviceId: 561C89695F6848A2EDAB6F14B2049C27
+      lockExpiration: null
+      lockType: null
+      id: 35667889
+    :headers:
+      content-length: '638'
+      Strict-Transport-Security: max-age=15768000
+      Server: nginx
+      ECS-Entry-Point-Zone: ext
+      Connection: keep-alive
+      host: datamanager.globaldevtools.bbva.com
+      Vary: Accept-Encoding
+      Date: Thu, 28 Dec 2023 23:42:36 GMT
+      Content-Type: application/json
+    :status: 200 OK

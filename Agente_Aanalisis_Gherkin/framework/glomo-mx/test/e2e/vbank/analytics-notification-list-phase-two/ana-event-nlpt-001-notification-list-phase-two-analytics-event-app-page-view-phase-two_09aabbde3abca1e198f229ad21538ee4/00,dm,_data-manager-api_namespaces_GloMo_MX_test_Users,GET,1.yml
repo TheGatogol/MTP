@@ -1,0 +1,43 @@
+when:
+  sequence: 1
+  path: /data-manager-api/namespaces/GloMo_MX_test_Users
+  method: GET
+  backend: dm
+request:
+  headers:
+    authorization: Basic Ym90LWdhbGF0ZWEtcGU6Y2VhZDlmMjctYjU4Zi00MDkzLTg2NzgtYThlMjZmOGIwMjE4
+    content-length: '0'
+    x-vbank-session: dc1cb6f0-6a6f-4b55-9d87-61fdaff64b9f
+    host: localhost:9999
+    connection: keep-alive
+    accept: application/json
+  query:
+    tags[]: notifications_list_phase_2
+    lock: 'false'
+then:
+- return:
+    :body:
+    - data:
+        text:
+          title: BBVA te llamará pronto
+        locale: es_mx
+        tags:
+        - notifications_list_phase_2
+        authentication:
+          password: Glomo2023
+          user: '7721052875'
+          deviceId: A00F1D83C0C89B93BDC29A58B82141F9
+      id: 35681564
+      lockType: null
+      lockExpiration: null
+    :headers:
+      content-length: '283'
+      Strict-Transport-Security: max-age=15768000
+      Server: nginx
+      ECS-Entry-Point-Zone: ext
+      Connection: keep-alive
+      host: datamanager.globaldevtools.bbva.com
+      Vary: Accept-Encoding
+      Date: Mon, 01 Apr 2024 22:06:50 GMT
+      Content-Type: application/json
+    :status: 200 OK

@@ -1,0 +1,585 @@
+when:
+  sequence: 4
+  path: /SRVS_A02/personal-finances/v2/balances-search
+  method: POST
+  backend: glomo
+request:
+  headers:
+    sec-fetch-mode: cors
+    referer: http://localhost:8001/
+    content-length: '126'
+    sec-fetch-site: same-site
+    accept-language: es-MX
+    origin: http://localhost:8001
+    tsec: ZXlKaFlYQWlPaUl4TURBd01ERTROeUlzSW10bGVWWmxjbk5wYjI0aU9qRXNJbUZ3Y0Vsa0lqb2lRVkJRTVNJc0ltdHBaQ0k2SWtGUVVERXViRzlqWVd3dU1TSXNJbVZ1WXlJNklrRXhPVEpIUTAwaUxDSnJaWGxVZVhCbElqb2liRzlqWVd3aUxDSmhiR2NpT2lKa2FYSWlMQ0owYzJWalNXUWlPaUppTmpObU5HVXdZaTA0T0RWaExUUmlNakl0T1Rrd05DMDRPRFJsTW1NNU1qZGxNbUVpZlEuLnJuMEZDem5nN1dseE5IaXAuQkJyZEdaeDExTGRNSUFlOGpnc1NZd3BCX3BLdWp6a1drX01aS0FocmRqZFMtVm5fZVc3aVIxSVpRbG5GWlAzcEhvTkprYXFuYlJHYy1CY05BT1h2R2JiVm9iODVYRnVQT1dQazcyTWJsMzNTbk9qemJZX1k5Qy1mMWszdUxGYnh0aksxeDZvU1d0dXB6c0lQUnBvMm5yRDdBWXdyNnVQNFFvU3pYRjA3RDVaR3dmZnN4UEtoNFlzQjRlcDlMWlVkaVI1YTJvdVhfTXRkNnk4SXBFbEw1dHp2SFA4QXFSc1RjNUxiMG83Z2xiWVJjWlJaZzU2VHJmMGhBa0s1NWNaZTRGVGx2NVY3Z2pBSUxGeXBnRmRldEFZdktLUlY3OXZiOW1TTGt0MnU3Z0xiV0JsNlRrMFlfWVp3cHhEZWNVMGxFLVpSWVpZanNyUmttaFpxRGx4VVJxTE1iNHRZZVItUjZlLTdDdzVURjdFQlQ2R01ZNjZUSWN4aHJyb09mOC03cmlYY1VyMlN4cmVxc01wdE84ZlFSUUxDcXdzbWVQbE9qQVZBMkxJWG1aRWttejhrQl93ME0tdW9ERmRicVctTTNfbklfVnJnTkxVTUsxX0tNemFocHJuUXQzX2Z6Ui1IbVIzaThUeXRrMzJ4clhJU2MtRW41QzlyTFZENmhSdXo3VnNlX0FjazZQWkhpd0NKbTFSVDNvUTVBd1oxZVh1XzdaN0JYSjJTdkZiQkQ1dVJLXzk1YjZLVHpUcXdJNE4zaldma1AwWDFZbl9uNmxjaGpoRDFGcjV4aWVhSU10MnFfMDk2RWRQWGJsZjR0VG9jSDd6Ull5YWM4amdvNEpHa3ZQcGJaV1gtU0UwQXpMakt6UldnTEZKcl9tdXB0Vm9sWFpZak1mOXlfQ1VZQXhINXJTUm1Xc0V3OGhKXzBTVEFMUHdjbUdkY01fNkpjd1FuYUlmWWJ4dlBJVG9WOXFfYTRlWk45MFc1UF9GVXZrWTk2cmJvWS1TSTZlVldRbUU5MGJuWjdYSlpYU29nVTNET2JmTVZqcHVTQ1RtTGpYZURjcXE2ZHFkUjh2ZEJUd2J0Umt2S2ZiMS0zZmlNaTdFb2pQaWR3S1lNRXdWNDMxeWRqc3U3Q0NHZEZNTE8xSHlxaTQtNDM0LS1fMmJ2Wm1sN2JjS0RHcEE3bFJ2T0gxTG40bm9HdjdreGY1VThfVnNfenJJWXV2NlRSUnJZZG9GNHNoWGpDa1ZhME9tajdGV3gyejZyZHpNN1JQRDVsblJvdkkyNFZoRXk3MTFkWjAxRXdhQ2dQZ2dQZTRuN2NLOTJRS0NMWDJGS0tpb3dJYnE0RkxBWjg5OHByQUc4a1NpaHVyMm1HVnVoOHVPdXRtTWR5dHZuWkR1ekJTb2Fzcy1RdUtyNl9pRXRGTjJrRFNBZ2o4UmVKa2x5Tm9ORXNMWXVmRVBmWWN5dVhQNXdoWk5WNnF4MXVuSXhrQlhrcVQybG45WFR3RjdrVk5BbEIyc2dwMlhaaHZBNkYtR0NibUdGSE5BTm9uanNZcEN1a2xNa29OZ1lpaHNCNXhBQ0dCTGRaUzF6dnBSTmpQaktJeGQ5c1MzNFBGLUxncVBIbUppYV9wSm1BR09Jd051V0MwNUtIalFwUWktRXR3anFwRXMxZHNyb3hNNVVBV2pUaVEzeDdmSk15VEdqNVVldjRSSUFTVGlNV1dBbVhHaDFBd1U5bjBha01zLTJtZWNyRmRMVnBTUEZNRF90SlhSUnFxY29nMy1sLV9vQzBqN2kyQl9GczlUM2MtTlJ6Z3V4blRUOGk0Q0FNb3FLNklaX3ZjTmhWbGhYaWJOcTR0aEs5NmY1eE1vblVMRjl3NlA1Q0RTSllNZUlscXhEd0VTWVo0TTNUQ3pQM2JFWHpyYzd2YkczREh5R3BnS19vMG5PS3pwRWY5R0ltM3F5Qm1UZ1Mxay1NbGhVblFoemdGSnlZcG9wLUdGY1lFNDV0cmJ4T0pUWmwwcUM1Um5HSXI4LlhXeGUtWDBkWnI3ZjRtQW5mY3Y3WWc=
+    accept: application/json, text/html, */*; q=0.1
+    sec-ch-ua: '"Chromium";v="140", "Not=A?Brand";v="24", "Google Chrome";v="140"'
+    sec-ch-ua-mobile: ?0
+    x-vbank-session: 7b5ed194-9195-4165-a9cd-9042cce24d2d
+    sec-ch-ua-platform: '"macOS"'
+    host: localhost:9000
+    content-type: application/json
+    connection: keep-alive
+    cache-control: no-cache, no-store, must-revalidate
+    accept-encoding: gzip, deflate, br, zstd
+    sec-fetch-dest: empty
+    user-agent: GLOMO_MX/99.99.99 (Android;14;Samsung)
+  body:
+    frequencyId: ONE_TIME
+    periodStartDate: '2025-08-20T00:00:00.000Z'
+    pfmId: '1'
+    periodEndDate: '2025-09-19T23:59:59.999Z'
+then:
+- return:
+    data:
+      totalTransactions: 34
+      balances:
+      - totalTransactions: 34
+        period:
+          endDate: 2025-09-04T23:59:59.999-0600
+          startDate: 2025-08-20T00:00:00.000-0600
+        groups:
+        - totalTransactions: 12
+          totalAmount:
+            amount: 64750.63
+            currency: MXN
+          amounts:
+          - amount: 0.0
+            pfmTransactionType: CREDIT_MOVEMENTS
+            currency: MXN
+          - amount: 64750.63
+            pfmTransactionType: DEBIT_MOVEMENTS
+            currency: MXN
+          name: Ingresos
+          averages:
+          - amount: 0.0
+            pfmTransactionType: CREDIT_MOVEMENTS
+            currency: MXN
+          - amount: 5395.89
+            pfmTransactionType: DEBIT_MOVEMENTS
+            currency: MXN
+          id: '1'
+          categories:
+          - totalTransactions: 7
+            image:
+              id: taxes
+            totalAmount:
+              amount: 37411.09
+              currency: MXN
+            amounts:
+            - amount: 0.0
+              pfmTransactionType: CREDIT_MOVEMENTS
+              currency: MXN
+            - amount: 37411.09
+              pfmTransactionType: DEBIT_MOVEMENTS
+              currency: MXN
+            name: Trabajo
+            averages:
+            - amount: 0.0
+              pfmTransactionType: CREDIT_MOVEMENTS
+              currency: MXN
+            - amount: 5344.44
+              pfmTransactionType: DEBIT_MOVEMENTS
+              currency: MXN
+            id: '101'
+            subcategories:
+            - totalTransactions: 7
+              image:
+                id: taxes
+              totalAmount:
+                amount: 37411.09
+                currency: MXN
+              amounts:
+              - amount: 0.0
+                pfmTransactionType: CREDIT_MOVEMENTS
+                currency: MXN
+              - amount: 37411.09
+                pfmTransactionType: DEBIT_MOVEMENTS
+                currency: MXN
+              name: Nómina
+              averages:
+              - amount: 0.0
+                pfmTransactionType: CREDIT_MOVEMENTS
+                currency: MXN
+              - amount: 5344.44
+                pfmTransactionType: DEBIT_MOVEMENTS
+                currency: MXN
+              id: '10101'
+          - totalTransactions: 5
+            image:
+              id: check
+            totalAmount:
+              amount: 27339.54
+              currency: MXN
+            amounts:
+            - amount: 0.0
+              pfmTransactionType: CREDIT_MOVEMENTS
+              currency: MXN
+            - amount: 27339.54
+              pfmTransactionType: DEBIT_MOVEMENTS
+              currency: MXN
+            name: Otros ingresos
+            averages:
+            - amount: 0.0
+              pfmTransactionType: CREDIT_MOVEMENTS
+              currency: MXN
+            - amount: 5467.91
+              pfmTransactionType: DEBIT_MOVEMENTS
+              currency: MXN
+            id: '104'
+            subcategories:
+            - totalTransactions: 5
+              image:
+                id: check
+              totalAmount:
+                amount: 27339.54
+                currency: MXN
+              amounts:
+              - amount: 0.0
+                pfmTransactionType: CREDIT_MOVEMENTS
+                currency: MXN
+              - amount: 27339.54
+                pfmTransactionType: DEBIT_MOVEMENTS
+                currency: MXN
+              name: Otros ingresos
+              averages:
+              - amount: 0.0
+                pfmTransactionType: CREDIT_MOVEMENTS
+                currency: MXN
+              - amount: 5467.91
+                pfmTransactionType: DEBIT_MOVEMENTS
+                currency: MXN
+              id: '10401'
+        - totalTransactions: 22
+          totalAmount:
+            amount: -7282.77
+            currency: MXN
+          amounts:
+          - amount: 0.0
+            pfmTransactionType: CREDIT_MOVEMENTS
+            currency: MXN
+          - amount: -7282.77
+            pfmTransactionType: DEBIT_MOVEMENTS
+            currency: MXN
+          name: Gastos
+          averages:
+          - amount: 0.0
+            pfmTransactionType: CREDIT_MOVEMENTS
+            currency: MXN
+          - amount: -331.04
+            pfmTransactionType: DEBIT_MOVEMENTS
+            currency: MXN
+          id: '2'
+          categories:
+          - totalTransactions: 7
+            image:
+              id: travel
+            totalAmount:
+              amount: -5378.87
+              currency: MXN
+            amounts:
+            - amount: 0.0
+              pfmTransactionType: CREDIT_MOVEMENTS
+              currency: MXN
+            - amount: -5378.87
+              pfmTransactionType: DEBIT_MOVEMENTS
+              currency: MXN
+            name: Transporte y viajes
+            averages:
+            - amount: 0.0
+              pfmTransactionType: CREDIT_MOVEMENTS
+              currency: MXN
+            - amount: -768.41
+              pfmTransactionType: DEBIT_MOVEMENTS
+              currency: MXN
+            id: '206'
+            subcategories:
+            - totalTransactions: 4
+              image:
+                id: travel
+              totalAmount:
+                amount: -3155.41
+                currency: MXN
+              amounts:
+              - amount: 0.0
+                pfmTransactionType: CREDIT_MOVEMENTS
+                currency: MXN
+              - amount: -3155.41
+                pfmTransactionType: DEBIT_MOVEMENTS
+                currency: MXN
+              name: Gasolina
+              averages:
+              - amount: 0.0
+                pfmTransactionType: CREDIT_MOVEMENTS
+                currency: MXN
+              - amount: -788.85
+                pfmTransactionType: DEBIT_MOVEMENTS
+                currency: MXN
+              id: '20604'
+            - totalTransactions: 3
+              image:
+                id: travel
+              totalAmount:
+                amount: -2223.46
+                currency: MXN
+              amounts:
+              - amount: 0.0
+                pfmTransactionType: CREDIT_MOVEMENTS
+                currency: MXN
+              - amount: -2223.46
+                pfmTransactionType: DEBIT_MOVEMENTS
+                currency: MXN
+              name: Boletos y gastos de avión
+              averages:
+              - amount: 0.0
+                pfmTransactionType: CREDIT_MOVEMENTS
+                currency: MXN
+              - amount: -741.15
+                pfmTransactionType: DEBIT_MOVEMENTS
+                currency: MXN
+              id: '20610'
+          - totalTransactions: 9
+            image:
+              id: shopping
+            totalAmount:
+              amount: -984.4
+              currency: MXN
+            amounts:
+            - amount: 0.0
+              pfmTransactionType: CREDIT_MOVEMENTS
+              currency: MXN
+            - amount: -984.4
+              pfmTransactionType: DEBIT_MOVEMENTS
+              currency: MXN
+            name: Compras y servicios
+            averages:
+            - amount: 0.0
+              pfmTransactionType: CREDIT_MOVEMENTS
+              currency: MXN
+            - amount: -109.38
+              pfmTransactionType: DEBIT_MOVEMENTS
+              currency: MXN
+            id: '202'
+            subcategories:
+            - totalTransactions: 4
+              image:
+                id: shopping
+              totalAmount:
+                amount: -581.0
+                currency: MXN
+              amounts:
+              - amount: 0.0
+                pfmTransactionType: CREDIT_MOVEMENTS
+                currency: MXN
+              - amount: -581.0
+                pfmTransactionType: DEBIT_MOVEMENTS
+                currency: MXN
+              name: Compras en línea
+              averages:
+              - amount: 0.0
+                pfmTransactionType: CREDIT_MOVEMENTS
+                currency: MXN
+              - amount: -145.25
+                pfmTransactionType: DEBIT_MOVEMENTS
+                currency: MXN
+              id: '20209'
+            - totalTransactions: 2
+              image:
+                id: shopping
+              totalAmount:
+                amount: -263.4
+                currency: MXN
+              amounts:
+              - amount: 0.0
+                pfmTransactionType: CREDIT_MOVEMENTS
+                currency: MXN
+              - amount: -263.4
+                pfmTransactionType: DEBIT_MOVEMENTS
+                currency: MXN
+              name: Tiendas de conveniencia
+              averages:
+              - amount: 0.0
+                pfmTransactionType: CREDIT_MOVEMENTS
+                currency: MXN
+              - amount: -131.7
+                pfmTransactionType: DEBIT_MOVEMENTS
+                currency: MXN
+              id: '20212'
+            - totalTransactions: 2
+              image:
+                id: shopping
+              totalAmount:
+                amount: -100.0
+                currency: MXN
+              amounts:
+              - amount: 0.0
+                pfmTransactionType: CREDIT_MOVEMENTS
+                currency: MXN
+              - amount: -100.0
+                pfmTransactionType: DEBIT_MOVEMENTS
+                currency: MXN
+              name: Telefonía celular
+              averages:
+              - amount: 0.0
+                pfmTransactionType: CREDIT_MOVEMENTS
+                currency: MXN
+              - amount: -50.0
+                pfmTransactionType: DEBIT_MOVEMENTS
+                currency: MXN
+              id: '20210'
+            - totalTransactions: 1
+              image:
+                id: shopping
+              totalAmount:
+                amount: -40.0
+                currency: MXN
+              amounts:
+              - amount: 0.0
+                pfmTransactionType: CREDIT_MOVEMENTS
+                currency: MXN
+              - amount: -40.0
+                pfmTransactionType: DEBIT_MOVEMENTS
+                currency: MXN
+              name: Tiendas departamentales
+              averages:
+              - amount: 0.0
+                pfmTransactionType: CREDIT_MOVEMENTS
+                currency: MXN
+              - amount: -40.0
+                pfmTransactionType: DEBIT_MOVEMENTS
+                currency: MXN
+              id: '20206'
+          - totalTransactions: 3
+            image:
+              id: home
+            totalAmount:
+              amount: -635.0
+              currency: MXN
+            amounts:
+            - amount: 0.0
+              pfmTransactionType: CREDIT_MOVEMENTS
+              currency: MXN
+            - amount: -635.0
+              pfmTransactionType: DEBIT_MOVEMENTS
+              currency: MXN
+            name: Casa
+            averages:
+            - amount: 0.0
+              pfmTransactionType: CREDIT_MOVEMENTS
+              currency: MXN
+            - amount: -211.67
+              pfmTransactionType: DEBIT_MOVEMENTS
+              currency: MXN
+            id: '201'
+            subcategories:
+            - totalTransactions: 3
+              image:
+                id: home
+              totalAmount:
+                amount: -635.0
+                currency: MXN
+              amounts:
+              - amount: 0.0
+                pfmTransactionType: CREDIT_MOVEMENTS
+                currency: MXN
+              - amount: -635.0
+                pfmTransactionType: DEBIT_MOVEMENTS
+                currency: MXN
+              name: Supermercado
+              averages:
+              - amount: 0.0
+                pfmTransactionType: CREDIT_MOVEMENTS
+                currency: MXN
+              - amount: -211.67
+                pfmTransactionType: DEBIT_MOVEMENTS
+                currency: MXN
+              id: '20113'
+          - totalTransactions: 2
+            image:
+              id: leisure
+            totalAmount:
+              amount: -190.0
+              currency: MXN
+            amounts:
+            - amount: 0.0
+              pfmTransactionType: CREDIT_MOVEMENTS
+              currency: MXN
+            - amount: -190.0
+              pfmTransactionType: DEBIT_MOVEMENTS
+              currency: MXN
+            name: Entretenimiento
+            averages:
+            - amount: 0.0
+              pfmTransactionType: CREDIT_MOVEMENTS
+              currency: MXN
+            - amount: -95.0
+              pfmTransactionType: DEBIT_MOVEMENTS
+              currency: MXN
+            id: '203'
+            subcategories:
+            - totalTransactions: 1
+              image:
+                id: leisure
+              totalAmount:
+                amount: -130.0
+                currency: MXN
+              amounts:
+              - amount: 0.0
+                pfmTransactionType: CREDIT_MOVEMENTS
+                currency: MXN
+              - amount: -130.0
+                pfmTransactionType: DEBIT_MOVEMENTS
+                currency: MXN
+              name: Actividades recreativas
+              averages:
+              - amount: 0.0
+                pfmTransactionType: CREDIT_MOVEMENTS
+                currency: MXN
+              - amount: -130.0
+                pfmTransactionType: DEBIT_MOVEMENTS
+                currency: MXN
+              id: '20304'
+            - totalTransactions: 1
+              image:
+                id: leisure
+              totalAmount:
+                amount: -60.0
+                currency: MXN
+              amounts:
+              - amount: 0.0
+                pfmTransactionType: CREDIT_MOVEMENTS
+                currency: MXN
+              - amount: -60.0
+                pfmTransactionType: DEBIT_MOVEMENTS
+                currency: MXN
+              name: Espectáculos
+              averages:
+              - amount: 0.0
+                pfmTransactionType: CREDIT_MOVEMENTS
+                currency: MXN
+              - amount: -60.0
+                pfmTransactionType: DEBIT_MOVEMENTS
+                currency: MXN
+              id: '20302'
+          - totalTransactions: 1
+            image:
+              id: health
+            totalAmount:
+              amount: -94.5
+              currency: MXN
+            amounts:
+            - amount: 0.0
+              pfmTransactionType: CREDIT_MOVEMENTS
+              currency: MXN
+            - amount: -94.5
+              pfmTransactionType: DEBIT_MOVEMENTS
+              currency: MXN
+            name: Salud y belleza
+            averages:
+            - amount: 0.0
+              pfmTransactionType: CREDIT_MOVEMENTS
+              currency: MXN
+            - amount: -94.5
+              pfmTransactionType: DEBIT_MOVEMENTS
+              currency: MXN
+            id: '204'
+            subcategories:
+            - totalTransactions: 1
+              image:
+                id: health
+              totalAmount:
+                amount: -94.5
+                currency: MXN
+              amounts:
+              - amount: 0.0
+                pfmTransactionType: CREDIT_MOVEMENTS
+                currency: MXN
+              - amount: -94.5
+                pfmTransactionType: DEBIT_MOVEMENTS
+                currency: MXN
+              name: Farmacias
+              averages:
+              - amount: 0.0
+                pfmTransactionType: CREDIT_MOVEMENTS
+                currency: MXN
+              - amount: -94.5
+                pfmTransactionType: DEBIT_MOVEMENTS
+                currency: MXN
+              id: '20402'
+        tags:
+        - totalTransactions: 10
+          totalAmount:
+            amount: 5000.0
+            currency: MXN
+          amounts:
+          - amount: 0.0
+            pfmTransactionType: CREDIT_MOVEMENTS
+            currency: MXN
+          - amount: 5000.0
+            pfmTransactionType: DEBIT_MOVEMENTS
+            currency: MXN
+          averages:
+          - amount: 0.0
+            pfmTransactionType: CREDIT_MOVEMENTS
+            currency: MXN
+          - amount: 500.0
+            pfmTransactionType: DEBIT_MOVEMENTS
+            currency: MXN
+          id: prueba
+      frequency:
+        id: ONE_TIME
+    :headers:
+      content-length: '10225'
+      Access-Control-Allow-Origin: '*'
+      ECS-Entry-Point-Zone: ext
+      Access-Control-Allow-Methods: GET, POST, DELETE, PUT, OPTIONS, PATCH
+      X-Content-Type-Options: nosniff
+      Connection: keep-alive
+      tsec: ZXlKaFlYQWlPaUl4TURBd01ERTROeUlzSW10bGVWWmxjbk5wYjI0aU9qRXNJbUZ3Y0Vsa0lqb2lRVkJRTVNJc0ltdHBaQ0k2SWtGUVVERXViRzlqWVd3dU1TSXNJbVZ1WXlJNklrRXhPVEpIUTAwaUxDSnJaWGxVZVhCbElqb2liRzlqWVd3aUxDSmhiR2NpT2lKa2FYSWlMQ0owYzJWalNXUWlPaUppTmpObU5HVXdZaTA0T0RWaExUUmlNakl0T1Rrd05DMDRPRFJsTW1NNU1qZGxNbUVpZlEuLnJuMEZDem5nN1dseE5IaXAuQkJyZEdaeDExTGRNSUFlOGpnc1NZd3BCX3BLdWp6a1drX01aS0FocmRqZFMtVm5fZVc3aVIxSVpRbG5GWlAzcEhvTkprYXFuYlJHYy1CY05BT1h2R2JiVm9iODVYRnVQT1dQazcyTWJsMzNTbk9qemJZX1k5Qy1mMWszdUxGYnh0aksxeDZvU1d0dXB6c0lQUnBvMm5yRDdBWXdyNnVQNFFvU3pYRjA3RDVaR3dmZnN4UEtoNFlzQjRlcDlMWlVkaVI1YTJvdVhfTXRkNnk4SXBFbEw1dHp2SFA4QXFSc1RjNUxiMG83Z2xiWVJjWlJaZzU2VHJmMGhBa0s1NWNaZTRGVGx2NVY3Z2pBSUxGeXBnRmRldEFZdktLUlY3OXZiOW1TTGt0MnU3Z0xiV0JsNlRrMFlfWVp3cHhEZWNVMGxFLVpSWVpZanNyUmttaFpxRGx4VVJxTE1iNHRZZVItUjZlLTdDdzVURjdFQlQ2R01ZNjZUSWN4aHJyb09mOC03cmlYY1VyMlN4cmVxc01wdE84ZlFSUUxDcXdzbWVQbE9qQVZBMkxJWG1aRWttejhrQl93ME0tdW9ERmRicVctTTNfbklfVnJnTkxVTUsxX0tNemFocHJuUXQzX2Z6Ui1IbVIzaThUeXRrMzJ4clhJU2MtRW41QzlyTFZENmhSdXo3VnNlX0FjazZQWkhpd0NKbTFSVDNvUTVBd1oxZVh1XzdaN0JYSjJTdkZiQkQ1dVJLXzk1YjZLVHpUcXdJNE4zaldma1AwWDFZbl9uNmxjaGpoRDFGcjV4aWVhSU10MnFfMDk2RWRQWGJsZjR0VG9jSDd6Ull5YWM4amdvNEpHa3ZQcGJaV1gtU0UwQXpMakt6UldnTEZKcl9tdXB0Vm9sWFpZak1mOXlfQ1VZQXhINXJTUm1Xc0V3OGhKXzBTVEFMUHdjbUdkY01fNkpjd1FuYUlmWWJ4dlBJVG9WOXFfYTRlWk45MFc1UF9GVXZrWTk2cmJvWS1TSTZlVldRbUU5MGJuWjdYSlpYU29nVTNET2JmTVZqcHVTQ1RtTGpYZURjcXE2ZHFkUjh2ZEJUd2J0Umt2S2ZiMS0zZmlNaTdFb2pQaWR3S1lNRXdWNDMxeWRqc3U3Q0NHZEZNTE8xSHlxaTQtNDM0LS1fMmJ2Wm1sN2JjS0RHcEE3bFJ2T0gxTG40bm9HdjdreGY1VThfVnNfenJJWXV2NlRSUnJZZG9GNHNoWGpDa1ZhME9tajdGV3gyejZyZHpNN1JQRDVsblJvdkkyNFZoRXk3MTFkWjAxRXdhQ2dQZ2dQZTRuN2NLOTJRS0NMWDJGS0tpb3dJYnE0RkxBWjg5OHByQUc4a1NpaHVyMm1HVnVoOHVPdXRtTWR5dHZuWkR1ekJTb2Fzcy1RdUtyNl9pRXRGTjJrRFNBZ2o4UmVKa2x5Tm9ORXNMWXVmRVBmWWN5dVhQNXdoWk5WNnF4MXVuSXhrQlhrcVQybG45WFR3RjdrVk5BbEIyc2dwMlhaaHZBNkYtR0NibUdGSE5BTm9uanNZcEN1a2xNa29OZ1lpaHNCNXhBQ0dCTGRaUzF6dnBSTmpQaktJeGQ5c1MzNFBGLUxncVBIbUppYV9wSm1BR09Jd051V0MwNUtIalFwUWktRXR3anFwRXMxZHNyb3hNNVVBV2pUaVEzeDdmSk15VEdqNVVldjRSSUFTVGlNV1dBbVhHaDFBd1U5bjBha01zLTJtZWNyRmRMVnBTUEZNRF90SlhSUnFxY29nMy1sLV9vQzBqN2kyQl9GczlUM2MtTlJ6Z3V4blRUOGk0Q0FNb3FLNklaX3ZjTmhWbGhYaWJOcTR0aEs5NmY1eE1vblVMRjl3NlA1Q0RTSllNZUlscXhEd0VTWVo0TTNUQ3pQM2JFWHpyYzd2YkczREh5R3BnS19vMG5PS3pwRWY5R0ltM3F5Qm1UZ1Mxay1NbGhVblFoemdGSnlZcG9wLUdGY1lFNDV0cmJ4T0pUWmwwcUM1Um5HSXI4LlhXeGUtWDBkWnI3ZjRtQW5mY3Y3WWc=
+      Access-Control-Allow-Headers: remaining-time, Bbva-User-Agent, Accept-Encoding,
+        Accept, Content-Type, tsec, consumerrequestid, authenticationchallenge, authenticationtype,
+        authenticationdata, authenticationstate, contactid, consumeruuid, consumerapplicationid,
+        perimetertsec, authorization, responsewarningcode, responsewarningdescription,
+        cuf, prefer, phoneNumber, Location, X-RHO-PARENTSPANID, X-RHO-TRACEID, preferredauthenticationtype,
+        X-HTTP-Method-Override, Access-Control-Allow-Methods, iv-remote-address, thirdparty-x-forwarded-for,
+        thirdparty-user-agent, thirdparty-geolocation, thirdparty-calculated-scoring,
+        thirdparty-deviceid, vnd.bbva.security-client-certificate, order-preferredaction,
+        authenticationresponse, Access-Control-Max-Age, BCS-Device-Id, BCS-Device-OS-Name,
+        BCS-Device-Model-Name, BCS-Device-Model-Manufacturer, BCS-Device-Screen-Size,
+        BCS-Device-OS-Version, BCS-Device-DPI, BCS-Device-App-Name, BCS-Device-App-Version,
+        Third-Party-Application-Id, ECS-Signature-Platform-Use-Case, BCS-Process-Code,
+        BCS-Operation-Tracer, BCS-Process-Tracer, vnd.bbva.user-id, order-id, order-accepteddisclaimers,
+        x-forwarded-for, Date, order-hmac, x-dmz-orgn, onsite-accountTerm, onsite-logicalTerm,
+        Akamai-BM-Telemetry, BCS-Third-Party-Session-Id, Cache-Control, clave, Content-Encoding,
+        ECS-Entry-Point-Zone, firma, Geolocation, Third-Party-Collaborator-Id, user-agent,
+        Via, order-signed, loginauthenticationtype, x-cau
+      Date: Thu, 04 Sep 2025 15:33:39 GMT
+      Referrer-Policy: same-origin
+      X-Frame-Options: sameorigin
+      Strict-Transport-Security: max-age=31536000; includeSubDomains
+      Access-Control-Expose-Headers: remaining-time, Bbva-User-Agent, Accept-Encoding,
+        Accept, Content-Type, tsec, consumerrequestid, authenticationchallenge, authenticationtype,
+        authenticationdata, authenticationstate, contactid, consumeruuid, consumerapplicationid,
+        perimetertsec, authorization, responsewarningcode, responsewarningdescription,
+        cuf, prefer, phoneNumber, Location, X-RHO-PARENTSPANID, X-RHO-TRACEID, preferredauthenticationtype,
+        X-HTTP-Method-Override, Access-Control-Allow-Methods, iv-remote-address, thirdparty-x-forwarded-for,
+        thirdparty-user-agent, thirdparty-geolocation, thirdparty-calculated-scoring,
+        thirdparty-deviceid, vnd.bbva.security-client-certificate, order-preferredaction,
+        authenticationresponse, Access-Control-Max-Age, BCS-Device-Id, BCS-Device-OS-Name,
+        BCS-Device-Model-Name, BCS-Device-Model-Manufacturer, BCS-Device-Screen-Size,
+        BCS-Device-OS-Version, BCS-Device-DPI, BCS-Device-App-Name, BCS-Device-App-Version,
+        Third-Party-Application-Id, ECS-Signature-Platform-Use-Case, BCS-Process-Code,
+        BCS-Operation-Tracer, BCS-Process-Tracer, vnd.bbva.user-id, order-id, order-accepteddisclaimers,
+        x-forwarded-for, Date, order-hmac, x-dmz-orgn, onsite-accountTerm, onsite-logicalTerm,
+        Akamai-BM-Telemetry, BCS-Third-Party-Session-Id, Cache-Control, clave, Content-Encoding,
+        ECS-Entry-Point-Zone, firma, Geolocation, Third-Party-Collaborator-Id, user-agent,
+        Via, order-signed, loginauthenticationtype, x-cau
+      Cache-Control: no-cache,no-store,must-revalidate
+      Content-Security-Policy: script-src 'self'
+      Vary: Accept-Encoding
+      Set-Cookie: vbank-session=7b5ed194-9195-4165-a9cd-9042cce24d2d
+      Expires: '-1'
+      X-XSS-Protection: 1; mode=block
+      consumerrequestid: 52fa5008-e15b-418e-8337-ab776020be62
+      Content-Type: application/json; charset=UTF-8
+    :status: 200 OK

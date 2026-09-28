@@ -1,0 +1,69 @@
+when:
+  sequence: 2
+  path: /SRVS_A02/promotions/v1/promotions/campaigns/12345678901234567/cards/0001/transactions/apply-promotion
+  method: POST
+  backend: glomo
+request:
+  headers:
+    sec-fetch-mode: cors
+    referer: http://localhost:8001/
+    content-length: '215'
+    sec-fetch-site: same-site
+    accept-language: es-MX,es;q=0.9
+    origin: http://localhost:8001
+    tsec: 4c0e34f275982965238fbe93b45f57851666e4f0
+    accept: application/json, text/html, */*; q=0.1
+    sec-ch-ua: '"Chromium";v="134", "Not:A-Brand";v="24", "Google Chrome";v="134"'
+    sec-ch-ua-mobile: ?0
+    x-vbank-session: 65aa4704-f66a-4437-84fc-7c75dd6c763f
+    sec-ch-ua-platform: '"macOS"'
+    host: localhost:9000
+    content-type: application/json
+    connection: keep-alive
+    cache-control: no-cache, no-store, must-revalidate
+    accept-encoding: gzip, deflate, br, zstd
+    sec-fetch-dest: empty
+    user-agent: GLOMO_MX/99.99.99 (Android;14;Samsung)
+  body:
+    transactions:
+    - date: '2024-06-30T11:05:03.000+01:00'
+      isAdditionalCardTransaction: true
+      amount:
+        amount: 1000
+        currency: MXN
+      concept: Zara Buenavista
+      id: 000A0001
+      category:
+        id: HOT_SALE_AFTER
+then:
+- return:
+    severity: FATAL
+    error-message: Mandatory parameters not reported
+    consumer-request-id: 207a2723-e82b-4c47-a64c-ea8836f245cd
+    :headers:
+      access-control-allow-origin: '*'
+      Access-Control-Expose-Headers: tsec, vnd.bbva.access-token-type,vnd.bbva.access-token,
+        vnd.bbva.sso-pkcs7, authenticationtype, authenticationdata, authenticationstate,
+        authenticationchallenge
+      Server: artichoke
+      access-control-allow-headers: Content-Type, tsec, authenticationtype, authenticationdata,
+        authenticationstate, contactid, consumeruuid, consumerapplicationid, perimetertsec,
+        authorization, responsewarningcode, responsewarningdescription, cuf, field,
+        bcs-device-app-version, bcs-device-app-version, vnd.bbva.authorization, device-id,
+        Bcs-Device-Os-Name, bcs-device-app-name, bcs-device-dpi, BCS-Device-Id
+      Connection: keep-alive
+      tsec: 4c0e34f275982965238fbe93b45f57851666e4f0
+      Content-Length: '422'
+      X-Response-Time: 2ms
+      Date: Tue, 29 Apr 2025 10:39:19 GMT
+      Content-Type: application/json; charset=utf-8
+    system-error-code: mandatoryParametersMissing
+    messages:
+    - code: mandatoryParametersMissing
+      message: Mandatory parameters not reported
+      type: ERROR
+    :status: 400 Bad Request
+    http-status: 400
+    system-error-description: mandatoryParametersMissing
+    error-code: mandatoryParametersMissing
+    version: 1

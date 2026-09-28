@@ -1,0 +1,340 @@
+/* eslint-disable max-statements */
+module.exports = (CONFIG) => {
+  const CONSTANTS = require('./common/_constants');
+  const LITERALS = require('./common/_literals');
+  const utils = require('./common/_utils');
+
+  const COMMON_FUNNEL = {
+    [CONSTANTS.APPLICATION_GLOBAL_APPLICATION]: LITERALS.globalApplication.sendMoney,
+    [CONSTANTS.APPLICATION_APPLICATION_NAME]: LITERALS.commons.sendMoney,
+    [CONSTANTS.APPLICATION_APPLICATION_TYPE]: LITERALS.commons.operative,
+    [CONSTANTS.APPLICATION_FULLFILMENT]: LITERALS.commons.online
+  };
+
+  const COMMON = {
+    [CONSTANTS.PAGE_PAGEACTIVITY_LOGINTYPE]: LITERALS.commons.empty,
+    [CONSTANTS.PAGE_INSTANCE_ID]: CONFIG.pageInstanceID,
+    [CONSTANTS.USER_USERSTATE]: LITERALS.commons.logado,
+    [CONSTANTS.USER_DEVICE_MOBILE]: LITERALS.commons.yes,
+    [CONSTANTS.PAGE_PAGEINFO_SERVER]: CONFIG.globalServices.host,
+    [CONSTANTS.PAGE_PAGEINFO_AREA]: LITERALS.commons.private,
+    [CONSTANTS.PAGE_PAGEINFO_PAGESEGMENT]: LITERALS.commons.persons,
+    [CONSTANTS.PAGE_PAGEINFO_PAGEINTENT]: LITERALS.commons.transaction,
+    [CONSTANTS.PAGE_PAGEINFO_PROJECTNAME]: LITERALS.sections.glomo
+  };
+
+  const COMMON_FOOTPRINT = {
+    [CONSTANTS.APPLICATION_STEP]: LITERALS.commons.empty
+  };
+
+  const PRODUCT_CONFIG = utils.getProduct(LITERALS.commons.account);
+
+  const DYNAMIC_COMMON_PROPERTIES = {
+    [CONSTANTS.PRODUCT_PRODUCT_NAME]: {
+      bind: 'name'
+    }
+  };
+
+  const DYNAMIC_COMMON_DATA = {
+    [CONSTANTS.APPLICATION_TYPOLOGY]: {
+      bind: 'typology'
+    },
+    [CONSTANTS.APPLICATION_PROCESS]: {
+      bind: 'process'
+    }
+  };
+
+  const DYNAMIC_COMMON_DATA_STEP_3 = {
+    [CONSTANTS.APPLICATION_AMOUNT]: {
+      bind: 'amount'
+    },
+    [CONSTANTS.APPLICATION_CURRENCY]: {
+      bind: 'currency'
+    }
+  };
+
+  const DYNAMIC_COMMON_OPT = {
+    [CONSTANTS.APPLICATION_CUSTOM_FIELDS]: {
+      bind: 'custom_fields'
+    }
+  };
+  const DYNAMIC_COMMON_COMPLETED = {
+    [CONSTANTS.APPLICATION_OPERATION_NUMBER]: {
+      bind: 'operation_number'
+    },
+    [CONSTANTS.PRODUCT_STATE]: LITERALS.commons.ended
+  };
+
+  const APP_ON_CLICK_START = {
+    ...COMMON,
+    ...COMMON_FUNNEL,
+    [CONSTANTS.PAGE_PAGEINFO_LEVEL1]: LITERALS.commons.account,
+    [CONSTANTS.PAGE_PAGEINFO_LEVEL2]: LITERALS.commons.detail,
+    [CONSTANTS.PRODUCT_ATTRIBUTES_PRIMARY_CATEGORY]: LITERALS.commons.account,
+    [CONSTANTS.PRODUCT_ATTRIBUTES_PRODUCT_NAME]: LITERALS.ocAccount.basicLibreton
+  };
+
+  const APP_CLICK_START = utils.getAppOnClickStartLevel(LITERALS.commons.oneContact, APP_ON_CLICK_START);
+
+  const PAGE_VISIT = {
+    ...COMMON,
+    ...COMMON_FUNNEL,
+    [CONSTANTS.PAGE_PAGEINFO_LEVEL1]: LITERALS.commons.account,
+    [CONSTANTS.PAGE_PAGEINFO_LEVEL2]: LITERALS.commons.sendMoney,
+    [CONSTANTS.PRODUCT_ATTRIBUTES_PRIMARY_CATEGORY]: LITERALS.commons.account,
+    ...PRODUCT_CONFIG,
+    ...DYNAMIC_COMMON_PROPERTIES
+  };
+  const APP_PAGE_VISIT = utils.getPageVisitWithLevel3(LITERALS.commons.oneContact, PAGE_VISIT);
+
+  const STARTED = {
+    ...COMMON,
+    ...COMMON_FUNNEL,
+    [CONSTANTS.PAGE_PAGEINFO_LEVEL1]: LITERALS.commons.account,
+    [CONSTANTS.PAGE_PAGEINFO_LEVEL2]: LITERALS.commons.sendMoney,
+    ...PRODUCT_CONFIG,
+    ...DYNAMIC_COMMON_PROPERTIES
+  };
+  const APP_STARTED = utils.getStaticAppStarted({bind: 'step'}, LITERALS.commons.oneContact, STARTED);
+
+  const STEP_2 = {
+    ...COMMON,
+    ...COMMON_FUNNEL,
+    [CONSTANTS.PAGE_PAGEINFO_LEVEL1]: LITERALS.commons.account,
+    [CONSTANTS.PAGE_PAGEINFO_LEVEL2]: LITERALS.commons.sendMoney,
+    ...PRODUCT_CONFIG,
+    ...DYNAMIC_COMMON_PROPERTIES,
+    ...DYNAMIC_COMMON_DATA,
+    ...DYNAMIC_COMMON_DATA_STEP_3,
+    [CONSTANTS.APPLICATION_STEP]: LITERALS.commons.twoAmount,
+    [CONSTANTS.PAGE_PAGEINFO_LEVEL3]: LITERALS.commons.twoAmount
+  };
+  const APP_STEP_2 = utils.getAppStep(2, STEP_2);
+
+  const STEP_3 = {
+    ...COMMON,
+    ...COMMON_FUNNEL,
+    ...PRODUCT_CONFIG,
+    ...DYNAMIC_COMMON_PROPERTIES,
+    ...DYNAMIC_COMMON_DATA,
+    ...DYNAMIC_COMMON_DATA_STEP_3,
+    [CONSTANTS.PAGE_PAGEINFO_LEVEL1]: LITERALS.commons.account,
+    [CONSTANTS.PAGE_PAGEINFO_LEVEL2]: LITERALS.commons.sendMoney,
+    [CONSTANTS.PAGE_PAGEINFO_LEVEL3]: LITERALS.commons.threeConcept,
+    [CONSTANTS.APPLICATION_STEP]: LITERALS.commons.threeConcept
+  };
+  const APP_STEP_3 = utils.getAppStep(3, STEP_3);
+
+  const STEP_4 = {
+    ...COMMON,
+    ...COMMON_FUNNEL,
+    ...PRODUCT_CONFIG,
+    ...DYNAMIC_COMMON_PROPERTIES,
+    ...DYNAMIC_COMMON_DATA,
+    ...DYNAMIC_COMMON_DATA_STEP_3,
+    [CONSTANTS.PAGE_PAGEINFO_LEVEL1]: LITERALS.commons.account,
+    [CONSTANTS.PAGE_PAGEINFO_LEVEL2]: LITERALS.commons.sendMoney,
+    [CONSTANTS.PAGE_PAGEINFO_LEVEL3]: LITERALS.commons.fourthConfirmation,
+    [CONSTANTS.APPLICATION_STEP]: LITERALS.commons.fourthConfirmation
+  };
+  const APP_STEP_4 = utils.getAppStep(4, STEP_4);
+
+  const STEP_5 = {
+    ...COMMON,
+    ...COMMON_FUNNEL,
+    ...PRODUCT_CONFIG,
+    ...DYNAMIC_COMMON_PROPERTIES,
+    ...DYNAMIC_COMMON_DATA,
+    ...DYNAMIC_COMMON_DATA_STEP_3,
+    ...DYNAMIC_COMMON_OPT,
+    [CONSTANTS.PAGE_PAGEINFO_LEVEL1]: LITERALS.commons.account,
+    [CONSTANTS.PAGE_PAGEINFO_LEVEL2]: LITERALS.commons.sendMoney,
+    [CONSTANTS.PAGE_PAGEINFO_LEVEL3]: LITERALS.commons.fifthOtp,
+    [CONSTANTS.APPLICATION_STEP]: LITERALS.commons.fifthOtp
+  };
+  const APP_STEP_5 = utils.getAppStep(5, STEP_5);
+
+  const COMPLETED = {
+    ...COMMON,
+    ...COMMON_FUNNEL,
+    ...PRODUCT_CONFIG,
+    ...DYNAMIC_COMMON_PROPERTIES,
+    ...DYNAMIC_COMMON_DATA,
+    ...DYNAMIC_COMMON_DATA_STEP_3,
+    ...DYNAMIC_COMMON_OPT,
+    ...DYNAMIC_COMMON_COMPLETED,
+    [CONSTANTS.PAGE_PAGEINFO_LEVEL1]: LITERALS.commons.account,
+    [CONSTANTS.PAGE_PAGEINFO_LEVEL2]: LITERALS.commons.sendMoney
+  };
+  const APP_COMPLETED = utils.getAppCompleted(LITERALS.commons.successfulPage, LITERALS.commons.ended, COMPLETED);
+
+  const CONTACTS = {
+    ...COMMON,
+    ...COMMON_FOOTPRINT,
+    [CONSTANTS.PAGE_PAGEINFO_LEVEL1]: LITERALS.commons.account,
+    [CONSTANTS.PAGE_PAGEINFO_LEVEL2]: LITERALS.commons.sendMoney,
+    [CONSTANTS.PAGE_PAGEINFO_LEVEL3]: LITERALS.commons.addressBookContacts
+  };
+  const FP_CONTACTS = utils.getAdvancedFootprint(CONTACTS);
+
+  const CONTACT_INVITATION = {
+    ...COMMON,
+    ...COMMON_FOOTPRINT,
+    [CONSTANTS.PAGE_PAGEINFO_LEVEL1]: LITERALS.commons.account,
+    [CONSTANTS.PAGE_PAGEINFO_LEVEL2]: LITERALS.commons.sendMoney,
+    [CONSTANTS.PAGE_PAGEINFO_LEVEL3]: LITERALS.commons.inviteContact
+  };
+  const FP_CONTACT_INVITATION = utils.getAdvancedFootprint(CONTACT_INVITATION);
+
+  const CONTACT_INVITATION_ACTION = {
+    ...COMMON,
+    ...COMMON_FOOTPRINT,
+    [CONSTANTS.PAGE_PAGEINFO_LEVEL1]: LITERALS.commons.account,
+    [CONSTANTS.PAGE_PAGEINFO_LEVEL2]: LITERALS.commons.sendMoney,
+    [CONSTANTS.PAGE_PAGEINFO_LEVEL3]: LITERALS.commons.inviteContact
+  };
+  const FP_CONTACT_INVITATION_ACTION = utils.getInternalLink({bind: 'linkname'}, CONTACT_INVITATION_ACTION);
+
+  const ALLOW_ACCESS = {
+    ...COMMON,
+    ...COMMON_FOOTPRINT,
+    [CONSTANTS.PAGE_PAGEINFO_LEVEL1]: LITERALS.commons.account,
+    [CONSTANTS.PAGE_PAGEINFO_LEVEL2]: LITERALS.commons.sendMoney,
+    [CONSTANTS.PAGE_PAGEINFO_LEVEL3]: LITERALS.commons.allowAccess
+  };
+  const FP_ALLOW_ACCESS = utils.getAdvancedFootprint(ALLOW_ACCESS);
+
+  const CHANGE_CONTACT = {
+    ...COMMON,
+    ...COMMON_FOOTPRINT,
+    [CONSTANTS.PAGE_PAGEINFO_LEVEL1]: LITERALS.commons.account,
+    [CONSTANTS.PAGE_PAGEINFO_LEVEL2]: LITERALS.commons.sendMoney,
+    [CONSTANTS.PAGE_PAGEINFO_LEVEL3]: LITERALS.commons.changeContact
+  };
+  const FP_CHANGE_CONTACT = utils.getAdvancedFootprint(CHANGE_CONTACT);
+
+  const CONTACT_ERROR = {
+    ...COMMON,
+    ...COMMON_FOOTPRINT,
+    [CONSTANTS.PAGE_PAGEINFO_LEVEL1]: LITERALS.commons.account,
+    [CONSTANTS.PAGE_PAGEINFO_LEVEL2]: LITERALS.commons.sendMoney,
+    [CONSTANTS.PAGE_PAGEINFO_LEVEL3]: LITERALS.commons.contactError,
+    [CONSTANTS.PAGE_PAGEINFO_ERRORPAGE]: LITERALS.commons.contactError
+  };
+  const FP_CONTACT_ERROR = utils.getAdvancedFootprint(CONTACT_ERROR);
+
+  const OPERATION_NOT_DONE = {
+    ...COMMON,
+    ...COMMON_FOOTPRINT,
+    [CONSTANTS.PAGE_PAGEINFO_LEVEL1]: LITERALS.commons.account,
+    [CONSTANTS.PAGE_PAGEINFO_LEVEL2]: LITERALS.commons.sendMoney,
+    [CONSTANTS.PAGE_PAGEINFO_LEVEL3]: LITERALS.commons.operationNotDone,
+    [CONSTANTS.PAGE_PAGEINFO_ERRORPAGE]: LITERALS.commons.operationNotDone
+  };
+  const FP_OPERATION_NOT_DONE = utils.getAdvancedFootprint(OPERATION_NOT_DONE);
+
+  const SERVICE_ERROR = {
+    ...COMMON,
+    ...COMMON_FOOTPRINT,
+    [CONSTANTS.PAGE_PAGEINFO_LEVEL1]: LITERALS.commons.account,
+    [CONSTANTS.PAGE_PAGEINFO_LEVEL2]: LITERALS.commons.sendMoney,
+    [CONSTANTS.PAGE_PAGEINFO_LEVEL3]: LITERALS.commons.serviceError,
+    [CONSTANTS.PAGE_PAGEINFO_ERRORPAGE]: LITERALS.commons.serviceError
+  };
+  const FP_SERVICE_ERROR = utils.getAdvancedFootprint(SERVICE_ERROR);
+
+  const SERVICE_ERROR_DAY = {
+    ...COMMON,
+    ...COMMON_FOOTPRINT,
+    [CONSTANTS.PAGE_PAGEINFO_LEVEL1]: LITERALS.commons.account,
+    [CONSTANTS.PAGE_PAGEINFO_LEVEL2]: LITERALS.commons.sendMoney,
+    [CONSTANTS.PAGE_PAGEINFO_LEVEL3]: LITERALS.commons.dailyErrorLimit,
+    [CONSTANTS.PAGE_PAGEINFO_ERRORPAGE]: LITERALS.commons.dailyErrorLimit
+  };
+  const FP_SERVICE_ERROR_DAY = utils.getAdvancedFootprint(SERVICE_ERROR_DAY);
+
+  const SERVICE_ERROR_MONTH = {
+    ...COMMON,
+    ...COMMON_FOOTPRINT,
+    [CONSTANTS.PAGE_PAGEINFO_LEVEL1]: LITERALS.commons.account,
+    [CONSTANTS.PAGE_PAGEINFO_LEVEL2]: LITERALS.commons.sendMoney,
+    [CONSTANTS.PAGE_PAGEINFO_LEVEL3]: LITERALS.commons.monthErrorLimit,
+    [CONSTANTS.PAGE_PAGEINFO_ERRORPAGE]: LITERALS.commons.monthErrorLimit
+  };
+  const FP_SERVICE_ERROR_MONTH = utils.getAdvancedFootprint(SERVICE_ERROR_MONTH);
+
+  const SERVICE_ERROR_NOT_POSIBLE = {
+    ...COMMON,
+    ...COMMON_FOOTPRINT,
+    [CONSTANTS.PAGE_PAGEINFO_LEVEL1]: LITERALS.commons.account,
+    [CONSTANTS.PAGE_PAGEINFO_LEVEL2]: LITERALS.commons.sendMoney,
+    [CONSTANTS.PAGE_PAGEINFO_LEVEL3]: LITERALS.commons.errorCantSend,
+    [CONSTANTS.PAGE_PAGEINFO_ERRORPAGE]: LITERALS.commons.errorCantSend
+  };
+  const FP_SERVICE_ERROR_NOT_POSIBLE = utils.getAdvancedFootprint(SERVICE_ERROR_NOT_POSIBLE);
+
+  const TRANSFER_NOT_AVAILABLE = {
+    ...COMMON,
+    ...COMMON_FOOTPRINT,
+    [CONSTANTS.PAGE_PAGEINFO_LEVEL1]: LITERALS.commons.account,
+    [CONSTANTS.PAGE_PAGEINFO_LEVEL2]: LITERALS.commons.sendMoney,
+    [CONSTANTS.PAGE_PAGEINFO_LEVEL3]: LITERALS.commons.errorCantTransfer,
+    [CONSTANTS.PAGE_PAGEINFO_ERRORPAGE]: LITERALS.commons.errorCantTransfer
+  };
+  const FP_TRANSFER_NOT_AVAILABLE = utils.getAdvancedFootprint(TRANSFER_NOT_AVAILABLE);
+
+  const ANALYTICS_FEATURE_FLAG = {
+    key: 'glomo.analytics.dimoSend',
+    defaultValue: true
+  };
+
+  [
+    APP_CLICK_START,
+    APP_PAGE_VISIT,
+    APP_STARTED,
+    APP_STEP_2,
+    APP_STEP_3,
+    APP_STEP_4,
+    APP_STEP_5,
+    APP_COMPLETED,
+    FP_CONTACTS,
+    FP_CONTACT_INVITATION,
+    FP_CONTACT_INVITATION_ACTION,
+    FP_ALLOW_ACCESS,
+    FP_CHANGE_CONTACT,
+    FP_CONTACT_ERROR,
+    FP_OPERATION_NOT_DONE,
+    FP_SERVICE_ERROR,
+    FP_SERVICE_ERROR_DAY,
+    FP_SERVICE_ERROR_MONTH,
+    FP_SERVICE_ERROR_NOT_POSIBLE,
+    FP_TRANSFER_NOT_AVAILABLE
+  ].forEach(item => utils.addFeatureFlag(item, ANALYTICS_FEATURE_FLAG));
+
+  return {
+
+    //..FUNNEL
+    APP_CLICK_START,
+    APP_PAGE_VISIT,
+    APP_STARTED,
+    APP_STEP_2,
+    APP_STEP_3,
+    APP_STEP_4,
+    APP_STEP_5,
+    APP_COMPLETED,
+
+    //..HUELLA & ERRORES
+    FP_CONTACTS,
+    FP_CONTACT_INVITATION,
+    FP_CONTACT_INVITATION_ACTION,
+    FP_ALLOW_ACCESS,
+    FP_CHANGE_CONTACT,
+    FP_CONTACT_ERROR,
+    FP_OPERATION_NOT_DONE,
+    FP_SERVICE_ERROR,
+    FP_SERVICE_ERROR_DAY,
+    FP_SERVICE_ERROR_MONTH,
+    FP_SERVICE_ERROR_NOT_POSIBLE,
+    FP_TRANSFER_NOT_AVAILABLE
+  };
+};

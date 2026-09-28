@@ -1,0 +1,160 @@
+when:
+  sequence: 3
+  path: /SRVS_A02/flexible-financings/v0/financing-lines/ASDAS2342345
+  method: GET
+  backend: glomo
+request:
+  headers:
+    sec-fetch-mode: cors
+    content-length: '0'
+    referer: http://localhost:8001/
+    sec-fetch-site: same-site
+    accept-language: es-MX,es;q=0.9
+    origin: http://localhost:8001
+    tsec: 0e416930778f38e483a0d4afcf002d4ff7060d98
+    accept: application/json, text/html, */*; q=0.1
+    sec-ch-ua: '"Google Chrome";v="141", "Not?A_Brand";v="8", "Chromium";v="141"'
+    sec-ch-ua-mobile: ?0
+    x-vbank-session: 2007df3a-0bec-49ad-a2ad-a79b6d517d87
+    sec-ch-ua-platform: '"macOS"'
+    host: localhost:9000
+    content-type: application/json
+    connection: keep-alive
+    cache-control: no-cache, no-store, must-revalidate
+    accept-encoding: gzip, deflate, br, zstd
+    sec-fetch-dest: empty
+    user-agent: GLOMO_MX/99.99.99 (Android;14;Samsung)
+then:
+- return:
+    data:
+      nextPaymentDate: '2024-02-01'
+      product:
+        name: Financing Line
+        subproduct:
+          name: Pay and Plan 2.0
+          id: CFX1
+        id: '100'
+      fees:
+        itemizeFees:
+        - itemizeFeeUnits:
+          - unitType: AMOUNT
+            amount: 600
+            currency: MXN
+          - unitType: AMOUNT
+            amount: 32
+            currency: USD
+          - unitType: PERCENTAGE
+            percentage: 6
+          feeType: MICROLOAN_FEE
+      numberType:
+        name: Local Internal Code.
+        id: LIC
+      formats:
+      - number: '001801019200000001'
+        numberType:
+          id: CLABE
+      rates:
+        itemizeRates:
+        - rateType: CAT
+          itemizeRateUnits:
+          - unitType: AMOUNT
+            amount: 200
+            currency: MXN
+          - unitType: AMOUNT
+            amount: 10
+            currency: USD
+          - unitType: PERCENTAGE
+            percentage: 15
+          calculationDate: '2023-12-04'
+        - rateType: ISR
+          itemizeRateUnits:
+          - unitType: PERCENTAGE
+            percentage: 20
+      taxes:
+        itemizeTaxes:
+        - itemizeTaxUnits:
+          - unitType: PERCENTAGE
+            percentage: 20
+          taxType: ISR
+      number: '050400010100120000'
+      balances:
+      - amounts:
+        - amount: 5444.88
+          currency: MXN
+        id: AVAILABLE_BALANCE
+      - amounts:
+        - amount: 5000
+          currency: MXN
+        id: TOTAL_DEBT
+      relatedContracts:
+      - relationType:
+          description: Credit account to which the financing will be made
+          id: CHARGE_ACCOUNT
+        id: '050400010100120000'
+        contractDetails:
+          number: '050400010100120000'
+          product:
+            name: LIBRETON
+            subproduct:
+              name: Deposit account designed.
+              id: SAVINGS_ACCOUNT
+            id: 36465JDJR
+            productType:
+              name: An account as a financing product.
+              id: ACCOUNT
+          numberType:
+            name: Local Internal Code.
+            id: LIC
+          contractType: INTERNAL_CONTRACT
+          contractId: '5001'
+          description: Internal contract description
+      contractingDate: '2023-12-04'
+      cutOffDate: '2023-06-27'
+      specificAmounts:
+      - amounts:
+        - amount: 6417.47
+          currency: MXN
+        id: GRANTED_AMOUNT
+      - amounts:
+        - amount: 324.2
+          currency: MXN
+        id: TOTAL_INSTALLMENT_MONTHLY_AMOUNT
+      maturityDate: '2023-12-23'
+      specificDates:
+      - specificDateType: LAST_PAYMENT_LENGTH
+        termType: MONTHS
+        term: 9
+        valueDate: '2024-12-20'
+      id: ASDAS2342345
+      isDirectDebit: true
+      status:
+        description: Active financing line
+        id: ACTIVE
+        subStatus:
+          description: Available financing line
+          id: AVAILABLE
+      customer:
+        id: 845FD45
+      currencies:
+      - isMajor: true
+        id: MXN
+      - id: USD
+    :headers:
+      access-control-allow-origin: '*'
+      content-length: '2298'
+      Access-Control-Expose-Headers: tsec, vnd.bbva.access-token-type,vnd.bbva.access-token,
+        vnd.bbva.sso-pkcs7, authenticationtype, authenticationdata, authenticationstate,
+        authenticationchallenge
+      Server: artichoke
+      access-control-allow-headers: Content-Type, tsec, authenticationtype, authenticationdata,
+        authenticationstate, contactid, consumeruuid, consumerapplicationid, perimetertsec,
+        authorization, responsewarningcode, responsewarningdescription, cuf, field,
+        bcs-device-app-version, bcs-device-app-version, vnd.bbva.authorization, device-id,
+        Bcs-Device-Os-Name, bcs-device-app-name, bcs-device-dpi, BCS-Device-Id
+      Connection: keep-alive
+      Vary: Accept-Encoding
+      tsec: 0e416930778f38e483a0d4afcf002d4ff7060d98
+      X-Response-Time: 12ms
+      Date: Tue, 13 Jan 2026 16:40:37 GMT
+      Content-Type: application/json; charset=utf-8
+    :status: 200 OK

@@ -1,0 +1,187 @@
+when:
+  sequence: 1
+  path: /SRVS_A02/cards/v2/cards/1240
+  method: GET
+  backend: glomo
+request:
+  headers:
+    sec-fetch-mode: cors
+    content-length: '0'
+    referer: http://localhost:8001/
+    sec-fetch-site: same-site
+    accept-language: en-US
+    origin: http://localhost:8001
+    tsec: 811e7ca6f2cc8dcb18a5813eb66d01f3f6672254
+    accept: application/json, text/html, */*; q=0.1
+    sec-ch-ua: ''
+    sec-ch-ua-mobile: ?0
+    x-vbank-session: 0ac6acd1-844e-4ec9-8a94-f602046b439d
+    sec-ch-ua-platform: ''
+    host: localhost:9000
+    content-type: application/json
+    connection: keep-alive
+    cache-control: no-cache, no-store, must-revalidate
+    accept-encoding: gzip, deflate, br
+    sec-fetch-dest: empty
+    user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36
+      (KHTML, like Gecko) HeadlessChrome/108.0.5359.124 Safari/537.36
+  query:
+    expand: payment-methods,blocks,indicators,activations
+then:
+- return:
+    data:
+      numberType:
+        description: Permanent Account Number
+        id: PAN
+      brandAssociation:
+        description: VISA
+        id: VISA
+      availableBalance:
+        currentBalances:
+        - amount: 3500
+          currency: MXN
+        pendingBalances:
+        - amount: 0
+          currency: MXN
+        postedBalances:
+        - amount: 3500
+          currency: MXN
+      number: '4555457083071240'
+      bank:
+        name: BBVA Mexico
+        id: '504'
+      cutOffDate: '2016-10-01T12:00:00Z'
+      paymentMethods:
+      - nextPaymentDate: '2017-07-05T12:00:00Z'
+        description: Pago mínimo
+        id: MINIMUM_AMOUNT_PAYMENT
+        monetaryPayments:
+        - amount: 0
+          currency: MXN
+      - nextPaymentDate: '2017-07-05T12:00:00Z'
+        description: Pago para no generar intereses
+        id: MINIMUM_AMOUNT_TO_AVOID_INTEREST_PAYMENT
+        monetaryPayments:
+        - amount: 0
+          currency: MXN
+      - nextPaymentDate: '2017-07-05T12:00:00Z'
+        description: Deuda de este mes
+        id: LAST_PERIOD_AMOUNT_PAYMENT
+        monetaryPayments:
+        - amount: 70000
+          currency: MXN
+      - nextPaymentDate: '2017-07-05T12:00:00Z'
+        description: Saldo al corte
+        id: TOTAL_AMOUNT_PAYMENT
+        monetaryPayments:
+        - amount: 75000
+          currency: MXN
+      alias: Tarjeta 1240 - Positive balance
+      id: '1240'
+      issueDate: '2016-07-01T12:05:13Z'
+      openingDate: '2016-07-01T11:31:45Z'
+      expirationDate: '**/**'
+      product:
+        name: Crédito BBVA Saldo a favor
+        id: V1
+      holderName: Carlos Santana
+      images:
+      - name: Front face of the card
+        id: FRONT_CARD
+        url: https://cardcovers.caasbbva.com/mexico/477291-AC.png.imgcaas.w320.png
+      - name: Back face of the card
+        id: BACK_CARD
+        url: /imageBack.jpg
+      blocks: []
+      physicalSupport:
+        description: Plástico normal
+        id: NORMAL_PLASTIC
+      cardType:
+        description: Tarjeta de crédito
+        id: CREDIT_CARD
+      disposedBalance:
+        currentBalances:
+        - amount: -500
+          currency: MXN
+        pendingBalances:
+        - amount: 0
+          currency: MXN
+        postedBalances:
+        - amount: -500
+          currency: MXN
+      indicators:
+      - description: The card can be associable to nfc.
+        id: ASSOCIABLE_TO_NFC
+        isActive: false
+      - description: Indica si la tarjeta cuenta con sticker asociado
+        id: ASSOCIABLE_TO_STICKER_CARDS
+        isActive: false
+      - description: The card can be related to virtual cards
+        id: ASSOCIABLE_TO_VIRTUAL_CARDS
+        isActive: false
+      - description: Bloquear tarjeta
+        id: BLOCKABLE
+        isActive: false
+      - description: Indica si la tarjeta puede modificar el nip de forma online por
+          una aplicación
+        id: BLOCKABLE_NIP
+        isActive: false
+      - description: Indica si los datos de seguridad de la tarjeta pueden ser leídos.
+        id: SECURITY_DATA_READ
+        isActive: true
+      - description: Indica si el CVV2 es dinámico
+        id: DINAMIC_CVV
+        isActive: false
+      - description: IS_ADDITIONAL
+        id: IS_ADDITIONAL
+        isActive: false
+      - description: The card have multipurchase financing available
+        id: MULTIPURCHASE_FINANCING_AVAILABLE
+        isActive: true
+      - description: The card have not personal finance plan
+        id: PERSONAL_FINANCE_PLAN
+        isActive: false
+      transactions:
+      - id: MXN0021
+      - id: MXN0022
+      - id: MXN0023
+      - id: MXN0024
+      - id: 3699A0803
+      - id: 3699A0802
+      grantedCredits:
+      - amount: 3000
+        currency: MXN
+      activations:
+      - name: Activation for global card usage
+        isActive: true
+        activationId: ON_OFF
+      activationDate: '2016-07-01T13:32:02Z'
+      currencies:
+      - isMajor: true
+        currency: MXN
+      status:
+        description: Operative card
+        id: OPERATIVE
+    :headers:
+      access-control-allow-origin: '*'
+      content-length: '5384'
+      Access-Control-Expose-Headers: tsec, vnd.bbva.access-token-type,vnd.bbva.access-token,
+        vnd.bbva.sso-pkcs7, authenticationtype, authenticationdata, authenticationstate,
+        authenticationchallenge
+      Server: artichoke
+      Alt-Svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      access-control-allow-headers: Content-Type, tsec, authenticationtype, authenticationdata,
+        authenticationstate, contactid, consumeruuid, consumerapplicationid, perimetertsec,
+        authorization, responsewarningcode, responsewarningdescription, cuf, field,
+        bcs-device-app-version, bcs-device-app-version, vnd.bbva.authorization
+      content-type: application/json;charset=UTF-8
+      Vary: Accept-Encoding
+      tsec: 811e7ca6f2cc8dcb18a5813eb66d01f3f6672254
+      X-Response-Time: 477ms
+      Date: Fri, 16 Dec 2022 13:13:26 GMT
+      Via: 1.1 google
+    :status: 200 OK
+    apiInfo:
+      name: cards
+      category: products
+      version: 0.19.0
